@@ -9,3 +9,4 @@ The material here is intended as operational guidance and should be tested befor
 | Directory | Purpose |
 | --- | --- |
 | [cpanel](cpanel) | cPanel EasyApache 4 mitigation material. |
+| [hestiacp](hestiacp) | HestiaCP control panel backend & multi-PHP FPM mitigation material. |
