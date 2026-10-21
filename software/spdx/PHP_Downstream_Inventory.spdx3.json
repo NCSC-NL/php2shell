@@ -3894,6 +3894,10 @@
         "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:f70b575bbd8c",
         "urn:php2shell:inventory:vex:CVE-2026-109618:affects:9f0e21803ee8",
         "urn:php2shell:inventory:vex:CVE-2026-109619:affects:9f0e21803ee8",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:affects:4d6c0c74eb12",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:affects:4d6c0c74eb12",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:affects:81f37b5ad902",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:affects:81f37b5ad902",
         "urn:php2shell:inventory:vex:CVE-2026-109618:affects:b3d5811e7062",
         "urn:php2shell:inventory:vex:CVE-2026-109619:affects:b3d5811e7062",
         "urn:php2shell:inventory:vex:CVE-2026-109618:affects:9c85bdebe018",
@@ -3905,7 +3909,19 @@
         "urn:php2shell:inventory:vex:CVE-2026-109618:affects:53d7de272a14",
         "urn:php2shell:inventory:vex:CVE-2026-109619:affects:53d7de272a14",
         "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:f13f6e246bc6",
-        "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:f13f6e246bc6"
+        "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:f13f6e246bc6",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:8d78426c8a90",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:8d78426c8a90",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:05e1498ecb2a",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:05e1498ecb2a",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:2b4351f4c7de",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:2b4351f4c7de",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:74c06cbb0310",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:74c06cbb0310",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:972b87629cc5",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:972b87629cc5",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:a6f1894970da",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:a6f1894970da"
       ]
     },
     {
@@ -3913,6 +3929,7 @@
       "spdxId": "urn:php2shell:inventory:package:PHP-0001",
       "creationInfo": "_:creationinfo",
       "name": "PHP-FPM",
+      "software_packageVersion": "8.5.12, 8.4.27, 8.3.36, 8.2.35",
       "software_primaryPurpose": "module",
       "externalIdentifier": [
         {
@@ -3941,6 +3958,14 @@
             "https://www.php.net/manual/en/book.fpm.php"
           ],
           "comment": "PHP FPM manual - PHP exposes FPM as a bundled FastCGI SAPI."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-21-5"
+          ],
+          "comment": "PHP official security advisory for CVE-2026-109618 and CVE-2026-109619"
         }
       ]
     },
@@ -3949,6 +3974,7 @@
       "spdxId": "urn:php2shell:inventory:package:PHP-0002",
       "creationInfo": "_:creationinfo",
       "name": "PHP-CGI",
+      "software_packageVersion": "8.5.12, 8.4.27, 8.3.36, 8.2.35",
       "software_primaryPurpose": "module",
       "externalIdentifier": [
         {
@@ -3977,6 +4003,14 @@
             "https://www.php.net/manual/en/install.php"
           ],
           "comment": "PHP installation manual - PHP documents CGI deployment separately from other interfaces."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-21-5"
+          ],
+          "comment": "PHP official security advisory for CVE-2026-109618 and CVE-2026-109619"
         }
       ]
     },
@@ -3985,6 +4019,7 @@
       "spdxId": "urn:php2shell:inventory:package:PHP-0003",
       "creationInfo": "_:creationinfo",
       "name": "Apache PHP module (mod_php)",
+      "software_packageVersion": "8.5.12, 8.4.27, 8.3.36, 8.2.35",
       "software_primaryPurpose": "module",
       "externalIdentifier": [
         {
@@ -4013,6 +4048,14 @@
             "https://docs.nextcloud.com/server/stable/admin_manual/installation/system_requirements.html"
           ],
           "comment": "Nextcloud system requirements - PHP documents deployment with Apache; Nextcloud explicitly supports mod_php."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-21-5"
+          ],
+          "comment": "PHP official security advisory for CVE-2026-109618 and CVE-2026-109619"
         }
       ]
     },
@@ -5010,9 +5053,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:webpros-plesk:93657c157beb",
-      "summary": "The dated PHP Updates entry supplies hosted-handler patch declarations. It is separate from the named Linux and Windows internal engines.",
+      "summary": "Plesk confirms hosted PHP remains affected in aggregate: Linux fixes are available for PHP 8.2-8.5, while Linux EOL branches and Windows builds remain affected.",
       "description": "Optional customer CGI/FastCGI/PHP-FPM handlers; Linux/Windows availability depends on OS/version",
-      "comment": "Inventory record: PHP-0029\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Optional customer CGI/FastCGI/PHP-FPM handlers; Linux/Windows availability depends on OS/version\nPHP version scope: Hosted PHP update entry dated 28 September 2026 declares 8.5.11, 8.4.26, 8.3.35 and 8.2.34. Platform-specific integration changes are separately labelled. These are published updates, not every installed handler or an internal-engine version.\nExtensions: Installed handler/package-specific; OS/OpenSSL compatibility affects available old PHP families\nLimitations: Hosted patches cannot be copied into sw-engine or plesk-engine records. Optional handler availability, actual installed packages, OS eligibility and backports still need operator/build evidence. No package, tenant, listener or vulnerability was tested.\nPatch owner: Plesk or OS/custom PHP package supplier publishes updates; hosting operator applies selected hosted-handler updates\nDownstream surface: Only sites selecting the relevant installed PHP handler\nRelease pin: PHP Updates, 2026-09-28; package bytes/digests and rollout unverified\nSource accessed: 2026-10-19\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0029\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Optional customer CGI/FastCGI/PHP-FPM handlers; Linux/Windows availability depends on OS/version\nPHP version scope: Plesk's 21 October 2026 advisory lists hosted PHP on Linux 8.5.11 and below, 8.4.26 and below, 8.3.35 and below, and 8.2.34 and below as affected, with fixes in 8.5.12, 8.4.27, 8.3.36 and 8.2.35. Linux PHP 8.1, 8.0 and 7.4 remain affected with fixes in development. Plesk hosted PHP on Windows 8.2-8.5 remains affected with fixes in development.\nExtensions: Installed handler/package-specific; OS/OpenSSL compatibility affects available old PHP families\nLimitations: This aggregate hosted-site row spans Linux and Windows plus supported and EOL PHP branches; it remains affected while any included branch remains affected. Hosted patches cannot be copied into sw-engine or plesk-engine records. Optional handler availability, actual installed packages, OS eligibility and backports still need operator/build evidence. No package, tenant or listener was tested.\nPatch owner: Plesk or OS/custom PHP package supplier publishes updates; hosting operator applies selected hosted-handler updates\nDownstream surface: Only sites selecting the relevant installed PHP handler\nRelease pin: Plesk security advisory updated 2026-10-21; package bytes/digests and rollout unverified\nSource accessed: 2026-10-21\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Confirmed affected by Plesk advisory for CVE-2026-109618 and CVE-2026-109619; fixed Linux 8.2-8.5 hosted builds are available, but the aggregate hosted-site PHP row still includes affected Linux EOL and Windows branches.\nCVE-2026-109618: Vulnerable\nCVE-2026-109619: Vulnerable\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Installed version, backport, configuration and reachable path need separate evidence.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -5029,6 +5072,14 @@
             "https://docs.plesk.com/en-US/obsidian/administrator-guide/web-hosting/php-management/installing-php.75153/"
           ],
           "comment": "Official publisher/project PHP scope evidence - Plesk documents multiple PHP handlers and permits removal of system PHP."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-Remote-code-execution-in-PHP-shipped-with-Plesk"
+          ],
+          "comment": "Plesk advisory for CVE-2026-109618 and CVE-2026-109619"
         }
       ]
     },
@@ -5305,6 +5356,7 @@
       "spdxId": "urn:php2shell:inventory:package:PHP-0037",
       "creationInfo": "_:creationinfo",
       "name": "PHP core and Zend Engine",
+      "software_packageVersion": "8.5.12, 8.4.27, 8.3.36, 8.2.35",
       "software_primaryPurpose": "platform",
       "externalIdentifier": [
         {
@@ -5341,6 +5393,14 @@
             "https://www.php.net/supported-versions.php"
           ],
           "comment": "Supported PHP versions - Upstream lists PHP 8.2 and 8.3 in security support and 8.4 and 8.5 in active support."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-21-5"
+          ],
+          "comment": "PHP official security advisory for CVE-2026-109618 and CVE-2026-109619"
         }
       ]
     },
@@ -7881,6 +7941,7 @@
       "spdxId": "urn:php2shell:inventory:package:PHP-0109",
       "creationInfo": "_:creationinfo",
       "name": "PHP LiteSpeed SAPI",
+      "software_packageVersion": "8.5.12, 8.4.27, 8.3.36, 8.2.35",
       "software_primaryPurpose": "module",
       "externalIdentifier": [
         {
@@ -7901,6 +7962,14 @@
             "https://raw.githubusercontent.com/php/php-src/34308a6666b2d489c509541ea9befea9e2b42348/sapi/litespeed/config.m4"
           ],
           "comment": "PHP litespeed SAPI release build manifest"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-21-5"
+          ],
+          "comment": "PHP official security advisory for CVE-2026-109618 and CVE-2026-109619"
         }
       ]
     },
@@ -15625,6 +15694,7 @@
       "spdxId": "urn:php2shell:inventory:package:PHP-0357",
       "creationInfo": "_:creationinfo",
       "name": "Debian trixie PHP 8.4 FPM package",
+      "software_packageVersion": "8.4.27-1~deb13u1",
       "software_primaryPurpose": "other",
       "externalIdentifier": [
         {
@@ -15645,6 +15715,14 @@
             "https://packages.debian.org/trixie/php8.4-fpm"
           ],
           "comment": "Official PHP distribution, package or build declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://lists.debian.org/debian-security-announce/2026/msg00489.html"
+          ],
+          "comment": "Debian Security Advisory DSA-6574-1"
         }
       ]
     },
@@ -15745,6 +15823,7 @@
       "spdxId": "urn:php2shell:inventory:package:PHP-0361",
       "creationInfo": "_:creationinfo",
       "name": "Arch Linux Extra PHP package",
+      "software_packageVersion": "8.5.12-1",
       "software_primaryPurpose": "other",
       "externalIdentifier": [
         {
@@ -15754,7 +15833,7 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:arch-linux-package-maintainers:8755a7661d8e",
-      "summary": "The official package page identifies PHP 8.5.11-1 and distinguishes runtime dependencies from dependencies marked make.",
+      "summary": "The official package page identifies PHP 8.5.12-1 and distinguishes runtime dependencies from dependencies marked make.",
       "description": "Packaged PHP runtime; web SAPIs/modules need separate package/configuration evidence",
       "comment": "Inventory record: PHP-0361\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Packaged PHP runtime; web SAPIs/modules need separate package/configuration evidence\nPHP version scope: php 8.5.11-1, x86_64 Extra; page build 2026-09-23 17:41 UTC\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: Apache, ICU, GD and other make dependencies do not prove every associated runtime module is installed or loaded. Optional package availability is not PHP in every Arch host. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Arch package maintainers and operator updating the rolling package and restarting users\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Arch php 8.5.11-1 x86_64; advertised signature metadata not independently verified\nSource accessed: 2026-10-17\nAliases: arch:extra/x86_64/php\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
       "externalRef": [
@@ -15765,6 +15844,14 @@
             "https://archlinux.org/packages/extra/x86_64/php/"
           ],
           "comment": "Official PHP distribution, package or build declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://archlinux.org/news/update-to-php-8512-andor-php-legacy-8336-to-prevent-remote-code-execution/"
+          ],
+          "comment": "Arch Linux PHP security update announcement"
         }
       ]
     },
@@ -15945,6 +16032,7 @@
       "spdxId": "urn:php2shell:inventory:package:PHP-0367",
       "creationInfo": "_:creationinfo",
       "name": "Official PHP Windows binary ZIP distribution",
+      "software_packageVersion": "8.5.12, 8.4.27, 8.3.36, 8.2.35",
       "software_primaryPurpose": "other",
       "externalIdentifier": [
         {
@@ -15954,7 +16042,7 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:the-php-group-php-windows-maintainers:0f2d7962643e",
-      "summary": "Official downloads distinguish NTS/TS roles and list four architecture/thread-safety ZIP choices. The x64NTS SBOM describes php8.5.11 and declares upstream dependency edges.",
+      "summary": "Official downloads distinguish NTS/TS roles and list four architecture/thread-safety ZIP choices; the security advisory points users to fixed Windows binaries.",
       "description": "NTS for CLI/FastCGI (e.g. IIS); TS for multithreaded web-server module (e.g. Apache); not a Windows FPM claim",
       "comment": "Inventory record: PHP-0367\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: NTS for CLI/FastCGI (e.g. IIS); TS for multithreaded web-server module (e.g. Apache); not a Windows FPM claim\nPHP version scope: Download page lists PHP 8.5.11 VS17 x64/x86, TS/NTS ZIPs dated2026-09-22. Only x64NTS SPDX 2.3 metadata inspected\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: Published ZIP hashes were not independently checked. SBOM filesAnalyzed=false; declared source/build and native-library edges do not prove a loaded module or that Apache ships/runs in the NTS ZIP. Other ZIP SBOMs not inspected. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: PHP Windows binary maintainers for rebuilt ZIPs/native dependencies; bundle publisher and operator for replacement and process restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: php-8.5.11-nts-Win32-vs17-x64.zip; advertised SHA256 0ea96e0d2b9b737a6036f05cf4e95c49313faa6d0f27bd97edb2742503f0c043; bytes unverified\nSource accessed: 2026-10-17\nAliases: php-windows:official-zips\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
       "externalRef": [
@@ -15965,6 +16053,14 @@
             "https://www.php.net/downloads.php?os=windows"
           ],
           "comment": "Official PHP distribution, package or build declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-21-5"
+          ],
+          "comment": "PHP official security advisory for CVE-2026-109618 and CVE-2026-109619"
         },
         {
           "type": "ExternalRef",
@@ -16538,9 +16634,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:webpros-plesk:93657c157beb",
-      "summary": "Release-labelled Linux entries pin an internal PHP declaration and a later client-library update. Windows plesk-engine is separately scoped as PHP-0611.",
+      "summary": "Plesk confirms that all versions of the Linux sw-engine internal UI component are affected; hotfixes are planned for Plesk Obsidian 18.0.80#11 and 18.0.81#4.",
       "description": "sw-engine PHP scripts, sw-engine-fpm and panel php.ini",
-      "comment": "Inventory record: PHP-0385\nCategory: Hosting and cloud\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0029\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: sw-engine PHP scripts, sw-engine-fpm and panel php.ini\nPHP version scope: Plesk Obsidian 18.0.79, dated 23 June 2026, declares Linux sw-engine PHP 8.4.21. The 18.0.81 entry dated 15 September separately declares its PostgreSQL client library 18.6, not a new PHP patch.\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: Do not infer that PHP 8.4.21 stayed unchanged in all later releases or that hosted-handler versions identify this engine. Linux and Windows engines, packages and service accounts differ. Exact payload, modules, backports, privilege boundaries and deployed builds remain unknown.\nPatch owner: Plesk for internal sw-engine distribution; hosting/server operator for panel update rollout\nDownstream surface: Only the named PHP component and its callers\nRelease pin: 18.0.79 (2026-06-23): sw-engine PHP 8.4.21; 18.0.81 (2026-09-15): PostgreSQL client library 18.6; declarations only\nSource accessed: 2026-10-19\nAliases: plesk:sw-engine-php\nConditional downstream consequence: A reachable matching PHP/parser flaw in this management component could affect availability, configuration integrity or credentials accessible to its service account; code execution would inherit that account\u2019s privileges. Root access, other tenants and lateral movement are not automatic and need a separate privilege/isolation path.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0385\nCategory: Hosting and cloud\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0029\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: sw-engine PHP scripts, sw-engine-fpm and panel php.ini\nPHP version scope: Plesk's 21 October 2026 advisory states that all versions of Plesk for Linux sw-engine, part of the Plesk UI, are affected. Plesk plans hotfixes as 18.0.80#11 and 18.0.81#4. The earlier release note pin remains useful context: Plesk Obsidian 18.0.79 declared Linux sw-engine PHP 8.4.21.\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: Do not infer that PHP 8.4.21 stayed unchanged in all later releases or that hosted-handler versions identify this engine. Linux and Windows engines, packages and service accounts differ. Exact payload, modules, privilege boundaries and deployed builds remain unknown.\nPatch owner: Plesk for internal sw-engine distribution; hosting/server operator for panel update rollout\nDownstream surface: Only the named PHP component and its callers\nRelease pin: Plesk security advisory updated 2026-10-21; hotfixes planned as 18.0.80#11 and 18.0.81#4\nSource accessed: 2026-10-21\nAliases: plesk:sw-engine-php\nConditional downstream consequence: A reachable matching PHP/parser flaw in this management component could affect availability, configuration integrity or credentials accessible to its service account; code execution would inherit that account\u2019s privileges. Root access, other tenants and lateral movement are not automatic and need a separate privilege/isolation path.\nVulnerability status: Confirmed affected by Plesk advisory for CVE-2026-109618 and CVE-2026-109619; hotfixes are planned but not yet released.\nCVE-2026-109618: Vulnerable\nCVE-2026-109619: Vulnerable\nCVE assessment limit: Installed build, configuration and reachable path need separate evidence.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -16557,6 +16653,14 @@
             "https://support.plesk.com/hc/en-us/articles/31743316866071-The-sw-engine-process-causes-high-CPU-usage-on-a-Plesk-server"
           ],
           "comment": "Official publisher/project PHP scope evidence - Plesk\u2019s KB shows sw-engine executing panel PHP scripts and an sw-engine-fpm process reading the panel php.ini."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-Remote-code-execution-in-PHP-shipped-with-Plesk"
+          ],
+          "comment": "Plesk advisory for CVE-2026-109618 and CVE-2026-109619"
         }
       ]
     },
@@ -16961,6 +17065,7 @@
       "spdxId": "urn:php2shell:inventory:package:PHP-0397",
       "creationInfo": "_:creationinfo",
       "name": "Google App Engine Standard PHP runtime",
+      "software_packageVersion": "PHP 8.2+ supported runtimes",
       "software_primaryPurpose": "platform",
       "externalIdentifier": [
         {
@@ -16981,6 +17086,14 @@
             "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/runtime"
           ],
           "comment": "Official PHP component, runtime or hosting declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://cloud.google.com/blog/products/identity-security/responding-to-core-php-vulnerabilities-cve-2026-109618-cve-2026-109619"
+          ],
+          "comment": "Google Cloud official advisory response for CVE-2026-109618 and CVE-2026-109619"
         }
       ]
     },
@@ -23121,6 +23234,7 @@
       "spdxId": "urn:php2shell:inventory:package:PHP-0591",
       "creationInfo": "_:creationinfo",
       "name": "Ubuntu Noble php8.3-fpm binary package",
+      "software_packageVersion": "8.3.6-0ubuntu0.24.04.13",
       "software_primaryPurpose": "other",
       "externalIdentifier": [
         {
@@ -23141,6 +23255,14 @@
             "https://packages.ubuntu.com/noble-updates/php8.3-fpm"
           ],
           "comment": "Official PHP distribution, package or build declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://ubuntu.com/security/notices/USN-8948-1"
+          ],
+          "comment": "Ubuntu Security Notice USN-8948-1"
         }
       ]
     },
@@ -23802,9 +23924,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:webpros-plesk:93657c157beb",
-      "summary": "A release-labelled Windows entry explicitly updates PHP inside plesk-engine.",
+      "summary": "Plesk confirms that all versions of the Windows internal UI engine component are affected; hotfixes are planned for Plesk Obsidian 18.0.80#11 and 18.0.81#4.",
       "description": "PHP inside the Windows plesk-engine component; exact SAPI/threading and process identity unverified",
-      "comment": "Inventory record: PHP-0611\nCategory: Hosting and cloud\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0029\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP inside the Windows plesk-engine component; exact SAPI/threading and process identity unverified\nPHP version scope: Plesk Obsidian 18.0.79, 23 June 2026, Windows section: plesk-engine PHP 8.4.22. Later internal PHP patch and exact Windows package revision unknown.\nExtensions: Internal Windows module/loader inventory unknown\nLimitations: Do not inherit the Linux sw-engine version or the separately dated hosted-handler patches. An internal runtime does not prove every panel daemon is PHP or always privileged. No installed payload, exposed management path, tenant escape or current vulnerability assessed.\nPatch owner: WebPros / Plesk for component fixes; package/image supplier for matching PHP ABI; operator for deployment and process restart\nDownstream surface: Only PHP processes using this named component and their accessible data\nRelease pin: Plesk 18.0.79 dated 2026-06-23; PHP 8.4.22 declaration, no DLL/package hash\nSource accessed: 2026-10-19\nAliases: plesk:windows-plesk-engine-php\nConditional downstream consequence: Analyst judgment: a matching flaw in the loaded PHP/native component could affect its worker availability, readable profile/application data or execution identity when the relevant path is reached. ABI, mode, input reachability and privilege conditions must match. A profiler or agent does not establish root access, tenant escape, credentials exposure or compromise.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0611\nCategory: Hosting and cloud\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0029\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP inside the Windows plesk-engine component; exact SAPI/threading and process identity unverified\nPHP version scope: Plesk's 21 October 2026 advisory states that all versions of the Windows internal UI engine component are affected and plans hotfixes as 18.0.80#11 and 18.0.81#4. Plesk's changelog names the Windows internal PHP runtime plesk-engine and previously pinned it to PHP 8.4.22 in Obsidian 18.0.79.\nExtensions: Internal Windows module/loader inventory unknown\nLimitations: The advisory table labels the Windows UI component as sw-engine while the changelog labels the Windows internal PHP runtime plesk-engine; this record maps those official Plesk descriptions to the same internal UI engine scope. Do not inherit the Linux sw-engine version or the separately dated hosted-handler patches. An internal runtime does not prove every panel daemon is PHP or always privileged. No installed payload, exposed management path or tenant escape was tested.\nPatch owner: WebPros / Plesk for component fixes; package/image supplier for matching PHP ABI; operator for deployment and process restart\nDownstream surface: Only PHP processes using this named component and their accessible data\nRelease pin: Plesk security advisory updated 2026-10-21; hotfixes planned as 18.0.80#11 and 18.0.81#4\nSource accessed: 2026-10-21\nAliases: plesk:windows-plesk-engine-php\nConditional downstream consequence: Analyst judgment: a matching flaw in the loaded PHP/native component could affect its worker availability, readable profile/application data or execution identity when the relevant path is reached. ABI, mode, input reachability and privilege conditions must match. A profiler or agent does not establish root access, tenant escape, credentials exposure or compromise.\nVulnerability status: Confirmed affected by Plesk advisory for CVE-2026-109618 and CVE-2026-109619; hotfixes are planned but not yet released.\nCVE-2026-109618: Vulnerable\nCVE-2026-109619: Vulnerable\nCVE assessment limit: Installed build, configuration and reachable path need separate evidence.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -23813,6 +23935,14 @@
             "https://docs.plesk.com/release-notes/obsidian/change-log/"
           ],
           "comment": "Official project/vendor or publisher registry declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-Remote-code-execution-in-PHP-shipped-with-Plesk"
+          ],
+          "comment": "Plesk advisory for CVE-2026-109618 and CVE-2026-109619"
         }
       ]
     },
@@ -32111,7 +32241,6 @@
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0028",
-        "urn:php2shell:inventory:package:PHP-0029",
         "urn:php2shell:inventory:package:PHP-0034",
         "urn:php2shell:inventory:package:PHP-0035",
         "urn:php2shell:inventory:package:PHP-0386",
@@ -32119,7 +32248,6 @@
         "urn:php2shell:inventory:package:PHP-0394",
         "urn:php2shell:inventory:package:PHP-0395",
         "urn:php2shell:inventory:package:PHP-0396",
-        "urn:php2shell:inventory:package:PHP-0397",
         "urn:php2shell:inventory:package:PHP-0398",
         "urn:php2shell:inventory:package:PHP-0399",
         "urn:php2shell:inventory:package:PHP-0400",
@@ -32218,9 +32346,6 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0001",
-        "urn:php2shell:inventory:package:PHP-0002",
-        "urn:php2shell:inventory:package:PHP-0003",
         "urn:php2shell:inventory:package:PHP-0004",
         "urn:php2shell:inventory:package:PHP-0006",
         "urn:php2shell:inventory:package:PHP-0007",
@@ -32244,7 +32369,6 @@
         "urn:php2shell:inventory:package:PHP-0031",
         "urn:php2shell:inventory:package:PHP-0032",
         "urn:php2shell:inventory:package:PHP-0033",
-        "urn:php2shell:inventory:package:PHP-0037",
         "urn:php2shell:inventory:package:PHP-0038",
         "urn:php2shell:inventory:package:PHP-0039",
         "urn:php2shell:inventory:package:PHP-0040",
@@ -32314,7 +32438,6 @@
         "urn:php2shell:inventory:package:PHP-0106",
         "urn:php2shell:inventory:package:PHP-0107",
         "urn:php2shell:inventory:package:PHP-0108",
-        "urn:php2shell:inventory:package:PHP-0109",
         "urn:php2shell:inventory:package:PHP-0110",
         "urn:php2shell:inventory:package:PHP-0112",
         "urn:php2shell:inventory:package:PHP-0113",
@@ -32546,17 +32669,14 @@
         "urn:php2shell:inventory:package:PHP-0354",
         "urn:php2shell:inventory:package:PHP-0355",
         "urn:php2shell:inventory:package:PHP-0356",
-        "urn:php2shell:inventory:package:PHP-0357",
         "urn:php2shell:inventory:package:PHP-0358",
         "urn:php2shell:inventory:package:PHP-0359",
         "urn:php2shell:inventory:package:PHP-0360",
-        "urn:php2shell:inventory:package:PHP-0361",
         "urn:php2shell:inventory:package:PHP-0362",
         "urn:php2shell:inventory:package:PHP-0363",
         "urn:php2shell:inventory:package:PHP-0364",
         "urn:php2shell:inventory:package:PHP-0365",
         "urn:php2shell:inventory:package:PHP-0366",
-        "urn:php2shell:inventory:package:PHP-0367",
         "urn:php2shell:inventory:package:PHP-0368",
         "urn:php2shell:inventory:package:PHP-0369",
         "urn:php2shell:inventory:package:PHP-0370",
@@ -32573,7 +32693,6 @@
         "urn:php2shell:inventory:package:PHP-0381",
         "urn:php2shell:inventory:package:PHP-0382",
         "urn:php2shell:inventory:package:PHP-0384",
-        "urn:php2shell:inventory:package:PHP-0385",
         "urn:php2shell:inventory:package:PHP-0389",
         "urn:php2shell:inventory:package:PHP-0390",
         "urn:php2shell:inventory:package:PHP-0391",
@@ -32652,7 +32771,6 @@
         "urn:php2shell:inventory:package:PHP-0586",
         "urn:php2shell:inventory:package:PHP-0587",
         "urn:php2shell:inventory:package:PHP-0588",
-        "urn:php2shell:inventory:package:PHP-0591",
         "urn:php2shell:inventory:package:PHP-0592",
         "urn:php2shell:inventory:package:PHP-0593",
         "urn:php2shell:inventory:package:PHP-0594",
@@ -32670,7 +32788,6 @@
         "urn:php2shell:inventory:package:PHP-0606",
         "urn:php2shell:inventory:package:PHP-0607",
         "urn:php2shell:inventory:package:PHP-0608",
-        "urn:php2shell:inventory:package:PHP-0611",
         "urn:php2shell:inventory:package:PHP-0612",
         "urn:php2shell:inventory:package:PHP-0614",
         "urn:php2shell:inventory:package:PHP-0615",
@@ -32830,7 +32947,6 @@
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0028",
-        "urn:php2shell:inventory:package:PHP-0029",
         "urn:php2shell:inventory:package:PHP-0034",
         "urn:php2shell:inventory:package:PHP-0035",
         "urn:php2shell:inventory:package:PHP-0386",
@@ -32838,7 +32954,6 @@
         "urn:php2shell:inventory:package:PHP-0394",
         "urn:php2shell:inventory:package:PHP-0395",
         "urn:php2shell:inventory:package:PHP-0396",
-        "urn:php2shell:inventory:package:PHP-0397",
         "urn:php2shell:inventory:package:PHP-0398",
         "urn:php2shell:inventory:package:PHP-0399",
         "urn:php2shell:inventory:package:PHP-0400",
@@ -32937,9 +33052,6 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0001",
-        "urn:php2shell:inventory:package:PHP-0002",
-        "urn:php2shell:inventory:package:PHP-0003",
         "urn:php2shell:inventory:package:PHP-0004",
         "urn:php2shell:inventory:package:PHP-0006",
         "urn:php2shell:inventory:package:PHP-0007",
@@ -32963,7 +33075,6 @@
         "urn:php2shell:inventory:package:PHP-0031",
         "urn:php2shell:inventory:package:PHP-0032",
         "urn:php2shell:inventory:package:PHP-0033",
-        "urn:php2shell:inventory:package:PHP-0037",
         "urn:php2shell:inventory:package:PHP-0038",
         "urn:php2shell:inventory:package:PHP-0039",
         "urn:php2shell:inventory:package:PHP-0040",
@@ -33033,7 +33144,6 @@
         "urn:php2shell:inventory:package:PHP-0106",
         "urn:php2shell:inventory:package:PHP-0107",
         "urn:php2shell:inventory:package:PHP-0108",
-        "urn:php2shell:inventory:package:PHP-0109",
         "urn:php2shell:inventory:package:PHP-0110",
         "urn:php2shell:inventory:package:PHP-0112",
         "urn:php2shell:inventory:package:PHP-0113",
@@ -33265,17 +33375,14 @@
         "urn:php2shell:inventory:package:PHP-0354",
         "urn:php2shell:inventory:package:PHP-0355",
         "urn:php2shell:inventory:package:PHP-0356",
-        "urn:php2shell:inventory:package:PHP-0357",
         "urn:php2shell:inventory:package:PHP-0358",
         "urn:php2shell:inventory:package:PHP-0359",
         "urn:php2shell:inventory:package:PHP-0360",
-        "urn:php2shell:inventory:package:PHP-0361",
         "urn:php2shell:inventory:package:PHP-0362",
         "urn:php2shell:inventory:package:PHP-0363",
         "urn:php2shell:inventory:package:PHP-0364",
         "urn:php2shell:inventory:package:PHP-0365",
         "urn:php2shell:inventory:package:PHP-0366",
-        "urn:php2shell:inventory:package:PHP-0367",
         "urn:php2shell:inventory:package:PHP-0368",
         "urn:php2shell:inventory:package:PHP-0369",
         "urn:php2shell:inventory:package:PHP-0370",
@@ -33292,7 +33399,6 @@
         "urn:php2shell:inventory:package:PHP-0381",
         "urn:php2shell:inventory:package:PHP-0382",
         "urn:php2shell:inventory:package:PHP-0384",
-        "urn:php2shell:inventory:package:PHP-0385",
         "urn:php2shell:inventory:package:PHP-0389",
         "urn:php2shell:inventory:package:PHP-0390",
         "urn:php2shell:inventory:package:PHP-0391",
@@ -33371,7 +33477,6 @@
         "urn:php2shell:inventory:package:PHP-0586",
         "urn:php2shell:inventory:package:PHP-0587",
         "urn:php2shell:inventory:package:PHP-0588",
-        "urn:php2shell:inventory:package:PHP-0591",
         "urn:php2shell:inventory:package:PHP-0592",
         "urn:php2shell:inventory:package:PHP-0593",
         "urn:php2shell:inventory:package:PHP-0594",
@@ -33389,7 +33494,6 @@
         "urn:php2shell:inventory:package:PHP-0606",
         "urn:php2shell:inventory:package:PHP-0607",
         "urn:php2shell:inventory:package:PHP-0608",
-        "urn:php2shell:inventory:package:PHP-0611",
         "urn:php2shell:inventory:package:PHP-0612",
         "urn:php2shell:inventory:package:PHP-0614",
         "urn:php2shell:inventory:package:PHP-0615",
@@ -33410,6 +33514,182 @@
       "security_statusNotes": "PHP relationship confirmed; CVE match unknown",
       "summary": "CVE-2026-109619 assessment: PHP relationship confirmed; CVE match unknown",
       "comment": "Generated from inventory field 'cve_2026_109619'. This assessment preserves the source inventory wording and does not assert an affected deployment."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:8d78426c8a90",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0001",
+        "urn:php2shell:inventory:package:PHP-0002",
+        "urn:php2shell:inventory:package:PHP-0003",
+        "urn:php2shell:inventory:package:PHP-0037",
+        "urn:php2shell:inventory:package:PHP-0109"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed upstream in PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35; advisory names PHP-FPM, Apache with mod_php, php-cgi and LiteSpeed among at-risk web request handlers",
+      "security_actionStatement": "Update to PHP 8.5.12, 8.4.27, 8.3.36 or 8.2.35 and restart PHP workers.",
+      "summary": "CVE-2026-109618 assessment: Fixed upstream in PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35; advisory names PHP-FPM, Apache with mod_php, php-cgi and LiteSpeed among at-risk web request handlers",
+      "comment": "Added from the PHP security advisory published 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:8d78426c8a90",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0001",
+        "urn:php2shell:inventory:package:PHP-0002",
+        "urn:php2shell:inventory:package:PHP-0003",
+        "urn:php2shell:inventory:package:PHP-0037",
+        "urn:php2shell:inventory:package:PHP-0109"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed upstream in PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35; advisory names PHP-FPM, Apache with mod_php, php-cgi and LiteSpeed among at-risk web request handlers",
+      "security_actionStatement": "Update to PHP 8.5.12, 8.4.27, 8.3.36 or 8.2.35 and restart PHP workers.",
+      "summary": "CVE-2026-109619 assessment: Fixed upstream in PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35; advisory names PHP-FPM, Apache with mod_php, php-cgi and LiteSpeed among at-risk web request handlers",
+      "comment": "Added from the PHP security advisory published 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:05e1498ecb2a",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0367"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed upstream Windows binaries are available for PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35",
+      "security_actionStatement": "Replace affected Windows PHP binaries with a fixed release.",
+      "summary": "CVE-2026-109618 assessment: Fixed upstream Windows binaries are available for PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35",
+      "comment": "Added from the PHP security advisory published 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:05e1498ecb2a",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0367"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed upstream Windows binaries are available for PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35",
+      "security_actionStatement": "Replace affected Windows PHP binaries with a fixed release.",
+      "summary": "CVE-2026-109619 assessment: Fixed upstream Windows binaries are available for PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35",
+      "comment": "Added from the PHP security advisory published 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:2b4351f4c7de",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0357"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Debian trixie php8.4 version 8.4.27-1~deb13u1",
+      "security_actionStatement": "Upgrade Debian trixie php8.4 packages to 8.4.27-1~deb13u1 or later.",
+      "summary": "CVE-2026-109618 assessment: Fixed in Debian trixie php8.4 version 8.4.27-1~deb13u1",
+      "comment": "Added from Debian Security Advisory DSA-6574-1 published 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:2b4351f4c7de",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0357"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Debian trixie php8.4 version 8.4.27-1~deb13u1",
+      "security_actionStatement": "Upgrade Debian trixie php8.4 packages to 8.4.27-1~deb13u1 or later.",
+      "summary": "CVE-2026-109619 assessment: Fixed in Debian trixie php8.4 version 8.4.27-1~deb13u1",
+      "comment": "Added from Debian Security Advisory DSA-6574-1 published 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:74c06cbb0310",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0361"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Arch Linux php 8.5.12-1",
+      "security_actionStatement": "Upgrade Arch Linux php to 8.5.12-1 or later.",
+      "summary": "CVE-2026-109618 assessment: Fixed in Arch Linux php 8.5.12-1",
+      "comment": "Added from the Arch Linux security news item and package page published 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:74c06cbb0310",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0361"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Arch Linux php 8.5.12-1",
+      "security_actionStatement": "Upgrade Arch Linux php to 8.5.12-1 or later.",
+      "summary": "CVE-2026-109619 assessment: Fixed in Arch Linux php 8.5.12-1",
+      "comment": "Added from the Arch Linux security news item and package page published 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:972b87629cc5",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0397"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Google App Engine Standard supported PHP 8.2+ runtimes are patched automatically",
+      "security_actionStatement": "Upgrade unsupported App Engine Standard PHP runtimes to PHP 8.2 or newer and redeploy.",
+      "summary": "CVE-2026-109618 assessment: Google App Engine Standard supported PHP 8.2+ runtimes are patched automatically",
+      "comment": "Added from the Google Cloud bulletin and blog post published 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:972b87629cc5",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0397"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Google App Engine Standard supported PHP 8.2+ runtimes are patched automatically",
+      "security_actionStatement": "Upgrade unsupported App Engine Standard PHP runtimes to PHP 8.2 or newer and redeploy.",
+      "summary": "CVE-2026-109619 assessment: Google App Engine Standard supported PHP 8.2+ runtimes are patched automatically",
+      "comment": "Added from the Google Cloud bulletin and blog post published 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:a6f1894970da",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0591"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Ubuntu Noble php8.3-fpm version 8.3.6-0ubuntu0.24.04.13",
+      "security_actionStatement": "Upgrade Ubuntu Noble php8.3-fpm to 8.3.6-0ubuntu0.24.04.13 or later.",
+      "summary": "CVE-2026-109618 assessment: Fixed in Ubuntu Noble php8.3-fpm version 8.3.6-0ubuntu0.24.04.13",
+      "comment": "Added from Ubuntu Security Notice USN-8948-1 published 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:a6f1894970da",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0591"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Ubuntu Noble php8.3-fpm version 8.3.6-0ubuntu0.24.04.13",
+      "security_actionStatement": "Upgrade Ubuntu Noble php8.3-fpm to 8.3.6-0ubuntu0.24.04.13 or later.",
+      "summary": "CVE-2026-109619 assessment: Fixed in Ubuntu Noble php8.3-fpm version 8.3.6-0ubuntu0.24.04.13",
+      "comment": "Added from Ubuntu Security Notice USN-8948-1 published 2026-10-21."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -33440,6 +33720,64 @@
       "security_actionStatement": "Apply fixed Plesk PHP packages when available from Plesk.",
       "summary": "CVE-2026-109619 assessment: Affected: all PHP versions shipped with Plesk",
       "comment": "Added from the Plesk security advisory published 2026-10-20."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:4d6c0c74eb12",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0029"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Affected hosted Plesk PHP in aggregate: Linux PHP 7.4, 8.0 and 8.1 plus Windows PHP 8.2-8.5 remain affected; fixed Linux PHP 8.2-8.5 builds are available",
+      "security_actionStatement": "Upgrade Linux hosted PHP to 8.2.35, 8.3.36, 8.4.27 or 8.5.12 as applicable; apply Windows and EOL branch fixes when Plesk publishes them.",
+      "summary": "CVE-2026-109618 assessment: Affected hosted Plesk PHP in aggregate: Linux PHP 7.4, 8.0 and 8.1 plus Windows PHP 8.2-8.5 remain affected; fixed Linux PHP 8.2-8.5 builds are available",
+      "comment": "Added from the Plesk security advisory updated 2026-10-21."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:4d6c0c74eb12",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0029"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Affected hosted Plesk PHP in aggregate: Linux PHP 7.4, 8.0 and 8.1 plus Windows PHP 8.2-8.5 remain affected; fixed Linux PHP 8.2-8.5 builds are available",
+      "security_actionStatement": "Upgrade Linux hosted PHP to 8.2.35, 8.3.36, 8.4.27 or 8.5.12 as applicable; apply Windows and EOL branch fixes when Plesk publishes them.",
+      "summary": "CVE-2026-109619 assessment: Affected hosted Plesk PHP in aggregate: Linux PHP 7.4, 8.0 and 8.1 plus Windows PHP 8.2-8.5 remain affected; fixed Linux PHP 8.2-8.5 builds are available",
+      "comment": "Added from the Plesk security advisory updated 2026-10-21."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:81f37b5ad902",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0385",
+        "urn:php2shell:inventory:package:PHP-0611"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Affected: all versions of Plesk's internal UI engine component; hotfixes are planned as 18.0.80#11 and 18.0.81#4",
+      "security_actionStatement": "Apply Plesk Obsidian hotfix 18.0.80#11 or 18.0.81#4 when available.",
+      "summary": "CVE-2026-109618 assessment: Affected: all versions of Plesk's internal UI engine component; hotfixes are planned as 18.0.80#11 and 18.0.81#4",
+      "comment": "Added from the Plesk security advisory updated 2026-10-21; the Plesk changelog names the Windows internal PHP runtime plesk-engine while the advisory table labels the Windows UI component sw-engine."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:81f37b5ad902",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0385",
+        "urn:php2shell:inventory:package:PHP-0611"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Affected: all versions of Plesk's internal UI engine component; hotfixes are planned as 18.0.80#11 and 18.0.81#4",
+      "security_actionStatement": "Apply Plesk Obsidian hotfix 18.0.80#11 or 18.0.81#4 when available.",
+      "summary": "CVE-2026-109619 assessment: Affected: all versions of Plesk's internal UI engine component; hotfixes are planned as 18.0.80#11 and 18.0.81#4",
+      "comment": "Added from the Plesk security advisory updated 2026-10-21; the Plesk changelog names the Windows internal PHP runtime plesk-engine while the advisory table labels the Windows UI component sw-engine."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
