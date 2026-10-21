@@ -3272,6 +3272,10 @@
         "urn:php2shell:inventory:package:PHP-0630",
         "urn:php2shell:inventory:package:PHP-0631",
         "urn:php2shell:inventory:package:PHP-0632",
+        "urn:php2shell:inventory:package:PHP-0633",
+        "urn:php2shell:inventory:package:PHP-0634",
+        "urn:php2shell:inventory:package:PHP-0635",
+        "urn:php2shell:inventory:package:PHP-0636",
         "urn:php2shell:inventory:relationship:PHP-0001",
         "urn:php2shell:inventory:relationship:PHP-0002",
         "urn:php2shell:inventory:relationship:PHP-0003",
@@ -3873,6 +3877,10 @@
         "urn:php2shell:inventory:relationship:PHP-0629",
         "urn:php2shell:inventory:relationship:PHP-0631",
         "urn:php2shell:inventory:relationship:PHP-0632",
+        "urn:php2shell:inventory:relationship:PHP-0633",
+        "urn:php2shell:inventory:relationship:PHP-0634",
+        "urn:php2shell:inventory:relationship:PHP-0635",
+        "urn:php2shell:inventory:relationship:PHP-0636",
         "urn:php2shell:inventory:relationship:PHP-0627:parent",
         "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
         "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
@@ -3914,14 +3922,26 @@
         "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:8d78426c8a90",
         "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:05e1498ecb2a",
         "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:05e1498ecb2a",
-        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:2b4351f4c7de",
-        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:2b4351f4c7de",
         "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:74c06cbb0310",
         "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:74c06cbb0310",
         "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:972b87629cc5",
         "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:972b87629cc5",
-        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:a6f1894970da",
-        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:a6f1894970da"
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:c140e8fdd7e2",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:c140e8fdd7e2",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:d0c4e29f1694",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:d0c4e29f1694",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:d6574deb84f1",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:d6574deb84f1",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:8948ab24f130",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:8948ab24f130",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:8948a261085f",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:8948a261085f",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:8948a264085f",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:8948a264085f",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:8948a220081f",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:8948a220081f",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:affects:a1088760f001",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:affects:a1088760f001"
       ]
     },
     {
@@ -5193,9 +5213,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:docker-official-images-maintainers:fecb8d8e4314",
-      "summary": "Official manifest maps the selected stable8.5.11 directories to one advertised source commit. Representative immutable CLI/FPM/ZTS recipes were read; four variant records preserve OS/SAPI boundaries.",
+      "summary": "Official manifests list patched stable PHP releases 8.2.35, 8.3.36, 8.4.27 and 8.5.12; four variant records preserve OS/SAPI boundaries.",
       "description": "CLI/Apache/FPM/ZTS build variants; Debian and Alpine bases",
-      "comment": "Inventory record: PHP-0032\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: CLI/Apache/FPM/ZTS build variants; Debian and Alpine bases\nPHP version scope: Stable8.5.11 bounded fourteen-directory matrix pinned to source 79320e28b93fdc720d6f07d150709310cf54e757; other stable branches and RC tags are distinct\nExtensions: Variant/version/custom-build specific; optional PECL/extension installer examples are not default module presence\nLimitations: Aliases/latest are not installations. Advertised source commits are not image content digests. Native ABI differs by Debian/glibc versus Alpine/musl. OS PHP packages do not patch source-built /usr/local PHP; downstream images need rebuild and rollout. No loaded build or vulnerability assessed.\nPatch owner: Docker PHP image maintainers for rebuilds; derived-image publisher for rebuilds and operator for rollout\nDownstream surface: Derived images and running containers\nRelease pin: Stable PHP8.5.11 build source 79320e28b93fdc720d6f07d150709310cf54e757; image digests unverified\nSource accessed: 2026-10-17\nAliases: docker.io/library/php\nConditional downstream consequence: Analyst judgment: a matching PHP or loaded-extension flaw could affect a selected affected image variant when the relevant input path is reachable. The base publisher must provide a corrected build, derived images must rebuild against it, and operators must replace running containers. Tags, cached layers and separate OS PHP updates do not prove that rollout occurred.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0032\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed fixed images\nDeployment status: Not measured\nPHP surface: CLI/Apache/FPM/ZTS build variants; Debian and Alpine bases\nPHP version scope: Official versions.json lists patched stable branches 8.2.35, 8.3.36, 8.4.27 and 8.5.12; the selected stable 8.5.12 matrix maps to source f6048b5f6e3c2202ee082665a4ccc0d90de291a3; RC tags are distinct.\nExtensions: Variant/version/custom-build specific; optional PECL/extension installer examples are not default module presence\nLimitations: Aliases/latest are not installations. Advertised source commits are not image content digests. Native ABI differs by Debian/glibc versus Alpine/musl. OS PHP packages do not patch source-built /usr/local PHP; downstream images need rebuild and rollout. Mutable tags and cached layers do not prove that a deployed workload has been updated.\nPatch owner: Docker PHP image maintainers for rebuilds; derived-image publisher for rebuilds and operator for rollout\nDownstream surface: Derived images and running containers\nRelease pin: Stable PHP 8.5.12 build source f6048b5f6e3c2202ee082665a4ccc0d90de291a3; image digests unverified\nSource accessed: 2026-10-21\nAliases: docker.io/library/php\nConditional downstream consequence: Analyst judgment: a matching PHP or loaded-extension flaw could affect a selected affected image variant when the relevant input path is reachable. The base publisher must provide a corrected build, derived images must rebuild against it, and operators must replace running containers. Tags, cached layers and separate OS PHP updates do not prove that rollout occurred.\nVulnerability status: Fixed in current Docker Official PHP image tags based on PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12.\nCVE-2026-109618: Fixed in current Docker Official PHP image tags\nCVE-2026-109619: Fixed in current Docker Official PHP image tags\nCVE assessment limit: Vendor source establishes patched current image source and tags; operators must pull rebuilt images and rebuild/redeploy derived images and running containers.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -5220,6 +5240,22 @@
             "https://github.com/docker-library/docs/blob/master/php/README.md"
           ],
           "comment": "Official publisher/project distribution evidence - Guide distinguishes SAPIs, OS base/native ABI and extension installation from default contents."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/docker-library/php/pull/1694"
+          ],
+          "comment": "Official docker-library/php security update pull request for PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://raw.githubusercontent.com/docker-library/php/master/versions.json"
+          ],
+          "comment": "Official Docker PHP versions manifest listing current patched stable branches"
         }
       ]
     },
@@ -15559,15 +15595,15 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:docker-official-images-docker-library-php-maintainers:c1946bfa8981",
-      "summary": "The tag manifest lists four stable CLI build directories; the immutable Alpine recipe sets PHP_VERSION 8.5.11.",
+      "summary": "The tag manifest lists patched stable CLI build directories; the selected Alpine recipe sets PHP_VERSION 8.5.12.",
       "description": "CLI interpreter; php-cgi availability documented for CLI variant",
-      "comment": "Inventory record: PHP-0353\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0032\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: CLI interpreter; php-cgi availability documented for CLI variant\nPHP version scope: Bounded stable PHP 8.5.11 matrix at source commit 79320e28b93fdc720d6f07d150709310cf54e757; not RC tags or all PHP branches\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: All variants also contain a CLI binary; CLI presence is not a web listener. Fourteen PHP 8.5.11 source directories are a bounded catalogue sample, not every supported PHP branch or an image digest inventory. OS tag and architecture affect native ABI. A source commit does not verify built image bytes. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Docker PHP image maintainers for rebuilds; derived-image publisher for rebuilds and operator for rollout\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: PHP 8.5.11 build source 79320e28b93fdc720d6f07d150709310cf54e757; variant cli; image content digest unverified\nSource accessed: 2026-10-17\nAliases: docker.io/library/php:cli\nConditional downstream consequence: If a matching PHP or loaded-parser flaw is reached while processing a project, dependency, fixture or local web request, developer/CI files or available credentials could be affected. Consequences depend on executed inputs and privileges; development use does not establish a public service or a tenant escape.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0353\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0032\nEvidence status: Vendor-confirmed fixed images\nDeployment status: Not measured\nPHP surface: CLI interpreter; php-cgi availability documented for CLI variant\nPHP version scope: Bounded stable PHP 8.5.12 matrix at source commit f6048b5f6e3c2202ee082665a4ccc0d90de291a3; not RC tags or all PHP branches\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: All variants also contain a CLI binary; CLI presence is not a web listener. Fourteen PHP 8.5.12 source directories are a bounded catalogue sample, not every supported PHP branch or an image digest inventory. OS tag and architecture affect native ABI. A source commit does not verify built image bytes. Operators must pull rebuilt images and rebuild/redeploy derived images and running containers.\nPatch owner: Docker PHP image maintainers for rebuilds; derived-image publisher for rebuilds and operator for rollout\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: PHP 8.5.12 build source f6048b5f6e3c2202ee082665a4ccc0d90de291a3; variant cli; image content digest unverified\nSource accessed: 2026-10-21\nAliases: docker.io/library/php:cli\nConditional downstream consequence: If a matching PHP or loaded-parser flaw is reached while processing a project, dependency, fixture or local web request, developer/CI files or available credentials could be affected. Consequences depend on executed inputs and privileges; development use does not establish a public service or a tenant escape.\nVulnerability status: Fixed in current Docker Official PHP image tags based on PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12.\nCVE-2026-109618: Fixed in current Docker Official PHP image tags\nCVE-2026-109619: Fixed in current Docker Official PHP image tags\nCVE assessment limit: Vendor source establishes patched current image source and tags; operator rollout remains unmeasured.",
       "externalRef": [
         {
           "type": "ExternalRef",
           "externalRefType": "other",
           "locator": [
-            "https://github.com/docker-library/php/blob/79320e28b93fdc720d6f07d150709310cf54e757/8.5/alpine3.24/cli/Dockerfile"
+            "https://github.com/docker-library/php/blob/f6048b5f6e3c2202ee082665a4ccc0d90de291a3/8.5/alpine3.24/cli/Dockerfile"
           ],
           "comment": "Official PHP distribution, package or build declaration"
         },
@@ -15577,7 +15613,15 @@
           "locator": [
             "https://github.com/docker-library/official-images/blob/master/library/php"
           ],
-          "comment": "Official publisher/project distribution evidence - Stable 8.5.11 cli directories map to commit 79320e28b93fdc720d6f07d150709310cf54e757."
+          "comment": "Official publisher/project distribution evidence - Stable 8.5.12 cli directories map to commit f6048b5f6e3c2202ee082665a4ccc0d90de291a3."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/docker-library/php/pull/1694"
+          ],
+          "comment": "Official docker-library/php security update pull request for patched PHP releases"
         }
       ]
     },
@@ -15597,7 +15641,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:docker-official-images-docker-library-php-maintainers:c1946bfa8981",
       "summary": "The official guide identifies the Apache variant as PHP loaded into Apache; the tag manifest lists Debian trixie and bookworm builds.",
       "description": "Apache module with mpm_prefork, plus PHP CLI",
-      "comment": "Inventory record: PHP-0354\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0032\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Apache module with mpm_prefork, plus PHP CLI\nPHP version scope: Bounded stable PHP 8.5.11 matrix at source commit 79320e28b93fdc720d6f07d150709310cf54e757; not RC tags or all PHP branches\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: The Apache recipe pin is advertised by the manifest; direct HTML/raw retrieval failed. No Alpine Apache directory occurs in this bounded matrix. Fourteen PHP 8.5.11 source directories are a bounded catalogue sample, not every supported PHP branch or an image digest inventory. OS tag and architecture affect native ABI. A source commit does not verify built image bytes. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Docker PHP image maintainers for rebuilds; derived-image publisher for rebuilds and operator for rollout\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: PHP 8.5.11 build source 79320e28b93fdc720d6f07d150709310cf54e757; variant apache; image content digest unverified\nSource accessed: 2026-10-17\nAliases: docker.io/library/php:apache\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0354\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0032\nEvidence status: Vendor-confirmed fixed images\nDeployment status: Not measured\nPHP surface: Apache module with mpm_prefork, plus PHP CLI\nPHP version scope: Bounded stable PHP 8.5.12 matrix at source commit f6048b5f6e3c2202ee082665a4ccc0d90de291a3; not RC tags or all PHP branches\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: The Apache recipe pin is advertised by the manifest. No Alpine Apache directory occurs in this bounded matrix. Fourteen PHP 8.5.12 source directories are a bounded catalogue sample, not every supported PHP branch or an image digest inventory. OS tag and architecture affect native ABI. A source commit does not verify built image bytes. Operators must pull rebuilt images and rebuild/redeploy derived images and running containers.\nPatch owner: Docker PHP image maintainers for rebuilds; derived-image publisher for rebuilds and operator for rollout\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: PHP 8.5.12 build source f6048b5f6e3c2202ee082665a4ccc0d90de291a3; variant apache; image content digest unverified\nSource accessed: 2026-10-21\nAliases: docker.io/library/php:apache\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nVulnerability status: Fixed in current Docker Official PHP image tags based on PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12.\nCVE-2026-109618: Fixed in current Docker Official PHP image tags\nCVE-2026-109619: Fixed in current Docker Official PHP image tags\nCVE assessment limit: Vendor source establishes patched current image source and tags; operator rollout remains unmeasured.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -15613,7 +15657,15 @@
           "locator": [
             "https://github.com/docker-library/official-images/blob/master/library/php"
           ],
-          "comment": "Official publisher/project distribution evidence - Stable 8.5.11 apache directories map to commit 79320e28b93fdc720d6f07d150709310cf54e757."
+          "comment": "Official publisher/project distribution evidence - Stable 8.5.12 apache directories map to commit f6048b5f6e3c2202ee082665a4ccc0d90de291a3."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/docker-library/php/pull/1694"
+          ],
+          "comment": "Official docker-library/php security update pull request for patched PHP releases"
         }
       ]
     },
@@ -15633,13 +15685,13 @@
       "suppliedBy": "urn:php2shell:inventory:organization:docker-official-images-docker-library-php-maintainers:c1946bfa8981",
       "summary": "The immutable trixie recipe starts from debian:trixie-slim, disables CGI and enables FPM.",
       "description": "PHP-FPM FastCGI, plus CLI; separate HTTP reverse proxy",
-      "comment": "Inventory record: PHP-0355\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0032\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP-FPM FastCGI, plus CLI; separate HTTP reverse proxy\nPHP version scope: Bounded stable PHP 8.5.11 matrix at source commit 79320e28b93fdc720d6f07d150709310cf54e757; not RC tags or all PHP branches\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: FastCGI is not HTTP. Debian PHP apt packages are explicitly blocked; source-built /usr/local PHP has a separate rebuild lane. Fourteen PHP 8.5.11 source directories are a bounded catalogue sample, not every supported PHP branch or an image digest inventory. OS tag and architecture affect native ABI. A source commit does not verify built image bytes. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Docker PHP image maintainers for rebuilds; derived-image publisher for rebuilds and operator for rollout\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: PHP 8.5.11 build source 79320e28b93fdc720d6f07d150709310cf54e757; variant fpm; image content digest unverified\nSource accessed: 2026-10-17\nAliases: docker.io/library/php:fpm\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0355\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0032\nEvidence status: Vendor-confirmed fixed images\nDeployment status: Not measured\nPHP surface: PHP-FPM FastCGI, plus CLI; separate HTTP reverse proxy\nPHP version scope: Bounded stable PHP 8.5.12 matrix at source commit f6048b5f6e3c2202ee082665a4ccc0d90de291a3; not RC tags or all PHP branches\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: FastCGI is not HTTP. Debian PHP apt packages are explicitly blocked; source-built /usr/local PHP has a separate rebuild lane. Fourteen PHP 8.5.12 source directories are a bounded catalogue sample, not every supported PHP branch or an image digest inventory. OS tag and architecture affect native ABI. A source commit does not verify built image bytes. Operators must pull rebuilt images and rebuild/redeploy derived images and running containers.\nPatch owner: Docker PHP image maintainers for rebuilds; derived-image publisher for rebuilds and operator for rollout\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: PHP 8.5.12 build source f6048b5f6e3c2202ee082665a4ccc0d90de291a3; variant fpm; image content digest unverified\nSource accessed: 2026-10-21\nAliases: docker.io/library/php:fpm\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nVulnerability status: Fixed in current Docker Official PHP image tags based on PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12.\nCVE-2026-109618: Fixed in current Docker Official PHP image tags\nCVE-2026-109619: Fixed in current Docker Official PHP image tags\nCVE assessment limit: Vendor source establishes patched current image source and tags; operator rollout remains unmeasured.",
       "externalRef": [
         {
           "type": "ExternalRef",
           "externalRefType": "other",
           "locator": [
-            "https://github.com/docker-library/php/blob/79320e28b93fdc720d6f07d150709310cf54e757/8.5/trixie/fpm/Dockerfile"
+            "https://github.com/docker-library/php/blob/f6048b5f6e3c2202ee082665a4ccc0d90de291a3/8.5/trixie/fpm/Dockerfile"
           ],
           "comment": "Official PHP distribution, package or build declaration"
         },
@@ -15649,7 +15701,15 @@
           "locator": [
             "https://github.com/docker-library/official-images/blob/master/library/php"
           ],
-          "comment": "Official publisher/project distribution evidence - Stable 8.5.11 fpm directories map to commit 79320e28b93fdc720d6f07d150709310cf54e757."
+          "comment": "Official publisher/project distribution evidence - Stable 8.5.12 fpm directories map to commit f6048b5f6e3c2202ee082665a4ccc0d90de291a3."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/docker-library/php/pull/1694"
+          ],
+          "comment": "Official docker-library/php security update pull request for patched PHP releases"
         }
       ]
     },
@@ -15669,13 +15729,13 @@
       "suppliedBy": "urn:php2shell:inventory:organization:docker-official-images-docker-library-php-maintainers:c1946bfa8981",
       "summary": "The immutable trixie recipe enables ZTS, embed and phpdbg. The manifest groups four OS build directories under ZTS tags.",
       "description": "Thread-safe PHP CLI/build; inspected Debian recipe also enables embed and phpdbg",
-      "comment": "Inventory record: PHP-0356\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0032\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Thread-safe PHP CLI/build; inspected Debian recipe also enables embed and phpdbg\nPHP version scope: Bounded stable PHP 8.5.11 matrix at source commit 79320e28b93fdc720d6f07d150709310cf54e757; not RC tags or all PHP branches\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: ZTS is a build mode, not a separate application or proof of a listening web service. Native extensions need matching thread-safety/ABI. Fourteen PHP 8.5.11 source directories are a bounded catalogue sample, not every supported PHP branch or an image digest inventory. OS tag and architecture affect native ABI. A source commit does not verify built image bytes. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Docker PHP image maintainers for rebuilds; derived-image publisher for rebuilds and operator for rollout\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: PHP 8.5.11 build source 79320e28b93fdc720d6f07d150709310cf54e757; variant zts; image content digest unverified\nSource accessed: 2026-10-17\nAliases: docker.io/library/php:zts\nConditional downstream consequence: If a matching PHP or loaded-parser flaw is reached while processing a project, dependency, fixture or local web request, developer/CI files or available credentials could be affected. Consequences depend on executed inputs and privileges; development use does not establish a public service or a tenant escape.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0356\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0032\nEvidence status: Vendor-confirmed fixed images\nDeployment status: Not measured\nPHP surface: Thread-safe PHP CLI/build; inspected Debian recipe also enables embed and phpdbg\nPHP version scope: Bounded stable PHP 8.5.12 matrix at source commit f6048b5f6e3c2202ee082665a4ccc0d90de291a3; not RC tags or all PHP branches\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: ZTS is a build mode, not a separate application or proof of a listening web service. Native extensions need matching thread-safety/ABI. Fourteen PHP 8.5.12 source directories are a bounded catalogue sample, not every supported PHP branch or an image digest inventory. OS tag and architecture affect native ABI. A source commit does not verify built image bytes. Operators must pull rebuilt images and rebuild/redeploy derived images and running containers.\nPatch owner: Docker PHP image maintainers for rebuilds; derived-image publisher for rebuilds and operator for rollout\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: PHP 8.5.12 build source f6048b5f6e3c2202ee082665a4ccc0d90de291a3; variant zts; image content digest unverified\nSource accessed: 2026-10-21\nAliases: docker.io/library/php:zts\nConditional downstream consequence: If a matching PHP or loaded-parser flaw is reached while processing a project, dependency, fixture or local web request, developer/CI files or available credentials could be affected. Consequences depend on executed inputs and privileges; development use does not establish a public service or a tenant escape.\nVulnerability status: Fixed in current Docker Official PHP image tags based on PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12.\nCVE-2026-109618: Fixed in current Docker Official PHP image tags\nCVE-2026-109619: Fixed in current Docker Official PHP image tags\nCVE assessment limit: Vendor source establishes patched current image source and tags; operator rollout remains unmeasured.",
       "externalRef": [
         {
           "type": "ExternalRef",
           "externalRefType": "other",
           "locator": [
-            "https://github.com/docker-library/php/blob/79320e28b93fdc720d6f07d150709310cf54e757/8.5/trixie/zts/Dockerfile"
+            "https://github.com/docker-library/php/blob/f6048b5f6e3c2202ee082665a4ccc0d90de291a3/8.5/trixie/zts/Dockerfile"
           ],
           "comment": "Official PHP distribution, package or build declaration"
         },
@@ -15685,7 +15745,15 @@
           "locator": [
             "https://github.com/docker-library/official-images/blob/master/library/php"
           ],
-          "comment": "Official publisher/project distribution evidence - Stable 8.5.11 zts directories map to commit 79320e28b93fdc720d6f07d150709310cf54e757."
+          "comment": "Official publisher/project distribution evidence - Stable 8.5.12 zts directories map to commit f6048b5f6e3c2202ee082665a4ccc0d90de291a3."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/docker-library/php/pull/1694"
+          ],
+          "comment": "Official docker-library/php security update pull request for patched PHP releases"
         }
       ]
     },
@@ -15696,6 +15764,7 @@
       "name": "Debian trixie PHP 8.4 FPM package",
       "software_packageVersion": "8.4.27-1~deb13u1",
       "software_primaryPurpose": "other",
+      "software_packageVersion": "8.4.27-1~deb13u1",
       "externalIdentifier": [
         {
           "type": "ExternalIdentifier",
@@ -15704,9 +15773,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:debian-php-maintainers:ebee55ebcf92",
-      "summary": "The package page describes FPM and declares dependencies on php8.4-cli, php8.4-common and php8.4-opcache; php-pear is suggested rather than required.",
+      "summary": "Debian DSA-6574-1 fixes CVE-2026-109618 and CVE-2026-109619 in trixie php8.4 8.4.27-1~deb13u1.",
       "description": "PHP-FPM FastCGI; package also depends on php8.4-cli",
-      "comment": "Inventory record: PHP-0357\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP-FPM FastCGI; package also depends on php8.4-cli\nPHP version scope: Trixie package dependency fixes php8.4-common at 8.4.26-1~deb13u1; architecture-specific dependencies\nExtensions: php8.4-opcache dependency declared; common module contents not fully enumerated; PEAR is a suggested tool, not a native extension\nLimitations: This row covers the named optional package, not every Debian installation or all Debian PHP packages. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Debian package/security maintainers and operator applying package updates/restarting workers\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Debian trixie php8.4-common dependency 8.4.26-1~deb13u1; binary hash unverified\nSource accessed: 2026-10-17\nAliases: deb:trixie/php8.4-fpm\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0357\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed fixed package\nDeployment status: Not measured\nPHP surface: PHP-FPM FastCGI; package also depends on php8.4-cli\nPHP version scope: Debian DSA-6574-1 fixes trixie php8.4 at 8.4.27-1~deb13u1; architecture-specific dependencies remain package-specific.\nExtensions: php8.4-opcache dependency declared; common module contents not fully enumerated; PEAR is a suggested tool, not a native extension\nLimitations: This row covers the named optional package, not every Debian installation or all Debian PHP packages. No binary/image was pulled, installed, built or executed. Package availability does not prove operator rollout or process restart.\nPatch owner: Debian package/security maintainers and operator applying package updates/restarting workers\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Debian DSA-6574-1; trixie php8.4 8.4.27-1~deb13u1; binary hash unverified\nSource accessed: 2026-10-21\nAliases: deb:trixie/php8.4-fpm\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Fixed in Debian trixie php8.4 8.4.27-1~deb13u1.\nCVE-2026-109618: Fixed in php8.4 8.4.27-1~deb13u1\nCVE-2026-109619: Fixed in php8.4 8.4.27-1~deb13u1\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -15722,7 +15791,7 @@
           "locator": [
             "https://lists.debian.org/debian-security-announce/2026/msg00489.html"
           ],
-          "comment": "Debian Security Advisory DSA-6574-1"
+          "comment": "Debian DSA-6574-1 - php8.4 security update"
         }
       ]
     },
@@ -15740,9 +15809,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:canonical-ubuntu-package-maintainers:689af08e8a74",
-      "summary": "Ubuntu optional runtime family retained. Fresh package detail resolves the earlier Noble FPM retrieval gap and is separately inventoried as a scoped family member.",
-      "description": "Documented optional Apache module, CLI and CGI; Noble FPM member now separately pinned in PHP-0591",
-      "comment": "Inventory record: PHP-0358\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Documented optional Apache module, CLI and CGI; Noble FPM member now separately pinned in PHP-0591\nPHP version scope: Family spans release/pocket-specific packages. Fresh Noble-updates php8.3-fpm metadata is 8.3.6-0ubuntu0.24.04.11; not a version for every Ubuntu PHP package.\nExtensions: Exact Noble FPM member requires php8.3-common at the same release and php8.3-opcache plus CLI. Other family packages and loaded extensions remain unresolved.\nLimitations: The exact Noble FPM metadata does not establish all Ubuntu releases, pockets, installed binaries or support entitlements. A distro version retains backports and cannot be judged from upstream 8.3.6 alone. No binary/package was downloaded, installed or executed; no deployment or vulnerability was measured.\nPatch owner: Ubuntu package/security maintainers and operator; coverage depends on release, package pocket and support entitlement\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Noble-updates php8.3-fpm 8.3.6-0ubuntu0.24.04.11 metadata; broader family and installed bytes not pinned\nSource accessed: 2026-10-19\nAliases: ubuntu:php, ubuntu:libapache2-mod-php\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "summary": "Ubuntu optional runtime family retained. USN-8948-1 scoped FPM package rows are separately inventoried for Jammy, Noble, Resolute and Stonking.",
+      "description": "Documented optional Apache module, CLI and CGI; scoped FPM members separately pinned in PHP-0591 and PHP-0634 through PHP-0636",
+      "comment": "Inventory record: PHP-0358\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Documented optional Apache module, CLI and CGI; scoped FPM members separately pinned in PHP-0591 and PHP-0634 through PHP-0636\nPHP version scope: Family spans release/pocket-specific packages. USN-8948-1 fixes scoped FPM members for Jammy, Noble, Resolute and Stonking in PHP-0591 and PHP-0634 through PHP-0636; this is not a version for every Ubuntu PHP package.\nExtensions: Exact scoped FPM members require release-matched common, opcache and CLI packages. Other family packages and loaded extensions remain unresolved.\nLimitations: The scoped FPM metadata does not establish all Ubuntu releases, pockets, installed binaries or support entitlements. Distro versions retain backports and cannot be judged from upstream version strings alone. No binary/package was downloaded, installed or executed; no deployment or vulnerability was measured.\nPatch owner: Ubuntu package/security maintainers and operator; coverage depends on release, package pocket and support entitlement\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: USN-8948-1; scoped FPM rows pinned separately; broader family and installed bytes not pinned\nSource accessed: 2026-10-21\nAliases: ubuntu:php, ubuntu:libapache2-mod-php\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Broad Ubuntu family row remains unresolved; use the scoped FPM rows for vendor-confirmed fixed package versions.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -16326,9 +16395,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:nextcloud-gmbh-nextcloud-aio-maintainers:1303c787a6ba",
-      "summary": "The AIO Nextcloud recipe names its PHP 8.4.26 FPM Alpine base and compiles/enables native modules, including separately installed PECL imap for PHP 8.4.",
+      "summary": "Nextcloud AIO maintainers state that the PHP issue affects online PHP servers including Nextcloud and advise shutting down the AIO stack until rebuilt images are available.",
       "description": "PHP-FPM and CLI inherited from official PHP Alpine image",
-      "comment": "Inventory record: PHP-0376\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0015\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP-FPM and CLI inherited from official PHP Alpine image\nPHP version scope: Inspected main recipe FROM php:8.4.26-fpm-alpine3.24 and NEXTCLOUD_VERSION34.0.5; moving source, not release/image byte verification\nExtensions: Recipe subset: bcmath, exif, gd, gmp, intl, ldap, opcache, pcntl, pdo_pgsql, sysvsem, zip, bz2, pgsql, ftp; PECL igbinary, APCu, memcached, redis, imagick, imap, smbclient. These are build selections, not universal Nextcloud requirements.\nLimitations: Only the Nextcloud container is covered, not every AIO master/database/office/Talk container. Moving main may precede released images; base tag has no verified digest. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Nextcloud AIO publisher and PHP image maintainers; operator applies AIO/container updates\nDownstream surface: Nextcloud application container files, configured credentials and mounted storage; other AIO service boundaries not inferred\nRelease pin: Moving main recipe declares PHP8.4.26, Alpine3.24 and Nextcloud34.0.5; immutable commit/digest pending\nSource accessed: 2026-10-17\nAliases: nextcloud-aio:nextcloud-container\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0376\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0015\nEvidence status: Vendor-confirmed affected product\nDeployment status: Not measured\nPHP surface: PHP-FPM and CLI inherited from official PHP Alpine image\nPHP version scope: Inspected main recipe FROM php:8.4.26-fpm-alpine3.24 and NEXTCLOUD_VERSION34.0.5; Nextcloud AIO maintainers state rebuilt images will follow updated PHP base images.\nExtensions: Recipe subset: bcmath, exif, gd, gmp, intl, ldap, opcache, pcntl, pdo_pgsql, sysvsem, zip, bz2, pgsql, ftp; PECL igbinary, APCu, memcached, redis, imagick, imap, smbclient. These are build selections, not universal Nextcloud requirements.\nLimitations: Only the Nextcloud container is covered, not every AIO master/database/office/Talk container. Moving main may precede released images; base tag has no verified digest. No binary/image was pulled, installed, built or executed. Deployments and operator rollout were not measured.\nPatch owner: Nextcloud AIO publisher and PHP image maintainers; operator applies AIO/container updates\nDownstream surface: Nextcloud application container files, configured credentials and mounted storage; other AIO service boundaries not inferred\nRelease pin: Nextcloud AIO issue #8876 opened 2026-10-21; moving main recipe declares PHP 8.4.26, Alpine 3.24 and Nextcloud 34.0.5; immutable release digest pending\nSource accessed: 2026-10-21\nAliases: nextcloud-aio:nextcloud-container\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nVulnerability status: Affected: Nextcloud AIO Nextcloud application container uses affected PHP base images; rebuilt images pending.\nCVE-2026-109618: Affected: rebuilt AIO image pending\nCVE-2026-109619: Affected: rebuilt AIO image pending\nCVE assessment limit: Vendor issue confirms AIO impact and pending rebuilt images; exact deployed image digest and operator rollout remain unmeasured.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -16337,6 +16406,14 @@
             "https://github.com/nextcloud/all-in-one/blob/main/Containers/nextcloud/Dockerfile"
           ],
           "comment": "Official PHP distribution, package or build declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/nextcloud/all-in-one/issues/8876"
+          ],
+          "comment": "Nextcloud AIO maintainer security issue for the PHP CVEs"
         }
       ]
     },
@@ -23236,6 +23313,7 @@
       "name": "Ubuntu Noble php8.3-fpm binary package",
       "software_packageVersion": "8.3.6-0ubuntu0.24.04.13",
       "software_primaryPurpose": "other",
+      "software_packageVersion": "8.3.6-0ubuntu0.24.04.13",
       "externalIdentifier": [
         {
           "type": "ExternalIdentifier",
@@ -23244,9 +23322,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:canonical-ubuntu-package-maintainers:689af08e8a74",
-      "summary": "The Noble FPM package page declares a full distro release and distinguishes binary, native, data/service and suggested dependencies.",
+      "summary": "Ubuntu USN-8948-1 fixes CVE-2026-109618 and CVE-2026-109619 in Noble php8.3-fpm 8.3.6-0ubuntu0.24.04.13.",
       "description": "PHP-FPM FastCGI binary; CLI is a separate required package, not the same SAPI",
-      "comment": "Inventory record: PHP-0591\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0358\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP-FPM FastCGI binary; CLI is a separate required package, not the same SAPI\nPHP version scope: Noble-updates/universe: 8.3.6-0ubuntu0.24.04.11; published package metadata, not a measured installed build\nExtensions: Requires php8.3-opcache and CLI packages; php8.3-common exactly 8.3.6-0ubuntu0.24.04.11. PEAR is suggested. Dependency presence does not prove a loaded extension.\nLimitations: Combined architecture page lists different zlib floors for armhf and other targets. Vendor backports, Ubuntu pocket/component and support entitlement must be matched. Native package declarations are not loaded-library measurements. Availability is not default installation. Exact installed bytes, loaded features, inputs, privileges, deployments and vulnerabilities are not measured. No research code/package/image was installed, built, imported or executed.\nPatch owner: Ubuntu package/security maintainers for distro patches; operator for selected pocket/entitlement, rollout and FPM restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: php8.3-fpm 8.3.6-0ubuntu0.24.04.11; noble-updates/universe; source .dsc retrieval failed\nSource accessed: 2026-10-19\nAliases: ubuntu:noble-updates/php8.3-fpm\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0591\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0358\nEvidence status: Vendor-confirmed fixed package\nDeployment status: Not measured\nPHP surface: PHP-FPM FastCGI binary; CLI is a separate required package, not the same SAPI\nPHP version scope: Ubuntu USN-8948-1 fixes Noble php8.3-fpm at 8.3.6-0ubuntu0.24.04.13; published package metadata, not a measured installed build.\nExtensions: Requires php8.3-opcache and CLI packages; php8.3-common exactly 8.3.6-0ubuntu0.24.04.13. PEAR is suggested. Dependency presence does not prove a loaded extension.\nLimitations: Combined architecture page lists different zlib floors for armhf and other targets. Vendor backports, Ubuntu pocket/component and support entitlement must be matched. Native package declarations are not loaded-library measurements. Availability is not default installation. Exact installed bytes, loaded features, inputs, privileges and deployments are not measured.\nPatch owner: Ubuntu package/security maintainers for distro patches; operator for selected pocket/entitlement, rollout and FPM restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: USN-8948-1; php8.3-fpm 8.3.6-0ubuntu0.24.04.13; noble-updates/universe\nSource accessed: 2026-10-21\nAliases: ubuntu:noble-updates/php8.3-fpm\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Fixed in Ubuntu Noble php8.3-fpm 8.3.6-0ubuntu0.24.04.13.\nCVE-2026-109618: Fixed in php8.3-fpm 8.3.6-0ubuntu0.24.04.13\nCVE-2026-109619: Fixed in php8.3-fpm 8.3.6-0ubuntu0.24.04.13\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -23262,7 +23340,7 @@
           "locator": [
             "https://ubuntu.com/security/notices/USN-8948-1"
           ],
-          "comment": "Ubuntu Security Notice USN-8948-1"
+          "comment": "Ubuntu USN-8948-1 - PHP vulnerabilities"
         }
       ]
     },
@@ -24642,6 +24720,122 @@
             "https://files.trendmicro.com/documentation/readme/CP/apexcentral_win_en_criticalpatch_b7328_Readme.html"
           ],
           "comment": "Official Trend Micro Apex Central hotfix readme"
+        }
+      ]
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0633",
+      "creationInfo": "_:creationinfo",
+      "name": "Red Hat Enterprise Linux 9 php:8.2 module",
+      "software_primaryPurpose": "other",
+      "software_packageVersion": "8.2.35-1.module+el9.8.0+25111+a1450321",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0633"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:red-hat:2c30c5da9571",
+      "summary": "Red Hat RHSA-2026:87072 provides fixed RHEL 9 php:8.2 module packages for CVE-2026-109618 and CVE-2026-109619.",
+      "description": "Red Hat Enterprise Linux 9 php:8.2 module packages",
+      "comment": "Inventory record: PHP-0633\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed fixed package\nDeployment status: Not measured\nPHP surface: RHEL 9 php:8.2 module packages\nPHP version scope: RHSA-2026:87072 lists php-8.2.35-1.module+el9.8.0+25111+a1450321.src.rpm as an updated package for affected RHEL 9 variants.\nLimitations: This advisory confirms the php:8.2 module scope only. Other RHEL 9 PHP RPM/AppStream branches remain outside this advisory scope and require separate vendor evidence.\nPatch owner: Red Hat for supported backported RPMs/AppStreams; subscriber/operator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: RHSA-2026:87072 issued and updated 2026-10-21\nSource accessed: 2026-10-21\nAliases: rhel9:php:8.2\nVulnerability status: Fixed in Red Hat Enterprise Linux 9 php:8.2 module package php-8.2.35-1.module+el9.8.0+25111+a1450321.\nCVE-2026-109618: Fixed in php-8.2.35-1.module+el9.8.0+25111+a1450321\nCVE-2026-109619: Fixed in php-8.2.35-1.module+el9.8.0+25111+a1450321\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/errata/RHSA-2026:87072"
+          ],
+          "comment": "Red Hat RHSA-2026:87072 - Important: php:8.2 security update"
+        }
+      ]
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0634",
+      "creationInfo": "_:creationinfo",
+      "name": "Ubuntu Stonking php8.5-fpm binary package",
+      "software_primaryPurpose": "other",
+      "software_packageVersion": "8.5.9-0ubuntu2.1",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0634"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:canonical-ubuntu-package-maintainers:689af08e8a74",
+      "summary": "Ubuntu USN-8948-1 fixes CVE-2026-109618 and CVE-2026-109619 in Stonking php8.5-fpm 8.5.9-0ubuntu2.1.",
+      "description": "PHP-FPM FastCGI binary package for Ubuntu 26.10 Stonking",
+      "comment": "Inventory record: PHP-0634\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0358\nEvidence status: Vendor-confirmed fixed package\nDeployment status: Not measured\nPHP surface: PHP-FPM FastCGI binary package\nPHP version scope: Ubuntu USN-8948-1 fixes Stonking php8.5-fpm at 8.5.9-0ubuntu2.1; published advisory scope, not a measured installed build.\nExtensions: Package-specific; loaded extensions and release-matched dependencies are not resolved in this advisory.\nLimitations: This row covers the named FPM package for Ubuntu 26.10 only, not every Ubuntu installation or all Ubuntu PHP packages. Package availability does not prove operator rollout or process restart.\nPatch owner: Ubuntu package/security maintainers for distro patches; operator for selected pocket/entitlement, rollout and FPM restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: USN-8948-1; php8.5-fpm 8.5.9-0ubuntu2.1; Ubuntu 26.10 Stonking\nSource accessed: 2026-10-21\nAliases: ubuntu:stonking/php8.5-fpm\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Fixed in Ubuntu Stonking php8.5-fpm 8.5.9-0ubuntu2.1.\nCVE-2026-109618: Fixed in php8.5-fpm 8.5.9-0ubuntu2.1\nCVE-2026-109619: Fixed in php8.5-fpm 8.5.9-0ubuntu2.1\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://ubuntu.com/security/notices/USN-8948-1"
+          ],
+          "comment": "Ubuntu USN-8948-1 - PHP vulnerabilities"
+        }
+      ]
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0635",
+      "creationInfo": "_:creationinfo",
+      "name": "Ubuntu Resolute php8.5-fpm binary package",
+      "software_primaryPurpose": "other",
+      "software_packageVersion": "8.5.4-0ubuntu1.5",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0635"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:canonical-ubuntu-package-maintainers:689af08e8a74",
+      "summary": "Ubuntu USN-8948-1 fixes CVE-2026-109618 and CVE-2026-109619 in Resolute php8.5-fpm 8.5.4-0ubuntu1.5.",
+      "description": "PHP-FPM FastCGI binary package for Ubuntu 26.04 LTS Resolute",
+      "comment": "Inventory record: PHP-0635\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0358\nEvidence status: Vendor-confirmed fixed package\nDeployment status: Not measured\nPHP surface: PHP-FPM FastCGI binary package\nPHP version scope: Ubuntu USN-8948-1 fixes Resolute php8.5-fpm at 8.5.4-0ubuntu1.5; published advisory scope, not a measured installed build.\nExtensions: Package-specific; loaded extensions and release-matched dependencies are not resolved in this advisory.\nLimitations: This row covers the named FPM package for Ubuntu 26.04 LTS only, not every Ubuntu installation or all Ubuntu PHP packages. Package availability does not prove operator rollout or process restart.\nPatch owner: Ubuntu package/security maintainers for distro patches; operator for selected pocket/entitlement, rollout and FPM restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: USN-8948-1; php8.5-fpm 8.5.4-0ubuntu1.5; Ubuntu 26.04 LTS Resolute\nSource accessed: 2026-10-21\nAliases: ubuntu:resolute/php8.5-fpm\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Fixed in Ubuntu Resolute php8.5-fpm 8.5.4-0ubuntu1.5.\nCVE-2026-109618: Fixed in php8.5-fpm 8.5.4-0ubuntu1.5\nCVE-2026-109619: Fixed in php8.5-fpm 8.5.4-0ubuntu1.5\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://ubuntu.com/security/notices/USN-8948-1"
+          ],
+          "comment": "Ubuntu USN-8948-1 - PHP vulnerabilities"
+        }
+      ]
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0636",
+      "creationInfo": "_:creationinfo",
+      "name": "Ubuntu Jammy php8.1-fpm binary package",
+      "software_primaryPurpose": "other",
+      "software_packageVersion": "8.1.2-1ubuntu2.28",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0636"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:canonical-ubuntu-package-maintainers:689af08e8a74",
+      "summary": "Ubuntu USN-8948-1 fixes CVE-2026-109618 and CVE-2026-109619 in Jammy php8.1-fpm 8.1.2-1ubuntu2.28.",
+      "description": "PHP-FPM FastCGI binary package for Ubuntu 22.04 LTS Jammy",
+      "comment": "Inventory record: PHP-0636\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0358\nEvidence status: Vendor-confirmed fixed package\nDeployment status: Not measured\nPHP surface: PHP-FPM FastCGI binary package\nPHP version scope: Ubuntu USN-8948-1 fixes Jammy php8.1-fpm at 8.1.2-1ubuntu2.28; published advisory scope, not a measured installed build.\nExtensions: Package-specific; loaded extensions and release-matched dependencies are not resolved in this advisory.\nLimitations: This row covers the named FPM package for Ubuntu 22.04 LTS only, not every Ubuntu installation or all Ubuntu PHP packages. Package availability does not prove operator rollout or process restart.\nPatch owner: Ubuntu package/security maintainers for distro patches; operator for selected pocket/entitlement, rollout and FPM restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: USN-8948-1; php8.1-fpm 8.1.2-1ubuntu2.28; Ubuntu 22.04 LTS Jammy\nSource accessed: 2026-10-21\nAliases: ubuntu:jammy/php8.1-fpm\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Fixed in Ubuntu Jammy php8.1-fpm 8.1.2-1ubuntu2.28.\nCVE-2026-109618: Fixed in php8.1-fpm 8.1.2-1ubuntu2.28\nCVE-2026-109619: Fixed in php8.1-fpm 8.1.2-1ubuntu2.28\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://ubuntu.com/security/notices/USN-8948-1"
+          ],
+          "comment": "Ubuntu USN-8948-1 - PHP vulnerabilities"
         }
       ]
     },
@@ -31859,6 +32053,54 @@
     },
     {
       "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0633",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0633",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "Inventory relationship for PHP-0633: bundles (distributes_php)",
+      "comment": "Mapped from inventory relationship 'bundles' and direction 'distributes_php' to SPDX relationshipType 'contains'."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0634",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0634",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0358"
+      ],
+      "relationshipType": "contains",
+      "summary": "Inventory relationship for PHP-0634: bundles (distributes_php)",
+      "comment": "Mapped from inventory relationship 'bundles' and direction 'distributes_php' to SPDX relationshipType 'contains'."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0635",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0635",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0358"
+      ],
+      "relationshipType": "contains",
+      "summary": "Inventory relationship for PHP-0635: bundles (distributes_php)",
+      "comment": "Mapped from inventory relationship 'bundles' and direction 'distributes_php' to SPDX relationshipType 'contains'."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0636",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0636",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0358"
+      ],
+      "relationshipType": "contains",
+      "summary": "Inventory relationship for PHP-0636: bundles (distributes_php)",
+      "comment": "Mapped from inventory relationship 'bundles' and direction 'distributes_php' to SPDX relationshipType 'contains'."
+    },
+    {
+      "type": "Relationship",
       "spdxId": "urn:php2shell:inventory:relationship:PHP-0627:parent",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:package:PHP-0626",
@@ -32367,7 +32609,6 @@
         "urn:php2shell:inventory:package:PHP-0027",
         "urn:php2shell:inventory:package:PHP-0030",
         "urn:php2shell:inventory:package:PHP-0031",
-        "urn:php2shell:inventory:package:PHP-0032",
         "urn:php2shell:inventory:package:PHP-0033",
         "urn:php2shell:inventory:package:PHP-0038",
         "urn:php2shell:inventory:package:PHP-0039",
@@ -32665,10 +32906,6 @@
         "urn:php2shell:inventory:package:PHP-0346",
         "urn:php2shell:inventory:package:PHP-0347",
         "urn:php2shell:inventory:package:PHP-0349",
-        "urn:php2shell:inventory:package:PHP-0353",
-        "urn:php2shell:inventory:package:PHP-0354",
-        "urn:php2shell:inventory:package:PHP-0355",
-        "urn:php2shell:inventory:package:PHP-0356",
         "urn:php2shell:inventory:package:PHP-0358",
         "urn:php2shell:inventory:package:PHP-0359",
         "urn:php2shell:inventory:package:PHP-0360",
@@ -32685,7 +32922,6 @@
         "urn:php2shell:inventory:package:PHP-0373",
         "urn:php2shell:inventory:package:PHP-0374",
         "urn:php2shell:inventory:package:PHP-0375",
-        "urn:php2shell:inventory:package:PHP-0376",
         "urn:php2shell:inventory:package:PHP-0377",
         "urn:php2shell:inventory:package:PHP-0378",
         "urn:php2shell:inventory:package:PHP-0379",
@@ -33073,7 +33309,6 @@
         "urn:php2shell:inventory:package:PHP-0027",
         "urn:php2shell:inventory:package:PHP-0030",
         "urn:php2shell:inventory:package:PHP-0031",
-        "urn:php2shell:inventory:package:PHP-0032",
         "urn:php2shell:inventory:package:PHP-0033",
         "urn:php2shell:inventory:package:PHP-0038",
         "urn:php2shell:inventory:package:PHP-0039",
@@ -33371,10 +33606,6 @@
         "urn:php2shell:inventory:package:PHP-0346",
         "urn:php2shell:inventory:package:PHP-0347",
         "urn:php2shell:inventory:package:PHP-0349",
-        "urn:php2shell:inventory:package:PHP-0353",
-        "urn:php2shell:inventory:package:PHP-0354",
-        "urn:php2shell:inventory:package:PHP-0355",
-        "urn:php2shell:inventory:package:PHP-0356",
         "urn:php2shell:inventory:package:PHP-0358",
         "urn:php2shell:inventory:package:PHP-0359",
         "urn:php2shell:inventory:package:PHP-0360",
@@ -33391,7 +33622,6 @@
         "urn:php2shell:inventory:package:PHP-0373",
         "urn:php2shell:inventory:package:PHP-0374",
         "urn:php2shell:inventory:package:PHP-0375",
-        "urn:php2shell:inventory:package:PHP-0376",
         "urn:php2shell:inventory:package:PHP-0377",
         "urn:php2shell:inventory:package:PHP-0378",
         "urn:php2shell:inventory:package:PHP-0379",
@@ -33581,34 +33811,6 @@
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:2b4351f4c7de",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0357"
-      ],
-      "relationshipType": "fixedIn",
-      "security_statusNotes": "Fixed in Debian trixie php8.4 version 8.4.27-1~deb13u1",
-      "security_actionStatement": "Upgrade Debian trixie php8.4 packages to 8.4.27-1~deb13u1 or later.",
-      "summary": "CVE-2026-109618 assessment: Fixed in Debian trixie php8.4 version 8.4.27-1~deb13u1",
-      "comment": "Added from Debian Security Advisory DSA-6574-1 published 2026-10-21."
-    },
-    {
-      "type": "security_VexFixedVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:2b4351f4c7de",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0357"
-      ],
-      "relationshipType": "fixedIn",
-      "security_statusNotes": "Fixed in Debian trixie php8.4 version 8.4.27-1~deb13u1",
-      "security_actionStatement": "Upgrade Debian trixie php8.4 packages to 8.4.27-1~deb13u1 or later.",
-      "summary": "CVE-2026-109619 assessment: Fixed in Debian trixie php8.4 version 8.4.27-1~deb13u1",
-      "comment": "Added from Debian Security Advisory DSA-6574-1 published 2026-10-21."
-    },
-    {
-      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:74c06cbb0310",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
@@ -33662,34 +33864,6 @@
       "security_actionStatement": "Upgrade unsupported App Engine Standard PHP runtimes to PHP 8.2 or newer and redeploy.",
       "summary": "CVE-2026-109619 assessment: Google App Engine Standard supported PHP 8.2+ runtimes are patched automatically",
       "comment": "Added from the Google Cloud bulletin and blog post published 2026-10-21."
-    },
-    {
-      "type": "security_VexFixedVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:a6f1894970da",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0591"
-      ],
-      "relationshipType": "fixedIn",
-      "security_statusNotes": "Fixed in Ubuntu Noble php8.3-fpm version 8.3.6-0ubuntu0.24.04.13",
-      "security_actionStatement": "Upgrade Ubuntu Noble php8.3-fpm to 8.3.6-0ubuntu0.24.04.13 or later.",
-      "summary": "CVE-2026-109618 assessment: Fixed in Ubuntu Noble php8.3-fpm version 8.3.6-0ubuntu0.24.04.13",
-      "comment": "Added from Ubuntu Security Notice USN-8948-1 published 2026-10-21."
-    },
-    {
-      "type": "security_VexFixedVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:a6f1894970da",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0591"
-      ],
-      "relationshipType": "fixedIn",
-      "security_statusNotes": "Fixed in Ubuntu Noble php8.3-fpm version 8.3.6-0ubuntu0.24.04.13",
-      "security_actionStatement": "Upgrade Ubuntu Noble php8.3-fpm to 8.3.6-0ubuntu0.24.04.13 or later.",
-      "summary": "CVE-2026-109619 assessment: Fixed in Ubuntu Noble php8.3-fpm version 8.3.6-0ubuntu0.24.04.13",
-      "comment": "Added from Ubuntu Security Notice USN-8948-1 published 2026-10-21."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -33948,6 +34122,238 @@
       "security_impactStatement": "PHP is not being used in iBabs. This is confirmed by an email of the supplier.",
       "summary": "CVE-2026-109619 assessment: PHP is not being used in iBabs. This is confirmed by an email of the supplier.",
       "comment": "Added from supplier email confirmation."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:c140e8fdd7e2",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0633"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Red Hat Enterprise Linux 9 php:8.2 module package php-8.2.35-1.module+el9.8.0+25111+a1450321",
+      "security_actionStatement": "Apply RHSA-2026:87072 updated php:8.2 module packages for affected Red Hat Enterprise Linux 9 systems.",
+      "summary": "CVE-2026-109618 assessment: Fixed in Red Hat Enterprise Linux 9 php:8.2 module package php-8.2.35-1.module+el9.8.0+25111+a1450321",
+      "comment": "Added from Red Hat RHSA-2026:87072 issued 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:c140e8fdd7e2",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0633"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Red Hat Enterprise Linux 9 php:8.2 module package php-8.2.35-1.module+el9.8.0+25111+a1450321",
+      "security_actionStatement": "Apply RHSA-2026:87072 updated php:8.2 module packages for affected Red Hat Enterprise Linux 9 systems.",
+      "summary": "CVE-2026-109619 assessment: Fixed in Red Hat Enterprise Linux 9 php:8.2 module package php-8.2.35-1.module+el9.8.0+25111+a1450321",
+      "comment": "Added from Red Hat RHSA-2026:87072 issued 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:d0c4e29f1694",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0032",
+        "urn:php2shell:inventory:package:PHP-0353",
+        "urn:php2shell:inventory:package:PHP-0354",
+        "urn:php2shell:inventory:package:PHP-0355",
+        "urn:php2shell:inventory:package:PHP-0356"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in current Docker Official PHP image tags based on PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12",
+      "security_actionStatement": "Pull rebuilt Docker Official PHP images and rebuild/redeploy derived images and running containers.",
+      "summary": "CVE-2026-109618 assessment: Fixed in current Docker Official PHP image tags based on PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12",
+      "comment": "Added from the official docker-library/php security update pull request and current versions manifest on 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:d0c4e29f1694",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0032",
+        "urn:php2shell:inventory:package:PHP-0353",
+        "urn:php2shell:inventory:package:PHP-0354",
+        "urn:php2shell:inventory:package:PHP-0355",
+        "urn:php2shell:inventory:package:PHP-0356"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in current Docker Official PHP image tags based on PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12",
+      "security_actionStatement": "Pull rebuilt Docker Official PHP images and rebuild/redeploy derived images and running containers.",
+      "summary": "CVE-2026-109619 assessment: Fixed in current Docker Official PHP image tags based on PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12",
+      "comment": "Added from the official docker-library/php security update pull request and current versions manifest on 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:d6574deb84f1",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0357"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Debian trixie php8.4 8.4.27-1~deb13u1",
+      "security_actionStatement": "Apply DSA-6574-1 updated php8.4 packages for affected Debian trixie systems.",
+      "summary": "CVE-2026-109618 assessment: Fixed in Debian trixie php8.4 8.4.27-1~deb13u1",
+      "comment": "Added from Debian DSA-6574-1 issued 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:d6574deb84f1",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0357"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Debian trixie php8.4 8.4.27-1~deb13u1",
+      "security_actionStatement": "Apply DSA-6574-1 updated php8.4 packages for affected Debian trixie systems.",
+      "summary": "CVE-2026-109619 assessment: Fixed in Debian trixie php8.4 8.4.27-1~deb13u1",
+      "comment": "Added from Debian DSA-6574-1 issued 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:8948ab24f130",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0591"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Ubuntu Noble php8.3-fpm 8.3.6-0ubuntu0.24.04.13",
+      "security_actionStatement": "Apply USN-8948-1 updated php8.3 packages for affected Ubuntu 24.04 LTS systems.",
+      "summary": "CVE-2026-109618 assessment: Fixed in Ubuntu Noble php8.3-fpm 8.3.6-0ubuntu0.24.04.13",
+      "comment": "Added from Ubuntu USN-8948-1 issued 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:8948ab24f130",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0591"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Ubuntu Noble php8.3-fpm 8.3.6-0ubuntu0.24.04.13",
+      "security_actionStatement": "Apply USN-8948-1 updated php8.3 packages for affected Ubuntu 24.04 LTS systems.",
+      "summary": "CVE-2026-109619 assessment: Fixed in Ubuntu Noble php8.3-fpm 8.3.6-0ubuntu0.24.04.13",
+      "comment": "Added from Ubuntu USN-8948-1 issued 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:8948a261085f",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0634"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Ubuntu Stonking php8.5-fpm 8.5.9-0ubuntu2.1",
+      "security_actionStatement": "Apply USN-8948-1 updated php8.5 packages for affected Ubuntu 26.10 systems.",
+      "summary": "CVE-2026-109618 assessment: Fixed in Ubuntu Stonking php8.5-fpm 8.5.9-0ubuntu2.1",
+      "comment": "Added from Ubuntu USN-8948-1 issued 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:8948a261085f",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0634"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Ubuntu Stonking php8.5-fpm 8.5.9-0ubuntu2.1",
+      "security_actionStatement": "Apply USN-8948-1 updated php8.5 packages for affected Ubuntu 26.10 systems.",
+      "summary": "CVE-2026-109619 assessment: Fixed in Ubuntu Stonking php8.5-fpm 8.5.9-0ubuntu2.1",
+      "comment": "Added from Ubuntu USN-8948-1 issued 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:8948a264085f",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0635"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Ubuntu Resolute php8.5-fpm 8.5.4-0ubuntu1.5",
+      "security_actionStatement": "Apply USN-8948-1 updated php8.5 packages for affected Ubuntu 26.04 LTS systems.",
+      "summary": "CVE-2026-109618 assessment: Fixed in Ubuntu Resolute php8.5-fpm 8.5.4-0ubuntu1.5",
+      "comment": "Added from Ubuntu USN-8948-1 issued 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:8948a264085f",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0635"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Ubuntu Resolute php8.5-fpm 8.5.4-0ubuntu1.5",
+      "security_actionStatement": "Apply USN-8948-1 updated php8.5 packages for affected Ubuntu 26.04 LTS systems.",
+      "summary": "CVE-2026-109619 assessment: Fixed in Ubuntu Resolute php8.5-fpm 8.5.4-0ubuntu1.5",
+      "comment": "Added from Ubuntu USN-8948-1 issued 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:8948a220081f",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0636"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Ubuntu Jammy php8.1-fpm 8.1.2-1ubuntu2.28",
+      "security_actionStatement": "Apply USN-8948-1 updated php8.1 packages for affected Ubuntu 22.04 LTS systems.",
+      "summary": "CVE-2026-109618 assessment: Fixed in Ubuntu Jammy php8.1-fpm 8.1.2-1ubuntu2.28",
+      "comment": "Added from Ubuntu USN-8948-1 issued 2026-10-21."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:8948a220081f",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0636"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Ubuntu Jammy php8.1-fpm 8.1.2-1ubuntu2.28",
+      "security_actionStatement": "Apply USN-8948-1 updated php8.1 packages for affected Ubuntu 22.04 LTS systems.",
+      "summary": "CVE-2026-109619 assessment: Fixed in Ubuntu Jammy php8.1-fpm 8.1.2-1ubuntu2.28",
+      "comment": "Added from Ubuntu USN-8948-1 issued 2026-10-21."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:a1088760f001",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0376"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Affected: Nextcloud AIO Nextcloud application container uses affected PHP base images; rebuilt images pending",
+      "security_actionStatement": "Apply the next Nextcloud AIO image release containing patched PHP base images; until then follow the AIO shutdown guidance.",
+      "summary": "CVE-2026-109618 assessment: Affected: Nextcloud AIO Nextcloud application container uses affected PHP base images; rebuilt images pending",
+      "comment": "Added from Nextcloud AIO issue #8876 opened 2026-10-21."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:a1088760f001",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0376"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Affected: Nextcloud AIO Nextcloud application container uses affected PHP base images; rebuilt images pending",
+      "security_actionStatement": "Apply the next Nextcloud AIO image release containing patched PHP base images; until then follow the AIO shutdown guidance.",
+      "summary": "CVE-2026-109619 assessment: Affected: Nextcloud AIO Nextcloud application container uses affected PHP base images; rebuilt images pending",
+      "comment": "Added from Nextcloud AIO issue #8876 opened 2026-10-21."
     }
   ]
 }

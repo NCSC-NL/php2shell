@@ -26,13 +26,14 @@ Update 21-10-2026 16:00: The PHP Foundation released two patches as a fix for CV
 For additional information see:
 
 - [CERT-EU Security Advisory 2026-018](https://cert.europa.eu/publications/security-advisories/2026-018/)
-- [PHP announcement: Upcoming Critical PHP Security Release](https://www.php.net/archive/2026.php#2026-10-20-1)
+- [PHP security advisory: Critical remote code execution vulnerabilities, update now](https://www.php.net/archive/2026.php#2026-10-21-5)
 - [List of advisories from other EU national CSIRT's](https://github.com/enisaeu/CNW/blob/main/advisories/2026/CNW-2026-04_php.md)
 
 ## Repository contents
 
 | Directory | Purpose |
 | --- | --- |
+| [detection_mitigation](detection_mitigation) | Contains detection and mitigation material for the vulnerabilities. |
 | [software](software) | Contains inventory lists of software products with a PHP dependency potentially affected by the vulnerabilities. |
 | [tools](tools) | Contains tools for using/generating files within this repo |
 
@@ -40,6 +41,7 @@ Please note that this repository is not complete and is currently being expanded
 
 ## Contributions welcome
 
-If you have additional information relevant to these PHP vulnerabilities, please open a pull request with a source that can be verified.
+If you have any additional information to share relevant to these PHP vulnerabilities, feel free to open a Pull request. New to this? [Read how to contribute in GitHub's documentation](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files#editing-files-in-another-users-repository).
 
-For updates to the paginated software list, please edit the SPDX source files in `software/spdx/`. The Markdown list pages are generated automatically from those files, so pull requests that only modify generated Markdown will not be merged.
+For updates to the software list: our strong preference is to receive edits in the SPDX source files in `software/spdx/`. The Markdown list pages are generated automatically from those files. In case this proves too difficult: don't worry. We'll attempt to backport edits in the .md files to the SPDX source files, but without any guarantees. 
+
