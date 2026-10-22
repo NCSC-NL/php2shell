@@ -5,15 +5,26 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
+import shutil
 import string
+import subprocess
 import sys
 import unicodedata
 from collections import defaultdict
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 TITLE = "List of software with PHP dependency potentially affected by php2shell CVEs"
+UPDATES_TITLE = "Software product status update history"
+CHANGELOG_FILENAME = "changelog_software_list.md"
+README_UPDATES_HEADING = "## Latest software status updates"
+README_LEGACY_TIMESTAMP_PREFIX = "Readme last significant change:"
+README_OPERATIONAL_TIMESTAMP_PREFIX = "Operational information last significant change:"
+README_SOFTWARE_TIMESTAMP_PREFIX = "Software list last status update:"
+HISTORY_DATE_TIME_FORMAT = "YYYY-MM-DD HH:MM:SS +/-HHMM"
 BUCKETS = ["0-9", *string.ascii_uppercase]
 DEFAULT_SPDX_DIR = Path("software") / "spdx"
 VEX_STATUS_MAP = {
@@ -43,6 +54,21 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
         type=Path,
         default=Path("software"),
         help="Output directory. Default: software",
+    )
+    parser.add_argument(
+        "--update-history",
+        action="store_true",
+        help=f"Also regenerate {CHANGELOG_FILENAME} from Git history.",
+    )
+    parser.add_argument(
+        "--update-readme",
+        action="store_true",
+        help="Also refresh the root README latest software status table and timestamp.",
+    )
+    parser.add_argument(
+        "--history-ref",
+        default="HEAD",
+        help="Git revision for mainline status history; use origin/main when updating a PR branch.",
     )
     return parser.parse_args(argv)
 
@@ -164,22 +190,34 @@ def package_statuses(
 def external_links(package: dict[str, Any]) -> str:
     refs = package.get("externalRef") or []
     urls: list[str] = []
+    notes: list[str] = []
     for ref in refs:
         if not isinstance(ref, dict):
             continue
         locators = ref.get("locator") or []
         if isinstance(locators, str):
             locators = [locators]
+        has_locator = False
         for locator in locators:
             locator_text = raw_text(locator)
-            if locator_text and locator_text not in urls:
-                urls.append(locator_text)
+            if locator_text:
+                has_locator = True
+                if locator_text not in urls:
+                    urls.append(locator_text)
+        if not has_locator:
+            comment = raw_text(ref.get("comment"))
+            if comment and comment not in notes:
+                notes.append(comment)
 
-    if not urls:
+    if not urls and not notes:
         return ""
+    rendered: list[str] = []
     if len(urls) == 1:
-        return markdown_link("source", urls[0])
-    return "<br>".join(markdown_link(f"source {index}", url) for index, url in enumerate(urls, 1))
+        rendered.append(markdown_link("source", urls[0]))
+    else:
+        rendered.extend(markdown_link(f"source {index}", url) for index, url in enumerate(urls, 1))
+    rendered.extend(markdown_cell(note) for note in notes)
+    return "<br>".join(rendered)
 
 
 def package_notes(package: dict[str, Any], status_notes: list[str]) -> str:
@@ -200,12 +238,24 @@ def bucket_for_supplier(supplier: str) -> str:
 
 
 def build_entries(document: dict[str, Any]) -> tuple[list[str], dict[str, list[dict[str, str]]]]:
+    cves, entries = build_entry_map(document)
+    buckets: defaultdict[str, list[dict[str, str]]] = defaultdict(list)
+
+    for entry in entries.values():
+        buckets[bucket_for_supplier(entry["supplier"])].append(entry)
+
+    for entries in buckets.values():
+        entries.sort(key=lambda item: (item["supplier"].casefold(), item["product"].casefold()))
+    return cves, dict(buckets)
+
+
+def build_entry_map(document: dict[str, Any]) -> tuple[list[str], dict[str, dict[str, str]]]:
     graph = document["@graph"]
     orgs = organization_names(graph)
     vulnerabilities = vulnerability_ids(graph)
     cves = sorted(vulnerabilities.values())
     statuses, status_notes = package_statuses(graph, vulnerabilities)
-    buckets: defaultdict[str, list[dict[str, str]]] = defaultdict(list)
+    entries: dict[str, dict[str, str]] = {}
 
     for package in graph_by_type(graph, "software_Package"):
         package_id = raw_text(package.get("spdxId"))
@@ -222,11 +272,8 @@ def build_entries(document: dict[str, Any]) -> tuple[list[str], dict[str, list[d
         }
         for cve in cves:
             entry[cve] = markdown_cell(statuses.get(package_id, {}).get(cve, ""))
-        buckets[bucket_for_supplier(supplier)].append(entry)
-
-    for entries in buckets.values():
-        entries.sort(key=lambda item: (item["supplier"].casefold(), item["product"].casefold()))
-    return cves, dict(buckets)
+        entries[package_id] = entry
+    return cves, entries
 
 
 def navigation_line() -> str:
@@ -234,8 +281,9 @@ def navigation_line() -> str:
     return " ".join(links)
 
 
-def table_header(cves: list[str]) -> list[str]:
+def table_header(cves: list[str], *, include_date_time: bool = False) -> list[str]:
     columns = [
+        *(["Date and time"] if include_date_time else []),
         "Supplier",
         "Product",
         "Version (see Status)",
@@ -243,11 +291,36 @@ def table_header(cves: list[str]) -> list[str]:
         "Notes",
         "Links",
     ]
-    alignment = [":---------", ":--------", ":--------------------:", *[":----------------------:" for _ in cves], ":------", "------:"]
+    alignment = []
+    if include_date_time:
+        alignment.append(":------------------------")
+    alignment.extend(
+        [
+            ":---------",
+            ":--------",
+            ":--------------------:",
+            *[":----------------------:" for _ in cves],
+            ":------",
+            "------:",
+        ]
+    )
     return [
         "| " + " | ".join(columns) + " |",
         "|" + "|".join(alignment) + "|",
     ]
+
+
+def table_row(entry: dict[str, str], cves: list[str], *, date_time: str | None = None) -> str:
+    row = [
+        *([markdown_cell(date_time)] if date_time is not None else []),
+        entry["supplier"],
+        entry["product"],
+        entry["version"],
+        *[entry.get(cve, "") for cve in cves],
+        entry["notes"],
+        entry["links"],
+    ]
+    return "|" + "|".join(row) + "|"
 
 
 def render_index() -> str:
@@ -274,44 +347,309 @@ def render_bucket(bucket: str, cves: list[str], entries: list[dict[str, str]]) -
         *table_header(cves),
     ]
     for entry in entries:
-        row = [
-            entry["supplier"],
-            entry["product"],
-            entry["version"],
-            *[entry.get(cve, "") for cve in cves],
-            entry["notes"],
-            entry["links"],
-        ]
-        lines.append("|" + "|".join(row) + "|")
+        lines.append(table_row(entry, cves))
     lines.append("")
     return "\n".join(lines)
+
+
+def git_executable() -> str:
+    git = shutil.which("git")
+    if git:
+        return git
+    if os.name == "nt":
+        candidates = [
+            Path(os.environ.get("ProgramFiles", "C:/Program Files")) / "Git" / "cmd" / "git.exe",
+            Path(os.environ.get("ProgramFiles(x86)", "C:/Program Files (x86)")) / "Git" / "cmd" / "git.exe",
+        ]
+        for candidate in candidates:
+            if candidate.exists():
+                return str(candidate)
+    raise GenerationError(f"Git is required to generate {CHANGELOG_FILENAME} and README updates.")
+
+
+def run_git(git: str, repo_root: Path, *args: str) -> str:
+    result = subprocess.run(
+        [git, "-C", str(repo_root), *args],
+        check=False,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+    )
+    if result.returncode != 0:
+        message = result.stderr.strip() or result.stdout.strip() or "unknown git error"
+        raise GenerationError(f"Git command failed: {message}")
+    return result.stdout
+
+
+def repository_root(git: str) -> Path:
+    start = Path(__file__).resolve().parents[1]
+    return Path(run_git(git, start, "rev-parse", "--show-toplevel").strip())
+
+
+def status_signature(entry: dict[str, str] | None, cves: list[str]) -> tuple[str, ...]:
+    if entry is None:
+        return tuple("" for _ in cves)
+    return tuple(entry.get(cve, "") for cve in cves)
+
+
+def status_changed_entries(
+    previous: dict[str, dict[str, str]],
+    current: dict[str, dict[str, str]],
+    cves: list[str],
+) -> list[dict[str, str]]:
+    changed = [
+        entry
+        for package_id, entry in current.items()
+        if status_signature(previous.get(package_id), cves) != status_signature(entry, cves)
+        and any(entry.get(cve) for cve in cves)
+    ]
+    changed.sort(key=lambda item: (item["supplier"].casefold(), item["product"].casefold()))
+    return changed
+
+
+def parse_git_date(value: str) -> str:
+    try:
+        return datetime.fromisoformat(value).strftime("%Y-%m-%d %H:%M:%S %z")
+    except ValueError:
+        return value
+
+
+def format_readme_timestamp(value: str | None) -> str:
+    try:
+        timestamp = datetime.fromisoformat(value) if value else datetime.now().astimezone()
+    except ValueError:
+        return value or ""
+    timezone = {
+        "+0100": "CET",
+        "+0200": "CEST",
+    }.get(timestamp.strftime("%z"), timestamp.strftime("%Z") or timestamp.strftime("%z"))
+    return f"{timestamp.day} {timestamp.strftime('%B %Y %H:%M')} {timezone}"
+
+
+def load_history_snapshot(git: str, repo_root: Path, commit: str, relative_spdx_path: str) -> dict[str, Any]:
+    try:
+        data = json.loads(run_git(git, repo_root, "show", f"{commit}:{relative_spdx_path}"))
+    except json.JSONDecodeError as exc:
+        raise GenerationError(f"Git snapshot {commit} is not valid JSON: {exc}") from exc
+    if not isinstance(data, dict) or not isinstance(data.get("@graph"), list):
+        raise GenerationError(f"Git snapshot {commit} is not an SPDX document with an '@graph' array.")
+    return data
+
+
+def build_status_history(
+    document: dict[str, Any],
+    spdx_path: Path,
+    history_ref: str = "HEAD",
+) -> tuple[list[str], list[dict[str, Any]]]:
+    git = git_executable()
+    repo_root = repository_root(git)
+    try:
+        relative_spdx_path = spdx_path.resolve().relative_to(repo_root).as_posix()
+    except ValueError as exc:
+        raise GenerationError("SPDX file must be inside the Git repository to generate update history.") from exc
+
+    current_cves, current_entries = build_entry_map(document)
+    log_output = run_git(
+        git,
+        repo_root,
+        "log",
+        "--first-parent",
+        "--reverse",
+        "--format=%H%x09%aI",
+        history_ref,
+        "--",
+        relative_spdx_path,
+    )
+    events: list[dict[str, Any]] = []
+    previous_entries: dict[str, dict[str, str]] = {}
+    for line in log_output.splitlines():
+        if not line:
+            continue
+        commit, authored_at = line.split("\t", 1)
+        _, entries = build_entry_map(load_history_snapshot(git, repo_root, commit, relative_spdx_path))
+        changed = status_changed_entries(previous_entries, entries, current_cves)
+        if changed:
+            events.append(
+                {
+                    "date_time": parse_git_date(authored_at),
+                    "authored_at": authored_at,
+                    "entries": changed,
+                }
+            )
+        previous_entries = entries
+
+    pending = status_changed_entries(previous_entries, current_entries, current_cves)
+    if pending:
+        authored_at = datetime.now().astimezone().isoformat(timespec="seconds")
+        events.append(
+            {
+                "date_time": parse_git_date(authored_at),
+                "authored_at": authored_at,
+                "entries": pending,
+            }
+        )
+    return current_cves, events
+
+
+def history_rows(events: list[dict[str, Any]]) -> list[tuple[str, dict[str, str]]]:
+    rows: list[tuple[str, dict[str, str]]] = []
+    for event in reversed(events):
+        date_time = event["date_time"]
+        rows.extend((date_time, entry) for entry in event["entries"])
+    return rows
+
+
+def render_updates_history(cves: list[str], events: list[dict[str, Any]]) -> str:
+    lines = [
+        f"# {UPDATES_TITLE}",
+        "[About this list](README.md)",
+        "",
+        "This file is generated from status-changing SPDX snapshots in the repository mainline Git history.",
+        f"Rows are ordered newest first. The `Date and time` column uses `{HISTORY_DATE_TIME_FORMAT}`.",
+        "",
+        *table_header(cves, include_date_time=True),
+    ]
+    lines.extend(table_row(entry, cves, date_time=date_time) for date_time, entry in history_rows(events))
+    lines.append("")
+    return "\n".join(lines)
+
+
+def latest_update_entries(events: list[dict[str, Any]], limit: int = 5) -> list[tuple[str, dict[str, str]]]:
+    return history_rows(events)[:limit]
+
+
+def render_readme_updates(cves: list[str], entries: list[tuple[str, dict[str, str]]]) -> str:
+    lines = [README_UPDATES_HEADING, "", *table_header(cves, include_date_time=True)]
+    lines.extend(table_row(entry, cves, date_time=date_time) for date_time, entry in entries)
+    lines.extend(["", f"See the [full software status update history](software/{CHANGELOG_FILENAME})."])
+    return "\n".join(lines)
+
+
+def write_generated_text(path: Path, content: str, default_newline: str = "\n") -> None:
+    existing = path.read_bytes() if path.exists() else b""
+    newline = "\r\n" if b"\r\n" in existing else default_newline
+    normalized = content.replace("\r\n", "\n")
+    rendered = normalized.replace("\n", newline).encode("utf-8")
+    if rendered != existing:
+        path.write_bytes(rendered)
+
+
+def write_readme_updates(
+    repo_root: Path,
+    cves: list[str],
+    entries: list[tuple[str, dict[str, str]]],
+    software_updated_at: str | None,
+) -> None:
+    readme_path = repo_root / "README.md"
+    if not readme_path.exists():
+        raise GenerationError(f"README does not exist: {readme_path}")
+    raw = readme_path.read_bytes()
+    text = raw.decode("utf-8").replace("\r\n", "\n")
+    section = render_readme_updates(cves, entries)
+    pattern = re.compile(
+        rf"^{re.escape(README_UPDATES_HEADING)}\r?\n.*?(?=^## |\Z)",
+        re.MULTILINE | re.DOTALL,
+    )
+    if pattern.search(text):
+        updated = pattern.sub(section + "\n\n", text, count=1)
+    else:
+        marker = "## Contributions welcome"
+        if marker not in text:
+            raise GenerationError(f"README is missing expected heading: {marker}")
+        updated = text.replace(marker, section + "\n\n" + marker, 1)
+
+    if updated != text or README_SOFTWARE_TIMESTAMP_PREFIX not in updated:
+        timestamp = format_readme_timestamp(software_updated_at)
+        if README_LEGACY_TIMESTAMP_PREFIX in updated:
+            updated = updated.replace(
+                README_LEGACY_TIMESTAMP_PREFIX,
+                README_OPERATIONAL_TIMESTAMP_PREFIX,
+                1,
+            )
+        software_timestamp = f"{README_SOFTWARE_TIMESTAMP_PREFIX} {timestamp}"
+        timestamp_pattern = re.compile(
+            rf"^{re.escape(README_SOFTWARE_TIMESTAMP_PREFIX)}.*$",
+            re.MULTILINE,
+        )
+        if timestamp_pattern.search(updated):
+            updated = timestamp_pattern.sub(software_timestamp, updated, count=1)
+        else:
+            operational_pattern = re.compile(
+                rf"^({re.escape(README_OPERATIONAL_TIMESTAMP_PREFIX)}.*)$",
+                re.MULTILINE,
+            )
+            if not operational_pattern.search(updated):
+                raise GenerationError(
+                    "README is missing an operational timestamp line for software timestamp insertion."
+                )
+            updated = operational_pattern.sub(rf"\1\n{software_timestamp}", updated, count=1)
+    write_generated_text(readme_path, updated)
 
 
 def write_lists(document: dict[str, Any], output_dir: Path) -> tuple[int, dict[str, int]]:
     cves, buckets = build_entries(document)
     output_dir.mkdir(parents=True, exist_ok=True)
-    (output_dir / "software_list.md").write_text(render_index(), encoding="utf-8", newline="\n")
+    write_generated_text(output_dir / "software_list.md", render_index())
 
     counts: dict[str, int] = {}
     for bucket in BUCKETS:
         entries = buckets.get(bucket, [])
         counts[bucket] = len(entries)
         path = output_dir / f"software_list_{bucket.lower()}.md"
-        path.write_text(render_bucket(bucket, cves, entries), encoding="utf-8", newline="\n")
+        write_generated_text(path, render_bucket(bucket, cves, entries))
     return sum(counts.values()), counts
+
+
+def write_optional_outputs(
+    document: dict[str, Any],
+    spdx_path: Path,
+    output_dir: Path,
+    *,
+    update_history: bool,
+    update_readme: bool,
+    history_ref: str = "HEAD",
+) -> int:
+    if not update_history and not update_readme:
+        return 0
+    history_cves, events = build_status_history(document, spdx_path, history_ref)
+    if update_history:
+        write_generated_text(output_dir / CHANGELOG_FILENAME, render_updates_history(history_cves, events))
+    if update_readme:
+        latest_event = events[-1] if events else {}
+        write_readme_updates(
+            repository_root(git_executable()),
+            history_cves,
+            latest_update_entries(events),
+            latest_event.get("authored_at"),
+        )
+    return sum(len(event["entries"]) for event in events)
 
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv or sys.argv[1:])
     try:
-        document = load_json(resolve_spdx_path(args.spdx_filename))
+        spdx_path = resolve_spdx_path(args.spdx_filename)
+        document = load_json(spdx_path)
         total, counts = write_lists(document, args.output_dir)
+        updates = write_optional_outputs(
+            document,
+            spdx_path,
+            args.output_dir,
+            update_history=args.update_history,
+            update_readme=args.update_readme,
+            history_ref=args.history_ref,
+        )
     except GenerationError as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
 
     populated = ", ".join(f"{bucket}={count}" for bucket, count in counts.items() if count)
-    print(f"Wrote {total} software rows to {args.output_dir}. Populated buckets: {populated}")
+    message = f"Wrote {total} software rows to {args.output_dir}."
+    if args.update_history:
+        message += f" Updated {updates} status history rows."
+    if args.update_readme:
+        message += " Updated README latest software status table."
+    print(f"{message} Populated buckets: {populated}")
     return 0
 
 
