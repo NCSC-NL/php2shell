@@ -22,8 +22,11 @@ UPDATES_TITLE = "Software product status update history"
 CHANGELOG_FILENAME = "changelog_software_list.md"
 README_UPDATES_HEADING = "## Latest software status updates"
 README_LEGACY_TIMESTAMP_PREFIX = "Readme last significant change:"
-README_OPERATIONAL_TIMESTAMP_PREFIX = "Operational information last significant change:"
+README_OPERATIONAL_LEGACY_TIMESTAMP_PREFIX = "Operational information last significant change:"
+README_OPERATIONAL_TIMESTAMP_PREFIX = "Operational information:"
 README_SOFTWARE_TIMESTAMP_PREFIX = "Software list last status update:"
+README_TLP_TEXT = "TLP:CLEAR"
+README_TLP_HEADING = "## TLP:CLEAR"
 HISTORY_DATE_TIME_FORMAT = "YYYY-MM-DD HH:MM:SS +/-HHMM"
 BUCKETS = ["0-9", *string.ascii_uppercase]
 DEFAULT_SPDX_DIR = Path("software") / "spdx"
@@ -592,6 +595,23 @@ def ensure_readme_hard_break(text: str, prefix: str) -> str:
     return text[: match.start()] + line + "<br>" + text[match.end() :]
 
 
+def normalize_readme_header(text: str) -> str:
+    for legacy_prefix in (
+        README_LEGACY_TIMESTAMP_PREFIX,
+        README_OPERATIONAL_LEGACY_TIMESTAMP_PREFIX,
+    ):
+        if legacy_prefix in text:
+            text = text.replace(legacy_prefix, README_OPERATIONAL_TIMESTAMP_PREFIX, 1)
+            break
+    return re.sub(
+        rf"^{re.escape(README_TLP_TEXT)}$",
+        README_TLP_HEADING,
+        text,
+        count=1,
+        flags=re.MULTILINE,
+    )
+
+
 def write_readme_updates(
     repo_root: Path,
     cves: list[str],
@@ -616,14 +636,9 @@ def write_readme_updates(
             raise GenerationError(f"README is missing expected heading: {marker}")
         updated = text.replace(marker, section + "\n\n" + marker, 1)
 
+    updated = normalize_readme_header(updated)
     if updated != text or README_SOFTWARE_TIMESTAMP_PREFIX not in updated:
         timestamp = format_readme_timestamp(software_updated_at)
-        if README_LEGACY_TIMESTAMP_PREFIX in updated:
-            updated = updated.replace(
-                README_LEGACY_TIMESTAMP_PREFIX,
-                README_OPERATIONAL_TIMESTAMP_PREFIX,
-                1,
-            )
         software_timestamp = f"{README_SOFTWARE_TIMESTAMP_PREFIX} {timestamp}<br>"
         timestamp_pattern = re.compile(
             rf"^{re.escape(README_SOFTWARE_TIMESTAMP_PREFIX)}.*$",
