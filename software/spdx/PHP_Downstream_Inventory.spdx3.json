@@ -4398,7 +4398,11 @@
         "urn:php2shell:inventory:relationship:PHP-0683",
         "urn:php2shell:inventory:relationship:PHP-0685",
         "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:fortinet-fg-ir-26-186-20261021",
-        "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:fortinet-fg-ir-26-186-20261021"
+        "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:fortinet-fg-ir-26-186-20261021",
+        "urn:php2shell:inventory:package:PHP-0726",
+        "urn:php2shell:inventory:relationship:PHP-0726",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:unopim-docker-images-20261022",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:unopim-docker-images-20261022"
       ]
     },
     {
@@ -41021,6 +41025,81 @@
       "security_statusNotes": "Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published",
       "summary": "CVE-2026-109619 assessment: Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published",
       "comment": "Reviewed Fortinet PSIRT FG-IR-26-186, published 2026-10-21 and updated 2026-10-22. These products remain under investigation; no affected or fixed builds are specified. The advisory links OT IPS signatures 10009977 and 10009978, released in version 37.316, while its Virtual Patch field remains No. Signature availability does not establish a software fix. FortiADC retains its existing separate VEX assessments."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0726",
+      "creationInfo": "_:creationinfo",
+      "name": "UnoPim official Docker images (webkul/unopim, webkul/unopim-queue)",
+      "software_packageVersion": "Images 3.1.3 / 3.1 / latest rebuilt 2026-10-22 on PHP 8.4.27",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0726"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:unopim:5e2db77c3503",
+      "summary": "Vendor-confirmed fix available in the named official Docker image scope; see the CVE assessment for self-hosted and deployment caveats.",
+      "description": "Official UnoPim Docker image pair for Apache/mod_php web and PHP CLI queue runtimes",
+      "comment": "Inventory record: PHP-0726\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed fixed images\nDeployment status: Not measured\nPHP surface: Official webkul/unopim Apache/mod_php image and webkul/unopim-queue PHP CLI image\nPHP version scope: UnoPim v3.1.3 release note, updated 2026-10-22, confirms tags 3.1.3, 3.1 and latest for both official images were rebuilt on PHP 8.4.27; it publishes image digests sha256:733a1ac27259acd59a9542eefbde1417edfc1920458b52dcc7fa1fd09f03ca50 and sha256:a3a66b4bd8ef015683bcfbfea7cdddf66536d7b1148e522af0c5a75f6d61144f.\nExtensions: Image-specific extension inventory unresolved; bundled php.ini disables session.upload_progress as extra hardening\nLimitations: This row is limited to the named official Docker images and published digests. Mutable tags, cached layers and existing running containers do not prove rollout. Self-hosted non-Docker installs use the operator's PHP runtime and are not fixed by the image publication.\nPatch owner: UnoPim maintainers for official image rebuilds; operator for pull/redeploy; self-hosted operator for PHP runtime updates\nDownstream surface: UnoPim web requests, queue workers, product catalogues, digital assets, imports/exports and configured credentials\nRelease pin: UnoPim v3.1.3 release note security update published 2026-10-22; webkul/unopim digest sha256:733a1ac27259acd59a9542eefbde1417edfc1920458b52dcc7fa1fd09f03ca50; webkul/unopim-queue digest sha256:a3a66b4bd8ef015683bcfbfea7cdddf66536d7b1148e522af0c5a75f6d61144f\nSource accessed: 2026-10-23\nAliases: webkul/unopim, webkul/unopim-queue\nConditional downstream consequence: If a matching PHP flaw is reachable through UnoPim web requests, imports, uploads or queue work, it could cause denial of service, disclosure, data alteration or worker-level code execution within the container's permissions. Host compromise, tenant escape and lateral movement require separate evidence.\nVulnerability status: Fixed official UnoPim Docker images are published on PHP 8.4.27; self-hosted deployments remain dependent on their own PHP runtime update.\nCVE-2026-109618: Fixed in the named official Docker images rebuilt on PHP 8.4.27\nCVE-2026-109619: Fixed in the named official Docker images rebuilt on PHP 8.4.27\nCVE assessment limit: Published replacement images only; cached images and running deployments require pull/redeploy and verification. Self-hosted non-Docker installs must update PHP separately.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/unopim/unopim/releases/tag/v3.1.3"
+          ],
+          "comment": "Official UnoPim v3.1.3 release note security section confirming fixed Docker image rebuilds"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/unopim/unopim/pull/787"
+          ],
+          "comment": "Official UnoPim Docker hardening pull request disabling session.upload_progress in bundled php.ini"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0726",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0726",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "Inventory relationship for PHP-0726: bundles (distributes_php)",
+      "comment": "Mapped from inventory relationship 'bundles' and direction 'distributes_php' to SPDX relationshipType 'contains'."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:unopim-docker-images-20261022",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0726"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "UnoPim's v3.1.3 release note confirms the official webkul/unopim and webkul/unopim-queue images were rebuilt on PHP 8.4.27 for both CVEs. This confirms the named Docker image scope only; self-hosted installs must update their own PHP runtime and cached/running containers require pull and redeploy.",
+      "summary": "CVE-2026-109618 assessment: Fixed in the named official UnoPim Docker images rebuilt on PHP 8.4.27",
+      "comment": "Added from the official UnoPim v3.1.3 release note reviewed 2026-10-23: https://github.com/unopim/unopim/releases/tag/v3.1.3. The release note explicitly names both CVEs, publishes fixed image tags and digests, and states self-hosted installs must update PHP separately.\nAction statement: Pull and redeploy the named official images and verify PHP 8.4.27; self-hosted non-Docker installs must update PHP to 8.4.27, 8.3.36 or 8.2.35 or later and restart PHP-FPM or Apache."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:unopim-docker-images-20261022",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0726"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "UnoPim's v3.1.3 release note confirms the official webkul/unopim and webkul/unopim-queue images were rebuilt on PHP 8.4.27 for both CVEs. This confirms the named Docker image scope only; self-hosted installs must update their own PHP runtime and cached/running containers require pull and redeploy.",
+      "summary": "CVE-2026-109619 assessment: Fixed in the named official UnoPim Docker images rebuilt on PHP 8.4.27",
+      "comment": "Added from the official UnoPim v3.1.3 release note reviewed 2026-10-23: https://github.com/unopim/unopim/releases/tag/v3.1.3. The release note explicitly names both CVEs, publishes fixed image tags and digests, and states self-hosted installs must update PHP separately.\nAction statement: Pull and redeploy the named official images and verify PHP 8.4.27; self-hosted non-Docker installs must update PHP to 8.4.27, 8.3.36 or 8.2.35 or later and restart PHP-FPM or Apache."
     }
   ]
 }

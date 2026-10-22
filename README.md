@@ -1,7 +1,7 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
 Operational information: 21 October 2026 17:25 CEST<br>
-Software list last status update: 22 October 2026 17:28 CEST<br>
+Software list last status update: 23 October 2026 00:43 CEST<br>
 ## TLP:CLEAR
 
 This repository contains operational information regarding the critical PHP vulnerabilities tracked by CERT-EU as CVE-2026-109618 and CVE-2026-109619.
@@ -44,11 +44,11 @@ Please note that this repository is not complete and is currently being expanded
 
 | Date and time | Supplier | Product | Version (see Status) | Status CVE-2026-109618 / CVE-2026-109619 | Links |
 |:------------------------|:---------|:--------|:--------------------:|:----------------------:|------:|
+|2026-10-23 00:43:33 +0200|UnoPim|UnoPim official Docker images (webkul/unopim, webkul/unopim-queue)|Images 3.1.3 / 3.1 / latest rebuilt 2026-10-22 on PHP 8.4.27|Fix|[source 1](<https://github.com/unopim/unopim/releases/tag/v3.1.3>)<br>[source 2](<https://github.com/unopim/unopim/pull/787>)|
 |2026-10-22 17:28:33 +0200|Fortinet|FortiADC Manager||Investigation|[source](<https://fortiguard.fortinet.com/psirt/FG-IR-26-186>)|
 |2026-10-22 17:28:33 +0200|Fortinet|FortiClient Cloud Services||Investigation|[source](<https://fortiguard.fortinet.com/psirt/FG-IR-26-186>)|
 |2026-10-22 17:28:33 +0200|Fortinet|FortiDDoS||Investigation|[source](<https://fortiguard.fortinet.com/psirt/FG-IR-26-186>)|
 |2026-10-22 17:28:33 +0200|Fortinet|FortiDDoS-F||Investigation|[source](<https://fortiguard.fortinet.com/psirt/FG-IR-26-186>)|
-|2026-10-22 17:28:33 +0200|Fortinet|FortiEndpoint||Investigation|[source](<https://fortiguard.fortinet.com/psirt/FG-IR-26-186>)|
 
 See the [full software status update history](software/changelog_software_list.md).
 
