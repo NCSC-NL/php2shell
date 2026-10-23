@@ -301,8 +301,6 @@
         "urn:php2shell:inventory:package:PHP-0346",
         "urn:php2shell:inventory:package:PHP-0347",
         "urn:php2shell:inventory:package:PHP-0349",
-        "urn:php2shell:inventory:package:PHP-0359",
-        "urn:php2shell:inventory:package:PHP-0360",
         "urn:php2shell:inventory:package:PHP-0368",
         "urn:php2shell:inventory:package:PHP-0369",
         "urn:php2shell:inventory:package:PHP-0370",
@@ -659,8 +657,6 @@
         "urn:php2shell:inventory:package:PHP-0346",
         "urn:php2shell:inventory:package:PHP-0347",
         "urn:php2shell:inventory:package:PHP-0349",
-        "urn:php2shell:inventory:package:PHP-0359",
-        "urn:php2shell:inventory:package:PHP-0360",
         "urn:php2shell:inventory:package:PHP-0368",
         "urn:php2shell:inventory:package:PHP-0369",
         "urn:php2shell:inventory:package:PHP-0370",
@@ -1278,30 +1274,32 @@
       ]
     },
     {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+      "type": "security_VexAffectedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:vendor-php2shell-candidates-20261021",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0673"
       ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Vendor advisory names product or service in php2shell response; exact affected/fixed product scope still under investigation",
-      "summary": "CVE-2026-109618 assessment: Vendor advisory names product or service in php2shell response; exact affected/fixed product scope still under investigation",
-      "comment": "Added from vendor php2shell notices published 2026-10-21 and reviewed through 2026-10-22. The notices name these products or hosted services in the response, but the exact affected/fixed PHP artifact scope and deployment state remain unresolved."
+      "relationshipType": "affects",
+      "security_statusNotes": "KACE SMA: 15.0 CU4 and 15.1 CU1 lack fixes; CU5/CU2 are under QA validation, not confirmed released.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable in the stated scope",
+      "comment": "Official public sources reviewed 2026-10-23: https://support.quest.com/kace-systems-management-appliance/kb/4385046/quest-kace-response-to-cve-2026-109618-and-cve-2026-109619-php2shell",
+      "security_actionStatement": "Restrict exposure and monitor the official advisory until a released product fix is available."
     },
     {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+      "type": "security_VexAffectedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:vendor-php2shell-candidates-20261021",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0673"
       ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Vendor advisory names product or service in php2shell response; exact affected/fixed product scope still under investigation",
-      "summary": "CVE-2026-109619 assessment: Vendor advisory names product or service in php2shell response; exact affected/fixed product scope still under investigation",
-      "comment": "Added from vendor php2shell notices published 2026-10-21 and reviewed through 2026-10-22. The notices name these products or hosted services in the response, but the exact affected/fixed PHP artifact scope and deployment state remain unresolved."
+      "relationshipType": "affects",
+      "security_statusNotes": "KACE SMA: 15.0 CU4 and 15.1 CU1 lack fixes; CU5/CU2 are under QA validation, not confirmed released.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable in the stated scope",
+      "comment": "Official public sources reviewed 2026-10-23: https://support.quest.com/kace-systems-management-appliance/kb/4385046/quest-kace-response-to-cve-2026-109618-and-cve-2026-109619-php2shell",
+      "security_actionStatement": "Restrict exposure and monitor the official advisory until a released product fix is available."
     },
     {
       "type": "security_VexUnderInvestigationVulnAssessmentRelationship",

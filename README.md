@@ -1,7 +1,7 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
 Operational information: 21 October 2026 17:25 CEST<br>
-Software list last status update: 23 October 2026 14:46 CEST<br>
+Software list last status update: 23 October 2026 15:53 CEST<br>
 ## TLP:CLEAR
 
 This repository contains operational information regarding the critical PHP vulnerabilities tracked by CERT-EU as CVE-2026-109618 and CVE-2026-109619.
@@ -44,11 +44,11 @@ The repository is being updated as the situation develops. Check back for update
 
 | Date and time | Supplier | Product | Version (see Status) | Status CVE-2026-109618 / CVE-2026-109619 | Links |
 |:------------------------|:---------|:--------|:--------------------:|:----------------------:|------:|
-|2026-10-23 14:46:29 +0200|Broadcom|Symantec Endpoint Protection Manager (SEPM)|14.3.27716.10000 / 14.4.494.0000|Fix|[source 1](<https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404>)<br>[source 2](<https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Symantec-Endpoint-Protection-Security-Update-for-PHP2Shell/39421>)<br>[source 3](<https://github.com/NCSC-NL/php2shell/issues/30>)|
-|2026-10-23 14:46:29 +0200|Hewlett Packard Enterprise|HPE Networking ClearPass Policy Manager|6.14.0 and below / 6.11.15 and below; 6.14.1 / 6.11.16 partially mitigated, still affected|Vulnerable|[source](<https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw05171en_us&docLocale=en_US>)|
-|2026-10-23 14:46:29 +0200|NetApp|ONTAP 9|ONTAP 9; affected maintenance releases and fixed releases not specified|Vulnerable/Not vuln|[source](<https://security.netapp.com/advisory/NTAP-20261021-0021>)|
-|2026-10-23 13:48:52 +0200|Cisco|Cisco Expressway Select Series|Expressway Select Series; affected release range not specified|Vulnerable|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
-|2026-10-23 13:48:52 +0200|Cisco|Cisco Identity Services Engine (ISE) Portal Builder||Investigation|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
+|2026-10-23 15:53:37 +0200|Alpine Linux package maintainers|Alpine Linux v3.22 php84 package family|8.4.27-r0 (Alpine v3.22/community, x86_64)|Fix|[source 1](<https://pkgs.alpinelinux.org/package/v3.22/community/x86_64/php84>)<br>[source 2](<https://www.php.net/archive/2026.php#2026-10-21-5>)|
+|2026-10-23 15:53:37 +0200|Broadcom|Carbon Black App Control Server|8.12.2; 8.13.2|Fix|[source 1](<https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404>)<br>[source 2](<https://knowledge.broadcom.com/external/article/459982/app-control-php2shell-impact-cve2026109.html>)|
+|2026-10-23 15:53:37 +0200|Fedora Project PHP maintainers|Fedora PHP distribution package family|Fedora 43: 8.4.27-2.fc43; Fedora 44: 8.5.12-1.fc44; Fedora 45: 8.5.12-1.fc45|Fix|[source 1](<https://packages.fedoraproject.org/pkgs/php/php/>)<br>[source 2](<https://www.php.net/archive/2026.php#2026-10-21-5>)|
+|2026-10-23 15:53:37 +0200|Quest Software|KACE Systems Management Appliance||Vulnerable|[source 1](<https://support.quest.com/kace-systems-management-appliance/kb/4385046/4385046>)<br>[source 2](<https://support.quest.com/kace-systems-management-appliance/rss>)<br>[source 3](<https://support.quest.com/kace-systems-management-appliance/kb/4385046/quest-kace-response-to-cve-2026-109618-and-cve-2026-109619-php2shell>)|
+|2026-10-23 14:50:49 +0200|Broadcom|Symantec Endpoint Protection Manager (SEPM)|14.3.27716.10000 / 14.4.494.0000|Fix|[source 1](<https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404>)<br>[source 2](<https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Symantec-Endpoint-Protection-Security-Update-for-PHP2Shell/39421>)<br>[source 3](<https://github.com/NCSC-NL/php2shell/issues/30>)|
 
 See the [full software status update history](software/changelog_software_list.md).
 

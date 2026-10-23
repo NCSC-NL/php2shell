@@ -229,9 +229,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:alpine-linux-package-maintainers:0ceb2d77697f",
-      "summary": "Alpine lists the php84 runtime and php84-common dependency, alongside musl and other upstream native libraries. The page separately lists subpackages.",
+      "summary": "Install the fixed php84 build for Alpine v3.22/community x86_64 and restart web-serving workers.",
       "description": "PHP84 language runtime; FPM and other subpackages are separate catalogue entries",
-      "comment": "Inventory record: PHP-0359\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP84 language runtime; FPM and other subpackages are separate catalogue entries\nPHP version scope: community x86_64 php84 8.4.16-r0; page build time 2025-12-21; advertised packaging commit 1a0af28d8f5e9377f19142ee6d846d86dcffb01e\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: This is the inspected v3.22/x86_64 catalogue entry, not a latest-Alpine or security-support claim. Reverse dependencies php84-dev/pear/phar are not runtime requirements of php84. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Alpine package/security maintainers and operator applying branch-appropriate updates\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: php84 8.4.16-r0; advertised packaging commit 1a0af28d8f5e9377f19142ee6d846d86dcffb01e; artifact unverified\nSource accessed: 2026-10-17\nAliases: apk:v3.22/community/php84\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0359\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP84 language runtime; FPM and other subpackages are separate catalogue entries\nPHP version scope: 8.4.27-r0 (Alpine v3.22/community, x86_64)\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: This is the inspected v3.22/x86_64 catalogue entry, not a latest-Alpine or security-support claim. Reverse dependencies php84-dev/pear/phar are not runtime requirements of php84. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Alpine package/security maintainers and operator applying branch-appropriate updates\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: 8.4.27-r0 (Alpine v3.22/community, x86_64)\nSource accessed: 2026-10-23\nAliases: apk:v3.22/community/php84\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Fix. Alpine v3.22/community x86_64 php84 8.4.27-r0. The official package version matches the upstream fixed PHP release; other branches and architectures are outside this observation.\nCVE-2026-109618: Fix. Alpine v3.22/community x86_64 php84 8.4.27-r0. The official package version matches the upstream fixed PHP release; other branches and architectures are outside this observation.\nCVE-2026-109619: Fix. Alpine v3.22/community x86_64 php84 8.4.27-r0. The official package version matches the upstream fixed PHP release; other branches and architectures are outside this observation.\nCVE assessment limit: Public vendor/upstream assessment for the stated scope only; no deployed installation was tested.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://pkgs.alpinelinux.org/package/v3.22/community/x86_64/php84 | https://www.php.net/archive/2026.php#2026-10-21-5",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -240,8 +240,17 @@
             "https://pkgs.alpinelinux.org/package/v3.22/community/x86_64/php84"
           ],
           "comment": "Official PHP distribution, package or build declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-21-5"
+          ],
+          "comment": "Official public source reviewed 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "8.4.27-r0 (Alpine v3.22/community, x86_64)"
     },
     {
       "type": "software_Package",
@@ -257,9 +266,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:fedora-project-php-maintainers:006582aa5697",
-      "summary": "The official package catalogue identifies PHP and gives distinct stable, testing and Rawhide release entries.",
+      "summary": "Install the fixed PHP build for the matching Fedora release and restart web-serving workers.",
       "description": "Packaged server-side PHP runtime; exact SAPI subpackage/configuration must be selected",
-      "comment": "Inventory record: PHP-0360\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Packaged server-side PHP runtime; exact SAPI subpackage/configuration must be selected\nPHP version scope: Page lists Fedora 45 8.5.11-2.fc45; Fedora 44 8.5.11-1.fc44; Fedora 43 8.4.26-1.fc43; Rawhide 8.5.12~RC1-1.fc46\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: Rawhide RC is not a stable upstream release. Catalogue labels do not establish OS-release availability on any host or which SAPI/modules were installed. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Fedora PHP package maintainers, Fedora update process and deploying operator\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Dated package catalogue observations; no RPM bytes or signatures verified\nSource accessed: 2026-10-17\nAliases: rpm:fedora/php\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0360\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Packaged server-side PHP runtime; exact SAPI subpackage/configuration must be selected\nPHP version scope: Fedora 43: 8.4.27-2.fc43; Fedora 44: 8.5.12-1.fc44; Fedora 45: 8.5.12-1.fc45\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: Rawhide RC is not a stable upstream release. Catalogue labels do not establish OS-release availability on any host or which SAPI/modules were installed. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Fedora PHP package maintainers, Fedora update process and deploying operator\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Fedora 43: 8.4.27-2.fc43; Fedora 44: 8.5.12-1.fc44; Fedora 45: 8.5.12-1.fc45\nSource accessed: 2026-10-23\nAliases: rpm:fedora/php\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Fix. Official stable package listing: Fedora 43 php 8.4.27-2.fc43; Fedora 44 php 8.5.12-1.fc44; Fedora 45 php 8.5.12-1.fc45. These match upstream fixed releases.\nCVE-2026-109618: Fix. Official stable package listing: Fedora 43 php 8.4.27-2.fc43; Fedora 44 php 8.5.12-1.fc44; Fedora 45 php 8.5.12-1.fc45. These match upstream fixed releases.\nCVE-2026-109619: Fix. Official stable package listing: Fedora 43 php 8.4.27-2.fc43; Fedora 44 php 8.5.12-1.fc44; Fedora 45 php 8.5.12-1.fc45. These match upstream fixed releases.\nCVE assessment limit: Public vendor/upstream assessment for the stated scope only; no deployed installation was tested.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://packages.fedoraproject.org/pkgs/php/php/ | https://www.php.net/archive/2026.php#2026-10-21-5",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -268,8 +277,17 @@
             "https://packages.fedoraproject.org/pkgs/php/php/"
           ],
           "comment": "Official PHP distribution, package or build declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-21-5"
+          ],
+          "comment": "Official public source reviewed 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Fedora 43: 8.4.27-2.fc43; Fedora 44: 8.5.12-1.fc44; Fedora 45: 8.5.12-1.fc45"
     },
     {
       "type": "software_Package",
@@ -3001,6 +3019,62 @@
       "security_statusNotes": "CloudLinux confirms fixed ea-php52 through ea-php85 packages in stable for EL7/8/9/10. Use the exact vendor package revisions, not the upstream PHP number alone: for example ea-php84 8.4.26-2.elX.cloudlinux.1 contains both fixes. CL6 and other platforms are not included in this fixed scope.",
       "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
       "comment": "Official sources reviewed 2026-10-23: https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:official-review-20261023-PHP-0359",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0359"
+      ],
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Alpine v3.22/community x86_64 php84 8.4.27-r0. The official package version matches the upstream fixed PHP release; other branches and architectures are outside this observation.",
+      "summary": "CVE-2026-109618 assessment: Fix in the stated scope",
+      "comment": "Official public sources reviewed 2026-10-23: https://pkgs.alpinelinux.org/package/v3.22/community/x86_64/php84 | https://www.php.net/archive/2026.php#2026-10-21-5",
+      "security_actionStatement": "Install the listed fixed product build or a later vendor-supported fixed build; restart or redeploy the runtime."
+    },
+    {
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:official-review-20261023-PHP-0359",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0359"
+      ],
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Alpine v3.22/community x86_64 php84 8.4.27-r0. The official package version matches the upstream fixed PHP release; other branches and architectures are outside this observation.",
+      "summary": "CVE-2026-109619 assessment: Fix in the stated scope",
+      "comment": "Official public sources reviewed 2026-10-23: https://pkgs.alpinelinux.org/package/v3.22/community/x86_64/php84 | https://www.php.net/archive/2026.php#2026-10-21-5",
+      "security_actionStatement": "Install the listed fixed product build or a later vendor-supported fixed build; restart or redeploy the runtime."
+    },
+    {
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:official-review-20261023-PHP-0360",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0360"
+      ],
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Official stable package listing: Fedora 43 php 8.4.27-2.fc43; Fedora 44 php 8.5.12-1.fc44; Fedora 45 php 8.5.12-1.fc45. These match upstream fixed releases.",
+      "summary": "CVE-2026-109618 assessment: Fix in the stated scope",
+      "comment": "Official public sources reviewed 2026-10-23: https://packages.fedoraproject.org/pkgs/php/php/ | https://www.php.net/archive/2026.php#2026-10-21-5",
+      "security_actionStatement": "Install the listed fixed product build or a later vendor-supported fixed build; restart or redeploy the runtime."
+    },
+    {
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:official-review-20261023-PHP-0360",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0360"
+      ],
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Official stable package listing: Fedora 43 php 8.4.27-2.fc43; Fedora 44 php 8.5.12-1.fc44; Fedora 45 php 8.5.12-1.fc45. These match upstream fixed releases.",
+      "summary": "CVE-2026-109619 assessment: Fix in the stated scope",
+      "comment": "Official public sources reviewed 2026-10-23: https://packages.fedoraproject.org/pkgs/php/php/ | https://www.php.net/archive/2026.php#2026-10-21-5",
+      "security_actionStatement": "Install the listed fixed product build or a later vendor-supported fixed build; restart or redeploy the runtime."
     }
   ]
 }

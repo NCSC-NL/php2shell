@@ -1,0 +1,1000 @@
+{
+  "review_date": "2026-10-23",
+  "purpose": "Public-source discovery log; search candidates are not accepted evidence or vulnerability determinations.",
+  "batches": [
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:EfficientIP OR site:Ev OR site:SMBClient) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:SSH2 OR site:XHProf OR site:access.redhat.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:accesstomemory.org OR site:adminer.org OR site:afterlogic.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:aimeos.org OR site:apachefriends.org OR site:archive.synology.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [],
+      "empty_results": true
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:assets.nagios.com OR site:astppbilling.org OR site:backdropcms.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:belnet.be OR site:bref.sh OR site:buddypress.trac.wordpress.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:calif.io OR site:cdn.f5.com OR site:circl.lu) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:circleci.com OR site:citrix.com OR site:classicpress.net) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://support.citrix.com/external/article/CTX697263/citrix-security-advisory-for-cve20261096.html",
+        "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697263&articleURL=Citrix_Security_Advisory_for_CVE_2026_109618_and_CVE_2026_109619",
+        "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697263&articleTitle=Citrix_Security_Advisory_for_CVE_2026_109618_and_CVE_2026_109619",
+        "https://bref.sh/news/06-php-security-release-october-2026",
+        "https://support.citrix.com/productdocs/",
+        "https://community.citrix.com/profile/1368-netscaler-cyber-threat-intelligence/",
+        "https://support.citrix.com/securitybulletins/?sortBy=CREATIONDATE",
+        "https://community.citrix.com/"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:cloud.google.com OR site:cloudlinux.statuspage.io OR site:cloudlinux.zendesk.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:community.citrix.com OR site:craftcms.com OR site:cs.symfony.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:devdocs.bagisto.com OR site:devdocs.prestashop-project.org OR site:developer.shopware.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:developer.wordpress.org OR site:developer.x-cart.com OR site:developers.cloudflare.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://cloudlinux.statuspage.io/",
+        "https://craftcms.com/blog/craft-cloud-and-php2shell",
+        "https://cloudlinux.statuspage.io/?subscription_confirmed=true"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:doc.ibexa.co OR site:doc.oroinc.com OR site:doc.owncloud.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:doc.thelia.net OR site:doc.tiki.org OR site:doc.wallabag.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:doc.yetiforce.com OR site:docs.acquia.com OR site:docs.aws.amazon.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:docs.backdropcms.org OR site:docs.blackfire.io OR site:docs.blesta.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [],
+      "empty_results": true
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:docs.boltcms.io OR site:docs.centreon.com OR site:docs.chamilo.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:docs.civicrm.org OR site:docs.classicpress.net OR site:docs.clientexec.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:docs.cloud.google.com OR site:docs.cloudlinux.com OR site:docs.collectiveaccess.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:docs.contao.org OR site:docs.couchbase.com OR site:docs.cs-cart.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [],
+      "empty_results": true
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:docs.espocrm.com OR site:docs.expressionengine.com OR site:docs.faveohelpdesk.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:docs.filegator.io OR site:docs.filerun.com OR site:docs.filesender.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:docs.flarum.org OR site:docs.fossbilling.org OR site:docs.froxlor.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:docs.humhub.org OR site:docs.kanboard.org OR site:docs.laminas.dev) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [],
+      "empty_results": true
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:docs.lando.dev OR site:docs.librenms.org OR site:docs.mautic.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:docs.modx.com OR site:docs.moodle.org OR site:docs.mybb.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:docs.neos.io OR site:docs.netlify.com OR site:docs.nextcloud.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:docs.observium.org OR site:docs.octobercms.com OR site:docs.openeclass.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [],
+      "empty_results": true
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:docs.openmage.org OR site:docs.osticket.com OR site:docs.ovhcloud.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:docs.oxid-esales.com OR site:docs.paloaltonetworks.com OR site:docs.peachpie.io) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:docs.phalcon.io OR site:docs.phpmyadmin.net OR site:docs.phpunit.de) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:docs.pimcore.com OR site:docs.plesk.com OR site:docs.projectsend.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [],
+      "empty_results": true
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:docs.pydio.com OR site:docs.raspap.com OR site:docs.redhat.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:docs.roadrunner.dev OR site:docs.s9y.org OR site:docs.shopware.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:docs.silverstripe.org OR site:docs.spryker.com OR site:docs.suitecrm.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:docs.sulu.io OR site:docs.sylius.com OR site:docs.tine-groupware.de) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://docs.spryker.com/docs/about/all/releases/image-releases/spryker-php/release-notes-spryker-php-20261021.html",
+        "https://docs.spryker.com/docs/about/all/releases/image-releases/spryker-php/release-notes-spryker-php-20261021"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:docs.typo3.org OR site:docs.unraid.net OR site:docs.vapor.build) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:docs.varbase.vardot.com OR site:docs.whmcs.com OR site:docs.xenforo.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:docs.zen-cart.com OR site:doctrine-project.org OR site:documentation.concretecms.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:download.moodle.org OR site:drupal.org OR site:easyphp.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://www.drupal.org/planet?_pxhc=1653073200118",
+        "https://www.drupal.org/planet?_pxhc=1657022400125&page=1",
+        "https://www.drupal.org/association/blog/after-the-php-security-release-auditing-your-drupal-sites",
+        "https://www.drupal.org/planet?_pxhc=1686009600097",
+        "https://www.drupal.org/?q=aggregator",
+        "https://www.drupal.org/planet?_pxhc=1653440400116",
+        "https://www.drupal.org/planet?page=1&sa=",
+        "https://www.drupal.org/planet?sa=X&ved=0CB4Q9QEwA2oVChMIttCe3_r2xgIVC5qICh13ow22",
+        "https://www.drupal.org/planet?_pxhc=1673200800133"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:elastic.co OR site:endor.dev OR site:engineering.fb.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:experienceleague.adobe.com OR site:filerun.com OR site:files.trendmicro.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:filesender.org OR site:fly.io OR site:fortiguard.fortinet.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:forums.vitalpbx.org OR site:freepbx.org OR site:freshrss.github.io) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://community.freepbx.org/t/time-to-say-good-bye-to-v16-and-older-major-php-zero-day-flaw/110404",
+        "https://community.freepbx.org/t/php-cve-patching/110401/2",
+        "https://community.freepbx.org/t/php-cve-patching/110401/4",
+        "https://filerun.com/index.php/php-security-alert-21oct26"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:fusiondirectory-user-manual.readthedocs.io OR site:get.typo3.org OR site:getcomposer.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:getkirby.com OR site:github.com/Automattic OR site:github.com/Azure) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/Cacti OR site:github.com/CircleCI-Public OR site:github.com/CleverCloud) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/Combodo OR site:github.com/DEVSENSE OR site:github.com/DataDog) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://github.com/NCSC-NL/php2shell",
+        "https://github.com/devploit/php2shell/security",
+        "https://github.com/devploit/php2shell/blob/main/docs/php2shell-analysis.md",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/README.md",
+        "https://github.com/NCSC-NL/php2shell/blob/main/detection_mitigation/cpanel/php2shell-mitigate.sh",
+        "https://github.com/yetDevs/php2shell-triage/blob/main/README.md",
+        "https://github.com/wakemeiflose/php2shell",
+        "https://github.com/scriptsnet/php2shell-security-toolkit",
+        "https://github.com/murrez/php2shell/blob/main/SECURITY.md",
+        "https://github.com/sdminev/php2shell-poc",
+        "https://github.com/1amrahul/php2shell-cve-2026-109618-cve-2026-109619"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:github.com/Dolibarr OR site:github.com/EC-CUBE OR site:github.com/EGroupware) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/FreePBX OR site:github.com/FrontAccountingERP OR site:github.com/ILIAS-eLearning) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/InvoicePlane OR site:github.com/Kopano-dev OR site:github.com/Leantime) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/MISP OR site:github.com/NoiseByNorthwest OR site:github.com/ONLYOFFICE) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://github.com/NCSC-NL/php2shell",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/README.md",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/software_list_e.md",
+        "https://github.com/Masriyan/php2shell/blob/main/docs/RESEARCH.md",
+        "https://github.com/NCSC-NL/php2shell/blob/main/detection_mitigation/cpanel/php2shell-mitigate.sh",
+        "https://github.com/scallydima/php2shell-poc",
+        "https://github.com/VKKKV/php2shell-test",
+        "https://github.com/yetDevs/php2shell-triage/blob/main/README.md",
+        "https://github.com/sdminev/php2shell-poc",
+        "https://github.com/wakemeiflose/php2shell",
+        "https://github.com/scriptsnet/php2shell-security-toolkit"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:github.com/Open-Web-Analytics OR site:github.com/OpenConext OR site:github.com/Part-DB) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/PrivateBin OR site:github.com/Qloapps OR site:github.com/RainLoop) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/SURFnet OR site:github.com/SURFscz OR site:github.com/SimpleMachines) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/SolidInvoice OR site:github.com/WordPress OR site:github.com/YOURLS) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://github.com/NCSC-NL/php2shell",
+        "https://github.com/devploit/php2shell/blob/main/docs/php2shell-analysis.md",
+        "https://github.com/scallydima/php2shell-poc",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/README.md",
+        "https://github.com/VKKKV/php2shell-test",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/software_list_r.md",
+        "https://github.com/scriptsnet/php2shell-security-toolkit",
+        "https://github.com/wakemeiflose/php2shell",
+        "https://github.com/kometsoft/php2shell-check",
+        "https://github.com/murrez/php2shell/blob/main/SECURITY.md"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:github.com/YetiForceCompany OR site:github.com/ZoneMinder OR site:github.com/adyen) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/aimeos OR site:github.com/akaunting OR site:github.com/akeneo) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/amphp OR site:github.com/api-platform OR site:github.com/auth0) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/aws OR site:github.com/awslabs OR site:github.com/behat) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://github.com/NCSC-NL/php2shell",
+        "https://github.com/Masriyan/php2shell/blob/main/docs/RESEARCH.md",
+        "https://github.com/devploit/php2shell/blob/main/docs/php2shell-analysis.md",
+        "https://github.com/scallydima/php2shell-poc",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/README.md",
+        "https://github.com/NCSC-NL/php2shell/blob/main/detection_mitigation/cpanel/php2shell-mitigate.sh",
+        "https://github.com/VKKKV/php2shell-test",
+        "https://github.com/wakemeiflose/php2shell",
+        "https://github.com/scriptsnet/php2shell-security-toolkit",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/software_list_p.md",
+        "https://github.com/1amrahul/php2shell-cve-2026-109618-cve-2026-109619"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:github.com/boxbilling OR site:github.com/brianium OR site:github.com/bunq) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/cachethq OR site:github.com/cakephp OR site:github.com/captainhook) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/centreon OR site:github.com/code-lts OR site:github.com/codeception) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/codeigniter4 OR site:github.com/composer OR site:github.com/couchbase) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://github.com/NCSC-NL/php2shell",
+        "https://github.com/Masriyan/php2shell/blob/main/docs/RESEARCH.md",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/README.md",
+        "https://github.com/devploit/php2shell/blob/main/docs/php2shell-analysis.md",
+        "https://github.com/NCSC-NL/php2shell/blob/main/detection_mitigation/cpanel/php2shell-mitigate.sh",
+        "https://github.com/VKKKV/php2shell-test",
+        "https://github.com/wakemeiflose/php2shell",
+        "https://github.com/scriptsnet/php2shell-security-toolkit",
+        "https://github.com/murrez/php2shell/blob/main/SECURITY.md",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/software_list_p.md"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:github.com/crater-invoice-inc OR site:github.com/deployer OR site:github.com/docker-library) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/doctrine OR site:github.com/dokuwiki OR site:github.com/drush) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/fengoffice OR site:github.com/formalms OR site:github.com/freescout-help-desk) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/froxlor OR site:github.com/fusionpbx OR site:github.com/glpi-project) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://github.com/NCSC-NL/php2shell",
+        "https://github.com/scallydima/php2shell-poc",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/README.md",
+        "https://github.com/NCSC-NL/php2shell/blob/main/detection_mitigation/cpanel/php2shell-mitigate.sh",
+        "https://github.com/devploit/php2shell/blob/main/docs/php2shell-analysis.md",
+        "https://github.com/wakemeiflose/php2shell",
+        "https://github.com/murrez/php2shell/blob/main/SECURITY.md",
+        "https://github.com/VKKKV/php2shell-test",
+        "https://github.com/scriptsnet/php2shell-security-toolkit",
+        "https://github.com/Nayrae/CVE-2026-109618"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:github.com/goalgorilla OR site:github.com/google OR site:github.com/grommunio) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/guzzlehttp OR site:github.com/hippyvm OR site:github.com/horde) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/humbug OR site:github.com/infection OR site:github.com/invoiceninja) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/jphp-group OR site:github.com/krakjoe OR site:github.com/krayin) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://github.com/NCSC-NL/php2shell",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/README.md",
+        "https://github.com/scallydima/php2shell-poc",
+        "https://github.com/devploit/php2shell/blob/main/docs/php2shell-analysis.md",
+        "https://github.com/VKKKV/php2shell-test",
+        "https://github.com/NCSC-NL/php2shell/blob/main/detection_mitigation/cpanel/php2shell-mitigate.sh",
+        "https://github.com/wakemeiflose/php2shell",
+        "https://github.com/yetDevs/php2shell-triage/blob/main/README.md",
+        "https://github.com/scriptsnet/php2shell-security-toolkit",
+        "https://github.com/murrez/php2shell/blob/main/SECURITY.md"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:github.com/laravel OR site:github.com/latte OR site:github.com/league) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/leenooks OR site:github.com/librenms OR site:github.com/lirantal) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/lunarphp OR site:github.com/mailwatch OR site:github.com/mantisbt) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/matomo OR site:github.com/matomo-org OR site:github.com/mautic) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://github.com/NCSC-NL/php2shell",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/README.md",
+        "https://github.com/devploit/php2shell/blob/main/docs/php2shell-analysis.md",
+        "https://github.com/VKKKV/php2shell-test",
+        "https://github.com/yetDevs/php2shell-triage/blob/main/README.md",
+        "https://github.com/wakemeiflose/php2shell",
+        "https://github.com/NCSC-NL/php2shell/blob/main/detection_mitigation/cpanel/php2shell-mitigate.sh",
+        "https://github.com/scallydima/php2shell-poc",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/software_list_p.md",
+        "https://github.com/murrez/php2shell/blob/main/SECURITY.md"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:github.com/mediawiki OR site:github.com/messagebird OR site:github.com/microsoft) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/mockery OR site:github.com/mollie OR site:github.com/mongodb) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/monicahq OR site:github.com/monolog OR site:github.com/nesbot) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/nette OR site:github.com/nextcloud OR site:github.com/nextcloud-releases) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://github.com/NCSC-NL/php2shell",
+        "https://github.com/NCSC-NL/php2shell/blob/main/detection_mitigation/cpanel/php2shell-mitigate.sh",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/README.md",
+        "https://github.com/scallydima/php2shell-poc",
+        "https://github.com/VKKKV/php2shell-test",
+        "https://github.com/murrez/php2shell/blob/main/SECURITY.md",
+        "https://github.com/wakemeiflose/php2shell",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/software_list_p.md",
+        "https://github.com/NethServer/dev/issues/8256",
+        "https://github.com/yetDevs/php2shell-triage/blob/main/README.md",
+        "https://github.com/deconstruction/EOLphp-php2shell-patches"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:github.com/nextcloud-snap OR site:github.com/nikic OR site:github.com/nilsteampassnet) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/opencart OR site:github.com/opendocman OR site:github.com/openeuropa) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/openmediavault OR site:github.com/opensearch-project OR site:github.com/orangehrm) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/oroinc OR site:github.com/paypal OR site:github.com/pdepend) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/README.md",
+        "https://github.com/NCSC-NL/php2shell",
+        "https://github.com/devploit/php2shell/blob/main/docs/php2shell-analysis.md",
+        "https://github.com/NCSC-NL/php2shell/blob/main/detection_mitigation/cpanel/php2shell-mitigate.sh",
+        "https://github.com/Masriyan/php2shell/blob/main/docs/RESEARCH.md",
+        "https://github.com/scallydima/php2shell-poc",
+        "https://github.com/78ResearchLab/PHP2Shell-Full-Chain-Exploit",
+        "https://github.com/wakemeiflose/php2shell",
+        "https://github.com/consocio/php2shell-audit",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/software_list_p.md",
+        "https://github.com/scriptsnet/php2shell-security-toolkit"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:github.com/pear OR site:github.com/pecl OR site:github.com/phar-io) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/phing OR site:github.com/php OR site:github.com/php-amqp) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/php-memcached-dev OR site:github.com/php-pm OR site:github.com/phpactor) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/phpbb OR site:github.com/phpbench OR site:github.com/phpcsstandards) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://github.com/NCSC-NL/php2shell",
+        "https://github.com/VKKKV/php2shell-test",
+        "https://github.com/devploit/php2shell/blob/main/docs/php2shell-analysis.md",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/README.md",
+        "https://github.com/Masriyan/php2shell/blob/main/docs/RESEARCH.md",
+        "https://github.com/NCSC-NL/php2shell/blob/main/detection_mitigation/cpanel/php2shell-mitigate.sh",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/software_list_p.md",
+        "https://github.com/wakemeiflose/php2shell",
+        "https://github.com/psylinux/php2shell-nuclei-template",
+        "https://github.com/scriptsnet/php2shell-security-toolkit",
+        "https://github.com/1amrahul/php2shell-cve-2026-109618-cve-2026-109619"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:github.com/phpdocumentor OR site:github.com/phpipam OR site:github.com/phpmailer) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/phpmd OR site:github.com/phppgadmin OR site:github.com/phpredis) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/phpro OR site:github.com/phpseclib OR site:github.com/phpspec) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/phpstan OR site:github.com/phpunit OR site:github.com/phpvirtualbox) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://github.com/NCSC-NL/php2shell",
+        "https://github.com/Masriyan/php2shell/blob/main/docs/RESEARCH.md",
+        "https://github.com/devploit/php2shell/blob/main/docs/php2shell-analysis.md",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/README.md",
+        "https://github.com/VKKKV/php2shell-test",
+        "https://github.com/scallydima/php2shell-poc",
+        "https://github.com/wakemeiflose/php2shell",
+        "https://github.com/NCSC-NL/php2shell/blob/main/detection_mitigation/cpanel/php2shell-mitigate.sh",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/software_list_p.md",
+        "https://github.com/scriptsnet/php2shell-security-toolkit",
+        "https://github.com/yetDevs/php2shell-triage/blob/main/README.md",
+        "https://github.com/78ResearchLab/PHP2Shell-Full-Chain-Exploit"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:github.com/pkp OR site:github.com/postfixadmin OR site:github.com/predis) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/projectsend OR site:github.com/psr OR site:github.com/psy) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/pterodactyl OR site:github.com/pydio OR site:github.com/ramsey) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/react OR site:github.com/rector OR site:github.com/roadrunner) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://github.com/NCSC-NL/php2shell",
+        "https://github.com/devploit/php2shell/blob/main/docs/php2shell-analysis.md",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/README.md",
+        "https://github.com/scallydima/php2shell-poc",
+        "https://github.com/VKKKV/php2shell-test",
+        "https://github.com/wakemeiflose/php2shell",
+        "https://github.com/scriptsnet/php2shell-security-toolkit",
+        "https://github.com/yetDevs/php2shell-triage/blob/main/README.md",
+        "https://github.com/NCSC-NL/php2shell/blob/main/detection_mitigation/cpanel/php2shell-mitigate.sh",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/software_list_p.md",
+        "https://github.com/TREXNEGRO/php2shell"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:github.com/roave OR site:github.com/roundcube OR site:github.com/rsyslog) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/seanmorris OR site:github.com/sendgrid OR site:github.com/shlinkio) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/shopify OR site:github.com/shopware OR site:github.com/simplesamlphp) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/slim OR site:github.com/spiral OR site:github.com/squizlabs) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://github.com/NCSC-NL/php2shell/blob/main/README.md",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/README.md",
+        "https://github.com/VKKKV/php2shell-test",
+        "https://github.com/roundcube/roundcubemail-docker/issues/468",
+        "https://github.com/devploit/php2shell/blob/main/docs/php2shell-analysis.md",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/software_list_r.md",
+        "https://github.com/scallydima/php2shell-poc",
+        "https://github.com/murrez/php2shell/blob/main/SECURITY.md",
+        "https://github.com/NCSC-NL/php2shell/blob/main/detection_mitigation/cpanel/php2shell-mitigate.sh",
+        "https://github.com/psylinux/php2shell-nuclei-template",
+        "https://github.com/deconstruction/EOLphp-php2shell-patches",
+        "https://github.com/wakemeiflose/php2shell"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:github.com/stripe OR site:github.com/symfony OR site:github.com/symplify) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/the-djmaze OR site:github.com/thirtybees OR site:github.com/thorsten) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/tideways OR site:github.com/tracy OR site:github.com/transip) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/twilio OR site:github.com/usmannasir OR site:github.com/uvdesk) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://github.com/NCSC-NL/php2shell",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/README.md",
+        "https://github.com/devploit/php2shell/blob/main/docs/php2shell-analysis.md",
+        "https://github.com/VKKKV/php2shell-test",
+        "https://github.com/scallydima/php2shell-poc",
+        "https://github.com/yetDevs/php2shell-triage/blob/main/README.md",
+        "https://github.com/wakemeiflose/php2shell",
+        "https://github.com/NCSC-NL/php2shell/blob/main/detection_mitigation/cpanel/php2shell-mitigate.sh",
+        "https://github.com/scriptsnet/php2shell-security-toolkit",
+        "https://github.com/scriptsnet/php2shell-security-toolkit/blob/main/docs/incident-report.en.md",
+        "https://github.com/sdminev/php2shell-poc"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:github.com/vlucas OR site:github.com/vufind-org OR site:github.com/webonyx) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:github.com/xdebug OR site:github.com/yiisoft OR site:glpi-install.readthedocs.io) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:glpi-project.org OR site:gnupg.org OR site:grommunio.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:grpc.io OR site:help.antagonist.nl OR site:help.terra-master.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://github.com/NCSC-NL/php2shell",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/README.md",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/software_list_x.md",
+        "https://github.com/devploit/php2shell/blob/main/docs/php2shell-analysis.md",
+        "https://github.com/Masriyan/php2shell/blob/main/docs/RESEARCH.md",
+        "https://github.com/VKKKV/php2shell-test",
+        "https://github.com/NCSC-NL/php2shell/blob/main/detection_mitigation/cpanel/php2shell-mitigate.sh",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/software_list_c.md",
+        "https://github.com/yetDevs/php2shell-triage",
+        "https://github.com/NCSC-NL/php2shell/blob/main/software/software_list_n.md"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:help.vtiger.com OR site:herd.laravel.com OR site:hesk.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:hhvm.com OR site:hikashop.com OR site:hostbill.atlassian.net) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:icinga.com OR site:interoperable-europe.ec.europa.eu OR site:invisioncommunity.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:invoiceninja.github.io OR site:invoiceninja.org OR site:ionos.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [],
+      "empty_results": true
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:ispconfig.org OR site:issabel.com OR site:jetbrains.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:laragon.org OR site:laravel.com OR site:ldap-account-manager.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:learn.getgrav.org OR site:library.oscommerce.com OR site:limesurvey.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:lists.freebsd.org OR site:livecodes.io OR site:m0n0.ch) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [],
+      "empty_results": true
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:mage-os.org OR site:mahara.org OR site:mail.getgrav.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:make.wordpress.org OR site:mamp.info OR site:manual.joomla.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:manual.mahara.org OR site:manual.woltlab.com OR site:matomo.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:mediawiki.org OR site:moodledev.io OR site:my.f5.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [],
+      "empty_results": true
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:my.securepoint.de OR site:omeka.org OR site:openbsd.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:openconext.org OR site:opendocman.com OR site:oscommerce.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:packages.couchbase.com OR site:packages.fedoraproject.org OR site:packaging.moodle.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:peachpie.io OR site:pear.php.net OR site:pecl.php.net) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://forum.omeka.org/t/important-critical-php-security-release-today-21-oct-14-00-utc-please-check-your-omeka-s-servers/30592"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:pestphp.com OR site:php.net OR site:phpipam.net) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:phpmyfaq.de OR site:phpstan.org OR site:phptojs.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:pi-hole.net OR site:pkgs.alpinelinux.org OR site:pmwiki.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:processwire.com OR site:prod-docs.netscaler.com OR site:projectredcap.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://news-web.php.net/php.announce/513",
+        "https://static.php.net/",
+        "https://news-web.php.net/php.announce/512",
+        "https://www.php.net/manual/en/ini.core.php",
+        "https://www.php.net/?trk=public_profile__posts-text",
+        "https://news-web.php.net/php.internals/132889",
+        "https://www.php.net/?=PHPE9568F35-D428-11d2-A769-00AA001ACF42",
+        "https://www.php.net/archive/2026.php?trk=public_post_comment-text"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:psalm.dev OR site:qnap.com OR site:rainloop.net) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:render.com OR site:resources.phplist.com OR site:resourcespace.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:sangomakb.atlassian.net OR site:sec.cloudapps.cisco.com OR site:security.netapp.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:security.paloaltonetworks.com OR site:seeddms.org OR site:sendy.co) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq?vs_f=Cisco+Security+Advisory%26vs_cat%3DSecurity+Intelligence%26vs_type%3DRSS%26vs_p%3DVulnerabilities+in+PHP+Affecting+Cisco+Products%3A+October+2026%26vs_k%3D1",
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+        "https://www.qnap.com/en/security-news/2026/qnap-statement-on-critical-php-vulnerabilities-php2shell-assessment-and-mitigation-guidance",
+        "https://community.qnap.com/t/security-notice-qnap-statement-on-critical-php-vulnerabilities-php2shell-security-advisory-qsa-26-18/7293",
+        "https://sec.cloudapps.cisco.com/security/center/publicationService.x",
+        "https://www.qnap.com/ko-kr/security-advisory/qsa-26-18",
+        "https://community.qnap.com/t/qnap-php-php2shell-qsa-26-18/7292",
+        "https://sec.cloudapps.cisco.com/security/center/publicationListing.x?apply=0",
+        "https://sec.cloudapps.cisco.com/security/center/publicationService.x?criteria=exact&cves=&keyword=&last_published_date=&limit=20&offset=0&publicationTypeIDs=1"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:servicedesk.surf.nl OR site:snipe-it.readme.io OR site:solidinvoice.co) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:sophos.com OR site:spip.net OR site:squirrelmail.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:starterhelp.orangehrm.com OR site:statamic.dev OR site:success.trendmicro.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:support.broadcom.com OR site:support.checkpoint.com OR site:support.citrix.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://discuter.spip.net/t/vulnerabilite-php-php2shell-cve-2026-109618-et-cve-2026-109619/205271?page=2",
+        "https://discuter.spip.net/t/vulnerabilite-php-php2shell-cve-2026-109618-et-cve-2026-109619/205271",
+        "https://discuter.spip.net/c/spip/6"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:support.hpe.com OR site:support.plesk.com OR site:support.quest.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:support.simplerisk.com OR site:support.sugarai.com OR site:support.tideways.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:supportportal.juniper.net OR site:surf.nl OR site:symfony.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:synology.com OR site:techdocs.f5.com OR site:textpattern.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk?sort_by=created_at",
+        "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk?sort_by=votes",
+        "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-Remote-code-execution-in-PHP-shipped-with-Plesk",
+        "https://support.plesk.com/hc/en-us"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:thirtybees.com OR site:thunder.org OR site:tideways.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:totara.help OR site:turnkeylinux.org OR site:twig.symfony.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:utrechtuniversity.github.io OR site:virtualmin.com OR site:virtuemart.net) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:vitalpbx.com OR site:vkcom.github.io OR site:wampserver.aviatechno.net) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://forum.virtualmin.com/t/security-advisory-critical-remote-code-execution-vulnerabilities-update-now-php/138200",
+        "https://forum.virtualmin.com/t/security-advisory-critical-remote-code-execution-vulnerabilities-update-now-php/138200/1"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "source-site",
+      "queries": [
+        "(site:weberp.org OR site:wiki.dolibarr.org OR site:wiki.pluxml.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:wikitech.wikimedia.org OR site:wintercms.com OR site:woocommerce.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:wordpress.com OR site:wordpress.org OR site:xdebug.org) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")",
+        "(site:xigmanas.com OR site:zabbix.com) (\"CVE-2026-109618\" OR \"CVE-2026-109619\" OR \"php2shell\")"
+      ],
+      "candidate_urls": [
+        "https://wordpress.org/support/topic/php-8-5-12-8-4-27-8-3-36-and-8-2-35-fix-two-critical-vulnerabilities/",
+        "https://wordpress.org/support/topic/cve-2026-109618-cve-2026-109619/",
+        "https://wordpress.org/plugins/security-check-report/",
+        "https://emoji.wordpress.org/plugins/moatline-malware-scanner/",
+        "https://wol.wordpress.org/plugins/security-check-report/",
+        "https://en-gb.wordpress.org/plugins/moatline-malware-scanner/",
+        "https://wordpress.org/plugins/atoa-pay/",
+        "https://en-gb.wordpress.org/plugins/airworthy/",
+        "https://srd.wordpress.org/plugins/segurium/",
+        "https://ps.wordpress.org/plugins/moatline-malware-scanner/",
+        "https://jv.wordpress.org/plugins/moatline-malware-scanner/",
+        "https://ary.wordpress.org/plugins/aepto-domain-ssl-dns-monitor/"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:access.redhat.com OR site:accesstomemory.org OR site:acquia.com)",
+        "\"CVE-2026-109618\" (site:adminer.org OR site:afterlogic.com OR site:aimeos.org)",
+        "\"CVE-2026-109618\" (site:alpinelinux.org OR site:antagonist.nl OR site:apachefriends.org)",
+        "\"CVE-2026-109618\" (site:archive.synology.com OR site:astppbilling.org OR site:aws.amazon.com)"
+      ],
+      "candidate_urls": [
+        "https://afterlogic.com/news"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:backdropcms.org OR site:bagisto.com OR site:belnet.be)",
+        "\"CVE-2026-109618\" (site:blackfire.io OR site:blesta.com OR site:boltcms.io)",
+        "\"CVE-2026-109618\" (site:bref.sh OR site:broadcom.com OR site:buddypress.trac.wordpress.org)",
+        "\"CVE-2026-109618\" (site:calif.io OR site:centreon.com OR site:chamilo.org)"
+      ],
+      "candidate_urls": [
+        "https://www.broadcom.com/support/security-center/protection-bulletin/php2shell-vulnerabilities-allow-remote-code-execution-in-php-runtimes",
+        "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39406",
+        "https://www.broadcom.com/php2shell",
+        "https://knowledge.broadcom.com/external/article/459982/app-control-php2shell-impact-cve2026109.html",
+        "https://knowledge.broadcom.com/external/article/460156/tanzu-php-vulnerabilities-cve2026109618.html",
+        "https://knowledge.broadcom.com/external/article/459962/is-messaging-gateway-affected-by-cve2026.html",
+        "https://knowledge.broadcom.com/external/article/460068/vmware-avi-load-balancer-mitigation-for.html",
+        "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/security-advisories/0/39404",
+        "https://knowledge.broadcom.com/external/article?legacyId=tech203134",
+        "https://knowledge.broadcom.com/external/article/459975",
+        "https://www.broadcom.com/company/news/articles/security/truesource-by-broadcom-delivers-remediated-php-software-in-under-60-minutes",
+        "https://knowledge.broadcom.com/external/article/459989"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:checkpoint.com OR site:circl.lu OR site:circleci.com)",
+        "\"CVE-2026-109618\" (site:citrix.com OR site:civicrm.org OR site:classicpress.net)",
+        "\"CVE-2026-109618\" (site:clientexec.com OR site:cloud.google.com OR site:cloudflare.com)",
+        "\"CVE-2026-109618\" (site:cloudlinux.com OR site:cloudlinux.statuspage.io OR site:cloudlinux.zendesk.com)"
+      ],
+      "candidate_urls": [
+        "https://cloudlinux.statuspage.io/",
+        "https://cloud.google.com/blog/products/identity-security/responding-to-core-php-vulnerabilities-cve-2026-109618-cve-2026-109619/",
+        "https://cloud.google.com/blog/products/identity-security/responding-to-core-php-vulnerabilities-cve-2026-109618-cve-2026-109619",
+        "https://vulnerability.circl.lu/known-exploited-vulnerabilities-catalog/56905d1d-b381-4de8-bd75-1d140bbbdfb0",
+        "https://cve.circl.lu/vuln/RHSA-2026%3A88532",
+        "https://cve.circl.lu/vuln/RHSA-2026%3A88533",
+        "https://vulnerability.circl.lu/vuln/alsa-2026%3A87080",
+        "https://vulnerability.circl.lu/vuln/CVE-2026-109618",
+        "https://vulnerability.circl.lu/vuln/VA-26-295-01"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:collectiveaccess.org OR site:contao.org OR site:couchbase.com)",
+        "\"CVE-2026-109618\" (site:craftcms.com OR site:cs-cart.com OR site:cs.symfony.com)",
+        "\"CVE-2026-109618\" (site:doctrine-project.org OR site:documentation.concretecms.org OR site:drupal.org)",
+        "\"CVE-2026-109618\" (site:easyphp.org OR site:elastic.co OR site:endor.dev)"
+      ],
+      "candidate_urls": [
+        "https://www.elastic.co/security-labs/threat-command/php2shell-php-rce-detection",
+        "https://www.elastic.co/security-labs/threat-command",
+        "https://www.elastic.co/security-labs/author/ruben-groenewoud",
+        "https://www.elastic.co/security-labs/threat-command/category/threat-intelligence",
+        "https://www.elastic.co/security-labs",
+        "https://www.elastic.co/security-labs/threat-command/category/detection-engineering",
+        "https://www.elastic.co/de/security-labs/author/ruben-groenewoud"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:engineering.fb.com OR site:espocrm.com OR site:experienceleague.adobe.com)",
+        "\"CVE-2026-109618\" (site:expressionengine.com OR site:f5.com OR site:faveohelpdesk.com)",
+        "\"CVE-2026-109618\" (site:fedoraproject.org OR site:filegator.io OR site:filerun.com)",
+        "\"CVE-2026-109618\" (site:files.trendmicro.com OR site:filesender.org OR site:flarum.org)"
+      ],
+      "candidate_urls": [
+        "https://my.f5.com/manage/s/article/K000163821",
+        "https://www.f5.com/es_es/company/blog/ai-found-it-ai-is-stopping-it",
+        "https://forum.espocrm.com/",
+        "https://www.f5.com/pt_br/company/blog/ai-found-it-ai-is-stopping-it"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:fly.io OR site:fortiguard.fortinet.com OR site:fossbilling.org)",
+        "\"CVE-2026-109618\" (site:freepbx.org OR site:freshrss.github.io OR site:froxlor.org)",
+        "\"CVE-2026-109618\" (site:fusiondirectory-user-manual.readthedocs.io OR site:get.typo3.org OR site:getcomposer.org)",
+        "\"CVE-2026-109618\" (site:getgrav.org OR site:getkirby.com OR site:glpi-install.readthedocs.io)"
+      ],
+      "candidate_urls": [],
+      "empty_results": true
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:glpi-project.org OR site:gnupg.org OR site:google.com)",
+        "\"CVE-2026-109618\" (site:grommunio.com OR site:grpc.io OR site:herd.laravel.com)",
+        "\"CVE-2026-109618\" (site:hesk.com OR site:hhvm.com OR site:hikashop.com)",
+        "\"CVE-2026-109618\" (site:hostbill.atlassian.net OR site:hpe.com OR site:humhub.org)"
+      ],
+      "candidate_urls": [
+        "https://community.hpe.com/t5/hpe-primera-storage/is-primera-affected-by-cve-2026-109618-and-cve-2026-109619/td-p/7274358",
+        "https://community.hpe.com/t5/hpe-alletra-storage/is-the-alletra-mp-b10000-affected-by-cve-2026-109618-and-cve/td-p/7274359",
+        "https://community.networking.hpe.com/discussion/php-cve-2026-109618-and-cve-2026-109619?hlmlt=VT",
+        "https://community.hpe.com/?profile.language=en",
+        "https://community.networking.hpe.com/community-home/digestviewer?CommunityKey=2477474f-de43-4598-a465-c179d41fdd0b&ReturnUrl=%2Fcommunity-home%2Fdigestviewer%3FMessageKey%3D0155499d-d23d-426b-b451-c16047482fe0%26CommunityKey%3D2477474f-de43-4598-a465-c179d41fdd0b",
+        "https://community.networking.hpe.com/community-home/digestviewer?CommunityKey=2477474f-de43-4598-a465-c179d41fdd0b&MessageKey=374deee7-fa53-4c03-b212-15e2fdb457b7&ReturnUrl=%2Fcommunity-home%2Fdigestviewer%3FMessageKey%3D67927e98-bb98-4ffd-bcbc-cbc7f048fd51%26CommunityKey%3D2477474f-de43-4598-a465-c179d41fdd0b",
+        "https://community.networking.hpe.com/community-home/digestviewer?ReturnUrl=%2Fcommunity-home%2Fdigestviewer%3FMessageKey%3D91f7913c-28ff-4181-8bad-a8a01f8e07d0%26CommunityKey%3D403fcb2e-4306-4eee-9bc7-bd6d0309ff7e%26ReturnUrl%3D%252Fcommunity-home%252Fdigestviewer%253FMessageKey%253D633cab28-3ccf-4476-9b8d-d41c1a7e1aa1%2526CommunityKey%253D403fcb2e-4306-4eee-9bc7-bd6d0309ff7e",
+        "https://community.networking.hpe.com/community-home/digestviewer?CommunityKey=2477474f-de43-4598-a465-c179d41fdd0b&MessageKey=acaa93e1-36db-42c6-bc73-be814590296b&ReturnUrl=%2Fcommunity-home%2Fdigestviewer%3FMessageKey%3Df79fc89d-5bb2-4aab-b0bb-9206f774c8a9%26CommunityKey%3D2477474f-de43-4598-a465-c179d41fdd0b%26ReturnUrl%3D%252Fcommunity-home%252Fdigestviewer%253FMessageKey%253Deab19733-6287-4970-bf76-b6331c2630aa%2526CommunityKey%253D2477474f-de43-4598-a465-c179d41fdd0b%2526ReturnUrl%253D%25252Fcommunity-home%25252Fdigestviewer%25253FMessageKey%25253Dfe525437-8dfc-4c69-baf5-ab7a0a6e5de3%252526CommunityKey%25253D2477474f-de43-4598-a465-c179d41fdd0b",
+        "https://community.networking.hpe.com/community-home/digestviewer?CommunityKey=2477474f-de43-4598-a465-c179d41fdd0b&MessageKey=06bc8b7d-8778-4768-99a3-110f1b9cc1a1&ReturnUrl=%2Fcommunity-home%2Fdigestviewer%3FMessageKey%3Deee9b9e9-31be-431a-83ef-0e1641dbe6f8%26CommunityKey%3D2477474f-de43-4598-a465-c179d41fdd0b%26ReturnUrl%3D%252Fcommunity-home%252Fdigestviewer%253FMessageKey%253Dffb0fb01-7668-4fe9-aefc-3520ce15d8f1%2526CommunityKey%253D2477474f-de43-4598-a465-c179d41fdd0b%2526ReturnUrl%253D%25252Fcommunity-home%25252Fdigestviewer%25253FCommunityKey%25253D2477474f-de43-4598-a465-c179d41fdd0b%252526ReturnUrl%25253D%2525252Fcommunity-home%2525252Fdigestviewer%2525253FMessageKey%2525253D99a404db-6a19-4232-8c66-c451a7aa670e%25252526CommunityKey%2525253D2477474f-de43-4598-a465-c179d41fdd0b%25252526ReturnUrl%2525253D%252525252Fcommunity-home%252525252Fdigestviewer%252525253FMessageKey%252525253D19fcd88a-cda8-4de2-a711-996421875863%2525252526CommunityKey%252525253D2477474f-de43-4598-a465-c179d41fdd0b",
+        "https://community.networking.hpe.com/home",
+        "https://community.networking.hpe.com/home?elqTrackId=2289ed483baf43b7b965215e951ce2a9&elqaid=1240&elqat=2",
+        "https://community.hpe.com/"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:ibexa.co OR site:icinga.com OR site:interoperable-europe.ec.europa.eu)",
+        "\"CVE-2026-109618\" (site:invisioncommunity.com OR site:invoiceninja.github.io OR site:invoiceninja.org)",
+        "\"CVE-2026-109618\" (site:ionos.com OR site:ispconfig.org OR site:issabel.com)",
+        "\"CVE-2026-109618\" (site:jetbrains.com OR site:joomla.org OR site:kanboard.org)"
+      ],
+      "candidate_urls": [
+        "https://www.ispconfig.org/blog/php2shell-critical-php-vulnerabilities-cve-2026-109618-cve-2026-109619/",
+        "https://www.ispconfig.org/blog/"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:laminas.dev OR site:lando.dev OR site:laragon.org)",
+        "\"CVE-2026-109618\" (site:laravel.com OR site:ldap-account-manager.org OR site:library.oscommerce.com)",
+        "\"CVE-2026-109618\" (site:librenms.org OR site:limesurvey.org OR site:lists.freebsd.org)",
+        "\"CVE-2026-109618\" (site:livecodes.io OR site:m0n0.ch OR site:mage-os.org)"
+      ],
+      "candidate_urls": [],
+      "empty_results": true
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:mahara.org OR site:mail.getgrav.org OR site:make.wordpress.org)",
+        "\"CVE-2026-109618\" (site:mamp.info OR site:matomo.org OR site:mautic.org)",
+        "\"CVE-2026-109618\" (site:mediawiki.org OR site:modx.com OR site:moodle.org)",
+        "\"CVE-2026-109618\" (site:moodledev.io OR site:my.f5.com OR site:my.securepoint.de)"
+      ],
+      "candidate_urls": [
+        "https://matomo.org/blog/2026/10/critical-php-security-vulnerabilities-important-update-for-matomo-users/",
+        "https://forum.matomo.org/t/urgent-security-advisory-critical-php-vulnerabilities/66007",
+        "https://matomo.org/changelog/matomo-5-14-2/",
+        "https://my.f5.com/manage/s/article/K000163821",
+        "https://community.modx.com/t/critical-php-vulnerabilities-upgrade-immediately/9312",
+        "https://fr.matomo.org/changelog/matomo-5-14-2/",
+        "https://mail.getgrav.org/blog/php-critical-security-release-october-2026",
+        "https://forum.matomo.org/c/general-questions/12"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:mybb.com OR site:nagios.com OR site:neos.io)",
+        "\"CVE-2026-109618\" (site:netapp.com OR site:netlify.com OR site:nextcloud.com)",
+        "\"CVE-2026-109618\" (site:observium.org OR site:octobercms.com OR site:omeka.org)",
+        "\"CVE-2026-109618\" (site:openbsd.org OR site:openconext.org OR site:opendocman.com)"
+      ],
+      "candidate_urls": [
+        "https://octobercms.com/blog/post/php-security-alert-critical-php-vulnerabilities-and-your-october-cms-sites"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:openeclass.org OR site:openmage.org OR site:oroinc.com)",
+        "\"CVE-2026-109618\" (site:oscommerce.com OR site:osticket.com OR site:ovhcloud.com)",
+        "\"CVE-2026-109618\" (site:owncloud.com OR site:oxid-esales.com OR site:packaging.moodle.org)",
+        "\"CVE-2026-109618\" (site:paloaltonetworks.com OR site:peachpie.io OR site:pear.php.net)"
+      ],
+      "candidate_urls": [],
+      "empty_results": true
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:pecl.php.net OR site:pestphp.com OR site:phalcon.io)",
+        "\"CVE-2026-109618\" (site:php.net OR site:phpipam.net OR site:phpmyadmin.net)",
+        "\"CVE-2026-109618\" (site:phpmyfaq.de OR site:phpstan.org OR site:phptojs.com)",
+        "\"CVE-2026-109618\" (site:phpunit.de OR site:pi-hole.net OR site:pimcore.com)"
+      ],
+      "candidate_urls": [],
+      "empty_results": true
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:plesk.com OR site:pmwiki.org OR site:prestashop-project.org)",
+        "\"CVE-2026-109618\" (site:processwire.com OR site:prod-docs.netscaler.com OR site:projectredcap.org)",
+        "\"CVE-2026-109618\" (site:projectsend.org OR site:psalm.dev OR site:pydio.com)",
+        "\"CVE-2026-109618\" (site:qnap.com OR site:quest.com OR site:rainloop.net)"
+      ],
+      "candidate_urls": [],
+      "empty_results": true
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:raspap.com OR site:redhat.com OR site:render.com)",
+        "\"CVE-2026-109618\" (site:resources.phplist.com OR site:resourcespace.com OR site:roadrunner.dev)",
+        "\"CVE-2026-109618\" (site:s9y.org OR site:sangomakb.atlassian.net OR site:sec.cloudapps.cisco.com)",
+        "\"CVE-2026-109618\" (site:seeddms.org OR site:sendy.co OR site:servicedesk.surf.nl)"
+      ],
+      "candidate_urls": [
+        "https://access.redhat.com/security/cve/cve-2026-109618",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2026-109618",
+        "https://bugzilla.redhat.com/show_bug.cgi?format=multiple&id=2553995",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=2558209",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=2556842",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=2553995",
+        "https://access.redhat.com/security/vulnerabilities/RHSB-2026-013"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:shopware.com OR site:silverstripe.org OR site:simplerisk.com)",
+        "\"CVE-2026-109618\" (site:snipe-it.readme.io OR site:solidinvoice.co OR site:sophos.com)",
+        "\"CVE-2026-109618\" (site:spip.net OR site:spryker.com OR site:squirrelmail.org)",
+        "\"CVE-2026-109618\" (site:starterhelp.orangehrm.com OR site:statamic.dev OR site:success.trendmicro.com)"
+      ],
+      "candidate_urls": [
+        "https://docs.spryker.com/docs/about/all/releases/image-releases/spryker-php/release-notes-spryker-php-20261021.html"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:sugarai.com OR site:suitecrm.com OR site:sulu.io)",
+        "\"CVE-2026-109618\" (site:supportportal.juniper.net OR site:surf.nl OR site:sylius.com)",
+        "\"CVE-2026-109618\" (site:symfony.com OR site:synology.com OR site:techdocs.f5.com)",
+        "\"CVE-2026-109618\" (site:terra-master.com OR site:textpattern.com OR site:thelia.net)"
+      ],
+      "candidate_urls": [
+        "https://www.synology.com/en-global/company/news/article/php2shell/Synology%20Statement%20on%20PHP2Shell%20Vulnerabilities",
+        "https://www.synology.com/it-it/security/advisory/Synology_SA_26_14",
+        "https://community.synology.com/enu/forum/18/post/231457",
+        "https://community.synology.com/enu/forum/12/post/231457",
+        "https://www.synology.com/en-global/releaseNote/PHP7.4?model=RS816&os=DSM&version=7_x_series",
+        "https://community.synology.com/enu/forum/1/post/231447",
+        "https://www.synology.com/tr-tr/releaseNote/PHP8.1?model=DS1520%2B",
+        "https://www.synology.com/en-us/releaseNote/PHP8.2?os=DSM&version=7_x_series",
+        "https://www.synology.com/en-global/releaseNote/PHP8.1?model=DS423%2B&os=DSM&version=7_x_series",
+        "https://www.synology.com/sv-se/releaseNote/MailStation?model=RS810+",
+        "https://www.synology.com/tr-tr/releaseNote/MailStation?model=RS819",
+        "https://www.synology.com/en-id/releaseNote/MailStation?model=DS418"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:thirtybees.com OR site:thunder.org OR site:tideways.com)",
+        "\"CVE-2026-109618\" (site:tiki.org OR site:tine-groupware.de OR site:totara.help)",
+        "\"CVE-2026-109618\" (site:turnkeylinux.org OR site:twig.symfony.com OR site:typo3.org)",
+        "\"CVE-2026-109618\" (site:unraid.net OR site:utrechtuniversity.github.io OR site:vapor.build)"
+      ],
+      "candidate_urls": [],
+      "empty_results": true
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:varbase.vardot.com OR site:virtualmin.com OR site:virtuemart.net)",
+        "\"CVE-2026-109618\" (site:vitalpbx.com OR site:vitalpbx.org OR site:vkcom.github.io)",
+        "\"CVE-2026-109618\" (site:vtiger.com OR site:wallabag.org OR site:wampserver.aviatechno.net)",
+        "\"CVE-2026-109618\" (site:weberp.org OR site:whmcs.com OR site:wiki.dolibarr.org)"
+      ],
+      "candidate_urls": [
+        "https://forums.vitalpbx.org/t/critical-security-update-php-8-2-35-now-available-for-debian-12/6482",
+        "https://forums.vitalpbx.org/",
+        "https://forums.vitalpbx.org/t/php-cve-2026-109618-cve-2026-109619/6481",
+        "https://forum.virtualmin.com/t/security-advisory-critical-remote-code-execution-vulnerabilities-update-now-php/138200",
+        "https://forum.virtualmin.com/t/security-advisory-critical-remote-code-execution-vulnerabilities-update-now-php/138200/1"
+      ],
+      "empty_results": false
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:wiki.pluxml.org OR site:wikitech.wikimedia.org OR site:wintercms.com)",
+        "\"CVE-2026-109618\" (site:woltlab.com OR site:woocommerce.com OR site:wordpress.com)",
+        "\"CVE-2026-109618\" (site:wordpress.org OR site:x-cart.com OR site:xdebug.org)",
+        "\"CVE-2026-109618\" (site:xenforo.com OR site:xigmanas.com OR site:yetiforce.com)"
+      ],
+      "candidate_urls": [],
+      "empty_results": true
+    },
+    {
+      "kind": "vendor-domain",
+      "queries": [
+        "\"CVE-2026-109618\" (site:zabbix.com OR site:zen-cart.com)"
+      ],
+      "candidate_urls": [],
+      "empty_results": true
+    }
+  ]
+}

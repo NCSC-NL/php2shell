@@ -20,6 +20,8 @@ The `Version` column in the software list relates to the status of the entry. Fo
 
 See [software_list.md](software_list.md) for the current list.
 
+The [official-source review of 23 October 2026](research/2026-10-23/README.md) lists confirmed findings for entries that were under investigation or vulnerable, with version scopes, public vendor sources and a coverage ledger.
+
 For upstream PHP remediation guidance, see the [official PHP security advisory](https://www.php.net/archive/2026.php#2026-10-21-5).
 
 The source of truth for this overview is the JSON fragments in [spdx/segments](spdx/segments/) and [spdx/shared](spdx/shared/). Run `python tools/build_spdx_inventory.py` from the repository root to compile every source JSON into `spdx/PHP_Downstream_Inventory.spdx3.json`. See [SPDX source maintenance](spdx/README.md) for the categories and editing workflow. The alphabetized Markdown pages are generated automatically from the compiled inventory using the tooling in [../tools](../tools/). Status values in the current list are derived from the VEX assessment relationships in the SPDX document.

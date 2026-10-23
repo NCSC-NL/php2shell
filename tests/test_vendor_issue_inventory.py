@@ -51,13 +51,14 @@ class VendorIssueInventoryTests(unittest.TestCase):
             vex = self.nodes[PREFIX + f"vex:{cve}:fixedIn:php-0731-maintainer-20261023"]
             self.assertEqual(vex["to"], [PREFIX + "package:PHP-0731"])
 
-    def test_sepm_fix_does_not_change_other_broadcom_statuses(self):
+    def test_broadcom_fixes_keep_separate_product_evidence(self):
         carbon_black = self.entries[PREFIX + "package:PHP-0730"]
-        self.assertEqual(carbon_black["version"], "Broadcom ESG advisory 39404 affected product scope")
+        self.assertEqual(carbon_black["version"], "8.12.2; 8.13.2")
+        self.assertIn("/459982/", carbon_black["links"])
         self.assertNotIn("/39421", carbon_black["links"])
         self.assertNotIn("/issues/30", carbon_black["links"])
         for identifier, status in (
-            ("PHP-0730", "Vulnerable"),
+            ("PHP-0730", "Fix"),
             ("PHP-0732", "Investigation"),
             ("PHP-0733", "Investigation"),
         ):
@@ -67,6 +68,7 @@ class VendorIssueInventoryTests(unittest.TestCase):
         for cve in CVES:
             vex = self.nodes[PREFIX + f"vex:{cve}:affects:broadcom-esg-39404-20261022"]
             self.assertEqual(vex["to"], [PREFIX + "package:PHP-0730"])
+            self.assertEqual(vex["relationshipType"], "fixedIn")
 
     def test_new_products_have_unique_identity_and_php_dependencies(self):
         for identifier, supplier, name in (

@@ -487,9 +487,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:drupal-project:5f28f6a52a86",
-      "summary": "The refreshed official compatibility matrix preserves major/minor-specific PHP bands. It directs exact extension requirements to core/composer.json; that linked source rendered only a loading placeholder.",
+      "summary": "Drupal sites on unpatched PHP. Updating Drupal alone does not patch the runtime.",
       "description": "Compatible PHP web runtime",
-      "comment": "Inventory record: PHP-0007\nCategory: CMS and publishing\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Compatible PHP web runtime\nPHP version scope: Official matrix updated 4 August 2026: Drupal 10.4\u201310.6 supports PHP 8.1\u20138.4; 11.1\u201311.2 supports 8.3\u20138.4; 11.3\u201311.4 supports 8.3\u20138.5. Drupal 12 is a separate PHP 8.5 scope. Stable-release manifests remain unread; registry-default 12 beta must not set the stable 10/11 floor.\nExtensions: Guide-level, not a released manifest: PDO plus selected database driver, XML/DOM, JSON and an image backend. OpenSSL is feature-conditional/recommended; cURL testing/feature and mbstring language guidance are not a complete current-release extension set.\nLimitations: The guide mixes legacy database-connector/configuration prose with newer compatibility tables. Its connector names are not an exact Drupal 11 driver manifest. Stable 11.4.10/10.6.19 identities and advertised digest retained from prior evidence; package bytes, signatures and installed builds remain unverified. Registry API retrieval also failed. No exposure inferred.\nPatch owner: Hosting provider or operator\nDownstream surface: Public content and API endpoints\nRelease pin: Official 11.4.10 release page (14 Oct 2026), advertised tar.gz SHA256 e900d4c1b8753c5878526446c517c92b199429f9f99a9cff14d3e63c7b6ee909; not independently verified\nSource accessed: 2026-10-19\nAliases: Drupal core\nConditional downstream consequence: If untrusted requests or media reach a matching PHP core/extension flaw, the PHP worker could suffer DoS or disclosure. Proven code execution could affect CMS content and its database/API credentials within that account. Root privileges, tenant escape and lateral movement require separate evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0007\nCategory: CMS and publishing\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Compatible PHP web runtime\nPHP version scope: Official matrix updated 4 August 2026: Drupal 10.4\u201310.6 supports PHP 8.1\u20138.4; 11.1\u201311.2 supports 8.3\u20138.4; 11.3\u201311.4 supports 8.3\u20138.5. Drupal 12 is a separate PHP 8.5 scope. Stable-release manifests remain unread; registry-default 12 beta must not set the stable 10/11 floor.\nExtensions: Guide-level, not a released manifest: PDO plus selected database driver, XML/DOM, JSON and an image backend. OpenSSL is feature-conditional/recommended; cURL testing/feature and mbstring language guidance are not a complete current-release extension set.\nLimitations: The guide mixes legacy database-connector/configuration prose with newer compatibility tables. Its connector names are not an exact Drupal 11 driver manifest. Stable 11.4.10/10.6.19 identities and advertised digest retained from prior evidence; package bytes, signatures and installed builds remain unverified. Registry API retrieval also failed. No exposure inferred.\nPatch owner: Hosting provider or operator\nDownstream surface: Public content and API endpoints\nRelease pin: Official 11.4.10 release page (14 Oct 2026), advertised tar.gz SHA256 e900d4c1b8753c5878526446c517c92b199429f9f99a9cff14d3e63c7b6ee909; not independently verified\nSource accessed: 2026-10-23\nAliases: Drupal core\nConditional downstream consequence: If untrusted requests or media reach a matching PHP core/extension flaw, the PHP worker could suffer DoS or disclosure. Proven code execution could affect CMS content and its database/API credentials within that account. Root privileges, tenant escape and lateral movement require separate evidence.\nVulnerability status: Vulnerable. Drupal sites on unpatched PHP. Updating Drupal alone does not patch the runtime.\nCVE-2026-109618: Vulnerable. Drupal sites on unpatched PHP. Updating Drupal alone does not patch the runtime.\nCVE-2026-109619: Vulnerable. Drupal sites on unpatched PHP. Updating Drupal alone does not patch the runtime.\nCVE assessment limit: Public vendor/upstream assessment for the stated scope only; no deployed installation was tested.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://www.drupal.org/association/blog/after-the-php-security-release-auditing-your-drupal-sites | https://www.drupal.org/psa-2026-10-20",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -530,6 +530,22 @@
             "https://packagist.org/packages/drupal/core"
           ],
           "comment": "Q17 primary-source scope validation - The displayed default is 12.0.0-beta2, not stable Drupal 11."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.drupal.org/association/blog/after-the-php-security-release-auditing-your-drupal-sites"
+          ],
+          "comment": "Official public source reviewed 2026-10-23"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.drupal.org/psa-2026-10-20"
+          ],
+          "comment": "Official public source reviewed 2026-10-23"
         }
       ]
     },
@@ -711,9 +727,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:moodle-project:f5c1a844978a",
-      "summary": "Official 5.3 notes specify PHP 8.3.0+, additional 8.4.x support, sodium and 64-bit PHP. The download catalogue separates the 5.3 release from weekly 5.3+ packages and publishes a release checksum.",
+      "summary": "Self-hosted Moodle sites on unpatched PHP. HQ says unpatched sites remain vulnerable; its own restored site is a separate deployment.",
       "description": "PHP web runtime and CLI",
-      "comment": "Inventory record: PHP-0013\nCategory: Education and knowledge\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP web runtime and CLI\nPHP version scope: 5.3 release notes, dated 5 October 2026: PHP >=8.3.0, PHP 8.4.x also supported; 64-bit only. Separate documented matrix: 4.5 LTS 8.1\u20138.3; 5.0/5.1 8.2\u20138.4; 5.2 8.3\u20138.4.\nExtensions: Sodium required for 5.3. Complete release-resolved set and selected database driver not yet verified; generic extension guidance mixes required and recommended items.\nLimitations: Release date, package build/listing date and moving weekly 5.3+ are separate. The v5.3.0 environment.xml read was denied; full extension inventory remains unknown. The old Git link redirected to repository root, not tag content. Bundled Moodle4Mac/Windows stacks are separately scoped and not proof of a supported unmodified 5.3 environment. Clients and deployed institutions remain separate.\nPatch owner: Hosting provider or operator\nDownstream surface: Learning portals, uploads and scheduled jobs\nRelease pin: Moodle 5.3 release notes: 5 October 2026. Download listing labels the release package 3 October. Advertised tgz SHA256 7e5edf110555956571f40e42acffde0eb23681ebebd212a2fec0fe7d795dd511; bytes/signatures not verified.\nSource accessed: 2026-10-19\nAliases: Moodle LMS, moodle/moodle\nConditional downstream consequence: A matching PHP parser or memory-safety flaw reached by course imports, uploads or web requests could cause denial of service, disclosure or code execution within the PHP worker. Its configured permissions could then expose learning records, authentication secrets or change course content. Host compromise, tenant escape and lateral movement require additional conditions.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0013\nCategory: Education and knowledge\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP web runtime and CLI\nPHP version scope: 5.3 release notes, dated 5 October 2026: PHP >=8.3.0, PHP 8.4.x also supported; 64-bit only. Separate documented matrix: 4.5 LTS 8.1\u20138.3; 5.0/5.1 8.2\u20138.4; 5.2 8.3\u20138.4.\nExtensions: Sodium required for 5.3. Complete release-resolved set and selected database driver not yet verified; generic extension guidance mixes required and recommended items.\nLimitations: Release date, package build/listing date and moving weekly 5.3+ are separate. The v5.3.0 environment.xml read was denied; full extension inventory remains unknown. The old Git link redirected to repository root, not tag content. Bundled Moodle4Mac/Windows stacks are separately scoped and not proof of a supported unmodified 5.3 environment. Clients and deployed institutions remain separate.\nPatch owner: Hosting provider or operator\nDownstream surface: Learning portals, uploads and scheduled jobs\nRelease pin: Moodle 5.3 release notes: 5 October 2026. Download listing labels the release package 3 October. Advertised tgz SHA256 7e5edf110555956571f40e42acffde0eb23681ebebd212a2fec0fe7d795dd511; bytes/signatures not verified.\nSource accessed: 2026-10-23\nAliases: Moodle LMS, moodle/moodle\nConditional downstream consequence: A matching PHP parser or memory-safety flaw reached by course imports, uploads or web requests could cause denial of service, disclosure or code execution within the PHP worker. Its configured permissions could then expose learning records, authentication secrets or change course content. Host compromise, tenant escape and lateral movement require additional conditions.\nVulnerability status: Vulnerable. Self-hosted Moodle sites on unpatched PHP. HQ says unpatched sites remain vulnerable; its own restored site is a separate deployment.\nCVE-2026-109618: Vulnerable. Self-hosted Moodle sites on unpatched PHP. HQ says unpatched sites remain vulnerable; its own restored site is a separate deployment.\nCVE-2026-109619: Vulnerable. Self-hosted Moodle sites on unpatched PHP. HQ says unpatched sites remain vulnerable; its own restored site is a separate deployment.\nCVE assessment limit: Public vendor/upstream assessment for the stated scope only; no deployed installation was tested.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://moodle.org/news/ | https://www.php.net/archive/2026.php#2026-10-21-5",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -746,6 +762,22 @@
             "https://packaging.moodle.org/stable503/moodle-5.3.tgz.sha256"
           ],
           "comment": "Primary application release, compatibility or installer evidence - Publisher checksum sidecar read as text; no archive fetched."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://moodle.org/news/"
+          ],
+          "comment": "Official public source reviewed 2026-10-23"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-21-5"
+          ],
+          "comment": "Official public source reviewed 2026-10-23"
         }
       ]
     },
@@ -931,9 +963,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:matomo:bf8cee3cfc7f",
-      "summary": "The vendor FAQ confirms PHP web/CLI processing and upcoming beta requirements; the 5.x source root preserves a lower declared PHP floor.",
+      "summary": "On-Premise deployments on affected PHP; Matomo 5.14.2 is a warning release, not a PHP runtime fix.",
       "description": "PHP web tracking/API/report server and PHP CLI/background processing where configured",
-      "comment": "Inventory record: PHP-0027\nCategory: Mail and analytics\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP web tracking/API/report server and PHP CLI/background processing where configured\nPHP version scope: FAQ says Matomo 4.16/5 use PHP 8 and Matomo 6.0.0 beta requires >=8.1. Inspected 5.x-dev root manifest still declares >=7.2.5. Conflict/source scope retained; exact released dependency graph unresolved.\nExtensions: Database choice: pdo/pdo_mysql OR mysqli. GD/reporting and recommended curl/xml/mbstring/CLI packages are separate from a fully resolved mandatory module set.\nLimitations: Matomo 6 is explicitly labelled beta/upcoming in these sources and is not silently promoted to the current stable branch. Standalone, WordPress-integrated and connection-only plugins overlap differently. Browser/mobile trackers and cloud backends are not inferred from this server record. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Matomo/core/plugin maintainers for application code; provider/operator for PHP/modules and separately deployed tracking/report processes\nDownstream surface: Tracking endpoints, reports and archive jobs\nRelease pin: Moving FAQ plus 5.x-dev root manifest; exact Matomo stable/beta artifact, lock and PHP build pins pending\nSource accessed: 2026-10-17\nAliases: Matomo standalone server, Matomo analytics on-premise\nConditional downstream consequence: A matching PHP or loaded-extension flaw reached by tracking/API requests, imported data, links, reports or background jobs could cause denial of service, disclosure, tampering or worker-level code execution. Analytics/customer data, configured integrations and responses/redirects could then be affected within application permissions. Browser execution, host privilege, remote service compromise and tenant escape are additional conditions.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0027\nCategory: Mail and analytics\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP web tracking/API/report server and PHP CLI/background processing where configured\nPHP version scope: FAQ says Matomo 4.16/5 use PHP 8 and Matomo 6.0.0 beta requires >=8.1. Inspected 5.x-dev root manifest still declares >=7.2.5. Conflict/source scope retained; exact released dependency graph unresolved.\nExtensions: Database choice: pdo/pdo_mysql OR mysqli. GD/reporting and recommended curl/xml/mbstring/CLI packages are separate from a fully resolved mandatory module set.\nLimitations: Matomo 6 is explicitly labelled beta/upcoming in these sources and is not silently promoted to the current stable branch. Standalone, WordPress-integrated and connection-only plugins overlap differently. Browser/mobile trackers and cloud backends are not inferred from this server record. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Matomo/core/plugin maintainers for application code; provider/operator for PHP/modules and separately deployed tracking/report processes\nDownstream surface: Tracking endpoints, reports and archive jobs\nRelease pin: Moving FAQ plus 5.x-dev root manifest; exact Matomo stable/beta artifact, lock and PHP build pins pending\nSource accessed: 2026-10-23\nAliases: Matomo standalone server, Matomo analytics on-premise\nConditional downstream consequence: A matching PHP or loaded-extension flaw reached by tracking/API requests, imported data, links, reports or background jobs could cause denial of service, disclosure, tampering or worker-level code execution. Analytics/customer data, configured integrations and responses/redirects could then be affected within application permissions. Browser execution, host privilege, remote service compromise and tenant escape are additional conditions.\nVulnerability status: Vulnerable. On-Premise deployments on affected PHP; Matomo 5.14.2 is a warning release, not a PHP runtime fix.\nCVE-2026-109618: Vulnerable. On-Premise deployments on affected PHP; Matomo 5.14.2 is a warning release, not a PHP runtime fix.\nCVE-2026-109619: Vulnerable. On-Premise deployments on affected PHP; Matomo 5.14.2 is a warning release, not a PHP runtime fix.\nCVE assessment limit: Public vendor/upstream assessment for the stated scope only; no deployed installation was tested.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://matomo.org/blog/2026/10/critical-php-security-vulnerabilities-important-update-for-matomo-users/ | https://matomo.org/changelog/matomo-5-14-2/",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -950,6 +982,22 @@
             "https://github.com/matomo-org/matomo/blob/5.x-dev/composer.json"
           ],
           "comment": "Official project/vendor documentation, repository manifest or publisher package metadata - The 5.x root requires PHP >=7.2.5; resolution targets and higher transitive requirements are separate."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://matomo.org/blog/2026/10/critical-php-security-vulnerabilities-important-update-for-matomo-users/"
+          ],
+          "comment": "Official public source reviewed 2026-10-23"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://matomo.org/changelog/matomo-5-14-2/"
+          ],
+          "comment": "Official public source reviewed 2026-10-23"
         }
       ]
     },
