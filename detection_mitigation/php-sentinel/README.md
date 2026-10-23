@@ -1,6 +1,6 @@
 # PHP Sentinel
 
-A reverse proxy that defends PHP applications against CVE-2026-109618, CVE-2026-109619, and the broader class of PHP SAPI parsing exploits. Two layers of protection:
+A reverse proxy that defends PHP applications against CVE-2026-109618 and the broader class of PHP SAPI crash-inducing exploits. Two layers of protection:
 
 1. **Upload-progress filter** (primary) — blocks any multipart request containing `PHP_SESSION_UPLOAD_PROGRESS`, the root attack surface for CVE-2026-109618. Deterministic, no latency cost.
 2. **Canary array** (defense in depth) — replays every request through 11 isolated PHP-FPM instances (PHP 5.6–8.4) in parallel. If any canary worker crashes, OOMs, or hangs, the request is blocked before production sees it. Catches unknown parser bugs that the filter doesn't cover.
@@ -25,7 +25,7 @@ Set `SENTINEL_BACKEND_URL` in `docker-compose.yml` to your PHP application's add
 
 ## Test results
 
-Tested against four independent public PoC exploit tools targeting CVE-2026-109618 and CVE-2026-109619:
+Tested against four independent public PoC exploit tools targeting CVE-2026-109618:
 
 | PoC | Attack type | Result |
 | --- | --- | --- |
@@ -37,9 +37,9 @@ Tested against four independent public PoC exploit tools targeting CVE-2026-1096
 
 ## Limitations
 
-- The canary array detects exploits that **crash** PHP workers. A successful RCE that runs without crashing is not caught by the canaries — the upload-progress filter is the primary defense against CVE-2026-109619's use-after-free.
+- The canary array detects exploits that **crash** PHP workers. A successful RCE that runs without crashing is not caught by the canaries.
 - Canaries run `memory_limit=16M`, not production's config. OOM thresholds can differ between canary and production.
-- CVE-2026-109619 corrupts worker state across multiple requests. Single-request canary replay does not reproduce multi-request heap grooming. The upload-progress filter covers this gap.
+- CVE-2026-109619 (cross-request state corruption) is not covered. Single-request canary replay does not reproduce multi-request heap grooming. Patching or taking the system offline is the only mitigation for 109619.
 - Adds latency per request (parallel canary replay, bounded by the slowest canary). The upload-progress filter adds none.
 - Requires Docker on the host system.
 - Does not replace updating to fixed PHP releases where available. This is a compensating control for environments where patching is not possible.
