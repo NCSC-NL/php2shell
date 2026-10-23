@@ -111,10 +111,6 @@
       "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:d013e862a29a": 2009,
       "urn:php2shell:inventory:vex:CVE-2026-109618:affects:netscaler-management-20261021": 2036,
       "urn:php2shell:inventory:vex:CVE-2026-109619:affects:netscaler-management-20261021": 2037,
-      "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:f5-bigip-research-20261021": 2038,
-      "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:f5-bigip-research-20261021": 2039,
-      "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:fortiadc-research-20261021": 2040,
-      "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:fortiadc-research-20261021": 2041,
       "urn:php2shell:inventory:package:PHP-0677": 2051,
       "urn:php2shell:inventory:package:PHP-0678": 2052,
       "urn:php2shell:inventory:relationship:PHP-0677": 2060,
@@ -278,9 +274,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:synology:81dd93975b06",
-      "summary": "Fresh archive metadata confirms the existing8.4 package identity. It is one of ten PHP branch families, not PHP installed by default throughout DSM.",
+      "summary": "Update the corresponding PHP package through DSM Package Center and verify dependent services restart.",
       "description": "Architecture-specific PHP SPK runtime packages; exact SAPI unverified",
-      "comment": "Inventory record: PHP-0423\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Architecture-specific PHP SPK runtime packages; exact SAPI unverified\nPHP version scope: Archive family8.4 lists8.4.19-0050 and8.4.14-0003. Selected8.4.19-0050 lists five SPKs, with archive modification timestamps24 March2026. These are catalogue timestamps, not release/support dates.\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: Package availability and filenames do not establish model/DSM support, exact payload, signatures, enabled extensions or active services. Release-note reads returned footer-only bodies, so search-snippet minimum DSM claims were not adopted. No package was downloaded, extracted or executed.\nPatch owner: Synology package maintainer; NAS administrator for installation and rollout\nDownstream surface: Only the named management component and its documented callers\nRelease pin: Archive build8.4.19-0050; SPK filenames/timestamps read, no bytes/digest verification\nSource accessed: 2026-10-19\nAliases: synology:php8.4-package\nConditional downstream consequence: A matching PHP or enabled-module flaw could propagate to applications selecting this distributed runtime. Actual impact depends on the installed build, reachable code and service identity; package availability alone establishes no exposed installation or successful exploitation.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0423\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Architecture-specific PHP SPK runtime packages; exact SAPI unverified\nPHP version scope: 8.4.27-0051 or above in the corresponding Synology PHP branch\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: Package availability and filenames do not establish model/DSM support, exact payload, signatures, enabled extensions or active services. Release-note reads returned footer-only bodies, so search-snippet minimum DSM claims were not adopted. No package was downloaded, extracted or executed.\nPatch owner: Synology package maintainer; NAS administrator for installation and rollout\nDownstream surface: Only the named management component and its documented callers\nRelease pin: 8.4.27-0051 or above in the corresponding Synology PHP branch\nSource accessed: 2026-10-23\nAliases: synology:php8.4-package\nConditional downstream consequence: A matching PHP or enabled-module flaw could propagate to applications selecting this distributed runtime. Actual impact depends on the installed build, reachable code and service identity; package availability alone establishes no exposed installation or successful exploitation.\nVulnerability status: Fix. Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.\nCVE-2026-109618: Fix. Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.\nCVE-2026-109619: Fix. Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -297,8 +293,17 @@
             "https://archive.synology.com/download/Package/PHP8.4"
           ],
           "comment": "Official project/vendor PHP relationship evidence - Two PHP8.4 package release directories are advertised."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.synology.com/en-global/security/advisory/Synology_SA_26_14"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "8.4.27-0051 or above in the corresponding Synology PHP branch"
     },
     {
       "type": "software_Package",
@@ -314,9 +319,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:synology:81dd93975b06",
-      "summary": "Web Station supports separately installed PHP backends and PHP profiles for hosted sites.",
+      "summary": "Update the applicable PHP package through Package Center; supported fixed branches and builds are listed in Synology-SA-26:14. DSM versions older than 7.2 require the vendor's additional upgrade guidance.",
       "description": "Optional Package Center PHP backend with nginx or Apache web hosting",
-      "comment": "Inventory record: PHP-0424\nCategory: Appliances and embedded\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0423\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Optional Package Center PHP backend with nginx or Apache web hosting\nPHP version scope: DSM7.4 Web Station specification; PHP backend version selected separately\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: Optional hosting capability does not prove PHP in the Web Station implementation or all DSM services. The specification supplies no patch-level backend catalogue. No deployment total, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied. Public documents/static source only; no retrieved code or appliance image was installed, executed, built or tested.\nPatch owner: Synology for runtime packages; NAS/site administrator for backend selection and updates\nDownstream surface: Only the named management component and its documented callers\nRelease pin: Moving official source/documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: synology:web-station-php-option\nConditional downstream consequence: If a matching PHP or enabled-extension flaw is reachable in this management interface, possible effects include worker denial of service, disclosure of accessible credentials, configuration modification or code execution as the service account. Root access, packet/media-plane compromise, tenant escape and lateral movement require separate privilege, reachability and isolation evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0424\nCategory: Appliances and embedded\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0423\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Optional Package Center PHP backend with nginx or Apache web hosting\nPHP version scope: Web Station with vendor-patched PHP packages from Synology-SA-26:14\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: Optional hosting capability does not prove PHP in the Web Station implementation or all DSM services. The specification supplies no patch-level backend catalogue. No deployment total, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied. Public documents/static source only; no retrieved code or appliance image was installed, executed, built or tested.\nPatch owner: Synology for runtime packages; NAS/site administrator for backend selection and updates\nDownstream surface: Only the named management component and its documented callers\nRelease pin: Web Station with vendor-patched PHP packages from Synology-SA-26:14\nSource accessed: 2026-10-23\nAliases: synology:web-station-php-option\nConditional downstream consequence: If a matching PHP or enabled-extension flaw is reachable in this management interface, possible effects include worker denial of service, disclosure of accessible credentials, configuration modification or code execution as the service account. Root access, packet/media-plane compromise, tenant escape and lateral movement require separate privilege, reachability and isolation evidence.\nVulnerability status: Fix. Synology names Web Station among affected PHP-dependent packages and says updating PHP resolves the vulnerabilities after dependent packages restart. This is a PHP dependency fix, not a separate Web Station release.\nCVE-2026-109618: Fix. Synology names Web Station among affected PHP-dependent packages and says updating PHP resolves the vulnerabilities after dependent packages restart. This is a PHP dependency fix, not a separate Web Station release.\nCVE-2026-109619: Fix. Synology names Web Station among affected PHP-dependent packages and says updating PHP resolves the vulnerabilities after dependent packages restart. This is a PHP dependency fix, not a separate Web Station release.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14 ; https://www.synology.com/en-us/company/news/article/php2shell/Synology%20Statement%20on%20PHP2Shell%20Vulnerabilities",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -325,8 +330,25 @@
             "https://www.synology.com/en-global/dsm/7.4/software_spec/web_station"
           ],
           "comment": "Official project/vendor scope evidence"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.synology.com/en-global/security/advisory/Synology_SA_26_14"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.synology.com/en-us/company/news/article/php2shell/Synology%20Statement%20on%20PHP2Shell%20Vulnerabilities"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Web Station with vendor-patched PHP packages from Synology-SA-26:14"
     },
     {
       "type": "software_Package",
@@ -460,9 +482,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:lime-technology-unraid:a8ec17054aaf",
-      "summary": "Unraid release notes identify its PHP package and PHP web GUI files.",
+      "summary": "Update Unraid OS to 7.3.4; assess independently maintained application runtimes separately.",
       "description": "Bundled PHP runtime used by the web management UI; exact SAPI unverified",
-      "comment": "Inventory record: PHP-0428\nCategory: Appliances and embedded\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Bundled PHP runtime used by the web management UI; exact SAPI unverified\nPHP version scope: 7.3.2 release lists php8.4.23-1;7.4.0-rc.1 lists PHP8.4.26\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: 7.4.0-rc.1 is a prerelease, not stable7.4. Disk/VM data planes and arbitrary containers do not inherit PHP implementation. No deployment total, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied. Public documents/static source only; no retrieved code or appliance image was installed, executed, built or tested.\nPatch owner: Unraid OS maintainer for bundled packages; operator for release rollout\nDownstream surface: Only the named management component and its documented callers\nRelease pin: Unraid7.3.2 release notes; separate7.4.0-rc.1 scope\nSource accessed: 2026-10-17\nAliases: unraid:php-management-runtime\nConditional downstream consequence: If a matching PHP or enabled-extension flaw is reachable in this management interface, possible effects include worker denial of service, disclosure of accessible credentials, configuration modification or code execution as the service account. Root access, packet/media-plane compromise, tenant escape and lateral movement require separate privilege, reachability and isolation evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0428\nCategory: Appliances and embedded\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Bundled PHP runtime used by the web management UI; exact SAPI unverified\nPHP version scope: Unraid OS 7.3.4 (PHP 8.4.27)\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: 7.4.0-rc.1 is a prerelease, not stable7.4. Disk/VM data planes and arbitrary containers do not inherit PHP implementation. No deployment total, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied. Public documents/static source only; no retrieved code or appliance image was installed, executed, built or tested.\nPatch owner: Unraid OS maintainer for bundled packages; operator for release rollout\nDownstream surface: Only the named management component and its documented callers\nRelease pin: Unraid OS 7.3.4 (PHP 8.4.27)\nSource accessed: 2026-10-23\nAliases: unraid:php-management-runtime\nConditional downstream consequence: If a matching PHP or enabled-extension flaw is reachable in this management interface, possible effects include worker denial of service, disclosure of accessible credentials, configuration modification or code execution as the service account. Root access, packet/media-plane compromise, tenant escape and lateral movement require separate privilege, reachability and isolation evidence.\nVulnerability status: Fix. Unraid's official administrator announcement confirms OS 7.3.4 includes PHP 8.4.27 fixing both CVEs. This does not cover separately maintained Docker or VM runtimes or the libvirt-php binding.\nCVE-2026-109618: Fix. Unraid's official administrator announcement confirms OS 7.3.4 includes PHP 8.4.27 fixing both CVEs. This does not cover separately maintained Docker or VM runtimes or the libvirt-php binding.\nCVE-2026-109619: Fix. Unraid's official administrator announcement confirms OS 7.3.4 includes PHP 8.4.27 fixing both CVEs. This does not cover separately maintained Docker or VM runtimes or the libvirt-php binding.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://forums.unraid.net/topic/200990-unraid-os-734-now-available/",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -479,8 +501,17 @@
             "https://docs.unraid.net/unraid-os/release-notes/7.4.0/"
           ],
           "comment": "Official project/vendor PHP relationship evidence - 7.4.0-rc.1 lists PHP8.4.26 and is explicitly prerelease."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://forums.unraid.net/topic/200990-unraid-os-734-now-available/"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Unraid OS 7.3.4 (PHP 8.4.27)"
     },
     {
       "type": "software_Package",
@@ -984,9 +1015,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:synology:81dd93975b06",
-      "summary": "The official archive publishes this named PHP package family and architecture/platform-labelled SPK files.",
+      "summary": "Migrate dependent applications to a supported, fixed Synology PHP package; do not expect a PHP 7.3 fix.",
       "description": "Selected NAS PHP runtime; exact SAPI and active service identities unknown",
-      "comment": "Inventory record: PHP-0603\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Selected NAS PHP runtime; exact SAPI and active service identities unknown\nPHP version scope: Archive branch7.3; first-listed build7.3.33-0173. 8 build folders; 5 SPK files in the selected build.\nExtensions: Exact required/optional/loaded extension set unknown for the selected vendor payload\nLimitations: Confirmed relationship refers to the named archived distribution, including legacy branches, not current support or installation. All model/DSM minima, native ABI, loaded modules and exact payloads remain unverified. No SPK was downloaded, unpacked or executed.\nPatch owner: Synology for package/firmware integration and distribution; PHP/component upstream for fixes; operator for compatible deployment and process restart\nDownstream surface: Only selected installed/configured NAS PHP workloads, not every NAS service or client\nRelease pin: Synology archive build7.3.33-0173; file names and modification metadata only, no binary hash verified\nSource accessed: 2026-10-19\nAliases: synology:php7.3-package\nConditional downstream consequence: Analyst judgment: a matching PHP flaw could affect a configured workload using this installed package and a loaded/reachable feature. Disclosure, DoS, integrity or code execution depend on the exact build, input path and privileges. Credentials, tenant crossing and host control are not established by catalogue availability.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0603\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Selected NAS PHP runtime; exact SAPI and active service identities unknown\nPHP version scope: Synology PHP 7.3; end of life\nExtensions: Exact required/optional/loaded extension set unknown for the selected vendor payload\nLimitations: Confirmed relationship refers to the named archived distribution, including legacy branches, not current support or installation. All model/DSM minima, native ABI, loaded modules and exact payloads remain unverified. No SPK was downloaded, unpacked or executed.\nPatch owner: Synology for package/firmware integration and distribution; PHP/component upstream for fixes; operator for compatible deployment and process restart\nDownstream surface: Only selected installed/configured NAS PHP workloads, not every NAS service or client\nRelease pin: Synology PHP 7.3; end of life\nSource accessed: 2026-10-23\nAliases: synology:php7.3-package\nConditional downstream consequence: Analyst judgment: a matching PHP flaw could affect a configured workload using this installed package and a loaded/reachable feature. Disclosure, DoS, integrity or code execution depend on the exact build, input path and privileges. Credentials, tenant crossing and host control are not established by catalogue availability.\nVulnerability status: Vulnerable. Synology-SA-26:14 lists PHP 7.3 as affected by both CVEs and states that no fix will be provided because the package is end of life.\nCVE-2026-109618: Vulnerable. Synology-SA-26:14 lists PHP 7.3 as affected by both CVEs and states that no fix will be provided because the package is end of life.\nCVE-2026-109619: Vulnerable. Synology-SA-26:14 lists PHP 7.3 as affected by both CVEs and states that no fix will be provided because the package is end of life.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1003,8 +1034,17 @@
             "https://archive.synology.com/download/Package/PHP7.3"
           ],
           "comment": "Primary NAS/appliance package, release or component-boundary evidence - Enumerated the version-labelled build folders for this family."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.synology.com/en-global/security/advisory/Synology_SA_26_14"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Synology PHP 7.3; end of life"
     },
     {
       "type": "software_Package",
@@ -1020,9 +1060,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:synology:81dd93975b06",
-      "summary": "The official archive publishes this named PHP package family and architecture/platform-labelled SPK files.",
+      "summary": "Update the corresponding PHP package through DSM Package Center and verify dependent services restart.",
       "description": "Selected NAS PHP runtime; exact SAPI and active service identities unknown",
-      "comment": "Inventory record: PHP-0604\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Selected NAS PHP runtime; exact SAPI and active service identities unknown\nPHP version scope: Archive branch7.4; first-listed build7.4.33-0140. 12 build folders; 2 SPK files in the selected build. Selected files carry a BSM marker; do not treat them as general DSM support.\nExtensions: Exact required/optional/loaded extension set unknown for the selected vendor payload\nLimitations: Confirmed relationship refers to the named archived distribution, including legacy branches, not current support or installation. The sampled7.4 files are BSM-tagged; their product/model applicability remains unknown. All model/DSM minima, native ABI, loaded modules and exact payloads remain unverified. No SPK was downloaded, unpacked or executed.\nPatch owner: Synology for package/firmware integration and distribution; PHP/component upstream for fixes; operator for compatible deployment and process restart\nDownstream surface: Only selected installed/configured NAS PHP workloads, not every NAS service or client\nRelease pin: Synology archive build7.4.33-0140; file names and modification metadata only, no binary hash verified\nSource accessed: 2026-10-19\nAliases: synology:php7.4-package\nConditional downstream consequence: Analyst judgment: a matching PHP flaw could affect a configured workload using this installed package and a loaded/reachable feature. Disclosure, DoS, integrity or code execution depend on the exact build, input path and privileges. Credentials, tenant crossing and host control are not established by catalogue availability.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0604\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Selected NAS PHP runtime; exact SAPI and active service identities unknown\nPHP version scope: 7.4.33-0131 or above in the corresponding Synology PHP branch\nExtensions: Exact required/optional/loaded extension set unknown for the selected vendor payload\nLimitations: Confirmed relationship refers to the named archived distribution, including legacy branches, not current support or installation. The sampled7.4 files are BSM-tagged; their product/model applicability remains unknown. All model/DSM minima, native ABI, loaded modules and exact payloads remain unverified. No SPK was downloaded, unpacked or executed.\nPatch owner: Synology for package/firmware integration and distribution; PHP/component upstream for fixes; operator for compatible deployment and process restart\nDownstream surface: Only selected installed/configured NAS PHP workloads, not every NAS service or client\nRelease pin: 7.4.33-0131 or above in the corresponding Synology PHP branch\nSource accessed: 2026-10-23\nAliases: synology:php7.4-package\nConditional downstream consequence: Analyst judgment: a matching PHP flaw could affect a configured workload using this installed package and a loaded/reachable feature. Disclosure, DoS, integrity or code execution depend on the exact build, input path and privileges. Credentials, tenant crossing and host control are not established by catalogue availability.\nVulnerability status: Fix. Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.\nCVE-2026-109618: Fix. Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.\nCVE-2026-109619: Fix. Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1039,8 +1079,17 @@
             "https://archive.synology.com/download/Package/PHP7.4"
           ],
           "comment": "Primary NAS/appliance package, release or component-boundary evidence - Enumerated the version-labelled build folders for this family."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.synology.com/en-global/security/advisory/Synology_SA_26_14"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "7.4.33-0131 or above in the corresponding Synology PHP branch"
     },
     {
       "type": "software_Package",
@@ -1056,9 +1105,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:synology:81dd93975b06",
-      "summary": "The official archive publishes this named PHP package family and architecture/platform-labelled SPK files.",
+      "summary": "Update the corresponding PHP package through DSM Package Center and verify dependent services restart.",
       "description": "Selected NAS PHP runtime; exact SAPI and active service identities unknown",
-      "comment": "Inventory record: PHP-0605\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Selected NAS PHP runtime; exact SAPI and active service identities unknown\nPHP version scope: Archive branch8.0; first-listed build8.0.30-0121. 6 build folders; 5 SPK files in the selected build.\nExtensions: Exact required/optional/loaded extension set unknown for the selected vendor payload\nLimitations: Confirmed relationship refers to the named archived distribution, including legacy branches, not current support or installation. All model/DSM minima, native ABI, loaded modules and exact payloads remain unverified. No SPK was downloaded, unpacked or executed.\nPatch owner: Synology for package/firmware integration and distribution; PHP/component upstream for fixes; operator for compatible deployment and process restart\nDownstream surface: Only selected installed/configured NAS PHP workloads, not every NAS service or client\nRelease pin: Synology archive build8.0.30-0121; file names and modification metadata only, no binary hash verified\nSource accessed: 2026-10-19\nAliases: synology:php8.0-package\nConditional downstream consequence: Analyst judgment: a matching PHP flaw could affect a configured workload using this installed package and a loaded/reachable feature. Disclosure, DoS, integrity or code execution depend on the exact build, input path and privileges. Credentials, tenant crossing and host control are not established by catalogue availability.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0605\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Selected NAS PHP runtime; exact SAPI and active service identities unknown\nPHP version scope: 8.0.30-0122 or above in the corresponding Synology PHP branch\nExtensions: Exact required/optional/loaded extension set unknown for the selected vendor payload\nLimitations: Confirmed relationship refers to the named archived distribution, including legacy branches, not current support or installation. All model/DSM minima, native ABI, loaded modules and exact payloads remain unverified. No SPK was downloaded, unpacked or executed.\nPatch owner: Synology for package/firmware integration and distribution; PHP/component upstream for fixes; operator for compatible deployment and process restart\nDownstream surface: Only selected installed/configured NAS PHP workloads, not every NAS service or client\nRelease pin: 8.0.30-0122 or above in the corresponding Synology PHP branch\nSource accessed: 2026-10-23\nAliases: synology:php8.0-package\nConditional downstream consequence: Analyst judgment: a matching PHP flaw could affect a configured workload using this installed package and a loaded/reachable feature. Disclosure, DoS, integrity or code execution depend on the exact build, input path and privileges. Credentials, tenant crossing and host control are not established by catalogue availability.\nVulnerability status: Fix. Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.\nCVE-2026-109618: Fix. Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.\nCVE-2026-109619: Fix. Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1075,8 +1124,17 @@
             "https://archive.synology.com/download/Package/PHP8.0"
           ],
           "comment": "Primary NAS/appliance package, release or component-boundary evidence - Enumerated the version-labelled build folders for this family."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.synology.com/en-global/security/advisory/Synology_SA_26_14"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "8.0.30-0122 or above in the corresponding Synology PHP branch"
     },
     {
       "type": "software_Package",
@@ -1092,9 +1150,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:synology:81dd93975b06",
-      "summary": "The official archive publishes this named PHP package family and architecture/platform-labelled SPK files.",
+      "summary": "Update the corresponding PHP package through DSM Package Center and verify dependent services restart.",
       "description": "Selected NAS PHP runtime; exact SAPI and active service identities unknown",
-      "comment": "Inventory record: PHP-0606\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Selected NAS PHP runtime; exact SAPI and active service identities unknown\nPHP version scope: Archive branch8.1; first-listed build8.1.34-0110. 4 build folders; 5 SPK files in the selected build.\nExtensions: Exact required/optional/loaded extension set unknown for the selected vendor payload\nLimitations: Confirmed relationship refers to the named archived distribution, including legacy branches, not current support or installation. All model/DSM minima, native ABI, loaded modules and exact payloads remain unverified. No SPK was downloaded, unpacked or executed.\nPatch owner: Synology for package/firmware integration and distribution; PHP/component upstream for fixes; operator for compatible deployment and process restart\nDownstream surface: Only selected installed/configured NAS PHP workloads, not every NAS service or client\nRelease pin: Synology archive build8.1.34-0110; file names and modification metadata only, no binary hash verified\nSource accessed: 2026-10-19\nAliases: synology:php8.1-package\nConditional downstream consequence: Analyst judgment: a matching PHP flaw could affect a configured workload using this installed package and a loaded/reachable feature. Disclosure, DoS, integrity or code execution depend on the exact build, input path and privileges. Credentials, tenant crossing and host control are not established by catalogue availability.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0606\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Selected NAS PHP runtime; exact SAPI and active service identities unknown\nPHP version scope: 8.1.34-0120 or above in the corresponding Synology PHP branch\nExtensions: Exact required/optional/loaded extension set unknown for the selected vendor payload\nLimitations: Confirmed relationship refers to the named archived distribution, including legacy branches, not current support or installation. All model/DSM minima, native ABI, loaded modules and exact payloads remain unverified. No SPK was downloaded, unpacked or executed.\nPatch owner: Synology for package/firmware integration and distribution; PHP/component upstream for fixes; operator for compatible deployment and process restart\nDownstream surface: Only selected installed/configured NAS PHP workloads, not every NAS service or client\nRelease pin: 8.1.34-0120 or above in the corresponding Synology PHP branch\nSource accessed: 2026-10-23\nAliases: synology:php8.1-package\nConditional downstream consequence: Analyst judgment: a matching PHP flaw could affect a configured workload using this installed package and a loaded/reachable feature. Disclosure, DoS, integrity or code execution depend on the exact build, input path and privileges. Credentials, tenant crossing and host control are not established by catalogue availability.\nVulnerability status: Fix. Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.\nCVE-2026-109618: Fix. Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.\nCVE-2026-109619: Fix. Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1111,8 +1169,17 @@
             "https://archive.synology.com/download/Package/PHP8.1"
           ],
           "comment": "Primary NAS/appliance package, release or component-boundary evidence - Enumerated the version-labelled build folders for this family."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.synology.com/en-global/security/advisory/Synology_SA_26_14"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "8.1.34-0120 or above in the corresponding Synology PHP branch"
     },
     {
       "type": "software_Package",
@@ -1128,9 +1195,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:synology:81dd93975b06",
-      "summary": "The official archive publishes this named PHP package family and architecture/platform-labelled SPK files.",
+      "summary": "Update the corresponding PHP package through DSM Package Center and verify dependent services restart.",
       "description": "Selected NAS PHP runtime; exact SAPI and active service identities unknown",
-      "comment": "Inventory record: PHP-0607\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Selected NAS PHP runtime; exact SAPI and active service identities unknown\nPHP version scope: Archive branch8.2; first-listed build8.2.30-0170. 5 build folders; 5 SPK files in the selected build.\nExtensions: Exact required/optional/loaded extension set unknown for the selected vendor payload\nLimitations: Confirmed relationship refers to the named archived distribution, including legacy branches, not current support or installation. All model/DSM minima, native ABI, loaded modules and exact payloads remain unverified. No SPK was downloaded, unpacked or executed.\nPatch owner: Synology for package/firmware integration and distribution; PHP/component upstream for fixes; operator for compatible deployment and process restart\nDownstream surface: Only selected installed/configured NAS PHP workloads, not every NAS service or client\nRelease pin: Synology archive build8.2.30-0170; file names and modification metadata only, no binary hash verified\nSource accessed: 2026-10-19\nAliases: synology:php8.2-package\nConditional downstream consequence: Analyst judgment: a matching PHP flaw could affect a configured workload using this installed package and a loaded/reachable feature. Disclosure, DoS, integrity or code execution depend on the exact build, input path and privileges. Credentials, tenant crossing and host control are not established by catalogue availability.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0607\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Selected NAS PHP runtime; exact SAPI and active service identities unknown\nPHP version scope: 8.2.35-0171 or above in the corresponding Synology PHP branch\nExtensions: Exact required/optional/loaded extension set unknown for the selected vendor payload\nLimitations: Confirmed relationship refers to the named archived distribution, including legacy branches, not current support or installation. All model/DSM minima, native ABI, loaded modules and exact payloads remain unverified. No SPK was downloaded, unpacked or executed.\nPatch owner: Synology for package/firmware integration and distribution; PHP/component upstream for fixes; operator for compatible deployment and process restart\nDownstream surface: Only selected installed/configured NAS PHP workloads, not every NAS service or client\nRelease pin: 8.2.35-0171 or above in the corresponding Synology PHP branch\nSource accessed: 2026-10-23\nAliases: synology:php8.2-package\nConditional downstream consequence: Analyst judgment: a matching PHP flaw could affect a configured workload using this installed package and a loaded/reachable feature. Disclosure, DoS, integrity or code execution depend on the exact build, input path and privileges. Credentials, tenant crossing and host control are not established by catalogue availability.\nVulnerability status: Fix. Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.\nCVE-2026-109618: Fix. Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.\nCVE-2026-109619: Fix. Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1147,8 +1214,17 @@
             "https://archive.synology.com/download/Package/PHP8.2"
           ],
           "comment": "Primary NAS/appliance package, release or component-boundary evidence - Enumerated the version-labelled build folders for this family."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.synology.com/en-global/security/advisory/Synology_SA_26_14"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "8.2.35-0171 or above in the corresponding Synology PHP branch"
     },
     {
       "type": "software_Package",
@@ -1164,9 +1240,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:synology:81dd93975b06",
-      "summary": "The official archive publishes this named PHP package family and architecture/platform-labelled SPK files.",
+      "summary": "Update the corresponding PHP package through DSM Package Center and verify dependent services restart.",
       "description": "Selected NAS PHP runtime; exact SAPI and active service identities unknown",
-      "comment": "Inventory record: PHP-0608\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Selected NAS PHP runtime; exact SAPI and active service identities unknown\nPHP version scope: Archive branch8.3; first-listed build8.3.30-0050. 2 build folders; 5 SPK files in the selected build.\nExtensions: Exact required/optional/loaded extension set unknown for the selected vendor payload\nLimitations: Confirmed relationship refers to the named archived distribution, including legacy branches, not current support or installation. All model/DSM minima, native ABI, loaded modules and exact payloads remain unverified. No SPK was downloaded, unpacked or executed.\nPatch owner: Synology for package/firmware integration and distribution; PHP/component upstream for fixes; operator for compatible deployment and process restart\nDownstream surface: Only selected installed/configured NAS PHP workloads, not every NAS service or client\nRelease pin: Synology archive build8.3.30-0050; file names and modification metadata only, no binary hash verified\nSource accessed: 2026-10-19\nAliases: synology:php8.3-package\nConditional downstream consequence: Analyst judgment: a matching PHP flaw could affect a configured workload using this installed package and a loaded/reachable feature. Disclosure, DoS, integrity or code execution depend on the exact build, input path and privileges. Credentials, tenant crossing and host control are not established by catalogue availability.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0608\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Selected NAS PHP runtime; exact SAPI and active service identities unknown\nPHP version scope: 8.3.36-0051 or above in the corresponding Synology PHP branch\nExtensions: Exact required/optional/loaded extension set unknown for the selected vendor payload\nLimitations: Confirmed relationship refers to the named archived distribution, including legacy branches, not current support or installation. All model/DSM minima, native ABI, loaded modules and exact payloads remain unverified. No SPK was downloaded, unpacked or executed.\nPatch owner: Synology for package/firmware integration and distribution; PHP/component upstream for fixes; operator for compatible deployment and process restart\nDownstream surface: Only selected installed/configured NAS PHP workloads, not every NAS service or client\nRelease pin: 8.3.36-0051 or above in the corresponding Synology PHP branch\nSource accessed: 2026-10-23\nAliases: synology:php8.3-package\nConditional downstream consequence: Analyst judgment: a matching PHP flaw could affect a configured workload using this installed package and a loaded/reachable feature. Disclosure, DoS, integrity or code execution depend on the exact build, input path and privileges. Credentials, tenant crossing and host control are not established by catalogue availability.\nVulnerability status: Fix. Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.\nCVE-2026-109618: Fix. Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.\nCVE-2026-109619: Fix. Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1183,8 +1259,17 @@
             "https://archive.synology.com/download/Package/PHP8.3"
           ],
           "comment": "Primary NAS/appliance package, release or component-boundary evidence - Enumerated the version-labelled build folders for this family."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.synology.com/en-global/security/advisory/Synology_SA_26_14"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "8.3.36-0051 or above in the corresponding Synology PHP branch"
     },
     {
       "type": "software_Package",
@@ -1291,7 +1376,7 @@
       "type": "software_Package",
       "spdxId": "urn:php2shell:inventory:package:PHP-0624",
       "creationInfo": "_:creationinfo",
-      "name": "NetScaler ADC",
+      "name": "Citrix NetScaler ADC and Citrix NetScaler Gateway",
       "software_primaryPurpose": "firmware",
       "externalIdentifier": [
         {
@@ -1301,9 +1386,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:citrix-netscaler:410b5f07d390",
-      "summary": "Official vendor assessment: Vulnerable for CVE-2026-109618 and CVE-2026-109619 in the PHP-based NetScaler Management Portal; fixed package pending.",
+      "summary": "Official vendor assessment: CTX697263 lists Citrix NetScaler ADC and Citrix NetScaler Gateway as impacted by CVE-2026-109618 and CVE-2026-109619; fixed PHP package pending for the PHP-based NetScaler Management Portal.",
       "description": "14.1 pooled notice includes PHP; separate guide identifies administration PHP controller.",
-      "comment": "Inventory record: PHP-0624\nEdge inventory record: EDGE-002\nCategory: Appliances and embedded\nScope group: Network/security appliance\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037 runtime family reference\nEvidence status: Vendor-confirmed affected product scope\nRelationship confidence: Source supports the stated scope; actual deployment unknown\nDeployment status: Unknown: no installation count, live build, reachability, permissions, failover or exploitation measured\nService role: Application delivery and appliance administration\nPHP surface: NetScaler Product Security states that the NetScaler Management Portal uses PHP; affected management access includes the NSIP GUI, management-enabled SNIP GUI and Cluster IP GUI.\nPHP version scope: All supported NetScaler software versions are impacted; Citrix is working to upgrade the PHP software package to a fixed version.\nExtensions: Unknown unless explicitly recorded\nImportant boundary: This assessment is limited to PHP-based management access. NetScaler Console (Service and on premises) and NetScaler SVM are not impacted; do not extend it to all Gateway login/VPN or data-plane paths.\nPatch owner: Citrix / NetScaler for supported firmware/component corrections; operator/provider for deployment, restart and service continuity\nPossible abuse: If a matching reachable PHP function is compromised, readable settings/credentials or permitted management actions could be misused. Wider appliance control requires separate privilege/path evidence.\nPHP component loss: The PHP-dependent interface/workflow could be unavailable. Independent traffic processing or other services may continue; exact behaviour is not measured.\nWhole appliance loss: Whole-ADC shutdown could interrupt published applications or configured remote-access services unless another path/failover maintains them.\nConditions: Requires a matching affected runtime/vendor build, enabled function, reachable input and relevant process permissions. PHP presence alone is insufficient.\nSource accessed: 2026-10-22\nPublic vendor CVE review: 2026-10-22\nVendor advisory sources: https://community.citrix.com/techzone-blogs/110_security-updates/protecting-netscaler-management-access-from-php-cve-2026-109618-cve-2026-109619-r1640/\nVulnerability status: Vendor bulletin 2026-10-21: NetScaler is impacted by both CVEs through the PHP-based Management Portal; a fixed PHP package is pending.\nCVE-2026-109618: Affected in all supported NetScaler software versions for PHP-based management access; fixed PHP package pending\nCVE-2026-109619: Affected in all supported NetScaler software versions for PHP-based management access; fixed PHP package pending\nCVE assessment limit: The VEX relationships state the current vendor-confirmed management-interface scope. Installed builds, runtime activation, access control and deployment were not tested.",
+      "comment": "Inventory record: PHP-0624\nEdge inventory record: EDGE-002\nCategory: Appliances and embedded\nScope group: Network/security appliance\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037 runtime family reference\nEvidence status: Vendor-confirmed affected product scope\nRelationship confidence: Source supports the stated scope; actual deployment unknown\nDeployment status: Unknown: no installation count, live build, reachability, permissions, failover or exploitation measured\nService role: Application delivery and appliance administration\nPHP surface: NetScaler Product Security states that the NetScaler Management Portal uses PHP; affected management access includes the NSIP GUI, management-enabled SNIP GUI and Cluster IP GUI.\nPHP version scope: CTX697263 lists Citrix NetScaler ADC and Citrix NetScaler Gateway as impacted; NetScaler Product Security says all supported NetScaler software versions are impacted and Citrix is working to upgrade the PHP software package to a fixed version.\nExtensions: Unknown unless explicitly recorded\nImportant boundary: This assessment is limited to PHP-based management access. CTX697263 says Citrix NetScaler Console is not impacted; NetScaler Product Security also excludes NetScaler SVM. Do not extend it to all Gateway login/VPN or data-plane paths.\nPatch owner: Citrix / NetScaler for supported firmware/component corrections; operator/provider for deployment, restart and service continuity\nPossible abuse: If a matching reachable PHP function is compromised, readable settings/credentials or permitted management actions could be misused. Wider appliance control requires separate privilege/path evidence.\nPHP component loss: The PHP-dependent interface/workflow could be unavailable. Independent traffic processing or other services may continue; exact behaviour is not measured.\nWhole appliance loss: Whole-ADC shutdown could interrupt published applications or configured remote-access services unless another path/failover maintains them.\nConditions: Requires a matching affected runtime/vendor build, enabled function, reachable input and relevant process permissions. PHP presence alone is insufficient.\nSource accessed: 2026-10-23\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://support.citrix.com/external/article/CTX697263/citrix-security-advisory-for-cve20261096.html; https://community.citrix.com/techzone-blogs/110_security-updates/protecting-netscaler-management-access-from-php-cve-2026-109618-cve-2026-109619-r1640/\nVulnerability status: Vulnerable. CTX697263 lists Citrix NetScaler ADC and Citrix NetScaler Gateway as impacted by both CVEs; NetScaler Product Security scopes the PHP exposure to management interfaces and says a fixed PHP package is pending.\nCVE-2026-109618: Vulnerable. CTX697263 lists Citrix NetScaler ADC and Citrix NetScaler Gateway as impacted; fixed PHP package pending for PHP-based management access\nCVE-2026-109619: Vulnerable. CTX697263 lists Citrix NetScaler ADC and Citrix NetScaler Gateway as impacted; fixed PHP package pending for PHP-based management access\nCVE assessment limit: The VEX relationships state the current vendor-confirmed management-interface scope. Installed builds, runtime activation, access control and deployment were not tested.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1325,9 +1410,17 @@
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
           "locator": [
+            "https://support.citrix.com/external/article/CTX697263/citrix-security-advisory-for-cve20261096.html"
+          ],
+          "comment": "Citrix Security Advisory CTX697263 reviewed 2026-10-23"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
             "https://community.citrix.com/techzone-blogs/110_security-updates/protecting-netscaler-management-access-from-php-cve-2026-109618-cve-2026-109619-r1640/"
           ],
-          "comment": "NetScaler Product Security guidance reviewed 2026-10-22"
+          "comment": "NetScaler Product Security guidance reviewed 2026-10-23"
         }
       ],
       "software_packageVersion": "All supported NetScaler software versions impacted; fixed PHP package pending"
@@ -1346,9 +1439,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:f5:6cd28ed32abf",
-      "summary": "F5 K000163821 lists BIG-IP (all modules) 21.x and 17.x under investigation for CVE-2026-109618 and CVE-2026-109619; confirmation of vulnerability or non-vulnerability is not yet available.",
+      "summary": "Apply F5's Configuration utility access restrictions and staged PHP mitigation guidance while monitoring for an available fixed release.",
       "description": "Official issue record confirms PHP in BIG-IP; administration-upload role is described in indexed vendor text.",
-      "comment": "Inventory record: PHP-0626\nEdge inventory record: EDGE-004\nCategory: Appliances and embedded\nScope group: Platform component\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037 runtime family reference\nEvidence status: Vendor advisory under investigation\nRelationship confidence: Source supports the stated scope; actual deployment unknown\nDeployment status: Unknown: no installation count, live build, reachability, permissions, failover or exploitation measured\nService role: Appliance platform; administration uploads indicated\nPHP surface: Official issue record confirms PHP in BIG-IP; administration-upload role is described in indexed vendor text.\nPHP version scope: F5 issue ID1270257 confirms a BIG-IP PHP component, while K000163821 lists BIG-IP (all modules) 21.x and 17.x with research placeholders and no affected/fixed release confirmation.\nExtensions: Unknown unless explicitly recorded\nImportant boundary: The advisory's all-modules evaluation scope is not a statement that every module or packet path is PHP, and F5 has not yet confirmed vulnerability or non-vulnerability.\nPatch owner: F5 for supported firmware/component corrections; operator/provider for deployment, restart and service continuity\nPossible abuse: If a matching reachable PHP function is compromised, readable settings/credentials or permitted management actions could be misused. Wider appliance control requires separate privilege/path evidence.\nPHP component loss: The PHP-dependent interface/workflow could be unavailable. Independent traffic processing or other services may continue; exact behaviour is not measured.\nWhole appliance loss: Whole BIG-IP shutdown could interrupt the application-delivery/access/security functions actually provisioned on that unit.\nConditions: Requires a matching affected runtime/vendor build, enabled function, reachable input and relevant process permissions. PHP presence alone is insufficient.\nSource accessed: 2026-10-22\nPublic vendor CVE review: 2026-10-22\nVendor advisory sources: https://my.f5.com/manage/s/article/K000163821\nVulnerability status: F5 K000163821 lists BIG-IP (all modules) 21.x and 17.x under investigation; confirmation of vulnerability or non-vulnerability is not presently available.\nCVE-2026-109618: Vendor advisory under investigation; no affected/fixed BIG-IP release confirmed\nCVE-2026-109619: Vendor advisory under investigation; no affected/fixed BIG-IP release confirmed\nCVE assessment limit: The VEX relationships state the current vendor research status. Installed builds, runtime activation, enabled features, reachable inputs and exploitation remain unestablished.",
+      "comment": "Inventory record: PHP-0626\nEdge inventory record: EDGE-004\nCategory: Appliances and embedded\nScope group: Platform component\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037 runtime family reference\nEvidence status: Official public vendor/upstream CVE assessment\nRelationship confidence: Source supports the stated scope; actual deployment unknown\nDeployment status: Unknown: no installation count, live build, reachability, permissions, failover or exploitation measured\nService role: Appliance platform; administration uploads indicated\nPHP surface: Official issue record confirms PHP in BIG-IP; administration-upload role is described in indexed vendor text.\nPHP version scope: BIG-IP 17.1.0-17.1.3 / 17.5.0-17.5.1 / 21.1.0\nExtensions: Unknown unless explicitly recorded\nImportant boundary: The advisory's all-modules evaluation scope is not a statement that every module or packet path is PHP, and F5 has not yet confirmed vulnerability or non-vulnerability.\nPatch owner: F5 for supported firmware/component corrections; operator/provider for deployment, restart and service continuity\nPossible abuse: If a matching reachable PHP function is compromised, readable settings/credentials or permitted management actions could be misused. Wider appliance control requires separate privilege/path evidence.\nPHP component loss: The PHP-dependent interface/workflow could be unavailable. Independent traffic processing or other services may continue; exact behaviour is not measured.\nWhole appliance loss: Whole BIG-IP shutdown could interrupt the application-delivery/access/security functions actually provisioned on that unit.\nConditions: Requires a matching affected runtime/vendor build, enabled function, reachable input and relevant process permissions. PHP presence alone is insufficient.\nSource accessed: 2026-10-23\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://my.f5.com/manage/s/article/K000163821\nVulnerability status: Vulnerable. F5 confirms the BIG-IP Configuration utility control plane is affected across all modules in the listed releases. K000163821 lists no introduced fix; its mitigations are not recorded as fixed software.\nCVE-2026-109618: Vulnerable. F5 confirms the BIG-IP Configuration utility control plane is affected across all modules in the listed releases. K000163821 lists no introduced fix; its mitigations are not recorded as fixed software.\nCVE-2026-109619: Vulnerable. F5 confirms the BIG-IP Configuration utility control plane is affected across all modules in the listed releases. K000163821 lists no introduced fix; its mitigations are not recorded as fixed software.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nRelease pin: BIG-IP 17.1.0-17.1.3 / 17.5.0-17.5.1 / 21.1.0",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1372,10 +1465,10 @@
           "locator": [
             "https://my.f5.com/manage/s/article/K000163821"
           ],
-          "comment": "F5 K000163821 public CVE assessment reviewed 2026-10-22"
+          "comment": "Official public CVE review 2026-10-23"
         }
       ],
-      "software_packageVersion": "BIG-IP (all modules) 21.x and 17.x under investigation; no affected/fixed release confirmed"
+      "software_packageVersion": "BIG-IP 17.1.0-17.1.3 / 17.5.0-17.5.1 / 21.1.0"
     },
     {
       "type": "software_Package",
@@ -1391,9 +1484,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:f5:6cd28ed32abf",
-      "summary": "F5 K000163821 lists BIG-IP (all modules) 21.x and 17.x under investigation for CVE-2026-109618 and CVE-2026-109619; confirmation of vulnerability or non-vulnerability is not yet available.",
+      "summary": "Apply F5's APM-specific mitigation guidance and restart requirements after staging validation; monitor for released fixes.",
       "description": "F5 explicitly documents PHP inside APM UI templates.",
-      "comment": "Inventory record: PHP-0627\nEdge inventory record: EDGE-005\nCategory: Appliances and embedded\nScope group: User access component\nOriginal relationship: component\nRelationship direction: depends_on_php\nParent component: PHP-0626 (EDGE-004)\nEvidence status: Vendor advisory under investigation\nRelationship confidence: Source supports the stated scope; actual deployment unknown\nDeployment status: Unknown: no installation count, live build, reachability, permissions, failover or exploitation measured\nService role: User access: logon, access-profile and webtop pages\nPHP surface: F5 explicitly documents PHP inside APM UI templates.\nPHP version scope: Version-labelled 16.1 guide with moving Applies To list; K000163821 separately lists current BIG-IP (all modules) 21.x and 17.x under investigation. Exact runtime and component applicability remain unknown.\nExtensions: Unknown unless explicitly recorded\nImportant boundary: This is a component of BIG-IP, not another device. Browser/mobile/Edge Client pages do not prove PHP executes on those clients, and F5 has not yet confirmed vulnerability or non-vulnerability.\nPatch owner: F5 for supported firmware/component corrections; operator/provider for deployment, restart and service continuity\nPossible abuse: If a matching PHP page function is compromised, information it handles or page behaviour could be misused. Credential/session theft or access-policy control needs evidence of the actual path and permissions.\nPHP component loss: Relevant logon/webtop/access pages may fail. Effects on existing sessions and non-page VPN traffic remain unestablished.\nWhole appliance loss: Whole provisioned APM/BIG-IP shutdown can interrupt remote access and applications behind it, subject to actual redundancy.\nConditions: Requires a matching affected runtime/vendor build, enabled function, reachable input and relevant process permissions. PHP presence alone is insufficient.\nSource accessed: 2026-10-22\nPublic vendor CVE review: 2026-10-22\nVendor advisory sources: https://my.f5.com/manage/s/article/K000163821\nVulnerability status: F5 K000163821 lists BIG-IP (all modules) 21.x and 17.x under investigation; confirmation of vulnerability or non-vulnerability is not presently available.\nCVE-2026-109618: Vendor advisory under investigation; no affected/fixed BIG-IP release confirmed\nCVE-2026-109619: Vendor advisory under investigation; no affected/fixed BIG-IP release confirmed\nCVE assessment limit: The VEX relationships state the current vendor research status. Installed builds, runtime activation, enabled features, reachable inputs and exploitation remain unestablished.",
+      "comment": "Inventory record: PHP-0627\nEdge inventory record: EDGE-005\nCategory: Appliances and embedded\nScope group: User access component\nOriginal relationship: component\nRelationship direction: depends_on_php\nParent component: PHP-0626 (EDGE-004)\nEvidence status: Official public vendor/upstream CVE assessment\nRelationship confidence: Source supports the stated scope; actual deployment unknown\nDeployment status: Unknown: no installation count, live build, reachability, permissions, failover or exploitation measured\nService role: User access: logon, access-profile and webtop pages\nPHP surface: F5 explicitly documents PHP inside APM UI templates.\nPHP version scope: BIG-IP APM 17.1.0-17.1.3 / 17.5.0-17.5.1 / 21.1.0\nExtensions: Unknown unless explicitly recorded\nImportant boundary: This is a component of BIG-IP, not another device. Browser/mobile/Edge Client pages do not prove PHP executes on those clients, and F5 has not yet confirmed vulnerability or non-vulnerability.\nPatch owner: F5 for supported firmware/component corrections; operator/provider for deployment, restart and service continuity\nPossible abuse: If a matching PHP page function is compromised, information it handles or page behaviour could be misused. Credential/session theft or access-policy control needs evidence of the actual path and permissions.\nPHP component loss: Relevant logon/webtop/access pages may fail. Effects on existing sessions and non-page VPN traffic remain unestablished.\nWhole appliance loss: Whole provisioned APM/BIG-IP shutdown can interrupt remote access and applications behind it, subject to actual redundancy.\nConditions: Requires a matching affected runtime/vendor build, enabled function, reachable input and relevant process permissions. PHP presence alone is insufficient.\nSource accessed: 2026-10-23\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://my.f5.com/manage/s/article/K000163821\nVulnerability status: Vulnerable. F5 confirms BIG-IP APM/SSLO access-profile data-plane exposure in the listed releases, in addition to the Configuration utility. No introduced fix is listed; this does not assert every PHP template is reachable.\nCVE-2026-109618: Vulnerable. F5 confirms BIG-IP APM/SSLO access-profile data-plane exposure in the listed releases, in addition to the Configuration utility. No introduced fix is listed; this does not assert every PHP template is reachable.\nCVE-2026-109619: Vulnerable. F5 confirms BIG-IP APM/SSLO access-profile data-plane exposure in the listed releases, in addition to the Configuration utility. No introduced fix is listed; this does not assert every PHP template is reachable.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nRelease pin: BIG-IP APM 17.1.0-17.1.3 / 17.5.0-17.5.1 / 21.1.0",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1417,10 +1510,10 @@
           "locator": [
             "https://my.f5.com/manage/s/article/K000163821"
           ],
-          "comment": "F5 K000163821 public CVE assessment reviewed 2026-10-22"
+          "comment": "Official public CVE review 2026-10-23"
         }
       ],
-      "software_packageVersion": "BIG-IP (all modules) 21.x and 17.x under investigation; no affected/fixed release confirmed"
+      "software_packageVersion": "BIG-IP APM 17.1.0-17.1.3 / 17.5.0-17.5.1 / 21.1.0"
     },
     {
       "type": "software_Package",
@@ -1436,9 +1529,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:fortinet:0dd4907ae878",
-      "summary": "Fortinet PSIRT FG-IR-26-186 lists FortiADC among products under investigation for CVE-2026-109618 and CVE-2026-109619; exact affected/fixed product scope remains unresolved.",
+      "summary": "Official vendor non-vulnerability confirmation reviewed 2026-10-23.",
       "description": "7.4.8 vendor CLI example shows PHP-FPM; web-interface role is corroborated by indexed troubleshooting text.",
-      "comment": "Inventory record: PHP-0628\nEdge inventory record: EDGE-006\nCategory: Appliances and embedded\nScope group: Network/security appliance\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037 runtime family reference\nEvidence status: Vendor advisory under investigation\nRelationship confidence: Source supports the stated scope; actual deployment unknown\nDeployment status: Unknown: no installation count, live build, reachability, permissions, failover or exploitation measured\nService role: Application delivery; PHP-FPM management processes\nPHP surface: 7.4.8 vendor CLI example shows PHP-FPM; web-interface role is corroborated by indexed troubleshooting text.\nPHP version scope: FortiADC 7.4.8 CLI Reference, printed page 563; 7.4.11 troubleshooting excerpt. FG-IR-26-186 names FortiADC under investigation without affected or fixed versions.\nExtensions: Unknown unless explicitly recorded\nImportant boundary: An official process example is not a live device observation. Do not attribute the separate load-balancing process to PHP, and do not infer a FortiADC affected or fixed release before Fortinet publishes one.\nPatch owner: Fortinet for supported firmware/component corrections; operator/provider for deployment, restart and service continuity\nPossible abuse: If a matching reachable PHP function is compromised, readable settings/credentials or permitted management actions could be misused. Wider appliance control requires separate privilege/path evidence.\nPHP component loss: The PHP-dependent interface/workflow could be unavailable. Independent traffic processing or other services may continue; exact behaviour is not measured.\nWhole appliance loss: Whole-ADC shutdown could make the applications/services it fronts unavailable unless another route/failover maintains them.\nConditions: Requires a matching affected runtime/vendor build, enabled function, reachable input and relevant process permissions. PHP presence alone is insufficient.\nSource accessed: 2026-10-22\nPublic vendor CVE review: 2026-10-22\nVendor advisory sources: https://fortiguard.fortinet.com/psirt/FG-IR-26-186\nVulnerability status: Fortinet PSIRT FG-IR-26-186 lists FortiADC under investigation; exact affected/fixed product scope remains unresolved.\nCVE-2026-109618: Vendor advisory under investigation; exact affected/fixed FortiADC scope unresolved\nCVE-2026-109619: Vendor advisory under investigation; exact affected/fixed FortiADC scope unresolved\nCVE assessment limit: The VEX relationships state the current vendor research status. Installed builds, runtime activation, enabled features, reachable inputs and exploitation remain unestablished.",
+      "comment": "Inventory record: PHP-0628\nEdge inventory record: EDGE-006\nCategory: Appliances and embedded\nScope group: Network/security appliance\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037 runtime family reference\nEvidence status: Official public vendor/upstream CVE assessment\nRelationship confidence: Source supports the stated scope; actual deployment unknown\nDeployment status: Unknown: no installation count, live build, reachability, permissions, failover or exploitation measured\nService role: Application delivery; PHP-FPM management processes\nPHP surface: 7.4.8 vendor CLI example shows PHP-FPM; web-interface role is corroborated by indexed troubleshooting text.\nPHP version scope: Vendor-confirmed not impacted product scope\nExtensions: Unknown unless explicitly recorded\nImportant boundary: Fortinet FG-IR-26-186, updated 23 October 2026, explicitly confirms this product is not impacted by both CVEs.\nPatch owner: Fortinet for supported firmware/component corrections; operator/provider for deployment, restart and service continuity\nPossible abuse: If a matching reachable PHP function is compromised, readable settings/credentials or permitted management actions could be misused. Wider appliance control requires separate privilege/path evidence.\nPHP component loss: The PHP-dependent interface/workflow could be unavailable. Independent traffic processing or other services may continue; exact behaviour is not measured.\nWhole appliance loss: Whole-ADC shutdown could make the applications/services it fronts unavailable unless another route/failover maintains them.\nConditions: Requires a matching affected runtime/vendor build, enabled function, reachable input and relevant process permissions. PHP presence alone is insufficient.\nSource accessed: 2026-10-23\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://fortiguard.fortinet.com/psirt/FG-IR-26-186\nVulnerability status: Not vuln. Fortinet FG-IR-26-186, updated 23 October 2026, explicitly confirms this product is not impacted by both CVEs.\nCVE-2026-109618: Not vuln. Fortinet FG-IR-26-186, updated 23 October 2026, explicitly confirms this product is not impacted by both CVEs.\nCVE-2026-109619: Not vuln. Fortinet FG-IR-26-186, updated 23 October 2026, explicitly confirms this product is not impacted by both CVEs.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nRelease pin: Vendor-confirmed not impacted product scope",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1462,9 +1555,10 @@
           "locator": [
             "https://fortiguard.fortinet.com/psirt/FG-IR-26-186"
           ],
-          "comment": "Fortinet PSIRT FG-IR-26-186 public CVE assessment reviewed 2026-10-22"
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Vendor-confirmed not impacted product scope"
     },
     {
       "type": "software_Package",
@@ -2082,9 +2176,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Cisco Identity Services Engine (ISE) as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Official vendor non-vulnerability confirmation reviewed 2026-10-23.",
       "description": "Network access control and policy appliance",
-      "comment": "Inventory record: PHP-0687\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22) lists Cisco Identity Services Engine (ISE) under 'Products Under Investigation' (Network and Content Security Devices); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-22\nVulnerability status: Cisco interim advisory: under investigation; no Cisco product confirmed vulnerable yet.\nCVE-2026-109618: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE-2026-109619: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0687\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: ISE; excludes separately investigated ISE Portal Builder\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Not vuln. Cisco confirms ISE is not vulnerable. ISE Portal Builder remains separately under investigation; that component is not covered by this conclusion.\nCVE-2026-109618: Not vuln. Cisco confirms ISE is not vulnerable. ISE Portal Builder remains separately under investigation; that component is not covered by this conclusion.\nCVE-2026-109619: Not vuln. Cisco confirms ISE is not vulnerable. ISE Portal Builder remains separately under investigation; that component is not covered by this conclusion.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: ISE; excludes separately investigated ISE Portal Builder",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2092,9 +2186,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Cisco Security Advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22)"
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "ISE; excludes separately investigated ISE Portal Builder"
     },
     {
       "type": "software_Package",
@@ -2110,9 +2205,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Cisco Catalyst Center (formerly DNA Center) as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Catalyst Center (formerly DNA Center) as under investigation for CVE-2026-109618 and CVE-2026-109619.",
       "description": "Campus network management appliance",
-      "comment": "Inventory record: PHP-0689\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22) lists Cisco Catalyst Center (formerly DNA Center) under 'Products Under Investigation' (Network Management and Provisioning); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-22\nVulnerability status: Cisco interim advisory: under investigation; no Cisco product confirmed vulnerable yet.\nCVE-2026-109618: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE-2026-109619: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0689\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.4, updated 2026-10-22 23:00 GMT) lists Catalyst Center (formerly DNA Center) under 'Products Under Investigation' (Network Management and Provisioning); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Cisco advisory version 1.4 lists this product under investigation; affected and fixed releases are not published.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Cisco advisory version 1.4 under-investigation product scope",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2120,7 +2215,7 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Cisco Security Advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22)"
+          "comment": "Official public CVE review 2026-10-23"
         }
       ]
     },
@@ -2138,9 +2233,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Cisco ASR 5000 Series Software (StarOS) as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Official vendor non-vulnerability confirmation reviewed 2026-10-23.",
       "description": "Mobile packet core software",
-      "comment": "Inventory record: PHP-0693\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22) lists Cisco ASR 5000 Series Software (StarOS) under 'Products Under Investigation' (Routing and Switching - Service Provider); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-22\nVulnerability status: Cisco interim advisory: under investigation; no Cisco product confirmed vulnerable yet.\nCVE-2026-109618: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE-2026-109619: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0693\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Vendor-confirmed not vulnerable product scope\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE-2026-109618: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE-2026-109619: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Vendor-confirmed not vulnerable product scope",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2148,9 +2243,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Cisco Security Advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22)"
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Vendor-confirmed not vulnerable product scope"
     },
     {
       "type": "software_Package",
@@ -2166,9 +2262,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Cisco Expressway Series as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Monitor CSCwx37062 for an available fixed release; Cisco lists no workaround.",
       "description": "Collaboration edge and traversal gateway",
-      "comment": "Inventory record: PHP-0698\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22) lists Cisco Expressway Series under 'Products Under Investigation' (Voice and Unified Communications Devices); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-22\nVulnerability status: Cisco interim advisory: under investigation; no Cisco product confirmed vulnerable yet.\nCVE-2026-109618: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE-2026-109619: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0698\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Expressway Series; affected release range not specified\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Vulnerable. Cisco lists Expressway Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.\nCVE-2026-109618: Vulnerable. Cisco lists Expressway Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.\nCVE-2026-109619: Vulnerable. Cisco lists Expressway Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Expressway Series; affected release range not specified",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2176,9 +2272,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Cisco Security Advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22)"
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Expressway Series; affected release range not specified"
     },
     {
       "type": "software_Package",
@@ -2194,9 +2291,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Cisco Ultra-Reliable Wireless Backhaul (URWB) as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Monitor CSCwx37073 for an available fixed release; do not treat its estimated date as released software.",
       "description": "Industrial wireless backhaul",
-      "comment": "Inventory record: PHP-0699\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22) lists Cisco Ultra-Reliable Wireless Backhaul (URWB) under 'Products Under Investigation' (Wireless); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-22\nVulnerability status: Cisco interim advisory: under investigation; no Cisco product confirmed vulnerable yet.\nCVE-2026-109618: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE-2026-109619: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0699\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: URWB; affected release range not specified\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Vulnerable. Cisco lists URWB as vulnerable under CSCwx37073 and requires an authenticated administrator for exploitation. Release 27.1.1 is only estimated for February 2027, not an available fix.\nCVE-2026-109618: Vulnerable. Cisco lists URWB as vulnerable under CSCwx37073 and requires an authenticated administrator for exploitation. Release 27.1.1 is only estimated for February 2027, not an available fix.\nCVE-2026-109619: Vulnerable. Cisco lists URWB as vulnerable under CSCwx37073 and requires an authenticated administrator for exploitation. Release 27.1.1 is only estimated for February 2027, not an available fix.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: URWB; affected release range not specified",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2204,9 +2301,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Cisco Security Advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22)"
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "URWB; affected release range not specified"
     },
     {
       "type": "software_Package",
@@ -2222,9 +2320,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Cisco Unified Industrial Wireless Software as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Unified Industrial Wireless Software as under investigation for CVE-2026-109618 and CVE-2026-109619.",
       "description": "Industrial wireless software",
-      "comment": "Inventory record: PHP-0700\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22) lists Cisco Unified Industrial Wireless Software under 'Products Under Investigation' (Wireless); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-22\nVulnerability status: Cisco interim advisory: under investigation; no Cisco product confirmed vulnerable yet.\nCVE-2026-109618: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE-2026-109619: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0700\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.4, updated 2026-10-22 23:00 GMT) lists Unified Industrial Wireless Software under 'Products Under Investigation' (Wireless); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Cisco advisory version 1.4 lists this product under investigation; affected and fixed releases are not published.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Cisco advisory version 1.4 under-investigation product scope",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2232,7 +2330,7 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Cisco Security Advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22)"
+          "comment": "Official public CVE review 2026-10-23"
         }
       ]
     },
@@ -2541,9 +2639,10 @@
         "urn:php2shell:inventory:package:PHP-0624"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "NetScaler says its PHP-based Management Portal is impacted in all supported software versions; fix pending. Scope is the NSIP GUI, management-enabled SNIP GUI and Cluster IP GUI; Console and SVM are not impacted.",
-      "summary": "CVE-2026-109618 assessment: NetScaler says its PHP-based Management Portal is impacted in all supported software versions; fix pending. Scope is the NSIP GUI, management-enabled SNIP GUI and Cluster IP GUI; Console and SVM are not impacted.",
-      "comment": "Added from NetScaler Product Security guidance published 2026-10-21 and reviewed 2026-10-22. The vendor says the PHP-based Management Portal is impacted in all supported NetScaler software versions and scopes exposure to NSIP GUI, management-enabled SNIP GUI and Cluster IP GUI. NetScaler Console and SVM are excluded.\nAction statement: Restrict NetScaler management GUI/API access on NSIP, management-enabled SNIPs and Cluster IPs to trusted administrative networks only; keep management interfaces off the Internet and verify authorized admin access remains available."
+      "security_statusNotes": "CTX697263 lists Citrix NetScaler ADC and Citrix NetScaler Gateway as impacted. NetScaler Product Security scopes the PHP exposure to the NSIP GUI, management-enabled SNIP GUI and Cluster IP GUI, says all supported NetScaler software versions are impacted, and says a fixed PHP package is pending. Citrix NetScaler Console and NetScaler SVM are excluded.",
+      "summary": "CVE-2026-109618 assessment: CTX697263 lists Citrix NetScaler ADC and Citrix NetScaler Gateway as impacted. NetScaler Product Security scopes the PHP exposure to the NSIP GUI, management-enabled SNIP GUI and Cluster IP GUI, says all supported NetScaler software versions are impacted, and says a fixed PHP package is pending. Citrix NetScaler Console and NetScaler SVM are excluded.",
+      "security_actionStatement": "Restrict NetScaler management GUI/API access on NSIP, management-enabled SNIPs and Cluster IPs to trusted administrative networks only; keep management interfaces off the Internet and verify authorized admin access remains available.",
+      "comment": "Added from Citrix Security Advisory CTX697263 and NetScaler Product Security guidance reviewed 2026-10-23. CTX697263 lists Citrix NetScaler ADC and Citrix NetScaler Gateway as impacted by both PHP CVEs. The NetScaler guidance scopes exposure to NSIP GUI, management-enabled SNIP GUI and Cluster IP GUI, states all supported NetScaler software versions are impacted, and excludes NetScaler Console and SVM.\nAction statement: Restrict NetScaler management GUI/API access on NSIP, management-enabled SNIPs and Cluster IPs to trusted administrative networks only; keep management interfaces off the Internet and verify authorized admin access remains available."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -2554,63 +2653,10 @@
         "urn:php2shell:inventory:package:PHP-0624"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "NetScaler says its PHP-based Management Portal is impacted in all supported software versions; fix pending. Scope is the NSIP GUI, management-enabled SNIP GUI and Cluster IP GUI; Console and SVM are not impacted.",
-      "summary": "CVE-2026-109619 assessment: NetScaler says its PHP-based Management Portal is impacted in all supported software versions; fix pending. Scope is the NSIP GUI, management-enabled SNIP GUI and Cluster IP GUI; Console and SVM are not impacted.",
-      "comment": "Added from NetScaler Product Security guidance published 2026-10-21 and reviewed 2026-10-22. The vendor says the PHP-based Management Portal is impacted in all supported NetScaler software versions and scopes exposure to NSIP GUI, management-enabled SNIP GUI and Cluster IP GUI. NetScaler Console and SVM are excluded.\nAction statement: Restrict NetScaler management GUI/API access on NSIP, management-enabled SNIPs and Cluster IPs to trusted administrative networks only; keep management interfaces off the Internet and verify authorized admin access remains available."
-    },
-    {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:f5-bigip-research-20261021",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0626",
-        "urn:php2shell:inventory:package:PHP-0627"
-      ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "F5 lists BIG-IP (all modules) 21.x and 17.x under investigation; confirmation of vulnerability or non-vulnerability is not presently available.",
-      "summary": "CVE-2026-109618 assessment: F5 lists BIG-IP (all modules) 21.x and 17.x under investigation; confirmation of vulnerability or non-vulnerability is not presently available.",
-      "comment": "Added from F5 K000163821 published 2026-10-21 and reviewed 2026-10-22. F5 lists BIG-IP (all modules) 21.x and 17.x with research placeholders and says confirmation of vulnerability or non-vulnerability is not presently available while research continues."
-    },
-    {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:f5-bigip-research-20261021",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0626",
-        "urn:php2shell:inventory:package:PHP-0627"
-      ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "F5 lists BIG-IP (all modules) 21.x and 17.x under investigation; confirmation of vulnerability or non-vulnerability is not presently available.",
-      "summary": "CVE-2026-109619 assessment: F5 lists BIG-IP (all modules) 21.x and 17.x under investigation; confirmation of vulnerability or non-vulnerability is not presently available.",
-      "comment": "Added from F5 K000163821 published 2026-10-21 and reviewed 2026-10-22. F5 lists BIG-IP (all modules) 21.x and 17.x with research placeholders and says confirmation of vulnerability or non-vulnerability is not presently available while research continues."
-    },
-    {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:fortiadc-research-20261021",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0628"
-      ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Fortinet PSIRT lists FortiADC under investigation; exact affected/fixed product scope remains unresolved.",
-      "summary": "CVE-2026-109618 assessment: Fortinet PSIRT lists FortiADC under investigation; exact affected/fixed product scope remains unresolved.",
-      "comment": "Added from Fortinet PSIRT FG-IR-26-186 published 2026-10-21 and reviewed 2026-10-22. Fortinet lists FortiADC under Products Under Investigation and does not publish affected or fixed FortiADC versions in the advisory."
-    },
-    {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:fortiadc-research-20261021",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0628"
-      ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Fortinet PSIRT lists FortiADC under investigation; exact affected/fixed product scope remains unresolved.",
-      "summary": "CVE-2026-109619 assessment: Fortinet PSIRT lists FortiADC under investigation; exact affected/fixed product scope remains unresolved.",
-      "comment": "Added from Fortinet PSIRT FG-IR-26-186 published 2026-10-21 and reviewed 2026-10-22. Fortinet lists FortiADC under Products Under Investigation and does not publish affected or fixed FortiADC versions in the advisory."
+      "security_statusNotes": "CTX697263 lists Citrix NetScaler ADC and Citrix NetScaler Gateway as impacted. NetScaler Product Security scopes the PHP exposure to the NSIP GUI, management-enabled SNIP GUI and Cluster IP GUI, says all supported NetScaler software versions are impacted, and says a fixed PHP package is pending. Citrix NetScaler Console and NetScaler SVM are excluded.",
+      "summary": "CVE-2026-109619 assessment: CTX697263 lists Citrix NetScaler ADC and Citrix NetScaler Gateway as impacted. NetScaler Product Security scopes the PHP exposure to the NSIP GUI, management-enabled SNIP GUI and Cluster IP GUI, says all supported NetScaler software versions are impacted, and says a fixed PHP package is pending. Citrix NetScaler Console and NetScaler SVM are excluded.",
+      "security_actionStatement": "Restrict NetScaler management GUI/API access on NSIP, management-enabled SNIPs and Cluster IPs to trusted administrative networks only; keep management interfaces off the Internet and verify authorized admin access remains available.",
+      "comment": "Added from Citrix Security Advisory CTX697263 and NetScaler Product Security guidance reviewed 2026-10-23. CTX697263 lists Citrix NetScaler ADC and Citrix NetScaler Gateway as impacted by both PHP CVEs. The NetScaler guidance scopes exposure to NSIP GUI, management-enabled SNIP GUI and Cluster IP GUI, states all supported NetScaler software versions are impacted, and excludes NetScaler Console and SVM.\nAction statement: Restrict NetScaler management GUI/API access on NSIP, management-enabled SNIPs and Cluster IPs to trusted administrative networks only; keep management interfaces off the Internet and verify authorized admin access remains available."
     },
     {
       "type": "software_Package",
@@ -2691,6 +2737,685 @@
       "relationshipType": "other",
       "summary": "Inventory association for PHP-0678: vendor PHP advisory candidate",
       "comment": "The vendor is investigating this product in its PHP advisory. This association records review scope only; a PHP dependency is not confirmed."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:php-0693-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0693"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.",
+      "summary": "CVE-2026-109618 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0693-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0693"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:php-0687-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0687"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco confirms ISE is not vulnerable. ISE Portal Builder remains separately under investigation; that component is not covered by this conclusion.",
+      "summary": "CVE-2026-109618 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco confirms ISE is not vulnerable. ISE Portal Builder remains separately under investigation; that component is not covered by this conclusion."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0687-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0687"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco confirms ISE is not vulnerable. ISE Portal Builder remains separately under investigation; that component is not covered by this conclusion.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco confirms ISE is not vulnerable. ISE Portal Builder remains separately under investigation; that component is not covered by this conclusion."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0698-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0698"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Cisco lists Expressway Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_actionStatement": "Monitor CSCwx37062 for an available fixed release; Cisco lists no workaround."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0698-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0698"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Cisco lists Expressway Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_actionStatement": "Monitor CSCwx37062 for an available fixed release; Cisco lists no workaround."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0699-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0699"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Cisco lists URWB as vulnerable under CSCwx37073 and requires an authenticated administrator for exploitation. Release 27.1.1 is only estimated for February 2027, not an available fix.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_actionStatement": "Monitor CSCwx37073 for an available fixed release; do not treat its estimated date as released software."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0699-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0699"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Cisco lists URWB as vulnerable under CSCwx37073 and requires an authenticated administrator for exploitation. Release 27.1.1 is only estimated for February 2027, not an available fix.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_actionStatement": "Monitor CSCwx37073 for an available fixed release; do not treat its estimated date as released software."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:php-0628-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0628"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Fortinet FG-IR-26-186, updated 23 October 2026, explicitly confirms this product is not impacted by both CVEs.",
+      "summary": "CVE-2026-109618 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://fortiguard.fortinet.com/psirt/FG-IR-26-186",
+      "security_impactStatement": "Fortinet FG-IR-26-186, updated 23 October 2026, explicitly confirms this product is not impacted by both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0628-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0628"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Fortinet FG-IR-26-186, updated 23 October 2026, explicitly confirms this product is not impacted by both CVEs.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://fortiguard.fortinet.com/psirt/FG-IR-26-186",
+      "security_impactStatement": "Fortinet FG-IR-26-186, updated 23 October 2026, explicitly confirms this product is not impacted by both CVEs."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0423-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0423"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14\nAction statement: Update the corresponding PHP package through DSM Package Center and verify dependent services restart."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0423-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0423"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14\nAction statement: Update the corresponding PHP package through DSM Package Center and verify dependent services restart."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0604-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0604"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14\nAction statement: Update the corresponding PHP package through DSM Package Center and verify dependent services restart."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0604-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0604"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14\nAction statement: Update the corresponding PHP package through DSM Package Center and verify dependent services restart."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0605-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0605"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14\nAction statement: Update the corresponding PHP package through DSM Package Center and verify dependent services restart."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0605-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0605"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14\nAction statement: Update the corresponding PHP package through DSM Package Center and verify dependent services restart."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0606-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0606"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14\nAction statement: Update the corresponding PHP package through DSM Package Center and verify dependent services restart."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0606-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0606"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14\nAction statement: Update the corresponding PHP package through DSM Package Center and verify dependent services restart."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0607-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0607"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14\nAction statement: Update the corresponding PHP package through DSM Package Center and verify dependent services restart."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0607-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0607"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14\nAction statement: Update the corresponding PHP package through DSM Package Center and verify dependent services restart."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0608-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0608"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14\nAction statement: Update the corresponding PHP package through DSM Package Center and verify dependent services restart."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0608-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0608"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Synology-SA-26:14 names this PHP package and publishes the listed fixed release for both CVEs. Earlier unpatched packages remain affected.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14\nAction statement: Update the corresponding PHP package through DSM Package Center and verify dependent services restart."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0603-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0603"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Synology-SA-26:14 lists PHP 7.3 as affected by both CVEs and states that no fix will be provided because the package is end of life.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14",
+      "security_actionStatement": "Migrate dependent applications to a supported, fixed Synology PHP package; do not expect a PHP 7.3 fix."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0603-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0603"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Synology-SA-26:14 lists PHP 7.3 as affected by both CVEs and states that no fix will be provided because the package is end of life.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14",
+      "security_actionStatement": "Migrate dependent applications to a supported, fixed Synology PHP package; do not expect a PHP 7.3 fix."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0424-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0424"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Synology names Web Station among affected PHP-dependent packages and says updating PHP resolves the vulnerabilities after dependent packages restart. This is a PHP dependency fix, not a separate Web Station release.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14 ; https://www.synology.com/en-us/company/news/article/php2shell/Synology%20Statement%20on%20PHP2Shell%20Vulnerabilities\nAction statement: Update the applicable PHP package through Package Center; supported fixed branches and builds are listed in Synology-SA-26:14. DSM versions older than 7.2 require the vendor's additional upgrade guidance."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0424-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0424"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Synology names Web Station among affected PHP-dependent packages and says updating PHP resolves the vulnerabilities after dependent packages restart. This is a PHP dependency fix, not a separate Web Station release.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.synology.com/en-global/security/advisory/Synology_SA_26_14 ; https://www.synology.com/en-us/company/news/article/php2shell/Synology%20Statement%20on%20PHP2Shell%20Vulnerabilities\nAction statement: Update the applicable PHP package through Package Center; supported fixed branches and builds are listed in Synology-SA-26:14. DSM versions older than 7.2 require the vendor's additional upgrade guidance."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0428-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0428"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Unraid's official administrator announcement confirms OS 7.3.4 includes PHP 8.4.27 fixing both CVEs. This does not cover separately maintained Docker or VM runtimes or the libvirt-php binding.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://forums.unraid.net/topic/200990-unraid-os-734-now-available/\nAction statement: Update Unraid OS to 7.3.4; assess independently maintained application runtimes separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0428-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0428"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Unraid's official administrator announcement confirms OS 7.3.4 includes PHP 8.4.27 fixing both CVEs. This does not cover separately maintained Docker or VM runtimes or the libvirt-php binding.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://forums.unraid.net/topic/200990-unraid-os-734-now-available/\nAction statement: Update Unraid OS to 7.3.4; assess independently maintained application runtimes separately."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0626-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0626"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "F5 confirms the BIG-IP Configuration utility control plane is affected across all modules in the listed releases. K000163821 lists no introduced fix; its mitigations are not recorded as fixed software.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://my.f5.com/manage/s/article/K000163821",
+      "security_actionStatement": "Apply F5's Configuration utility access restrictions and staged PHP mitigation guidance while monitoring for an available fixed release."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0626-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0626"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "F5 confirms the BIG-IP Configuration utility control plane is affected across all modules in the listed releases. K000163821 lists no introduced fix; its mitigations are not recorded as fixed software.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://my.f5.com/manage/s/article/K000163821",
+      "security_actionStatement": "Apply F5's Configuration utility access restrictions and staged PHP mitigation guidance while monitoring for an available fixed release."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0627-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0627"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "F5 confirms BIG-IP APM/SSLO access-profile data-plane exposure in the listed releases, in addition to the Configuration utility. No introduced fix is listed; this does not assert every PHP template is reachable.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://my.f5.com/manage/s/article/K000163821",
+      "security_actionStatement": "Apply F5's APM-specific mitigation guidance and restart requirements after staging validation; monitor for released fixes."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0627-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0627"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "F5 confirms BIG-IP APM/SSLO access-profile data-plane exposure in the listed releases, in addition to the Configuration utility. No introduced fix is listed; this does not assert every PHP template is reachable.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://my.f5.com/manage/s/article/K000163821",
+      "security_actionStatement": "Apply F5's APM-specific mitigation guidance and restart requirements after staging validation; monitor for released fixes."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0748",
+      "creationInfo": "_:creationinfo",
+      "name": "Cisco Identity Services Engine (ISE) Portal Builder",
+      "software_primaryPurpose": "application",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0748"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
+      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Identity Services Engine (ISE) Portal Builder as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "description": "ISE portal customization component",
+      "comment": "Inventory record: PHP-0748\nCategory: Appliances and embedded\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.4, updated 2026-10-22 23:00 GMT) lists Identity Services Engine (ISE) Portal Builder under 'Products Under Investigation' (Network and Content Security Devices); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Cisco advisory version 1.4 lists this product under investigation; affected and fixed releases are not published.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Cisco advisory version 1.4 under-investigation product scope",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
+        }
+      ]
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0749",
+      "creationInfo": "_:creationinfo",
+      "name": "Cisco Expressway Select Series",
+      "software_primaryPurpose": "firmware",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0749"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
+      "summary": "Monitor CSCwx37062 for an available fixed release; Cisco lists no workaround.",
+      "description": "Collaboration edge and traversal gateway",
+      "comment": "Inventory record: PHP-0749\nCategory: Appliances and embedded\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Expressway Select Series; affected release range not specified\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Vulnerable. Cisco lists Expressway Select Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.\nCVE-2026-109618: Vulnerable. Cisco lists Expressway Select Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.\nCVE-2026-109619: Vulnerable. Cisco lists Expressway Select Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Expressway Select Series; affected release range not specified",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
+        }
+      ],
+      "software_packageVersion": "Expressway Select Series; affected release range not specified"
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0748",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0748",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "other",
+      "summary": "Inventory association for PHP-0748: vendor PHP advisory candidate",
+      "comment": "Cisco advisory version 1.4 lists this product under investigation for PHP2Shell. This association records vendor review scope only; a PHP dependency is not confirmed."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0749",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0749",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "other",
+      "summary": "Inventory association for PHP-0749: vendor PHP advisory candidate",
+      "comment": "Cisco advisory version 1.4 lists this product as vulnerable to PHP2Shell. This association records vendor review scope only; the exact PHP dependency is not published."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0749-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0749"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Cisco lists Expressway Select Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_actionStatement": "Monitor CSCwx37062 for an available fixed release; Cisco lists no workaround."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0749-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0749"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Cisco lists Expressway Select Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_actionStatement": "Monitor CSCwx37062 for an available fixed release; Cisco lists no workaround."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0751",
+      "creationInfo": "_:creationinfo",
+      "name": "HPE Networking ClearPass Policy Manager",
+      "software_primaryPurpose": "application",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0751"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:hewlett-packard-enterprise:e2f8dff0f1e0",
+      "summary": "HPESBNW05171 rev.1 confirms both CVEs affect ClearPass. Releases 6.14.1 and 6.11.16 only restrict exploitation to authenticated cluster-admin users; full fixes are still in development.",
+      "description": "Network access policy management appliance with a PHP runtime",
+      "software_packageVersion": "6.14.0 and below / 6.11.15 and below; 6.14.1 / 6.11.16 partially mitigated, still affected",
+      "comment": "Inventory record: PHP-0751\nCategory: Appliances and embedded\nAliases: CPPM, Aruba ClearPass Policy Manager\nOriginal relationship: depends_on\nRelationship direction: uses_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed PHP dependency and affected scope\nDeployment status: Not measured\nPHP surface: PHP core library in ClearPass; exact bundled PHP version and SAPI are not published\nPHP version scope: HPESBNW05171 rev.1 names 6.14.0 and below and 6.11.15 and below as fully affected. Versions 6.14.1 and 6.11.16 remain affected but require authenticated cluster-admin privileges.\nLimitations: Partial mitigation is not a full fix. End-of-support installations have not been assessed by HPE. No conclusion is extended to other HPE products or unlisted future releases.\nPatch owner: Hewlett Packard Enterprise; operator for deployment\nSource accessed: 2026-10-23\nCVE-2026-109618: Vulnerable; partial mitigation only in 6.14.1 and 6.11.16\nCVE-2026-109619: Vulnerable; partial mitigation only in 6.14.1 and 6.11.16\nCVE assessment limit: Vendor product assessment only; no installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory: HPESBNW05171 rev.1, published and updated 2026-10-22",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw05171en_us&docLocale=en_US"
+          ],
+          "comment": "HPESBNW05171 rev.1; public vendor advisory reviewed 2026-10-23"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0751",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0751",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "dependsOn",
+      "summary": "ClearPass depends on the PHP core library identified in HPESBNW05171.",
+      "comment": "Vendor advisory reviewed 2026-10-23. The exact bundled PHP version and SAPI are not published; the dependency targets the unversioned PHP core family."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0751-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0751"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "HPESBNW05171 rev.1 confirms ClearPass 6.14.0 and below and 6.11.15 and below are fully affected. Versions 6.14.1 and 6.11.16 partially mitigate exposure by requiring authenticated cluster-admin privileges; full fixes remain in development.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "security_actionStatement": "Apply HPE's partial-mitigation releases and restrict CLI and web management access to dedicated networks or firewall policies with logging. Consider removing guest portals and management interfaces from public access as advised by HPE; monitor for full fixes.",
+      "comment": "Public official source reviewed 2026-10-23. Source: https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw05171en_us&docLocale=en_US"
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0751-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0751"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "HPESBNW05171 rev.1 confirms ClearPass 6.14.0 and below and 6.11.15 and below are fully affected. Versions 6.14.1 and 6.11.16 partially mitigate exposure by requiring authenticated cluster-admin privileges; full fixes remain in development.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "security_actionStatement": "Apply HPE's partial-mitigation releases and restrict CLI and web management access to dedicated networks or firewall policies with logging. Consider removing guest portals and management interfaces from public access as advised by HPE; monitor for full fixes.",
+      "comment": "Public official source reviewed 2026-10-23. Source: https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw05171en_us&docLocale=en_US"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0752",
+      "creationInfo": "_:creationinfo",
+      "name": "ONTAP 9",
+      "software_primaryPurpose": "operatingSystem",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0752"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:netapp:35b1a7722289",
+      "summary": "NTAP-20261021-0021 version 3.0 confirms ONTAP 9 is affected only by CVE-2026-109618, not CVE-2026-109619. Exploitation is limited to the www user in the PHP jail. No fixed release is listed; workarounds have operational trade-offs.",
+      "description": "Storage operating system with PHP-backed web services",
+      "software_packageVersion": "ONTAP 9; affected maintenance releases and fixed releases not specified",
+      "comment": "Inventory record: PHP-0752\nCategory: Appliances and embedded\nOriginal relationship: depends_on\nRelationship direction: uses_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed PHP dependency and per-CVE assessment\nDeployment status: Not measured\nPHP surface: ONTAP web services invoke PHP; potential access is limited to the www user in the PHP jail\nPHP version scope: NTAP-20261021-0021 version 3.0 names ONTAP 9 without an affected maintenance-release range or fixed release.\nLimitations: The vendor explicitly excludes CVE-2026-109619 for ONTAP 9 but does not publish the technical reason. Jail confinement does not make CVE-2026-109618 unaffected. No conclusion is extended to other NetApp products.\nWorkarounds: Disable all external web services (most disruptive, also covers future SVMs); or enable SAML (unauthenticated exploitation blocked, authenticated attackers can still reach affected services); or disable only sysmgr and saml (less protection, preserves REST/ZAPI, repeat for new SVMs). Follow the vendor advisory when choosing an option.\nPatch owner: NetApp; operator for deployment\nSource accessed: 2026-10-23\nCVE-2026-109618: Vulnerable; no fixed release listed\nCVE-2026-109619: Not vuln; vendor states ONTAP 9 is affected only by CVE-2026-109618\nCVE assessment limit: Vendor product assessment only; no installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory: NTAP-20261021-0021 version 3.0, published 2026-10-21 and updated 2026-10-22",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://security.netapp.com/advisory/NTAP-20261021-0021"
+          ],
+          "comment": "NTAP-20261021-0021 version 3.0; public vendor advisory reviewed 2026-10-23"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0752",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0752",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "dependsOn",
+      "summary": "ONTAP 9 web services invoke PHP as confirmed by NetApp's advisory.",
+      "comment": "NTAP-20261021-0021 version 3.0 describes Apache invoking PHP on vulnerable endpoints. The exact runtime version and SAPI are not published; the dependency targets the unversioned PHP core family."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0752-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0752"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "NTAP-20261021-0021 version 3.0 lists ONTAP 9 as affected only by CVE-2026-109618. An unauthenticated attacker could gain www-user access restricted to the PHP jail. No fixed release is listed.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "security_actionStatement": "Choose a NetApp-documented workaround: disable all external web services (most disruptive and covers future SVMs); enable SAML (authenticated attackers remain a risk); or disable sysmgr and saml (less protection, preserves REST/ZAPI, repeat for new SVMs). Monitor for fixed releases.",
+      "comment": "Public official source reviewed 2026-10-23. Source: https://security.netapp.com/advisory/NTAP-20261021-0021"
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0752-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0752"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "NetApp explicitly states ONTAP 9 is affected only by CVE-2026-109618, excluding CVE-2026-109619. The vendor does not publish the technical reason for this exclusion.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "security_impactStatement": "NTAP-20261021-0021 version 3.0 excludes CVE-2026-109619 from ONTAP 9's affected scope. This does not change ONTAP 9's vulnerable status for CVE-2026-109618.",
+      "comment": "Public official source reviewed 2026-10-23. Source: https://security.netapp.com/advisory/NTAP-20261021-0021"
     }
   ]
 }

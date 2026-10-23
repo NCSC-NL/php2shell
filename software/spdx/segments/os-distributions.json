@@ -452,9 +452,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:red-hat:2c30c5da9571",
-      "summary": "Red Hat's CVE pages mark the RHEL 9 PHP component family affected; RHSA-2026:87072 separately fixes the scoped php:8.2 module row.",
+      "summary": "Red Hat has fixed RHEL 9 PHP 8.0, 8.2 and 8.3; the PHP 8.4 stream remains affected.",
       "description": "Common profile includes php-fpm for Apache/nginx; minimal profile is CLI only",
-      "comment": "Inventory record: PHP-0364\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected family\nDeployment status: Not measured\nPHP surface: Common profile includes php-fpm for Apache/nginx; minimal profile is CLI only\nPHP version scope: Red Hat CVE pages list Red Hat Enterprise Linux 9 php, php:8.2/php, php:8.3/php and php:8.4/php components as affected. PHP-0633 separately records the RHSA-2026:87072 fixed php:8.2 module package.\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: The RHEL 9 family row spans multiple component streams with mixed fix state. Use the scoped PHP-0633 row for the vendor-confirmed php:8.2 fix; other listed components still require branch-specific errata evidence. Module availability, support entitlement, backported package release and actual installation must be resolved together. No binary/image was pulled, installed, built or executed. Deployments were not measured.\nPatch owner: Red Hat for supported backported RPMs/AppStreams; subscriber/operator for supported stream selection, update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Red Hat CVE-2026-109618 and CVE-2026-109619 pages last modified 2026-10-21; RHSA-2026:87072 scoped separately\nSource accessed: 2026-10-21\nAliases: rhel9:php-appstreams\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Affected: Red Hat lists the RHEL 9 PHP component family as affected; the scoped php:8.2 module fix is recorded separately.\nCVE-2026-109618: Affected for the RHEL 9 PHP component family; scoped php:8.2 fix recorded separately\nCVE-2026-109619: Affected for the RHEL 9 PHP component family; scoped php:8.2 fix recorded separately\nCVE assessment limit: Vendor VEX confirms affected RHEL 9 PHP component family scope, not deployment status or whether branch-specific fixes have been applied.",
+      "comment": "Inventory record: PHP-0364\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected scope with separately recorded fixed releases\nDeployment status: Not measured\nPHP surface: Common profile includes php-fpm for Apache/nginx; minimal profile is CLI only\nPHP version scope: Red Hat lists fixed RHEL 9 PHP 8.0 and php:8.3 packages in RHSA-2026:87151 and RHSA-2026:87079, alongside the existing php:8.2 fix. The php:8.4/php stream remains Affected for both CVEs, so the family stays Vulnerable; fixed package scopes are separate entries.\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: Red Hat lists fixed RHEL 9 PHP 8.0 and php:8.3 packages in RHSA-2026:87151 and RHSA-2026:87079, alongside the existing php:8.2 fix. The php:8.4/php stream remains Affected for both CVEs, so the family stays Vulnerable; fixed package scopes are separate entries.\nPatch owner: Red Hat for supported backported RPMs/AppStreams; subscriber/operator for supported stream selection, update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Official advisory reviewed 2026-10-23; fixed scope recorded separately\nSource accessed: 2026-10-23\nAliases: rhel9:php-appstreams\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Red Hat lists fixed RHEL 9 PHP 8.0 and php:8.3 packages in RHSA-2026:87151 and RHSA-2026:87079, alongside the existing php:8.2 fix. The php:8.4/php stream remains Affected for both CVEs, so the family stays Vulnerable; fixed package scopes are separate entries.\nCVE-2026-109618: Vulnerable in the stated scope; see VEX assessment\nCVE-2026-109619: Vulnerable in the stated scope; see VEX assessment\nCVE assessment limit: Red Hat lists fixed RHEL 9 PHP 8.0 and php:8.3 packages in RHSA-2026:87151 and RHSA-2026:87079, alongside the existing php:8.2 fix. The php:8.4/php stream remains Affected for both CVEs, so the family stays Vulnerable; fixed package scopes are separate entries.\nFix sources: https://access.redhat.com/errata/RHSA-2026:87151; https://access.redhat.com/errata/RHSA-2026:87079",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -487,8 +487,25 @@
             "https://access.redhat.com/security/cve/cve-2026-109619"
           ],
           "comment": "Red Hat CVE-2026-109619 VEX page"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/errata/RHSA-2026:87151"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/errata/RHSA-2026:87079"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
         }
-      ]
+      ],
+      "software_packageVersion": "Unpatched PHP builds; fixed release scopes listed separately"
     },
     {
       "type": "software_Package",
@@ -504,9 +521,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:suse:26e43032c4d1",
-      "summary": "SUSE release notes establish PHP 8.2 availability; its published update lists versioned php8 runtime, FPM and extension packages.",
+      "summary": "Install the product-specific SUSE security update and restart affected PHP services; do not select a package built for another SLE branch.",
       "description": "Vendor package list includes php8-fpm, Apache module, FastCGI and embed packages; selection is product-specific",
-      "comment": "Inventory record: PHP-0365\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Vendor package list includes php8-fpm, Apache module, FastCGI and embed packages; selection is product-specific\nPHP version scope: SLES 15 SP6 release notes announce PHP 8.2 replacing8.0. Separate 2026 vendor update lists php8 8.0.30-150400.4.76.1 for its eligible product scopes\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: The advisory package build must not be assigned to every SLES 15 service pack or entitlement. Backported vendor releases cannot be assessed solely by upstream 8.0.30. No advisory CVE was assessed or copied into exposure claims. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: SUSE vendor package/security maintenance for the entitled product; operator applies packages and restarts runtimes\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Moving official documentation; immutable artifact pin pending\nSource accessed: 2026-10-17\nAliases: sles:php8\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0365\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor package list includes php8-fpm, Apache module, FastCGI and embed packages; selection is product-specific\nPHP version scope: SLE 15 SP4: 8.0.30-150400.4.80.1; SP6: 8.2.35-150600.3.39.1; SP7: 8.3.36-150700.3.24.1; SLES 16.0: 8.4.27-160000.1.1\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: The advisory package build must not be assigned to every SLES 15 service pack or entitlement. Backported vendor releases cannot be assessed solely by upstream 8.0.30. No advisory CVE was assessed or copied into exposure claims. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: SUSE vendor package/security maintenance for the entitled product; operator applies packages and restarts runtimes\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: SLE 15 SP4: 8.0.30-150400.4.80.1; SP6: 8.2.35-150600.3.39.1; SP7: 8.3.36-150700.3.24.1; SLES 16.0: 8.4.27-160000.1.1\nSource accessed: 2026-10-23\nAliases: sles:php8\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Fix. SUSE publishes fixed PHP8 packages for the listed SLE product branches. This does not assert that every SLE service pack or PHP package family is fixed; use the matching product-specific advisory.\nCVE-2026-109618: Fix. SUSE publishes fixed PHP8 packages for the listed SLE product branches. This does not assert that every SLE service pack or PHP package family is fixed; use the matching product-specific advisory.\nCVE-2026-109619: Fix. SUSE publishes fixed PHP8 packages for the listed SLE product branches. This does not assert that every SLE service pack or PHP package family is fixed; use the matching product-specific advisory.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://www.suse.com/security/cve/CVE-2026-109618.html ; https://www.suse.com/security/cve/CVE-2026-109619.html ; https://www.suse.com/support/update/announcement/2026/suse-su-20264843-1/ ; https://www.suse.com/support/update/announcement/2026/suse-su-20264844-1/ ; https://www.suse.com/support/update/announcement/2026/suse-su-20264852-1/",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -523,8 +540,49 @@
             "https://www.suse.com/support/update/announcement/2026/suse-su-20264651-1/"
           ],
           "comment": "Official publisher/project distribution evidence - Vendor update enumerates php8 8.0.30-150400.4.76.1 packages for eligible products."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.suse.com/security/cve/CVE-2026-109618.html"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.suse.com/security/cve/CVE-2026-109619.html"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.suse.com/support/update/announcement/2026/suse-su-20264843-1/"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.suse.com/support/update/announcement/2026/suse-su-20264844-1/"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.suse.com/support/update/announcement/2026/suse-su-20264852-1/"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "SLE 15 SP4: 8.0.30-150400.4.80.1; SP6: 8.2.35-150600.3.39.1; SP7: 8.3.36-150700.3.24.1; SLES 16.0: 8.4.27-160000.1.1"
     },
     {
       "type": "software_Package",
@@ -585,9 +643,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cloudlinux-tuxcare:f11bd01ef3af",
-      "summary": "CloudLinux identifies Alt-PHP as affected by both CVEs and reports fixed alt-php74 builds for several Linux platforms plus alt-php80 for Alpine Linux 3.23; broader family coverage is still in progress.",
+      "summary": "CloudLinux has released additional platform-specific Alt-PHP fixes, recorded separately without extending them to unlisted platforms.",
       "description": "Parallel /opt/alt/phpXX PHP builds and selected user extensions",
-      "comment": "Inventory record: PHP-0387\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected family\nDeployment status: Not measured\nPHP surface: Parallel /opt/alt/phpXX PHP builds and selected user extensions\nPHP version scope: CloudLinux version/OS compatibility matrix includes legacy and 8.x families through 8.5; exact RPM/DEB build and backports unresolved\nExtensions: Per-user selected modules and version defaults differ; complete required and loaded list unknown\nLimitations: Alt-PHP is not the same package family as ea-PHP. Extension selection does not enable modules in every PHP version. CageFS/LVE prerequisites and a single-user mode do not prove deployed isolation. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: CloudLinux/TuxCare for Alt-PHP packages and covered backports; hosting operator for entitlements, updates and selected-user configuration\nDownstream surface: Only the named PHP component and its callers\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-21\nAliases: cloudlinux:alt-php, cloudlinux:php-selector-runtimes\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Affected: CloudLinux identifies the Alt-PHP family as affected; scoped fixed alt-php74 and alt-php80 platform rows are recorded separately.\nCVE-2026-109618: Affected for the broader Alt-PHP family; scoped fixed rows recorded separately\nCVE-2026-109619: Affected for the broader Alt-PHP family; scoped fixed rows recorded separately\nCVE assessment limit: Vendor notice confirms affected Alt-PHP family scope and partial fixed-package releases, not complete family remediation or deployment status.",
+      "comment": "Inventory record: PHP-0387\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected scope with separately recorded fixed releases\nDeployment status: Not measured\nPHP surface: Parallel /opt/alt/phpXX PHP builds and selected user extensions\nPHP version scope: CloudLinux confirms fixed Alt-PHP packages for the listed CloudLinux 7-10 and Ubuntu 22.04 branch combinations; these are recorded in PHP-0743. The broad family remains Vulnerable for unpatched runtimes; the notice does not establish fixed coverage for CloudLinux 6 or every unlisted platform/branch combination.\nExtensions: Per-user selected modules and version defaults differ; complete required and loaded list unknown\nLimitations: CloudLinux confirms fixed Alt-PHP packages for the listed CloudLinux 7-10 and Ubuntu 22.04 branch combinations; these are recorded in PHP-0743. The broad family remains Vulnerable for unpatched runtimes; the notice does not establish fixed coverage for CloudLinux 6 or every unlisted platform/branch combination.\nPatch owner: CloudLinux/TuxCare for Alt-PHP packages and covered backports; hosting operator for entitlements, updates and selected-user configuration\nDownstream surface: Only the named PHP component and its callers\nRelease pin: Official advisory reviewed 2026-10-23; fixed scope recorded separately\nSource accessed: 2026-10-23\nAliases: cloudlinux:alt-php, cloudlinux:php-selector-runtimes\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: CloudLinux confirms fixed Alt-PHP packages for the listed CloudLinux 7-10 and Ubuntu 22.04 branch combinations; these are recorded in PHP-0743. The broad family remains Vulnerable for unpatched runtimes; the notice does not establish fixed coverage for CloudLinux 6 or every unlisted platform/branch combination.\nCVE-2026-109618: Vulnerable in the stated scope; see VEX assessment\nCVE-2026-109619: Vulnerable in the stated scope; see VEX assessment\nCVE assessment limit: CloudLinux confirms fixed Alt-PHP packages for the listed CloudLinux 7-10 and Ubuntu 22.04 branch combinations; these are recorded in PHP-0743. The broad family remains Vulnerable for unpatched runtimes; the notice does not establish fixed coverage for CloudLinux 6 or every unlisted platform/branch combination.\nFix sources: https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -603,7 +661,7 @@
           "locator": [
             "https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5"
           ],
-          "comment": "CloudLinux - Critical PHP vulnerabilities CVE-2026-109618 / CVE-2026-109619"
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
         },
         {
           "type": "ExternalRef",
@@ -613,7 +671,8 @@
           ],
           "comment": "CloudLinux - PHP CVE-2026-109618 / CVE-2026-109619 updated package availability"
         }
-      ]
+      ],
+      "software_packageVersion": "Unpatched PHP builds; fixed release scopes listed separately"
     },
     {
       "type": "software_Package",
@@ -629,9 +688,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cloudlinux:daf109985d8c",
-      "summary": "CloudLinux identifies ea-php as affected by both CVEs and says patched ea-php74 through ea-php85 packages are scheduled for EasyApache4 v25.91; release is not yet confirmed.",
+      "summary": "CloudLinux has released fixed ea-PHP builds for EL7/8/9/10; the historical broader platform scope is retained separately.",
       "description": "EasyApache ea-PHP packages managed through MultiPHP/EasyApache",
-      "comment": "Inventory record: PHP-0388\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0028\nEvidence status: Vendor-confirmed affected family\nDeployment status: Not measured\nPHP surface: EasyApache ea-PHP packages managed through MultiPHP/EasyApache\nPHP version scope: Vendor documents older EOL ea-PHP on CloudLinux 6\u20139; exact covered branches, package releases and entitlement unresolved\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: This page\u2019s general Linux discussion does not override its compatibility rows: ea-PHP is marked unavailable for Ubuntu/Debian there. No promise that every flaw/build is fixed follows from the product description. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: CloudLinux for its backported packages; hosting operator for subscription, package update and service rollout\nDownstream surface: Only the named PHP component and its callers\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-21\nAliases: cloudlinux:ea-php-extended-support\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Affected: CloudLinux identifies ea-php as affected and states patched ea-php74 through ea-php85 packages are scheduled for EasyApache4 v25.91.\nCVE-2026-109618: Affected: patched ea-php74 through ea-php85 packages scheduled, release not yet confirmed\nCVE-2026-109619: Affected: patched ea-php74 through ea-php85 packages scheduled, release not yet confirmed\nCVE assessment limit: Vendor notice confirms affected ea-php family scope and planned EasyApache4 package releases, not completed release or deployment status.",
+      "comment": "Inventory record: PHP-0388\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0028\nEvidence status: Vendor-confirmed affected scope with separately recorded fixed releases\nDeployment status: Not measured\nPHP surface: EasyApache ea-PHP packages managed through MultiPHP/EasyApache\nPHP version scope: CloudLinux confirms released ea-php52 through ea-php85 security builds for EL7/8/9/10, recorded in PHP-0744. The historical family includes CloudLinux 6, which is not covered by this fixed matrix. Unpatched builds remain affected; upstream PHP version numbers alone cannot identify the vendor backport.\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: CloudLinux confirms released ea-php52 through ea-php85 security builds for EL7/8/9/10, recorded in PHP-0744. The historical family includes CloudLinux 6, which is not covered by this fixed matrix. Unpatched builds remain affected; upstream PHP version numbers alone cannot identify the vendor backport.\nPatch owner: CloudLinux for its backported packages; hosting operator for subscription, package update and service rollout\nDownstream surface: Only the named PHP component and its callers\nRelease pin: Official advisory reviewed 2026-10-23; fixed scope recorded separately\nSource accessed: 2026-10-23\nAliases: cloudlinux:ea-php-extended-support\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: CloudLinux confirms released ea-php52 through ea-php85 security builds for EL7/8/9/10, recorded in PHP-0744. The historical family includes CloudLinux 6, which is not covered by this fixed matrix. Unpatched builds remain affected; upstream PHP version numbers alone cannot identify the vendor backport.\nCVE-2026-109618: Vulnerable in the stated scope; see VEX assessment\nCVE-2026-109619: Vulnerable in the stated scope; see VEX assessment\nCVE assessment limit: CloudLinux confirms released ea-php52 through ea-php85 security builds for EL7/8/9/10, recorded in PHP-0744. The historical family includes CloudLinux 6, which is not covered by this fixed matrix. Unpatched builds remain affected; upstream PHP version numbers alone cannot identify the vendor backport.\nFix sources: https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -655,9 +714,10 @@
           "locator": [
             "https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5"
           ],
-          "comment": "CloudLinux incident status page for the PHP CVEs and package release progress"
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
         }
-      ]
+      ],
+      "software_packageVersion": "Unpatched PHP builds; fixed release scopes listed separately"
     },
     {
       "type": "software_Package",
@@ -673,9 +733,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:tuxcare-cloudlinux:44063b555f7c",
-      "summary": "CloudLinux scopes TuxCare PHP ELS as affected by both CVEs and reports several fixed ELS packages, while the broader family remains only partially remediated.",
+      "summary": "CloudLinux's completed release update confirms TuxCare ELS fixed packages for alt-php, distribution PHP and Windows PHP.",
       "description": "Vendor PHP ELS packages for supported Linux and Windows platforms",
-      "comment": "Inventory record: PHP-0422\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected family\nDeployment status: Not measured\nPHP surface: Vendor PHP ELS packages for supported Linux and Windows platforms\nPHP version scope: TuxCare documentation lists supported PHP families across EL, Ubuntu, Debian, Alpine Linux and Windows; the CloudLinux status incident separately reports fixed ELS package releases for selected CentOS and Ubuntu scopes.\nExtensions: Built-in and loadable sets differ by PHP version, platform and package; enablement must be verified\nLimitations: The status page reports only selected fixed ELS package releases and does not establish complete remediation for every supported PHP/OS combination. Optional ELS installation does not put PHP on all hosts. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured.\nPatch owner: TuxCare for licensed PHP backport builds; system administrator for selected package/runtime update and service rollout\nDownstream surface: Only the named PHP component and its callers\nRelease pin: CloudLinux status incident updated 2026-10-21; scoped fixed ELS rows pinned separately; broader family not fully pinned\nSource accessed: 2026-10-21\nAliases: tuxcare:els-php\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Affected: CloudLinux identifies TuxCare PHP ELS as affected; scoped fixed ELS package rows are recorded separately.\nCVE-2026-109618: Affected for the broader TuxCare PHP ELS family; scoped fixed rows recorded separately\nCVE-2026-109619: Affected for the broader TuxCare PHP ELS family; scoped fixed rows recorded separately\nCVE assessment limit: Vendor notice confirms affected TuxCare PHP ELS family scope and partial fixed-package releases, not complete family remediation or deployment status.",
+      "comment": "Inventory record: PHP-0422\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix in the specified scope\nDeployment status: Not measured\nPHP surface: Vendor PHP ELS packages for supported Linux and Windows platforms\nPHP version scope: TuxCare ELS security packages released by 2026-10-22 00:07 UTC; vendor-supported PHP/OS combinations\nExtensions: Built-in and loadable sets differ by PHP version, platform and package; enablement must be verified\nLimitations: CloudLinux's 22 October completed-release update confirms that TuxCare ELS fixed packages are released for alt-php, distribution PHP and Windows PHP. Scope is vendor-supported ELS packages; lower upstream PHP version numbers can contain backports, so verify the installed package revision and CVE changelog.\nPatch owner: TuxCare for licensed PHP backport builds; system administrator for selected package/runtime update and service rollout\nDownstream surface: Only the named PHP component and its callers\nRelease pin: TuxCare ELS security packages released by 2026-10-22 00:07 UTC; vendor-supported PHP/OS combinations\nSource accessed: 2026-10-23\nAliases: tuxcare:els-php\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: CloudLinux's 22 October completed-release update confirms that TuxCare ELS fixed packages are released for alt-php, distribution PHP and Windows PHP. Scope is vendor-supported ELS packages; lower upstream PHP version numbers can contain backports, so verify the installed package revision and CVE changelog.\nCVE-2026-109618: Fix in the stated scope; see VEX assessment\nCVE-2026-109619: Fix in the stated scope; see VEX assessment\nCVE assessment limit: CloudLinux's 22 October completed-release update confirms that TuxCare ELS fixed packages are released for alt-php, distribution PHP and Windows PHP. Scope is vendor-supported ELS packages; lower upstream PHP version numbers can contain backports, so verify the installed package revision and CVE changelog.\nFix sources: https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -699,9 +759,10 @@
           "locator": [
             "https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5"
           ],
-          "comment": "CloudLinux incident status page for the PHP CVEs and package release progress"
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
         }
-      ]
+      ],
+      "software_packageVersion": "TuxCare ELS security packages released by 2026-10-22 00:07 UTC; vendor-supported PHP/OS combinations"
     },
     {
       "type": "software_Package",
@@ -791,9 +852,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:nixos-nixpkgs-maintainers:4f3a9d20c67b",
-      "summary": "Nixpkgs documents a minimal PHP base wrapped with selected extensions and generated php.ini; PHP-built tools inherit their owning runtime.",
+      "summary": "Update the applicable Nixpkgs input/channel, rebuild and activate services, and verify the running PHP version.",
       "description": "Wrapped interpreter with generated php.ini; selected PHP-FPM pool or Apache integration; unwrapped runtime is separate",
-      "comment": "Inventory record: PHP-0595\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Wrapped interpreter with generated php.ini; selected PHP-FPM pool or Apache integration; unwrapped runtime is separate\nPHP version scope: Official stable manual plus pinned wiki revision33628; exact nixpkgs revision, PHP version, platform and output not pinned\nExtensions: php.withExtensions/buildEnv selects extensions and configuration; adding a standalone memcached extension to systemPackages alone does not enable it.\nLimitations: Manual examples are configuration syntax, not available/supported version declarations. Wiki examples containing php74, php81 or php1 are not used as current runtime inventory. Host NixOS and every derivation do not thereby require PHP. Availability is not default installation. Exact installed bytes, loaded features, inputs, privileges, deployments and vulnerabilities are not measured. No research code/package/image was installed, built, imported or executed.\nPatch owner: Nixpkgs maintainers for package expressions; flake/derivation owner for pinned revision, rebuild/switch and service restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: NixOS wiki PHP oldid33628 read; stable manual is moving; no exact derivation/hash\nSource accessed: 2026-10-19\nAliases: nixpkgs:php, nixos:phpfpm\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0595\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Wrapped interpreter with generated php.ini; selected PHP-FPM pool or Apache integration; unwrapped runtime is separate\nPHP version scope: Nixpkgs PHP 8.3.36 / 8.4.27 / 8.5.12; updated nixos-26.05-small and nixos-unstable-small inputs\nExtensions: php.withExtensions/buildEnv selects extensions and configuration; adding a standalone memcached extension to systemPackages alone does not enable it.\nLimitations: Manual examples are configuration syntax, not available/supported version declarations. Wiki examples containing php74, php81 or php1 are not used as current runtime inventory. Host NixOS and every derivation do not thereby require PHP. Availability is not default installation. Exact installed bytes, loaded features, inputs, privileges, deployments and vulnerabilities are not measured. No research code/package/image was installed, built, imported or executed.\nPatch owner: Nixpkgs maintainers for package expressions; flake/derivation owner for pinned revision, rebuild/switch and service restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Nixpkgs PHP 8.3.36 / 8.4.27 / 8.5.12; updated nixos-26.05-small and nixos-unstable-small inputs\nSource accessed: 2026-10-23\nAliases: nixpkgs:php, nixos:phpfpm\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Fix. Nixpkgs merged PR 576853 fixing both CVEs; a maintainer confirms delivery to the small channels. Other channels and pinned inputs are not assumed updated, and this finding does not claim a PHP 8.2 fix from that PR.\nCVE-2026-109618: Fix. Nixpkgs merged PR 576853 fixing both CVEs; a maintainer confirms delivery to the small channels. Other channels and pinned inputs are not assumed updated, and this finding does not claim a PHP 8.2 fix from that PR.\nCVE-2026-109619: Fix. Nixpkgs merged PR 576853 fixing both CVEs; a maintainer confirms delivery to the small channels. Other channels and pinned inputs are not assumed updated, and this finding does not claim a PHP 8.2 fix from that PR.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://github.com/NixOS/nixpkgs/pull/576853 ; https://github.com/NixOS/nixpkgs/pull/576853#issuecomment-6337965090",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -810,8 +871,25 @@
             "https://wiki.nixos.org/w/index.php?title=PHP&oldid=33628"
           ],
           "comment": "Primary package, build, release or vendor distribution evidence - Pinned wiki revision illustrates runtime extension selection and warns standalone memcached package is not automatically enabled."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/NixOS/nixpkgs/pull/576853"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/NixOS/nixpkgs/pull/576853#issuecomment-6337965090"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Nixpkgs PHP 8.3.36 / 8.4.27 / 8.5.12; updated nixos-26.05-small and nixos-unstable-small inputs"
     },
     {
       "type": "software_Package",
@@ -1832,10 +1910,10 @@
         "urn:php2shell:inventory:package:PHP-0387"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Affected family: CloudLinux Alt-PHP; scoped fixed alt-php74 and alt-php80 platform rows are recorded separately",
-      "summary": "CVE-2026-109618 assessment: Affected family: CloudLinux Alt-PHP; scoped fixed alt-php74 and alt-php80 platform rows are recorded separately",
-      "comment": "Added from the CloudLinux incident notice updated 2026-10-21.",
-      "security_actionStatement": "Apply updated Alt-PHP packages when available from CloudLinux."
+      "security_statusNotes": "CloudLinux confirms fixed Alt-PHP packages for the listed CloudLinux 7-10 and Ubuntu 22.04 branch combinations; these are recorded in PHP-0743. The broad family remains Vulnerable for unpatched runtimes; the notice does not establish fixed coverage for CloudLinux 6 or every unlisted platform/branch combination.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable in the remaining unpatched scope",
+      "comment": "Official sources reviewed 2026-10-23: https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5",
+      "security_actionStatement": "Install the fixed package set matching the OS and PHP branch, verify its changelog and restart PHP; do not infer coverage for unlisted platforms."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -1846,10 +1924,10 @@
         "urn:php2shell:inventory:package:PHP-0387"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Affected family: CloudLinux Alt-PHP; scoped fixed alt-php74 and alt-php80 platform rows are recorded separately",
-      "summary": "CVE-2026-109619 assessment: Affected family: CloudLinux Alt-PHP; scoped fixed alt-php74 and alt-php80 platform rows are recorded separately",
-      "comment": "Added from the CloudLinux incident notice updated 2026-10-21.",
-      "security_actionStatement": "Apply updated Alt-PHP packages when available from CloudLinux."
+      "security_statusNotes": "CloudLinux confirms fixed Alt-PHP packages for the listed CloudLinux 7-10 and Ubuntu 22.04 branch combinations; these are recorded in PHP-0743. The broad family remains Vulnerable for unpatched runtimes; the notice does not establish fixed coverage for CloudLinux 6 or every unlisted platform/branch combination.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable in the remaining unpatched scope",
+      "comment": "Official sources reviewed 2026-10-23: https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5",
+      "security_actionStatement": "Install the fixed package set matching the OS and PHP branch, verify its changelog and restart PHP; do not infer coverage for unlisted platforms."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -1857,14 +1935,13 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0388",
-        "urn:php2shell:inventory:package:PHP-0422"
+        "urn:php2shell:inventory:package:PHP-0388"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Affected package streams: CloudLinux ea-php and broad TuxCare PHP ELS family; scoped fixed ELS rows are recorded separately",
-      "summary": "CVE-2026-109618 assessment: Affected package streams: CloudLinux ea-php and broad TuxCare PHP ELS family; scoped fixed ELS rows are recorded separately",
-      "comment": "Added from the CloudLinux knowledge base article and incident status page updated 2026-10-21.",
-      "security_actionStatement": "Apply updated CloudLinux or TuxCare PHP packages when available."
+      "security_statusNotes": "CloudLinux confirms released ea-php52 through ea-php85 security builds for EL7/8/9/10, recorded in PHP-0744. The historical family includes CloudLinux 6, which is not covered by this fixed matrix. Unpatched builds remain affected; upstream PHP version numbers alone cannot identify the vendor backport.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable in the remaining unpatched scope",
+      "comment": "Official sources reviewed 2026-10-23: https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5",
+      "security_actionStatement": "Use the exact fixed ea-PHP revision for EL7/8/9/10 and restart services; verify older platform support separately."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -1872,14 +1949,13 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0388",
-        "urn:php2shell:inventory:package:PHP-0422"
+        "urn:php2shell:inventory:package:PHP-0388"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Affected package streams: CloudLinux ea-php and broad TuxCare PHP ELS family; scoped fixed ELS rows are recorded separately",
-      "summary": "CVE-2026-109619 assessment: Affected package streams: CloudLinux ea-php and broad TuxCare PHP ELS family; scoped fixed ELS rows are recorded separately",
-      "comment": "Added from the CloudLinux knowledge base article and incident status page updated 2026-10-21.",
-      "security_actionStatement": "Apply updated CloudLinux or TuxCare PHP packages when available."
+      "security_statusNotes": "CloudLinux confirms released ea-php52 through ea-php85 security builds for EL7/8/9/10, recorded in PHP-0744. The historical family includes CloudLinux 6, which is not covered by this fixed matrix. Unpatched builds remain affected; upstream PHP version numbers alone cannot identify the vendor backport.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable in the remaining unpatched scope",
+      "comment": "Official sources reviewed 2026-10-23: https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5",
+      "security_actionStatement": "Use the exact fixed ea-PHP revision for EL7/8/9/10 and restart services; verify older platform support separately."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -2176,10 +2252,10 @@
         "urn:php2shell:inventory:package:PHP-0364"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Affected: Red Hat lists the RHEL 9 PHP component family as affected; scoped php:8.2 fix recorded separately",
-      "summary": "CVE-2026-109618 assessment: Affected: Red Hat lists the RHEL 9 PHP component family as affected; scoped php:8.2 fix recorded separately",
-      "comment": "Added from Red Hat CVE-2026-109618 VEX page last modified 2026-10-21.",
-      "security_actionStatement": "Apply branch-specific Red Hat errata as released; RHSA-2026:87072 fixes the separately scoped RHEL 9 php:8.2 module row."
+      "security_statusNotes": "Red Hat lists fixed RHEL 9 PHP 8.0 and php:8.3 packages in RHSA-2026:87151 and RHSA-2026:87079, alongside the existing php:8.2 fix. The php:8.4/php stream remains Affected for both CVEs, so the family stays Vulnerable; fixed package scopes are separate entries.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable in the remaining unpatched scope",
+      "comment": "Official sources reviewed 2026-10-23: https://access.redhat.com/errata/RHSA-2026:87151; https://access.redhat.com/errata/RHSA-2026:87079",
+      "security_actionStatement": "Install the applicable Red Hat security advisory for the selected stream; do not apply PHP 8.0/8.2/8.3 fix status to PHP 8.4."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -2190,10 +2266,10 @@
         "urn:php2shell:inventory:package:PHP-0364"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Affected: Red Hat lists the RHEL 9 PHP component family as affected; scoped php:8.2 fix recorded separately",
-      "summary": "CVE-2026-109619 assessment: Affected: Red Hat lists the RHEL 9 PHP component family as affected; scoped php:8.2 fix recorded separately",
-      "comment": "Added from Red Hat CVE-2026-109619 VEX page last modified 2026-10-21.",
-      "security_actionStatement": "Apply branch-specific Red Hat errata as released; RHSA-2026:87072 fixes the separately scoped RHEL 9 php:8.2 module row."
+      "security_statusNotes": "Red Hat lists fixed RHEL 9 PHP 8.0 and php:8.3 packages in RHSA-2026:87151 and RHSA-2026:87079, alongside the existing php:8.2 fix. The php:8.4/php stream remains Affected for both CVEs, so the family stays Vulnerable; fixed package scopes are separate entries.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable in the remaining unpatched scope",
+      "comment": "Official sources reviewed 2026-10-23: https://access.redhat.com/errata/RHSA-2026:87151; https://access.redhat.com/errata/RHSA-2026:87079",
+      "security_actionStatement": "Install the applicable Red Hat security advisory for the selected stream; do not apply PHP 8.0/8.2/8.3 fix status to PHP 8.4."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -2480,6 +2556,451 @@
       "security_statusNotes": "OpenWrt member-authored security update PRs explicitly name both CVEs and are merged into the named package-feed branches. This confirms fixed package source recipes, not a completed binary mirror or firmware rollout for every target. Devices without the optional PHP packages are outside this record's runtime scope.",
       "summary": "CVE-2026-109619 assessment: Fix available for the named runtime/build scope",
       "comment": "Official public vendor/upstream evidence independently reviewed 2026-10-22: https://github.com/openwrt/packages/pull/30844; https://github.com/openwrt/packages/pull/30845; https://github.com/openwrt/packages/pull/30847\nAction statement: Build/install PHP packages from the corresponding updated branch and restart the selected PHP services; verify binary package availability and installed versions for the device target."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0365-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0365"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "SUSE publishes fixed PHP8 packages for the listed SLE product branches. This does not assert that every SLE service pack or PHP package family is fixed; use the matching product-specific advisory.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.suse.com/security/cve/CVE-2026-109618.html ; https://www.suse.com/security/cve/CVE-2026-109619.html ; https://www.suse.com/support/update/announcement/2026/suse-su-20264843-1/ ; https://www.suse.com/support/update/announcement/2026/suse-su-20264844-1/ ; https://www.suse.com/support/update/announcement/2026/suse-su-20264852-1/\nAction statement: Install the product-specific SUSE security update and restart affected PHP services; do not select a package built for another SLE branch."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0365-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0365"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "SUSE publishes fixed PHP8 packages for the listed SLE product branches. This does not assert that every SLE service pack or PHP package family is fixed; use the matching product-specific advisory.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.suse.com/security/cve/CVE-2026-109618.html ; https://www.suse.com/security/cve/CVE-2026-109619.html ; https://www.suse.com/support/update/announcement/2026/suse-su-20264843-1/ ; https://www.suse.com/support/update/announcement/2026/suse-su-20264844-1/ ; https://www.suse.com/support/update/announcement/2026/suse-su-20264852-1/\nAction statement: Install the product-specific SUSE security update and restart affected PHP services; do not select a package built for another SLE branch."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0595-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0595"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Nixpkgs merged PR 576853 fixing both CVEs; a maintainer confirms delivery to the small channels. Other channels and pinned inputs are not assumed updated, and this finding does not claim a PHP 8.2 fix from that PR.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://github.com/NixOS/nixpkgs/pull/576853 ; https://github.com/NixOS/nixpkgs/pull/576853#issuecomment-6337965090\nAction statement: Update the applicable Nixpkgs input/channel, rebuild and activate services, and verify the running PHP version."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0595-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0595"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Nixpkgs merged PR 576853 fixing both CVEs; a maintainer confirms delivery to the small channels. Other channels and pinned inputs are not assumed updated, and this finding does not claim a PHP 8.2 fix from that PR.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://github.com/NixOS/nixpkgs/pull/576853 ; https://github.com/NixOS/nixpkgs/pull/576853#issuecomment-6337965090\nAction statement: Update the applicable Nixpkgs input/channel, rebuild and activate services, and verify the running PHP version."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0422-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0422"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "CloudLinux's 22 October completed-release update confirms that TuxCare ELS fixed packages are released for alt-php, distribution PHP and Windows PHP. Scope is vendor-supported ELS packages; lower upstream PHP version numbers can contain backports, so verify the installed package revision and CVE changelog.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5.\nAction statement: Install the appropriate vendor-supported ELS security packages, confirm both CVE fixes in the package changelog and restart the PHP services."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0422-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0422"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "CloudLinux's 22 October completed-release update confirms that TuxCare ELS fixed packages are released for alt-php, distribution PHP and Windows PHP. Scope is vendor-supported ELS packages; lower upstream PHP version numbers can contain backports, so verify the installed package revision and CVE changelog.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5.\nAction statement: Install the appropriate vendor-supported ELS security packages, confirm both CVE fixes in the package changelog and restart the PHP services."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0740",
+      "creationInfo": "_:creationinfo",
+      "name": "grommunio PHP packages for SUSE-based installations",
+      "software_packageVersion": "Out-of-band PHP security packages announced 2026-10-21",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0740"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:grommunio-gmbh:87b43b9b84ca",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package or image scope.",
+      "description": "Fixed distribution scope of PHP-0221 (grommunio Web).",
+      "comment": "Inventory record: PHP-0740\nParent inventory record: PHP-0221\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nSource accessed: 2026-10-23\nPHP version scope: Out-of-band PHP security packages announced 2026-10-21\nLimitations: grommunio confirms its patched PHP packages are available in community and supported repositories for SUSE-based installations. The advisory does not give exact package revisions. Debian, Ubuntu and other distributions must obtain their own distribution PHP fixes; a grommunio Web application update alone does not fix those runtimes.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://grommunio.com/news/php2shell-patched-php-packages-available/"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0740",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0740",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package or image distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of the product tracked by PHP-0221; deployment and other product variants are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0740-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0740"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "grommunio confirms its patched PHP packages are available in community and supported repositories for SUSE-based installations. The advisory does not give exact package revisions. Debian, Ubuntu and other distributions must obtain their own distribution PHP fixes; a grommunio Web application update alone does not fix those runtimes.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://grommunio.com/news/php2shell-patched-php-packages-available/.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0740-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0740"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "grommunio confirms its patched PHP packages are available in community and supported repositories for SUSE-based installations. The advisory does not give exact package revisions. Debian, Ubuntu and other distributions must obtain their own distribution PHP fixes; a grommunio Web application update alone does not fix those runtimes.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://grommunio.com/news/php2shell-patched-php-packages-available/.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0741",
+      "creationInfo": "_:creationinfo",
+      "name": "Red Hat Enterprise Linux 9 PHP 8.0 packages",
+      "software_packageVersion": "php-0:8.0.30-8.el9_8.1 (RHSA-2026:87151)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0741"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:red-hat:2c30c5da9571",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package or image scope.",
+      "description": "Fixed distribution scope of PHP-0364 (Red Hat Enterprise Linux 9 PHP RPM/AppStreams).",
+      "comment": "Inventory record: PHP-0741\nParent inventory record: PHP-0364\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nSource accessed: 2026-10-23\nPHP version scope: php-0:8.0.30-8.el9_8.1 (RHSA-2026:87151)\nLimitations: Red Hat lists RHSA-2026:87151 and php-0:8.0.30-8.el9_8.1 as a fixed release for both CVEs. This backport is specific to RHEL 9 PHP 8.0; the broader RHEL 9 PHP family still includes an affected PHP 8.4 stream.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/errata/RHSA-2026:87151"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/security/cve/cve-2026-109618"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/security/cve/cve-2026-109619"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0741",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0741",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package or image distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of the product tracked by PHP-0364; deployment and other product variants are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0741-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0741"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Red Hat lists RHSA-2026:87151 and php-0:8.0.30-8.el9_8.1 as a fixed release for both CVEs. This backport is specific to RHEL 9 PHP 8.0; the broader RHEL 9 PHP family still includes an affected PHP 8.4 stream.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://access.redhat.com/errata/RHSA-2026:87151; https://access.redhat.com/security/cve/cve-2026-109618; https://access.redhat.com/security/cve/cve-2026-109619.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0741-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0741"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Red Hat lists RHSA-2026:87151 and php-0:8.0.30-8.el9_8.1 as a fixed release for both CVEs. This backport is specific to RHEL 9 PHP 8.0; the broader RHEL 9 PHP family still includes an affected PHP 8.4 stream.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://access.redhat.com/errata/RHSA-2026:87151; https://access.redhat.com/security/cve/cve-2026-109618; https://access.redhat.com/security/cve/cve-2026-109619.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0742",
+      "creationInfo": "_:creationinfo",
+      "name": "Red Hat Enterprise Linux 9 php:8.3 module",
+      "software_packageVersion": "php:8.3-9080020261020115403.9 (RHSA-2026:87079)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0742"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:red-hat:2c30c5da9571",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package or image scope.",
+      "description": "Fixed distribution scope of PHP-0364 (Red Hat Enterprise Linux 9 PHP RPM/AppStreams).",
+      "comment": "Inventory record: PHP-0742\nParent inventory record: PHP-0364\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nSource accessed: 2026-10-23\nPHP version scope: php:8.3-9080020261020115403.9 (RHSA-2026:87079)\nLimitations: Red Hat lists RHSA-2026:87079 and php:8.3-9080020261020115403.9 as a fixed release for both CVEs. This assessment covers the RHEL 9 php:8.3 module only; it does not cover the still-affected PHP 8.4 stream.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/errata/RHSA-2026:87079"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/security/cve/cve-2026-109618"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/security/cve/cve-2026-109619"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0742",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0742",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package or image distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of the product tracked by PHP-0364; deployment and other product variants are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0742-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0742"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Red Hat lists RHSA-2026:87079 and php:8.3-9080020261020115403.9 as a fixed release for both CVEs. This assessment covers the RHEL 9 php:8.3 module only; it does not cover the still-affected PHP 8.4 stream.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://access.redhat.com/errata/RHSA-2026:87079; https://access.redhat.com/security/cve/cve-2026-109618; https://access.redhat.com/security/cve/cve-2026-109619.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0742-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0742"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Red Hat lists RHSA-2026:87079 and php:8.3-9080020261020115403.9 as a fixed release for both CVEs. This assessment covers the RHEL 9 php:8.3 module only; it does not cover the still-affected PHP 8.4 stream.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://access.redhat.com/errata/RHSA-2026:87079; https://access.redhat.com/security/cve/cve-2026-109618; https://access.redhat.com/security/cve/cve-2026-109619.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0743",
+      "creationInfo": "_:creationinfo",
+      "name": "CloudLinux Alt-PHP fixed packages for CloudLinux 7-10 and Ubuntu 22.04",
+      "software_packageVersion": "Stable security builds released 2026-10-21/22; CL8/9 PHP 8.2.35-1, 8.3.36-1, 8.4.27-1, 8.5.12-1 also released 2026-10-23",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0743"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:cloudlinux-tuxcare:f11bd01ef3af",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package or image scope.",
+      "description": "Fixed distribution scope of PHP-0387 (CloudLinux Alt-PHP / PHP Selector runtime family).",
+      "comment": "Inventory record: PHP-0743\nParent inventory record: PHP-0387\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nSource accessed: 2026-10-23\nPHP version scope: Stable security builds released 2026-10-21/22; CL8/9 PHP 8.2.35-1, 8.3.36-1, 8.4.27-1, 8.5.12-1 also released 2026-10-23\nLimitations: CloudLinux confirms fixed alt-php 5.2-5.6, 7.0-7.4 and 8.0-8.5 for CL7/8/9; Ubuntu 22.04 covers 5.2, 5.6, 7.0-7.4 and 8.0-8.5. CL10 has fixed 5.2 in stable and other branches through ELS ALT PHP. CL8/9 also have new upstream-number builds for 8.2-8.5. CL6 and unlisted platform/branch combinations are excluded. Check backport revisions and changelogs.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0743",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0743",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package or image distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of the product tracked by PHP-0387; deployment and other product variants are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0743-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0743"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "CloudLinux confirms fixed alt-php 5.2-5.6, 7.0-7.4 and 8.0-8.5 for CL7/8/9; Ubuntu 22.04 covers 5.2, 5.6, 7.0-7.4 and 8.0-8.5. CL10 has fixed 5.2 in stable and other branches through ELS ALT PHP. CL8/9 also have new upstream-number builds for 8.2-8.5. CL6 and unlisted platform/branch combinations are excluded. Check backport revisions and changelogs.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0743-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0743"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "CloudLinux confirms fixed alt-php 5.2-5.6, 7.0-7.4 and 8.0-8.5 for CL7/8/9; Ubuntu 22.04 covers 5.2, 5.6, 7.0-7.4 and 8.0-8.5. CL10 has fixed 5.2 in stable and other branches through ELS ALT PHP. CL8/9 also have new upstream-number builds for 8.2-8.5. CL6 and unlisted platform/branch combinations are excluded. Check backport revisions and changelogs.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0744",
+      "creationInfo": "_:creationinfo",
+      "name": "CloudLinux ea-PHP fixed packages for CloudLinux 7-10",
+      "software_packageVersion": "ea-php52 through ea-php85: vendor fixed build matrix released 2026-10-21 20:55 UTC (EL7/8/9/10)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0744"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:cloudlinux:daf109985d8c",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package or image scope.",
+      "description": "Fixed distribution scope of PHP-0388 (CloudLinux legacy ea-PHP extended-support packages).",
+      "comment": "Inventory record: PHP-0744\nParent inventory record: PHP-0388\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nSource accessed: 2026-10-23\nPHP version scope: ea-php52 through ea-php85: vendor fixed build matrix released 2026-10-21 20:55 UTC (EL7/8/9/10)\nLimitations: CloudLinux confirms fixed ea-php52 through ea-php85 packages in stable for EL7/8/9/10. Use the exact vendor package revisions, not the upstream PHP number alone: for example ea-php84 8.4.26-2.elX.cloudlinux.1 contains both fixes. CL6 and other platforms are not included in this fixed scope.\nRelease evidence: Fixed package matrix, where elX is el7, el8, el9 or el10: ea-php52 5.2.17-27.elX.cloudlinux.67; ea-php53 5.3.29-29.elX.cloudlinux.69; ea-php54 5.4.45-82.elX.cloudlinux.9; ea-php55 5.5.38-64.elX.cloudlinux.10; ea-php56 5.6.40-25.elX.cloudlinux.18; ea-php70 7.0.33-29.elX.cloudlinux.17; ea-php71 7.1.33-20.elX.cloudlinux.17; ea-php72 7.2.34-12.elX.cloudlinux.18; ea-php73 7.3.33-15.elX.cloudlinux.18; ea-php74 7.4.33-18.elX.cloudlinux.13; ea-php80 8.0.30-11.elX.cloudlinux.1; ea-php81 8.1.34-4.elX.cloudlinux.1; ea-php82 8.2.34-2.elX.cloudlinux.1; ea-php83 8.3.35-2.elX.cloudlinux.2; ea-php84 8.4.26-2.elX.cloudlinux.1; ea-php85 8.5.11-2.elX.cloudlinux.1.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0744",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0744",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package or image distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of the product tracked by PHP-0388; deployment and other product variants are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0744-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0744"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "CloudLinux confirms fixed ea-php52 through ea-php85 packages in stable for EL7/8/9/10. Use the exact vendor package revisions, not the upstream PHP number alone: for example ea-php84 8.4.26-2.elX.cloudlinux.1 contains both fixes. CL6 and other platforms are not included in this fixed scope.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0744-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0744"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "CloudLinux confirms fixed ea-php52 through ea-php85 packages in stable for EL7/8/9/10. Use the exact vendor package revisions, not the upstream PHP number alone: for example ea-php84 8.4.26-2.elX.cloudlinux.1 contains both fixes. CL6 and other platforms are not included in this fixed scope.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
     }
   ]
 }

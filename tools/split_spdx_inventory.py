@@ -120,7 +120,7 @@ def split_document(document: dict[str, Any], newline: str) -> dict[str, dict[str
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("input", type=Path, help="The preserved original inventory or its backup.")
+    parser.add_argument("input", type=Path, help="The original inventory to split.")
     parser.add_argument("--spdx-dir", type=Path, default=compiler.DEFAULT_SPDX_DIR)
     args = parser.parse_args(argv)
     try:

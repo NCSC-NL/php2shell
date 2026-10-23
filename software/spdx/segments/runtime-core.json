@@ -458,9 +458,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:frankenphp:c752b8206ab0",
-      "summary": "PHP names FrankenPHP among web-serving installations at risk from both CVEs; maintainers state builds are prepared but fixed artifact release is not yet confirmed.",
+      "summary": "FrankenPHP 1.13.2 publishes static binaries with PHP 8.5.12 fixing both PHP2Shell CVEs.",
       "description": "Embedded PHP / ZTS",
-      "comment": "Inventory record: PHP-0005\nCategory: Embedded runtimes\nOriginal relationship: embeds\nRelationship direction: distributes_php\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Embedded PHP / ZTS\nPHP version scope: Selected at build\nExtensions: Selected at build\nLimitations: Do not assume an OS PHP update changes PHP embedded in a binary.\nPatch owner: Binary or image publisher and operator\nDownstream surface: Long-running application server\nRelease pin: Documentation URL; immutable release pin pending\nSource accessed: 2026-10-21\nConditional downstream consequence: Analyst judgment: a matching flaw in the PHP or extension code embedded in a selected static binary could affect requests and data accessible to that process. Remediation requires a rebuilt replacement binary or image and restart. Updating separate system PHP does not update the embedded runtime.\nVulnerability status: Vendor/upstream notice 2026-10-21: PHP names FrankenPHP among web-serving installations at risk and FrankenPHP maintainers state builds are prepared, but fixed artifact release is not yet confirmed.\nCVE-2026-109618: Affected: FrankenPHP web-serving builds embedding affected PHP versions; fixed artifact release not yet confirmed\nCVE-2026-109619: Affected: FrankenPHP web-serving builds embedding affected PHP versions; fixed artifact release not yet confirmed\nCVE assessment limit: PHP confirms web-serving FrankenPHP scope; exact affected FrankenPHP artifact versions and completed fixed release identifiers remain pending.",
+      "comment": "Inventory record: PHP-0005\nCategory: Embedded runtimes\nOriginal relationship: embeds\nRelationship direction: distributes_php\nEvidence status: Vendor-confirmed released fix in the specified scope\nDeployment status: Not measured\nPHP surface: Embedded PHP / ZTS\nPHP version scope: FrankenPHP 1.13.2 static binaries with PHP 8.5.12\nExtensions: Selected at build\nLimitations: Fixed in FrankenPHP 1.13.2 static binaries embedding PHP 8.5.12. Replace the embedded runtime binary; updating a separate system PHP installation does not repair older static builds.\nPatch owner: Binary or image publisher and operator\nDownstream surface: Long-running application server\nRelease pin: FrankenPHP 1.13.2 static binaries with PHP 8.5.12\nSource accessed: 2026-10-23\nConditional downstream consequence: Analyst judgment: a matching flaw in the PHP or extension code embedded in a selected static binary could affect requests and data accessible to that process. Remediation requires a rebuilt replacement binary or image and restart. Updating separate system PHP does not update the embedded runtime.\nVulnerability status: Fixed in FrankenPHP 1.13.2 static binaries embedding PHP 8.5.12. Replace the embedded runtime binary; updating a separate system PHP installation does not repair older static builds.\nCVE-2026-109618: Fix in the stated scope; see VEX assessment\nCVE-2026-109619: Fix in the stated scope; see VEX assessment\nCVE assessment limit: Fixed in FrankenPHP 1.13.2 static binaries embedding PHP 8.5.12. Replace the embedded runtime binary; updating a separate system PHP installation does not repair older static builds.\nFix sources: https://github.com/php/frankenphp/releases/tag/v1.13.2",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -485,8 +485,17 @@
             "https://github.com/php/frankenphp/issues/2732"
           ],
           "comment": "FrankenPHP issue tracking rebuilt images, packages and binaries for the CVEs"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/frankenphp/releases/tag/v1.13.2"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
         }
-      ]
+      ],
+      "software_packageVersion": "FrankenPHP 1.13.2 static binaries with PHP 8.5.12"
     },
     {
       "type": "software_Package",
@@ -6709,32 +6718,30 @@
       "comment": "Added from the PHP security advisory published 2026-10-21.\nAction statement: Update to PHP 8.5.12, 8.4.27, 8.3.36 or 8.2.35 and restart PHP workers."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:ae38229d0a7b",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0005"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Affected: FrankenPHP web-serving builds embedding affected PHP versions; fixed artifact release not yet confirmed",
-      "summary": "CVE-2026-109618 assessment: Affected: FrankenPHP web-serving builds embedding affected PHP versions; fixed artifact release not yet confirmed",
-      "comment": "Added from the PHP security advisory and FrankenPHP project issue updated 2026-10-21.",
-      "security_actionStatement": "Apply rebuilt FrankenPHP images, packages or binaries containing fixed PHP releases when available."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in FrankenPHP 1.13.2 static binaries embedding PHP 8.5.12. Replace the embedded runtime binary; updating a separate system PHP installation does not repair older static builds.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/php/frankenphp/releases/tag/v1.13.2.\nAction statement: Install the appropriate published 1.13.2 static binary and restart the service; custom static builds need their own rebuild with fixed PHP."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:ae38229d0a7b",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0005"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Affected: FrankenPHP web-serving builds embedding affected PHP versions; fixed artifact release not yet confirmed",
-      "summary": "CVE-2026-109619 assessment: Affected: FrankenPHP web-serving builds embedding affected PHP versions; fixed artifact release not yet confirmed",
-      "comment": "Added from the PHP security advisory and FrankenPHP project issue updated 2026-10-21.",
-      "security_actionStatement": "Apply rebuilt FrankenPHP images, packages or binaries containing fixed PHP releases when available."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in FrankenPHP 1.13.2 static binaries embedding PHP 8.5.12. Replace the embedded runtime binary; updating a separate system PHP installation does not repair older static builds.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/php/frankenphp/releases/tag/v1.13.2.\nAction statement: Install the appropriate published 1.13.2 static binary and restart the service; custom static builds need their own rebuild with fixed PHP."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",

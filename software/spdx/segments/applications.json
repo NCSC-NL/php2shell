@@ -1023,9 +1023,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:grav-project:fb8c0ee3f440",
-      "summary": "The current 2.x guide requires PHP 8.3.11+ and describes flat-file storage without a database.",
+      "summary": "The application remains affected on an unpatched PHP runtime; confirmed fixed distribution scopes are recorded separately in PHP-0736.",
       "description": "Server-side PHP web runtime; SAPI depends on deployment",
-      "comment": "Inventory record: PHP-0120\nCategory: CMS and publishing\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime; SAPI depends on deployment\nPHP version scope: 2.x stable docs: PHP 8.3.11+; legacy 1.7 docs: PHP 7.3.6+\nExtensions: Required: curl, ctype, dom, gd, json, libxml, mbstring, openssl, session, simplexml, zip. optional/recommended: fileinfo, intl, exif, apcu, opcache, yaml, xdebug\nLimitations: The extension list in this row is from 2.x. Flat-file storage still requires PHP for the application, admin and applicable processing tasks; it is not evidence of a PHP-free static host. PHP presence does not establish a vulnerable build or a reachable affected path.\nPatch owner: PHP binary/image/distribution publisher and operator for runtime fixes; application maintainer/operator for application code\nDownstream surface: Content, admin/API requests and enabled media/document processing\nRelease pin: Version-scoped official documentation; immutable source/artifact pin pending\nSource accessed: 2026-10-16\nAliases: Grav, getgrav/grav\nConditional downstream consequence: If untrusted requests or media reach a matching PHP core/extension flaw, the PHP worker could suffer DoS or disclosure. Proven code execution could affect CMS content and its database/API credentials within that account. Root privileges, tenant escape and lateral movement require separate evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0120\nCategory: CMS and publishing\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime; SAPI depends on deployment\nPHP version scope: 2.x stable docs: PHP 8.3.11+; legacy 1.7 docs: PHP 7.3.6+\nExtensions: Required: curl, ctype, dom, gd, json, libxml, mbstring, openssl, session, simplexml, zip. optional/recommended: fileinfo, intl, exif, apcu, opcache, yaml, xdebug\nLimitations: The extension list in this row is from 2.x. Flat-file storage still requires PHP for the application, admin and applicable processing tasks; it is not evidence of a PHP-free static host. PHP presence does not establish a vulnerable build or a reachable affected path.\nPatch owner: PHP binary/image/distribution publisher and operator for runtime fixes; application maintainer/operator for application code\nDownstream surface: Content, admin/API requests and enabled media/document processing\nRelease pin: Version-scoped official documentation; immutable source/artifact pin pending\nSource accessed: 2026-10-16\nAliases: Grav, getgrav/grav\nConditional downstream consequence: If untrusted requests or media reach a matching PHP core/extension flaw, the PHP worker could suffer DoS or disclosure. Proven code execution could affect CMS content and its database/API credentials within that account. Root privileges, tenant escape and lateral movement require separate evidence.\nVulnerability status: Vulnerable when using an affected PHP runtime; the vendor-confirmed fixed distribution is recorded separately.\nCVE-2026-109618: Vulnerable on affected PHP; see the separate fixed distribution scope.\nCVE-2026-109619: Vulnerable on affected PHP; see the separate fixed distribution scope.\nCVE assessment limit: A fixed vendor package or container does not repair other installations using externally supplied PHP; installed runtimes and deployment were not tested.\nPublished fix review (2026-10-23): PHP-0736: getgrav/grav tags rebuilt 2026-10-21 with patched PHP. These specific distributions do not establish a fix for other installations or externally supplied PHP.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1042,6 +1042,14 @@
             "https://learn.getgrav.org/17/basics/requirements"
           ],
           "comment": "Official project/vendor requirements or implementation evidence - The 1.7 page is explicitly marked legacy and lists PHP 7.3.6+."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://mail.getgrav.org/blog/php-critical-security-release-october-2026"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
         }
       ]
     },
@@ -3696,9 +3704,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:filerun:e71a668f5e36",
-      "summary": "The vendor identifies FileRun as PHP software and separates installation-blocking modules from feature-dependent additions.",
+      "summary": "The application remains affected on an unpatched PHP runtime; confirmed fixed distribution scopes are recorded separately in PHP-0734.",
       "description": "Server-side PHP web runtime; exact SAPI deployment-dependent; CLI only where separately documented",
-      "comment": "Inventory record: PHP-0210\nCategory: Collaboration and storage\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime; exact SAPI deployment-dependent; CLI only where separately documented\nPHP version scope: Moving requirements: PHP 8.3/8.4/8.5 on 64-bit systems; 8.4/8.5 preferred. ionCube >=14.4 for PHP 8.3/8.4 and >=15.5.0 for PHP 8.5.\nExtensions: Required in stated source scope: pdo_mysql, openssl, mbstring, ionCube Loader. Optional/recommended: zip, curl, exif, imagick, opcache. Conditional/ambiguous: xml OR xmlwriter for WebDAV and desktop/mobile sync; proc_open function for external ImageMagick/FFmpeg/LibreOffice; these programs are not PHP extensions\nLimitations: Exact FileRun release and encoded build remain unpinned. Loader compatibility is part of the runtime boundary. Browser/sync clients do not thereby embed PHP; external preview programs remain separate. PHP presence does not establish an affected build, reachable flaw or exploitation. Deployments and enabled features were not measured.\nPatch owner: PHP package/image/hosting provider and operator for runtime updates; component/app maintainer and deploying operator for application changes\nDownstream surface: Private files, shares, WebDAV, online-editor integrations and previews\nRelease pin: Version-scoped/moving official documentation or source branch; immutable application pin pending\nSource accessed: 2026-10-17\nAliases: FileRun self-hosted file manager\nConditional downstream consequence: A matching PHP parser or memory-safety flaw reachable through requests, uploads, previews or archive handling could cause denial of service, disclosure or worker-level code execution. The worker\u2019s actual file, database and configured-service permissions determine possible document loss, alteration or credential access. Host compromise, tenant escape and lateral movement require additional conditions.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0210\nCategory: Collaboration and storage\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime; exact SAPI deployment-dependent; CLI only where separately documented\nPHP version scope: Moving requirements: PHP 8.3/8.4/8.5 on 64-bit systems; 8.4/8.5 preferred. ionCube >=14.4 for PHP 8.3/8.4 and >=15.5.0 for PHP 8.5.\nExtensions: Required in stated source scope: pdo_mysql, openssl, mbstring, ionCube Loader. Optional/recommended: zip, curl, exif, imagick, opcache. Conditional/ambiguous: xml OR xmlwriter for WebDAV and desktop/mobile sync; proc_open function for external ImageMagick/FFmpeg/LibreOffice; these programs are not PHP extensions\nLimitations: Exact FileRun release and encoded build remain unpinned. Loader compatibility is part of the runtime boundary. Browser/sync clients do not thereby embed PHP; external preview programs remain separate. PHP presence does not establish an affected build, reachable flaw or exploitation. Deployments and enabled features were not measured.\nPatch owner: PHP package/image/hosting provider and operator for runtime updates; component/app maintainer and deploying operator for application changes\nDownstream surface: Private files, shares, WebDAV, online-editor integrations and previews\nRelease pin: Version-scoped/moving official documentation or source branch; immutable application pin pending\nSource accessed: 2026-10-17\nAliases: FileRun self-hosted file manager\nConditional downstream consequence: A matching PHP parser or memory-safety flaw reachable through requests, uploads, previews or archive handling could cause denial of service, disclosure or worker-level code execution. The worker\u2019s actual file, database and configured-service permissions determine possible document loss, alteration or credential access. Host compromise, tenant escape and lateral movement require additional conditions.\nVulnerability status: Vulnerable when using an affected PHP runtime; the vendor-confirmed fixed distribution is recorded separately.\nCVE-2026-109618: Vulnerable on affected PHP; see the separate fixed distribution scope.\nCVE-2026-109619: Vulnerable on affected PHP; see the separate fixed distribution scope.\nCVE assessment limit: A fixed vendor package or container does not repair other installations using externally supplied PHP; installed runtimes and deployment were not tested.\nPublished fix review (2026-10-23): PHP-0734: filerun/filerun:2026.03 rebuilt with fixed PHP, announced 2026-10-21. These specific distributions do not establish a fix for other installations or externally supplied PHP.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -3707,6 +3715,14 @@
             "https://docs.filerun.com/requirements"
           ],
           "comment": "Official FileRun PHP relationship / requirements evidence"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://filerun.com/index.php/php-security-alert-21oct26"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
         }
       ]
     },
@@ -3724,9 +3740,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:filecloud:aedb4a5ecb13",
-      "summary": "Official upgrade instructions invoke the XAMPP php.exe post-upgrade script and identify PHP web-install and multi-tenant administration files.",
+      "summary": "FileCloud confirms that Server 23.263.2 includes PHP 8.4.27 and fixes both CVEs on Windows and Linux.",
       "description": "Bundled Windows PHP CLI for fcpostupgrade.php; web installation/admin PHP scripts; exact production web SAPI unresolved",
-      "comment": "Inventory record: PHP-0211\nCategory: Collaboration and storage\nOriginal relationship: component\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Bundled Windows PHP CLI for fcpostupgrade.php; web installation/admin PHP scripts; exact production web SAPI unresolved\nPHP version scope: Current Windows upgrade guide explicitly uses bundled XAMPP PHP CLI, php.ini and PHP web-install paths. Exact FileCloud release and PHP build/version not identified.\nExtensions: Full required extension set unknown\nLimitations: The evidence is confined to named server installation/maintenance components. It does not establish the implementation of every FileCloud backend, native client, Online tenant or current build. Multi-tenancy documentation is not proof of tenant escape. PHP presence does not establish an affected build, reachable flaw or exploitation. Deployments and enabled features were not measured.\nPatch owner: FileCloud for supplied server/PHP bundles and maintenance code; deploying operator for applying and restarting updated components\nDownstream surface: Server installation, post-upgrade maintenance and multi-tenant administration\nRelease pin: Version-scoped/moving official documentation or source branch; immutable application pin pending\nSource accessed: 2026-10-17\nAliases: FileCloud Server PHP components, FileCloud Windows server installation\nConditional downstream consequence: A matching PHP parser or memory-safety flaw reachable through requests, uploads, previews or archive handling could cause denial of service, disclosure or worker-level code execution. The worker\u2019s actual file, database and configured-service permissions determine possible document loss, alteration or credential access. Host compromise, tenant escape and lateral movement require additional conditions.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0211\nCategory: Collaboration and storage\nOriginal relationship: component\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix in the specified scope\nDeployment status: Not measured\nPHP surface: Bundled Windows PHP CLI for fcpostupgrade.php; web installation/admin PHP scripts; exact production web SAPI unresolved\nPHP version scope: FileCloud Server 23.263.2 (PHP 8.4.27), Windows and Linux\nExtensions: Full required extension set unknown\nLimitations: Fixed in FileCloud Server 23.263.2, which includes PHP 8.4.27, for Windows and Linux. Earlier Server versions are affected. This does not confirm completion of the separately announced FileCloud Online rollout.\nPatch owner: FileCloud for supplied server/PHP bundles and maintenance code; deploying operator for applying and restarting updated components\nDownstream surface: Server installation, post-upgrade maintenance and multi-tenant administration\nRelease pin: FileCloud Server 23.263.2 (PHP 8.4.27), Windows and Linux\nSource accessed: 2026-10-23\nAliases: FileCloud Server PHP components, FileCloud Windows server installation\nConditional downstream consequence: A matching PHP parser or memory-safety flaw reachable through requests, uploads, previews or archive handling could cause denial of service, disclosure or worker-level code execution. The worker\u2019s actual file, database and configured-service permissions determine possible document loss, alteration or credential access. Host compromise, tenant escape and lateral movement require additional conditions.\nVulnerability status: Fixed in FileCloud Server 23.263.2, which includes PHP 8.4.27, for Windows and Linux. Earlier Server versions are affected. This does not confirm completion of the separately announced FileCloud Online rollout.\nCVE-2026-109618: Fix in the stated scope; see VEX assessment\nCVE-2026-109619: Fix in the stated scope; see VEX assessment\nCVE assessment limit: Fixed in FileCloud Server 23.263.2, which includes PHP 8.4.27, for Windows and Linux. Earlier Server versions are affected. This does not confirm completion of the separately announced FileCloud Online rollout.\nFix sources: https://docs.filecloud.com/fcdoc/latest/server/security-advisories/2026-security-advisories/filecloud-release-23-263-security-advisories/advisory-2026-10-03-php2shell-critical-php-remote-code-execution-vulnerabilities",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -3735,8 +3751,17 @@
             "https://docs.filecloud.com/fcdoc/latest/server/upgrade-filecloud/upgrade-using-update-tool-windows-only"
           ],
           "comment": "Official FileCloud Server PHP installation and maintenance PHP relationship / requirements evidence"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://docs.filecloud.com/fcdoc/latest/server/security-advisories/2026-security-advisories/filecloud-release-23-263-security-advisories/advisory-2026-10-03-php2shell-critical-php-remote-code-execution-vulnerabilities"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
         }
-      ]
+      ],
+      "software_packageVersion": "FileCloud Server 23.263.2 (PHP 8.4.27), Windows and Linux"
     },
     {
       "type": "software_Package",
@@ -4052,9 +4077,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:grommunio-gmbh:87b43b9b84ca",
-      "summary": "The project separates its PHP server from JavaScript/CSS, requires the Gromox MAPI extension and says released packages contain a built tree.",
+      "summary": "The application remains affected on an unpatched PHP runtime; confirmed fixed distribution scopes are recorded separately in PHP-0740.",
       "description": "PHP web runtime, preferably PHP-FPM in the official README; PHP also used for source builds",
-      "comment": "Inventory record: PHP-0221\nCategory: Collaboration and storage\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP web runtime, preferably PHP-FPM in the official README; PHP also used for source builds\nPHP version scope: Inspected master README: PHP >=8.2 and mapi extension provided by Gromox. Exact released PHP/MAPI ABI unpinned.\nExtensions: Required in stated source scope: mapi\nLimitations: Only the Web subsystem is established as PHP. The Gromox native server, administration interfaces and Desktop shell require separate evidence. Public SBOM files are advertised but were not fully inventoried in this pass. PHP presence does not establish an affected build, reachable flaw or exploitation. Deployments and enabled features were not measured.\nPatch owner: PHP package/image/hosting provider and operator for runtime updates; component/app maintainer and deploying operator for application changes\nDownstream surface: Webmail, shared calendars/contacts, attachments, plugins and MAPI-connected user data\nRelease pin: Version-scoped/moving official documentation or source branch; immutable application pin pending\nSource accessed: 2026-10-17\nAliases: grommunio-web\nConditional downstream consequence: A matching PHP runtime or loaded-extension flaw reached by web/API, message or attachment processing could cause denial of service, disclosure or code execution within the PHP worker. Mail, contacts, calendar data and configured authentication/service credentials could then be affected according to permissions. Native mail servers, desktop clients and tenant boundaries are separate components.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0221\nCategory: Collaboration and storage\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP web runtime, preferably PHP-FPM in the official README; PHP also used for source builds\nPHP version scope: Inspected master README: PHP >=8.2 and mapi extension provided by Gromox. Exact released PHP/MAPI ABI unpinned.\nExtensions: Required in stated source scope: mapi\nLimitations: Only the Web subsystem is established as PHP. The Gromox native server, administration interfaces and Desktop shell require separate evidence. Public SBOM files are advertised but were not fully inventoried in this pass. PHP presence does not establish an affected build, reachable flaw or exploitation. Deployments and enabled features were not measured.\nPatch owner: PHP package/image/hosting provider and operator for runtime updates; component/app maintainer and deploying operator for application changes\nDownstream surface: Webmail, shared calendars/contacts, attachments, plugins and MAPI-connected user data\nRelease pin: Version-scoped/moving official documentation or source branch; immutable application pin pending\nSource accessed: 2026-10-17\nAliases: grommunio-web\nConditional downstream consequence: A matching PHP runtime or loaded-extension flaw reached by web/API, message or attachment processing could cause denial of service, disclosure or code execution within the PHP worker. Mail, contacts, calendar data and configured authentication/service credentials could then be affected according to permissions. Native mail servers, desktop clients and tenant boundaries are separate components.\nVulnerability status: Vulnerable when using an affected PHP runtime; the vendor-confirmed fixed distribution is recorded separately.\nCVE-2026-109618: Vulnerable on affected PHP; see the separate fixed distribution scope.\nCVE-2026-109619: Vulnerable on affected PHP; see the separate fixed distribution scope.\nCVE assessment limit: A fixed vendor package or container does not repair other installations using externally supplied PHP; installed runtimes and deployment were not tested.\nPublished fix review (2026-10-23): PHP-0740: Out-of-band PHP security packages announced 2026-10-21. These specific distributions do not establish a fix for other installations or externally supplied PHP.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -4063,6 +4088,14 @@
             "https://github.com/grommunio/grommunio-web"
           ],
           "comment": "Official grommunio Web PHP relationship / requirements evidence"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://grommunio.com/news/php2shell-patched-php-packages-available/"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
         }
       ]
     },
@@ -4245,9 +4278,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:shaarli-community:1503521bca1c",
-      "summary": "Official vendor assessment: Vulnerable for CVE-2026-109618 and CVE-2026-109619; see the scoped VEX assessment and advisory references.",
+      "summary": "Shaarli's maintainer confirms fixed official Docker images with PHP 8.4.27 in the 0.16.10 release.",
       "description": "Server-side PHP web runtime; exact SAPI deployment-dependent; CLI only where separately documented",
-      "comment": "Inventory record: PHP-0227\nCategory: Collaboration and storage\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime; exact SAPI deployment-dependent; CLI only where separately documented\nPHP version scope: Inspected master manifest: PHP >=7.4, json and zlib. Exact current release/upper compatibility unpinned.\nExtensions: Required in stated source scope: json, zlib. Optional/recommended: curl, gd, gettext, intl, mbstring\nLimitations: The Composer resolution setting php=8.2 is not a deployed version or the declared runtime minimum. Optional thumbnail/fetching features are not automatically enabled; shared bookmarks can contain private data despite public-service use. PHP presence does not establish an affected build, reachable flaw or exploitation. Deployments and enabled features were not measured.\nPatch owner: PHP package/image/hosting provider and operator for runtime updates; component/app maintainer and deploying operator for application changes\nDownstream surface: Private/shared bookmarks, thumbnails, feeds and authentication\nRelease pin: Version-scoped/moving official documentation or source branch; immutable application pin pending\nSource accessed: 2026-10-17\nAliases: shaarli/Shaarli\nConditional downstream consequence: A matching PHP parser or memory-safety flaw reached by requests or content processing could cause denial of service, disclosure or worker-level code execution and alter stored/shared content within its permissions. Desktop/mobile compromise, host privilege and tenant escape require additional evidence.\nPublic vendor CVE review: 2026-10-21\nVendor advisory sources: https://github.com/shaarli/Shaarli/issues/2297#issuecomment-6320488435\nCVE assessment limit: The VEX relationships state the current vendor-confirmed scope. Earlier inventory context describes dependency evidence only; installed builds, runtime activation and deployment were not tested.",
+      "comment": "Inventory record: PHP-0227\nCategory: Collaboration and storage\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix in the specified scope\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime; exact SAPI deployment-dependent; CLI only where separately documented\nPHP version scope: Shaarli Docker v0.16.10 / v0.16 / release rebuilt with PHP 8.4.27\nExtensions: Required in stated source scope: json, zlib. Optional/recommended: curl, gd, gettext, intl, mbstring\nLimitations: Fixed in the official ghcr.io/shaarli/shaarli images v0.16.10, v0.16 and release rebuilt with PHP 8.4.27. The remaining open issue concerns build reproducibility. Non-container installations must update their own PHP runtime.\nPatch owner: PHP package/image/hosting provider and operator for runtime updates; component/app maintainer and deploying operator for application changes\nDownstream surface: Private/shared bookmarks, thumbnails, feeds and authentication\nRelease pin: Shaarli Docker v0.16.10 / v0.16 / release rebuilt with PHP 8.4.27\nSource accessed: 2026-10-23\nAliases: shaarli/Shaarli\nConditional downstream consequence: A matching PHP parser or memory-safety flaw reached by requests or content processing could cause denial of service, disclosure or worker-level code execution and alter stored/shared content within its permissions. Desktop/mobile compromise, host privilege and tenant escape require additional evidence.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://github.com/shaarli/Shaarli/issues/2297#issuecomment-6328236858; https://github.com/shaarli/Shaarli/releases/tag/v0.16.10\nCVE assessment limit: Fixed in the official ghcr.io/shaarli/shaarli images v0.16.10, v0.16 and release rebuilt with PHP 8.4.27. The remaining open issue concerns build reproducibility. Non-container installations must update their own PHP runtime.\nVulnerability status: Fixed in the official ghcr.io/shaarli/shaarli images v0.16.10, v0.16 and release rebuilt with PHP 8.4.27. The remaining open issue concerns build reproducibility. Non-container installations must update their own PHP runtime.\nCVE-2026-109618: Fix in the stated scope; see VEX assessment\nCVE-2026-109619: Fix in the stated scope; see VEX assessment\nFix sources: https://github.com/shaarli/Shaarli/issues/2297#issuecomment-6328236858; https://github.com/shaarli/Shaarli/releases/tag/v0.16.10",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -4264,9 +4297,25 @@
             "https://github.com/shaarli/Shaarli/issues/2297#issuecomment-6320488435"
           ],
           "comment": "Public vendor CVE assessment reviewed 2026-10-21"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/shaarli/Shaarli/issues/2297#issuecomment-6328236858"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/shaarli/Shaarli/releases/tag/v0.16.10"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
         }
       ],
-      "software_packageVersion": "Shaarli Docker distribution awaiting a patched Alpine base at review time"
+      "software_packageVersion": "Shaarli Docker v0.16.10 / v0.16 / release rebuilt with PHP 8.4.27"
     },
     {
       "type": "software_Package",
@@ -5559,9 +5608,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:part-db-project:4985626f8fec",
-      "summary": "The official server manifest declares PHP and direct native modules; README separates server execution from Node/yarn browser-asset building.",
+      "summary": "The application remains affected on an unpatched PHP runtime; confirmed fixed distribution scopes are recorded separately in PHP-0737.",
       "description": "PHP-capable Symfony web server and bin/console migrations/cache/admin CLI",
-      "comment": "Inventory record: PHP-0265\nCategory: Business applications\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP-capable Symfony web server and bin/console migrations/cache/admin CLI\nPHP version scope: Official README requires PHP >=8.2 / Symfony 7; inspected master root require.php is ^8.2. A nested ZipStream package entry instead says ^8.0 and must not replace the root floor.\nExtensions: Required in stated source scope: ctype, dom, gd, iconv, intl, json, mbstring, zip. Optional/recommended: bcmath, gmp\nLimitations: The named server, legacy pre-1.0 versions and Docker distribution have separate build scopes. Source prose about universities/companies is not a measured deployment total or a specific institution\u2019s runtime. PHP presence does not establish an affected build, reachability or exploitation. Deployments and enabled features were not measured.\nPatch owner: PHP package/image/hosting provider and operator for runtime updates; application/component maintainer and deploying operator for application changes\nDownstream surface: Electronic-parts stock, pricing, files, shared inventory and administration\nRelease pin: Version-scoped/moving official documentation or source branch; immutable application pin pending\nSource accessed: 2026-10-17\nAliases: Part-DB, Part-DB/Part-DB-server\nConditional downstream consequence: A matching PHP runtime or loaded-extension flaw reached through requests, imports, uploads or document processing could cause denial of service, disclosure or code execution within the PHP worker. Customer, personnel, financial or inventory data and configured credentials could be read or altered within that worker\u2019s permissions. Host privilege, tenant escape and lateral movement require additional conditions.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0265\nCategory: Business applications\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP-capable Symfony web server and bin/console migrations/cache/admin CLI\nPHP version scope: Official README requires PHP >=8.2 / Symfony 7; inspected master root require.php is ^8.2. A nested ZipStream package entry instead says ^8.0 and must not replace the root floor.\nExtensions: Required in stated source scope: ctype, dom, gd, iconv, intl, json, mbstring, zip. Optional/recommended: bcmath, gmp\nLimitations: The named server, legacy pre-1.0 versions and Docker distribution have separate build scopes. Source prose about universities/companies is not a measured deployment total or a specific institution\u2019s runtime. PHP presence does not establish an affected build, reachability or exploitation. Deployments and enabled features were not measured.\nPatch owner: PHP package/image/hosting provider and operator for runtime updates; application/component maintainer and deploying operator for application changes\nDownstream surface: Electronic-parts stock, pricing, files, shared inventory and administration\nRelease pin: Version-scoped/moving official documentation or source branch; immutable application pin pending\nSource accessed: 2026-10-17\nAliases: Part-DB, Part-DB/Part-DB-server\nConditional downstream consequence: A matching PHP runtime or loaded-extension flaw reached through requests, imports, uploads or document processing could cause denial of service, disclosure or code execution within the PHP worker. Customer, personnel, financial or inventory data and configured credentials could be read or altered within that worker\u2019s permissions. Host privilege, tenant escape and lateral movement require additional conditions.\nVulnerability status: Vulnerable when using an affected PHP runtime; the vendor-confirmed fixed distribution is recorded separately.\nCVE-2026-109618: Vulnerable on affected PHP; see the separate fixed distribution scope.\nCVE-2026-109619: Vulnerable on affected PHP; see the separate fixed distribution scope.\nCVE assessment limit: A fixed vendor package or container does not repair other installations using externally supplied PHP; installed runtimes and deployment were not tested.\nPublished fix review (2026-10-23): PHP-0737: jbtronics/part-db1:2.20.2 rebuild containing PHP 8.4.27. These specific distributions do not establish a fix for other installations or externally supplied PHP.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -5578,6 +5627,22 @@
             "https://github.com/Part-DB/Part-DB-server"
           ],
           "comment": "Official project/vendor documentation, source manifest or publisher package metadata - README identifies the PHP/Symfony server, CLI operations, database choices and separate frontend-build tools."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/Part-DB/Part-DB-server/issues/1615#issuecomment-6324675679"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/Part-DB/Part-DB-server/issues/1615"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
         }
       ]
     },
@@ -5991,9 +6056,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:shlink-project:f5039970bb8f",
-      "summary": "Official package metadata identifies a PHP URL-shortening application with CLI/REST interfaces and direct runtime modules.",
+      "summary": "The application remains affected on an unpatched PHP runtime; confirmed fixed distribution scopes are recorded separately in PHP-0739.",
       "description": "PHP HTTP/REST application and PHP CLI; exact worker/SAPI packaging not pinned",
-      "comment": "Inventory record: PHP-0297\nCategory: Mail and analytics\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP HTTP/REST application and PHP CLI; exact worker/SAPI packaging not pinned\nPHP version scope: Registry advertises v5.1.7 (2026-09-21), PHP ^8.4. README supports 8.4/8.5. Root/transitive requirements can differ; no installed build was measured.\nExtensions: Required in stated source scope: curl, mbstring, pdo. Conditional/ambiguous: README additionally names json, intl, gd and gmp OR bcmath; sockets and bcmath for RabbitMQ integration; connector/worker modules depend on deployment\nLimitations: A separate web client or API consumer does not thereby use PHP. Registry downloads are not installations; source archives are PHP-version-specific and must be matched. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Application/module maintainer for product code; PHP package/image/hosting provider and deploying operator for compatible runtime/module updates\nDownstream surface: Redirects, link data, API keys, visit analytics and optional queue integration\nRelease pin: Registry-advertised v5.1.7, source reference 3f17ecf9334ea3d53beba0539e6f23a42454f5a3; immutable manifest retrieval failed\nSource accessed: 2026-10-17\nAliases: shlinkio/shlink, Shlink URL shortener\nConditional downstream consequence: A matching PHP or loaded-extension flaw reached by tracking/API requests, imported data, links, reports or background jobs could cause denial of service, disclosure, tampering or worker-level code execution. Analytics/customer data, configured integrations and responses/redirects could then be affected within application permissions. Browser execution, host privilege, remote service compromise and tenant escape are additional conditions.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0297\nCategory: Mail and analytics\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP HTTP/REST application and PHP CLI; exact worker/SAPI packaging not pinned\nPHP version scope: Registry advertises v5.1.7 (2026-09-21), PHP ^8.4. README supports 8.4/8.5. Root/transitive requirements can differ; no installed build was measured.\nExtensions: Required in stated source scope: curl, mbstring, pdo. Conditional/ambiguous: README additionally names json, intl, gd and gmp OR bcmath; sockets and bcmath for RabbitMQ integration; connector/worker modules depend on deployment\nLimitations: A separate web client or API consumer does not thereby use PHP. Registry downloads are not installations; source archives are PHP-version-specific and must be matched. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Application/module maintainer for product code; PHP package/image/hosting provider and deploying operator for compatible runtime/module updates\nDownstream surface: Redirects, link data, API keys, visit analytics and optional queue integration\nRelease pin: Registry-advertised v5.1.7, source reference 3f17ecf9334ea3d53beba0539e6f23a42454f5a3; immutable manifest retrieval failed\nSource accessed: 2026-10-17\nAliases: shlinkio/shlink, Shlink URL shortener\nConditional downstream consequence: A matching PHP or loaded-extension flaw reached by tracking/API requests, imported data, links, reports or background jobs could cause denial of service, disclosure, tampering or worker-level code execution. Analytics/customer data, configured integrations and responses/redirects could then be affected within application permissions. Browser execution, host privilege, remote service compromise and tenant escape are additional conditions.\nVulnerability status: Vulnerable when using an affected PHP runtime; the vendor-confirmed fixed distribution is recorded separately.\nCVE-2026-109618: Vulnerable on affected PHP; see the separate fixed distribution scope.\nCVE-2026-109619: Vulnerable on affected PHP; see the separate fixed distribution scope.\nCVE assessment limit: A fixed vendor package or container does not repair other installations using externally supplied PHP; installed runtimes and deployment were not tested.\nPublished fix review (2026-10-23): PHP-0739: shlinkio/shlink:5.1.8, published 2026-10-22. These specific distributions do not establish a fix for other installations or externally supplied PHP.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -6010,6 +6075,14 @@
             "https://github.com/shlinkio/shlink"
           ],
           "comment": "Official project/vendor documentation, repository manifest or publisher package metadata - README supplies PHP 8.4/8.5 and additional database/media/math/optional queue requirements."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/shlinkio/shlink/releases/tag/v5.1.8"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
         }
       ]
     },
@@ -8869,32 +8942,30 @@
       "comment": "Public vendor assessment reviewed 2026-10-21. Sources: https://www.passbolt.com/incidents/critical-php-vulnerabilities-cvss-9-2\nAction statement: Pull and redeploy the patched image, or update the existing instance's PHP packages and restart PHP services. Verify the actual deployment, not just the Passbolt application version."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:ecd57fcebac2",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0227"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Shaarli's maintainer confirms that its Docker distribution needs the Alpine PHP security fix and that a new release is pending. This finding is scoped to the container runtime, not a Shaarli application-code defect.",
-      "summary": "CVE-2026-109618 assessment: Shaarli's maintainer confirms that its Docker distribution needs the Alpine PHP security fix and that a new release is pending. This finding is scoped to the container runtime, not a Shaarli application-code defect.",
-      "comment": "Public vendor assessment reviewed 2026-10-21. Sources: https://github.com/shaarli/Shaarli/issues/2297#issuecomment-6320488435",
-      "security_actionStatement": "Apply a vendor-confirmed patched runtime or rebuilt Shaarli image when available; restrict exposure until then."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in the official ghcr.io/shaarli/shaarli images v0.16.10, v0.16 and release rebuilt with PHP 8.4.27. The remaining open issue concerns build reproducibility. Non-container installations must update their own PHP runtime.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/shaarli/Shaarli/issues/2297#issuecomment-6328236858; https://github.com/shaarli/Shaarli/releases/tag/v0.16.10.\nAction statement: Pull the rebuilt image and recreate the container; verify PHP 8.4.27. The image release does not patch existing containers or non-container installations."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:797a3463f045",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0227"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Shaarli's maintainer confirms that its Docker distribution needs the Alpine PHP security fix and that a new release is pending. This finding is scoped to the container runtime, not a Shaarli application-code defect.",
-      "summary": "CVE-2026-109619 assessment: Shaarli's maintainer confirms that its Docker distribution needs the Alpine PHP security fix and that a new release is pending. This finding is scoped to the container runtime, not a Shaarli application-code defect.",
-      "comment": "Public vendor assessment reviewed 2026-10-21. Sources: https://github.com/shaarli/Shaarli/issues/2297#issuecomment-6320488435",
-      "security_actionStatement": "Apply a vendor-confirmed patched runtime or rebuilt Shaarli image when available; restrict exposure until then."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in the official ghcr.io/shaarli/shaarli images v0.16.10, v0.16 and release rebuilt with PHP 8.4.27. The remaining open issue concerns build reproducibility. Non-container installations must update their own PHP runtime.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/shaarli/Shaarli/issues/2297#issuecomment-6328236858; https://github.com/shaarli/Shaarli/releases/tag/v0.16.10.\nAction statement: Pull the rebuilt image and recreate the container; verify PHP 8.4.27. The image release does not patch existing containers or non-container installations."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -8936,9 +9007,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:n-able:664d55891d79",
-      "summary": "N-able lists Mail Assure / Spam Experts among products receiving emergency maintenance and updates for php2shell.",
+      "summary": "No customer PHP patch is specified for these vendor-hosted fixes; retain the vendor's product and service scope limits.",
       "description": "Hosted mail-security service",
-      "comment": "Inventory record: PHP-0655\nCategory: Mail and analytics\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Hosted product surface named in N-able's php2shell maintenance update\nPHP version scope: Vendor update names PHP vulnerabilities but does not publish the service's exact PHP build.\nExtensions: Unknown\nLimitations: The vendor update establishes product-level maintenance scope, not the exact PHP component, version, SAPI or reachable service path.\nPatch owner: N-able for hosted service remediation\nDownstream surface: Mail-security administration, quarantine and service workflows\nRelease pin: N-able php2shell update published 2026-10-21; service artifact identity not published\nSource accessed: 2026-10-21\nAliases: Mail Assure, Spam Experts\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through the hosted service, possible effects include worker denial of service, disclosure of service-accessible secrets, data modification or code execution with the service identity. Provider boundaries, tenant escape and lateral movement require separate evidence.\nVulnerability status: Vendor update 2026-10-21: N-able names Mail Assure / Spam Experts in emergency php2shell maintenance; exact affected/fixed service scope remains pending.\nCVE-2026-109618: Vendor advisory names product or service in php2shell response; exact affected/fixed product scope still under investigation\nCVE-2026-109619: Vendor advisory names product or service in php2shell response; exact affected/fixed product scope still under investigation\nCVE assessment limit: This candidate record confirms PHP relationship evidence only. Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path still need deployment-specific evidence.",
+      "comment": "Inventory record: PHP-0655\nCategory: Mail and analytics\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Hosted product surface named in N-able's php2shell maintenance update\nPHP version scope: Vendor platform fixes completed 22 October 2026 at 18:30 EDT\nExtensions: Unknown\nLimitations: The vendor update establishes product-level maintenance scope, not the exact PHP component, version, SAPI or reachable service path.\nPatch owner: N-able for hosted service remediation\nDownstream surface: Mail-security administration, quarantine and service workflows\nRelease pin: Vendor platform fixes completed 22 October 2026 at 18:30 EDT\nSource accessed: 2026-10-23\nAliases: Mail Assure, Spam Experts\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through the hosted service, possible effects include worker denial of service, disclosure of service-accessible secrets, data modification or code execution with the service identity. Provider boundaries, tenant escape and lateral movement require separate evidence.\nVulnerability status: Fix. N-able's final update confirms all relevant products secured against both vulnerabilities and their root causes across supported PHP versions. Take Control scope is session routing only, including standalone and integrated routing.\nCVE-2026-109618: Fix. N-able's final update confirms all relevant products secured against both vulnerabilities and their root causes across supported PHP versions. Take Control scope is session routing only, including standalone and integrated routing.\nCVE-2026-109619: Fix. N-able's final update confirms all relevant products secured against both vulnerabilities and their root causes across supported PHP versions. Take Control scope is session routing only, including standalone and integrated routing.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://www.n-able.com/blog/n-able-update-on-the-global-php-issue",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -8946,9 +9017,10 @@
           "locator": [
             "https://www.n-able.com/blog/n-able-update-on-the-global-php-issue"
           ],
-          "comment": "N-able update on the global PHP issue"
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Vendor platform fixes completed 22 October 2026 at 18:30 EDT"
     },
     {
       "type": "software_Package",
@@ -8964,9 +9036,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:n-able:664d55891d79",
-      "summary": "N-able lists Passportal among products receiving emergency maintenance and updates for php2shell.",
+      "summary": "No customer PHP patch is specified for these vendor-hosted fixes; retain the vendor's product and service scope limits.",
       "description": "Hosted password and documentation service",
-      "comment": "Inventory record: PHP-0656\nCategory: Business applications\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Hosted product surface named in N-able's php2shell maintenance update\nPHP version scope: Vendor update names PHP vulnerabilities but does not publish Passportal's exact PHP build.\nExtensions: Unknown\nLimitations: The vendor update establishes product-level maintenance scope, not the exact PHP component, version, SAPI or reachable service path.\nPatch owner: N-able for hosted service remediation\nDownstream surface: Password, documentation and administrative service workflows\nRelease pin: N-able php2shell update published 2026-10-21; service artifact identity not published\nSource accessed: 2026-10-21\nAliases: N-able Passportal\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through the hosted service, possible effects include worker denial of service, disclosure of service-accessible secrets, data modification or code execution with the service identity. Provider boundaries, tenant escape and lateral movement require separate evidence.\nVulnerability status: Vendor update 2026-10-21: N-able names Passportal in emergency php2shell maintenance; exact affected/fixed service scope remains pending.\nCVE-2026-109618: Vendor advisory names product or service in php2shell response; exact affected/fixed product scope still under investigation\nCVE-2026-109619: Vendor advisory names product or service in php2shell response; exact affected/fixed product scope still under investigation\nCVE assessment limit: This candidate record confirms PHP relationship evidence only. Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path still need deployment-specific evidence.",
+      "comment": "Inventory record: PHP-0656\nCategory: Business applications\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Hosted product surface named in N-able's php2shell maintenance update\nPHP version scope: Vendor platform fixes completed 22 October 2026 at 18:30 EDT\nExtensions: Unknown\nLimitations: The vendor update establishes product-level maintenance scope, not the exact PHP component, version, SAPI or reachable service path.\nPatch owner: N-able for hosted service remediation\nDownstream surface: Password, documentation and administrative service workflows\nRelease pin: Vendor platform fixes completed 22 October 2026 at 18:30 EDT\nSource accessed: 2026-10-23\nAliases: N-able Passportal\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through the hosted service, possible effects include worker denial of service, disclosure of service-accessible secrets, data modification or code execution with the service identity. Provider boundaries, tenant escape and lateral movement require separate evidence.\nVulnerability status: Fix. N-able's final update confirms all relevant products secured against both vulnerabilities and their root causes across supported PHP versions. Take Control scope is session routing only, including standalone and integrated routing.\nCVE-2026-109618: Fix. N-able's final update confirms all relevant products secured against both vulnerabilities and their root causes across supported PHP versions. Take Control scope is session routing only, including standalone and integrated routing.\nCVE-2026-109619: Fix. N-able's final update confirms all relevant products secured against both vulnerabilities and their root causes across supported PHP versions. Take Control scope is session routing only, including standalone and integrated routing.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://www.n-able.com/blog/n-able-update-on-the-global-php-issue",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -8974,9 +9046,10 @@
           "locator": [
             "https://www.n-able.com/blog/n-able-update-on-the-global-php-issue"
           ],
-          "comment": "N-able update on the global PHP issue"
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Vendor platform fixes completed 22 October 2026 at 18:30 EDT"
     },
     {
       "type": "software_Package",
@@ -8992,9 +9065,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:phpmyfaq-project:ab2e5ba5d190",
-      "summary": "The official phpMyFAQ Composer manifest declares PHP >=8.4.0, and the release process documents signed CycloneDX SBOM publication.",
+      "summary": "Update the deployed PHP runtime using the official PHP security guidance; do not treat the notice's CGI configuration suggestion as a complete fix.",
       "description": "Self-hosted FAQ and knowledge-base web application",
-      "comment": "Inventory record: PHP-0658\nCategory: Education and knowledge\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime and CLI tooling where configured\nPHP version scope: Official main Composer manifest declares PHP >=8.4.0; exact released artifact pin pending.\nExtensions: Manifest-declared extension set not exhaustively resolved in this candidate pass\nLimitations: A moving branch manifest and release-process SBOM documentation do not prove an installed release, PHP build, loaded modules or reachable affected path.\nPatch owner: phpMyFAQ maintainers for application releases; PHP runtime provider and operator for runtime fixes\nDownstream surface: FAQ content, administration and configured integrations\nRelease pin: Moving official composer.json and release documentation retrieved 2026-10-21\nSource accessed: 2026-10-21\nAliases: thorsten/phpMyFAQ\nConditional downstream consequence: If untrusted requests or media reach a matching PHP core/extension flaw, the PHP worker could suffer denial of service, disclosure or code execution. Application data and configured credentials could then be affected within that worker's permissions; host privilege, tenant escape and lateral movement require separate evidence.\nVulnerability status: Candidate added from official PHP requirement and SBOM publication evidence; no product-specific php2shell assessment located in this pass.\nCVE-2026-109618: Official PHP requirement or SBOM evidence only; CVE match unknown\nCVE-2026-109619: Official PHP requirement or SBOM evidence only; CVE match unknown\nCVE assessment limit: This candidate record confirms PHP relationship evidence only. Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path still need deployment-specific evidence.",
+      "comment": "Inventory record: PHP-0658\nCategory: Education and knowledge\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime and CLI tooling where configured\nPHP version scope: phpMyFAQ deployments on affected PHP-CGI runtimes\nExtensions: Manifest-declared extension set not exhaustively resolved in this candidate pass\nLimitations: A moving branch manifest and release-process SBOM documentation do not prove an installed release, PHP build, loaded modules or reachable affected path.\nPatch owner: phpMyFAQ maintainers for application releases; PHP runtime provider and operator for runtime fixes\nDownstream surface: FAQ content, administration and configured integrations\nRelease pin: phpMyFAQ deployments on affected PHP-CGI runtimes\nSource accessed: 2026-10-23\nAliases: thorsten/phpMyFAQ\nConditional downstream consequence: If untrusted requests or media reach a matching PHP core/extension flaw, the PHP worker could suffer denial of service, disclosure or code execution. Application data and configured credentials could then be affected within that worker's permissions; host privilege, tenant escape and lateral movement require separate evidence.\nVulnerability status: Vulnerable. The phpMyFAQ team's 21 October notice explicitly reports CVE-2026-109618 exposure on PHP-CGI. It does not assess CVE-2026-109619; that CVE remains Investigation. No application-code fix or complete configuration workaround is asserted.\nCVE-2026-109618: Vulnerable. The phpMyFAQ team's 21 October notice explicitly reports CVE-2026-109618 exposure on PHP-CGI. It does not assess CVE-2026-109619; that CVE remains Investigation. No application-code fix or complete configuration workaround is asserted.\nCVE-2026-109619: Official PHP requirement or SBOM evidence only; CVE match unknown\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://phpmyfaq.de/",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -9011,8 +9084,17 @@
             "https://github.com/thorsten/phpMyFAQ/blob/main/docs/release.md"
           ],
           "comment": "Official phpMyFAQ release documentation describing signed CycloneDX SBOMs"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://phpmyfaq.de/"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "phpMyFAQ deployments on affected PHP-CGI runtimes"
     },
     {
       "type": "software_Package",
@@ -9366,9 +9448,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:unopim:5e2db77c3503",
-      "summary": "The official UnoPim repository documents a Laravel PIM/DAM platform requiring PHP 8.4.1+, and GitHub exposes an SPDX dependency-graph SBOM for the repository.",
+      "summary": "Pull the rebuilt image by verified digest and recreate containers. Custom FPM builds and existing cached images need separate rebuilding and verification.",
       "description": "Product information and digital asset management web application",
-      "comment": "Inventory record: PHP-0671\nCategory: Business applications\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side Laravel/PHP web runtime and queue workers\nPHP version scope: Official repository requirements state PHP 8.4.1+; exact released artifact pin pending.\nExtensions: Official repository requirements list PHP extensions; exact deployed set not measured\nLimitations: Moving repository requirements and dependency-graph SBOM do not prove a particular installed release, PHP build, loaded modules or reachable affected path.\nPatch owner: UnoPim maintainers for application releases; PHP runtime provider and operator for runtime fixes\nDownstream surface: Product catalogues, digital assets, import/export jobs, APIs and administrative workflows\nRelease pin: Moving official repository requirements and GitHub dependency-graph SBOM export reviewed 2026-10-21; immutable release pin pending\nSource accessed: 2026-10-21\nAliases: unopim/unopim\nConditional downstream consequence: If untrusted requests, imports or assets reach a matching PHP core/extension flaw, the PHP worker could suffer denial of service, disclosure or code execution. Product data, media and configured credentials could then be affected within that worker's permissions; host privilege, tenant escape and lateral movement require separate evidence.\nVulnerability status: Candidate added from official PHP requirement and GitHub dependency-graph SBOM evidence; no product-specific php2shell assessment located in this pass.\nCVE-2026-109618: Official PHP requirement or GitHub SBOM evidence only; CVE match unknown\nCVE-2026-109619: Official PHP requirement or GitHub SBOM evidence only; CVE match unknown\nCVE assessment limit: This candidate record confirms PHP relationship evidence only. Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path still need deployment-specific evidence.",
+      "comment": "Inventory record: PHP-0671\nCategory: Business applications\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Server-side Laravel/PHP web runtime and queue workers\nPHP version scope: Rebuilt webkul/unopim 3.1.3 / 3.1 / latest with PHP 8.4.27\nExtensions: Official repository requirements list PHP extensions; exact deployed set not measured\nLimitations: Moving repository requirements and dependency-graph SBOM do not prove a particular installed release, PHP build, loaded modules or reachable affected path.\nPatch owner: UnoPim maintainers for application releases; PHP runtime provider and operator for runtime fixes\nDownstream surface: Product catalogues, digital assets, import/export jobs, APIs and administrative workflows\nRelease pin: Rebuilt webkul/unopim 3.1.3 / 3.1 / latest with PHP 8.4.27\nSource accessed: 2026-10-23\nAliases: unopim/unopim\nConditional downstream consequence: If untrusted requests, imports or assets reach a matching PHP core/extension flaw, the PHP worker could suffer denial of service, disclosure or code execution. Product data, media and configured credentials could then be affected within that worker's permissions; host privilege, tenant escape and lateral movement require separate evidence.\nVulnerability status: Fix. An UnoPim collaborator confirms published images were rebuilt with PHP 8.4.27 fixing both CVEs. The web image digest is sha256:733a1ac27259acd59a9542eefbde1417edfc1920458b52dcc7fa1fd09f03ca50; cached copies of the same tags are not fixed.\nCVE-2026-109618: Fix. An UnoPim collaborator confirms published images were rebuilt with PHP 8.4.27 fixing both CVEs. The web image digest is sha256:733a1ac27259acd59a9542eefbde1417edfc1920458b52dcc7fa1fd09f03ca50; cached copies of the same tags are not fixed.\nCVE-2026-109619: Fix. An UnoPim collaborator confirms published images were rebuilt with PHP 8.4.27 fixing both CVEs. The web image digest is sha256:733a1ac27259acd59a9542eefbde1417edfc1920458b52dcc7fa1fd09f03ca50; cached copies of the same tags are not fixed.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://github.com/unopim/unopim/pull/787#issuecomment-6345365916 ; https://github.com/unopim/unopim/pull/791#issuecomment-6345463242",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -9385,8 +9467,25 @@
             "https://api.github.com/repos/unopim/unopim/dependency-graph/sbom"
           ],
           "comment": "GitHub dependency-graph SPDX SBOM export endpoint"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/unopim/unopim/pull/787#issuecomment-6345365916"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/unopim/unopim/pull/791#issuecomment-6345463242"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Rebuilt webkul/unopim 3.1.3 / 3.1 / latest with PHP 8.4.27"
     },
     {
       "type": "software_Package",
@@ -9766,7 +9865,6 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0658",
         "urn:php2shell:inventory:package:PHP-0660",
         "urn:php2shell:inventory:package:PHP-0661",
         "urn:php2shell:inventory:package:PHP-0662",
@@ -9847,6 +9945,124 @@
       "security_statusNotes": "Firefly III's maintainer JC5 explicitly confirms that Firefly III and its data importer now run PHP 8.5.12 and closes the CVE issue. Existing image tags were rebuilt without a new application release. This confirms the container runtime fix, not a PHP update for independently hosted non-container installations.",
       "summary": "CVE-2026-109619 assessment: Fix available for the named runtime/build scope",
       "comment": "Official public vendor/upstream evidence independently reviewed 2026-10-22: https://github.com/firefly-iii/firefly-iii/issues/13087#issuecomment-6324447202\nAction statement: Pull the rebuilt container tag and recreate the workload, then verify PHP 8.5.12. Non-container installations must update their own PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0655-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0655"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "N-able's final update confirms all relevant products secured against both vulnerabilities and their root causes across supported PHP versions. Take Control scope is session routing only, including standalone and integrated routing.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.n-able.com/blog/n-able-update-on-the-global-php-issue\nAction statement: No customer PHP patch is specified for these vendor-hosted fixes; retain the vendor's product and service scope limits."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0655-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0655"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "N-able's final update confirms all relevant products secured against both vulnerabilities and their root causes across supported PHP versions. Take Control scope is session routing only, including standalone and integrated routing.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.n-able.com/blog/n-able-update-on-the-global-php-issue\nAction statement: No customer PHP patch is specified for these vendor-hosted fixes; retain the vendor's product and service scope limits."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0656-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0656"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "N-able's final update confirms all relevant products secured against both vulnerabilities and their root causes across supported PHP versions. Take Control scope is session routing only, including standalone and integrated routing.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.n-able.com/blog/n-able-update-on-the-global-php-issue\nAction statement: No customer PHP patch is specified for these vendor-hosted fixes; retain the vendor's product and service scope limits."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0656-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0656"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "N-able's final update confirms all relevant products secured against both vulnerabilities and their root causes across supported PHP versions. Take Control scope is session routing only, including standalone and integrated routing.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.n-able.com/blog/n-able-update-on-the-global-php-issue\nAction statement: No customer PHP patch is specified for these vendor-hosted fixes; retain the vendor's product and service scope limits."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0671-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0671"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "An UnoPim collaborator confirms published images were rebuilt with PHP 8.4.27 fixing both CVEs. The web image digest is sha256:733a1ac27259acd59a9542eefbde1417edfc1920458b52dcc7fa1fd09f03ca50; cached copies of the same tags are not fixed.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://github.com/unopim/unopim/pull/787#issuecomment-6345365916 ; https://github.com/unopim/unopim/pull/791#issuecomment-6345463242\nAction statement: Pull the rebuilt image by verified digest and recreate containers. Custom FPM builds and existing cached images need separate rebuilding and verification."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0671-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0671"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "An UnoPim collaborator confirms published images were rebuilt with PHP 8.4.27 fixing both CVEs. The web image digest is sha256:733a1ac27259acd59a9542eefbde1417edfc1920458b52dcc7fa1fd09f03ca50; cached copies of the same tags are not fixed.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://github.com/unopim/unopim/pull/787#issuecomment-6345365916 ; https://github.com/unopim/unopim/pull/791#issuecomment-6345463242\nAction statement: Pull the rebuilt image by verified digest and recreate containers. Custom FPM builds and existing cached images need separate rebuilding and verification."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0658-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0658"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "The phpMyFAQ team's 21 October notice explicitly reports CVE-2026-109618 exposure on PHP-CGI. It does not assess CVE-2026-109619; that CVE remains Investigation. No application-code fix or complete configuration workaround is asserted.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://phpmyfaq.de/",
+      "security_actionStatement": "Update the deployed PHP runtime using the official PHP security guidance; do not treat the notice's CGI configuration suggestion as a complete fix."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0211-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0211"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in FileCloud Server 23.263.2, which includes PHP 8.4.27, for Windows and Linux. Earlier Server versions are affected. This does not confirm completion of the separately announced FileCloud Online rollout.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://docs.filecloud.com/fcdoc/latest/server/security-advisories/2026-security-advisories/filecloud-release-23-263-security-advisories/advisory-2026-10-03-php2shell-critical-php-remote-code-execution-vulnerabilities.\nAction statement: Upgrade FileCloud Server to 23.263.2 and verify that the serving runtime is the bundled patched PHP."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0211-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0211"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in FileCloud Server 23.263.2, which includes PHP 8.4.27, for Windows and Linux. Earlier Server versions are affected. This does not confirm completion of the separately announced FileCloud Online rollout.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://docs.filecloud.com/fcdoc/latest/server/security-advisories/2026-security-advisories/filecloud-release-23-263-security-advisories/advisory-2026-10-03-php2shell-critical-php-remote-code-execution-vulnerabilities.\nAction statement: Upgrade FileCloud Server to 23.263.2 and verify that the serving runtime is the bundled patched PHP."
     }
   ]
 }

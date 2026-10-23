@@ -459,9 +459,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:ddev-project:d35232937d19",
-      "summary": "DDEV config defines php_version, ddev/ddev-webserver image selection and separate nginx-fpm/apache-fpm/generic modes.",
+      "summary": "Follow DDEV's documented AMD64 PHP package-upgrade and no-cache rebuild procedure and verify the runtime. Public casual hosting and ddev share require patching; local-only exposure is treated separately by DDEV.",
       "description": "Default nginx-fpm; alternate apache-fpm; generic mode runs no web-server daemon",
-      "comment": "Inventory record: PHP-0373\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Default nginx-fpm; alternate apache-fpm; generic mode runs no web-server daemon\nPHP version scope: Stable docs default PHP 8.4, selectable5.6\u20138.5 family labels; patch selection not supported in php_version setting\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: The configured image, customized build and actual patch contents need a digest/SBOM. Old selectable families are not upstream support guarantees. PHP in managed containers does not establish the host orchestrator is written in PHP. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: DDEV webserver-image publishers and developer/CI operator rebuilding custom images and replacing containers\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Moving stable DDEV configuration documentation; image digest/PHP patch unknown\nSource accessed: 2026-10-17\nAliases: ddev/ddev-webserver:php\nConditional downstream consequence: If a matching PHP or loaded-parser flaw is reached while processing a project, dependency, fixture or local web request, developer/CI files or available credentials could be affected. Consequences depend on executed inputs and privileges; development use does not establish a public service or a tenant escape.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0373\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Default nginx-fpm; alternate apache-fpm; generic mode runs no web-server daemon\nPHP version scope: DDEV 1.25.4 AMD64 project images rebuilt with PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: The configured image, customized build and actual patch contents need a digest/SBOM. Old selectable families are not upstream support guarantees. PHP in managed containers does not establish the host orchestrator is written in PHP. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: DDEV webserver-image publishers and developer/CI operator rebuilding custom images and replacing containers\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: DDEV 1.25.4 AMD64 project images rebuilt with PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12\nSource accessed: 2026-10-23\nAliases: ddev/ddev-webserver:php\nConditional downstream consequence: If a matching PHP or loaded-parser flaw is reached while processing a project, dependency, fixture or local web request, developer/CI files or available credentials could be affected. Consequences depend on executed inputs and privileges; development use does not establish a public service or a tenant escape.\nVulnerability status: Fix. DDEV confirms tested AMD64 project-image rebuilds that install fixed PHP packages, including a package upgrade for bundled PHP 8.2-8.5. This is not a claim that stock 1.25.4 images or ARM64 images are fixed, or that planned 1.25.5 has shipped.\nCVE-2026-109618: Fix. DDEV confirms tested AMD64 project-image rebuilds that install fixed PHP packages, including a package upgrade for bundled PHP 8.2-8.5. This is not a claim that stock 1.25.4 images or ARM64 images are fixed, or that planned 1.25.5 has shipped.\nCVE-2026-109619: Fix. DDEV confirms tested AMD64 project-image rebuilds that install fixed PHP packages, including a package upgrade for bundled PHP 8.2-8.5. This is not a claim that stock 1.25.4 images or ARM64 images are fixed, or that planned 1.25.5 has shipped.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://ddev.com/blog/php2shell-what-ddev-users-need-to-know/",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -470,8 +470,17 @@
             "https://docs.ddev.com/en/stable/users/configuration/config/"
           ],
           "comment": "Official PHP distribution, package or build declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://ddev.com/blog/php2shell-what-ddev-users-need-to-know/"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "DDEV 1.25.4 AMD64 project images rebuilt with PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12"
     },
     {
       "type": "software_Package",
@@ -543,9 +552,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:nextcloud-gmbh-nextcloud-aio-maintainers:1303c787a6ba",
-      "summary": "Nextcloud AIO maintainers confirm affected PHP base images and report that rebuilt images depend on upstream PHP image publication; a fixed AIO release is not yet confirmed.",
+      "summary": "Nextcloud AIO 14.4.1 ships updated PHP dependencies and is the project's published PHP2Shell security update.",
       "description": "PHP-FPM and CLI inherited from official PHP Alpine image",
-      "comment": "Inventory record: PHP-0376\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0015\nEvidence status: Vendor-confirmed affected product\nDeployment status: Not measured\nPHP surface: PHP-FPM and CLI inherited from official PHP Alpine image\nPHP version scope: Inspected main recipe FROM php:8.4.26-fpm-alpine3.24 and NEXTCLOUD_VERSION34.0.5; Nextcloud AIO maintainers state rebuilt images depend on updated upstream PHP base images and were still in progress on 2026-10-21.\nExtensions: Recipe subset: bcmath, exif, gd, gmp, intl, ldap, opcache, pcntl, pdo_pgsql, sysvsem, zip, bz2, pgsql, ftp; PECL igbinary, APCu, memcached, redis, imagick, imap, smbclient. These are build selections, not universal Nextcloud requirements.\nLimitations: Only the Nextcloud container is covered, not every AIO master/database/office/Talk container. Moving main may precede released images; base tag has no verified digest. No binary/image was pulled, installed, built or executed. Deployments and operator rollout were not measured.\nPatch owner: Nextcloud AIO publisher and PHP image maintainers; operator applies AIO/container updates\nDownstream surface: Nextcloud application container files, configured credentials and mounted storage; other AIO service boundaries not inferred\nRelease pin: Nextcloud AIO issue #8876 opened 2026-10-21; moving main recipe declares PHP 8.4.26, Alpine 3.24 and Nextcloud 34.0.5; immutable release digest pending\nSource accessed: 2026-10-21\nAliases: nextcloud-aio:nextcloud-container\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nVulnerability status: Affected: Nextcloud AIO Nextcloud application container uses affected PHP base images; upstream PHP image publication and AIO rebuild completion were still pending in the vendor tracker.\nCVE-2026-109618: Affected: fixed AIO image release not yet confirmed\nCVE-2026-109619: Affected: fixed AIO image release not yet confirmed\nCVE assessment limit: Vendor issue confirms AIO impact and rebuild progress, but not a completed fixed AIO release; exact deployed image digest and operator rollout remain unmeasured.",
+      "comment": "Inventory record: PHP-0376\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0015\nEvidence status: Vendor-confirmed released fix in the specified scope\nDeployment status: Not measured\nPHP surface: PHP-FPM and CLI inherited from official PHP Alpine image\nPHP version scope: Nextcloud AIO 14.4.1\nExtensions: Recipe subset: bcmath, exif, gd, gmp, intl, ldap, opcache, pcntl, pdo_pgsql, sysvsem, zip, bz2, pgsql, ftp; PECL igbinary, APCu, memcached, redis, imagick, imap, smbclient. These are build selections, not universal Nextcloud requirements.\nLimitations: Fixed in Nextcloud AIO 14.4.1, whose release directs users to upgrade for the PHP CVEs and includes the patched PHP dependencies. This assessment is limited to AIO; other Nextcloud distributions have independent runtimes.\nPatch owner: Nextcloud AIO publisher and PHP image maintainers; operator applies AIO/container updates\nDownstream surface: Nextcloud application container files, configured credentials and mounted storage; other AIO service boundaries not inferred\nRelease pin: Nextcloud AIO 14.4.1\nSource accessed: 2026-10-23\nAliases: nextcloud-aio:nextcloud-container\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nVulnerability status: Fixed in Nextcloud AIO 14.4.1, whose release directs users to upgrade for the PHP CVEs and includes the patched PHP dependencies. This assessment is limited to AIO; other Nextcloud distributions have independent runtimes.\nCVE-2026-109618: Fix in the stated scope; see VEX assessment\nCVE-2026-109619: Fix in the stated scope; see VEX assessment\nCVE assessment limit: Fixed in Nextcloud AIO 14.4.1, whose release directs users to upgrade for the PHP CVEs and includes the patched PHP dependencies. This assessment is limited to AIO; other Nextcloud distributions have independent runtimes.\nFix sources: https://github.com/nextcloud/all-in-one/releases/tag/v14.4.1; https://github.com/nextcloud/all-in-one/issues/8876",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -561,9 +570,18 @@
           "locator": [
             "https://github.com/nextcloud/all-in-one/issues/8876"
           ],
-          "comment": "Nextcloud AIO maintainer security issue for the PHP CVEs"
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/nextcloud/all-in-one/releases/tag/v14.4.1"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
         }
-      ]
+      ],
+      "software_packageVersion": "Nextcloud AIO 14.4.1"
     },
     {
       "type": "software_Package",
@@ -651,9 +669,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:roundcube-project:a7c8aa7ae5bb",
-      "summary": "Official vendor assessment: Vulnerable for CVE-2026-109618 and CVE-2026-109619; see the scoped VEX assessment and advisory references.",
+      "summary": "Roundcube published replacement images after an fpm-alpine regression; the verified 1.7.x-fpm-alpine rebuild is recorded separately.",
       "description": "Apache, FPM and FPM-Alpine variants derive from corresponding official PHP images",
-      "comment": "Inventory record: PHP-0381\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0026\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Apache, FPM and FPM-Alpine variants derive from corresponding official PHP images\nPHP version scope: Moving README defines variants/latest tags; historical build example still names php:7.4-apache; current exact PHP patch/digest unknown\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: Do not use the stale PHP 7.4 example as the current tag runtime. Nonroot reduces process privilege but does not prove isolation or a matching flaw is harmless. SMTP/IMAP servers are separate components. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Roundcube image maintainers and PHP base-image maintainers; operator refreshes derived images and rolls out webmail containers\nDownstream surface: Webmail messages, sessions, plugins and configured IMAP/SMTP/database/OAuth credentials\nRelease pin: Moving official documentation; immutable artifact pin pending\nSource accessed: 2026-10-17\nAliases: docker.io/roundcube/roundcubemail\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nPublic vendor CVE review: 2026-10-21\nVendor advisory sources: https://github.com/roundcube/roundcubemail-docker/issues/468#issuecomment-6321479744\nCVE assessment limit: The VEX relationships state the current vendor-confirmed scope. Earlier inventory context describes dependency evidence only; installed builds, runtime activation and deployment were not tested.",
+      "comment": "Inventory record: PHP-0381\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0026\nEvidence status: Vendor-confirmed affected scope with separately recorded fixed releases\nDeployment status: Not measured\nPHP surface: Apache, FPM and FPM-Alpine variants derive from corresponding official PHP images\nPHP version scope: Roundcube reports rebuilt images, followed by an fpm-alpine regression corrected on 23 October. The republished 1.7.x-fpm-alpine index with PHP 8.4.27 is recorded separately in PHP-0747. The broad family remains Vulnerable for old or unrebuilt variants; this review does not verify every historical tag.\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: Roundcube reports rebuilt images, followed by an fpm-alpine regression corrected on 23 October. The republished 1.7.x-fpm-alpine index with PHP 8.4.27 is recorded separately in PHP-0747. The broad family remains Vulnerable for old or unrebuilt variants; this review does not verify every historical tag.\nPatch owner: Roundcube image maintainers and PHP base-image maintainers; operator refreshes derived images and rolls out webmail containers\nDownstream surface: Webmail messages, sessions, plugins and configured IMAP/SMTP/database/OAuth credentials\nRelease pin: Official advisory reviewed 2026-10-23; fixed scope recorded separately\nSource accessed: 2026-10-23\nAliases: docker.io/roundcube/roundcubemail\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://github.com/roundcube/roundcubemail-docker/issues/468#issuecomment-6361850134; https://hub.docker.com/v2/repositories/roundcube/roundcubemail/tags/1.7.x-fpm-alpine\nCVE assessment limit: Roundcube reports rebuilt images, followed by an fpm-alpine regression corrected on 23 October. The republished 1.7.x-fpm-alpine index with PHP 8.4.27 is recorded separately in PHP-0747. The broad family remains Vulnerable for old or unrebuilt variants; this review does not verify every historical tag.\nVulnerability status: Roundcube reports rebuilt images, followed by an fpm-alpine regression corrected on 23 October. The republished 1.7.x-fpm-alpine index with PHP 8.4.27 is recorded separately in PHP-0747. The broad family remains Vulnerable for old or unrebuilt variants; this review does not verify every historical tag.\nCVE-2026-109618: Vulnerable in the stated scope; see VEX assessment\nCVE-2026-109619: Vulnerable in the stated scope; see VEX assessment\nFix sources: https://github.com/roundcube/roundcubemail-docker/issues/468#issuecomment-6361850134; https://hub.docker.com/v2/repositories/roundcube/roundcubemail/tags/1.7.x-fpm-alpine",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -670,9 +688,25 @@
             "https://github.com/roundcube/roundcubemail-docker/issues/468#issuecomment-6321479744"
           ],
           "comment": "Public vendor CVE assessment reviewed 2026-10-21"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/roundcube/roundcubemail-docker/issues/468#issuecomment-6361850134"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/roundcube/roundcubemail/tags/1.7.x-fpm-alpine"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
         }
       ],
-      "software_packageVersion": "Unrebuilt Roundcube Docker variants using pre-fix PHP 8.4 base images"
+      "software_packageVersion": "Unpatched PHP builds; fixed release scopes listed separately"
     },
     {
       "type": "software_Package",
@@ -1332,32 +1366,30 @@
       "comment": "Added from the official docker-library/php security update pull request and the official-images metadata pull request merged 2026-10-21.\nAction statement: Verify deployed tags/digests, pull rebuilt Docker Official PHP images and rebuild/redeploy derived images and running containers."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:a1088760f001",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0376"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Affected: Nextcloud AIO Nextcloud application container uses affected PHP base images; fixed AIO image release not yet confirmed",
-      "summary": "CVE-2026-109618 assessment: Affected: Nextcloud AIO Nextcloud application container uses affected PHP base images; fixed AIO image release not yet confirmed",
-      "comment": "Added from Nextcloud AIO issue #8876 updated 2026-10-21.",
-      "security_actionStatement": "Apply the next Nextcloud AIO image release containing patched PHP base images; until then follow the AIO shutdown guidance."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Nextcloud AIO 14.4.1, whose release directs users to upgrade for the PHP CVEs and includes the patched PHP dependencies. This assessment is limited to AIO; other Nextcloud distributions have independent runtimes.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/nextcloud/all-in-one/releases/tag/v14.4.1; https://github.com/nextcloud/all-in-one/issues/8876.\nAction statement: Apply the AIO 14.4.1 update and recreate the affected containers through AIO's update workflow."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:a1088760f001",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0376"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Affected: Nextcloud AIO Nextcloud application container uses affected PHP base images; fixed AIO image release not yet confirmed",
-      "summary": "CVE-2026-109619 assessment: Affected: Nextcloud AIO Nextcloud application container uses affected PHP base images; fixed AIO image release not yet confirmed",
-      "comment": "Added from Nextcloud AIO issue #8876 updated 2026-10-21.",
-      "security_actionStatement": "Apply the next Nextcloud AIO image release containing patched PHP base images; until then follow the AIO shutdown guidance."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Nextcloud AIO 14.4.1, whose release directs users to upgrade for the PHP CVEs and includes the patched PHP dependencies. This assessment is limited to AIO; other Nextcloud distributions have independent runtimes.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/nextcloud/all-in-one/releases/tag/v14.4.1; https://github.com/nextcloud/all-in-one/issues/8876.\nAction statement: Apply the AIO 14.4.1 update and recreate the affected containers through AIO's update workflow."
     },
     {
       "type": "security_VexNotAffectedVulnAssessmentRelationship",
@@ -1400,10 +1432,10 @@
         "urn:php2shell:inventory:package:PHP-0381"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Roundcube's maintainer confirms that image rebuilds are needed after patched PHP base images arrive and reports build failures. No complete set of published fixed Roundcube tags is confirmed in the reviewed thread.",
-      "summary": "CVE-2026-109618 assessment: Roundcube's maintainer confirms that image rebuilds are needed after patched PHP base images arrive and reports build failures. No complete set of published fixed Roundcube tags is confirmed in the reviewed thread.",
-      "comment": "Public vendor assessment reviewed 2026-10-21. Sources: https://github.com/roundcube/roundcubemail-docker/issues/468#issuecomment-6321479744",
-      "security_actionStatement": "Verify a successfully published patched image for the exact tag before pulling and redeploying; upstream PHP tag availability alone does not patch Roundcube images."
+      "security_statusNotes": "Roundcube reports rebuilt images, followed by an fpm-alpine regression corrected on 23 October. The republished 1.7.x-fpm-alpine index with PHP 8.4.27 is recorded separately in PHP-0747. The broad family remains Vulnerable for old or unrebuilt variants; this review does not verify every historical tag.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable in the remaining unpatched scope",
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/roundcube/roundcubemail-docker/issues/468#issuecomment-6361850134; https://hub.docker.com/v2/repositories/roundcube/roundcubemail/tags/1.7.x-fpm-alpine",
+      "security_actionStatement": "Pull and recreate from a verified fixed image; for 1.7.x-fpm-alpine use the 23 October replacement index and verify the runtime."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -1414,10 +1446,10 @@
         "urn:php2shell:inventory:package:PHP-0381"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Roundcube's maintainer confirms that image rebuilds are needed after patched PHP base images arrive and reports build failures. No complete set of published fixed Roundcube tags is confirmed in the reviewed thread.",
-      "summary": "CVE-2026-109619 assessment: Roundcube's maintainer confirms that image rebuilds are needed after patched PHP base images arrive and reports build failures. No complete set of published fixed Roundcube tags is confirmed in the reviewed thread.",
-      "comment": "Public vendor assessment reviewed 2026-10-21. Sources: https://github.com/roundcube/roundcubemail-docker/issues/468#issuecomment-6321479744",
-      "security_actionStatement": "Verify a successfully published patched image for the exact tag before pulling and redeploying; upstream PHP tag availability alone does not patch Roundcube images."
+      "security_statusNotes": "Roundcube reports rebuilt images, followed by an fpm-alpine regression corrected on 23 October. The republished 1.7.x-fpm-alpine index with PHP 8.4.27 is recorded separately in PHP-0747. The broad family remains Vulnerable for old or unrebuilt variants; this review does not verify every historical tag.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable in the remaining unpatched scope",
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/roundcube/roundcubemail-docker/issues/468#issuecomment-6361850134; https://hub.docker.com/v2/repositories/roundcube/roundcubemail/tags/1.7.x-fpm-alpine",
+      "security_actionStatement": "Pull and recreate from a verified fixed image; for 1.7.x-fpm-alpine use the 23 October replacement index and verify the runtime."
     },
     {
       "type": "software_Package",
@@ -1560,6 +1592,608 @@
       "security_statusNotes": "UnoPim's v3.1.3 release note confirms the official webkul/unopim and webkul/unopim-queue images were rebuilt on PHP 8.4.27 for both CVEs. This confirms the named Docker image scope only; self-hosted installs must update their own PHP runtime and cached/running containers require pull and redeploy.",
       "summary": "CVE-2026-109619 assessment: Fixed in the named official UnoPim Docker images rebuilt on PHP 8.4.27",
       "comment": "Added from the official UnoPim v3.1.3 release note reviewed 2026-10-23: https://github.com/unopim/unopim/releases/tag/v3.1.3. The release note explicitly names both CVEs, publishes fixed image tags and digests, and states self-hosted installs must update PHP separately.\nAction statement: Pull and redeploy the named official images and verify PHP 8.4.27; self-hosted non-Docker installs must update PHP to 8.4.27, 8.3.36 or 8.2.35 or later and restart PHP-FPM or Apache."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0727",
+      "creationInfo": "_:creationinfo",
+      "name": "Server Side Up PHP Docker images, v5.0.2 for PHP 8.2-8.5",
+      "software_packageVersion": "v5.0.2: PHP 8.2.35, 8.3.36, 8.4.27, 8.5.12 image variants",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0727"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:server-side-up:b8dc6cf91ab8",
+      "summary": "Publisher reports fixed v5.0.2 Docker images for PHP 8.2-8.5; image digests and deployed workers were not verified.",
+      "description": "Server Side Up PHP Docker images built on official Docker PHP images; variant-specific web and CLI surfaces",
+      "comment": "Inventory record: PHP-0727\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0032\nEvidence status: Publisher-reported fixed image release\nDeployment status: Not measured\nPHP surface: Variant-specific; the release illustrates an 8.4-fpm-nginx image, but this record does not identify a running SAPI\nPHP version scope: The v5.0.2 release reports images rebuilt and tested for PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12. Its PHP 8.1.34 image is explicitly unpatched and excluded from this fixed-release record.\nExtensions: Variant-specific; loaded native extension set not measured\nLimitations: This is a publisher release statement, not an independently verified image digest or running worker observation. Floating tags require a fresh pull and redeploy; old v5.0.1 release tags and older patch tags do not acquire the fix. Custom and derived images need their own rebuild and rollout.\nPatch owner: Server Side Up for published image rebuilds; derived-image publisher and operator for rebuild, pull and redeploy\nDownstream surface: Applications and jobs using the named image variants\nRelease pin: Server Side Up v5.0.2 published 2026-10-21; image digests not supplied in the cited release and not independently measured\nSource accessed: 2026-10-23\nAliases: serversideup/php\nConditional downstream consequence: A vulnerable PHP runtime serving web requests could expose application data or worker-level code execution. The publisher reports fixed replacement images in the scoped release, but a tag name, cached layer or package version does not prove what an operator is running.\nVulnerability status: Publisher reports fixed v5.0.2 images for PHP 8.2-8.5; PHP 8.1 remains unpatched and deployed image contents are unknown.\nCVE-2026-109618: Publisher-reported fix in v5.0.2 images for PHP 8.2-8.5 only\nCVE-2026-109619: Publisher-reported fix in v5.0.2 images for PHP 8.2-8.5 only\nCVE assessment limit: The cited release does not establish individual image digests, all tags, custom builds, or running deployments; verify selected digest, serving runtime and rollout separately.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/serversideup/docker-php/releases/tag/v5.0.2"
+          ],
+          "comment": "Server Side Up v5.0.2 publisher release announcing rebuilt and tested fixed PHP image variants and tag update instructions"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/docker-library/php/pull/1694"
+          ],
+          "comment": "Official Docker PHP source update to fixed PHP releases; it does not prove Server Side Up image bytes"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0727",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0727",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0032"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped Server Side Up images are built on official Docker PHP images.",
+      "comment": "The v5.0.2 publisher release says its images rebuild on patched official Docker PHP images; the relationship does not identify a running image digest."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:serversideup-v5-0-2-20261021",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0727"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "The publisher reports v5.0.2 images for PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12 rebuilt and tested for CVE-2026-109618. This assessment covers those versioned image variants only. PHP 8.1.34 remains unpatched; image digests and running deployments were not verified.",
+      "summary": "CVE-2026-109618 assessment: publisher-reported fix in v5.0.2 image variants for PHP 8.2-8.5",
+      "comment": "Based on the Server Side Up v5.0.2 release published 2026-10-21: https://github.com/serversideup/docker-php/releases/tag/v5.0.2. The release names both CVEs and fixed PHP versions but provides no individual image digest. Action statement: select the appropriate v5.0.2 or fixed patch tag, pull and redeploy, then verify the selected image digest and serving runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:serversideup-v5-0-2-20261021",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0727"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "The publisher reports v5.0.2 images for PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12 rebuilt and tested for CVE-2026-109619. This assessment covers those versioned image variants only. PHP 8.1.34 remains unpatched; image digests and running deployments were not verified.",
+      "summary": "CVE-2026-109619 assessment: publisher-reported fix in v5.0.2 image variants for PHP 8.2-8.5",
+      "comment": "Based on the Server Side Up v5.0.2 release published 2026-10-21: https://github.com/serversideup/docker-php/releases/tag/v5.0.2. The release names both CVEs and fixed PHP versions but provides no individual image digest. Action statement: select the appropriate v5.0.2 or fixed patch tag, pull and redeploy, then verify the selected image digest and serving runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0373-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0373"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "DDEV confirms tested AMD64 project-image rebuilds that install fixed PHP packages, including a package upgrade for bundled PHP 8.2-8.5. This is not a claim that stock 1.25.4 images or ARM64 images are fixed, or that planned 1.25.5 has shipped.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://ddev.com/blog/php2shell-what-ddev-users-need-to-know/\nAction statement: Follow DDEV's documented AMD64 PHP package-upgrade and no-cache rebuild procedure and verify the runtime. Public casual hosting and ddev share require patching; local-only exposure is treated separately by DDEV."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0373-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0373"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "DDEV confirms tested AMD64 project-image rebuilds that install fixed PHP packages, including a package upgrade for bundled PHP 8.2-8.5. This is not a claim that stock 1.25.4 images or ARM64 images are fixed, or that planned 1.25.5 has shipped.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://ddev.com/blog/php2shell-what-ddev-users-need-to-know/\nAction statement: Follow DDEV's documented AMD64 PHP package-upgrade and no-cache rebuild procedure and verify the runtime. Public casual hosting and ddev share require patching; local-only exposure is treated separately by DDEV."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0734",
+      "creationInfo": "_:creationinfo",
+      "name": "FileRun official Docker image (fixed PHP rebuild)",
+      "software_packageVersion": "filerun/filerun:2026.03 rebuilt with fixed PHP, announced 2026-10-21",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0734"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:filerun:e71a668f5e36",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package or image scope.",
+      "description": "Fixed distribution scope of PHP-0210 (FileRun).",
+      "comment": "Inventory record: PHP-0734\nParent inventory record: PHP-0210\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nSource accessed: 2026-10-23\nPHP version scope: filerun/filerun:2026.03 rebuilt with fixed PHP, announced 2026-10-21\nLimitations: FileRun confirms its official Docker image already includes the PHP fix and identifies filerun/filerun:2026.03 in the update instructions. Re-pull and recreate the container. Non-Docker FileRun installations still require a separate PHP update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://filerun.com/index.php/php-security-alert-21oct26"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0734",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0734",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package or image distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of the product tracked by PHP-0210; deployment and other product variants are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0734-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0734"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "FileRun confirms its official Docker image already includes the PHP fix and identifies filerun/filerun:2026.03 in the update instructions. Re-pull and recreate the container. Non-Docker FileRun installations still require a separate PHP update.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://filerun.com/index.php/php-security-alert-21oct26.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0734-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0734"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "FileRun confirms its official Docker image already includes the PHP fix and identifies filerun/filerun:2026.03 in the update instructions. Re-pull and recreate the container. Non-Docker FileRun installations still require a separate PHP update.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://filerun.com/index.php/php-security-alert-21oct26.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0735",
+      "creationInfo": "_:creationinfo",
+      "name": "GLPI official Docker images (main, 12, 11, 10)",
+      "software_packageVersion": "Official main / 12 / 11 / 10 image rebuilds announced 2026-10-21",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0735"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:glpi-teclib:9df3cd869503",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package or image scope.",
+      "description": "Fixed distribution scope of PHP-0024 (GLPI).",
+      "comment": "Inventory record: PHP-0735\nParent inventory record: PHP-0024\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nSource accessed: 2026-10-23\nPHP version scope: Official main / 12 / 11 / 10 image rebuilds announced 2026-10-21\nLimitations: GLPI confirms rebuilt official Docker images for main, 12, 11 and 10 with patched PHP. Pull and recreate containers; updating GLPI application files or restarting an old container is insufficient. Other self-hosted deployments require their own PHP security update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.glpi-project.org/en/%F0%9F%9A%A8-critical-php2shell-php-vulnerabilities-cve-2026-109618-cve-2026-109619-what-you-need-to-know-for-your-glpi-server/"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0735",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0735",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package or image distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of the product tracked by PHP-0024; deployment and other product variants are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0735-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0735"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "GLPI confirms rebuilt official Docker images for main, 12, 11 and 10 with patched PHP. Pull and recreate containers; updating GLPI application files or restarting an old container is insufficient. Other self-hosted deployments require their own PHP security update.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://www.glpi-project.org/en/%F0%9F%9A%A8-critical-php2shell-php-vulnerabilities-cve-2026-109618-cve-2026-109619-what-you-need-to-know-for-your-glpi-server/.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0735-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0735"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "GLPI confirms rebuilt official Docker images for main, 12, 11 and 10 with patched PHP. Pull and recreate containers; updating GLPI application files or restarting an old container is insufficient. Other self-hosted deployments require their own PHP security update.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://www.glpi-project.org/en/%F0%9F%9A%A8-critical-php2shell-php-vulnerabilities-cve-2026-109618-cve-2026-109619-what-you-need-to-know-for-your-glpi-server/.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0736",
+      "creationInfo": "_:creationinfo",
+      "name": "Grav official Docker images (getgrav/grav)",
+      "software_packageVersion": "getgrav/grav tags rebuilt 2026-10-21 with patched PHP",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0736"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:grav-project:fb8c0ee3f440",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package or image scope.",
+      "description": "Fixed distribution scope of PHP-0120 (Grav CMS).",
+      "comment": "Inventory record: PHP-0736\nParent inventory record: PHP-0120\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nSource accessed: 2026-10-23\nPHP version scope: getgrav/grav tags rebuilt 2026-10-21 with patched PHP\nLimitations: Grav confirms all official getgrav/grav tags were rebuilt on 21 October 2026 with patched PHP for both CVEs. This applies to those replacement images; pull and recreate containers. Non-container Grav installations still require their own PHP update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://mail.getgrav.org/blog/php-critical-security-release-october-2026"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0736",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0736",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package or image distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of the product tracked by PHP-0120; deployment and other product variants are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0736-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0736"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Grav confirms all official getgrav/grav tags were rebuilt on 21 October 2026 with patched PHP for both CVEs. This applies to those replacement images; pull and recreate containers. Non-container Grav installations still require their own PHP update.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://mail.getgrav.org/blog/php-critical-security-release-october-2026.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0736-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0736"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Grav confirms all official getgrav/grav tags were rebuilt on 21 October 2026 with patched PHP for both CVEs. This applies to those replacement images; pull and recreate containers. Non-container Grav installations still require their own PHP update.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://mail.getgrav.org/blog/php-critical-security-release-october-2026.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0737",
+      "creationInfo": "_:creationinfo",
+      "name": "Part-DB official Docker image (PHP 8.4.27 rebuild)",
+      "software_packageVersion": "jbtronics/part-db1:2.20.2 rebuild containing PHP 8.4.27",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0737"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:part-db-project:4985626f8fec",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package or image scope.",
+      "description": "Fixed distribution scope of PHP-0265 (Part-DB server).",
+      "comment": "Inventory record: PHP-0737\nParent inventory record: PHP-0265\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nSource accessed: 2026-10-23\nPHP version scope: jbtronics/part-db1:2.20.2 rebuild containing PHP 8.4.27\nLimitations: The Part-DB maintainer confirms a republished 2.20.2 image with PHP 8.4.27. This Fix is limited to that rebuilt image content: later ARM64 reports still show PHP 8.4.26 and have no maintainer resolution. Do not treat every architecture or cached 2.20.2 image as fixed; verify the selected image's serving runtime.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/Part-DB/Part-DB-server/issues/1615#issuecomment-6324675679"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/Part-DB/Part-DB-server/issues/1615"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0737",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0737",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package or image distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of the product tracked by PHP-0265; deployment and other product variants are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0737-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0737"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "The Part-DB maintainer confirms a republished 2.20.2 image with PHP 8.4.27. This Fix is limited to that rebuilt image content: later ARM64 reports still show PHP 8.4.26 and have no maintainer resolution. Do not treat every architecture or cached 2.20.2 image as fixed; verify the selected image's serving runtime.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/Part-DB/Part-DB-server/issues/1615#issuecomment-6324675679; https://github.com/Part-DB/Part-DB-server/issues/1615.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0737-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0737"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "The Part-DB maintainer confirms a republished 2.20.2 image with PHP 8.4.27. This Fix is limited to that rebuilt image content: later ARM64 reports still show PHP 8.4.26 and have no maintainer resolution. Do not treat every architecture or cached 2.20.2 image as fixed; verify the selected image's serving runtime.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/Part-DB/Part-DB-server/issues/1615#issuecomment-6324675679; https://github.com/Part-DB/Part-DB-server/issues/1615.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0738",
+      "creationInfo": "_:creationinfo",
+      "name": "phpLDAPadmin official Docker image",
+      "software_packageVersion": "Docker release 2.3.12 (PHP 8.4.27)",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0738"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:phpldapadmin-leenooks-project:b63ad108fc59",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package or image scope.",
+      "description": "Fixed distribution scope of PHP-0284 (phpLDAPadmin).",
+      "comment": "Inventory record: PHP-0738\nParent inventory record: PHP-0284\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nSource accessed: 2026-10-23\nPHP version scope: Docker release 2.3.12 (PHP 8.4.27)\nLimitations: The phpLDAPadmin owner confirms Docker release 2.3.12 was pushed with PHP 8.4.27 in the issue for both PHP2Shell CVEs. Pull and recreate the container. This does not patch externally supplied PHP for non-container phpLDAPadmin deployments.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/leenooks/phpLDAPadmin/issues/491#issuecomment-6339838166"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0738",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0738",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package or image distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of the product tracked by PHP-0284; deployment and other product variants are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0738-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0738"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "The phpLDAPadmin owner confirms Docker release 2.3.12 was pushed with PHP 8.4.27 in the issue for both PHP2Shell CVEs. Pull and recreate the container. This does not patch externally supplied PHP for non-container phpLDAPadmin deployments.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/leenooks/phpLDAPadmin/issues/491#issuecomment-6339838166.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0738-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0738"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "The phpLDAPadmin owner confirms Docker release 2.3.12 was pushed with PHP 8.4.27 in the issue for both PHP2Shell CVEs. Pull and recreate the container. This does not patch externally supplied PHP for non-container phpLDAPadmin deployments.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/leenooks/phpLDAPadmin/issues/491#issuecomment-6339838166.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0739",
+      "creationInfo": "_:creationinfo",
+      "name": "Shlink official Docker image",
+      "software_packageVersion": "shlinkio/shlink:5.1.8, published 2026-10-22",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0739"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:shlink-project:f5039970bb8f",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package or image scope.",
+      "description": "Fixed distribution scope of PHP-0297 (Shlink).",
+      "comment": "Inventory record: PHP-0739\nParent inventory record: PHP-0297\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nSource accessed: 2026-10-23\nPHP version scope: shlinkio/shlink:5.1.8, published 2026-10-22\nLimitations: Shlink 5.1.8 explicitly fixes both CVEs in its Docker images by moving to Alpine 3.24. Docker Hub confirms publication on 22 October after the initial build failure. Scope is the published image; non-container deployments must update their own PHP runtime.\nRelease evidence: Published image index: sha256:68a722f7677008a50ccf3a9e570966bc37d7627fe6a870b86be28c5dcf9085ee.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/shlinkio/shlink/releases/tag/v5.1.8"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/shlinkio/shlink/tags/5.1.8"
+          ],
+          "comment": "Public publisher registry metadata reviewed 2026-10-23."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0739",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0739",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package or image distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of the product tracked by PHP-0297; deployment and other product variants are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0739-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0739"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Shlink 5.1.8 explicitly fixes both CVEs in its Docker images by moving to Alpine 3.24. Docker Hub confirms publication on 22 October after the initial build failure. Scope is the published image; non-container deployments must update their own PHP runtime.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/shlinkio/shlink/releases/tag/v5.1.8.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0739-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0739"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Shlink 5.1.8 explicitly fixes both CVEs in its Docker images by moving to Alpine 3.24. Docker Hub confirms publication on 22 October after the initial build failure. Scope is the published image; non-container deployments must update their own PHP runtime.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/shlinkio/shlink/releases/tag/v5.1.8.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0747",
+      "creationInfo": "_:creationinfo",
+      "name": "Roundcube official 1.7.x-fpm-alpine Docker image",
+      "software_packageVersion": "1.7.x-fpm-alpine rebuilt 2026-10-23 09:45 UTC (PHP 8.4.27)",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0747"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:roundcube-project:a7c8aa7ae5bb",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package or image scope.",
+      "description": "Fixed distribution scope of PHP-0381 (Roundcube Webmail Docker image family).",
+      "comment": "Inventory record: PHP-0747\nParent inventory record: PHP-0381\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nSource accessed: 2026-10-23\nPHP version scope: 1.7.x-fpm-alpine rebuilt 2026-10-23 09:45 UTC (PHP 8.4.27)\nLimitations: Roundcube's maintainer confirms correction of a regression that reintroduced an old fpm-alpine base. The published 1.7.x-fpm-alpine index was replaced on 23 October at 09:45 UTC; all five Linux platform configurations declare PHP 8.4.27. Scope is this verified index, not every historical tag or a running deployment.\nRelease evidence: Published index sha256:bd96d60fdcb93bbd2d49fe08ff659d8c97efe747226283e8742d3b4a4a06c4b0; public registry configuration JSON inspected for linux/amd64, linux/arm64, linux/386, linux/arm/v6 and linux/arm/v7. This verifies declared runtime metadata, not runtime execution or deployed containers.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/roundcube/roundcubemail-docker/issues/468#issuecomment-6361850134"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/roundcube/roundcubemail-docker/issues/468#issuecomment-6361860529"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/roundcube/roundcubemail/tags/1.7.x-fpm-alpine"
+          ],
+          "comment": "Public publisher registry metadata reviewed 2026-10-23."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0747",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0747",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package or image distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of the product tracked by PHP-0381; deployment and other product variants are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0747-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0747"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Roundcube's maintainer confirms correction of a regression that reintroduced an old fpm-alpine base. The published 1.7.x-fpm-alpine index was replaced on 23 October at 09:45 UTC; all five Linux platform configurations declare PHP 8.4.27. Scope is this verified index, not every historical tag or a running deployment.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/roundcube/roundcubemail-docker/issues/468#issuecomment-6361850134; https://github.com/roundcube/roundcubemail-docker/issues/468#issuecomment-6361860529.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0747-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0747"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Roundcube's maintainer confirms correction of a regression that reintroduced an old fpm-alpine base. The published 1.7.x-fpm-alpine index was replaced on 23 October at 09:45 UTC; all five Linux platform configurations declare PHP 8.4.27. Scope is this verified index, not every historical tag or a running deployment.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/roundcube/roundcubemail-docker/issues/468#issuecomment-6361850134; https://github.com/roundcube/roundcubemail-docker/issues/468#issuecomment-6361860529.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
     }
   ]
 }

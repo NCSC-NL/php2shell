@@ -7,7 +7,7 @@ This repository tracks CVE-2026-109618 and CVE-2026-109619. PHP's official advis
 Compiles every `.json` file recursively under `software/spdx/shared/` and
 `software/spdx/segments/` into `software/spdx/PHP_Downstream_Inventory.spdx3.json`.
 File discovery is automatic; there is no manifest. Neither the existing compiled
-file nor the migration backup is read as input to compilation.
+file is read as input to compilation.
 
 ```bash
 python tools/build_spdx_inventory.py
@@ -19,15 +19,6 @@ incompatible contexts, and missing bundle members. `--check` fails if the compil
 file is stale and does not write anything. `--spdx-dir` selects another source root;
 `--output` selects another output file outside the source directories.
 
-The original inventory is preserved as
-`software/spdx/PHP_Downstream_Inventory.spdx3.backup.json`. To repeat the migration's
-byte-for-byte comparison:
-
-```bash
-python tools/build_spdx_inventory.py --check --compare software/spdx/PHP_Downstream_Inventory.spdx3.backup.json
-```
-
-That backup comparison is expected to fail after intentional inventory updates.
 Use `--check` alone for routine verification. See [source maintenance](../software/spdx/README.md)
 for fragment ownership and ordering rules.
 

@@ -3202,7 +3202,38 @@
       "type": "Organization",
       "spdxId": "urn:php2shell:inventory:organization:entelliweb:73c2d38cb10f",
       "creationInfo": "_:creationinfo",
-      "name": "Entelliweb"
+      "name": "Delta Controls",
+      "comment": "Official supplier name confirmed by Delta Controls SecB0015; existing organization ID retained for compatibility."
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:server-side-up:b8dc6cf91ab8",
+      "creationInfo": "_:creationinfo",
+      "name": "Server Side Up"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:tenable:97a4c423fdc7",
+      "creationInfo": "_:creationinfo",
+      "name": "Tenable"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:broadcom:caf79e01972c",
+      "creationInfo": "_:creationinfo",
+      "name": "Broadcom"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:hewlett-packard-enterprise:e2f8dff0f1e0",
+      "creationInfo": "_:creationinfo",
+      "name": "Hewlett Packard Enterprise"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:netapp:35b1a7722289",
+      "creationInfo": "_:creationinfo",
+      "name": "NetApp"
     }
   ]
 }

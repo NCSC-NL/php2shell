@@ -9,16 +9,13 @@ python tools/generate_software_list_from_spdx3.py PHP_Downstream_Inventory.spdx3
 
 Run these commands from the repository root. Every `.json` file in those two
 directories, including nested directories, is discovered automatically. Adding a
-source file requires no registration or manifest. Keep backups outside these
+source file requires no registration or manifest. Keep non-source JSON files outside these
 directories because every JSON file inside them is an input.
 
 `PHP_Downstream_Inventory.spdx3.json` is the generated full inventory. Keep it in
 version control alongside source edits so the existing Markdown and Git status
 history generators can continue reading the same file. Its path and package IDs
 remain stable. The compiler can recreate it even when the output file is absent.
-
-`PHP_Downstream_Inventory.spdx3.backup.json` preserves the original inventory before
-the split. It is excluded from compilation and should remain unchanged.
 
 ## Categories
 
@@ -70,7 +67,7 @@ New elements can omit order entries; the compiler appends them sorted by ID.
 
 `shared/core.json` records `_compiler.newline` to retain the original CRLF line
 endings. Compilation emits UTF-8 JSON with two-space indentation and a final
-newline. Git attributes preserve those line endings for the aggregate and backup
+newline. Git attributes preserve those line endings for the aggregate
 across checkouts. Source files themselves may use LF or CRLF.
 
 When adding packages, relationships, vulnerabilities or VEX assessments, also add
@@ -85,14 +82,3 @@ compiled file. Keep each shared element in exactly one source file.
 python tools/build_spdx_inventory.py --check
 python -m unittest discover -s tests
 ```
-
-The migration also supports an exact comparison against the preserved original:
-
-```bash
-python tools/build_spdx_inventory.py --check --compare software/spdx/PHP_Downstream_Inventory.spdx3.backup.json
-```
-
-This comparison includes graph order, every field and array, UTF-8 characters,
-whitespace and line endings. It should pass immediately after migration; use
-`--check` alone after intentional inventory updates. A comparison failure prevents
-the compiler from writing output.

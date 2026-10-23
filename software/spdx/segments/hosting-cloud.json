@@ -211,9 +211,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:webpros-plesk:93657c157beb",
-      "summary": "Plesk confirms hosted PHP remains affected in aggregate: Linux fixes are available for PHP 8.2-8.5, while Linux EOL branches and Windows builds remain affected.",
+      "summary": "Plesk has released hosted-handler fixes for the named Linux and Windows branches; older handlers require separate coverage.",
       "description": "Optional customer CGI/FastCGI/PHP-FPM handlers; Linux/Windows availability depends on OS/version",
-      "comment": "Inventory record: PHP-0029\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Optional customer CGI/FastCGI/PHP-FPM handlers; Linux/Windows availability depends on OS/version\nPHP version scope: Plesk's 21 October 2026 advisory lists hosted PHP on Linux 8.5.11 and below, 8.4.26 and below, 8.3.35 and below, and 8.2.34 and below as affected, with fixes in 8.5.12, 8.4.27, 8.3.36 and 8.2.35. Linux PHP 8.1, 8.0 and 7.4 remain affected with fixes in development. Plesk hosted PHP on Windows 8.2-8.5 remains affected with fixes in development.\nExtensions: Installed handler/package-specific; OS/OpenSSL compatibility affects available old PHP families\nLimitations: This aggregate hosted-site row spans Linux and Windows plus supported and EOL PHP branches; it remains affected while any included branch remains affected. Hosted patches cannot be copied into sw-engine or plesk-engine records. Optional handler availability, actual installed packages, OS eligibility and backports still need operator/build evidence. No package, tenant or listener was tested.\nPatch owner: Plesk or OS/custom PHP package supplier publishes updates; hosting operator applies selected hosted-handler updates\nDownstream surface: Only sites selecting the relevant installed PHP handler\nRelease pin: Plesk security advisory updated 2026-10-21; package bytes/digests and rollout unverified\nSource accessed: 2026-10-21\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Confirmed affected by Plesk advisory for CVE-2026-109618 and CVE-2026-109619; fixed Linux 8.2-8.5 hosted builds are available, but the aggregate hosted-site PHP row still includes affected Linux EOL and Windows branches.\nCVE-2026-109618: Vulnerable\nCVE-2026-109619: Vulnerable\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0029\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nEvidence status: Vendor-confirmed affected scope with separately recorded fixed releases\nDeployment status: Not measured\nPHP surface: Optional customer CGI/FastCGI/PHP-FPM handlers; Linux/Windows availability depends on OS/version\nPHP version scope: Plesk has released hosted-PHP fixes for Linux 7.4 and 8.0-8.5 and Windows 8.2-8.5, recorded in PHP-0745 and PHP-0746. Linux 7.4/8.0/8.1 require builds dated 21 October 2026. This broad row retains Vulnerable for unpatched or older handlers; PHP 5.6/7.2/7.3 require separate ELS coverage and the internal engines have independent fixes.\nExtensions: Installed handler/package-specific; OS/OpenSSL compatibility affects available old PHP families\nLimitations: Plesk has released hosted-PHP fixes for Linux 7.4 and 8.0-8.5 and Windows 8.2-8.5, recorded in PHP-0745 and PHP-0746. Linux 7.4/8.0/8.1 require builds dated 21 October 2026. This broad row retains Vulnerable for unpatched or older handlers; PHP 5.6/7.2/7.3 require separate ELS coverage and the internal engines have independent fixes.\nPatch owner: Plesk or OS/custom PHP package supplier publishes updates; hosting operator applies selected hosted-handler updates\nDownstream surface: Only sites selecting the relevant installed PHP handler\nRelease pin: Official advisory reviewed 2026-10-23; fixed scope recorded separately\nSource accessed: 2026-10-23\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Plesk has released hosted-PHP fixes for Linux 7.4 and 8.0-8.5 and Windows 8.2-8.5, recorded in PHP-0745 and PHP-0746. Linux 7.4/8.0/8.1 require builds dated 21 October 2026. This broad row retains Vulnerable for unpatched or older handlers; PHP 5.6/7.2/7.3 require separate ELS coverage and the internal engines have independent fixes.\nCVE-2026-109618: Vulnerable in the stated scope; see VEX assessment\nCVE-2026-109619: Vulnerable in the stated scope; see VEX assessment\nCVE assessment limit: Plesk has released hosted-PHP fixes for Linux 7.4 and 8.0-8.5 and Windows 8.2-8.5, recorded in PHP-0745 and PHP-0746. Linux 7.4/8.0/8.1 require builds dated 21 October 2026. This broad row retains Vulnerable for unpatched or older handlers; PHP 5.6/7.2/7.3 require separate ELS coverage and the internal engines have independent fixes.\nFix sources: https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -235,11 +235,12 @@
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
           "locator": [
-            "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-Remote-code-execution-in-PHP-shipped-with-Plesk"
+            "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk"
           ],
-          "comment": "Plesk advisory for CVE-2026-109618 and CVE-2026-109619"
+          "comment": "Plesk advisory updated 2026-10-22 confirming released hosted-PHP and internal-engine fixes."
         }
-      ]
+      ],
+      "software_packageVersion": "Unpatched PHP builds; fixed release scopes listed separately"
     },
     {
       "type": "software_Package",
@@ -255,9 +256,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:microsoft:c7bac46904be",
-      "summary": "Microsoft documents Linux PHP workloads and explicitly says Windows PHP support ended in November2022.",
+      "summary": "Use a supported runtime on Latest or Standard and verify the running PHP patch version; rebuild custom containers separately.",
       "description": "Managed Linux customer PHP web/API runtime; custom extension configuration",
-      "comment": "Inventory record: PHP-0034\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Managed Linux customer PHP web/API runtime; custom extension configuration\nPHP version scope: PHP supported on App Service Linux; built-in Windows PHP support ended November2022. Current stack/patch not statically resolved\nExtensions: Default common extensions and optional compatible .so modules; complete current Linux list unknown\nLimitations: The page says reference-only and retains Windows/VC9 examples beside Linux text. These are not current Linux ABI or runtime-version guidance. Server PHP does not establish PHP in browser/mobile clients or Azure control planes. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: Microsoft for managed stack distribution; app owner for chosen stack, compatible extensions/dependencies and rollout verification; custom-image owner for custom runtimes\nDownstream surface: Managed app instances and deployment slots\nRelease pin: Moving reference-only Microsoft guide; exact supported runtime release/build remains a gap\nSource accessed: 2026-10-17\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0034\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Managed Linux customer PHP web/API runtime; custom extension configuration\nPHP version scope: Linux built-in PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12 on Latest and Standard\nExtensions: Default common extensions and optional compatible .so modules; complete current Linux list unknown\nLimitations: The page says reference-only and retains Windows/VC9 examples beside Linux text. These are not current Linux ABI or runtime-version guidance. Server PHP does not establish PHP in browser/mobile clients or Azure control planes. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: Microsoft for managed stack distribution; app owner for chosen stack, compatible extensions/dependencies and rollout verification; custom-image owner for custom runtimes\nDownstream surface: Managed app instances and deployment slots\nRelease pin: Linux built-in PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12 on Latest and Standard\nSource accessed: 2026-10-23\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Fix. The Azure App Service team confirms completed rollout of fixed built-in Linux PHP images to Latest and Standard. Extended, EOL runtimes and customer-maintained containers are not covered by that completion statement.\nCVE-2026-109618: Fix. The Azure App Service team confirms completed rollout of fixed built-in Linux PHP images to Latest and Standard. Extended, EOL runtimes and customer-maintained containers are not covered by that completion statement.\nCVE-2026-109619: Fix. The Azure App Service team confirms completed rollout of fixed built-in Linux PHP images to Latest and Standard. Extended, EOL runtimes and customer-maintained containers are not covered by that completion statement.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://azure.github.io/AppService/2026/10/21/php-critical-security-release-app-service-linux.html ; https://techcommunity.microsoft.com/blog/azurenetworksecurityblog/addressing-php2shell-cve-2026-109618-and-cve-2026-109619-upgrade-guidance-and-az/4566623",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -266,8 +267,25 @@
             "https://learn.microsoft.com/en-us/azure/app-service/configure-language-php"
           ],
           "comment": "Azure App Service PHP configuration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://azure.github.io/AppService/2026/10/21/php-critical-security-release-app-service-linux.html"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://techcommunity.microsoft.com/blog/azurenetworksecurityblog/addressing-php2shell-cve-2026-109618-and-cve-2026-109619-upgrade-guidance-and-az/4566623"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Linux built-in PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12 on Latest and Standard"
     },
     {
       "type": "software_Package",
@@ -283,9 +301,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:amazon-web-services:a940fb838463",
-      "summary": "AWS publishes four PHP AL2023 platform4.13.10 rows with branch-specific PHP patches and Composer2.10.3/PIE1.5.1.",
+      "summary": "Update the environment platform to the applicable 4.13.13 release; managed updates apply during the configured maintenance window.",
       "description": "Selected AL2023 PHP application platform; nginx(default)/Apache proxy choice, precise SAPI not established by platform table",
-      "comment": "Inventory record: PHP-0035\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Selected AL2023 PHP application platform; nginx(default)/Apache proxy choice, precise SAPI not established by platform table\nPHP version scope: AL2023 platform4.13.10, AMI2023.12.20260930: PHP8.5.11,8.4.26,8.3.33,8.2.33 across four named branches\nExtensions: Complete required/built-in/optional module inventory not supplied by supported-platform table\nLimitations: This is a released-platform catalogue, not measured tenant AMIs or PHP patches. Proxy software does not itself establish the PHP SAPI; no inference to other AWS services. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: AWS publishes updated PHP platforms; environment operator selects/applies appropriate platform update policy and app dependencies\nDownstream surface: Application environments and instances\nRelease pin: PHP AL2023 platform4.13.10; AMI version2023.12.20260930; four PHP branch rows, image bytes unverified\nSource accessed: 2026-10-17\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0035\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Selected AL2023 PHP application platform; nginx(default)/Apache proxy choice, precise SAPI not established by platform table\nPHP version scope: AL2023 PHP 8.2-8.5 platform version 4.13.13\nExtensions: Complete required/built-in/optional module inventory not supplied by supported-platform table\nLimitations: This is a released-platform catalogue, not measured tenant AMIs or PHP patches. Proxy software does not itself establish the PHP SAPI; no inference to other AWS services. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: AWS publishes updated PHP platforms; environment operator selects/applies appropriate platform update policy and app dependencies\nDownstream surface: Application environments and instances\nRelease pin: AL2023 PHP 8.2-8.5 platform version 4.13.13\nSource accessed: 2026-10-23\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Fix. AWS confirms released AL2023 PHP platform 4.13.13 with upstream fixes: PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12. The earlier configuration-only platform update is not the fix recorded here.\nCVE-2026-109618: Fix. AWS confirms released AL2023 PHP platform 4.13.13 with upstream fixes: PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12. The earlier configuration-only platform update is not the fix recorded here.\nCVE-2026-109619: Fix. AWS confirms released AL2023 PHP platform 4.13.13 with upstream fixes: PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12. The earlier configuration-only platform update is not the fix recorded here.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://aws.amazon.com/security/security-bulletins/2026-143-aws/ ; https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2026-10-21-al2023-php84-php85.html ; https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2026-10-22-al2023-php82-php83.html",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -294,8 +312,33 @@
             "https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html"
           ],
           "comment": "Elastic Beanstalk supported platforms"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://aws.amazon.com/security/security-bulletins/2026-143-aws/"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2026-10-21-al2023-php84-php85.html"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2026-10-22-al2023-php82-php83.html"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "AL2023 PHP 8.2-8.5 platform version 4.13.13"
     },
     {
       "type": "software_Package",
@@ -364,9 +407,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:webpros-plesk:93657c157beb",
-      "summary": "Plesk confirms that all versions of the Linux sw-engine internal UI component are affected; hotfixes are planned for Plesk Obsidian 18.0.80#11 and 18.0.81#4.",
+      "summary": "Plesk confirms released fixes for the Linux sw-engine internal PHP runtime in 18.0.80 Update 11 and 18.0.81 Update 4.",
       "description": "sw-engine PHP scripts, sw-engine-fpm and panel php.ini",
-      "comment": "Inventory record: PHP-0385\nCategory: Hosting and cloud\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0029\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: sw-engine PHP scripts, sw-engine-fpm and panel php.ini\nPHP version scope: Plesk's 21 October 2026 advisory states that all versions of Plesk for Linux sw-engine, part of the Plesk UI, are affected. Plesk plans hotfixes as 18.0.80#11 and 18.0.81#4. The earlier release note pin remains useful context: Plesk Obsidian 18.0.79 declared Linux sw-engine PHP 8.4.21.\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: Do not infer that PHP 8.4.21 stayed unchanged in all later releases or that hosted-handler versions identify this engine. Linux and Windows engines, packages and service accounts differ. Exact payload, modules, privilege boundaries and deployed builds remain unknown.\nPatch owner: Plesk for internal sw-engine distribution; hosting/server operator for panel update rollout\nDownstream surface: Only the named PHP component and its callers\nRelease pin: Plesk security advisory updated 2026-10-21; hotfixes planned as 18.0.80#11 and 18.0.81#4\nSource accessed: 2026-10-21\nAliases: plesk:sw-engine-php\nConditional downstream consequence: A reachable matching PHP/parser flaw in this management component could affect availability, configuration integrity or credentials accessible to its service account; code execution would inherit that account\u2019s privileges. Root access, other tenants and lateral movement are not automatic and need a separate privilege/isolation path.\nVulnerability status: Confirmed affected by Plesk advisory for CVE-2026-109618 and CVE-2026-109619; hotfixes are planned but not yet released.\nCVE-2026-109618: Vulnerable\nCVE-2026-109619: Vulnerable\nCVE assessment limit: Installed build, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0385\nCategory: Hosting and cloud\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0029\nEvidence status: Vendor-confirmed released fix in the specified scope\nDeployment status: Not measured\nPHP surface: sw-engine PHP scripts, sw-engine-fpm and panel php.ini\nPHP version scope: Plesk Obsidian 18.0.80 Update 11 or 18.0.81 Update 4\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: Fixed in Plesk Obsidian 18.0.80 Update 11 or 18.0.81 Update 4 for the internal management PHP engine: Linux sw-engine and Windows plesk-engine. Hosted-site PHP packages are separate and also require their applicable security updates.\nPatch owner: Plesk for internal sw-engine distribution; hosting/server operator for panel update rollout\nDownstream surface: Only the named PHP component and its callers\nRelease pin: Plesk Obsidian 18.0.80 Update 11 or 18.0.81 Update 4\nSource accessed: 2026-10-23\nAliases: plesk:sw-engine-php\nConditional downstream consequence: A reachable matching PHP/parser flaw in this management component could affect availability, configuration integrity or credentials accessible to its service account; code execution would inherit that account\u2019s privileges. Root access, other tenants and lateral movement are not automatic and need a separate privilege/isolation path.\nVulnerability status: Fixed in Plesk Obsidian 18.0.80 Update 11 or 18.0.81 Update 4 for the internal management PHP engine: Linux sw-engine and Windows plesk-engine. Hosted-site PHP packages are separate and also require their applicable security updates.\nCVE-2026-109618: Fix in the stated scope; see VEX assessment\nCVE-2026-109619: Fix in the stated scope; see VEX assessment\nCVE assessment limit: Fixed in Plesk Obsidian 18.0.80 Update 11 or 18.0.81 Update 4 for the internal management PHP engine: Linux sw-engine and Windows plesk-engine. Hosted-site PHP packages are separate and also require their applicable security updates.\nFix sources: https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -388,11 +431,12 @@
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
           "locator": [
-            "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-Remote-code-execution-in-PHP-shipped-with-Plesk"
+            "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk"
           ],
-          "comment": "Plesk advisory for CVE-2026-109618 and CVE-2026-109619"
+          "comment": "Plesk advisory updated 2026-10-22 confirming released hosted-PHP and internal-engine fixes."
         }
-      ]
+      ],
+      "software_packageVersion": "Plesk Obsidian 18.0.80 Update 11 or 18.0.81 Update 4"
     },
     {
       "type": "software_Package",
@@ -526,9 +570,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:hestia-control-panel-project:3a40940dadf2",
-      "summary": "Official vendor assessment: Vulnerable for CVE-2026-109618 and CVE-2026-109619; see the scoped VEX assessment and advisory references.",
+      "summary": "HestiaCP's maintainer confirms released hestia-php updates for Ubuntu 22.04 and newer and Debian 11 and newer.",
       "description": "Separately compiled hestia-php package; system /usr/bin/php used for Composer dependency setup",
-      "comment": "Inventory record: PHP-0391\nCategory: Hosting and cloud\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Separately compiled hestia-php package; system /usr/bin/php used for Composer dependency setup\nPHP version scope: Hestia 1.10.5 release dated 14 September 2026 explicitly bumps hestia-php to 8.5.10. Advertised release commit 7d617fd1c5fd3be86458c7f53a6dad4a444b0a82 was opened; native package bytes remain unverified.\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: The panel release commit is a source-reference pin, not a binary hash or verification of GitHub signature metadata. Co-listed OpenSSL/PCRE updates do not independently prove their linkage into this PHP package. Hosted-site PHP and system PHP used during setup remain separate. Complete modules, ABI, package revisions and installed state remain unknown.\nPatch owner: Hestia package maintainers for hestia-php builds; operator for native runtime/package rollout and system PHP used during setup\nDownstream surface: Only the named PHP component and its callers\nRelease pin: Hestia 1.10.5, 2026-09-14; hestia-php 8.5.10; release commit 7d617fd1c5fd3be86458c7f53a6dad4a444b0a82\nSource accessed: 2026-10-19\nAliases: hestiacp:hestia-php\nConditional downstream consequence: A reachable matching PHP/parser flaw in this management component could affect availability, configuration integrity or credentials accessible to its service account; code execution would inherit that account\u2019s privileges. Root access, other tenants and lateral movement are not automatic and need a separate privilege/isolation path.\nPublic vendor CVE review: 2026-10-21\nVendor advisory sources: https://github.com/hestiacp/hestiacp/issues/5817#issuecomment-6318435423\nCVE assessment limit: The VEX relationships state the current vendor-confirmed scope. Earlier inventory context describes dependency evidence only; installed builds, runtime activation and deployment were not tested.",
+      "comment": "Inventory record: PHP-0391\nCategory: Hosting and cloud\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix in the specified scope\nDeployment status: Not measured\nPHP surface: Separately compiled hestia-php package; system /usr/bin/php used for Composer dependency setup\nPHP version scope: hestia-php security update released 2026-10-22; Ubuntu 22.04+ and Debian 11+\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: Fixed hestia-php packages were released on 22 October 2026 for Ubuntu 22.04+ and Debian 11+; the maintainer separately confirms Debian Bullseye publication. The notice does not identify an exact package revision. Hosted-site and system PHP remain separate update scopes.\nPatch owner: Hestia package maintainers for hestia-php builds; operator for native runtime/package rollout and system PHP used during setup\nDownstream surface: Only the named PHP component and its callers\nRelease pin: hestia-php security update released 2026-10-22; Ubuntu 22.04+ and Debian 11+\nSource accessed: 2026-10-23\nAliases: hestiacp:hestia-php\nConditional downstream consequence: A reachable matching PHP/parser flaw in this management component could affect availability, configuration integrity or credentials accessible to its service account; code execution would inherit that account\u2019s privileges. Root access, other tenants and lateral movement are not automatic and need a separate privilege/isolation path.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://github.com/hestiacp/hestiacp/issues/5817#issuecomment-6333993141; https://github.com/hestiacp/hestiacp/issues/5817#issuecomment-6342235021\nCVE assessment limit: Fixed hestia-php packages were released on 22 October 2026 for Ubuntu 22.04+ and Debian 11+; the maintainer separately confirms Debian Bullseye publication. The notice does not identify an exact package revision. Hosted-site and system PHP remain separate update scopes.\nVulnerability status: Fixed hestia-php packages were released on 22 October 2026 for Ubuntu 22.04+ and Debian 11+; the maintainer separately confirms Debian Bullseye publication. The notice does not identify an exact package revision. Hosted-site and system PHP remain separate update scopes.\nCVE-2026-109618: Fix in the stated scope; see VEX assessment\nCVE-2026-109619: Fix in the stated scope; see VEX assessment\nFix sources: https://github.com/hestiacp/hestiacp/issues/5817#issuecomment-6333993141; https://github.com/hestiacp/hestiacp/issues/5817#issuecomment-6342235021",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -577,9 +621,25 @@
             "https://github.com/hestiacp/hestiacp/issues/5817#issuecomment-6318435423"
           ],
           "comment": "Public vendor CVE assessment reviewed 2026-10-21"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/hestiacp/hestiacp/issues/5817#issuecomment-6333993141"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/hestiacp/hestiacp/issues/5817#issuecomment-6342235021"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
         }
       ],
-      "software_packageVersion": "Unpatched HestiaCP bundled hestia-php runtime; fix still being built"
+      "software_packageVersion": "hestia-php security update released 2026-10-22; Ubuntu 22.04+ and Debian 11+"
     },
     {
       "type": "software_Package",
@@ -1051,9 +1111,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:wp-engine:c79e160ca994",
-      "summary": "WP Engine\u2019s guide documents PHP environment selection, staged version availability and forced EOL upgrades with a legacy exception.",
+      "summary": "No customer action required for the managed hosting scope covered by WP Engine's confirmation.",
       "description": "Managed per-environment PHP version selection; exact web SAPI not established",
-      "comment": "Inventory record: PHP-0404\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0006\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Managed per-environment PHP version selection; exact web SAPI not established\nPHP version scope: Guide lists7.4,8.2,8.4 and a temporary7.4 extended-support exception; exact current environment patch/catalogue unresolved\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: The same page contains old WordPress/PHP compatibility wording and an EOL-removal rule alongside7.4 extended support. Treat this as bounded provider documentation, not authoritative current upstream lifecycle evidence. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: WP Engine for platform runtime updates/upgrades; customer for app compatibility and runtime choice where permitted\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: wpengine:php-hosting\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0404\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0006\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Managed per-environment PHP version selection; exact web SAPI not established\nPHP version scope: Vendor-patched managed PHP infrastructure, confirmed 22 October 2026\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: The same page contains old WordPress/PHP compatibility wording and an EOL-removal rule alongside7.4 extended support. Treat this as bounded provider documentation, not authoritative current upstream lifecycle evidence. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: WP Engine for platform runtime updates/upgrades; customer for app compatibility and runtime choice where permitted\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Vendor-patched managed PHP infrastructure, confirmed 22 October 2026\nSource accessed: 2026-10-23\nAliases: wpengine:php-hosting\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Fix. WP Engine confirms all customer sites run fully patched PHP after deployment of official LTS-provider patches, separately from its earlier WAF and configuration mitigations.\nCVE-2026-109618: Fix. WP Engine confirms all customer sites run fully patched PHP after deployment of official LTS-provider patches, separately from its earlier WAF and configuration mitigations.\nCVE-2026-109619: Fix. WP Engine confirms all customer sites run fully patched PHP after deployment of official LTS-provider patches, separately from its earlier WAF and configuration mitigations.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://wpengine.com/blog/php-vulnerability-update/",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1062,8 +1122,17 @@
             "https://wpengine.com/support/php-guide/"
           ],
           "comment": "Official PHP component, runtime or hosting declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://wpengine.com/blog/php-vulnerability-update/"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Vendor-patched managed PHP infrastructure, confirmed 22 October 2026"
     },
     {
       "type": "software_Package",
@@ -1286,9 +1355,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:transip:7333da98c122",
-      "summary": "TransIP states its webhosting packages include PHP and documents changing the package\u2019s selected version.",
+      "summary": "No action required on TransIP shared webhosting; separately patch customer-managed PHP environments.",
       "description": "Provider-managed server-side PHP selection for webhosting package",
-      "comment": "Inventory record: PHP-0416\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0037\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Provider-managed server-side PHP selection for webhosting package\nPHP version scope: Official guide lists8.0,8.1,8.2,8.3,8.4,8.5; exact patches/backport policy unresolved\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: A Dutch hosting-service role is evidenced, not any critical-sector customer deployment, installation total or PHP implementation of the TransIP portal. Legacy availability is not upstream support. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: TransIP for hosted runtime distribution; site owner for version selection and application compatibility\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: transip:shared-webhosting-php\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0416\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Provider-managed server-side PHP selection for webhosting package\nPHP version scope: Shared-hosting PHP patches deployed 21 October 2026, including 7.4 / 8.0 / 8.1\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: A Dutch hosting-service role is evidenced, not any critical-sector customer deployment, installation total or PHP implementation of the TransIP portal. Legacy availability is not upstream support. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: TransIP for hosted runtime distribution; site owner for version selection and application compatibility\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Shared-hosting PHP patches deployed 21 October 2026, including 7.4 / 8.0 / 8.1\nSource accessed: 2026-10-23\nAliases: transip:shared-webhosting-php\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Fix. TransIP confirms all PHP versions offered on its shared-webhosting platform were patched. Customer-managed VPS, Kubernetes and OpenStack PHP installations are excluded and require customer updates.\nCVE-2026-109618: Fix. TransIP confirms all PHP versions offered on its shared-webhosting platform were patched. Customer-managed VPS, Kubernetes and OpenStack PHP installations are excluded and require customer updates.\nCVE-2026-109619: Fix. TransIP confirms all PHP versions offered on its shared-webhosting platform were patched. Customer-managed VPS, Kubernetes and OpenStack PHP installations are excluded and require customer updates.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://www.transip.nl/knowledgebase/website-troubleshooting/kritieke-php-kwetsbaarheden-cve-2026-109618-en-cve-2026-109619",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1297,8 +1366,17 @@
             "https://www.transip.nl/knowledgebase/5987-wil-php-versie-mijn-website-wijzigen"
           ],
           "comment": "Official PHP component, runtime or hosting declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.transip.nl/knowledgebase/website-troubleshooting/kritieke-php-kwetsbaarheden-cve-2026-109618-en-cve-2026-109619"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Shared-hosting PHP patches deployed 21 October 2026, including 7.4 / 8.0 / 8.1"
     },
     {
       "type": "software_Package",
@@ -1406,9 +1484,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:render-customer-base-image-publisher:0ba5e6a95438",
-      "summary": "Render\u2019s PHP deployment guide uses Docker and nginx/php-fpm for a Laravel application.",
+      "summary": "Rebuild or obtain patched PHP images, redeploy each affected service, and verify the runtime serving web requests; Render does not automatically patch customer images.",
       "description": "Customer Docker runtime; official Laravel11 example uses nginx/php-fpm",
-      "comment": "Inventory record: PHP-0420\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0037\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Customer Docker runtime; official Laravel11 example uses nginx/php-fpm\nPHP version scope: No native PHP runtime per Docker guide; customer Dockerfile/base image sets PHP branch and patch\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: A rebuilt container does not guarantee a fresh base image when tags are cached. PHP is scoped to selected workload images, not Render\u2019s native runtime catalogue or backend implementation. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: Customer/base-image publisher for PHP image refresh; customer for rebuild/deployment; Render for platform infrastructure\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: render:php-docker-hosting\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0420\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Customer Docker runtime; official Laravel11 example uses nginx/php-fpm\nPHP version scope: Customer PHP Docker services running unpatched affected runtimes\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: A rebuilt container does not guarantee a fresh base image when tags are cached. PHP is scoped to selected workload images, not Render\u2019s native runtime catalogue or backend implementation. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: Customer/base-image publisher for PHP image refresh; customer for rebuild/deployment; Render for platform infrastructure\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Customer PHP Docker services running unpatched affected runtimes\nSource accessed: 2026-10-23\nAliases: render:php-docker-hosting\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Vulnerable. Render's official advisory directs customers to patch and redeploy their PHP Docker services for both CVEs. This is customer-container exposure, not a vulnerability assertion about Render's control plane or every deployed service.\nCVE-2026-109618: Vulnerable. Render's official advisory directs customers to patch and redeploy their PHP Docker services for both CVEs. This is customer-container exposure, not a vulnerability assertion about Render's control plane or every deployed service.\nCVE-2026-109619: Vulnerable. Render's official advisory directs customers to patch and redeploy their PHP Docker services for both CVEs. This is customer-container exposure, not a vulnerability assertion about Render's control plane or every deployed service.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://render.com/docs/advisory-php2shell",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1425,8 +1503,17 @@
             "https://render.com/docs/docker"
           ],
           "comment": "Official publisher/project PHP scope evidence - Render explicitly treats PHP as a non-native language requiring Docker; image builds can reuse cached mutable base tags."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://render.com/docs/advisory-php2shell"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Customer PHP Docker services running unpatched affected runtimes"
     },
     {
       "type": "software_Package",
@@ -1526,9 +1613,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:webpros-plesk:93657c157beb",
-      "summary": "Plesk confirms that all versions of the Windows internal UI engine component are affected; hotfixes are planned for Plesk Obsidian 18.0.80#11 and 18.0.81#4.",
+      "summary": "Plesk confirms released fixes for the Windows plesk-engine internal PHP runtime in 18.0.80 Update 11 and 18.0.81 Update 4.",
       "description": "PHP inside the Windows plesk-engine component; exact SAPI/threading and process identity unverified",
-      "comment": "Inventory record: PHP-0611\nCategory: Hosting and cloud\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0029\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP inside the Windows plesk-engine component; exact SAPI/threading and process identity unverified\nPHP version scope: Plesk's 21 October 2026 advisory states that all versions of the Windows internal UI engine component are affected and plans hotfixes as 18.0.80#11 and 18.0.81#4. Plesk's changelog names the Windows internal PHP runtime plesk-engine and previously pinned it to PHP 8.4.22 in Obsidian 18.0.79.\nExtensions: Internal Windows module/loader inventory unknown\nLimitations: The advisory table labels the Windows UI component as sw-engine while the changelog labels the Windows internal PHP runtime plesk-engine; this record maps those official Plesk descriptions to the same internal UI engine scope. Do not inherit the Linux sw-engine version or the separately dated hosted-handler patches. An internal runtime does not prove every panel daemon is PHP or always privileged. No installed payload, exposed management path or tenant escape was tested.\nPatch owner: WebPros / Plesk for component fixes; package/image supplier for matching PHP ABI; operator for deployment and process restart\nDownstream surface: Only PHP processes using this named component and their accessible data\nRelease pin: Plesk security advisory updated 2026-10-21; hotfixes planned as 18.0.80#11 and 18.0.81#4\nSource accessed: 2026-10-21\nAliases: plesk:windows-plesk-engine-php\nConditional downstream consequence: Analyst judgment: a matching flaw in the loaded PHP/native component could affect its worker availability, readable profile/application data or execution identity when the relevant path is reached. ABI, mode, input reachability and privilege conditions must match. A profiler or agent does not establish root access, tenant escape, credentials exposure or compromise.\nVulnerability status: Confirmed affected by Plesk advisory for CVE-2026-109618 and CVE-2026-109619; hotfixes are planned but not yet released.\nCVE-2026-109618: Vulnerable\nCVE-2026-109619: Vulnerable\nCVE assessment limit: Installed build, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0611\nCategory: Hosting and cloud\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0029\nEvidence status: Vendor-confirmed released fix in the specified scope\nDeployment status: Not measured\nPHP surface: PHP inside the Windows plesk-engine component; exact SAPI/threading and process identity unverified\nPHP version scope: Plesk Obsidian 18.0.80 Update 11 or 18.0.81 Update 4\nExtensions: Internal Windows module/loader inventory unknown\nLimitations: Fixed in Plesk Obsidian 18.0.80 Update 11 or 18.0.81 Update 4 for the internal management PHP engine: Linux sw-engine and Windows plesk-engine. Hosted-site PHP packages are separate and also require their applicable security updates.\nPatch owner: WebPros / Plesk for component fixes; package/image supplier for matching PHP ABI; operator for deployment and process restart\nDownstream surface: Only PHP processes using this named component and their accessible data\nRelease pin: Plesk Obsidian 18.0.80 Update 11 or 18.0.81 Update 4\nSource accessed: 2026-10-23\nAliases: plesk:windows-plesk-engine-php\nConditional downstream consequence: Analyst judgment: a matching flaw in the loaded PHP/native component could affect its worker availability, readable profile/application data or execution identity when the relevant path is reached. ABI, mode, input reachability and privilege conditions must match. A profiler or agent does not establish root access, tenant escape, credentials exposure or compromise.\nVulnerability status: Fixed in Plesk Obsidian 18.0.80 Update 11 or 18.0.81 Update 4 for the internal management PHP engine: Linux sw-engine and Windows plesk-engine. Hosted-site PHP packages are separate and also require their applicable security updates.\nCVE-2026-109618: Fix in the stated scope; see VEX assessment\nCVE-2026-109619: Fix in the stated scope; see VEX assessment\nCVE assessment limit: Fixed in Plesk Obsidian 18.0.80 Update 11 or 18.0.81 Update 4 for the internal management PHP engine: Linux sw-engine and Windows plesk-engine. Hosted-site PHP packages are separate and also require their applicable security updates.\nFix sources: https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1542,11 +1629,12 @@
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
           "locator": [
-            "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-Remote-code-execution-in-PHP-shipped-with-Plesk"
+            "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk"
           ],
-          "comment": "Plesk advisory for CVE-2026-109618 and CVE-2026-109619"
+          "comment": "Plesk advisory updated 2026-10-22 confirming released hosted-PHP and internal-engine fixes."
         }
-      ]
+      ],
+      "software_packageVersion": "Plesk Obsidian 18.0.80 Update 11 or 18.0.81 Update 4"
     },
     {
       "type": "software_Package",
@@ -1554,7 +1642,7 @@
       "creationInfo": "_:creationinfo",
       "name": "Plesk for Linux",
       "software_primaryPurpose": "platform",
-      "software_packageVersion": "All shipped PHP versions",
+      "software_packageVersion": "Unpatched PHP builds; fixed release scopes listed separately",
       "externalIdentifier": [
         {
           "type": "ExternalIdentifier",
@@ -1563,17 +1651,17 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:webpros-plesk:93657c157beb",
-      "summary": "Plesk confirms that all PHP versions shipped with Plesk for Linux are affected; patched versions are pending a PHP vendor fix.",
+      "summary": "Plesk for Linux has published internal-engine and hosted-handler fixes, recorded in their component-specific entries.",
       "description": "Plesk for Linux product shipping PHP runtimes",
-      "comment": "Source: Plesk security advisory updated 2026-10-20\nAffected versions: All shipped PHP versions\nPatched versions: Pending fix from the PHP vendor\nImpact: Remote code execution is possible on affected PHP versions.",
+      "comment": "Source: Plesk advisory updated 2026-10-22; reviewed 2026-10-23\nAffected versions: Unpatched vendor PHP builds; older/custom handler coverage must be verified separately\nPublished fixes: Plesk now publishes fixed hosted PHP packages and internal-engine updates. Hosted scopes are recorded in PHP-0745/PHP-0746 and internal scopes in PHP-0385/PHP-0611. These released fixes do not cover every older or custom PHP handler in the broad product rows; unpatched versions remain affected.\nDeployment status: Not measured\nCVE-2026-109618: Vulnerable in the remaining unpatched scope\nCVE-2026-109619: Vulnerable in the remaining unpatched scope\nAction statement: Install Plesk 18.0.80 Update 11 or 18.0.81 Update 4 for the internal engine and the platform-specific fixed hosted PHP packages. Confirm older-handler ELS coverage separately.",
       "externalRef": [
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
           "locator": [
-            "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-Remote-code-execution-in-PHP-shipped-with-Plesk"
+            "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk"
           ],
-          "comment": "Plesk - Vulnerability CVE-2026-109618 and CVE-2026-109619: Remote code execution in PHP shipped with Plesk"
+          "comment": "Plesk advisory updated 2026-10-22 confirming released hosted-PHP and internal-engine fixes."
         }
       ]
     },
@@ -1583,7 +1671,7 @@
       "creationInfo": "_:creationinfo",
       "name": "Plesk for Windows",
       "software_primaryPurpose": "platform",
-      "software_packageVersion": "All shipped PHP versions",
+      "software_packageVersion": "Unpatched PHP builds; fixed release scopes listed separately",
       "externalIdentifier": [
         {
           "type": "ExternalIdentifier",
@@ -1592,17 +1680,17 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:webpros-plesk:93657c157beb",
-      "summary": "Plesk confirms that all PHP versions shipped with Plesk for Windows are affected; patched versions are pending a PHP vendor fix.",
+      "summary": "Plesk for Windows has published internal-engine and hosted-handler fixes, recorded in their component-specific entries.",
       "description": "Plesk for Windows product shipping PHP runtimes",
-      "comment": "Source: Plesk security advisory updated 2026-10-20\nAffected versions: All shipped PHP versions\nPatched versions: Pending fix from the PHP vendor\nImpact: Remote code execution is possible on affected PHP versions.",
+      "comment": "Source: Plesk advisory updated 2026-10-22; reviewed 2026-10-23\nAffected versions: Unpatched vendor PHP builds; older/custom handler coverage must be verified separately\nPublished fixes: Plesk now publishes fixed hosted PHP packages and internal-engine updates. Hosted scopes are recorded in PHP-0745/PHP-0746 and internal scopes in PHP-0385/PHP-0611. These released fixes do not cover every older or custom PHP handler in the broad product rows; unpatched versions remain affected.\nDeployment status: Not measured\nCVE-2026-109618: Vulnerable in the remaining unpatched scope\nCVE-2026-109619: Vulnerable in the remaining unpatched scope\nAction statement: Install Plesk 18.0.80 Update 11 or 18.0.81 Update 4 for the internal engine and the platform-specific fixed hosted PHP packages. Confirm older-handler ELS coverage separately.",
       "externalRef": [
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
           "locator": [
-            "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-Remote-code-execution-in-PHP-shipped-with-Plesk"
+            "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk"
           ],
-          "comment": "Plesk - Vulnerability CVE-2026-109618 and CVE-2026-109619: Remote code execution in PHP shipped with Plesk"
+          "comment": "Plesk advisory updated 2026-10-22 confirming released hosted-PHP and internal-engine fixes."
         }
       ]
     },
@@ -2083,10 +2171,10 @@
         "urn:php2shell:inventory:package:PHP-0622"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Affected: all PHP versions shipped with Plesk",
-      "summary": "CVE-2026-109618 assessment: Affected: all PHP versions shipped with Plesk",
-      "comment": "Added from the Plesk security advisory published 2026-10-20.",
-      "security_actionStatement": "Apply fixed Plesk PHP packages when available from Plesk."
+      "security_statusNotes": "Plesk now publishes fixed hosted PHP packages and internal-engine updates. Hosted scopes are recorded in PHP-0745/PHP-0746 and internal scopes in PHP-0385/PHP-0611. These released fixes do not cover every older or custom PHP handler in the broad product rows; unpatched versions remain affected.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable in the remaining unpatched scope",
+      "comment": "Official sources reviewed 2026-10-23: https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk",
+      "security_actionStatement": "Install Plesk 18.0.80 Update 11 or 18.0.81 Update 4 for the internal engine and the platform-specific fixed hosted PHP packages. Confirm older-handler ELS coverage separately."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -2098,10 +2186,10 @@
         "urn:php2shell:inventory:package:PHP-0622"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Affected: all PHP versions shipped with Plesk",
-      "summary": "CVE-2026-109619 assessment: Affected: all PHP versions shipped with Plesk",
-      "comment": "Added from the Plesk security advisory published 2026-10-20.",
-      "security_actionStatement": "Apply fixed Plesk PHP packages when available from Plesk."
+      "security_statusNotes": "Plesk now publishes fixed hosted PHP packages and internal-engine updates. Hosted scopes are recorded in PHP-0745/PHP-0746 and internal scopes in PHP-0385/PHP-0611. These released fixes do not cover every older or custom PHP handler in the broad product rows; unpatched versions remain affected.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable in the remaining unpatched scope",
+      "comment": "Official sources reviewed 2026-10-23: https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk",
+      "security_actionStatement": "Install Plesk 18.0.80 Update 11 or 18.0.81 Update 4 for the internal engine and the platform-specific fixed hosted PHP packages. Confirm older-handler ELS coverage separately."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -2112,10 +2200,10 @@
         "urn:php2shell:inventory:package:PHP-0029"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Affected hosted Plesk PHP in aggregate: Linux PHP 7.4, 8.0 and 8.1 plus Windows PHP 8.2-8.5 remain affected; fixed Linux PHP 8.2-8.5 builds are available",
-      "summary": "CVE-2026-109618 assessment: Affected hosted Plesk PHP in aggregate: Linux PHP 7.4, 8.0 and 8.1 plus Windows PHP 8.2-8.5 remain affected; fixed Linux PHP 8.2-8.5 builds are available",
-      "comment": "Added from the Plesk security advisory updated 2026-10-21.",
-      "security_actionStatement": "Upgrade Linux hosted PHP to 8.2.35, 8.3.36, 8.4.27 or 8.5.12 as applicable; apply Windows and EOL branch fixes when Plesk publishes them."
+      "security_statusNotes": "Plesk has released hosted-PHP fixes for Linux 7.4 and 8.0-8.5 and Windows 8.2-8.5, recorded in PHP-0745 and PHP-0746. Linux 7.4/8.0/8.1 require builds dated 21 October 2026. This broad row retains Vulnerable for unpatched or older handlers; PHP 5.6/7.2/7.3 require separate ELS coverage and the internal engines have independent fixes.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable in the remaining unpatched scope",
+      "comment": "Official sources reviewed 2026-10-23: https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk",
+      "security_actionStatement": "Apply each handler's fixed package and separately update Plesk's internal engine; verify ELS coverage for older handlers."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -2126,13 +2214,13 @@
         "urn:php2shell:inventory:package:PHP-0029"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Affected hosted Plesk PHP in aggregate: Linux PHP 7.4, 8.0 and 8.1 plus Windows PHP 8.2-8.5 remain affected; fixed Linux PHP 8.2-8.5 builds are available",
-      "summary": "CVE-2026-109619 assessment: Affected hosted Plesk PHP in aggregate: Linux PHP 7.4, 8.0 and 8.1 plus Windows PHP 8.2-8.5 remain affected; fixed Linux PHP 8.2-8.5 builds are available",
-      "comment": "Added from the Plesk security advisory updated 2026-10-21.",
-      "security_actionStatement": "Upgrade Linux hosted PHP to 8.2.35, 8.3.36, 8.4.27 or 8.5.12 as applicable; apply Windows and EOL branch fixes when Plesk publishes them."
+      "security_statusNotes": "Plesk has released hosted-PHP fixes for Linux 7.4 and 8.0-8.5 and Windows 8.2-8.5, recorded in PHP-0745 and PHP-0746. Linux 7.4/8.0/8.1 require builds dated 21 October 2026. This broad row retains Vulnerable for unpatched or older handlers; PHP 5.6/7.2/7.3 require separate ELS coverage and the internal engines have independent fixes.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable in the remaining unpatched scope",
+      "comment": "Official sources reviewed 2026-10-23: https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk",
+      "security_actionStatement": "Apply each handler's fixed package and separately update Plesk's internal engine; verify ELS coverage for older handlers."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:81f37b5ad902",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
@@ -2140,14 +2228,13 @@
         "urn:php2shell:inventory:package:PHP-0385",
         "urn:php2shell:inventory:package:PHP-0611"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Affected: all versions of Plesk's internal UI engine component; hotfixes are planned as 18.0.80#11 and 18.0.81#4",
-      "summary": "CVE-2026-109618 assessment: Affected: all versions of Plesk's internal UI engine component; hotfixes are planned as 18.0.80#11 and 18.0.81#4",
-      "comment": "Added from the Plesk security advisory updated 2026-10-21; the Plesk changelog names the Windows internal PHP runtime plesk-engine while the advisory table labels the Windows UI component sw-engine.",
-      "security_actionStatement": "Apply Plesk Obsidian hotfix 18.0.80#11 or 18.0.81#4 when available."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Plesk Obsidian 18.0.80 Update 11 or 18.0.81 Update 4 for the internal management PHP engine: Linux sw-engine and Windows plesk-engine. Hosted-site PHP packages are separate and also require their applicable security updates.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk.\nAction statement: Install the applicable Plesk update for the internal engine and separately update every hosted-site PHP handler."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:81f37b5ad902",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
@@ -2155,11 +2242,10 @@
         "urn:php2shell:inventory:package:PHP-0385",
         "urn:php2shell:inventory:package:PHP-0611"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Affected: all versions of Plesk's internal UI engine component; hotfixes are planned as 18.0.80#11 and 18.0.81#4",
-      "summary": "CVE-2026-109619 assessment: Affected: all versions of Plesk's internal UI engine component; hotfixes are planned as 18.0.80#11 and 18.0.81#4",
-      "comment": "Added from the Plesk security advisory updated 2026-10-21; the Plesk changelog names the Windows internal PHP runtime plesk-engine while the advisory table labels the Windows UI component sw-engine.",
-      "security_actionStatement": "Apply Plesk Obsidian hotfix 18.0.80#11 or 18.0.81#4 when available."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in Plesk Obsidian 18.0.80 Update 11 or 18.0.81 Update 4 for the internal management PHP engine: Linux sw-engine and Windows plesk-engine. Hosted-site PHP packages are separate and also require their applicable security updates.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk.\nAction statement: Install the applicable Plesk update for the internal engine and separately update every hosted-site PHP handler."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -2402,32 +2488,30 @@
       "comment": "Public vendor assessment reviewed 2026-10-21. Sources: https://devcenter.heroku.com/changelog-items/3845\nAction statement: Redeploy the application using a supported fixed PHP runtime. Do not mistake the unchanged 8.1.34 upstream version for proof that the old build was patched."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:0a31d605017b",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0391"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "HestiaCP's maintainer explicitly confirms its bundled hestia-php remains vulnerable while a fix is prepared. This is distinct from patched distribution PHP serving hosted websites; INI changes are not a complete fix.",
-      "summary": "CVE-2026-109618 assessment: HestiaCP's maintainer explicitly confirms its bundled hestia-php remains vulnerable while a fix is prepared. This is distinct from patched distribution PHP serving hosted websites; INI changes are not a complete fix.",
-      "comment": "Public vendor assessment reviewed 2026-10-21. Sources: https://github.com/hestiacp/hestiacp/issues/5817#issuecomment-6318435423",
-      "security_actionStatement": "Apply the hestia-php update once published and verify the panel's running runtime; updating hosted-site PHP alone does not patch the panel."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed hestia-php packages were released on 22 October 2026 for Ubuntu 22.04+ and Debian 11+; the maintainer separately confirms Debian Bullseye publication. The notice does not identify an exact package revision. Hosted-site and system PHP remain separate update scopes.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/hestiacp/hestiacp/issues/5817#issuecomment-6333993141; https://github.com/hestiacp/hestiacp/issues/5817#issuecomment-6342235021.\nAction statement: Install the released hestia-php and hestia-nginx updates for the supported OS and restart the panel services; verify the installed runtime."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:29024f127941",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0391"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "HestiaCP's maintainer explicitly confirms its bundled hestia-php remains vulnerable while a fix is prepared. This is distinct from patched distribution PHP serving hosted websites; INI changes are not a complete fix.",
-      "summary": "CVE-2026-109619 assessment: HestiaCP's maintainer explicitly confirms its bundled hestia-php remains vulnerable while a fix is prepared. This is distinct from patched distribution PHP serving hosted websites; INI changes are not a complete fix.",
-      "comment": "Public vendor assessment reviewed 2026-10-21. Sources: https://github.com/hestiacp/hestiacp/issues/5817#issuecomment-6318435423",
-      "security_actionStatement": "Apply the hestia-php update once published and verify the panel's running runtime; updating hosted-site PHP alone does not patch the panel."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed hestia-php packages were released on 22 October 2026 for Ubuntu 22.04+ and Debian 11+; the maintainer separately confirms Debian Bullseye publication. The notice does not identify an exact package revision. Hosted-site and system PHP remain separate update scopes.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/hestiacp/hestiacp/issues/5817#issuecomment-6333993141; https://github.com/hestiacp/hestiacp/issues/5817#issuecomment-6342235021.\nAction statement: Install the released hestia-php and hestia-nginx updates for the supported OS and restart the panel services; verify the installed runtime."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -2498,9 +2582,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:sophos:2fd5c42d49f9",
-      "summary": "Sophos says its legacy MyUTM portal ran an affected PHP version and was taken offline for update, while stating that Sophos products themselves are not affected.",
+      "summary": "Use Sophos Support for licensing while the portal is offline; no completed portal fix is asserted.",
       "description": "Legacy hosted licensing portal",
-      "comment": "Inventory record: PHP-0657\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Legacy hosted portal web runtime\nPHP version scope: Sophos states the MyUTM portal ran an affected PHP version; exact version and fixed deployment identity are not published.\nExtensions: Unknown\nLimitations: This row covers the legacy hosted MyUTM portal only. Sophos explicitly says no Sophos products are affected, so this must not be generalized to Sophos UTM or other product lines.\nPatch owner: Sophos for hosted portal remediation\nDownstream surface: Legacy licensing portal accounts and service operations\nRelease pin: Sophos advisory SA-20261021-PHP2SHELL published 2026-10-21; portal build not published\nSource accessed: 2026-10-21\nAliases: Sophos MyUTM portal\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through the hosted service, possible effects include worker denial of service, disclosure of service-accessible secrets, data modification or code execution with the service identity. Provider boundaries, tenant escape and lateral movement require separate evidence.\nVulnerability status: Vendor advisory 2026-10-21: Sophos states the legacy MyUTM portal ran an affected PHP version and was taken offline for update; exact fixed portal deployment remains unpublished.\nCVE-2026-109618: Vendor advisory names product or service in php2shell response; exact affected/fixed product scope still under investigation\nCVE-2026-109619: Vendor advisory names product or service in php2shell response; exact affected/fixed product scope still under investigation\nCVE assessment limit: This candidate record confirms PHP relationship evidence only. Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path still need deployment-specific evidence.",
+      "comment": "Inventory record: PHP-0657\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Legacy hosted portal web runtime\nPHP version scope: MyUTM hosted licensing portal before vendor PHP update\nExtensions: Unknown\nLimitations: This row covers the legacy hosted MyUTM portal only. Sophos explicitly says no Sophos products are affected, so this must not be generalized to Sophos UTM or other product lines.\nPatch owner: Sophos for hosted portal remediation\nDownstream surface: Legacy licensing portal accounts and service operations\nRelease pin: MyUTM hosted licensing portal before vendor PHP update\nSource accessed: 2026-10-23\nAliases: Sophos MyUTM portal\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through the hosted service, possible effects include worker denial of service, disclosure of service-accessible secrets, data modification or code execution with the service identity. Provider boundaries, tenant escape and lateral movement require separate evidence.\nVulnerability status: Vulnerable. Sophos advisory version 4 confirms the MyUTM hosted portal ran affected PHP and was taken offline pending its update. The separate statement that Sophos products are not affected does not exclude this hosted service.\nCVE-2026-109618: Vulnerable. Sophos advisory version 4 confirms the MyUTM hosted portal ran affected PHP and was taken offline pending its update. The separate statement that Sophos products are not affected does not exclude this hosted service.\nCVE-2026-109619: Vulnerable. Sophos advisory version 4 confirms the MyUTM hosted portal ran affected PHP and was taken offline pending its update. The separate statement that Sophos products are not affected does not exclude this hosted service.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2508,9 +2592,10 @@
           "locator": [
             "https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell"
           ],
-          "comment": "Sophos advisory SA-20261021-PHP2SHELL"
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "MyUTM hosted licensing portal before vendor PHP update"
     },
     {
       "type": "software_Package",
@@ -2571,9 +2656,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists AppDynamics SaaS Secure Application as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Official vendor non-vulnerability confirmation reviewed 2026-10-23.",
       "description": "Hosted application security monitoring",
-      "comment": "Inventory record: PHP-0703\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22) lists AppDynamics SaaS Secure Application under 'Products Under Investigation' (Cisco Cloud Hosted Services); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-22\nVulnerability status: Cisco interim advisory: under investigation; no Cisco product confirmed vulnerable yet.\nCVE-2026-109618: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE-2026-109619: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0703\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Vendor-confirmed not vulnerable product scope\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE-2026-109618: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE-2026-109619: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Vendor-confirmed not vulnerable product scope",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2581,9 +2666,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Cisco Security Advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22)"
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Vendor-confirmed not vulnerable product scope"
     },
     {
       "type": "software_Package",
@@ -2599,9 +2685,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Cisco CX Cloud as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists CX Cloud as under investigation for CVE-2026-109618 and CVE-2026-109619.",
       "description": "Hosted customer experience portal",
-      "comment": "Inventory record: PHP-0704\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22) lists Cisco CX Cloud under 'Products Under Investigation' (Cisco Cloud Hosted Services); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-22\nVulnerability status: Cisco interim advisory: under investigation; no Cisco product confirmed vulnerable yet.\nCVE-2026-109618: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE-2026-109619: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0704\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.4, updated 2026-10-22 23:00 GMT) lists CX Cloud under 'Products Under Investigation' (Cisco Cloud Hosted Services); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Cisco advisory version 1.4 lists this product under investigation; affected and fixed releases are not published.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Cisco advisory version 1.4 under-investigation product scope",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2609,7 +2695,7 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Cisco Security Advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22)"
+          "comment": "Official public CVE review 2026-10-23"
         }
       ]
     },
@@ -2627,9 +2713,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Cisco Defense Orchestrator as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Official vendor non-vulnerability confirmation reviewed 2026-10-23.",
       "description": "Hosted security policy management",
-      "comment": "Inventory record: PHP-0705\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22) lists Cisco Defense Orchestrator under 'Products Under Investigation' (Cisco Cloud Hosted Services); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-22\nVulnerability status: Cisco interim advisory: under investigation; no Cisco product confirmed vulnerable yet.\nCVE-2026-109618: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE-2026-109619: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0705\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Security Cloud Control - Firewall Management (formerly Defense Orchestrator)\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Not vuln. Cisco confirms Security Cloud Control - Firewall Management, formerly Cisco Defense Orchestrator, is not vulnerable to both CVEs.\nCVE-2026-109618: Not vuln. Cisco confirms Security Cloud Control - Firewall Management, formerly Cisco Defense Orchestrator, is not vulnerable to both CVEs.\nCVE-2026-109619: Not vuln. Cisco confirms Security Cloud Control - Firewall Management, formerly Cisco Defense Orchestrator, is not vulnerable to both CVEs.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Security Cloud Control - Firewall Management (formerly Defense Orchestrator)",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2637,9 +2723,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Cisco Security Advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22)"
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Security Cloud Control - Firewall Management (formerly Defense Orchestrator)"
     },
     {
       "type": "software_Package",
@@ -2655,9 +2742,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Cisco IoT Control Center as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists IoT Control Center as under investigation for CVE-2026-109618 and CVE-2026-109619.",
       "description": "Hosted IoT connectivity management",
-      "comment": "Inventory record: PHP-0706\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22) lists Cisco IoT Control Center under 'Products Under Investigation' (Cisco Cloud Hosted Services); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-22\nVulnerability status: Cisco interim advisory: under investigation; no Cisco product confirmed vulnerable yet.\nCVE-2026-109618: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE-2026-109619: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0706\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.4, updated 2026-10-22 23:00 GMT) lists IoT Control Center under 'Products Under Investigation' (Cisco Cloud Hosted Services); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Cisco advisory version 1.4 lists this product under investigation; affected and fixed releases are not published.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Cisco advisory version 1.4 under-investigation product scope",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2665,7 +2752,7 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Cisco Security Advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22)"
+          "comment": "Official public CVE review 2026-10-23"
         }
       ]
     },
@@ -2683,9 +2770,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Cisco Multicloud Defense as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Official vendor non-vulnerability confirmation reviewed 2026-10-23.",
       "description": "Hosted multicloud network security",
-      "comment": "Inventory record: PHP-0707\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22) lists Cisco Multicloud Defense under 'Products Under Investigation' (Cisco Cloud Hosted Services); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-22\nVulnerability status: Cisco interim advisory: under investigation; no Cisco product confirmed vulnerable yet.\nCVE-2026-109618: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE-2026-109619: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0707\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Vendor-confirmed not vulnerable product scope\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE-2026-109618: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE-2026-109619: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Vendor-confirmed not vulnerable product scope",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2693,9 +2780,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Cisco Security Advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22)"
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Vendor-confirmed not vulnerable product scope"
     },
     {
       "type": "software_Package",
@@ -2711,9 +2799,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Cisco Panoptica as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Investigation retained: Cisco Panoptica appeared under investigation in advisory version 1.1 but is absent from the explicit version 1.4 status lists.",
       "description": "Hosted cloud-native application security",
-      "comment": "Inventory record: PHP-0708\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22) lists Cisco Panoptica under 'Products Under Investigation' (Cisco Cloud Hosted Services); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-22\nVulnerability status: Cisco interim advisory: under investigation; no Cisco product confirmed vulnerable yet.\nCVE-2026-109618: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE-2026-109619: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0708\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq version 1.1 listed Cisco Panoptica under 'Products Under Investigation' (Cisco Cloud Hosted Services). Version 1.4, updated 2026-10-22 23:00 GMT, no longer names Panoptica in its explicit under-investigation, vulnerable or confirmed-not-vulnerable sections.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. Cisco's statement that unlisted products are initially indicated not affected is not an explicit product confirmation for this retained inventory scope.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Investigation retained. Cisco advisory version 1.4 does not explicitly confirm affected, released-fixed or not-vulnerable status for this inventory scope.\nCVE-2026-109618: Investigation retained pending explicit Cisco product status\nCVE-2026-109619: Investigation retained pending explicit Cisco product status\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Retained investigation pending explicit Cisco status",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2721,7 +2809,7 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Cisco Security Advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22)"
+          "comment": "Official public CVE review 2026-10-23"
         }
       ]
     },
@@ -2739,9 +2827,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Cisco Secure Access as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Official vendor non-vulnerability confirmation reviewed 2026-10-23.",
       "description": "Hosted security service edge",
-      "comment": "Inventory record: PHP-0709\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22) lists Cisco Secure Access under 'Products Under Investigation' (Cisco Cloud Hosted Services); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-22\nVulnerability status: Cisco interim advisory: under investigation; no Cisco product confirmed vulnerable yet.\nCVE-2026-109618: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE-2026-109619: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0709\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Vendor-confirmed not vulnerable product scope\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE-2026-109618: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE-2026-109619: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Vendor-confirmed not vulnerable product scope",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2749,9 +2837,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Cisco Security Advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22)"
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Vendor-confirmed not vulnerable product scope"
     },
     {
       "type": "software_Package",
@@ -2767,9 +2856,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Cisco Secure Email Threat Defense as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Official vendor non-vulnerability confirmation reviewed 2026-10-23.",
       "description": "Hosted email security",
-      "comment": "Inventory record: PHP-0710\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22) lists Cisco Secure Email Threat Defense under 'Products Under Investigation' (Cisco Cloud Hosted Services); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-22\nVulnerability status: Cisco interim advisory: under investigation; no Cisco product confirmed vulnerable yet.\nCVE-2026-109618: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE-2026-109619: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0710\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Vendor-confirmed not vulnerable product scope\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE-2026-109618: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE-2026-109619: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Vendor-confirmed not vulnerable product scope",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2777,9 +2866,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Cisco Security Advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22)"
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Vendor-confirmed not vulnerable product scope"
     },
     {
       "type": "software_Package",
@@ -2795,9 +2885,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Cisco Vulnerability Management (formerly Kenna.VM) as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Official vendor non-vulnerability confirmation reviewed 2026-10-23.",
       "description": "Hosted risk-based vulnerability management",
-      "comment": "Inventory record: PHP-0711\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22) lists Cisco Vulnerability Management (formerly Kenna.VM) under 'Products Under Investigation' (Cisco Cloud Hosted Services); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-22\nVulnerability status: Cisco interim advisory: under investigation; no Cisco product confirmed vulnerable yet.\nCVE-2026-109618: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE-2026-109619: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0711\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Vendor-confirmed not vulnerable product scope\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE-2026-109618: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE-2026-109619: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Vendor-confirmed not vulnerable product scope",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2805,9 +2895,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Cisco Security Advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22)"
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Vendor-confirmed not vulnerable product scope"
     },
     {
       "type": "software_Package",
@@ -2823,9 +2914,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Cisco+ Secure Connect as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Official vendor non-vulnerability confirmation reviewed 2026-10-23.",
       "description": "Hosted secure access service",
-      "comment": "Inventory record: PHP-0712\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22) lists Cisco+ Secure Connect under 'Products Under Investigation' (Cisco Cloud Hosted Services); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-22\nVulnerability status: Cisco interim advisory: under investigation; no Cisco product confirmed vulnerable yet.\nCVE-2026-109618: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE-2026-109619: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0712\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Vendor-confirmed not vulnerable product scope\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE-2026-109618: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE-2026-109619: Not vuln. Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Vendor-confirmed not vulnerable product scope",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2833,9 +2924,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Cisco Security Advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22)"
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Vendor-confirmed not vulnerable product scope"
     },
     {
       "type": "software_Package",
@@ -2853,7 +2945,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
       "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Slido as under investigation for CVE-2026-109618 and CVE-2026-109619.",
       "description": "Hosted audience interaction service",
-      "comment": "Inventory record: PHP-0713\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22) lists Slido under 'Products Under Investigation' (Cisco Cloud Hosted Services); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-22\nVulnerability status: Cisco interim advisory: under investigation; no Cisco product confirmed vulnerable yet.\nCVE-2026-109618: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE-2026-109619: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0713\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.4, updated 2026-10-22 23:00 GMT) lists Slido under 'Products Under Investigation' (Cisco Cloud Hosted Services); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Cisco advisory version 1.4 lists this product under investigation; affected and fixed releases are not published.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Cisco advisory version 1.4 under-investigation product scope",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2861,7 +2953,7 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Cisco Security Advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22)"
+          "comment": "Official public CVE review 2026-10-23"
         }
       ]
     },
@@ -2879,9 +2971,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Webex as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Official vendor non-vulnerability confirmation reviewed 2026-10-23.",
       "description": "Hosted collaboration service",
-      "comment": "Inventory record: PHP-0714\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22) lists Webex under 'Products Under Investigation' (Cisco Cloud Hosted Services); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-22\nVulnerability status: Cisco interim advisory: under investigation; no Cisco product confirmed vulnerable yet.\nCVE-2026-109618: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE-2026-109619: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product as under investigation; no Cisco product confirmed vulnerable yet\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0714\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Webex Meetings, Webex Teams and Webex Web SDK only\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Not vuln. Cisco explicitly confirms Webex Meetings, Teams and Web SDK are not vulnerable. This assessment is limited to those named offerings, not every Webex-branded product.\nCVE-2026-109618: Not vuln. Cisco explicitly confirms Webex Meetings, Teams and Web SDK are not vulnerable. This assessment is limited to those named offerings, not every Webex-branded product.\nCVE-2026-109619: Not vuln. Cisco explicitly confirms Webex Meetings, Teams and Web SDK are not vulnerable. This assessment is limited to those named offerings, not every Webex-branded product.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Webex Meetings, Webex Teams and Webex Web SDK only",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2889,9 +2981,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Cisco Security Advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.1, 2026-10-22)"
+          "comment": "Official public CVE review 2026-10-23"
         }
-      ]
+      ],
+      "software_packageVersion": "Webex Meetings, Webex Teams and Webex Web SDK only"
     },
     {
       "type": "software_Package",
@@ -3415,6 +3508,564 @@
       "relationshipType": "other",
       "summary": "Inventory association for PHP-0683: vendor PHP advisory candidate",
       "comment": "The vendor is investigating this product in its PHP advisory. This association records review scope only; a PHP dependency is not confirmed."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:php-0703-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0703"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.",
+      "summary": "CVE-2026-109618 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0703-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0703"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:php-0707-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0707"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.",
+      "summary": "CVE-2026-109618 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0707-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0707"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:php-0709-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0709"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.",
+      "summary": "CVE-2026-109618 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0709-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0709"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:php-0710-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0710"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.",
+      "summary": "CVE-2026-109618 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0710-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0710"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:php-0711-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0711"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.",
+      "summary": "CVE-2026-109618 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0711-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0711"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:php-0712-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0712"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.",
+      "summary": "CVE-2026-109618 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0712-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0712"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco advisory version 1.4 explicitly lists this product as confirmed not vulnerable to both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:php-0705-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0705"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco confirms Security Cloud Control - Firewall Management, formerly Cisco Defense Orchestrator, is not vulnerable to both CVEs.",
+      "summary": "CVE-2026-109618 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco confirms Security Cloud Control - Firewall Management, formerly Cisco Defense Orchestrator, is not vulnerable to both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0705-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0705"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco confirms Security Cloud Control - Firewall Management, formerly Cisco Defense Orchestrator, is not vulnerable to both CVEs.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco confirms Security Cloud Control - Firewall Management, formerly Cisco Defense Orchestrator, is not vulnerable to both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:php-0714-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0714"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco explicitly confirms Webex Meetings, Teams and Web SDK are not vulnerable. This assessment is limited to those named offerings, not every Webex-branded product.",
+      "summary": "CVE-2026-109618 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco explicitly confirms Webex Meetings, Teams and Web SDK are not vulnerable. This assessment is limited to those named offerings, not every Webex-branded product."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0714-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0714"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco explicitly confirms Webex Meetings, Teams and Web SDK are not vulnerable. This assessment is limited to those named offerings, not every Webex-branded product.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco explicitly confirms Webex Meetings, Teams and Web SDK are not vulnerable. This assessment is limited to those named offerings, not every Webex-branded product."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0034-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0034"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "The Azure App Service team confirms completed rollout of fixed built-in Linux PHP images to Latest and Standard. Extended, EOL runtimes and customer-maintained containers are not covered by that completion statement.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://azure.github.io/AppService/2026/10/21/php-critical-security-release-app-service-linux.html ; https://techcommunity.microsoft.com/blog/azurenetworksecurityblog/addressing-php2shell-cve-2026-109618-and-cve-2026-109619-upgrade-guidance-and-az/4566623\nAction statement: Use a supported runtime on Latest or Standard and verify the running PHP patch version; rebuild custom containers separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0034-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0034"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "The Azure App Service team confirms completed rollout of fixed built-in Linux PHP images to Latest and Standard. Extended, EOL runtimes and customer-maintained containers are not covered by that completion statement.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://azure.github.io/AppService/2026/10/21/php-critical-security-release-app-service-linux.html ; https://techcommunity.microsoft.com/blog/azurenetworksecurityblog/addressing-php2shell-cve-2026-109618-and-cve-2026-109619-upgrade-guidance-and-az/4566623\nAction statement: Use a supported runtime on Latest or Standard and verify the running PHP patch version; rebuild custom containers separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0035-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0035"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AWS confirms released AL2023 PHP platform 4.13.13 with upstream fixes: PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12. The earlier configuration-only platform update is not the fix recorded here.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://aws.amazon.com/security/security-bulletins/2026-143-aws/ ; https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2026-10-21-al2023-php84-php85.html ; https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2026-10-22-al2023-php82-php83.html\nAction statement: Update the environment platform to the applicable 4.13.13 release; managed updates apply during the configured maintenance window."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0035-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0035"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AWS confirms released AL2023 PHP platform 4.13.13 with upstream fixes: PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12. The earlier configuration-only platform update is not the fix recorded here.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://aws.amazon.com/security/security-bulletins/2026-143-aws/ ; https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2026-10-21-al2023-php84-php85.html ; https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2026-10-22-al2023-php82-php83.html\nAction statement: Update the environment platform to the applicable 4.13.13 release; managed updates apply during the configured maintenance window."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0404-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0404"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "WP Engine confirms all customer sites run fully patched PHP after deployment of official LTS-provider patches, separately from its earlier WAF and configuration mitigations.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://wpengine.com/blog/php-vulnerability-update/\nAction statement: No customer action required for the managed hosting scope covered by WP Engine's confirmation."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0404-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0404"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "WP Engine confirms all customer sites run fully patched PHP after deployment of official LTS-provider patches, separately from its earlier WAF and configuration mitigations.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://wpengine.com/blog/php-vulnerability-update/\nAction statement: No customer action required for the managed hosting scope covered by WP Engine's confirmation."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0416-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0416"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "TransIP confirms all PHP versions offered on its shared-webhosting platform were patched. Customer-managed VPS, Kubernetes and OpenStack PHP installations are excluded and require customer updates.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.transip.nl/knowledgebase/website-troubleshooting/kritieke-php-kwetsbaarheden-cve-2026-109618-en-cve-2026-109619\nAction statement: No action required on TransIP shared webhosting; separately patch customer-managed PHP environments."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0416-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0416"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "TransIP confirms all PHP versions offered on its shared-webhosting platform were patched. Customer-managed VPS, Kubernetes and OpenStack PHP installations are excluded and require customer updates.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.transip.nl/knowledgebase/website-troubleshooting/kritieke-php-kwetsbaarheden-cve-2026-109618-en-cve-2026-109619\nAction statement: No action required on TransIP shared webhosting; separately patch customer-managed PHP environments."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0657-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0657"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Sophos advisory version 4 confirms the MyUTM hosted portal ran affected PHP and was taken offline pending its update. The separate statement that Sophos products are not affected does not exclude this hosted service.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell",
+      "security_actionStatement": "Use Sophos Support for licensing while the portal is offline; no completed portal fix is asserted."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0657-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0657"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Sophos advisory version 4 confirms the MyUTM hosted portal ran affected PHP and was taken offline pending its update. The separate statement that Sophos products are not affected does not exclude this hosted service.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell",
+      "security_actionStatement": "Use Sophos Support for licensing while the portal is offline; no completed portal fix is asserted."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0420-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0420"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Render's official advisory directs customers to patch and redeploy their PHP Docker services for both CVEs. This is customer-container exposure, not a vulnerability assertion about Render's control plane or every deployed service.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://render.com/docs/advisory-php2shell",
+      "security_actionStatement": "Rebuild or obtain patched PHP images, redeploy each affected service, and verify the runtime serving web requests; Render does not automatically patch customer images."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0420-official-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0420"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Render's official advisory directs customers to patch and redeploy their PHP Docker services for both CVEs. This is customer-container exposure, not a vulnerability assertion about Render's control plane or every deployed service.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Public official source reviewed 2026-10-23. Sources: https://render.com/docs/advisory-php2shell",
+      "security_actionStatement": "Rebuild or obtain patched PHP images, redeploy each affected service, and verify the runtime serving web requests; Render does not automatically patch customer images."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0745",
+      "creationInfo": "_:creationinfo",
+      "name": "Plesk for Linux hosted PHP 7.4 and 8.0-8.5 fixed packages",
+      "software_packageVersion": "PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12; 7.4.33 / 8.0.30 / 8.1.34 built 2026-10-21",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0745"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:webpros-plesk:93657c157beb",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package or image scope.",
+      "description": "Fixed distribution scope of PHP-0029 (Plesk Obsidian hosted-site PHP).",
+      "comment": "Inventory record: PHP-0745\nParent inventory record: PHP-0029\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nSource accessed: 2026-10-23\nPHP version scope: PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12; 7.4.33 / 8.0.30 / 8.1.34 built 2026-10-21\nLimitations: Plesk confirms fixed Linux hosted PHP 8.2-8.5 packages and backports for 7.4.33, 8.0.30 and 8.1.34 built on 21 October 2026. The unchanged legacy version number alone is insufficient. PHP 5.6/7.2/7.3 and the internal sw-engine are separate update scopes.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0745",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0745",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package or image distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of the product tracked by PHP-0029; deployment and other product variants are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0745-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0745"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Plesk confirms fixed Linux hosted PHP 8.2-8.5 packages and backports for 7.4.33, 8.0.30 and 8.1.34 built on 21 October 2026. The unchanged legacy version number alone is insufficient. PHP 5.6/7.2/7.3 and the internal sw-engine are separate update scopes.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0745-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0745"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Plesk confirms fixed Linux hosted PHP 8.2-8.5 packages and backports for 7.4.33, 8.0.30 and 8.1.34 built on 21 October 2026. The unchanged legacy version number alone is insufficient. PHP 5.6/7.2/7.3 and the internal sw-engine are separate update scopes.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0746",
+      "creationInfo": "_:creationinfo",
+      "name": "Plesk for Windows hosted PHP 8.2-8.5 fixed packages",
+      "software_packageVersion": "PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0746"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:webpros-plesk:93657c157beb",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package or image scope.",
+      "description": "Fixed distribution scope of PHP-0029 (Plesk Obsidian hosted-site PHP).",
+      "comment": "Inventory record: PHP-0746\nParent inventory record: PHP-0029\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nSource accessed: 2026-10-23\nPHP version scope: PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12\nLimitations: Plesk confirms released Windows hosted PHP fixes in 8.2.35, 8.3.36, 8.4.27 and 8.5.12. This covers hosted PHP handlers only. The internal plesk-engine requires its separate Plesk update; older or custom handlers are outside this fixed scope.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk"
+          ],
+          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0746",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0746",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package or image distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of the product tracked by PHP-0029; deployment and other product variants are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0746-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0746"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Plesk confirms released Windows hosted PHP fixes in 8.2.35, 8.3.36, 8.4.27 and 8.5.12. This covers hosted PHP handlers only. The internal plesk-engine requires its separate Plesk update; older or custom handlers are outside this fixed scope.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0746-released-20261023",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0746"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Plesk confirms released Windows hosted PHP fixes in 8.2.35, 8.3.36, 8.4.27 and 8.5.12. This covers hosted PHP handlers only. The internal plesk-engine requires its separate Plesk update; older or custom handlers are outside this fixed scope.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-10-23: https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0750",
+      "creationInfo": "_:creationinfo",
+      "name": "Cisco Meraki Dashboard",
+      "software_primaryPurpose": "application",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0750"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
+      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Meraki Dashboard as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "description": "Hosted network management dashboard",
+      "comment": "Inventory record: PHP-0750\nCategory: Hosting and cloud\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.4, updated 2026-10-22 23:00 GMT) lists Meraki Dashboard under 'Products Under Investigation' (Cisco Cloud Hosted Services); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Cisco advisory version 1.4 lists this product under investigation; affected and fixed releases are not published.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Cisco advisory version 1.4 under-investigation product scope",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
+          ],
+          "comment": "Official public CVE review 2026-10-23"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0750",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0750",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "other",
+      "summary": "Inventory association for PHP-0750: vendor PHP advisory candidate",
+      "comment": "Cisco advisory version 1.4 lists this product under investigation for PHP2Shell. This association records vendor review scope only; a PHP dependency is not confirmed."
     }
   ]
 }
