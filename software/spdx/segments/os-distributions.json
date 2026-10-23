@@ -3001,6 +3001,81 @@
       "security_statusNotes": "CloudLinux confirms fixed ea-php52 through ea-php85 packages in stable for EL7/8/9/10. Use the exact vendor package revisions, not the upstream PHP number alone: for example ea-php84 8.4.26-2.elX.cloudlinux.1 contains both fixes. CL6 and other platforms are not included in this fixed scope.",
       "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
       "comment": "Official sources reviewed 2026-10-23: https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0753",
+      "creationInfo": "_:creationinfo",
+      "name": "GetPageSpeed PHP 5.6-8.4 backport packages for CentOS 7 / EL7",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0753"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:getpagespeed:5d1f0c2a9b3e",
+      "summary": "GetPageSpeed released fixed PHP 5.6 to 8.4 RPMs for CentOS 7 / EL7, including backports for the branches upstream no longer supports (5.6 to 8.1).",
+      "description": "Remi-compatible EL7 PHP RPMs (base-name and software collection packages)",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.getpagespeed.com/php2shell#eol"
+          ],
+          "comment": "GetPageSpeed PHP2Shell page listing the patched EL7 build per PHP branch"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://www.getpagespeed.com/eol/centos-7"
+          ],
+          "comment": "GetPageSpeed CentOS 7 extended lifecycle PHP packages"
+        }
+      ],
+      "software_packageVersion": "5.6 to 8.4 (EL7 builds)",
+      "comment": "Inventory record: PHP-0753\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix in the specified scope\nDeployment status: Not measured\nPHP surface: Remi-compatible PHP 5.6 to 8.4 RPMs for CentOS 7 / RHEL 7 (base-name php-* packages and php56-php to php84-php software collections), served via mod_php, PHP-FPM and CLI\nPHP version scope: Current patched builds (the fix first shipped in earlier releases of these branches, so these builds and anything newer are fixed): 5.6 5.6.40-44.el7; 7.0 7.0.33-46.el7; 7.1 7.1.33-35.el7; 7.2 7.2.34-30.el7; 7.3 7.3.33-26.el7; 7.4 7.4.33-35.el7; 8.0 8.0.30-25.el7; 8.1 8.1.34-8.el7; 8.2 8.2.35-2.el7; 8.3 8.3.36-2.el7; 8.4 8.4.27-3.el7. 5.6 to 8.1 carry backports of the upstream fix (official PHP 7.4/8.0/8.1 minimal backports, ported to 5.6-7.3); 8.2 to 8.4 are the fixed upstream releases rebuilt for EL7. Software collection builds (phpNN-php-*) carry the same fix.\nLimitations: Upstream version numbers stay unchanged for 5.6 to 8.1, so version-only scanners report these builds as vulnerable; verify the package release. Package availability does not prove operator rollout or service restart.\nPatch owner: GetPageSpeed for the EL7 PHP backport builds; system administrator for update and service rollout\nDownstream surface: Only applications/jobs using the installed GetPageSpeed PHP runtime\nRelease pin: 5.6 5.6.40-44.el7; 7.0 7.0.33-46.el7; 7.1 7.1.33-35.el7; 7.2 7.2.34-30.el7; 7.3 7.3.33-26.el7; 7.4 7.4.33-35.el7; 8.0 8.0.30-25.el7; 8.1 8.1.34-8.el7; 8.2 8.2.35-2.el7; 8.3 8.3.36-2.el7; 8.4 8.4.27-3.el7\nSource accessed: 2026-10-24\nAliases: getpagespeed:extras/el7/php\nVulnerability status: Fixed in GetPageSpeed CentOS 7 / EL7 PHP builds: 5.6 5.6.40-44.el7; 7.0 7.0.33-46.el7; 7.1 7.1.33-35.el7; 7.2 7.2.34-30.el7; 7.3 7.3.33-26.el7; 7.4 7.4.33-35.el7; 8.0 8.0.30-25.el7; 8.1 8.1.34-8.el7; 8.2 8.2.35-2.el7; 8.3 8.3.36-2.el7; 8.4 8.4.27-3.el7.\nCVE-2026-109618: Fixed in GetPageSpeed CentOS 7 / EL7 PHP builds: 5.6 5.6.40-44.el7; 7.0 7.0.33-46.el7; 7.1 7.1.33-35.el7; 7.2 7.2.34-30.el7; 7.3 7.3.33-26.el7; 7.4 7.4.33-35.el7; 8.0 8.0.30-25.el7; 8.1 8.1.34-8.el7; 8.2 8.2.35-2.el7; 8.3 8.3.36-2.el7; 8.4 8.4.27-3.el7\nCVE-2026-109619: Fixed in GetPageSpeed CentOS 7 / EL7 PHP builds: 5.6 5.6.40-44.el7; 7.0 7.0.33-46.el7; 7.1 7.1.33-35.el7; 7.2 7.2.34-30.el7; 7.3 7.3.33-26.el7; 7.4 7.4.33-35.el7; 8.0 8.0.30-25.el7; 8.1 8.1.34-8.el7; 8.2 8.2.35-2.el7; 8.3 8.3.36-2.el7; 8.4 8.4.27-3.el7\nCVE assessment limit: Vendor page establishes fixed build availability for the listed EL7 branches, not operator rollout.\nMapped from inventory relationship 'bundles' and direction 'distributes_php' to SPDX relationshipType 'contains'."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0753",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0753",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "Inventory relationship for PHP-0753: bundles (distributes_php)",
+      "comment": "Mapped from inventory relationship 'bundles' and direction 'distributes_php' to SPDX relationshipType 'contains'."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:getpagespeed-el7-php-20261024",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0753"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in GetPageSpeed CentOS 7 / EL7 PHP builds: 5.6 5.6.40-44.el7; 7.0 7.0.33-46.el7; 7.1 7.1.33-35.el7; 7.2 7.2.34-30.el7; 7.3 7.3.33-26.el7; 7.4 7.4.33-35.el7; 8.0 8.0.30-25.el7; 8.1 8.1.34-8.el7; 8.2 8.2.35-2.el7; 8.3 8.3.36-2.el7; 8.4 8.4.27-3.el7",
+      "summary": "CVE-2026-109618 assessment: Fixed in GetPageSpeed CentOS 7 / EL7 PHP builds: 5.6 5.6.40-44.el7; 7.0 7.0.33-46.el7; 7.1 7.1.33-35.el7; 7.2 7.2.34-30.el7; 7.3 7.3.33-26.el7; 7.4 7.4.33-35.el7; 8.0 8.0.30-25.el7; 8.1 8.1.34-8.el7; 8.2 8.2.35-2.el7; 8.3 8.3.36-2.el7; 8.4 8.4.27-3.el7",
+      "comment": "Added from the vendor page https://www.getpagespeed.com/php2shell#eol (accessed 2026-10-24).\nAction statement: Install release-latest.rpm from extras.getpagespeed.com, upgrade the PHP packages for the installed branch, and restart PHP-FPM or httpd."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:getpagespeed-el7-php-20261024",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0753"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in GetPageSpeed CentOS 7 / EL7 PHP builds: 5.6 5.6.40-44.el7; 7.0 7.0.33-46.el7; 7.1 7.1.33-35.el7; 7.2 7.2.34-30.el7; 7.3 7.3.33-26.el7; 7.4 7.4.33-35.el7; 8.0 8.0.30-25.el7; 8.1 8.1.34-8.el7; 8.2 8.2.35-2.el7; 8.3 8.3.36-2.el7; 8.4 8.4.27-3.el7",
+      "summary": "CVE-2026-109619 assessment: Fixed in GetPageSpeed CentOS 7 / EL7 PHP builds: 5.6 5.6.40-44.el7; 7.0 7.0.33-46.el7; 7.1 7.1.33-35.el7; 7.2 7.2.34-30.el7; 7.3 7.3.33-26.el7; 7.4 7.4.33-35.el7; 8.0 8.0.30-25.el7; 8.1 8.1.34-8.el7; 8.2 8.2.35-2.el7; 8.3 8.3.36-2.el7; 8.4 8.4.27-3.el7",
+      "comment": "Added from the vendor page https://www.getpagespeed.com/php2shell#eol (accessed 2026-10-24).\nAction statement: Install release-latest.rpm from extras.getpagespeed.com, upgrade the PHP packages for the installed branch, and restart PHP-FPM or httpd."
     }
   ]
 }

@@ -3234,6 +3234,12 @@
       "spdxId": "urn:php2shell:inventory:organization:netapp:35b1a7722289",
       "creationInfo": "_:creationinfo",
       "name": "NetApp"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:getpagespeed:5d1f0c2a9b3e",
+      "creationInfo": "_:creationinfo",
+      "name": "GetPageSpeed"
     }
   ]
 }
