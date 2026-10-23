@@ -9,3 +9,4 @@ The material here is intended as operational guidance and should be tested befor
 | Directory | Purpose |
 | --- | --- |
 | [cpanel](cpanel) | cPanel EasyApache 4 mitigation material. |
+| [php-sentinel](php-sentinel) | Reverse proxy canary array — compensating control for EOL PHP versions (5.6–8.1) where no vendor patch exists. |
