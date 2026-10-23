@@ -102,7 +102,7 @@ class SoftwareStatusUpdatesTests(unittest.TestCase):
         text = updated.decode("utf-8")
         self.assertLess(text.index("## Repository contents"), text.index(generator.README_UPDATES_HEADING))
         self.assertLess(text.index(generator.README_UPDATES_HEADING), text.index("## Contributions welcome"))
-        self.assertIn("Operational information: unchanged<br>\r\n", text)
+        self.assertIn("Operational information last significant change: unchanged<br>\r\n", text)
         self.assertIn("Keep this text.\r\n", text)
         self.assertTrue(text.endswith("## Contributions welcome\r\nKeep this too.\r\n"))
         self.assertNotIn(b"\n", updated.replace(b"\r\n", b""))
@@ -118,7 +118,7 @@ class SoftwareStatusUpdatesTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             (root / "README.md").write_text(
-                "# Inventory\nOperational information: unchanged<br>\n"
+                "# Inventory\nOperational information last significant change: unchanged<br>\n"
                 "## Repository contents\n\n## Contributions welcome\n",
                 encoding="utf-8",
             )
