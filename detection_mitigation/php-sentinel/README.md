@@ -2,7 +2,7 @@
 
 A reverse proxy that defends PHP applications against CVE-2026-109618 and CVE-2026-109619 (php2shell). Two layers of protection:
 
-1. **Upload-progress filter** (primary) — blocks any multipart request containing `PHP_SESSION_UPLOAD_PROGRESS`, the shared attack surface for both CVE-2026-109618 and CVE-2026-109619. Deterministic, no latency cost.
+1. **Upload-progress filter** (primary) — blocks any multipart request containing the `session.upload_progress` field name (default `PHP_SESSION_UPLOAD_PROGRESS`, configurable via `SENTINEL_UPLOAD_PROGRESS_NAME`), the shared attack surface for both CVE-2026-109618 and CVE-2026-109619. Deterministic, no latency cost.
 2. **Canary array** (defense in depth) — replays every request through 11 isolated PHP-FPM instances (PHP 5.6–8.4) in parallel. If any canary worker crashes, OOMs, or hangs, the request is blocked before production sees it. Catches unknown parser bugs that the filter doesn't cover.
 
 **Compensating control for EOL PHP versions (5.6, 7.x, 8.0, 8.1) where no vendor patch exists.**
@@ -25,7 +25,7 @@ Set `SENTINEL_BACKEND_URL` in `docker-compose.yml` to your PHP application's add
 
 ## Test results
 
-Tested against four independent public PoC exploit tools targeting CVE-2026-109618 and CVE-2026-109619:
+Tested against five independent public PoC exploit tools targeting CVE-2026-109618 and CVE-2026-109619:
 
 | PoC | Attack type | Result |
 | --- | --- | --- |
@@ -34,6 +34,7 @@ Tested against four independent public PoC exploit tools targeting CVE-2026-1096
 | ikow/php2shell-poc | 4-tier scanner + active OOM probe | Blocked |
 | ikow/php2shell-poc | OOM header bomb (5000 headers) | Blocked (403) |
 | ikow/php2shell-poc | Session filename injection | Blocked (upload_progress filter) |
+| cozybear/cve-2026-109619 | CVE-2026-109619 stale session state → RCE | Blocked (filter ON: blocked at proxy; filter OFF: all 11 canaries crashed, 403) |
 
 ## Limitations
 
