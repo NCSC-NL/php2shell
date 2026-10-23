@@ -9,7 +9,7 @@ The material here is intended as operational guidance and should be tested befor
 | Directory | Purpose |
 | --- | --- |
 | [cpanel](cpanel) | cPanel EasyApache 4 mitigation material. |
-
+| [version_check](version_check) | Self-deleting file that reports the exact PHP runtime version a site is served with. |
 
 ## Community tools
 
