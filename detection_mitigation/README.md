@@ -9,3 +9,4 @@ The material here is intended as operational guidance and should be tested befor
 | Directory | Purpose |
 | --- | --- |
 | [cpanel](cpanel) | cPanel EasyApache 4 mitigation material. |
+| [server-inventory](server-inventory) | Inventorying PHP packages, control-panel and source builds on Linux, checking fix evidence, and identifying stale workers. |
