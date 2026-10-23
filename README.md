@@ -1,7 +1,7 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
-Operational information: 21 October 2026 17:25 CEST<br>
-Software list last status update: 23 October 2026 14:46 CEST<br>
+Operational information last significant change: 21 October 2026 17:25 CEST<br>
+Software list last status update: 23 October 2026 17:12 CEST<br>
 ## TLP:CLEAR
 
 This repository contains operational information regarding the critical PHP vulnerabilities tracked by CERT-EU as CVE-2026-109618 and CVE-2026-109619.
@@ -44,11 +44,11 @@ The repository is being updated as the situation develops. Check back for update
 
 | Date and time | Supplier | Product | Version (see Status) | Status CVE-2026-109618 / CVE-2026-109619 | Links |
 |:------------------------|:---------|:--------|:--------------------:|:----------------------:|------:|
-|2026-10-23 14:46:29 +0200|Broadcom|Symantec Endpoint Protection Manager (SEPM)|14.3.27716.10000 / 14.4.494.0000|Fix|[source 1](<https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404>)<br>[source 2](<https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Symantec-Endpoint-Protection-Security-Update-for-PHP2Shell/39421>)<br>[source 3](<https://github.com/NCSC-NL/php2shell/issues/30>)|
-|2026-10-23 14:46:29 +0200|Hewlett Packard Enterprise|HPE Networking ClearPass Policy Manager|6.14.0 and below / 6.11.15 and below; 6.14.1 / 6.11.16 partially mitigated, still affected|Vulnerable|[source](<https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw05171en_us&docLocale=en_US>)|
-|2026-10-23 14:46:29 +0200|NetApp|ONTAP 9|ONTAP 9; affected maintenance releases and fixed releases not specified|Vulnerable/Not vuln|[source](<https://security.netapp.com/advisory/NTAP-20261021-0021>)|
-|2026-10-23 13:48:52 +0200|Cisco|Cisco Expressway Select Series|Expressway Select Series; affected release range not specified|Vulnerable|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
-|2026-10-23 13:48:52 +0200|Cisco|Cisco Identity Services Engine (ISE) Portal Builder||Investigation|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
+|2026-10-23 17:12:30 +0200|Adiscon / LogAnalyzer project|Adiscon LogAnalyzer PHP web application||Investigation|[source 1](<https://github.com/rsyslog/loganalyzer>)<br>[source 2](<https://github.com/rsyslog/loganalyzer/blob/master/composer.json>)|
+|2026-10-23 17:12:30 +0200|Adobe|Adobe Commerce||Investigation|[source 1](<https://experienceleague.adobe.com/en/docs/commerce-operations/installation-guide/prerequisites/php-settings>)<br>[source 2](<https://experienceleague.adobe.com/en/docs/commerce-operations/installation-guide/system-requirements>)|
+|2026-10-23 17:12:30 +0200|AfterLogic|AfterLogic WebMail Lite PHP||Investigation|[source](<https://afterlogic.com/docs/webmail-lite/system-requirements>)|
+|2026-10-23 17:12:30 +0200|Akaunting|Akaunting self-hosted application||Investigation|[source 1](<https://github.com/akaunting/akaunting/blob/master/composer.json>)<br>[source 2](<https://github.com/akaunting/akaunting>)|
+|2026-10-23 17:12:30 +0200|Alpine Linux package maintainers|Alpine Linux v3.22 php84 package family|v3.22/community php84 8.4.27-r0|Fix|[source 1](<https://pkgs.alpinelinux.org/package/v3.22/community/x86_64/php84>)<br>[source 2](<https://secdb.alpinelinux.org/v3.22/community.json>)|
 
 See the [full software status update history](software/changelog_software_list.md).
 

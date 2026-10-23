@@ -669,9 +669,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:roundcube-project:a7c8aa7ae5bb",
-      "summary": "Roundcube published replacement images after an fpm-alpine regression; the verified 1.7.x-fpm-alpine rebuild is recorded separately.",
+      "summary": "The Roundcube maintainer confirms that an fpm-alpine change reintroduced the old base image after the initial rebuild. The 23 October comment says the correction is made and replacement images are building; that statement alone does not prove publication. Old images remain affected.",
       "description": "Apache, FPM and FPM-Alpine variants derive from corresponding official PHP images",
-      "comment": "Inventory record: PHP-0381\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0026\nEvidence status: Vendor-confirmed affected scope with separately recorded fixed releases\nDeployment status: Not measured\nPHP surface: Apache, FPM and FPM-Alpine variants derive from corresponding official PHP images\nPHP version scope: Roundcube reports rebuilt images, followed by an fpm-alpine regression corrected on 23 October. The republished 1.7.x-fpm-alpine index with PHP 8.4.27 is recorded separately in PHP-0747. The broad family remains Vulnerable for old or unrebuilt variants; this review does not verify every historical tag.\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: Roundcube reports rebuilt images, followed by an fpm-alpine regression corrected on 23 October. The republished 1.7.x-fpm-alpine index with PHP 8.4.27 is recorded separately in PHP-0747. The broad family remains Vulnerable for old or unrebuilt variants; this review does not verify every historical tag.\nPatch owner: Roundcube image maintainers and PHP base-image maintainers; operator refreshes derived images and rolls out webmail containers\nDownstream surface: Webmail messages, sessions, plugins and configured IMAP/SMTP/database/OAuth credentials\nRelease pin: Official advisory reviewed 2026-10-23; fixed scope recorded separately\nSource accessed: 2026-10-23\nAliases: docker.io/roundcube/roundcubemail\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://github.com/roundcube/roundcubemail-docker/issues/468#issuecomment-6361850134; https://hub.docker.com/v2/repositories/roundcube/roundcubemail/tags/1.7.x-fpm-alpine\nCVE assessment limit: Roundcube reports rebuilt images, followed by an fpm-alpine regression corrected on 23 October. The republished 1.7.x-fpm-alpine index with PHP 8.4.27 is recorded separately in PHP-0747. The broad family remains Vulnerable for old or unrebuilt variants; this review does not verify every historical tag.\nVulnerability status: Roundcube reports rebuilt images, followed by an fpm-alpine regression corrected on 23 October. The republished 1.7.x-fpm-alpine index with PHP 8.4.27 is recorded separately in PHP-0747. The broad family remains Vulnerable for old or unrebuilt variants; this review does not verify every historical tag.\nCVE-2026-109618: Vulnerable in the stated scope; see VEX assessment\nCVE-2026-109619: Vulnerable in the stated scope; see VEX assessment\nFix sources: https://github.com/roundcube/roundcubemail-docker/issues/468#issuecomment-6361850134; https://hub.docker.com/v2/repositories/roundcube/roundcubemail/tags/1.7.x-fpm-alpine",
+      "comment": "Inventory record: PHP-0381\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0026\nEvidence status: Official-source CVE review; product and deployment scope retained\nDeployment status: Not measured\nPHP surface: Apache, FPM and FPM-Alpine variants derive from corresponding official PHP images\nPHP version scope: Unpatched Roundcube images; fpm-alpine regression scope\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: Roundcube reports rebuilt images, followed by an fpm-alpine regression corrected on 23 October. The republished 1.7.x-fpm-alpine index with PHP 8.4.27 is recorded separately in PHP-0747. The broad family remains Vulnerable for old or unrebuilt variants; this review does not verify every historical tag.\nPatch owner: Roundcube image maintainers and PHP base-image maintainers; operator refreshes derived images and rolls out webmail containers\nDownstream surface: Webmail messages, sessions, plugins and configured IMAP/SMTP/database/OAuth credentials\nRelease pin: Unpatched Roundcube images; fpm-alpine regression scope\nSource accessed: 2026-10-23\nAliases: docker.io/roundcube/roundcubemail\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://github.com/roundcube/roundcubemail-docker/issues/468\nCVE assessment limit: The Roundcube maintainer confirms that an fpm-alpine change reintroduced the old base image after the initial rebuild. The 23 October comment says the correction is made and replacement images are building; that statement alone does not prove publication. Old images remain affected.\nVulnerability status: Vulnerable / Vulnerable; see CVE-specific assessment\nCVE-2026-109618: Vulnerable in the stated scope\nCVE-2026-109619: Vulnerable in the stated scope\nRemediation: Pull and recreate from a verified replacement image. The existing separately recorded PHP-0747 fixed image was outside this initially Investigation/Vulnerable review; no additional tag-wide Fix conclusion is made here.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -704,9 +704,17 @@
             "https://hub.docker.com/v2/repositories/roundcube/roundcubemail/tags/1.7.x-fpm-alpine"
           ],
           "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/roundcube/roundcubemail-docker/issues/468"
+          ],
+          "comment": "Vendor: Roundcube project. Product: Roundcube Webmail Docker image family. Title: Roundcube Docker Image Rebuilds: PHP Core Patches CVE-2026-109618 / CVE-2026-109619. Published: 2026-10-21. Updated: 2026-10-23 maintainer comments. CVEs: CVE-2026-109618, CVE-2026-109619. Official provenance: Vendor/upstream-owned publication. Exact wording: This is fixed already and the new images are currently building. Accessed: 2026-10-23."
         }
       ],
-      "software_packageVersion": "Unpatched PHP builds; fixed release scopes listed separately"
+      "software_packageVersion": "Unpatched Roundcube images; fpm-alpine regression scope"
     },
     {
       "type": "software_Package",
@@ -1432,10 +1440,10 @@
         "urn:php2shell:inventory:package:PHP-0381"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Roundcube reports rebuilt images, followed by an fpm-alpine regression corrected on 23 October. The republished 1.7.x-fpm-alpine index with PHP 8.4.27 is recorded separately in PHP-0747. The broad family remains Vulnerable for old or unrebuilt variants; this review does not verify every historical tag.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable in the remaining unpatched scope",
-      "comment": "Official sources reviewed 2026-10-23: https://github.com/roundcube/roundcubemail-docker/issues/468#issuecomment-6361850134; https://hub.docker.com/v2/repositories/roundcube/roundcubemail/tags/1.7.x-fpm-alpine",
-      "security_actionStatement": "Pull and recreate from a verified fixed image; for 1.7.x-fpm-alpine use the 23 October replacement index and verify the runtime."
+      "summary": "CVE-2026-109618 assessment: Vulnerable in the stated scope",
+      "comment": "Official-source review 2026-10-23. Sources: https://github.com/roundcube/roundcubemail-docker/issues/468",
+      "security_statusNotes": "The Roundcube maintainer confirms that an fpm-alpine change reintroduced the old base image after the initial rebuild. The 23 October comment says the correction is made and replacement images are building; that statement alone does not prove publication. Old images remain affected.",
+      "security_actionStatement": "Pull and recreate from a verified replacement image. The existing separately recorded PHP-0747 fixed image was outside this initially Investigation/Vulnerable review; no additional tag-wide Fix conclusion is made here."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -1446,10 +1454,10 @@
         "urn:php2shell:inventory:package:PHP-0381"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Roundcube reports rebuilt images, followed by an fpm-alpine regression corrected on 23 October. The republished 1.7.x-fpm-alpine index with PHP 8.4.27 is recorded separately in PHP-0747. The broad family remains Vulnerable for old or unrebuilt variants; this review does not verify every historical tag.",
-      "summary": "CVE-2026-109619 assessment: Vulnerable in the remaining unpatched scope",
-      "comment": "Official sources reviewed 2026-10-23: https://github.com/roundcube/roundcubemail-docker/issues/468#issuecomment-6361850134; https://hub.docker.com/v2/repositories/roundcube/roundcubemail/tags/1.7.x-fpm-alpine",
-      "security_actionStatement": "Pull and recreate from a verified fixed image; for 1.7.x-fpm-alpine use the 23 October replacement index and verify the runtime."
+      "summary": "CVE-2026-109619 assessment: Vulnerable in the stated scope",
+      "comment": "Official-source review 2026-10-23. Sources: https://github.com/roundcube/roundcubemail-docker/issues/468",
+      "security_statusNotes": "The Roundcube maintainer confirms that an fpm-alpine change reintroduced the old base image after the initial rebuild. The 23 October comment says the correction is made and replacement images are building; that statement alone does not prove publication. Old images remain affected.",
+      "security_actionStatement": "Pull and recreate from a verified replacement image. The existing separately recorded PHP-0747 fixed image was outside this initially Investigation/Vulnerable review; no additional tag-wide Fix conclusion is made here."
     },
     {
       "type": "software_Package",
