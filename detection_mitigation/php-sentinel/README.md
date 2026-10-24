@@ -23,6 +23,14 @@ docker compose build && docker compose up -d
 
 Set `SENTINEL_BACKEND_URL` in `docker-compose.yml` to your PHP application's address. Dashboard available at `/__sentinel/dashboard`.
 
+The upload-progress filter auto-detects the field name from the canary PHP config. If your production PHP uses a custom `session.upload_progress.name`, check it with:
+
+```bash
+php -r "echo ini_get('session.upload_progress.name');"
+```
+
+Then set the same value in `canary/php.ini` (the proxy reads it at startup) or override via `SENTINEL_UPLOAD_PROGRESS_NAME` env var.
+
 ## Test results
 
 Tested against five independent public PoC exploit tools targeting CVE-2026-109618 and CVE-2026-109619:
@@ -40,7 +48,7 @@ Tested against five independent public PoC exploit tools targeting CVE-2026-1096
 
 - The upload-progress filter blocks the shared attack surface for both CVE-2026-109618 and CVE-2026-109619. Both CVEs are triggered through the `session.upload_progress` handler.
 - The canary array detects exploits that **crash** PHP workers. A successful RCE that runs without crashing is not caught by the canaries.
-- Canaries run `memory_limit=16M`, not production's config. OOM thresholds can differ between canary and production.
+- Canaries run `memory_limit=16M`. Keep this at or below production's `memory_limit` — CVE-2026-109618 is triggered by hitting the OOM handler, so the canary must reach that limit before production does.
 - CVE-2026-109619 can corrupt worker state across multiple requests. Single-request canary replay does not reproduce multi-request heap grooming. The upload-progress filter blocks the entry point; the canaries cannot independently detect silent cross-request exploitation.
 - Adds latency per request (parallel canary replay, bounded by the slowest canary). The upload-progress filter adds none.
 - Requires Docker on the host system.
