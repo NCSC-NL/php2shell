@@ -42,7 +42,7 @@ Tested against five independent public PoC exploit tools targeting CVE-2026-1096
 | ikow/php2shell-poc | 4-tier scanner + active OOM probe | Blocked |
 | ikow/php2shell-poc | OOM header bomb (5000 headers) | Blocked (403) |
 | ikow/php2shell-poc | Session filename injection | Blocked (upload_progress filter) |
-| [Taz1920/cve-2026-109619](https://github.com/Taz1920/cve-2026-109619) | CVE-2026-109619 stale session state → RCE | Attack vector blocked (filter ON: all requests blocked at proxy; filter OFF: all 11 canaries crashed, 403). Positive control (RCE without Sentinel) not yet confirmed on test environment — see `tests/RESULTS.md` for details. |
+| [Taz1920/cve-2026-109619](https://github.com/Taz1920/cve-2026-109619) | CVE-2026-109619 stale session state → RCE | **Blocked (confirmed RCE prevented).** Positive control: exploit achieves full RCE on PHP 8.4.26 without Sentinel (`id` executed as www-data). With Sentinel: filter ON blocks all requests at proxy; filter OFF crashes all 11 canaries (403). See `tests/RESULTS.md`. |
 
 WordPress false-positive pilot: 57 legitimate requests (pages, admin, login, uploads, REST API, XML-RPC, AJAX, static assets), 0 false positives. See `tests/wordpress-pilot/`.
 
