@@ -1,8 +1,8 @@
 # PHP Sentinel
 
-A reverse proxy that defends PHP applications against CVE-2026-109618 and CVE-2026-109619 (php2shell). Two layers of protection:
+A reverse proxy that defends PHP applications against CVE-2026-109618 and the known public exploits for CVE-2026-109619 (php2shell). Two layers of protection:
 
-1. **Upload-progress filter** (primary) — blocks any multipart request containing the `session.upload_progress` field name (default `PHP_SESSION_UPLOAD_PROGRESS`, configurable via `SENTINEL_UPLOAD_PROGRESS_NAME`), the shared attack surface for both CVE-2026-109618 and CVE-2026-109619. Deterministic, no latency cost.
+1. **Upload-progress filter** (primary) — blocks any multipart request containing the `session.upload_progress` field name (default `PHP_SESSION_UPLOAD_PROGRESS`, configurable via `SENTINEL_UPLOAD_PROGRESS_NAME`), the attack surface used by CVE-2026-109618 and all known public CVE-2026-109619 exploits. Deterministic, no latency cost. Note: CVE-2026-109619 has other confirmed trigger paths (e.g. `fatal_error_backtraces` on PHP 8.5 mod_php) that do not go through upload progress — the filter does not cover those.
 2. **Canary array** (defense in depth) — replays every request through 11 isolated PHP-FPM instances (PHP 5.6–8.4) in parallel. If any canary worker crashes, OOMs, or hangs, the request is blocked before production sees it. Catches unknown parser bugs that the filter doesn't cover.
 
 **Compensating control for EOL PHP versions (5.6, 7.x, 8.0, 8.1) where no vendor patch exists.**
@@ -48,10 +48,10 @@ WordPress false-positive pilot: 57 legitimate requests (pages, admin, login, upl
 
 ## Limitations
 
-- The upload-progress filter blocks the shared attack surface for both CVE-2026-109618 and CVE-2026-109619. Both CVEs are triggered through the `session.upload_progress` handler.
+- The upload-progress filter blocks the attack surface used by CVE-2026-109618 and all known public CVE-2026-109619 exploits. However, CVE-2026-109619 is a stale-state bug with multiple confirmed trigger paths — `session.upload_progress` is one, but `fatal_error_backtraces` on PHP 8.5 mod_php is another that does not involve upload progress. The filter does not cover trigger paths that bypass upload progress.
 - The canary array detects exploits that **crash** PHP workers. A successful RCE that runs without crashing is not caught by the canaries.
 - Canaries run `memory_limit=16M`. Keep this at or below production's `memory_limit` — CVE-2026-109618 is triggered by hitting the OOM handler, so the canary must reach that limit before production does.
-- CVE-2026-109619 can corrupt worker state across multiple requests. Single-request canary replay does not reproduce multi-request heap grooming. The upload-progress filter blocks the entry point; the canaries cannot independently detect silent cross-request exploitation.
+- CVE-2026-109619 can corrupt worker state across multiple requests. Single-request canary replay does not reproduce multi-request heap grooming. The upload-progress filter blocks the known entry points that use upload progress; the canaries cannot independently detect silent cross-request exploitation.
 - Adds latency per request (parallel canary replay, bounded by the slowest canary). The upload-progress filter adds none.
 - Requires Docker on the host system.
 - Does not replace updating to fixed PHP releases where available. This is a compensating control for environments where patching is not possible.
