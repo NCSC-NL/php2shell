@@ -33,7 +33,7 @@ Then set the same value in `canary/php.ini` (the proxy reads it at startup) or o
 
 ## Test results
 
-Tested against five independent public PoC exploit tools targeting CVE-2026-109618 and CVE-2026-109619:
+Tested against four independent public PoC exploit tools targeting CVE-2026-109618 and CVE-2026-109619:
 
 | PoC | Attack type | Result |
 | --- | --- | --- |
