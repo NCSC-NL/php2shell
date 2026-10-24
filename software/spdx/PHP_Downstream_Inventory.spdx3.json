@@ -4615,7 +4615,12 @@
         "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0752-official-20261023",
         "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0752-official-20261023",
         "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0731-maintainer-20261023",
-        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0731-maintainer-20261023"
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0731-maintainer-20261023",
+        "urn:php2shell:inventory:organization:ubiquiti",
+        "urn:php2shell:inventory:package:PHP-0753",
+        "urn:php2shell:inventory:relationship:PHP-0753",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:ubiquiti-uisp-crm-20261024",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:ubiquiti-uisp-crm-20261024"
       ]
     },
     {
@@ -41678,6 +41683,12 @@
       "name": "Tenable"
     },
     {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:ubiquiti",
+      "creationInfo": "_:creationinfo",
+      "name": "Ubiquiti"
+    },
+    {
       "type": "software_Package",
       "spdxId": "urn:php2shell:inventory:package:PHP-0727",
       "creationInfo": "_:creationinfo",
@@ -42534,6 +42545,51 @@
       ]
     },
     {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0753",
+      "creationInfo": "_:creationinfo",
+      "name": "UISP CRM (UCRM)",
+      "software_primaryPurpose": "application",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0753"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:ubiquiti",
+      "software_packageVersion": "UISP Application 3.1.70 (CRM module)",
+      "summary": "Public official release dated 2026-10-23; Ubiquiti recommends updating promptly. The release notes do not specify a standalone CRM version, bundled PHP version, or complete affected-version range. Official release: https://uisp.community.ui.com/releases/UISP-Application-3-1-70/8292c6cb-4eb4-447d-9c90-455ca41b4f67 ; Historical community discussion: https://uisp.community.ui.com/questions/UCRM-4-6-15-remains-exposed-to-CVSS-9-2-RCEs-CVE-2026-109618-109619-ETA-for-PHP-8-3-36/d0fae711-2df1-4550-80e3-2b395a6a5c86 ; Earlier EA release (contents not independently verified): https://uisp.community.ui.com/releases/UISP-Application-3-1-69/d19ae117-04f7-42b3-bf53-f77d2b9e09fc",
+      "description": "CRM component of UISP Application (formerly UNMS).",
+      "comment": "Official release notes reviewed 2026-10-24. Assessment is limited to CVE-2026-109618 and CVE-2026-109619 in the UISP CRM module of UISP Application 3.1.70. No claim is made about UniFi, UISP hardware, the complete range of earlier affected releases, other CVEs, or cloud rollout.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "releaseNotes",
+          "locator": [
+            "https://uisp.community.ui.com/releases/UISP-Application-3-1-70/8292c6cb-4eb4-447d-9c90-455ca41b4f67"
+          ],
+          "comment": "Public official UISP Application 3.1.70 release notes; explicitly confirms fixes for both CVEs in the CRM PHP runtime. Reviewed 2026-10-24."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://uisp.community.ui.com/questions/UCRM-4-6-15-remains-exposed-to-CVSS-9-2-RCEs-CVE-2026-109618-109619-ETA-for-PHP-8-3-36/d0fae711-2df1-4550-80e3-2b395a6a5c86"
+          ],
+          "comment": "Community reports; not a vendor advisory."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "releaseNotes",
+          "locator": [
+            "https://uisp.community.ui.com/releases/UISP-Application-3-1-69/d19ae117-04f7-42b3-bf53-f77d2b9e09fc"
+          ],
+          "comment": "Official release URL; EA access gate observed, release-note contents not verified."
+        }
+      ]
+    },
+    {
       "type": "Relationship",
       "spdxId": "urn:php2shell:inventory:relationship:PHP-0727",
       "creationInfo": "_:creationinfo",
@@ -42844,6 +42900,18 @@
       "relationshipType": "dependsOn",
       "summary": "ONTAP 9 web services invoke PHP as confirmed by NetApp's advisory.",
       "comment": "NTAP-20261021-0021 version 3.0 describes Apache invoking PHP on vulnerable endpoints. The exact runtime version and SAPI are not published; the dependency targets the unversioned PHP core family."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0753",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0753",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "dependsOn",
+      "summary": "Vendor-confirmed PHP runtime dependency in the UISP CRM module.",
+      "comment": "UISP Application 3.1.70 official release notes identify the PHP runtime used by the CRM module. Source: https://uisp.community.ui.com/releases/UISP-Application-3-1-70/8292c6cb-4eb4-447d-9c90-455ca41b4f67"
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -43911,6 +43979,18 @@
       "comment": "Public vendor assessment reviewed 2026-10-23. Sources: https://www.tenable.com/security/tns-2026-28 ; https://docs.tenable.com/release-notes/Content/security-center/2026.htm\nAction statement: Install the matching vendor patch and restart Security Center after installation; verify the patch applied successfully."
     },
     {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:ubiquiti-uisp-crm-20261024",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0753"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Ubiquiti confirms that UISP Application 3.1.70 fixes both PHP2Shell CVEs in the PHP runtime used by the UISP CRM module. Fix status applies to that release; it does not establish that existing deployments or cloud instances have been upgraded.",
+      "comment": "Public official source reviewed 2026-10-24: https://uisp.community.ui.com/releases/UISP-Application-3-1-70/8292c6cb-4eb4-447d-9c90-455ca41b4f67\nAction statement: Update to UISP Application 3.1.70 using vendor instructions and verify successful deployment."
+    },
+    {
       "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:broadcom-esg-39404-20261022",
       "creationInfo": "_:creationinfo",
@@ -44974,6 +45054,18 @@
       "security_statusNotes": "Patch SC-202610.1 updates the bundled PHP to 8.2.35. Affected: Security Center 6.9.1 and earlier. Patch-supported scope: Security Center 6.6.0, 6.7.2, 6.8.0 and 6.9.1 on Oracle Linux or Red Hat Enterprise Linux 8 or later. Install the matching vendor patch and restart Security Center after installation; verify the patch applied successfully. Unpatched installations remain affected.",
       "summary": "CVE-2026-109619 assessment: Fixed in the documented Security Center Patch SC-202610.1 scope",
       "comment": "Public vendor assessment reviewed 2026-10-23. Sources: https://www.tenable.com/security/tns-2026-28 ; https://docs.tenable.com/release-notes/Content/security-center/2026.htm\nAction statement: Install the matching vendor patch and restart Security Center after installation; verify the patch applied successfully."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:ubiquiti-uisp-crm-20261024",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0753"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Ubiquiti confirms that UISP Application 3.1.70 fixes both PHP2Shell CVEs in the PHP runtime used by the UISP CRM module. Fix status applies to that release; it does not establish that existing deployments or cloud instances have been upgraded.",
+      "comment": "Public official source reviewed 2026-10-24: https://uisp.community.ui.com/releases/UISP-Application-3-1-70/8292c6cb-4eb4-447d-9c90-455ca41b4f67\nAction statement: Update to UISP Application 3.1.70 using vendor instructions and verify successful deployment."
     },
     {
       "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
