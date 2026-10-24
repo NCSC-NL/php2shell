@@ -53,6 +53,7 @@ WordPress false-positive pilot: 57 legitimate requests (pages, admin, login, upl
 - Canaries run `memory_limit=16M`. Keep this at or below production's `memory_limit` — CVE-2026-109618 is triggered by hitting the OOM handler, so the canary must reach that limit before production does.
 - CVE-2026-109619 can corrupt worker state across multiple requests. Single-request canary replay does not reproduce multi-request heap grooming. The upload-progress filter blocks the known entry points that use upload progress; the canaries cannot independently detect silent cross-request exploitation.
 - Adds latency per request (parallel canary replay, bounded by the slowest canary). The upload-progress filter adds none.
+- **PHP 8.5 mod_php users:** Set `fatal_error_backtraces=0` in php.ini alongside deploying Sentinel. PHP 8.5 introduced a backtrace feature that creates a separate CVE-2026-109619 trigger path not involving upload progress — the filter cannot catch it. This is irrelevant for PHP 8.4 and earlier (the feature doesn't exist) and for PHP-FPM (the confirmed backtrace path requires mod_php). PHP 8.5 users should update to 8.5.12.
 - Requires Docker on the host system.
 - Does not replace updating to fixed PHP releases where available. This is a compensating control for environments where patching is not possible.
 
