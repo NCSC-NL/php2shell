@@ -6238,9 +6238,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:nextcloud-snap-maintainers:3471f671bf79",
-      "summary": "The Snap recipe has an explicit PHP autotools part with FPM enabled and separate Redis6.3.0/APCu5.1.28 extension builds.",
+      "summary": "Refresh to Nextcloud Snap 34.0.5snap3 or a later release retaining the fixed PHP runtime.",
       "description": "Source-built PHP-FPM and CLI; CGI/phpdbg disabled in recipe; snap-specific CLI wrapper",
-      "comment": "Inventory record: PHP-0377\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0015\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Source-built PHP-FPM and CLI; CGI/phpdbg disabled in recipe; snap-specific CLI wrapper\nPHP version scope: Moving snapcraft recipe pins php8.4.26 tarball and SHA256 4209694d7b0f63c45a3773e07cdc2bbfc71249265a5d951b1ff53e1147edc5ca\nExtensions: Inspected build selections include mbstring, zip, pdo_mysql, zlib, gd, curl, openssl, bz2, sodium, exif, intl, pcntl, ftp, bcmath, sysvsem, ldap, gmp; separate redis and APCu builds. Full loaded module set unknown.\nLimitations: Source checksum is a recipe declaration, not independently hashed tarball or installed Snap revision. Snap channel/revision, application release and refresh state remain unmeasured; OS apt PHP is a separate installation. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Nextcloud Snap publisher rebuilds the bundled runtime/extensions; operator/channel/refresh policy determines rollout\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: PHP8.4.26 tarball SHA256 declaration in moving snapcraft.yaml; Snap revision/digest pending\nSource accessed: 2026-10-17\nAliases: nextcloud-snap:php-part\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0377\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0015\nDeployment status: Not measured\nPHP surface: Source-built PHP-FPM and CLI; CGI/phpdbg disabled in recipe; snap-specific CLI wrapper\nExtensions: Inspected build selections include mbstring, zip, pdo_mysql, zlib, gd, curl, openssl, bz2, sodium, exif, intl, pcntl, ftp, bcmath, sysvsem, ldap, gmp; separate redis and APCu builds. Full loaded module set unknown.\nLimitations: Source checksum is a recipe declaration, not independently hashed tarball or installed Snap revision. Snap channel/revision, application release and refresh state remain unmeasured; OS apt PHP is a separate installation. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Nextcloud Snap publisher rebuilds the bundled runtime/extensions; operator/channel/refresh policy determines rollout\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nAliases: nextcloud-snap:php-part\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nEvidence status: Official public vendor/upstream CVE assessment\nSource accessed: 2026-10-28\nPublic vendor CVE review: 2026-10-28\nVendor advisory sources: https://github.com/nextcloud-snap/nextcloud-snap/releases/tag/34.0.5snap3; https://github.com/nextcloud-snap/nextcloud-snap/issues/3701; https://www.php.net/archive/2026.php#2026-10-21-5\nVendor advisory status: The official Nextcloud Snap release ships PHP 8.4.27, and its maintainers confirm the security update in issue 3701. PHP upstream identifies 8.4.27 as fixed for both CVEs. This finding applies to the Snap package.\nVulnerability status: Fix. The official Nextcloud Snap release ships PHP 8.4.27, and its maintainers confirm the security update in issue 3701. PHP upstream identifies 8.4.27 as fixed for both CVEs. This finding applies to the Snap package.\nCVE assessment limit: Only the documented product, release and platform scope is assessed. Installed versions, runtime selection, reachability and exploitation were not tested.\nCVE-2026-109618: Fix. The official Nextcloud Snap release ships PHP 8.4.27, and its maintainers confirm the security update in issue 3701. PHP upstream identifies 8.4.27 as fixed for both CVEs. This finding applies to the Snap package.\nCVE-2026-109619: Fix. The official Nextcloud Snap release ships PHP 8.4.27, and its maintainers confirm the security update in issue 3701. PHP upstream identifies 8.4.27 as fixed for both CVEs. This finding applies to the Snap package.\nPHP version scope: 34.0.5snap3 (bundled PHP 8.4.27)\nRelease pin: 34.0.5snap3 (bundled PHP 8.4.27)",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -6249,8 +6249,33 @@
             "https://github.com/nextcloud-snap/nextcloud-snap/blob/master/snap/snapcraft.yaml"
           ],
           "comment": "Official PHP distribution, package or build declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/nextcloud-snap/nextcloud-snap/releases/tag/34.0.5snap3"
+          ],
+          "comment": "Official public source reviewed 2026-10-28"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/nextcloud-snap/nextcloud-snap/issues/3701"
+          ],
+          "comment": "Official public source reviewed 2026-10-28"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-21-5"
+          ],
+          "comment": "Official public source reviewed 2026-10-28"
         }
-      ]
+      ],
+      "software_packageVersion": "34.0.5snap3 (bundled PHP 8.4.27)"
     },
     {
       "type": "software_Package",
@@ -10494,6 +10519,32 @@
       "summary": "CVE-2026-109619 assessment: Fix (maintainer-accepted PR report)",
       "comment": "PR #41 reviewed and accepted by the maintainer on 2026-10-27: https://github.com/NCSC-NL/php2shell/pull/41\nPublic Cleo Streem release notes reviewed 2026-10-27: https://support.cleo.com/hc/en-us/articles/39285811298327-Cleo-Streem-Release-Notes\nAction statement: Contact Cleo Streem support for the security patch and verify the installed build. This assessment does not establish that existing deployments have been upgraded.",
       "security_actionStatement": "Contact Cleo Streem support for the security patch and verify the installed build; the public fixed release is not stated."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0377-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0377"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "The official Nextcloud Snap release ships PHP 8.4.27, and its maintainers confirm the security update in issue 3701. PHP upstream identifies 8.4.27 as fixed for both CVEs. This finding applies to the Snap package.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://github.com/nextcloud-snap/nextcloud-snap/releases/tag/34.0.5snap3; https://github.com/nextcloud-snap/nextcloud-snap/issues/3701; https://www.php.net/archive/2026.php#2026-10-21-5\nAction statement: Refresh to Nextcloud Snap 34.0.5snap3 or a later release retaining the fixed PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0377-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0377"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "The official Nextcloud Snap release ships PHP 8.4.27, and its maintainers confirm the security update in issue 3701. PHP upstream identifies 8.4.27 as fixed for both CVEs. This finding applies to the Snap package.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://github.com/nextcloud-snap/nextcloud-snap/releases/tag/34.0.5snap3; https://github.com/nextcloud-snap/nextcloud-snap/issues/3701; https://www.php.net/archive/2026.php#2026-10-21-5\nAction statement: Refresh to Nextcloud Snap 34.0.5snap3 or a later release retaining the fixed PHP runtime."
     }
   ]
 }

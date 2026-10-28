@@ -1,7 +1,7 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
 Operational information: 28 October 2026 13:48 CET<br>
-Software list last status update: 28 October 2026 11:14 CET<br>
+Software list last status update: 28 October 2026 16:22 CET<br>
 ## TLP:CLEAR
 
 This repository contains operational information regarding the critical PHP vulnerabilities tracked by CERT-EU as CVE-2026-109618 and CVE-2026-109619.
@@ -11,7 +11,7 @@ PHP is a widely used open-source server-side scripting language, so these vulner
 ## Current status
 
 <!-- inventory-statistics:summary:start -->
-This repository tracks **757 products**, including **216 vulnerable** and **136 fixed**.
+This repository tracks **757 products**, including **218 vulnerable** and **144 fixed**.
 <!-- inventory-statistics:summary:end -->
 
 On 21 October 2026, PHP published fixed releases for CVE-2026-109618 and CVE-2026-109619: PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. PHP states that both vulnerabilities can allow unauthenticated remote code execution and that all PHP installations serving web requests are at risk, including PHP-FPM, Apache with mod_php, php-cgi, FrankenPHP and LiteSpeed. PHP considers the risk highest for mod_php, where an unauthenticated request can trigger exploitation before application code runs.
@@ -58,7 +58,7 @@ Statistics as of **2026-10-28 (UTC)**, from the current SPDX inventory.
 
 | Products tracked | Fixed | Vulnerable | Under investigation | Not affected | Unassessed / unknown |
 | ---: | ---: | ---: | ---: | ---: | ---: |
-| 757 | 136 | 216 | 364 | 40 | 1 |
+| 757 | 144 | 218 | 354 | 40 | 1 |
 
 ![Product status on the last 3 inventory update days](software/statistics/inventory-statistics.png)
 
@@ -70,11 +70,11 @@ Statistics as of **2026-10-28 (UTC)**, from the current SPDX inventory.
 
 | Date and time | Supplier | Product | Version (see Status) | Status CVE-2026-109618 / CVE-2026-109619 | Links |
 |:------------------------|:---------|:--------|:--------------------:|:----------------------:|------:|
-|2026-10-28 11:14:56 +0100|Palo Alto Networks|PAN-OS|Fixed thresholds in PAN-OS 12.2.4-h1; 12.1.4-h13 (ETA 2026-10-29), 12.1.7-h11, 12.1.10-h3 (ETA 2026-10-30); 11.2.4-h23 (ETA 2026-10-30), 11.2.7-h23, 11.2.10-h16, 11.2.13-h4, 11.2.16-h1; 11.1.4-h38, 11.1.6-h40, 11.1.7-h12 (ETA 2026-10-30), 11.1.10-h36, 11.1.13-h16, 11.1.16-h4; 10.2.7-h39 (ETA 2026-10-30), 10.2.10-h42 (ETA 2026-10-29), 10.2.13-h27, 10.2.16-h12, 10.2.18-h13; earlier builds affected|Fix|[source 1](<https://docs.paloaltonetworks.com/oss-listings/pan-os-oss-listings/pan-os-12-2-open-source-software-oss-listing>)<br>[source 2](<https://security.paloaltonetworks.com/CVE-2025-0108>)<br>[source 3](<https://security.paloaltonetworks.com/CVE-2026-109618>)|
-|2026-10-28 11:14:56 +0100|Palo Alto Networks|Panorama|Fixed thresholds in Panorama 12.2.4-h1; 12.1.4-h13 (ETA 2026-10-29), 12.1.7-h11, 12.1.10-h3 (ETA 2026-10-30); 11.2.4-h23 (ETA 2026-10-30), 11.2.7-h23, 11.2.10-h16, 11.2.13-h4, 11.2.16-h1; 11.1.4-h38, 11.1.6-h40, 11.1.7-h12 (ETA 2026-10-30), 11.1.10-h36, 11.1.13-h16, 11.1.16-h4; 10.2.7-h39 (ETA 2026-10-30), 10.2.10-h42 (ETA 2026-10-29), 10.2.13-h27, 10.2.16-h12, 10.2.18-h13; earlier builds affected|Fix|[source 1](<https://docs.paloaltonetworks.com/oss-listings/panorama-oss-listings/panorama-12-2-open-source-software-oss-listing>)<br>[source 2](<https://docs.paloaltonetworks.com/panorama/getting-started/panorama-overview/about-panorama>)<br>[source 3](<https://security.paloaltonetworks.com/CVE-2026-109618>)|
-|2026-10-28 10:58:25 +0100|Citrix / NetScaler|Citrix NetScaler ADC and Citrix NetScaler Gateway|Fixed in NetScaler ADC and Gateway 14.1-73.49 and later; 13.1-64.32 and later releases of 13.1; ADC 14.1-FIPS 14.1-73.49 FIPS and later; ADC 13.1-FIPS and 13.1-NDcPP 13.1.37.286 and later; earlier builds impacted|Fix|[source 1](<https://www.citrix.com/content/dam/citrix/en_us/documents/downloads/netscaler-adc/NetScaler_ADC_ADM_FreeBSD_14.1_Third_Party_Notices.pdf>)<br>[source 2](<https://prod-docs.netscaler.com/en-us/citrix-adc/current-release/application-firewall/signatures/signature-auto-update>)<br>[source 3](<https://support.citrix.com/external/article/CTX697263/citrix-security-advisory-for-cve20261096.html>)<br>[source 4](<https://community.citrix.com/techzone-blogs/110_security-updates/protecting-netscaler-management-access-from-php-cve-2026-109618-cve-2026-109619-r1640/>)|
-|2026-10-28 10:44:24 +0100|Securepoint GmbH|Securepoint Resellerportal|Patched before 2026-10-22 inventory entry; fixed release not publicly stated|Fix|[source 1](<https://my.securepoint.de/>)<br>[source 2](<https://laravel.com/framework/docs/deployment>)<br>[source 3](<https://github.com/NCSC-NL/php2shell/issues/58>)<br>[source 4](<https://github.com/NCSC-NL/php2shell/pull/10>)|
-|2026-10-27 15:17:18 +0100|GetPageSpeed|GetPageSpeed PHP 7.2-8.4 packages for Ubuntu 18.04/20.04 and Debian 10|Known patched builds (not necessarily first fixed revisions): bionic PHP 7.2 7.2.34-66+gps1+ubuntu1804+stable.1; buster PHP 7.3 7.3.33-35+gps1+deb10+stable.1; focal PHP 7.4 1:7.4.33-31+gps1+ubuntu2004+stable.1; PHP 8.0 1:8.0.30-25+gps1+ubuntu2004+stable.1; PHP 8.1 8.1.34-9+gps1+ubuntu2004+stable.1; PHP 8.2 8.2.35-1+gps1+ubuntu2004+stable.1; PHP 8.3 8.3.36-1+gps1+ubuntu2004+stable.1; PHP 8.4 8.4.27-1+gps1+ubuntu2004+stable.1|Fix|[source 1](<https://www.getpagespeed.com/server-setup/php/php2shell-on-ubuntu-debian>)<br>[source 2](<https://www.getpagespeed.com/php2shell>)<br>[source 3](<https://extras.getpagespeed.com/ubuntu/dists/bionic/main/binary-amd64/Packages.gz>)<br>[source 4](<https://extras.getpagespeed.com/debian/dists/buster/main/binary-amd64/Packages.gz>)<br>[source 5](<https://extras.getpagespeed.com/ubuntu/dists/focal/main/binary-amd64/Packages.gz>)|
+|2026-10-28 16:22:26 +0100|Apache Friends|XAMPP|Windows x64 installers 8.3.36, 8.4.27 or 8.5.12|Fix|[source 1](<https://www.apachefriends.org/download.html>)<br>[source 2](<https://www.apachefriends.org/index.html>)<br>[source 3](<https://www.php.net/archive/2026.php#2026-10-21-5>)|
+|2026-10-28 16:22:26 +0100|Beyond Code in partnership with Laravel|Laravel Herd managed native PHP environment|Patched PHP builds distributed through Herd after the 2026-10-21 security release|Fix|[source 1](<https://herd.laravel.com/>)<br>[source 2](<https://herd.laravel.com/docs/windows/advanced-usage/directories-and-files>)<br>[source 3](<https://beyondco.de/blog/php-security-release>)<br>[source 4](<https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/>)|
+|2026-10-28 16:22:26 +0100|Cisco|Cisco Identity Services Engine (ISE) Portal Builder||Vulnerable|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
+|2026-10-28 16:22:26 +0100|Cisco|Cisco Unified Industrial Wireless Software||Vulnerable|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
+|2026-10-28 16:22:26 +0100|CyberPanel project|CyberPanel hosted PHP / LSPHP options|Ubuntu 26.04 LSPHP: 8.2.35-1+resolute, 8.3.36-1+resolute, 8.4.27-1+resolute or 8.5.12-1+resolute|Fix|[source 1](<https://github.com/usmannasir/cyberpanel>)<br>[source 2](<https://github.com/usmannasir/cyberpanel/blob/v3.0.5-dev/manage.py>)<br>[source 3](<https://cyberpanel.net/blog/php-security-october-2026-cyberpanel-response>)|
 
 See the [full software status update history](software/changelog_software_list.md).
 
