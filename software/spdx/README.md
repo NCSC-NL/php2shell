@@ -80,5 +80,4 @@ compiled file. Keep each shared element in exactly one source file.
 
 ```bash
 python tools/build_spdx_inventory.py --check
-python -m unittest discover -s tests
 ```
