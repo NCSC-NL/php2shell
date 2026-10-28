@@ -7,7 +7,7 @@
 
 # Community contributions
 
-This catalog records community tools, tips, guides, and reference resources submitted through open pull requests and issues in [NCSC-NL/php2shell](https://github.com/NCSC-NL/php2shell). The open submissions were reviewed on **28 October 2026**: seven pull requests and four issues, of which five pull requests and three issues proposed resources included below. Submissions concerned solely with software inventory changes are outside this catalog.
+This catalog records community tools, tips, guides, and reference resources submitted through pull requests and issues in [NCSC-NL/php2shell](https://github.com/NCSC-NL/php2shell). The sources were reviewed on **28 October 2026**; the resources below were proposed in five pull requests and three issues. Source submissions may now be closed. Submissions concerned solely with software inventory changes are outside this catalog.
 
 **Contributor** identifies the PR or issue author's GitHub username, which does not necessarily identify the tool's author or maintainer. Descriptions summarize the submissions and linked documentation; their functionality, effectiveness, and claims have not been independently validated. Listing a contribution does not mean that its source PR has been accepted. Links to proposed files use the reviewed commit, because those files may not exist on `main`.
 

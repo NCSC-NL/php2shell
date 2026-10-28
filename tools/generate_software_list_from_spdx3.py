@@ -28,8 +28,7 @@ README_SOFTWARE_TIMESTAMP_PREFIX = "Software list last status update:"
 README_TLP_TEXT = "TLP:CLEAR"
 README_TLP_HEADING = "## TLP:CLEAR"
 README_COMMUNITY_ROW = (
-    "| [Community contributions](https://github.com/NCSC-NL/php2shell/blob/"
-    "community-contributions/COMMUNITY_CONTRIBUTIONS.MD) "
+    "| [Community contributions](COMMUNITY_CONTRIBUTIONS.MD) "
     "| Community tools, tips, guides, and reference resources. |"
 )
 README_OBSERVATIONS_LABEL = "PHP2shell observations in the wild (TU Delft)"
