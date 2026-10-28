@@ -32,6 +32,8 @@ README_COMMUNITY_ROW = (
     "community-contributions/COMMUNITY_CONTRIBUTIONS.MD) "
     "| Community tools, tips, guides, and reference resources. |"
 )
+README_OBSERVATIONS_LABEL = "PHP2shell observations in the wild (TU Delft)"
+README_OBSERVATIONS_ITEM = f"- [{README_OBSERVATIONS_LABEL}](https://php2shell.delftintellab.com/)"
 HISTORY_DATE_TIME_FORMAT = "YYYY-MM-DD HH:MM:SS +/-HHMM"
 BUCKETS = ["0-9", *string.ascii_uppercase]
 DEFAULT_SPDX_DIR = Path("software") / "spdx"
@@ -617,8 +619,8 @@ def normalize_readme_header(text: str) -> str:
     )
 
 
-def ensure_readme_repository_links(text: str) -> str:
-    """Keep permanent navigation links in the Repository contents table."""
+def ensure_readme_links(text: str) -> str:
+    """Keep permanent repository and additional-information links in the README."""
     section = re.search(r"^## Repository contents\n(?P<body>.*?)(?=^## |\Z)", text, re.MULTILINE | re.DOTALL)
     if not section:
         raise GenerationError("README is missing expected heading: ## Repository contents")
@@ -632,9 +634,23 @@ def ensure_readme_repository_links(text: str) -> str:
             raise GenerationError("README Repository contents section is missing its table.")
         end = rows[-1].end()
         updated_body = body[:end] + "\n" + README_COMMUNITY_ROW + body[end:]
-    if updated_body == body:
-        return text
     updated = text[:section.start("body")] + updated_body + text[section.end("body"):]
+    information = re.search(r"^For additional information see:\n(?P<body>.*?)(?=^## |\Z)", updated, re.MULTILINE | re.DOTALL)
+    if not information:
+        raise GenerationError("README is missing expected text: For additional information see:")
+    body = information.group("body")
+    observations_item = re.compile(rf"^-\s*\[{re.escape(README_OBSERVATIONS_LABEL)}\]\([^\n]*$", re.MULTILINE)
+    if observations_item.search(body):
+        updated_body = observations_item.sub(README_OBSERVATIONS_ITEM, body, count=1)
+    else:
+        items = list(re.finditer(r"^- [^\n]*$", body, re.MULTILINE))
+        if not items:
+            raise GenerationError("README additional-information section is missing its link list.")
+        end = items[-1].end()
+        updated_body = body[:end] + "\n" + README_OBSERVATIONS_ITEM + body[end:]
+    updated = updated[:information.start("body")] + updated_body + updated[information.end("body"):]
+    if updated == text:
+        return text
     # Navigation is operational content; do not change the software-status date.
     return re.sub(
         rf"^{re.escape(README_OPERATIONAL_TIMESTAMP_PREFIX)}.*$",
@@ -687,7 +703,7 @@ def write_readme_updates(
                     "README is missing an operational timestamp line for software timestamp insertion."
                 )
             updated = operational_pattern.sub(rf"\1\n{software_timestamp}", updated, count=1)
-    updated = ensure_readme_repository_links(updated)
+    updated = ensure_readme_links(updated)
     updated = ensure_readme_hard_break(updated, README_OPERATIONAL_TIMESTAMP_PREFIX)
     updated = ensure_readme_hard_break(updated, README_SOFTWARE_TIMESTAMP_PREFIX)
     write_generated_text(readme_path, updated)

@@ -15,7 +15,7 @@ from typing import Any
 from generate_software_list_from_spdx3 import (
     GenerationError,
     build_entry_map,
-    ensure_readme_repository_links,
+    ensure_readme_links,
     git_executable,
     load_history_snapshot,
     load_json,
@@ -207,7 +207,7 @@ def render_readme_section(statistics: dict[str, Any]) -> str:
 
 
 def update_readme(text: str, statistics: dict[str, Any]) -> str:
-    text = ensure_readme_repository_links(text)
+    text = ensure_readme_links(text)
     section = render_readme_section(statistics)
     if BEGIN in text or END in text:
         pattern = re.compile(rf"^{re.escape(HEADING)}\n\n{re.escape(BEGIN)}.*?{re.escape(END)}", re.MULTILINE | re.DOTALL)

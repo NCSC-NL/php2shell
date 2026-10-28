@@ -1,6 +1,6 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
-Operational information: 28 October 2026 13:46 CET<br>
+Operational information: 28 October 2026 13:48 CET<br>
 Software list last status update: 28 October 2026 11:14 CET<br>
 ## TLP:CLEAR
 
@@ -37,6 +37,7 @@ For additional information see:
 - [PHP security advisory: Critical remote code execution vulnerabilities, update now](https://www.php.net/archive/2026.php#2026-10-21-5)
 - [PHP informational advisory: Session upload progress (23 October 2026)](https://www.php.net/archive/2026.php#2026-10-23-1)
 - [List of advisories from other EU national CSIRT's](https://github.com/enisaeu/CNW/blob/main/advisories/2026/CNW-2026-04_php.md)
+- [PHP2shell observations in the wild (TU Delft)](https://php2shell.delftintellab.com/)
 
 ## Repository contents
 
