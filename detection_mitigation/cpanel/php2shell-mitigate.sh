@@ -11,7 +11,9 @@
 #     php.ini and every other php.d file, so it wins over cPanel's
 #     MultiPHP INI Editor values and over per-directory php.ini files used
 #     by suphp/cgi). It never edits php.ini itself.
-#       session.upload_progress.enabled = 0   (CVE-2026-109619)
+#       session.upload_progress.enabled = 0   (CVE-2026-109619; keep after
+#                                              updating until the next PHP bugfix
+#                                              release, CVE-2026-115560, php.net 2026-10-23)
 #       post_max_size / upload_max_filesize   (CVE-2026-109618; never raised
 #                                              above the current value)
 #       memory_limit = -1                     (optional, --memory-unlimited)
@@ -178,7 +180,8 @@ for root in "${roots[@]}"; do
 
 		content="; Managed by php2shell-mitigate.sh ($(date -u +%Y-%m-%dT%H:%M:%SZ)).
 ; PARTIAL mitigation for CVE-2026-109618 / CVE-2026-109619. Only updating
-; PHP is a complete fix. Remove with: php2shell-mitigate.sh --rollback --apply
+; PHP is a complete fix. Keep session.upload_progress.enabled = 0 until the
+; next PHP bugfix release (CVE-2026-115560). Remove with: php2shell-mitigate.sh --rollback --apply
 session.upload_progress.enabled = 0
 post_max_size = $new_post
 upload_max_filesize = $new_upload"

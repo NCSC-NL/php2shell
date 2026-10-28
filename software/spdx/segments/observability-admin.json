@@ -134,7 +134,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:zabbix:a67c5eade920",
       "summary": "The 7.4 guide identifies the PHP frontend, its PHP version range and conditional authentication/database modules separately from native server/proxy/agent requirements.",
       "description": "PHP web frontend",
-      "comment": "Inventory record: PHP-0022\nCategory: Monitoring and administration\nOriginal relationship: component\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP web frontend\nPHP version scope: Versioned 7.4 requirements: PHP 8.0.0\u20138.5.x; 8.5 support added in 7.4.9. Exact released PHP/build/module combination remains unpinned.\nExtensions: Required frontend list: bcmath, mbstring, gd (PNG/JPEG/FreeType), libxml, xmlwriter, xmlreader, ctype, session. Database connector and authentication/script/translation/mail modules are conditional.\nLimitations: The frontend requirement does not establish PHP in every Zabbix server, proxy, agent or external script. Browser/client libraries and native compilation dependencies are separate. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Zabbix for frontend application releases; PHP package/provider and deploying operator for compatible runtime/modules\nDownstream surface: Privileged monitoring console\nRelease pin: Zabbix 7.4 version-scoped documentation, including 7.4.9 PHP-8.5 note; immutable frontend/PHP pins pending\nSource accessed: 2026-10-17\nAliases: Zabbix PHP frontend\nConditional downstream consequence: A matching PHP runtime or loaded-extension flaw reached through web/API input, imported content or PHP background jobs could cause denial of service, information disclosure or worker-level code execution. Monitoring data, application configuration and accessible integration credentials could then be read or changed. Further management actions require the configured rights and reachable services; native engines, agents, host privilege and tenant escape remain separate boundaries.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0022\nCategory: Monitoring and administration\nOriginal relationship: component\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP web frontend\nPHP version scope: Versioned 7.4 requirements: PHP 8.0.0–8.5.x; 8.5 support added in 7.4.9. Exact released PHP/build/module combination remains unpinned.\nExtensions: Required frontend list: bcmath, mbstring, gd (PNG/JPEG/FreeType), libxml, xmlwriter, xmlreader, ctype, session. Database connector and authentication/script/translation/mail modules are conditional.\nLimitations: The frontend requirement does not establish PHP in every Zabbix server, proxy, agent or external script. Browser/client libraries and native compilation dependencies are separate. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Zabbix for frontend application releases; PHP package/provider and deploying operator for compatible runtime/modules\nDownstream surface: Privileged monitoring console\nRelease pin: Zabbix 7.4 version-scoped documentation, including 7.4.9 PHP-8.5 note; immutable frontend/PHP pins pending\nSource accessed: 2026-10-17\nAliases: Zabbix PHP frontend\nConditional downstream consequence: A matching PHP runtime or loaded-extension flaw reached through web/API input, imported content or PHP background jobs could cause denial of service, information disclosure or worker-level code execution. Monitoring data, application configuration and accessible integration credentials could then be read or changed. Further management actions require the configured rights and reachable services; native engines, agents, host privilege and tenant escape remain separate boundaries.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -150,7 +150,7 @@
           "locator": [
             "https://www.zabbix.com/documentation/7.4/en/manual/installation/requirements"
           ],
-          "comment": "Official project/vendor documentation, repository manifest or publisher package metadata - Frontend PHP 8.0\u20138.5 range, module table and separately described native components."
+          "comment": "Official project/vendor documentation, repository manifest or publisher package metadata - Frontend PHP 8.0–8.5 range, module table and separately described native components."
         }
       ]
     },
@@ -204,9 +204,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:glpi-teclib:9df3cd869503",
-      "summary": "The application remains affected on an unpatched PHP runtime; confirmed fixed distribution scopes are recorded separately in PHP-0735.",
+      "summary": "Teclib confirms that servers hosting GLPI remain vulnerable to both CVEs until their PHP runtime is patched, regardless of the GLPI application version. The separate GLPI Network Cloud service has already received patches.",
       "description": "PHP web runtime; nginx PHP-FPM or documented Apache/other web-server setup",
-      "comment": "Inventory record: PHP-0024\nCategory: Monitoring and administration\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP web runtime; nginx PHP-FPM or documented Apache/other web-server setup\nPHP version scope: Guide: GLPI 10.0.x PHP >=7.4; 11.0.x >=8.2. GLPI 12.0.0 was released 7 October 2026, but its exact PHP floor and extension set were not retrieved. Do not inherit the guide\u2019s 10/11 table as a 12 requirement.\nExtensions: Retained guide-scoped 10/11 requirements: dom, fileinfo, filter, libxml, simplexml, tokenizer, xmlreader, xmlwriter, curl, gd, intl, mysqli, session, zlib. GLPI 11 adds bcmath, mbstring, openssl. Full 12.0.0 list unknown; optional/emulated features remain separate.\nLimitations: A release identity is not a requirements manifest. PHP floors and required/optional arrays retained here apply only to the explicitly documented 10/11 scope. Version 12 minimums remain unknown. Official release advisory text was not treated as a PHP-core CVE or current product exposure. GLPI Agent/client, exact deployed build and plugin state remain separate.\nPatch owner: GLPI/Teclib and app maintainers for application releases; PHP package/hosting provider and deploying operator for compatible runtime/module updates\nDownstream surface: IT service, inventory and admin data\nRelease pin: GLPI 12.0.0, 7 October 2026, commit cd812fbc82eaa8d0356d0fb650842069c1c18f4e. Version/changelog diff read; requirements and archive bytes not verified.\nSource accessed: 2026-10-19\nAliases: GLPI Server, GLPI 10 server, GLPI 11 server\nConditional downstream consequence: A matching PHP runtime or loaded-extension flaw reached through web/API requests, mail parsing or attachments could cause denial of service, disclosure or worker-level code execution. Ticket contents, attachments, mailbox credentials, directory integrations and service-management records could then be affected according to configured permissions. Agent/endpoint compromise, host privilege and tenant escape are separate conditions.\nVulnerability status: Vulnerable when using an affected PHP runtime; the vendor-confirmed fixed distribution is recorded separately.\nCVE-2026-109618: Vulnerable on affected PHP; see the separate fixed distribution scope.\nCVE-2026-109619: Vulnerable on affected PHP; see the separate fixed distribution scope.\nCVE assessment limit: A fixed vendor package or container does not repair other installations using externally supplied PHP; installed runtimes and deployment were not tested.\nPublished fix review (2026-10-23): PHP-0735: Official main / 12 / 11 / 10 image rebuilds announced 2026-10-21. These specific distributions do not establish a fix for other installations or externally supplied PHP.",
+      "comment": "Inventory record: PHP-0024\nCategory: Monitoring and administration\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: PHP web runtime; nginx PHP-FPM or documented Apache/other web-server setup\nPHP version scope: Installations served by unpatched PHP; application versions are not the patch boundary\nExtensions: Retained guide-scoped 10/11 requirements: dom, fileinfo, filter, libxml, simplexml, tokenizer, xmlreader, xmlwriter, curl, gd, intl, mysqli, session, zlib. GLPI 11 adds bcmath, mbstring, openssl. Full 12.0.0 list unknown; optional/emulated features remain separate.\nLimitations: Only the named vendor product and version scope is assessed. Installed versions, exposure and exploitation were not tested.\nPatch owner: GLPI/Teclib and app maintainers for application releases; PHP package/hosting provider and deploying operator for compatible runtime/module updates\nDownstream surface: IT service, inventory and admin data\nRelease pin: Installations served by unpatched PHP; application versions are not the patch boundary\nSource accessed: 2026-10-26\nAliases: GLPI Server, GLPI 10 server, GLPI 11 server\nConditional downstream consequence: A matching PHP runtime or loaded-extension flaw reached through web/API requests, mail parsing or attachments could cause denial of service, disclosure or worker-level code execution. Ticket contents, attachments, mailbox credentials, directory integrations and service-management records could then be affected according to configured permissions. Agent/endpoint compromise, host privilege and tenant escape are separate conditions.\nVulnerability status: Vulnerable / Vulnerable. Teclib confirms that servers hosting GLPI remain vulnerable to both CVEs until their PHP runtime is patched, regardless of the GLPI application version. The separate GLPI Network Cloud service has already received patches.\nCVE-2026-109618: Vulnerable. Teclib confirms that servers hosting GLPI remain vulnerable to both CVEs until their PHP runtime is patched, regardless of the GLPI application version. The separate GLPI Network Cloud service has already received patches.\nCVE-2026-109619: Vulnerable. Teclib confirms that servers hosting GLPI remain vulnerable to both CVEs until their PHP runtime is patched, regardless of the GLPI application version. The separate GLPI Network Cloud service has already received patches.\nCVE assessment limit: A fixed vendor package or container does not repair other installations using externally supplied PHP; installed runtimes and deployment were not tested.\nPublished fix review (2026-10-23): PHP-0735: Official main / 12 / 11 / 10 image rebuilds announced 2026-10-21. These specific distributions do not establish a fix for other installations or externally supplied PHP.\nPublic vendor CVE review: 2026-10-26\nVendor advisory sources: https://www.glpi-project.org/en/%F0%9F%9A%A8-critical-php2shell-php-vulnerabilities-cve-2026-109618-cve-2026-109619-what-you-need-to-know-for-your-glpi-server/",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -246,9 +246,10 @@
           "locator": [
             "https://www.glpi-project.org/en/%F0%9F%9A%A8-critical-php2shell-php-vulnerabilities-cve-2026-109618-cve-2026-109619-what-you-need-to-know-for-your-glpi-server/"
           ],
-          "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+          "comment": "Official public vendor source reviewed 2026-10-26"
         }
-      ]
+      ],
+      "software_packageVersion": "Installations served by unpatched PHP; application versions are not the patch boundary"
     },
     {
       "type": "software_Package",
@@ -338,7 +339,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:observium-limited-observium-project:09c602022500",
       "summary": "The official installation guide explicitly provisions both the PHP web SAPI and command-line runtime.",
       "description": "Apache mod_php with prefork plus PHP CLI in the documented environments",
-      "comment": "Inventory record: PHP-0272\nCategory: Monitoring and administration\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Apache mod_php with prefork plus PHP CLI in the documented environments\nPHP version scope: Official Ubuntu/Debian examples use PHP 8.5 on Ubuntu 26.04, 8.4 on Debian 13 and 8.3 on Ubuntu 24.04. These are documented OS environments, not a universal minimum or edition/version matrix.\nExtensions: Full required extension set unknown. Conditional/ambiguous: Example packages include mysql connector, gd, bcmath, mbstring, curl, APCu and version-dependent OPcache packaging; mandatory/optional split remains unverified\nLimitations: Community/subscription source snapshots and complete native modules were not pinned separately. The guide\u2019s PHP 8.5 OPcache packaging note is not generalized to every distributor. No monitoring commands were executed. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Application/module maintainer for product code; PHP package/image/hosting provider and deploying operator for compatible runtime/module updates\nDownstream surface: Network monitoring web interface, graphs, inventory and scheduled processing\nRelease pin: Version-scoped/moving official documentation or source branch; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: Observium Community Edition, Observium network monitoring\nConditional downstream consequence: A matching PHP runtime or loaded-extension flaw reached through web/API input, imported content or PHP background jobs could cause denial of service, information disclosure or worker-level code execution. Monitoring data, application configuration and accessible integration credentials could then be read or changed. Further management actions require the configured rights and reachable services; native engines, agents, host privilege and tenant escape remain separate boundaries.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0272\nCategory: Monitoring and administration\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Apache mod_php with prefork plus PHP CLI in the documented environments\nPHP version scope: Official Ubuntu/Debian examples use PHP 8.5 on Ubuntu 26.04, 8.4 on Debian 13 and 8.3 on Ubuntu 24.04. These are documented OS environments, not a universal minimum or edition/version matrix.\nExtensions: Full required extension set unknown. Conditional/ambiguous: Example packages include mysql connector, gd, bcmath, mbstring, curl, APCu and version-dependent OPcache packaging; mandatory/optional split remains unverified\nLimitations: Community/subscription source snapshots and complete native modules were not pinned separately. The guide’s PHP 8.5 OPcache packaging note is not generalized to every distributor. No monitoring commands were executed. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Application/module maintainer for product code; PHP package/image/hosting provider and deploying operator for compatible runtime/module updates\nDownstream surface: Network monitoring web interface, graphs, inventory and scheduled processing\nRelease pin: Version-scoped/moving official documentation or source branch; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: Observium Community Edition, Observium network monitoring\nConditional downstream consequence: A matching PHP runtime or loaded-extension flaw reached through web/API input, imported content or PHP background jobs could cause denial of service, information disclosure or worker-level code execution. Monitoring data, application configuration and accessible integration credentials could then be read or changed. Further management actions require the configured rights and reachable services; native engines, agents, host privilege and tenant escape remain separate boundaries.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -492,7 +493,7 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:icinga-gmbh:c965749e3457",
-      "summary": "The module\u2019s own requirements explicitly identify PHP, mbstring and a database PDO connector.",
+      "summary": "The module’s own requirements explicitly identify PHP, mbstring and a database PDO connector.",
       "description": "Icinga Web PHP module and scheduled/CLI report generation",
       "comment": "Inventory record: PHP-0277\nCategory: Monitoring and administration\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0273\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Icinga Web PHP module and scheduled/CLI report generation\nPHP version scope: Current requirements: PHP >=8.2, Web >=2.12.5 and PHP Library/Thirdparty >=1.0.0. Release article names Reporting 1.1.0.\nExtensions: Required in stated source scope: mbstring. Conditional/ambiguous: pdo_mysql OR pdo_pgsql matching the database\nLimitations: Host Web and PDF modules can impose further requirements. Report/export worker permissions and data access are deployment-specific; no scheduled task was run. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Application/module maintainer for product code; PHP package/image/hosting provider and deploying operator for compatible runtime/module updates\nDownstream surface: Monitoring reports, schedules, rendered output and report databases\nRelease pin: Version-scoped/moving official documentation or source branch; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: Icinga reporting module\nConditional downstream consequence: A matching PHP runtime or loaded-extension flaw reached through web/API input, imported content or PHP background jobs could cause denial of service, information disclosure or worker-level code execution. Monitoring data, application configuration and accessible integration credentials could then be read or changed. Further management actions require the configured rights and reachable services; native engines, agents, host privilege and tenant escape remain separate boundaries.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
       "externalRef": [
@@ -558,7 +559,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:centreon:fb564bc80284",
       "summary": "The vendor installation procedure explicitly enables PHP 8.2 for the central web environment.",
       "description": "PHP-FPM behind Apache in central-server package installation",
-      "comment": "Inventory record: PHP-0279\nCategory: Monitoring and administration\nOriginal relationship: component\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP-FPM behind Apache in central-server package installation\nPHP version scope: Current central-server installation page is labelled 25.10 and configures PHP 8.2 / PHP-FPM on supported OS examples. This is an installation environment, not every Centreon component\u2019s runtime.\nExtensions: Full required extension set unknown\nLimitations: Centreon Engine/Broker, connectors, Gorgone and agents are separate components. The Collect source repository describes native build dependencies; PHP is not automatically attributed to all of them. Exact package patch/module contents unresolved. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Application/module maintainer for product code; PHP package/image/hosting provider and deploying operator for compatible runtime/module updates\nDownstream surface: Central monitoring/admin UI, configuration, resource data and integration settings\nRelease pin: Version-scoped/moving official documentation or source branch; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: Centreon Web, Centreon OnPrem web components\nConditional downstream consequence: A matching PHP runtime or loaded-extension flaw reached through web/API input, imported content or PHP background jobs could cause denial of service, information disclosure or worker-level code execution. Monitoring data, application configuration and accessible integration credentials could then be read or changed. Further management actions require the configured rights and reachable services; native engines, agents, host privilege and tenant escape remain separate boundaries.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0279\nCategory: Monitoring and administration\nOriginal relationship: component\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP-FPM behind Apache in central-server package installation\nPHP version scope: Current central-server installation page is labelled 25.10 and configures PHP 8.2 / PHP-FPM on supported OS examples. This is an installation environment, not every Centreon component’s runtime.\nExtensions: Full required extension set unknown\nLimitations: Centreon Engine/Broker, connectors, Gorgone and agents are separate components. The Collect source repository describes native build dependencies; PHP is not automatically attributed to all of them. Exact package patch/module contents unresolved. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Application/module maintainer for product code; PHP package/image/hosting provider and deploying operator for compatible runtime/module updates\nDownstream surface: Central monitoring/admin UI, configuration, resource data and integration settings\nRelease pin: Version-scoped/moving official documentation or source branch; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: Centreon Web, Centreon OnPrem web components\nConditional downstream consequence: A matching PHP runtime or loaded-extension flaw reached through web/API input, imported content or PHP background jobs could cause denial of service, information disclosure or worker-level code execution. Monitoring data, application configuration and accessible integration credentials could then be read or changed. Further management actions require the configured rights and reachable services; native engines, agents, host privilege and tenant escape remain separate boundaries.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -778,7 +779,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:fusiondirectory:f643dc998a37",
       "summary": "The versioned manual identifies a PHP identity-management web application with an independently operated LDAP server.",
       "description": "Server-side PHP web runtime; exact SAPI and any separate CLI phase deployment-dependent/unpinned",
-      "comment": "Inventory record: PHP-0286\nCategory: Monitoring and administration\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime; exact SAPI and any separate CLI phase deployment-dependent/unpinned\nPHP version scope: Version-1.4 requirements explicitly specify PHP 7.4. This is that documented branch\u2019s runtime, not a verified current family-wide PHP matrix.\nExtensions: Required in stated source scope: curl, filter, gd, iconv, imagick, imap, json, mbstring, ldap, openssl, simplexml, xml. Conditional/ambiguous: The guide groups CAS and FPDF under extensions; these library identities are not automatically recorded as native PHP modules; Guide also describes optional legacy feature modules; exact contemporary ABI/configuration unresolved\nLimitations: PHP-library/extension terminology in the guide is broader than native extension loading. Do not equate CAS/FPDF package names or this old branch\u2019s requirements with a modern resolved native build. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Application/module maintainer for product code; PHP package/image/hosting provider and deploying operator for compatible runtime/module updates\nDownstream surface: Identity, directory, account/workstation configuration and configured management integrations\nRelease pin: Version-scoped/moving official documentation or source branch; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: FusionDirectory IAM\nConditional downstream consequence: A matching reachable PHP or loaded-extension flaw could cause denial of service, disclosure, integrity loss or code execution within the administration worker. Database or directory actions would depend on supplied/session/configured credentials and actual privileges. A PHP process is not automatically a database superuser, directory administrator, root account or route to another tenant.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0286\nCategory: Monitoring and administration\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime; exact SAPI and any separate CLI phase deployment-dependent/unpinned\nPHP version scope: Version-1.4 requirements explicitly specify PHP 7.4. This is that documented branch’s runtime, not a verified current family-wide PHP matrix.\nExtensions: Required in stated source scope: curl, filter, gd, iconv, imagick, imap, json, mbstring, ldap, openssl, simplexml, xml. Conditional/ambiguous: The guide groups CAS and FPDF under extensions; these library identities are not automatically recorded as native PHP modules; Guide also describes optional legacy feature modules; exact contemporary ABI/configuration unresolved\nLimitations: PHP-library/extension terminology in the guide is broader than native extension loading. Do not equate CAS/FPDF package names or this old branch’s requirements with a modern resolved native build. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Application/module maintainer for product code; PHP package/image/hosting provider and deploying operator for compatible runtime/module updates\nDownstream surface: Identity, directory, account/workstation configuration and configured management integrations\nRelease pin: Version-scoped/moving official documentation or source branch; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: FusionDirectory IAM\nConditional downstream consequence: A matching reachable PHP or loaded-extension flaw could cause denial of service, disclosure, integrity loss or code execution within the administration worker. Database or directory actions would depend on supplied/session/configured credentials and actual privileges. A PHP process is not automatically a database superuser, directory administrator, root account or route to another tenant.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -834,7 +835,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:phpipam-project:0fbf6e2c0aba",
       "summary": "The project supplies branch-specific PHP ranges and separately documents PHP modules and optional CLI functions.",
       "description": "PHP web runtime; optional PHP CLI scheduled scanning/status checks documented but not performed",
-      "comment": "Inventory record: PHP-0288\nCategory: Monitoring and administration\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP web runtime; optional PHP CLI scheduled scanning/status checks documented but not performed\nPHP version scope: Official repository matrix: 1.8.x / DEVELOP PHP 7.2\u20138.5; 1.7.x and 1.6.x PHP 7.2\u20138.3; 1.5.x/1.4.x PHP 5.4\u20137.4. These branch tests do not identify an installed build.\nExtensions: Required in stated source scope: pdo, pdo_mysql, sockets, openssl, gmp, json, filter, mbstring. Conditional/ambiguous: ldap for directory/AD support; simplexml for RIPE queries/API where needed; pcntl and PHP CLI for optional scanning/status checks; CLI is a SAPI, not an extension\nLimitations: Older installation prose is not a universal current support matrix. No scan, status check, endpoint query or discovered-network access was performed. Native GMP is an upstream dependency used through PHP, not a PHP-dependent product. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Application/module maintainer for product code; PHP package/image/hosting provider and deploying operator for compatible runtime/module updates\nDownstream surface: Address-space inventory, network metadata, authentication and optional scanning configuration\nRelease pin: Version-scoped/moving official documentation or source branch; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: phpipam/phpipam\nConditional downstream consequence: A matching reachable PHP or loaded-extension flaw could cause denial of service, disclosure, integrity loss or code execution within the administration worker. Database or directory actions would depend on supplied/session/configured credentials and actual privileges. A PHP process is not automatically a database superuser, directory administrator, root account or route to another tenant.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0288\nCategory: Monitoring and administration\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP web runtime; optional PHP CLI scheduled scanning/status checks documented but not performed\nPHP version scope: Official repository matrix: 1.8.x / DEVELOP PHP 7.2–8.5; 1.7.x and 1.6.x PHP 7.2–8.3; 1.5.x/1.4.x PHP 5.4–7.4. These branch tests do not identify an installed build.\nExtensions: Required in stated source scope: pdo, pdo_mysql, sockets, openssl, gmp, json, filter, mbstring. Conditional/ambiguous: ldap for directory/AD support; simplexml for RIPE queries/API where needed; pcntl and PHP CLI for optional scanning/status checks; CLI is a SAPI, not an extension\nLimitations: Older installation prose is not a universal current support matrix. No scan, status check, endpoint query or discovered-network access was performed. Native GMP is an upstream dependency used through PHP, not a PHP-dependent product. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Application/module maintainer for product code; PHP package/image/hosting provider and deploying operator for compatible runtime/module updates\nDownstream surface: Address-space inventory, network metadata, authentication and optional scanning configuration\nRelease pin: Version-scoped/moving official documentation or source branch; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: phpipam/phpipam\nConditional downstream consequence: A matching reachable PHP or loaded-extension flaw could cause denial of service, disclosure, integrity loss or code execution within the administration worker. Database or directory actions would depend on supplied/session/configured credentials and actual privileges. A PHP process is not automatically a database superuser, directory administrator, root account or route to another tenant.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1024,7 +1025,7 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:circl-luxembourg:99262a322fcb",
-      "summary": "CIRCL publicly states it operates multiple MISP instances; MISP\u2019s server PHP relationship is independently documented.",
+      "summary": "CIRCL publicly states it operates multiple MISP instances; MISP’s server PHP relationship is independently documented.",
       "description": "Provider-operated MISP web and REST API service; transitive server PHP relationship",
       "comment": "Inventory record: PHP-0450\nCategory: Monitoring and administration\nOriginal relationship: transitive\nRelationship direction: depends_on_php_via_named_application_family\nParent component: PHP-0439\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Provider-operated MISP web and REST API service; transitive server PHP relationship\nPHP version scope: Provider confirms MISP operation; installed MISP/PHP versions and instance count unknown\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: Transitive application-family inference, not a2.5 release or exact-runtime measurement. No service endpoint, account, customer asset or restricted community was queried. No deployment total, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied. Public documents/static source only; no retrieved code or appliance image was installed, executed, built or tested.\nPatch owner: CIRCL for operated platform/runtime rollout; MISP upstream and OS packagers for source fixes\nDownstream surface: Threat-intelligence exchange, sharing permissions and service-accessible API credentials\nRelease pin: Public service description plus MISP requirements; no installed-build pin\nSource accessed: 2026-10-17\nAliases: circl:misp-threat-sharing-service\nConditional downstream consequence: A matching PHP/parser or enabled native-extension flaw reached through this application could affect worker availability, accessible secrets, stored-data integrity or execution with the worker identity. Scope depends on the deployed build, input path and permissions; this is not a finding of a current flaw or compromise.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
       "externalRef": [
@@ -1096,7 +1097,7 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:surf:526cb83fb5c6",
-      "summary": "SURF\u2019s architecture names EngineBlock as the SRAM proxy.",
+      "summary": "SURF’s architecture names EngineBlock as the SRAM proxy.",
       "description": "Server-side PHP through the named upstream application; deployed SAPI unknown",
       "comment": "Inventory record: PHP-0563\nCategory: Monitoring and administration\nOriginal relationship: transitive\nRelationship direction: product_depends_on_php\nParent component: PHP-0558\nEvidence status: Confirmed relationship\nDeployment status: Publicly documented service/software relationship; not independently measured or probed\nPHP surface: Server-side PHP through the named upstream application; deployed SAPI unknown\nPHP version scope: Operator/project identifies software family only; deployed application/PHP versions and backports unknown.\nExtensions: Actual required/optional extension set unknown for this deployed/released scope; do not inherit a moving parent version matrix\nLimitations: SBS is separately Python-based; this is not a claim that the whole SRAM platform is PHP. No exact installed build, loaded-extension set, input reachability, installation total, tenant escape or compromise was measured. No specific PHP CVE was supplied. Public documentation and static declarations only.\nPatch owner: SURF for deployed configuration/runtime rollout; application and PHP upstream/package maintainers for fixes\nDownstream surface: Federated access proxy for research collaborations\nRelease pin: Moving primary documentation, retrieved 2026-10-18\nSource accessed: 2026-10-18\nConditional downstream consequence: Analyst judgment: a matching reachable PHP/parser/session flaw could disrupt sign-in or affect assertions, session material or configuration. Code execution requires the matching flaw class and process privileges. Trust in connected services, credential access and cross-tenant effects need separate evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
       "externalRef": [
@@ -1140,9 +1141,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:surf:526cb83fb5c6",
-      "summary": "Project showcase and architecture connect SURFconext with OpenConext\u2019s EngineBlock proxy.",
+      "summary": "Project showcase and architecture connect SURFconext with OpenConext’s EngineBlock proxy.",
       "description": "Server-side PHP through the named upstream application; deployed SAPI unknown",
-      "comment": "Inventory record: PHP-0564\nCategory: Monitoring and administration\nOriginal relationship: transitive\nRelationship direction: product_depends_on_php\nParent component: PHP-0558\nEvidence status: Confirmed relationship\nDeployment status: Publicly documented service/software relationship; not independently measured or probed\nPHP surface: Server-side PHP through the named upstream application; deployed SAPI unknown\nPHP version scope: Operator/project identifies software family only; deployed application/PHP versions and backports unknown.\nExtensions: Actual required/optional extension set unknown for this deployed/released scope; do not inherit a moving parent version matrix\nLimitations: Only the named application tier is covered, not the operator\u2019s whole infrastructure or native/browser/mobile clients. Parent release minima are not inherited as deployed versions. No exact installed build, loaded-extension set, input reachability, installation total, tenant escape or compromise was measured. No specific PHP CVE was supplied. Public documentation and static declarations only.\nPatch owner: SURF for deployed configuration/runtime rollout; application and PHP upstream/package maintainers for fixes\nDownstream surface: Education/research single-sign-on federation proxy\nRelease pin: Moving primary documentation, retrieved 2026-10-18\nSource accessed: 2026-10-18\nConditional downstream consequence: Analyst judgment: a matching reachable PHP/parser/session flaw could disrupt sign-in or affect assertions, session material or configuration. Code execution requires the matching flaw class and process privileges. Trust in connected services, credential access and cross-tenant effects need separate evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0564\nCategory: Monitoring and administration\nOriginal relationship: transitive\nRelationship direction: product_depends_on_php\nParent component: PHP-0558\nEvidence status: Confirmed relationship\nDeployment status: Publicly documented service/software relationship; not independently measured or probed\nPHP surface: Server-side PHP through the named upstream application; deployed SAPI unknown\nPHP version scope: Operator/project identifies software family only; deployed application/PHP versions and backports unknown.\nExtensions: Actual required/optional extension set unknown for this deployed/released scope; do not inherit a moving parent version matrix\nLimitations: Only the named application tier is covered, not the operator’s whole infrastructure or native/browser/mobile clients. Parent release minima are not inherited as deployed versions. No exact installed build, loaded-extension set, input reachability, installation total, tenant escape or compromise was measured. No specific PHP CVE was supplied. Public documentation and static declarations only.\nPatch owner: SURF for deployed configuration/runtime rollout; application and PHP upstream/package maintainers for fixes\nDownstream surface: Education/research single-sign-on federation proxy\nRelease pin: Moving primary documentation, retrieved 2026-10-18\nSource accessed: 2026-10-18\nConditional downstream consequence: Analyst judgment: a matching reachable PHP/parser/session flaw could disrupt sign-in or affect assertions, session material or configuration. Code execution requires the matching flaw class and process privileges. Trust in connected services, credential access and cross-tenant effects need separate evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1909,9 +1910,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists WAN Automation Engine (WAE) as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs.",
       "description": "WAN traffic engineering and automation",
-      "comment": "Inventory record: PHP-0692\nCategory: Monitoring and administration\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.4, updated 2026-10-22 23:00 GMT) lists WAN Automation Engine (WAE) under 'Products Under Investigation' (Network Management and Provisioning); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Cisco advisory version 1.4 lists this product under investigation; affected and fixed releases are not published.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Cisco advisory version 1.4 under-investigation product scope",
+      "comment": "Inventory record: PHP-0692\nCategory: Monitoring and administration\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Vendor-confirmed not vulnerable product scope\nExtensions: Unknown\nLimitations: Only the named vendor product and version scope is assessed. Installed versions, exposure and exploitation were not tested.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-26\nVulnerability status: Not vuln / Not vuln. Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs.\nCVE-2026-109618: Not vuln. Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs.\nCVE-2026-109619: Not vuln. Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-26\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Vendor-confirmed not vulnerable product scope",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1919,9 +1920,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Official public CVE review 2026-10-23"
+          "comment": "Official public vendor source reviewed 2026-10-26"
         }
-      ]
+      ],
+      "software_packageVersion": "Vendor-confirmed not vulnerable product scope"
     },
     {
       "type": "software_Package",
@@ -1966,9 +1968,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Ultra Packet Core - Converged Policy and Charging as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "No remediation is required for this vendor-confirmed non-vulnerable product scope.",
       "description": "Cloud-native mobile core policy and charging",
-      "comment": "Inventory record: PHP-0695\nCategory: Monitoring and administration\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.4, updated 2026-10-22 23:00 GMT) lists Ultra Packet Core - Converged Policy and Charging under 'Products Under Investigation' (Routing and Switching - Service Provider); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Cisco advisory version 1.4 lists this product under investigation; affected and fixed releases are not published.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Cisco advisory version 1.4 under-investigation product scope",
+      "comment": "Inventory record: PHP-0695\nCategory: Monitoring and administration\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.4, updated 2026-10-22 23:00 GMT) lists Ultra Packet Core - Converged Policy and Charging under 'Products Under Investigation' (Routing and Switching - Service Provider); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Cisco advisory version 1.4 lists this product under investigation; affected and fixed releases are not published.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Cisco advisory version 1.4 under-investigation product scope\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Not vuln; CVE-2026-109619: Not vuln\nScope: Cisco Ultra Cloud Core / Ultra Packet Core - Converged Policy and Charging product scope, as named in the vendor list.\nAssessment: Cisco advisory version 1.7 explicitly lists Ultra Packet Core - Converged Policy and Charging as confirmed not vulnerable to both CVEs. This matches the existing Ultra Cloud Core product entry; no status is inferred from absence.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1976,9 +1978,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Official public CVE review 2026-10-23"
+          "comment": "Vulnerabilities in PHP Affecting Cisco Products: October 2026; 2026-10-26 20:00 GMT; reviewed 2026-10-27"
         }
-      ]
+      ],
+      "software_packageVersion": "Cisco advisory 1.7 confirmed not vulnerable product scope"
     },
     {
       "type": "software_Package",
@@ -3344,9 +3347,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:broadcom:caf79e01972c",
-      "summary": "Broadcom ESG advisory 39404 lists CloudSOC Cloud Access Security Broker (CASB) as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Broadcom ESG advisory 39404, updated 2026-10-23, explicitly lists CloudSOC CASB as not vulnerable. The separately named CloudSOC SpanVA appliance is affected; that assessment does not transfer to the CASB service.",
       "description": "Cloud access security broker",
-      "comment": "Inventory record: PHP-0732\nCategory: Security operations and management consoles\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Broadcom ESG advisory 39404; exact PHP component and SAPI are not published\nPHP version scope: Broadcom ESG advisory 39404, updated 2026-10-22, lists CloudSOC Cloud Access Security Broker (CASB) under investigation; affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes product review scope, not a confirmed PHP dependency, affected build, enabled feature set, reachable path or exploitation.\nPatch owner: Broadcom; operator for exposure review and future remediation rollout\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Broadcom ESG advisory 39404 lists CloudSOC Cloud Access Security Broker (CASB) under investigation for both PHP2Shell CVEs.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404\nRelease pin: Broadcom ESG advisory 39404 under-investigation product scope",
+      "comment": "Inventory record: PHP-0732\nCategory: Security operations and management consoles\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Broadcom ESG advisory 39404; exact PHP component and SAPI are not published\nPHP version scope: CloudSOC CASB service; excludes the separate SpanVA appliance\nExtensions: Unknown\nLimitations: Only the named vendor product and version scope is assessed. Installed versions, exposure and exploitation were not tested.\nPatch owner: Broadcom; operator for exposure review and future remediation rollout\nSource accessed: 2026-10-26\nVulnerability status: Not vuln / Not vuln. Broadcom ESG advisory 39404, updated 2026-10-23, explicitly lists CloudSOC CASB as not vulnerable. The separately named CloudSOC SpanVA appliance is affected; that assessment does not transfer to the CASB service.\nCVE-2026-109618: Not vuln. Broadcom ESG advisory 39404, updated 2026-10-23, explicitly lists CloudSOC CASB as not vulnerable. The separately named CloudSOC SpanVA appliance is affected; that assessment does not transfer to the CASB service.\nCVE-2026-109619: Not vuln. Broadcom ESG advisory 39404, updated 2026-10-23, explicitly lists CloudSOC CASB as not vulnerable. The separately named CloudSOC SpanVA appliance is affected; that assessment does not transfer to the CASB service.\nCVE assessment limit: Only the stated product scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-26\nVendor advisory sources: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404\nRelease pin: CloudSOC CASB service; excludes the separate SpanVA appliance",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -3354,10 +3357,10 @@
           "locator": [
             "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404"
           ],
-          "comment": "Broadcom ESG advisory 39404 reviewed 2026-10-23"
+          "comment": "Official public vendor source reviewed 2026-10-26"
         }
       ],
-      "software_packageVersion": "Broadcom ESG advisory 39404 under-investigation product scope"
+      "software_packageVersion": "CloudSOC CASB service; excludes the separate SpanVA appliance"
     },
     {
       "type": "software_Package",
@@ -3373,9 +3376,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:broadcom:caf79e01972c",
-      "summary": "Broadcom ESG advisory 39404 lists Content Analysis as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "No remediation is required for Content Analysis (CAS) for these CVEs. Do not extend this conclusion to CASMA.",
       "description": "Content analysis security product",
-      "comment": "Inventory record: PHP-0733\nCategory: Security operations and management consoles\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Broadcom ESG advisory 39404; exact PHP component and SAPI are not published\nPHP version scope: Broadcom ESG advisory 39404, updated 2026-10-22, lists Content Analysis under investigation; affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes product review scope, not a confirmed PHP dependency, affected build, enabled feature set, reachable path or exploitation.\nPatch owner: Broadcom; operator for exposure review and future remediation rollout\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Broadcom ESG advisory 39404 lists Content Analysis under investigation for both PHP2Shell CVEs.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404\nRelease pin: Broadcom ESG advisory 39404 under-investigation product scope",
+      "comment": "Inventory record: PHP-0733\nCategory: Security operations and management consoles\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Broadcom ESG advisory 39404; exact PHP component and SAPI are not published\nPHP version scope: Broadcom ESG advisory 39404, updated 2026-10-22, lists Content Analysis under investigation; affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes product review scope, not a confirmed PHP dependency, affected build, enabled feature set, reachable path or exploitation.\nPatch owner: Broadcom; operator for exposure review and future remediation rollout\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Broadcom ESG advisory 39404 lists Content Analysis under investigation for both PHP2Shell CVEs.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404\nRelease pin: Broadcom ESG advisory 39404 under-investigation product scope\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Not vuln; CVE-2026-109619: Not vuln\nScope: Content Analysis (CAS) only. Distinct Content Analysis and Malware Analysis (CASMA) remains under investigation and must not inherit this assessment.\nAssessment: Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) remains under investigation and is excluded.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -3383,10 +3386,10 @@
           "locator": [
             "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404"
           ],
-          "comment": "Broadcom ESG advisory 39404 reviewed 2026-10-23"
+          "comment": "Enterprise Security Group Advisory for PHP2Shell; 2026-10-26; reviewed 2026-10-27"
         }
       ],
-      "software_packageVersion": "Broadcom ESG advisory 39404 under-investigation product scope"
+      "software_packageVersion": "Content Analysis (CAS) only; excludes CASMA"
     },
     {
       "type": "Relationship",
@@ -3465,34 +3468,6 @@
       "security_actionStatement": "Monitor the linked Broadcom product advisories for remediation details and restrict management exposure until a fixed release is verified."
     },
     {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:broadcom-esg-39404-20261022",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0732",
-        "urn:php2shell:inventory:package:PHP-0733"
-      ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Broadcom ESG advisory 39404 lists CloudSOC Cloud Access Security Broker (CASB) and Content Analysis as under investigation for both PHP2Shell CVEs; affected and fixed releases are not published.",
-      "summary": "CVE-2026-109618 assessment: Broadcom ESG advisory 39404 under-investigation product scope",
-      "comment": "Public official source reviewed 2026-10-23. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404"
-    },
-    {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:broadcom-esg-39404-20261022",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0732",
-        "urn:php2shell:inventory:package:PHP-0733"
-      ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Broadcom ESG advisory 39404 lists CloudSOC Cloud Access Security Broker (CASB) and Content Analysis as under investigation for both PHP2Shell CVEs; affected and fixed releases are not published.",
-      "summary": "CVE-2026-109619 assessment: Broadcom ESG advisory 39404 under-investigation product scope",
-      "comment": "Public official source reviewed 2026-10-23. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404"
-    },
-    {
       "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0731-maintainer-20261023",
       "creationInfo": "_:creationinfo",
@@ -3517,6 +3492,369 @@
       "security_statusNotes": "The maintainer accepts issue #30's reported SEPM 14.3.27716.10000 and 14.4.494.0000 updates as fixes for both PHP2Shell CVEs. The report cites Broadcom advisory 39421, which requires login and was not independently verified. Fix status applies only to these two builds.",
       "summary": "CVE-2026-109619 assessment: Fix (maintainer-accepted issue report)",
       "comment": "Issue report reviewed and accepted by the maintainer on 2026-10-23: https://github.com/NCSC-NL/php2shell/issues/30\nCited vendor advisory, not independently read: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Symantec-Endpoint-Protection-Security-Update-for-PHP2Shell/39421\nAction statement: Deploy the appropriate reported SEPM update using Broadcom's product-specific instructions; verify the installed build. This assessment does not establish that existing deployments have been upgraded."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0024-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0024"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Teclib confirms that servers hosting GLPI remain vulnerable to both CVEs until their PHP runtime is patched, regardless of the GLPI application version. The separate GLPI Network Cloud service has already received patches.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable. Teclib confirms that servers hosting GLPI remain vulnerable to both CVEs until their PHP runtime is patched, regardless of the GLPI application version. The separate GLPI Network Cloud service has already received patches.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://www.glpi-project.org/en/%F0%9F%9A%A8-critical-php2shell-php-vulnerabilities-cve-2026-109618-cve-2026-109619-what-you-need-to-know-for-your-glpi-server/",
+      "security_actionStatement": "Update the serving PHP runtime to the vendor-supported fixed package and restart PHP workers. Hosted and container scopes must be checked separately."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0024-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0024"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Teclib confirms that servers hosting GLPI remain vulnerable to both CVEs until their PHP runtime is patched, regardless of the GLPI application version. The separate GLPI Network Cloud service has already received patches.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable. Teclib confirms that servers hosting GLPI remain vulnerable to both CVEs until their PHP runtime is patched, regardless of the GLPI application version. The separate GLPI Network Cloud service has already received patches.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://www.glpi-project.org/en/%F0%9F%9A%A8-critical-php2shell-php-vulnerabilities-cve-2026-109618-cve-2026-109619-what-you-need-to-know-for-your-glpi-server/",
+      "security_actionStatement": "Update the serving PHP runtime to the vendor-supported fixed package and restart PHP workers. Hosted and container scopes must be checked separately."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:php-0692-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0692"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs.",
+      "summary": "CVE-2026-109618 assessment: Not vuln. Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0692-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0692"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs.",
+      "summary": "CVE-2026-109619 assessment: Not vuln. Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:php-0732-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0732"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Broadcom ESG advisory 39404, updated 2026-10-23, explicitly lists CloudSOC CASB as not vulnerable. The separately named CloudSOC SpanVA appliance is affected; that assessment does not transfer to the CASB service.",
+      "summary": "CVE-2026-109618 assessment: Not vuln. Broadcom ESG advisory 39404, updated 2026-10-23, explicitly lists CloudSOC CASB as not vulnerable. The separately named CloudSOC SpanVA appliance is affected; that assessment does not transfer to the CASB service.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
+      "security_impactStatement": "Broadcom ESG advisory 39404, updated 2026-10-23, explicitly lists CloudSOC CASB as not vulnerable. The separately named CloudSOC SpanVA appliance is affected; that assessment does not transfer to the CASB service."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0732-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0732"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Broadcom ESG advisory 39404, updated 2026-10-23, explicitly lists CloudSOC CASB as not vulnerable. The separately named CloudSOC SpanVA appliance is affected; that assessment does not transfer to the CASB service.",
+      "summary": "CVE-2026-109619 assessment: Not vuln. Broadcom ESG advisory 39404, updated 2026-10-23, explicitly lists CloudSOC CASB as not vulnerable. The separately named CloudSOC SpanVA appliance is affected; that assessment does not transfer to the CASB service.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
+      "security_impactStatement": "Broadcom ESG advisory 39404, updated 2026-10-23, explicitly lists CloudSOC CASB as not vulnerable. The separately named CloudSOC SpanVA appliance is affected; that assessment does not transfer to the CASB service."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:php-0695-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0695"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.7 explicitly lists Ultra Packet Core - Converged Policy and Charging as confirmed not vulnerable to both CVEs. This matches the existing Ultra Cloud Core product entry; no status is inferred from absence.",
+      "summary": "CVE-2026-109618 assessment: Not vuln",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_actionStatement": "No remediation is required for this vendor-confirmed non-vulnerable product scope.",
+      "security_impactStatement": "Cisco advisory version 1.7 explicitly lists Ultra Packet Core - Converged Policy and Charging as confirmed not vulnerable to both CVEs. This matches the existing Ultra Cloud Core product entry; no status is inferred from absence."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0695-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0695"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.7 explicitly lists Ultra Packet Core - Converged Policy and Charging as confirmed not vulnerable to both CVEs. This matches the existing Ultra Cloud Core product entry; no status is inferred from absence.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_actionStatement": "No remediation is required for this vendor-confirmed non-vulnerable product scope.",
+      "security_impactStatement": "Cisco advisory version 1.7 explicitly lists Ultra Packet Core - Converged Policy and Charging as confirmed not vulnerable to both CVEs. This matches the existing Ultra Cloud Core product entry; no status is inferred from absence."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:php-0733-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0733"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) remains under investigation and is excluded.",
+      "summary": "CVE-2026-109618 assessment: Not vuln",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
+      "security_actionStatement": "No remediation is required for Content Analysis (CAS) for these CVEs. Do not extend this conclusion to CASMA.",
+      "security_impactStatement": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) remains under investigation and is excluded."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0733-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0733"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) remains under investigation and is excluded.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
+      "security_actionStatement": "No remediation is required for Content Analysis (CAS) for these CVEs. Do not extend this conclusion to CASMA.",
+      "security_impactStatement": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) remains under investigation and is excluded."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0754",
+      "creationInfo": "_:creationinfo",
+      "name": "UISP CRM (UCRM)",
+      "software_primaryPurpose": "application",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0754"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:ubiquiti",
+      "software_packageVersion": "UISP Application 3.1.70 (CRM module)",
+      "summary": "Public official release dated 2026-10-23; Ubiquiti recommends updating promptly. The release notes do not specify a standalone CRM version, bundled PHP version, or complete affected-version range. Official release: https://uisp.community.ui.com/releases/UISP-Application-3-1-70/8292c6cb-4eb4-447d-9c90-455ca41b4f67 ; Historical community discussion: https://uisp.community.ui.com/questions/UCRM-4-6-15-remains-exposed-to-CVSS-9-2-RCEs-CVE-2026-109618-109619-ETA-for-PHP-8-3-36/d0fae711-2df1-4550-80e3-2b395a6a5c86 ; Earlier EA release (contents not independently verified): https://uisp.community.ui.com/releases/UISP-Application-3-1-69/d19ae117-04f7-42b3-bf53-f77d2b9e09fc",
+      "description": "CRM component of UISP Application (formerly UNMS).",
+      "comment": "Official release notes reviewed 2026-10-24. Assessment is limited to CVE-2026-109618 and CVE-2026-109619 in the UISP CRM module of UISP Application 3.1.70. No claim is made about UniFi, UISP hardware, the complete range of earlier affected releases, other CVEs, or cloud rollout.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "releaseNotes",
+          "locator": [
+            "https://uisp.community.ui.com/releases/UISP-Application-3-1-70/8292c6cb-4eb4-447d-9c90-455ca41b4f67"
+          ],
+          "comment": "Public official UISP Application 3.1.70 release notes; explicitly confirms fixes for both CVEs in the CRM PHP runtime. Reviewed 2026-10-24."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://uisp.community.ui.com/questions/UCRM-4-6-15-remains-exposed-to-CVSS-9-2-RCEs-CVE-2026-109618-109619-ETA-for-PHP-8-3-36/d0fae711-2df1-4550-80e3-2b395a6a5c86"
+          ],
+          "comment": "Community reports; not a vendor advisory."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "releaseNotes",
+          "locator": [
+            "https://uisp.community.ui.com/releases/UISP-Application-3-1-69/d19ae117-04f7-42b3-bf53-f77d2b9e09fc"
+          ],
+          "comment": "Official release URL; EA access gate observed, release-note contents not verified."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0754",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0754",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "dependsOn",
+      "summary": "Vendor-confirmed PHP runtime dependency in the UISP CRM module.",
+      "comment": "UISP Application 3.1.70 official release notes identify the PHP runtime used by the CRM module. Source: https://uisp.community.ui.com/releases/UISP-Application-3-1-70/8292c6cb-4eb4-447d-9c90-455ca41b4f67"
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:ubiquiti-uisp-crm-20261024",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0754"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Ubiquiti confirms that UISP Application 3.1.70 fixes both PHP2Shell CVEs in the PHP runtime used by the UISP CRM module. Fix status applies to that release; it does not establish that existing deployments or cloud instances have been upgraded.",
+      "comment": "Public official source reviewed 2026-10-24: https://uisp.community.ui.com/releases/UISP-Application-3-1-70/8292c6cb-4eb4-447d-9c90-455ca41b4f67\nAction statement: Update to UISP Application 3.1.70 using vendor instructions and verify successful deployment."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:ubiquiti-uisp-crm-20261024",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0754"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Ubiquiti confirms that UISP Application 3.1.70 fixes both PHP2Shell CVEs in the PHP runtime used by the UISP CRM module. Fix status applies to that release; it does not establish that existing deployments or cloud instances have been upgraded.",
+      "comment": "Public official source reviewed 2026-10-24: https://uisp.community.ui.com/releases/UISP-Application-3-1-70/8292c6cb-4eb4-447d-9c90-455ca41b4f67\nAction statement: Update to UISP Application 3.1.70 using vendor instructions and verify successful deployment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0755",
+      "creationInfo": "_:creationinfo",
+      "name": "CloudSOC SpanVA Appliance",
+      "software_primaryPurpose": "application",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0755"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:broadcom:caf79e01972c",
+      "summary": "Broadcom ESG advisory 39404 lists CloudSOC SpanVA Appliance under Affected Product(s) for CVE-2026-109618 and CVE-2026-109619; the umbrella advisory does not state fixed releases.",
+      "description": "CloudSOC SpanVA security appliance",
+      "comment": "Inventory record: PHP-0755\nCategory: Security operations and management consoles\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected product scope\nDeployment status: Not measured\nPHP surface: Vendor-named product in Broadcom ESG advisory 39404; exact PHP component and SAPI are not published\nPHP version scope: Broadcom ESG advisory 39404, updated 2026-10-26, lists CloudSOC SpanVA Appliance under Affected Product(s); affected and fixed releases are not stated in the umbrella advisory.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes product review scope, not a live deployment, exact embedded PHP build, enabled feature set, reachable path or exploitation. The umbrella advisory links a product-specific advisory, but this record does not infer unpublished version or remediation scope from that link.\nPatch owner: Broadcom; operator for exposure reduction and update rollout\nSource accessed: 2026-10-27\nVulnerability status: Vulnerable. Broadcom ESG advisory 39404 lists CloudSOC SpanVA Appliance under Affected Product(s) for both PHP2Shell CVEs; no fixed version is stated in the umbrella advisory.\nCVE-2026-109618: Vendor-confirmed affected product scope; fixed version not stated in umbrella advisory\nCVE-2026-109619: Vendor-confirmed affected product scope; fixed version not stated in umbrella advisory\nCVE assessment limit: Only the stated product scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-27\nVendor advisory sources: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404\nRelease pin: Broadcom ESG advisory 39404 affected product scope",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404"
+          ],
+          "comment": "Enterprise Security Group Advisory for PHP2Shell; 2026-10-26; reviewed 2026-10-27"
+        }
+      ],
+      "software_packageVersion": "Broadcom ESG advisory 39404 affected product scope"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0756",
+      "creationInfo": "_:creationinfo",
+      "name": "Content Analysis and Malware Analysis (CASMA)",
+      "software_primaryPurpose": "application",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0756"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:broadcom:caf79e01972c",
+      "summary": "Broadcom advisory 39404, updated 26 October, lists Content Analysis and Malware Analysis (CASMA) under investigation for both PHP2Shell CVEs; affected and fixed releases are not published.",
+      "description": "Content analysis and malware analysis security product",
+      "comment": "Inventory record: PHP-0756\nCategory: Security operations and management consoles\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor-confirmed under-investigation product scope\nDeployment status: Not measured\nPHP surface: Vendor-named product in Broadcom ESG advisory 39404; exact PHP component and SAPI are not published\nPHP version scope: Broadcom ESG advisory 39404, updated 2026-10-26, lists Content Analysis and Malware Analysis (CASMA) under investigation; affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes product review scope, not a confirmed PHP dependency, affected build, enabled feature set, reachable path or exploitation. The separate Content Analysis (CAS) not-vulnerable assessment does not transfer to CASMA.\nPatch owner: Broadcom; operator for exposure review and future remediation rollout\nSource accessed: 2026-10-27\nVulnerability status: Investigation. Broadcom ESG advisory 39404 lists Content Analysis and Malware Analysis (CASMA) under investigation for both PHP2Shell CVEs.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-27\nVendor advisory sources: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404\nRelease pin: Broadcom ESG advisory 39404 under-investigation product scope",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404"
+          ],
+          "comment": "Enterprise Security Group Advisory for PHP2Shell; 2026-10-26; reviewed 2026-10-27"
+        }
+      ],
+      "software_packageVersion": "Broadcom ESG advisory 39404 under-investigation product scope"
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0755",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0755",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "other",
+      "summary": "Inventory association for PHP-0755: vendor PHP advisory candidate",
+      "comment": "Broadcom ESG advisory 39404 lists this product as affected by PHP2Shell. This association records vendor review scope only; the exact PHP dependency is not published."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0756",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0756",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "other",
+      "summary": "Inventory association for PHP-0756: vendor PHP advisory candidate",
+      "comment": "Broadcom ESG advisory 39404 lists this product under investigation for PHP2Shell. This association records vendor review scope only; a PHP dependency is not confirmed."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0755-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0755"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Broadcom ESG advisory 39404, updated 2026-10-26, explicitly lists CloudSOC SpanVA Appliance under Affected Product(s) for both PHP2Shell CVEs; the umbrella advisory does not state affected or fixed releases.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
+      "security_actionStatement": "Monitor the linked Broadcom product advisory for remediation details and restrict management exposure until a fixed release is verified."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0755-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0755"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Broadcom ESG advisory 39404, updated 2026-10-26, explicitly lists CloudSOC SpanVA Appliance under Affected Product(s) for both PHP2Shell CVEs; the umbrella advisory does not state affected or fixed releases.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
+      "security_actionStatement": "Monitor the linked Broadcom product advisory for remediation details and restrict management exposure until a fixed release is verified."
+    },
+    {
+      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:php-0756-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0756"
+      ],
+      "relationshipType": "underInvestigationFor",
+      "security_statusNotes": "Broadcom advisory 39404, updated 26 October, lists Content Analysis and Malware Analysis (CASMA) under investigation for both PHP2Shell CVEs. The separate Content Analysis (CAS) product is not vulnerable; that assessment does not transfer to CASMA.",
+      "summary": "CVE-2026-109618 assessment: Investigation",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
+      "security_actionStatement": "Monitor Broadcom advisory 39404 for a resolved product status; do not inherit the separate Content Analysis (CAS) not-vulnerable assessment."
+    },
+    {
+      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:php-0756-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0756"
+      ],
+      "relationshipType": "underInvestigationFor",
+      "security_statusNotes": "Broadcom advisory 39404, updated 26 October, lists Content Analysis and Malware Analysis (CASMA) under investigation for both PHP2Shell CVEs. The separate Content Analysis (CAS) product is not vulnerable; that assessment does not transfer to CASMA.",
+      "summary": "CVE-2026-109619 assessment: Investigation",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
+      "security_actionStatement": "Monitor Broadcom advisory 39404 for a resolved product status; do not inherit the separate Content Analysis (CAS) not-vulnerable assessment."
     }
   ]
 }

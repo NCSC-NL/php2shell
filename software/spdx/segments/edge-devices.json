@@ -356,7 +356,7 @@
       "creationInfo": "_:creationinfo",
       "name": "QNAP QTS built-in PHP runtime",
       "software_primaryPurpose": "firmware",
-      "software_packageVersion": "QTS 6.1.0; QTS 5.2.11 and earlier",
+      "software_packageVersion": "QTS 6.1.0.3656 build 20261023 / QTS 5.2.11.3661 build 20261023",
       "externalIdentifier": [
         {
           "type": "ExternalIdentifier",
@@ -365,9 +365,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:qnap:01af88f7bc7a",
-      "summary": "QNAP QSA-26-18 lists QTS 6.1.0 and QTS 5.2.11 and earlier as affected by CVE-2026-109618 and CVE-2026-109619; fixed versions are to be announced.",
+      "summary": "QNAP QSA-26-18 revision 1.1 (2026-10-24) marks the QTS branches Resolved and lists these fixed firmware builds for both CVEs. Earlier affected builds remain vulnerable.",
       "description": "Firmware-bundled PHP; enabled services and exact SAPI unknown",
-      "comment": "Inventory record: PHP-0425\nCategory: Appliances and embedded\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected product scope\nDeployment status: Not measured\nPHP surface: Firmware-bundled PHP; QNAP says PHP is used in web components of QNAP operating systems and several QNAP applications.\nPHP version scope: QSA-26-18 lists QTS 6.1.0 and QTS 5.2.11 and earlier as affected; fixed versions are to be announced. Earlier QNAP FAQ mapping retained: QTS 4.2.6-4.3.6 -> PHP 5.6; 4.4.x -> 7.3; 5.0.1 -> 7.4; 5.1 -> 8.2.\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: QSA-26-18 establishes affected QTS release scope, not a live deployment, exact embedded PHP patch build, enabled feature set, reachable path or exploitation. The optional PHP7.4 app remains separately scoped as PHP-0610. PHP included in containers running on Container Station or in third-party applications is outside QNAP update coverage.\nPatch owner: QNAP through firmware releases; NAS administrator for exposure reduction and update rollout\nDownstream surface: QNAP web components in the named QTS releases\nRelease pin: QSA-26-18 published 2026-10-22; earlier built-in mapping FAQ 2024-03-05 retained in source references\nSource accessed: 2026-10-22\nAliases: qnap:qts-built-in-php\nVulnerability status: QNAP QSA-26-18 lists the QTS release scope as affected; fixed versions are to be announced.\nCVE-2026-109618: Vendor-confirmed affected QTS scope; fixed versions to be announced\nCVE-2026-109619: Vendor-confirmed affected QTS scope; fixed versions to be announced\nCVE assessment limit: Affected product release scope is vendor-confirmed; installed version, exposure, configuration and exploitation need separate evidence.",
+      "comment": "Inventory record: PHP-0425\nCategory: Appliances and embedded\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Firmware-bundled PHP; QNAP says PHP is used in web components of QNAP operating systems and several QNAP applications.\nPHP version scope: QTS 6.1.0.3656 build 20261023 / QTS 5.2.11.3661 build 20261023\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: Only the named vendor product and version scope is assessed. Installed versions, exposure and exploitation were not tested.\nPatch owner: QNAP through firmware releases; NAS administrator for exposure reduction and update rollout\nDownstream surface: QNAP web components in the named QTS releases\nRelease pin: QTS 6.1.0.3656 build 20261023 / QTS 5.2.11.3661 build 20261023\nSource accessed: 2026-10-26\nAliases: qnap:qts-built-in-php\nVulnerability status: Fix / Fix. QNAP QSA-26-18 revision 1.1 (2026-10-24) marks the QTS branches Resolved and lists these fixed firmware builds for both CVEs. Earlier affected builds remain vulnerable.\nCVE-2026-109618: Fix. QNAP QSA-26-18 revision 1.1 (2026-10-24) marks the QTS branches Resolved and lists these fixed firmware builds for both CVEs. Earlier affected builds remain vulnerable.\nCVE-2026-109619: Fix. QNAP QSA-26-18 revision 1.1 (2026-10-24) marks the QTS branches Resolved and lists these fixed firmware builds for both CVEs. Earlier affected builds remain vulnerable.\nCVE assessment limit: Affected product release scope is vendor-confirmed; installed version, exposure, configuration and exploitation need separate evidence.\nPublic vendor CVE review: 2026-10-26\nVendor advisory sources: https://www.qnap.com/en/security-advisory/qsa-26-18",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -391,7 +391,7 @@
           "locator": [
             "https://www.qnap.com/en/security-advisory/qsa-26-18"
           ],
-          "comment": "QNAP Security Advisory QSA-26-18 (2026-10-22)"
+          "comment": "Official public vendor source reviewed 2026-10-26"
         }
       ]
     },
@@ -401,7 +401,7 @@
       "creationInfo": "_:creationinfo",
       "name": "QNAP QuTS hero built-in PHP runtime",
       "software_primaryPurpose": "firmware",
-      "software_packageVersion": "QuTS hero h6.1.0; QuTS hero h6.0.x; QuTS hero h5.2.11 and earlier",
+      "software_packageVersion": "QuTS hero h6.1.0.3656 / h6.0.2.3656 / h5.2.11.3661, each build 20261023",
       "externalIdentifier": [
         {
           "type": "ExternalIdentifier",
@@ -410,9 +410,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:qnap:01af88f7bc7a",
-      "summary": "QNAP QSA-26-18 lists QuTS hero h6.1.0, QuTS hero h6.0.x and QuTS hero h5.2.11 and earlier as affected by CVE-2026-109618 and CVE-2026-109619; fixed versions are to be announced.",
+      "summary": "QNAP QSA-26-18 revision 1.1 (2026-10-24) marks the QuTS hero branches Resolved and lists these fixed firmware builds for both CVEs. Earlier affected builds remain vulnerable.",
       "description": "Firmware-bundled PHP; active workload/SAPI unmeasured",
-      "comment": "Inventory record: PHP-0426\nCategory: Appliances and embedded\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected product scope\nDeployment status: Not measured\nPHP surface: Firmware-bundled PHP; QNAP says PHP is used in web components of QNAP operating systems and several QNAP applications.\nPHP version scope: QSA-26-18 lists QuTS hero h6.1.0, QuTS hero h6.0.x and QuTS hero h5.2.11 and earlier as affected; fixed versions are to be announced. Earlier QNAP FAQ mapping retained: QuTS hero h4.5.4 -> PHP 7.3; h5.0.1 -> 7.4; h5.1 -> 8.2.\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: QSA-26-18 establishes affected QuTS hero release scope, not a live deployment, exact embedded PHP patch build, enabled feature set, reachable path or exploitation. The optional PHP7.4 app remains separately scoped as PHP-0610. PHP included in containers running on Container Station or in third-party applications is outside QNAP update coverage.\nPatch owner: QNAP through firmware releases; NAS administrator for exposure reduction and update rollout\nDownstream surface: QNAP web components in the named QuTS hero releases\nRelease pin: QSA-26-18 published 2026-10-22; earlier built-in mapping FAQ 2024-03-05 retained in source references\nSource accessed: 2026-10-22\nAliases: qnap:quts-hero-built-in-php\nVulnerability status: QNAP QSA-26-18 lists the QuTS hero release scope as affected; fixed versions are to be announced.\nCVE-2026-109618: Vendor-confirmed affected QuTS hero scope; fixed versions to be announced\nCVE-2026-109619: Vendor-confirmed affected QuTS hero scope; fixed versions to be announced\nCVE assessment limit: Affected product release scope is vendor-confirmed; installed version, exposure, configuration and exploitation need separate evidence.",
+      "comment": "Inventory record: PHP-0426\nCategory: Appliances and embedded\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Firmware-bundled PHP; QNAP says PHP is used in web components of QNAP operating systems and several QNAP applications.\nPHP version scope: QuTS hero h6.1.0.3656 / h6.0.2.3656 / h5.2.11.3661, each build 20261023\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: Only the named vendor product and version scope is assessed. Installed versions, exposure and exploitation were not tested.\nPatch owner: QNAP through firmware releases; NAS administrator for exposure reduction and update rollout\nDownstream surface: QNAP web components in the named QuTS hero releases\nRelease pin: QuTS hero h6.1.0.3656 / h6.0.2.3656 / h5.2.11.3661, each build 20261023\nSource accessed: 2026-10-26\nAliases: qnap:quts-hero-built-in-php\nVulnerability status: Fix / Fix. QNAP QSA-26-18 revision 1.1 (2026-10-24) marks the QuTS hero branches Resolved and lists these fixed firmware builds for both CVEs. Earlier affected builds remain vulnerable.\nCVE-2026-109618: Fix. QNAP QSA-26-18 revision 1.1 (2026-10-24) marks the QuTS hero branches Resolved and lists these fixed firmware builds for both CVEs. Earlier affected builds remain vulnerable.\nCVE-2026-109619: Fix. QNAP QSA-26-18 revision 1.1 (2026-10-24) marks the QuTS hero branches Resolved and lists these fixed firmware builds for both CVEs. Earlier affected builds remain vulnerable.\nCVE assessment limit: Affected product release scope is vendor-confirmed; installed version, exposure, configuration and exploitation need separate evidence.\nPublic vendor CVE review: 2026-10-26\nVendor advisory sources: https://www.qnap.com/en/security-advisory/qsa-26-18",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -436,7 +436,7 @@
           "locator": [
             "https://www.qnap.com/en/security-advisory/qsa-26-18"
           ],
-          "comment": "QNAP Security Advisory QSA-26-18 (2026-10-22)"
+          "comment": "Official public vendor source reviewed 2026-10-26"
         }
       ]
     },
@@ -555,9 +555,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:sangoma-freepbx-project:0e64d6e9d80d",
-      "summary": "FreePBX17 documents PHP8.2 as its supported tested platform, distinct from its installer minimum guard.",
+      "summary": "Apply the latest system PHP security updates using Sangoma's FreePBX 17 update procedure and verify the installed packages.",
       "description": "Server-side PHP administration and installer/CLI; exact web SAPI not pinned",
-      "comment": "Inventory record: PHP-0432\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP administration and installer/CLI; exact web SAPI not pinned\nPHP version scope: Official17FAQ: PHP8.2.x tested/default; inspected release/17.0 installer only rejects PHP<7.4\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: A permissive installer guard does not override supported-platform or commercial-module constraints. Asterisk SIP/media processing is a separate implementation. No deployment total, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied. Public documents/static source only; no retrieved code or appliance image was installed, executed, built or tested.\nPatch owner: FreePBX/Sangoma for framework/modules and supported distribution; operator for runtime and module updates\nDownstream surface: Only the named management component and its documented callers\nRelease pin: FreePBX17 vendor FAQ plus moving release/17.0 installer; no immutable build pin\nSource accessed: 2026-10-17\nAliases: freepbx:17-management-framework\nConditional downstream consequence: If a matching PHP or enabled-extension flaw is reachable in this management interface, possible effects include worker denial of service, disclosure of accessible credentials, configuration modification or code execution as the service account. Root access, packet/media-plane compromise, tenant escape and lateral movement require separate privilege, reachability and isolation evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0432\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP administration and installer/CLI; exact web SAPI not pinned\nPHP version scope: Official17FAQ: PHP8.2.x tested/default; inspected release/17.0 installer only rejects PHP<7.4\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: A permissive installer guard does not override supported-platform or commercial-module constraints. Asterisk SIP/media processing is a separate implementation. No deployment total, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied. Public documents/static source only; no retrieved code or appliance image was installed, executed, built or tested.\nPatch owner: FreePBX/Sangoma for framework/modules and supported distribution; operator for runtime and module updates\nDownstream surface: Only the named management component and its documented callers\nRelease pin: FreePBX17 vendor FAQ plus moving release/17.0 installer; no immutable build pin\nSource accessed: 2026-10-17\nAliases: freepbx:17-management-framework\nConditional downstream consequence: If a matching PHP or enabled-extension flaw is reachable in this management interface, possible effects include worker denial of service, disclosure of accessible credentials, configuration modification or code execution as the service account. Root access, packet/media-plane compromise, tenant escape and lateral movement require separate privilege, reachability and isolation evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Fix; CVE-2026-109619: Fix\nScope: FreePBX 17 after system PHP security updates; not an assertion that an unupdated FreePBX 17 installation is fixed\nAssessment: Sangoma directs FreePBX 17 operators to install the available PHP security updates for both CVEs. Fixed scope requires those system updates; an unupdated version 17 installation remains affected. The advisory does not specify an exact package build.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -574,8 +574,25 @@
             "https://github.com/FreePBX/framework/blob/release/17.0/install.php"
           ],
           "comment": "Official project/vendor PHP relationship evidence - The installer guard rejects versions below7.4, a different scope from supported17requirements."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://community.freepbx.org/t/critical-php-security-vulnerabilities-action-required-for-freepbx-and-pbxact/110423"
+          ],
+          "comment": "Critical PHP Security Vulnerabilities: Action Required for FreePBX and PBXact; 2026-10-23; reviewed 2026-10-27"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://sangomakb.atlassian.net/wiki/spaces/FP/pages/2121924609/FreePBX%2BOpen%2BSource%2B-%2BUpdate%2Bsystem%2Bsoftware%2Bon%2BFreePBX%2B17"
+          ],
+          "comment": "FreePBX Open Source - Update system software on FreePBX 17; Updated Oct 23 (vendor page); reviewed 2026-10-27"
         }
-      ]
+      ],
+      "software_packageVersion": "FreePBX 17 after latest PHP security updates (Sangoma advisory 2026-10-23); exact build unpublished"
     },
     {
       "type": "software_Package",
@@ -591,9 +608,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:sangoma:fcf1fd5f9a41",
-      "summary": "Sangoma describes PBXact17 as its commercial FreePBX-based system with PHP8.2.",
+      "summary": "Apply the latest system PHP security updates using Sangoma's version 17 update procedure and verify the installed packages.",
       "description": "Commercial PHP-based FreePBX management application; web SAPI unknown",
-      "comment": "Inventory record: PHP-0433\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0432\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Commercial PHP-based FreePBX management application; web SAPI unknown\nPHP version scope: PBXact17 GA announcement specifies PHP8.2 and Debian12\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: Edition and base framework overlap. Appliance model/module compatibility and deployed PHP patches require separate qualification. No deployment total, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied. Public documents/static source only; no retrieved code or appliance image was installed, executed, built or tested.\nPatch owner: Sangoma for supported edition/firmware/modules; administrator for applicable update rollout\nDownstream surface: Only the named management component and its documented callers\nRelease pin: PBXact17 GA announcement; exact appliance build not pinned\nSource accessed: 2026-10-17\nAliases: sangoma:pbxact17\nConditional downstream consequence: If a matching PHP or enabled-extension flaw is reachable in this management interface, possible effects include worker denial of service, disclosure of accessible credentials, configuration modification or code execution as the service account. Root access, packet/media-plane compromise, tenant escape and lateral movement require separate privilege, reachability and isolation evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0433\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0432\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Commercial PHP-based FreePBX management application; web SAPI unknown\nPHP version scope: PBXact17 GA announcement specifies PHP8.2 and Debian12\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: Edition and base framework overlap. Appliance model/module compatibility and deployed PHP patches require separate qualification. No deployment total, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied. Public documents/static source only; no retrieved code or appliance image was installed, executed, built or tested.\nPatch owner: Sangoma for supported edition/firmware/modules; administrator for applicable update rollout\nDownstream surface: Only the named management component and its documented callers\nRelease pin: PBXact17 GA announcement; exact appliance build not pinned\nSource accessed: 2026-10-17\nAliases: sangoma:pbxact17\nConditional downstream consequence: If a matching PHP or enabled-extension flaw is reachable in this management interface, possible effects include worker denial of service, disclosure of accessible credentials, configuration modification or code execution as the service account. Root access, packet/media-plane compromise, tenant escape and lateral movement require separate privilege, reachability and isolation evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Fix; CVE-2026-109619: Fix\nScope: PBXact 17 after system PHP security updates; unupdated installations remain outside fixed scope\nAssessment: Sangoma directs PBXact 17 operators to install the available PHP security updates for both CVEs. Fixed scope requires those system updates; an unupdated version 17 installation remains affected. The advisory does not specify an exact package build.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -602,8 +619,17 @@
             "https://www.freepbx.org/pbxact-17-general-availability-announcement/"
           ],
           "comment": "Official project/vendor scope evidence"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://community.freepbx.org/t/critical-php-security-vulnerabilities-action-required-for-freepbx-and-pbxact/110423"
+          ],
+          "comment": "Critical PHP Security Vulnerabilities: Action Required for FreePBX and PBXact; 2026-10-23; reviewed 2026-10-27"
         }
-      ]
+      ],
+      "software_packageVersion": "PBXact 17 after latest PHP security updates (Sangoma advisory 2026-10-23); exact build unpublished"
     },
     {
       "type": "software_Package",
@@ -675,7 +701,7 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:vitalpbx:cdb51f865789",
-      "summary": "The vendor\u2019s4.0.0R4 announcement explicitly records a PHP8.1 upgrade.",
+      "summary": "The vendor’s4.0.0R4 announcement explicitly records a PHP8.1 upgrade.",
       "description": "Version-scoped bundled PHP for communications management; SAPI unknown",
       "comment": "Inventory record: PHP-0436\nCategory: Appliances and embedded\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Version-scoped bundled PHP for communications management; SAPI unknown\nPHP version scope: Official4.0.0R4 announcement,2022-10-10: PHP8.1 upgrade\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: This confirms the named release, not the current4.5 core PHP version. A VitXi release requirement must not be inherited by the whole VitalPBX product. No deployment total, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied. Public documents/static source only; no retrieved code or appliance image was installed, executed, built or tested.\nPatch owner: VitalPBX distribution maintainer; administrator for applicable release and runtime rollout\nDownstream surface: Only the named management component and its documented callers\nRelease pin: Vendor4.0.0R4 announcement dated2022-10-10; current branch unresolved\nSource accessed: 2026-10-17\nAliases: vitalpbx:4.0-php-management\nConditional downstream consequence: If a matching PHP or enabled-extension flaw is reachable in this management interface, possible effects include worker denial of service, disclosure of accessible credentials, configuration modification or code execution as the service account. Root access, packet/media-plane compromise, tenant escape and lateral movement require separate privilege, reachability and isolation evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
       "externalRef": [
@@ -731,7 +757,7 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:inextrix-astpp:5cadc909e4cb",
-      "summary": "ASTPP\u2019s vendor explicitly identifies PHP8.2 in version7.",
+      "summary": "ASTPP’s vendor explicitly identifies PHP8.2 in version7.",
       "description": "Server-side PHP billing/administration application; exact SAPI unknown",
       "comment": "Inventory record: PHP-0438\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP billing/administration application; exact SAPI unknown\nPHP version scope: Vendor v7 webinar FAQ states PHP8.2 update; patch and edition-specific builds unknown\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: Deployment options and billing features do not prove PHP inside FreeSWITCH media/signalling, every hosted service or all proprietary edition components. No deployment total, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied. Public documents/static source only; no retrieved code or appliance image was installed, executed, built or tested.\nPatch owner: ASTPP/iNextrix for application/edition packages; runtime provider/operator for applicable updates\nDownstream surface: Billing, routing configuration and application-accessible account/tenant data\nRelease pin: Version7 vendor FAQ; immutable source/package pin unavailable\nSource accessed: 2026-10-17\nAliases: astpp:v7-php-management\nConditional downstream consequence: If a matching PHP or enabled-extension flaw is reachable in this management interface, possible effects include worker denial of service, disclosure of accessible credentials, configuration modification or code execution as the service account. Root access, packet/media-plane compromise, tenant escape and lateral movement require separate privilege, reachability and isolation evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
       "externalRef": [
@@ -759,7 +785,7 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:raspap-project:fedc8249a109",
-      "summary": "RaspAP\u2019s manual installation configures a PHP-CGI web management interface.",
+      "summary": "RaspAP’s manual installation configures a PHP-CGI web management interface.",
       "description": "lighttpd FastCGI with PHP-CGI; configured restricted service-management sudo commands",
       "comment": "Inventory record: PHP-0443\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: lighttpd FastCGI with PHP-CGI; configured restricted service-management sudo commands\nPHP version scope: Manual recipe uses php8.2-cgi; documented Bullseye alternative7.4; current patch unpinned\nExtensions: OPcache described as an optional optimization; complete required module list unknown\nLimitations: Recipe scope varies by OS. Selected sudo permissions are not unrestricted root access; hostapd/dnsmasq networking is not inferred to execute PHP. No deployment total, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied. Public documents/static source only; no retrieved code or appliance image was installed, executed, built or tested.\nPatch owner: RaspAP for application/configuration; OS PHP packager and administrator for runtime updates\nDownstream surface: Only the named management component and its documented callers\nRelease pin: Moving official source/documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: raspap:php-webgui\nConditional downstream consequence: If a matching PHP or enabled-extension flaw is reachable in this management interface, possible effects include worker denial of service, disclosure of accessible credentials, configuration modification or code execution as the service account. Root access, packet/media-plane compromise, tenant escape and lateral movement require separate privilege, reachability and isolation evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
       "externalRef": [
@@ -843,7 +869,7 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:pi-hole-project:1dfc9fb3e345",
-      "summary": "Pi-hole\u2019s version6 announcement explicitly removes the former lighttpd/PHP dependency.",
+      "summary": "Pi-hole’s version6 announcement explicitly removes the former lighttpd/PHP dependency.",
       "description": "Legacy PHP web UI; v6 replaces the former web stack with FTL/Lua",
       "comment": "Inventory record: PHP-0448\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Historical-only\nDeployment status: Not measured\nPHP surface: Legacy PHP web UI; v6 replaces the former web stack with FTL/Lua\nPHP version scope: Historical v5-era PHP interface; official2025-02-18 v6 migration removes the PHP requirement\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: Do not count currentv6 as a PHP-dependent interface. An upgraded host can retain PHP/lighttpd for other applications; DNS processing is a separate component. No deployment total, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied. Public documents/static source only; no retrieved code or appliance image was installed, executed, built or tested.\nPatch owner: Operator of a retained legacy interface and runtime; successor update path does not establish all packages removed\nDownstream surface: Only the named management component and its documented callers\nRelease pin: Official v6 migration announcement2025-02-18\nSource accessed: 2026-10-17\nAliases: pi-hole:v5-legacy-php-web\nConditional downstream consequence: A matching flaw could affect a retained legacy PHP management deployment only if its actual runtime, input path and privileges match. Historical inclusion establishes neither present installation nor current exploitability; successor and native data-plane implementations require separate evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Historical scope; current use unknown. No affected deployment established.\nCVE-2026-109618: Historical scope; current use unknown\nCVE-2026-109619: Historical scope; current use unknown\nCVE assessment limit: Historical evidence does not prove retirement from every installation or that a current deployment is affected. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
       "externalRef": [
@@ -871,7 +897,7 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:m0n0wall-project:c2892c9539db",
-      "summary": "The project\u2019s facts page lists PHP-CGI; its closure announcement ends further development/releases.",
+      "summary": "The project’s facts page lists PHP-CGI; its closure announcement ends further development/releases.",
       "description": "Bundled PHP-CGI with mini_httpd for appliance management",
       "comment": "Inventory record: PHP-0449\nCategory: Appliances and embedded\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Historical-only\nDeployment status: Not measured\nPHP surface: Bundled PHP-CGI with mini_httpd for appliance management\nPHP version scope: Legacy appliance; project ended2015-02-15; PHP patch level unknown\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: Historical inclusion is not a current installed fleet. Fork ancestry does not impose the same runtime on later pfSense, OPNsense, FreeNAS or other descendants. No deployment total, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied. Public documents/static source only; no retrieved code or appliance image was installed, executed, built or tested.\nPatch owner: No further upstream project releases after closure; retained-system operator owns local update/migration decisions\nDownstream surface: Only the named management component and its documented callers\nRelease pin: Archived project facts and end announcement2015-02-15\nSource accessed: 2026-10-17\nAliases: m0n0wall:legacy-php-cgi\nConditional downstream consequence: A matching flaw could affect a retained legacy PHP management deployment only if its actual runtime, input path and privileges match. Historical inclusion establishes neither present installation nor current exploitability; successor and native data-plane implementations require separate evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Historical scope; current use unknown. No affected deployment established.\nCVE-2026-109618: Historical scope; current use unknown\nCVE-2026-109619: Historical scope; current use unknown\nCVE assessment limit: Historical evidence does not prove retirement from every installation or that a current deployment is affected. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
       "externalRef": [
@@ -1285,9 +1311,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:terramaster:1fcc803c1548",
-      "summary": "The Web Server guide documents optional PHP instances, virtual-host version selection and configurable extensions.",
+      "summary": "Migrate to TOS 7, install the vendor-fixed PHP package in App Center and restart PHP-dependent services. Update containers independently.",
       "description": "Configurable PHP instances attached to virtual hosts; server SAPI unverified",
-      "comment": "Inventory record: PHP-0609\nCategory: Appliances and embedded\nOriginal relationship: hosts\nRelationship direction: hosts_php_workloads\nParent component: TerraMaster TOS6\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Configurable PHP instances attached to virtual hosts; server SAPI unverified\nPHP version scope: Versioned TOS6 guide allows choosing PHP versions and creating per-site PHP instances; available branches, PHP patches and firmware builds unspecified.\nExtensions: Xdebug is explicitly optional; other extension names and cache implementation not enumerated\nLimitations: Hosting support does not prove TOS or the management GUI is written in PHP. The guide\u2019s virtual hosts do not establish tenant isolation or shared-process boundaries. Actual PHP/SAPI, package contents, selected extensions, Internet exposure and installations remain unknown.\nPatch owner: TerraMaster for package/firmware integration and distribution; PHP/component upstream for fixes; operator for compatible deployment and process restart\nDownstream surface: Only selected installed/configured NAS PHP workloads, not every NAS service or client\nRelease pin: TOS6-scoped public Web Server guide; firmware/runtime release pin unknown\nSource accessed: 2026-10-19\nAliases: terramaster:tos6-web-server-php-option\nConditional downstream consequence: Analyst judgment: a matching PHP flaw could affect a configured workload using this installed package and a loaded/reachable feature. Disclosure, DoS, integrity or code execution depend on the exact build, input path and privileges. Credentials, tenant crossing and host control are not established by catalogue availability.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0609\nCategory: Appliances and embedded\nOriginal relationship: hosts\nRelationship direction: hosts_php_workloads\nParent component: TerraMaster TOS6\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Configurable PHP instances attached to virtual hosts; server SAPI unverified\nPHP version scope: Versioned TOS6 guide allows choosing PHP versions and creating per-site PHP instances; available branches, PHP patches and firmware builds unspecified.\nExtensions: Xdebug is explicitly optional; other extension names and cache implementation not enumerated\nLimitations: Hosting support does not prove TOS or the management GUI is written in PHP. The guide’s virtual hosts do not establish tenant isolation or shared-process boundaries. Actual PHP/SAPI, package contents, selected extensions, Internet exposure and installations remain unknown.\nPatch owner: TerraMaster for package/firmware integration and distribution; PHP/component upstream for fixes; operator for compatible deployment and process restart\nDownstream surface: Only selected installed/configured NAS PHP workloads, not every NAS service or client\nRelease pin: TOS6-scoped public Web Server guide; firmware/runtime release pin unknown\nSource accessed: 2026-10-19\nAliases: terramaster:tos6-web-server-php-option\nConditional downstream consequence: Analyst judgment: a matching PHP flaw could affect a configured workload using this installed package and a loaded/reachable feature. Disclosure, DoS, integrity or code execution depend on the exact build, input path and privileges. Credentials, tenant crossing and host control are not established by catalogue availability.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Vulnerable; CVE-2026-109619: Vulnerable\nScope: TOS6 PHP-hosting scope in existing entry. TOS7 fixed PHP packages are separate remediation scope, not proof of an in-place TOS6 fix.\nAssessment: TerraMaster support explicitly lists TOS 5/6 as affected by both CVEs and names Web Server among PHP-dependent applications. TOS 6 users must migrate to TOS 7 and install its patched PHP packages; no in-place TOS 6 fix is established.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1296,8 +1322,17 @@
             "https://help.terra-master.com/docs/TOS6/application/web-server"
           ],
           "comment": "Official NAS vendor runtime/hosting declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://forum.terra-master.com/en/viewtopic.php?p=61416&t=10721"
+          ],
+          "comment": "PHP Critical Vulnerability Fix Announcemen; Post displayed 'Yesterday, 19:47' when accessed 2026-10-27; absolute publication date not exposed in retrieved page; reviewed 2026-10-27"
         }
-      ]
+      ],
+      "software_packageVersion": "TOS 6 systems using PHP/Web Server; migration to TOS 7 required"
     },
     {
       "type": "software_Package",
@@ -1315,7 +1350,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:qnap:01af88f7bc7a",
       "summary": "QNAP documents a separate PHP7.4 application and its firmware-transition disablement.",
       "description": "Selected NAS PHP runtime; exact SAPI and active service identities unknown",
-      "comment": "Inventory record: PHP-0610\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0425 / PHP-0426\nEvidence status: Historical-only\nDeployment status: Not measured\nPHP surface: Selected NAS PHP runtime; exact SAPI and active service identities unknown\nPHP version scope: Vendor FAQ: optional PHP7.4 app on QTS/QuTS hero5.1.x is disabled after upgrade to5.2.0 or later; not available in that later App Center scope. Exact PHP patch unknown.\nExtensions: Exact required/optional/loaded extension set unknown for the selected vendor payload\nLimitations: Historical-only describes the documented app lifecycle, not proof that every older NAS upgraded or uninstalled it. This app is distinct from built-in firmware PHP and container runtimes. The OpenSSL explanation is vendor-package-specific; no universal upstream PHP7.4 constraint or current affected-system claim.\nPatch owner: QNAP for package/firmware integration and distribution; PHP/component upstream for fixes; operator for compatible deployment and process restart\nDownstream surface: Only selected installed/configured NAS PHP workloads, not every NAS service or client\nRelease pin: Vendor FAQ last modified2024-11-19;5.1.x\u21925.2.0 transition, not an exact application binary\nSource accessed: 2026-10-19\nAliases: qnap:optional-php74-app\nConditional downstream consequence: Analyst judgment: a matching PHP flaw could affect a configured workload using this installed package and a loaded/reachable feature. Disclosure, DoS, integrity or code execution depend on the exact build, input path and privileges. Credentials, tenant crossing and host control are not established by catalogue availability.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Historical scope; current use unknown. No affected deployment established.\nCVE-2026-109618: Historical scope; current use unknown\nCVE-2026-109619: Historical scope; current use unknown\nCVE assessment limit: Historical evidence does not prove retirement from every installation or that a current deployment is affected. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0610\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0425 / PHP-0426\nEvidence status: Historical-only\nDeployment status: Not measured\nPHP surface: Selected NAS PHP runtime; exact SAPI and active service identities unknown\nPHP version scope: Vendor FAQ: optional PHP7.4 app on QTS/QuTS hero5.1.x is disabled after upgrade to5.2.0 or later; not available in that later App Center scope. Exact PHP patch unknown.\nExtensions: Exact required/optional/loaded extension set unknown for the selected vendor payload\nLimitations: Historical-only describes the documented app lifecycle, not proof that every older NAS upgraded or uninstalled it. This app is distinct from built-in firmware PHP and container runtimes. The OpenSSL explanation is vendor-package-specific; no universal upstream PHP7.4 constraint or current affected-system claim.\nPatch owner: QNAP for package/firmware integration and distribution; PHP/component upstream for fixes; operator for compatible deployment and process restart\nDownstream surface: Only selected installed/configured NAS PHP workloads, not every NAS service or client\nRelease pin: Vendor FAQ last modified2024-11-19;5.1.x→5.2.0 transition, not an exact application binary\nSource accessed: 2026-10-19\nAliases: qnap:optional-php74-app\nConditional downstream consequence: Analyst judgment: a matching PHP flaw could affect a configured workload using this installed package and a loaded/reachable feature. Disclosure, DoS, integrity or code execution depend on the exact build, input path and privileges. Credentials, tenant crossing and host control are not established by catalogue availability.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Historical scope; current use unknown. No affected deployment established.\nCVE-2026-109618: Historical scope; current use unknown\nCVE-2026-109619: Historical scope; current use unknown\nCVE assessment limit: Historical evidence does not prove retirement from every installation or that a current deployment is affected. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1439,9 +1474,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:f5:6cd28ed32abf",
-      "summary": "Apply F5's Configuration utility access restrictions and staged PHP mitigation guidance while monitoring for an available fixed release.",
+      "summary": "F5 K000163821, updated 2026-10-24, lists fixes in 17.1.3.7, 17.5.1.11 and 21.1.0.4 for both CVEs. APM exposure concerns the data-plane access profile; all-module control-plane exposure concerns the Configuration utility. Earlier affected releases remain vulnerable.",
       "description": "Official issue record confirms PHP in BIG-IP; administration-upload role is described in indexed vendor text.",
-      "comment": "Inventory record: PHP-0626\nEdge inventory record: EDGE-004\nCategory: Appliances and embedded\nScope group: Platform component\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037 runtime family reference\nEvidence status: Official public vendor/upstream CVE assessment\nRelationship confidence: Source supports the stated scope; actual deployment unknown\nDeployment status: Unknown: no installation count, live build, reachability, permissions, failover or exploitation measured\nService role: Appliance platform; administration uploads indicated\nPHP surface: Official issue record confirms PHP in BIG-IP; administration-upload role is described in indexed vendor text.\nPHP version scope: BIG-IP 17.1.0-17.1.3 / 17.5.0-17.5.1 / 21.1.0\nExtensions: Unknown unless explicitly recorded\nImportant boundary: The advisory's all-modules evaluation scope is not a statement that every module or packet path is PHP, and F5 has not yet confirmed vulnerability or non-vulnerability.\nPatch owner: F5 for supported firmware/component corrections; operator/provider for deployment, restart and service continuity\nPossible abuse: If a matching reachable PHP function is compromised, readable settings/credentials or permitted management actions could be misused. Wider appliance control requires separate privilege/path evidence.\nPHP component loss: The PHP-dependent interface/workflow could be unavailable. Independent traffic processing or other services may continue; exact behaviour is not measured.\nWhole appliance loss: Whole BIG-IP shutdown could interrupt the application-delivery/access/security functions actually provisioned on that unit.\nConditions: Requires a matching affected runtime/vendor build, enabled function, reachable input and relevant process permissions. PHP presence alone is insufficient.\nSource accessed: 2026-10-23\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://my.f5.com/manage/s/article/K000163821\nVulnerability status: Vulnerable. F5 confirms the BIG-IP Configuration utility control plane is affected across all modules in the listed releases. K000163821 lists no introduced fix; its mitigations are not recorded as fixed software.\nCVE-2026-109618: Vulnerable. F5 confirms the BIG-IP Configuration utility control plane is affected across all modules in the listed releases. K000163821 lists no introduced fix; its mitigations are not recorded as fixed software.\nCVE-2026-109619: Vulnerable. F5 confirms the BIG-IP Configuration utility control plane is affected across all modules in the listed releases. K000163821 lists no introduced fix; its mitigations are not recorded as fixed software.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nRelease pin: BIG-IP 17.1.0-17.1.3 / 17.5.0-17.5.1 / 21.1.0",
+      "comment": "Inventory record: PHP-0626\nEdge inventory record: EDGE-004\nCategory: Appliances and embedded\nScope group: Platform component\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037 runtime family reference\nEvidence status: Official public vendor/upstream CVE assessment\nRelationship confidence: Source supports the stated scope; actual deployment unknown\nDeployment status: Unknown: no installation count, live build, reachability, permissions, failover or exploitation measured\nService role: Appliance platform; administration uploads indicated\nPHP surface: Official issue record confirms PHP in BIG-IP; administration-upload role is described in indexed vendor text.\nPHP version scope: BIG-IP 17.1.3.7 / 17.5.1.11 / 21.1.0.4\nExtensions: Unknown unless explicitly recorded\nImportant boundary: The advisory's all-modules evaluation scope is not a statement that every module or packet path is PHP, and F5 has not yet confirmed vulnerability or non-vulnerability.\nPatch owner: F5 for supported firmware/component corrections; operator/provider for deployment, restart and service continuity\nPossible abuse: If a matching reachable PHP function is compromised, readable settings/credentials or permitted management actions could be misused. Wider appliance control requires separate privilege/path evidence.\nPHP component loss: The PHP-dependent interface/workflow could be unavailable. Independent traffic processing or other services may continue; exact behaviour is not measured.\nWhole appliance loss: Whole BIG-IP shutdown could interrupt the application-delivery/access/security functions actually provisioned on that unit.\nConditions: Requires a matching affected runtime/vendor build, enabled function, reachable input and relevant process permissions. PHP presence alone is insufficient.\nSource accessed: 2026-10-26\nPublic vendor CVE review: 2026-10-26\nVendor advisory sources: https://my.f5.com/manage/s/article/K000163821\nVulnerability status: Fix / Fix. F5 K000163821, updated 2026-10-24, lists fixes in 17.1.3.7, 17.5.1.11 and 21.1.0.4 for both CVEs. APM exposure concerns the data-plane access profile; all-module control-plane exposure concerns the Configuration utility. Earlier affected releases remain vulnerable.\nCVE-2026-109618: Fix. F5 K000163821, updated 2026-10-24, lists fixes in 17.1.3.7, 17.5.1.11 and 21.1.0.4 for both CVEs. APM exposure concerns the data-plane access profile; all-module control-plane exposure concerns the Configuration utility. Earlier affected releases remain vulnerable.\nCVE-2026-109619: Fix. F5 K000163821, updated 2026-10-24, lists fixes in 17.1.3.7, 17.5.1.11 and 21.1.0.4 for both CVEs. APM exposure concerns the data-plane access profile; all-module control-plane exposure concerns the Configuration utility. Earlier affected releases remain vulnerable.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nRelease pin: BIG-IP 17.1.3.7 / 17.5.1.11 / 21.1.0.4\nLimitations: Only the named vendor product and version scope is assessed. Installed versions, exposure and exploitation were not tested.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1465,10 +1500,10 @@
           "locator": [
             "https://my.f5.com/manage/s/article/K000163821"
           ],
-          "comment": "Official public CVE review 2026-10-23"
+          "comment": "Official public vendor source reviewed 2026-10-26"
         }
       ],
-      "software_packageVersion": "BIG-IP 17.1.0-17.1.3 / 17.5.0-17.5.1 / 21.1.0"
+      "software_packageVersion": "BIG-IP 17.1.3.7 / 17.5.1.11 / 21.1.0.4"
     },
     {
       "type": "software_Package",
@@ -1484,9 +1519,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:f5:6cd28ed32abf",
-      "summary": "Apply F5's APM-specific mitigation guidance and restart requirements after staging validation; monitor for released fixes.",
+      "summary": "F5 K000163821, updated 2026-10-24, lists fixes in 17.1.3.7, 17.5.1.11 and 21.1.0.4 for both CVEs. APM exposure concerns the data-plane access profile; all-module control-plane exposure concerns the Configuration utility. Earlier affected releases remain vulnerable.",
       "description": "F5 explicitly documents PHP inside APM UI templates.",
-      "comment": "Inventory record: PHP-0627\nEdge inventory record: EDGE-005\nCategory: Appliances and embedded\nScope group: User access component\nOriginal relationship: component\nRelationship direction: depends_on_php\nParent component: PHP-0626 (EDGE-004)\nEvidence status: Official public vendor/upstream CVE assessment\nRelationship confidence: Source supports the stated scope; actual deployment unknown\nDeployment status: Unknown: no installation count, live build, reachability, permissions, failover or exploitation measured\nService role: User access: logon, access-profile and webtop pages\nPHP surface: F5 explicitly documents PHP inside APM UI templates.\nPHP version scope: BIG-IP APM 17.1.0-17.1.3 / 17.5.0-17.5.1 / 21.1.0\nExtensions: Unknown unless explicitly recorded\nImportant boundary: This is a component of BIG-IP, not another device. Browser/mobile/Edge Client pages do not prove PHP executes on those clients, and F5 has not yet confirmed vulnerability or non-vulnerability.\nPatch owner: F5 for supported firmware/component corrections; operator/provider for deployment, restart and service continuity\nPossible abuse: If a matching PHP page function is compromised, information it handles or page behaviour could be misused. Credential/session theft or access-policy control needs evidence of the actual path and permissions.\nPHP component loss: Relevant logon/webtop/access pages may fail. Effects on existing sessions and non-page VPN traffic remain unestablished.\nWhole appliance loss: Whole provisioned APM/BIG-IP shutdown can interrupt remote access and applications behind it, subject to actual redundancy.\nConditions: Requires a matching affected runtime/vendor build, enabled function, reachable input and relevant process permissions. PHP presence alone is insufficient.\nSource accessed: 2026-10-23\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://my.f5.com/manage/s/article/K000163821\nVulnerability status: Vulnerable. F5 confirms BIG-IP APM/SSLO access-profile data-plane exposure in the listed releases, in addition to the Configuration utility. No introduced fix is listed; this does not assert every PHP template is reachable.\nCVE-2026-109618: Vulnerable. F5 confirms BIG-IP APM/SSLO access-profile data-plane exposure in the listed releases, in addition to the Configuration utility. No introduced fix is listed; this does not assert every PHP template is reachable.\nCVE-2026-109619: Vulnerable. F5 confirms BIG-IP APM/SSLO access-profile data-plane exposure in the listed releases, in addition to the Configuration utility. No introduced fix is listed; this does not assert every PHP template is reachable.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nRelease pin: BIG-IP APM 17.1.0-17.1.3 / 17.5.0-17.5.1 / 21.1.0",
+      "comment": "Inventory record: PHP-0627\nEdge inventory record: EDGE-005\nCategory: Appliances and embedded\nScope group: User access component\nOriginal relationship: component\nRelationship direction: depends_on_php\nParent component: PHP-0626 (EDGE-004)\nEvidence status: Official public vendor/upstream CVE assessment\nRelationship confidence: Source supports the stated scope; actual deployment unknown\nDeployment status: Unknown: no installation count, live build, reachability, permissions, failover or exploitation measured\nService role: User access: logon, access-profile and webtop pages\nPHP surface: F5 explicitly documents PHP inside APM UI templates.\nPHP version scope: BIG-IP 17.1.3.7 / 17.5.1.11 / 21.1.0.4\nExtensions: Unknown unless explicitly recorded\nImportant boundary: This is a component of BIG-IP, not another device. Browser/mobile/Edge Client pages do not prove PHP executes on those clients, and F5 has not yet confirmed vulnerability or non-vulnerability.\nPatch owner: F5 for supported firmware/component corrections; operator/provider for deployment, restart and service continuity\nPossible abuse: If a matching PHP page function is compromised, information it handles or page behaviour could be misused. Credential/session theft or access-policy control needs evidence of the actual path and permissions.\nPHP component loss: Relevant logon/webtop/access pages may fail. Effects on existing sessions and non-page VPN traffic remain unestablished.\nWhole appliance loss: Whole provisioned APM/BIG-IP shutdown can interrupt remote access and applications behind it, subject to actual redundancy.\nConditions: Requires a matching affected runtime/vendor build, enabled function, reachable input and relevant process permissions. PHP presence alone is insufficient.\nSource accessed: 2026-10-26\nPublic vendor CVE review: 2026-10-26\nVendor advisory sources: https://my.f5.com/manage/s/article/K000163821\nVulnerability status: Fix / Fix. F5 K000163821, updated 2026-10-24, lists fixes in 17.1.3.7, 17.5.1.11 and 21.1.0.4 for both CVEs. APM exposure concerns the data-plane access profile; all-module control-plane exposure concerns the Configuration utility. Earlier affected releases remain vulnerable.\nCVE-2026-109618: Fix. F5 K000163821, updated 2026-10-24, lists fixes in 17.1.3.7, 17.5.1.11 and 21.1.0.4 for both CVEs. APM exposure concerns the data-plane access profile; all-module control-plane exposure concerns the Configuration utility. Earlier affected releases remain vulnerable.\nCVE-2026-109619: Fix. F5 K000163821, updated 2026-10-24, lists fixes in 17.1.3.7, 17.5.1.11 and 21.1.0.4 for both CVEs. APM exposure concerns the data-plane access profile; all-module control-plane exposure concerns the Configuration utility. Earlier affected releases remain vulnerable.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nRelease pin: BIG-IP 17.1.3.7 / 17.5.1.11 / 21.1.0.4\nLimitations: Only the named vendor product and version scope is assessed. Installed versions, exposure and exploitation were not tested.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1510,10 +1545,10 @@
           "locator": [
             "https://my.f5.com/manage/s/article/K000163821"
           ],
-          "comment": "Official public CVE review 2026-10-23"
+          "comment": "Official public vendor source reviewed 2026-10-26"
         }
       ],
-      "software_packageVersion": "BIG-IP APM 17.1.0-17.1.3 / 17.5.0-17.5.1 / 21.1.0"
+      "software_packageVersion": "BIG-IP 17.1.3.7 / 17.5.1.11 / 21.1.0.4"
     },
     {
       "type": "software_Package",
@@ -1574,9 +1609,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:juniper-networks:d899c5f10f6d",
-      "summary": "Juniper-authored CVE record expressly identifies PHP in J-Web; later vendor bulletin corroborates inclusion. Applicability of CVE-2026-109618 and CVE-2026-109619 is not established for this scope.",
+      "summary": "Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.",
       "description": "Juniper-authored CVE record expressly identifies PHP in J-Web; later vendor bulletin corroborates inclusion.",
-      "comment": "Inventory record: PHP-0629\nEdge inventory record: EDGE-019\nCategory: Appliances and embedded\nScope group: Network/security appliance\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037 runtime family reference\nEvidence status: Confirmed relationship\nRelationship confidence: Source supports the stated scope; actual deployment unknown\nDeployment status: Unknown: no installation count, live build, reachability, permissions, failover or exploitation measured\nService role: Network/security device web administration\nPHP surface: Juniper-authored CVE record expressly identifies PHP in J-Web; later vendor bulletin corroborates inclusion.\nPHP version scope: Historical 2023 EX/SRX CNA scope; 2024 indexed JSA88120 through23.4. Exact current PHP build unknown.\nExtensions: Unknown unless explicitly recorded\nImportant boundary: Only the named J-Web/release scope is supported. Enabling conditions of an older flaw are not automatically those of the 2026 pair.\nPatch owner: Juniper Networks for supported firmware/component corrections; operator/provider for deployment, restart and service continuity\nPossible abuse: If a matching reachable PHP function is compromised, readable settings/credentials or permitted management actions could be misused. Wider appliance control requires separate privilege/path evidence.\nPHP component loss: The PHP-dependent interface/workflow could be unavailable. Independent traffic processing or other services may continue; exact behaviour is not measured.\nWhole appliance loss: Whole SRX/EX shutdown could interrupt firewall/switch connectivity. Disabling only J-Web is a narrower scenario; actual remaining operations must be verified.\nConditions: Requires a matching affected runtime/vendor build, enabled function, reachable input and relevant process permissions. PHP presence alone is insufficient.\nSource accessed: 2026-10-21\nVendor advisory status: No direct vendor confirmation for CVE-2026-109618 or CVE-2026-109619 identified in official-site review on 2026-10-21.\nVulnerability status: PHP relationship confirmed; product/build applicability of CVE-2026-109618 and CVE-2026-109619 not established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: The edge inventory confirms a PHP relationship in the cited scope only. Affected/fixed appliance builds, vendor backports, enabled features, reachable inputs and exploitation remain unestablished.",
+      "comment": "Inventory record: PHP-0629\nEdge inventory record: EDGE-019\nCategory: Appliances and embedded\nScope group: Network/security appliance\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037 runtime family reference\nEvidence status: Official public vendor/upstream CVE assessment\nRelationship confidence: Source supports the stated scope; actual deployment unknown\nDeployment status: Unknown: no installation count, live build, reachability, permissions, failover or exploitation measured\nService role: Network/security device web administration\nPHP surface: Juniper-authored CVE record expressly identifies PHP in J-Web; later vendor bulletin corroborates inclusion.\nPHP version scope: Junos OS J-Web on EX/SRX using affected PHP; SRX 25.2R1 no longer uses PHP\nExtensions: Unknown unless explicitly recorded\nImportant boundary: Only the named J-Web/release scope is supported. Enabling conditions of an older flaw are not automatically those of the 2026 pair.\nPatch owner: Juniper Networks for supported firmware/component corrections; operator/provider for deployment, restart and service continuity\nPossible abuse: If a matching reachable PHP function is compromised, readable settings/credentials or permitted management actions could be misused. Wider appliance control requires separate privilege/path evidence.\nPHP component loss: The PHP-dependent interface/workflow could be unavailable. Independent traffic processing or other services may continue; exact behaviour is not measured.\nWhole appliance loss: Whole SRX/EX shutdown could interrupt firewall/switch connectivity. Disabling only J-Web is a narrower scenario; actual remaining operations must be verified.\nConditions: Requires a matching affected runtime/vendor build, enabled function, reachable input and relevant process permissions. PHP presence alone is insufficient.\nSource accessed: 2026-10-26\nVendor advisory status: No direct vendor confirmation for CVE-2026-109618 or CVE-2026-109619 identified in official-site review on 2026-10-21.\nVulnerability status: Vulnerable / Investigation. Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.\nCVE-2026-109618: Vulnerable. Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.\nCVE-2026-109619: Investigation. Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.\nCVE assessment limit: The edge inventory confirms a PHP relationship in the cited scope only. Affected/fixed appliance builds, vendor backports, enabled features, reachable inputs and exploitation remain unestablished.\nLimitations: Only the named vendor product and version scope is assessed. Installed versions, exposure and exploitation were not tested.\nPublic vendor CVE review: 2026-10-26\nVendor advisory sources: https://supportportal.juniper.net/s/article/2026-10-Reference-Advisory-Status-of-PHP2Shell-vulnerabilities-on-Juniper-Products-CVE-2026-109618-CVE-2026-109619\nRelease pin: Junos OS J-Web on EX/SRX using affected PHP; SRX 25.2R1 no longer uses PHP",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1593,8 +1628,17 @@
             "https://supportportal.juniper.net/s/article/2024-10-Security-Bulletin-Junos-OS-J-Web-Multiple-vulnerabilities-resolved-in-PHP-software"
           ],
           "comment": "Project Initium edge evidence - JSA88120: PHP in J-Web"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://supportportal.juniper.net/s/article/2026-10-Reference-Advisory-Status-of-PHP2Shell-vulnerabilities-on-Juniper-Products-CVE-2026-109618-CVE-2026-109619"
+          ],
+          "comment": "Official public vendor source reviewed 2026-10-26"
         }
-      ]
+      ],
+      "software_packageVersion": "Junos OS J-Web on EX/SRX using affected PHP; SRX 25.2R1 no longer uses PHP"
     },
     {
       "type": "Relationship",
@@ -2066,9 +2110,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:quest-software:6a9ebaa7dc77",
-      "summary": "Quest published KB 4385046 in the KACE Systems Management Appliance support feed as a response to CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Quest KB 4385046, updated 2026-10-23, confirms KACE SMA is affected by both CVEs and that 15.0 CU5 and 15.1 CU2 addressing them are available. Earlier 15.0 CU4 and 15.1 CU1 do not contain these fixes. The separate KACE SDA product is outside this inventory entry.",
       "description": "Systems management virtual appliance",
-      "comment": "Inventory record: PHP-0673\nCategory: Monitoring and administration\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named appliance web/admin surface; exact PHP component and SAPI are not published in the accessible RSS evidence\nPHP version scope: Quest KB 4385046 names both CVEs in a KACE Systems Management Appliance support item; exact affected/fixed PHP build and appliance versions are not available from the accessible RSS evidence.\nExtensions: Unknown\nLimitations: The article body is blocked by Quest's WAF/JavaScript challenge in this pass; the RSS feed proves publication and product association, not exact affected versions, fix state or reachable path.\nPatch owner: Quest for appliance remediation\nDownstream surface: Device management, patching, asset inventory, service desk and administrative workflows\nRelease pin: Quest KB 4385046 published 2026-10-21 09:58:20 GMT in the KACE Systems Management Appliance RSS feed; appliance artifact and version not pinned\nSource accessed: 2026-10-22\nAliases: KACE SMA, Quest KACE Systems Management Appliance\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through the appliance web surface, possible effects include worker denial of service, disclosure of service-accessible secrets, data modification or code execution with the appliance service identity. Host privilege, tenant escape and lateral movement require separate evidence.\nVulnerability status: Vendor bulletin 2026-10-21: Quest published a KACE Systems Management Appliance response item for both php2shell CVEs; exact affected/fixed appliance scope remains unresolved.\nCVE-2026-109618: Vendor advisory names product or service in php2shell response; exact affected/fixed product scope still under investigation\nCVE-2026-109619: Vendor advisory names product or service in php2shell response; exact affected/fixed product scope still under investigation\nCVE assessment limit: This candidate record confirms PHP relationship evidence only. Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path still need deployment-specific evidence.",
+      "comment": "Inventory record: PHP-0673\nCategory: Monitoring and administration\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named appliance web/admin surface; exact PHP component and SAPI are not published in the accessible RSS evidence\nPHP version scope: KACE SMA 15.0 CU5 (15.0.378) / 15.1 CU2 (15.1.177)\nExtensions: Unknown\nLimitations: Only the named vendor product and version scope is assessed. Installed versions, exposure and exploitation were not tested.\nPatch owner: Quest for appliance remediation\nDownstream surface: Device management, patching, asset inventory, service desk and administrative workflows\nRelease pin: KACE SMA 15.0 CU5 (15.0.378) / 15.1 CU2 (15.1.177)\nSource accessed: 2026-10-26\nAliases: KACE SMA, Quest KACE Systems Management Appliance\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through the appliance web surface, possible effects include worker denial of service, disclosure of service-accessible secrets, data modification or code execution with the appliance service identity. Host privilege, tenant escape and lateral movement require separate evidence.\nVulnerability status: Fix / Fix. Quest KB 4385046, updated 2026-10-23, confirms KACE SMA is affected by both CVEs and that 15.0 CU5 and 15.1 CU2 addressing them are available. Earlier 15.0 CU4 and 15.1 CU1 do not contain these fixes. The separate KACE SDA product is outside this inventory entry.\nCVE-2026-109618: Fix. Quest KB 4385046, updated 2026-10-23, confirms KACE SMA is affected by both CVEs and that 15.0 CU5 and 15.1 CU2 addressing them are available. Earlier 15.0 CU4 and 15.1 CU1 do not contain these fixes. The separate KACE SDA product is outside this inventory entry.\nCVE-2026-109619: Fix. Quest KB 4385046, updated 2026-10-23, confirms KACE SMA is affected by both CVEs and that 15.0 CU5 and 15.1 CU2 addressing them are available. Earlier 15.0 CU4 and 15.1 CU1 do not contain these fixes. The separate KACE SDA product is outside this inventory entry.\nCVE assessment limit: This candidate record confirms PHP relationship evidence only. Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path still need deployment-specific evidence.\nPublic vendor CVE review: 2026-10-26\nVendor advisory sources: https://support.quest.com/kace-systems-management-appliance/kb/4385046/quest-kace-response-to-cve-2026-109618-and-cve-2026-109619-php2shell",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2085,8 +2129,17 @@
             "https://support.quest.com/kace-systems-management-appliance/rss"
           ],
           "comment": "Quest KACE Systems Management Appliance RSS feed listing KB 4385046"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://support.quest.com/kace-systems-management-appliance/kb/4385046/quest-kace-response-to-cve-2026-109618-and-cve-2026-109619-php2shell"
+          ],
+          "comment": "Official public vendor source reviewed 2026-10-26"
         }
-      ]
+      ],
+      "software_packageVersion": "KACE SMA 15.0 CU5 (15.0.378) / 15.1 CU2 (15.1.177)"
     },
     {
       "type": "software_Package",
@@ -2205,9 +2258,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Catalyst Center (formerly DNA Center) as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs.",
       "description": "Campus network management appliance",
-      "comment": "Inventory record: PHP-0689\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.4, updated 2026-10-22 23:00 GMT) lists Catalyst Center (formerly DNA Center) under 'Products Under Investigation' (Network Management and Provisioning); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Cisco advisory version 1.4 lists this product under investigation; affected and fixed releases are not published.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Cisco advisory version 1.4 under-investigation product scope",
+      "comment": "Inventory record: PHP-0689\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Vendor-confirmed not vulnerable product scope\nExtensions: Unknown\nLimitations: Only the named vendor product and version scope is assessed. Installed versions, exposure and exploitation were not tested.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-26\nVulnerability status: Not vuln / Not vuln. Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs.\nCVE-2026-109618: Not vuln. Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs.\nCVE-2026-109619: Not vuln. Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-26\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Vendor-confirmed not vulnerable product scope",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2215,9 +2268,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Official public CVE review 2026-10-23"
+          "comment": "Official public vendor source reviewed 2026-10-26"
         }
-      ]
+      ],
+      "software_packageVersion": "Vendor-confirmed not vulnerable product scope"
     },
     {
       "type": "software_Package",
@@ -2700,9 +2754,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:fortinet:0dd4907ae878",
-      "summary": "Fortinet PSIRT advisory FG-IR-26-186 lists FortiDDoS-F as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Fortinet FG-IR-26-186, updated 2026-10-23, lists FortiDDoS-F among products confirmed not impacted. FortiDDoS without the -F suffix remains under investigation.",
       "description": "DDoS mitigation appliance (F-series)",
-      "comment": "Inventory record: PHP-0678\nCategory: Appliances and embedded\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in the FG-IR-26-186 php2shell response; exact PHP component and SAPI are not published\nPHP version scope: Fortinet FG-IR-26-186 (published 2026-10-21, updated 2026-10-22) lists FortiDDoS-F under 'Products Under Investigation'; affected and fixed product versions are not published.\nExtensions: Unknown\nLimitations: An under-investigation listing establishes vendor review scope, not a confirmed PHP dependency, affected build or reachable path.\nPatch owner: Fortinet; operator for deployment of fixed releases\nSource accessed: 2026-10-22\nVulnerability status: Vendor advisory FG-IR-26-186: under investigation.\nCVE-2026-109618: Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published\nCVE-2026-109619: Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0678\nCategory: Appliances and embedded\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in the FG-IR-26-186 php2shell response; exact PHP component and SAPI are not published\nPHP version scope: FortiDDoS-F; vendor-confirmed not impacted scope\nExtensions: Unknown\nLimitations: Only the named vendor product and version scope is assessed. Installed versions, exposure and exploitation were not tested.\nPatch owner: Fortinet; operator for deployment of fixed releases\nSource accessed: 2026-10-26\nVulnerability status: Not vuln / Not vuln. Fortinet FG-IR-26-186, updated 2026-10-23, lists FortiDDoS-F among products confirmed not impacted. FortiDDoS without the -F suffix remains under investigation.\nCVE-2026-109618: Not vuln. Fortinet FG-IR-26-186, updated 2026-10-23, lists FortiDDoS-F among products confirmed not impacted. FortiDDoS without the -F suffix remains under investigation.\nCVE-2026-109619: Not vuln. Fortinet FG-IR-26-186, updated 2026-10-23, lists FortiDDoS-F among products confirmed not impacted. FortiDDoS without the -F suffix remains under investigation.\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.\nPublic vendor CVE review: 2026-10-26\nVendor advisory sources: https://fortiguard.fortinet.com/psirt/FG-IR-26-186\nRelease pin: FortiDDoS-F; vendor-confirmed not impacted scope",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2710,9 +2764,10 @@
           "locator": [
             "https://fortiguard.fortinet.com/psirt/FG-IR-26-186"
           ],
-          "comment": "Fortinet PSIRT FG-IR-26-186, published 2026-10-21 and updated 2026-10-22; current investigation scope"
+          "comment": "Official public vendor source reviewed 2026-10-26"
         }
-      ]
+      ],
+      "software_packageVersion": "FortiDDoS-F; vendor-confirmed not impacted scope"
     },
     {
       "type": "Relationship",
@@ -3115,62 +3170,6 @@
       "comment": "Public official source reviewed 2026-10-23. Sources: https://forums.unraid.net/topic/200990-unraid-os-734-now-available/\nAction statement: Update Unraid OS to 7.3.4; assess independently maintained application runtimes separately."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0626-official-20261023",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0626"
-      ],
-      "relationshipType": "affects",
-      "security_statusNotes": "F5 confirms the BIG-IP Configuration utility control plane is affected across all modules in the listed releases. K000163821 lists no introduced fix; its mitigations are not recorded as fixed software.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://my.f5.com/manage/s/article/K000163821",
-      "security_actionStatement": "Apply F5's Configuration utility access restrictions and staged PHP mitigation guidance while monitoring for an available fixed release."
-    },
-    {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0626-official-20261023",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0626"
-      ],
-      "relationshipType": "affects",
-      "security_statusNotes": "F5 confirms the BIG-IP Configuration utility control plane is affected across all modules in the listed releases. K000163821 lists no introduced fix; its mitigations are not recorded as fixed software.",
-      "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://my.f5.com/manage/s/article/K000163821",
-      "security_actionStatement": "Apply F5's Configuration utility access restrictions and staged PHP mitigation guidance while monitoring for an available fixed release."
-    },
-    {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0627-official-20261023",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0627"
-      ],
-      "relationshipType": "affects",
-      "security_statusNotes": "F5 confirms BIG-IP APM/SSLO access-profile data-plane exposure in the listed releases, in addition to the Configuration utility. No introduced fix is listed; this does not assert every PHP template is reachable.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://my.f5.com/manage/s/article/K000163821",
-      "security_actionStatement": "Apply F5's APM-specific mitigation guidance and restart requirements after staging validation; monitor for released fixes."
-    },
-    {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0627-official-20261023",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0627"
-      ],
-      "relationshipType": "affects",
-      "security_statusNotes": "F5 confirms BIG-IP APM/SSLO access-profile data-plane exposure in the listed releases, in addition to the Configuration utility. No introduced fix is listed; this does not assert every PHP template is reachable.",
-      "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://my.f5.com/manage/s/article/K000163821",
-      "security_actionStatement": "Apply F5's APM-specific mitigation guidance and restart requirements after staging validation; monitor for released fixes."
-    },
-    {
       "type": "software_Package",
       "spdxId": "urn:php2shell:inventory:package:PHP-0748",
       "creationInfo": "_:creationinfo",
@@ -3293,10 +3292,10 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:hewlett-packard-enterprise:e2f8dff0f1e0",
-      "summary": "HPESBNW05171 rev.1 confirms both CVEs affect ClearPass. Releases 6.14.1 and 6.11.16 only restrict exploitation to authenticated cluster-admin users; full fixes are still in development.",
+      "summary": "HPESBNW05171 rev.2 lists released ClearPass 6.14.1 and 6.11.16 Hotfix Patches to Address PHP Vulnerabilities CVE-2026-109618 and CVE-2026-109619. Both base releases without the hotfix remain affected; their earlier mitigations are not full fixes.",
       "description": "Network access policy management appliance with a PHP runtime",
-      "software_packageVersion": "6.14.0 and below / 6.11.15 and below; 6.14.1 / 6.11.16 partially mitigated, still affected",
-      "comment": "Inventory record: PHP-0751\nCategory: Appliances and embedded\nAliases: CPPM, Aruba ClearPass Policy Manager\nOriginal relationship: depends_on\nRelationship direction: uses_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed PHP dependency and affected scope\nDeployment status: Not measured\nPHP surface: PHP core library in ClearPass; exact bundled PHP version and SAPI are not published\nPHP version scope: HPESBNW05171 rev.1 names 6.14.0 and below and 6.11.15 and below as fully affected. Versions 6.14.1 and 6.11.16 remain affected but require authenticated cluster-admin privileges.\nLimitations: Partial mitigation is not a full fix. End-of-support installations have not been assessed by HPE. No conclusion is extended to other HPE products or unlisted future releases.\nPatch owner: Hewlett Packard Enterprise; operator for deployment\nSource accessed: 2026-10-23\nCVE-2026-109618: Vulnerable; partial mitigation only in 6.14.1 and 6.11.16\nCVE-2026-109619: Vulnerable; partial mitigation only in 6.14.1 and 6.11.16\nCVE assessment limit: Vendor product assessment only; no installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory: HPESBNW05171 rev.1, published and updated 2026-10-22",
+      "software_packageVersion": "ClearPass 6.14.1 + PHP CVE hotfix / ClearPass 6.11.16 + PHP CVE hotfix",
+      "comment": "Inventory record: PHP-0751\nCategory: Appliances and embedded\nAliases: CPPM, Aruba ClearPass Policy Manager\nOriginal relationship: depends_on\nRelationship direction: uses_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: PHP core library in ClearPass; exact bundled PHP version and SAPI are not published\nPHP version scope: ClearPass 6.14.1 + PHP CVE hotfix / ClearPass 6.11.16 + PHP CVE hotfix\nLimitations: Only the named vendor product and version scope is assessed. Installed versions, exposure and exploitation were not tested.\nPatch owner: Hewlett Packard Enterprise; operator for deployment\nSource accessed: 2026-10-26\nCVE-2026-109618: Fix. HPESBNW05171 rev.2 lists released ClearPass 6.14.1 and 6.11.16 Hotfix Patches to Address PHP Vulnerabilities CVE-2026-109618 and CVE-2026-109619. Both base releases without the hotfix remain affected; their earlier mitigations are not full fixes.\nCVE-2026-109619: Fix. HPESBNW05171 rev.2 lists released ClearPass 6.14.1 and 6.11.16 Hotfix Patches to Address PHP Vulnerabilities CVE-2026-109618 and CVE-2026-109619. Both base releases without the hotfix remain affected; their earlier mitigations are not full fixes.\nCVE assessment limit: Vendor product assessment only; no installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-26\nVendor advisory: HPESBNW05171 rev.1, published and updated 2026-10-22\nVulnerability status: Fix / Fix. HPESBNW05171 rev.2 lists released ClearPass 6.14.1 and 6.11.16 Hotfix Patches to Address PHP Vulnerabilities CVE-2026-109618 and CVE-2026-109619. Both base releases without the hotfix remain affected; their earlier mitigations are not full fixes.\nVendor advisory sources: https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw05171en_us&docLocale=en_US\nRelease pin: ClearPass 6.14.1 + PHP CVE hotfix / ClearPass 6.11.16 + PHP CVE hotfix",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -3304,7 +3303,7 @@
           "locator": [
             "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw05171en_us&docLocale=en_US"
           ],
-          "comment": "HPESBNW05171 rev.1; public vendor advisory reviewed 2026-10-23"
+          "comment": "Official public vendor source reviewed 2026-10-26"
         }
       ]
     },
@@ -3321,34 +3320,6 @@
       "comment": "Vendor advisory reviewed 2026-10-23. The exact bundled PHP version and SAPI are not published; the dependency targets the unversioned PHP core family."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0751-official-20261023",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0751"
-      ],
-      "relationshipType": "affects",
-      "security_statusNotes": "HPESBNW05171 rev.1 confirms ClearPass 6.14.0 and below and 6.11.15 and below are fully affected. Versions 6.14.1 and 6.11.16 partially mitigate exposure by requiring authenticated cluster-admin privileges; full fixes remain in development.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "security_actionStatement": "Apply HPE's partial-mitigation releases and restrict CLI and web management access to dedicated networks or firewall policies with logging. Consider removing guest portals and management interfaces from public access as advised by HPE; monitor for full fixes.",
-      "comment": "Public official source reviewed 2026-10-23. Source: https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw05171en_us&docLocale=en_US"
-    },
-    {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0751-official-20261023",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0751"
-      ],
-      "relationshipType": "affects",
-      "security_statusNotes": "HPESBNW05171 rev.1 confirms ClearPass 6.14.0 and below and 6.11.15 and below are fully affected. Versions 6.14.1 and 6.11.16 partially mitigate exposure by requiring authenticated cluster-admin privileges; full fixes remain in development.",
-      "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "security_actionStatement": "Apply HPE's partial-mitigation releases and restrict CLI and web management access to dedicated networks or firewall policies with logging. Consider removing guest portals and management interfaces from public access as advised by HPE; monitor for full fixes.",
-      "comment": "Public official source reviewed 2026-10-23. Source: https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw05171en_us&docLocale=en_US"
-    },
-    {
       "type": "software_Package",
       "spdxId": "urn:php2shell:inventory:package:PHP-0752",
       "creationInfo": "_:creationinfo",
@@ -3362,10 +3333,10 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:netapp:35b1a7722289",
-      "summary": "NTAP-20261021-0021 version 3.0 confirms ONTAP 9 is affected only by CVE-2026-109618, not CVE-2026-109619. Exploitation is limited to the www user in the PHP jail. No fixed release is listed; workarounds have operational trade-offs.",
+      "summary": "NetApp NTAP-20261021-0021 version 7.0 (2026-10-25) lists these currently available ONTAP 9 patches. ONTAP 9 is affected only by CVE-2026-109618; CVE-2026-109619 does not affect it. Exploitation of an unpatched release is limited to the www user in the PHP jail.",
       "description": "Storage operating system with PHP-backed web services",
-      "software_packageVersion": "ONTAP 9; affected maintenance releases and fixed releases not specified",
-      "comment": "Inventory record: PHP-0752\nCategory: Appliances and embedded\nOriginal relationship: depends_on\nRelationship direction: uses_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed PHP dependency and per-CVE assessment\nDeployment status: Not measured\nPHP surface: ONTAP web services invoke PHP; potential access is limited to the www user in the PHP jail\nPHP version scope: NTAP-20261021-0021 version 3.0 names ONTAP 9 without an affected maintenance-release range or fixed release.\nLimitations: The vendor explicitly excludes CVE-2026-109619 for ONTAP 9 but does not publish the technical reason. Jail confinement does not make CVE-2026-109618 unaffected. No conclusion is extended to other NetApp products.\nWorkarounds: Disable all external web services (most disruptive, also covers future SVMs); or enable SAML (unauthenticated exploitation blocked, authenticated attackers can still reach affected services); or disable only sysmgr and saml (less protection, preserves REST/ZAPI, repeat for new SVMs). Follow the vendor advisory when choosing an option.\nPatch owner: NetApp; operator for deployment\nSource accessed: 2026-10-23\nCVE-2026-109618: Vulnerable; no fixed release listed\nCVE-2026-109619: Not vuln; vendor states ONTAP 9 is affected only by CVE-2026-109618\nCVE assessment limit: Vendor product assessment only; no installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory: NTAP-20261021-0021 version 3.0, published 2026-10-21 and updated 2026-10-22",
+      "software_packageVersion": "9.15.1P20HF1 / 9.16.1P16HF1 / 9.17.1P11HF1 / 9.18.1P8HF1 / 9.19.1P3HF1",
+      "comment": "Inventory record: PHP-0752\nCategory: Appliances and embedded\nOriginal relationship: depends_on\nRelationship direction: uses_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: ONTAP web services invoke PHP; potential access is limited to the www user in the PHP jail\nPHP version scope: 9.15.1P20HF1 / 9.16.1P16HF1 / 9.17.1P11HF1 / 9.18.1P8HF1 / 9.19.1P3HF1\nLimitations: Only the named vendor product and version scope is assessed. Installed versions, exposure and exploitation were not tested.\nWorkarounds: Disable all external web services (most disruptive, also covers future SVMs); or enable SAML (unauthenticated exploitation blocked, authenticated attackers can still reach affected services); or disable only sysmgr and saml (less protection, preserves REST/ZAPI, repeat for new SVMs). Follow the vendor advisory when choosing an option.\nPatch owner: NetApp; operator for deployment\nSource accessed: 2026-10-26\nCVE-2026-109618: Fix. NetApp NTAP-20261021-0021 version 7.0 (2026-10-25) lists these currently available ONTAP 9 patches. ONTAP 9 is affected only by CVE-2026-109618; CVE-2026-109619 does not affect it. Exploitation of an unpatched release is limited to the www user in the PHP jail.\nCVE-2026-109619: Not vuln. NetApp NTAP-20261021-0021 version 7.0 (2026-10-25) lists these currently available ONTAP 9 patches. ONTAP 9 is affected only by CVE-2026-109618; CVE-2026-109619 does not affect it. Exploitation of an unpatched release is limited to the www user in the PHP jail.\nCVE assessment limit: Vendor product assessment only; no installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-26\nVendor advisory: NTAP-20261021-0021 version 3.0, published 2026-10-21 and updated 2026-10-22\nVulnerability status: Fix / Not vuln. NetApp NTAP-20261021-0021 version 7.0 (2026-10-25) lists these currently available ONTAP 9 patches. ONTAP 9 is affected only by CVE-2026-109618; CVE-2026-109619 does not affect it. Exploitation of an unpatched release is limited to the www user in the PHP jail.\nVendor advisory sources: https://security.netapp.com/advisory/NTAP-20261021-0021\nRelease pin: 9.15.1P20HF1 / 9.16.1P16HF1 / 9.17.1P11HF1 / 9.18.1P8HF1 / 9.19.1P3HF1",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -3373,7 +3344,7 @@
           "locator": [
             "https://security.netapp.com/advisory/NTAP-20261021-0021"
           ],
-          "comment": "NTAP-20261021-0021 version 3.0; public vendor advisory reviewed 2026-10-23"
+          "comment": "Official public vendor source reviewed 2026-10-26"
         }
       ]
     },
@@ -3390,32 +3361,369 @@
       "comment": "NTAP-20261021-0021 version 3.0 describes Apache invoking PHP on vulnerable endpoints. The exact runtime version and SAPI are not published; the dependency targets the unversioned PHP core family."
     },
     {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0425-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0425"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "QNAP QSA-26-18 revision 1.1 (2026-10-24) marks the QTS branches Resolved and lists these fixed firmware builds for both CVEs. Earlier affected builds remain vulnerable.",
+      "summary": "CVE-2026-109618 assessment: Fix. QNAP QSA-26-18 revision 1.1 (2026-10-24) marks the QTS branches Resolved and lists these fixed firmware builds for both CVEs. Earlier affected builds remain vulnerable.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://www.qnap.com/en/security-advisory/qsa-26-18",
+      "security_actionStatement": "Install the fixed firmware for the device model. Third-party containers and applications require separate updates."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0425-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0425"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "QNAP QSA-26-18 revision 1.1 (2026-10-24) marks the QTS branches Resolved and lists these fixed firmware builds for both CVEs. Earlier affected builds remain vulnerable.",
+      "summary": "CVE-2026-109619 assessment: Fix. QNAP QSA-26-18 revision 1.1 (2026-10-24) marks the QTS branches Resolved and lists these fixed firmware builds for both CVEs. Earlier affected builds remain vulnerable.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://www.qnap.com/en/security-advisory/qsa-26-18",
+      "security_actionStatement": "Install the fixed firmware for the device model. Third-party containers and applications require separate updates."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0426-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0426"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "QNAP QSA-26-18 revision 1.1 (2026-10-24) marks the QuTS hero branches Resolved and lists these fixed firmware builds for both CVEs. Earlier affected builds remain vulnerable.",
+      "summary": "CVE-2026-109618 assessment: Fix. QNAP QSA-26-18 revision 1.1 (2026-10-24) marks the QuTS hero branches Resolved and lists these fixed firmware builds for both CVEs. Earlier affected builds remain vulnerable.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://www.qnap.com/en/security-advisory/qsa-26-18",
+      "security_actionStatement": "Install the model-appropriate fixed firmware; check release-channel availability for h6.1.0. Third-party containers and applications require separate updates."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0426-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0426"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "QNAP QSA-26-18 revision 1.1 (2026-10-24) marks the QuTS hero branches Resolved and lists these fixed firmware builds for both CVEs. Earlier affected builds remain vulnerable.",
+      "summary": "CVE-2026-109619 assessment: Fix. QNAP QSA-26-18 revision 1.1 (2026-10-24) marks the QuTS hero branches Resolved and lists these fixed firmware builds for both CVEs. Earlier affected builds remain vulnerable.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://www.qnap.com/en/security-advisory/qsa-26-18",
+      "security_actionStatement": "Install the model-appropriate fixed firmware; check release-channel availability for h6.1.0. Third-party containers and applications require separate updates."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0626-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0626"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "F5 K000163821, updated 2026-10-24, lists fixes in 17.1.3.7, 17.5.1.11 and 21.1.0.4 for both CVEs. APM exposure concerns the data-plane access profile; all-module control-plane exposure concerns the Configuration utility. Earlier affected releases remain vulnerable.",
+      "summary": "CVE-2026-109618 assessment: Fix. F5 K000163821, updated 2026-10-24, lists fixes in 17.1.3.7, 17.5.1.11 and 21.1.0.4 for both CVEs. APM exposure concerns the data-plane access profile; all-module control-plane exposure concerns the Configuration utility. Earlier affected releases remain vulnerable.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://my.f5.com/manage/s/article/K000163821",
+      "security_actionStatement": "Install the fixed BIG-IP release for the deployed branch; WAF signatures are mitigation, not a PHP fix."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0626-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0626"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "F5 K000163821, updated 2026-10-24, lists fixes in 17.1.3.7, 17.5.1.11 and 21.1.0.4 for both CVEs. APM exposure concerns the data-plane access profile; all-module control-plane exposure concerns the Configuration utility. Earlier affected releases remain vulnerable.",
+      "summary": "CVE-2026-109619 assessment: Fix. F5 K000163821, updated 2026-10-24, lists fixes in 17.1.3.7, 17.5.1.11 and 21.1.0.4 for both CVEs. APM exposure concerns the data-plane access profile; all-module control-plane exposure concerns the Configuration utility. Earlier affected releases remain vulnerable.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://my.f5.com/manage/s/article/K000163821",
+      "security_actionStatement": "Install the fixed BIG-IP release for the deployed branch; WAF signatures are mitigation, not a PHP fix."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0627-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0627"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "F5 K000163821, updated 2026-10-24, lists fixes in 17.1.3.7, 17.5.1.11 and 21.1.0.4 for both CVEs. APM exposure concerns the data-plane access profile; all-module control-plane exposure concerns the Configuration utility. Earlier affected releases remain vulnerable.",
+      "summary": "CVE-2026-109618 assessment: Fix. F5 K000163821, updated 2026-10-24, lists fixes in 17.1.3.7, 17.5.1.11 and 21.1.0.4 for both CVEs. APM exposure concerns the data-plane access profile; all-module control-plane exposure concerns the Configuration utility. Earlier affected releases remain vulnerable.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://my.f5.com/manage/s/article/K000163821",
+      "security_actionStatement": "Install the fixed BIG-IP release for the deployed branch; WAF signatures are mitigation, not a PHP fix."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0627-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0627"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "F5 K000163821, updated 2026-10-24, lists fixes in 17.1.3.7, 17.5.1.11 and 21.1.0.4 for both CVEs. APM exposure concerns the data-plane access profile; all-module control-plane exposure concerns the Configuration utility. Earlier affected releases remain vulnerable.",
+      "summary": "CVE-2026-109619 assessment: Fix. F5 K000163821, updated 2026-10-24, lists fixes in 17.1.3.7, 17.5.1.11 and 21.1.0.4 for both CVEs. APM exposure concerns the data-plane access profile; all-module control-plane exposure concerns the Configuration utility. Earlier affected releases remain vulnerable.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://my.f5.com/manage/s/article/K000163821",
+      "security_actionStatement": "Install the fixed BIG-IP release for the deployed branch; WAF signatures are mitigation, not a PHP fix."
+    },
+    {
       "type": "security_VexAffectedVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0752-official-20261023",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0629-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0629"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable. Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://supportportal.juniper.net/s/article/2026-10-Reference-Advisory-Status-of-PHP2Shell-vulnerabilities-on-Juniper-Products-CVE-2026-109618-CVE-2026-109619",
+      "security_actionStatement": "Follow JSA112681: upgrade SRX to 25.2R1 where applicable, or disable/restrict J-Web and the other vendor-named web services. Do not assume the same remediation applies to EX."
+    },
+    {
+      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:php-0629-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0629"
+      ],
+      "relationshipType": "underInvestigationFor",
+      "security_statusNotes": "Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.",
+      "summary": "CVE-2026-109619 assessment: Investigation. Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://supportportal.juniper.net/s/article/2026-10-Reference-Advisory-Status-of-PHP2Shell-vulnerabilities-on-Juniper-Products-CVE-2026-109618-CVE-2026-109619",
+      "security_actionStatement": "Follow JSA112681: upgrade SRX to 25.2R1 where applicable, or disable/restrict J-Web and the other vendor-named web services. Do not assume the same remediation applies to EX."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0673-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0673"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Quest KB 4385046, updated 2026-10-23, confirms KACE SMA is affected by both CVEs and that 15.0 CU5 and 15.1 CU2 addressing them are available. Earlier 15.0 CU4 and 15.1 CU1 do not contain these fixes. The separate KACE SDA product is outside this inventory entry.",
+      "summary": "CVE-2026-109618 assessment: Fix. Quest KB 4385046, updated 2026-10-23, confirms KACE SMA is affected by both CVEs and that 15.0 CU5 and 15.1 CU2 addressing them are available. Earlier 15.0 CU4 and 15.1 CU1 do not contain these fixes. The separate KACE SDA product is outside this inventory entry.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://support.quest.com/kace-systems-management-appliance/kb/4385046/quest-kace-response-to-cve-2026-109618-and-cve-2026-109619-php2shell",
+      "security_actionStatement": "Install 15.0 CU5 or 15.1 CU2; older supported installations must follow the vendor upgrade path."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0673-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0673"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Quest KB 4385046, updated 2026-10-23, confirms KACE SMA is affected by both CVEs and that 15.0 CU5 and 15.1 CU2 addressing them are available. Earlier 15.0 CU4 and 15.1 CU1 do not contain these fixes. The separate KACE SDA product is outside this inventory entry.",
+      "summary": "CVE-2026-109619 assessment: Fix. Quest KB 4385046, updated 2026-10-23, confirms KACE SMA is affected by both CVEs and that 15.0 CU5 and 15.1 CU2 addressing them are available. Earlier 15.0 CU4 and 15.1 CU1 do not contain these fixes. The separate KACE SDA product is outside this inventory entry.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://support.quest.com/kace-systems-management-appliance/kb/4385046/quest-kace-response-to-cve-2026-109618-and-cve-2026-109619-php2shell",
+      "security_actionStatement": "Install 15.0 CU5 or 15.1 CU2; older supported installations must follow the vendor upgrade path."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:php-0689-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0689"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs.",
+      "summary": "CVE-2026-109618 assessment: Not vuln. Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0689-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0689"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs.",
+      "summary": "CVE-2026-109619 assessment: Not vuln. Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_impactStatement": "Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:php-0678-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0678"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Fortinet FG-IR-26-186, updated 2026-10-23, lists FortiDDoS-F among products confirmed not impacted. FortiDDoS without the -F suffix remains under investigation.",
+      "summary": "CVE-2026-109618 assessment: Not vuln. Fortinet FG-IR-26-186, updated 2026-10-23, lists FortiDDoS-F among products confirmed not impacted. FortiDDoS without the -F suffix remains under investigation.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://fortiguard.fortinet.com/psirt/FG-IR-26-186",
+      "security_impactStatement": "Fortinet FG-IR-26-186, updated 2026-10-23, lists FortiDDoS-F among products confirmed not impacted. FortiDDoS without the -F suffix remains under investigation."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0678-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0678"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Fortinet FG-IR-26-186, updated 2026-10-23, lists FortiDDoS-F among products confirmed not impacted. FortiDDoS without the -F suffix remains under investigation.",
+      "summary": "CVE-2026-109619 assessment: Not vuln. Fortinet FG-IR-26-186, updated 2026-10-23, lists FortiDDoS-F among products confirmed not impacted. FortiDDoS without the -F suffix remains under investigation.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://fortiguard.fortinet.com/psirt/FG-IR-26-186",
+      "security_impactStatement": "Fortinet FG-IR-26-186, updated 2026-10-23, lists FortiDDoS-F among products confirmed not impacted. FortiDDoS without the -F suffix remains under investigation."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0751-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0751"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "HPESBNW05171 rev.2 lists released ClearPass 6.14.1 and 6.11.16 Hotfix Patches to Address PHP Vulnerabilities CVE-2026-109618 and CVE-2026-109619. Both base releases without the hotfix remain affected; their earlier mitigations are not full fixes.",
+      "summary": "CVE-2026-109618 assessment: Fix. HPESBNW05171 rev.2 lists released ClearPass 6.14.1 and 6.11.16 Hotfix Patches to Address PHP Vulnerabilities CVE-2026-109618 and CVE-2026-109619. Both base releases without the hotfix remain affected; their earlier mitigations are not full fixes.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw05171en_us&docLocale=en_US",
+      "security_actionStatement": "Install the named PHP hotfix for ClearPass 6.14.1 or 6.11.16. Upgrading only to those base releases is insufficient."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0751-official-20261026",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0751"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "HPESBNW05171 rev.2 lists released ClearPass 6.14.1 and 6.11.16 Hotfix Patches to Address PHP Vulnerabilities CVE-2026-109618 and CVE-2026-109619. Both base releases without the hotfix remain affected; their earlier mitigations are not full fixes.",
+      "summary": "CVE-2026-109619 assessment: Fix. HPESBNW05171 rev.2 lists released ClearPass 6.14.1 and 6.11.16 Hotfix Patches to Address PHP Vulnerabilities CVE-2026-109618 and CVE-2026-109619. Both base releases without the hotfix remain affected; their earlier mitigations are not full fixes.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbnw05171en_us&docLocale=en_US",
+      "security_actionStatement": "Install the named PHP hotfix for ClearPass 6.14.1 or 6.11.16. Upgrading only to those base releases is insufficient."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0752-official-20261026",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0752"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "NTAP-20261021-0021 version 3.0 lists ONTAP 9 as affected only by CVE-2026-109618. An unauthenticated attacker could gain www-user access restricted to the PHP jail. No fixed release is listed.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "security_actionStatement": "Choose a NetApp-documented workaround: disable all external web services (most disruptive and covers future SVMs); enable SAML (authenticated attackers remain a risk); or disable sysmgr and saml (less protection, preserves REST/ZAPI, repeat for new SVMs). Monitor for fixed releases.",
-      "comment": "Public official source reviewed 2026-10-23. Source: https://security.netapp.com/advisory/NTAP-20261021-0021"
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "NetApp NTAP-20261021-0021 version 7.0 (2026-10-25) lists these currently available ONTAP 9 patches. ONTAP 9 is affected only by CVE-2026-109618; CVE-2026-109619 does not affect it. Exploitation of an unpatched release is limited to the www user in the PHP jail.",
+      "summary": "CVE-2026-109618 assessment: Fix. NetApp NTAP-20261021-0021 version 7.0 (2026-10-25) lists these currently available ONTAP 9 patches. ONTAP 9 is affected only by CVE-2026-109618; CVE-2026-109619 does not affect it. Exploitation of an unpatched release is limited to the www user in the PHP jail.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://security.netapp.com/advisory/NTAP-20261021-0021",
+      "security_actionStatement": "Install the first fixed release for the deployed ONTAP branch. The available workaround options have operational trade-offs."
     },
     {
       "type": "security_VexNotAffectedVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0752-official-20261023",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:php-0752-official-20261026",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0752"
       ],
       "relationshipType": "doesNotAffect",
-      "security_statusNotes": "NetApp explicitly states ONTAP 9 is affected only by CVE-2026-109618, excluding CVE-2026-109619. The vendor does not publish the technical reason for this exclusion.",
-      "summary": "CVE-2026-109619 assessment: Not vuln",
-      "security_impactStatement": "NTAP-20261021-0021 version 3.0 excludes CVE-2026-109619 from ONTAP 9's affected scope. This does not change ONTAP 9's vulnerable status for CVE-2026-109618.",
-      "comment": "Public official source reviewed 2026-10-23. Source: https://security.netapp.com/advisory/NTAP-20261021-0021"
+      "security_statusNotes": "NetApp NTAP-20261021-0021 version 7.0 (2026-10-25) lists these currently available ONTAP 9 patches. ONTAP 9 is affected only by CVE-2026-109618; CVE-2026-109619 does not affect it. Exploitation of an unpatched release is limited to the www user in the PHP jail.",
+      "summary": "CVE-2026-109619 assessment: Not vuln. NetApp NTAP-20261021-0021 version 7.0 (2026-10-25) lists these currently available ONTAP 9 patches. ONTAP 9 is affected only by CVE-2026-109618; CVE-2026-109619 does not affect it. Exploitation of an unpatched release is limited to the www user in the PHP jail.",
+      "comment": "Official public source reviewed 2026-10-26. Source: https://security.netapp.com/advisory/NTAP-20261021-0021",
+      "security_impactStatement": "NetApp NTAP-20261021-0021 version 7.0 (2026-10-25) lists these currently available ONTAP 9 patches. ONTAP 9 is affected only by CVE-2026-109618; CVE-2026-109619 does not affect it. Exploitation of an unpatched release is limited to the www user in the PHP jail.",
+      "security_actionStatement": "Install the first fixed release for the deployed ONTAP branch. The available workaround options have operational trade-offs."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0432-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0432"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Sangoma directs FreePBX 17 operators to install the available PHP security updates for both CVEs. Fixed scope requires those system updates; an unupdated version 17 installation remains affected. The advisory does not specify an exact package build.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://community.freepbx.org/t/critical-php-security-vulnerabilities-action-required-for-freepbx-and-pbxact/110423",
+      "security_actionStatement": "Apply the latest system PHP security updates using Sangoma's FreePBX 17 update procedure and verify the installed packages."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0432-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0432"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Sangoma directs FreePBX 17 operators to install the available PHP security updates for both CVEs. Fixed scope requires those system updates; an unupdated version 17 installation remains affected. The advisory does not specify an exact package build.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://community.freepbx.org/t/critical-php-security-vulnerabilities-action-required-for-freepbx-and-pbxact/110423",
+      "security_actionStatement": "Apply the latest system PHP security updates using Sangoma's FreePBX 17 update procedure and verify the installed packages."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0433-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0433"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Sangoma directs PBXact 17 operators to install the available PHP security updates for both CVEs. Fixed scope requires those system updates; an unupdated version 17 installation remains affected. The advisory does not specify an exact package build.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://community.freepbx.org/t/critical-php-security-vulnerabilities-action-required-for-freepbx-and-pbxact/110423",
+      "security_actionStatement": "Apply the latest system PHP security updates using Sangoma's version 17 update procedure and verify the installed packages."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0433-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0433"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Sangoma directs PBXact 17 operators to install the available PHP security updates for both CVEs. Fixed scope requires those system updates; an unupdated version 17 installation remains affected. The advisory does not specify an exact package build.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://community.freepbx.org/t/critical-php-security-vulnerabilities-action-required-for-freepbx-and-pbxact/110423",
+      "security_actionStatement": "Apply the latest system PHP security updates using Sangoma's version 17 update procedure and verify the installed packages."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0609-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0609"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "TerraMaster support explicitly lists TOS 5/6 as affected by both CVEs and names Web Server among PHP-dependent applications. TOS 6 users must migrate to TOS 7 and install its patched PHP packages; no in-place TOS 6 fix is established.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://forum.terra-master.com/en/viewtopic.php?p=61416&t=10721",
+      "security_actionStatement": "Migrate to TOS 7, install the vendor-fixed PHP package in App Center and restart PHP-dependent services. Update containers independently."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0609-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0609"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "TerraMaster support explicitly lists TOS 5/6 as affected by both CVEs and names Web Server among PHP-dependent applications. TOS 6 users must migrate to TOS 7 and install its patched PHP packages; no in-place TOS 6 fix is established.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://forum.terra-master.com/en/viewtopic.php?p=61416&t=10721",
+      "security_actionStatement": "Migrate to TOS 7, install the vendor-fixed PHP package in App Center and restart PHP-dependent services. Update containers independently."
     }
   ]
 }
