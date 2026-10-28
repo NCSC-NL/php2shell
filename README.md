@@ -62,3 +62,4 @@ If you have any additional information to share relevant to these PHP vulnerabil
 
 For updates to the software list: our strong preference is to receive edits in the SPDX source files in `software/spdx/`. The Markdown list pages are generated automatically from those files. In case this proves too difficult: don't worry. We'll attempt to backport edits in the .md files to the SPDX source files, but without any guarantees. 
 
+For a list of other contributions made by our community, see [COMMUNITY_CONTRIBUTIONS.MD](COMMUNITY_CONTRIBUTIONS.MD)
