@@ -27,6 +27,11 @@ README_OPERATIONAL_TIMESTAMP_PREFIX = "Operational information:"
 README_SOFTWARE_TIMESTAMP_PREFIX = "Software list last status update:"
 README_TLP_TEXT = "TLP:CLEAR"
 README_TLP_HEADING = "## TLP:CLEAR"
+README_COMMUNITY_ROW = (
+    "| [Community contributions](https://github.com/NCSC-NL/php2shell/blob/"
+    "community-contributions/COMMUNITY_CONTRIBUTIONS.MD) "
+    "| Community tools, tips, guides, and reference resources. |"
+)
 HISTORY_DATE_TIME_FORMAT = "YYYY-MM-DD HH:MM:SS +/-HHMM"
 BUCKETS = ["0-9", *string.ascii_uppercase]
 DEFAULT_SPDX_DIR = Path("software") / "spdx"
@@ -612,6 +617,32 @@ def normalize_readme_header(text: str) -> str:
     )
 
 
+def ensure_readme_repository_links(text: str) -> str:
+    """Keep permanent navigation links in the Repository contents table."""
+    section = re.search(r"^## Repository contents\n(?P<body>.*?)(?=^## |\Z)", text, re.MULTILINE | re.DOTALL)
+    if not section:
+        raise GenerationError("README is missing expected heading: ## Repository contents")
+    body = section.group("body")
+    community_row = re.compile(r"^\|\s*\[Community contributions\]\([^\n]*$", re.MULTILINE)
+    if community_row.search(body):
+        updated_body = community_row.sub(README_COMMUNITY_ROW, body, count=1)
+    else:
+        rows = list(re.finditer(r"^\|[^\n]*\|[ \t]*$", body, re.MULTILINE))
+        if not rows:
+            raise GenerationError("README Repository contents section is missing its table.")
+        end = rows[-1].end()
+        updated_body = body[:end] + "\n" + README_COMMUNITY_ROW + body[end:]
+    if updated_body == body:
+        return text
+    updated = text[:section.start("body")] + updated_body + text[section.end("body"):]
+    # Navigation is operational content; do not change the software-status date.
+    return re.sub(
+        rf"^{re.escape(README_OPERATIONAL_TIMESTAMP_PREFIX)}.*$",
+        f"{README_OPERATIONAL_TIMESTAMP_PREFIX} {format_readme_timestamp(None)}<br>",
+        updated, count=1, flags=re.MULTILINE,
+    )
+
+
 def write_readme_updates(
     repo_root: Path,
     cves: list[str],
@@ -656,6 +687,7 @@ def write_readme_updates(
                     "README is missing an operational timestamp line for software timestamp insertion."
                 )
             updated = operational_pattern.sub(rf"\1\n{software_timestamp}", updated, count=1)
+    updated = ensure_readme_repository_links(updated)
     updated = ensure_readme_hard_break(updated, README_OPERATIONAL_TIMESTAMP_PREFIX)
     updated = ensure_readme_hard_break(updated, README_SOFTWARE_TIMESTAMP_PREFIX)
     write_generated_text(readme_path, updated)

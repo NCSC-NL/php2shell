@@ -53,6 +53,12 @@ python tools/generate_inventory_statistics.py
 
 The generated history file is `software/changelog_software_list.md`. It uses the same columns as the alphabetized lists, with a leading `Date and time` column in `YYYY-MM-DD HH:MM:SS +/-HHMM` format. The README contains the five most recent status updates in a compact table that merges per-CVE statuses into one column and omits notes, then links to the full history.
 
+Both README generators preserve the existing contents table and ensure it includes
+the [Community contributions](https://github.com/NCSC-NL/php2shell/blob/community-contributions/COMMUNITY_CONTRIBUTIONS.MD)
+link. The permanent row is defined by `README_COMMUNITY_ROW` in
+`generate_software_list_from_spdx3.py` and restored if missing. Restoring or correcting
+this row updates the operational timestamp without changing the software-status date.
+
 History defaults to `HEAD`. On a pull request branch, fetch the latest `main`, merge it before editing SPDX, and add `--history-ref origin/main` to the command above. This preserves the mainline update timestamps instead of treating merges into the PR branch as new status updates. Status changes not yet present on the selected history reference are included as pending updates.
 
 When only a filename is provided, the tool reads it from `software/spdx/`. An explicit path may also be provided.

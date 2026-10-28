@@ -1,6 +1,6 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
-Operational information: 28 October 2026 12:48 CET<br>
+Operational information: 28 October 2026 13:46 CET<br>
 Software list last status update: 28 October 2026 11:14 CET<br>
 ## TLP:CLEAR
 
@@ -45,6 +45,7 @@ For additional information see:
 | [detection_mitigation](detection_mitigation) | Contains detection and mitigation material for the vulnerabilities. |
 | [software](software) | Contains inventory lists of software products with a PHP dependency potentially affected by the vulnerabilities. |
 | [tools](tools) | Contains tools for using/generating files within this repo |
+| [Community contributions](https://github.com/NCSC-NL/php2shell/blob/community-contributions/COMMUNITY_CONTRIBUTIONS.MD) | Community tools, tips, guides, and reference resources. |
 
 The repository is being updated as the situation develops. Check back for updates.
 
