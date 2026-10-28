@@ -48,6 +48,7 @@ By default, the tool updates only the alphabetized `software_list*.md` pages. To
 ```bash
 python tools/build_spdx_inventory.py
 python tools/generate_software_list_from_spdx3.py PHP_Downstream_Inventory.spdx3.json -o software --update-history --update-readme
+python tools/generate_inventory_statistics.py
 ```
 
 The generated history file is `software/changelog_software_list.md`. It uses the same columns as the alphabetized lists, with a leading `Date and time` column in `YYYY-MM-DD HH:MM:SS +/-HHMM` format. The README contains the five most recent status updates in a compact table that merges per-CVE statuses into one column and omits notes, then links to the full history.
@@ -55,3 +56,69 @@ The generated history file is `software/changelog_software_list.md`. It uses the
 History defaults to `HEAD`. On a pull request branch, fetch the latest `main`, merge it before editing SPDX, and add `--history-ref origin/main` to the command above. This preserves the mainline update timestamps instead of treating merges into the PR branch as new status updates. Status changes not yet present on the selected history reference are included as pending updates.
 
 When only a filename is provided, the tool reads it from `software/spdx/`. An explicit path may also be provided.
+
+## `generate_inventory_statistics.py`
+
+Updates the generated statistics section in the root `README.md` and writes
+`software/statistics/inventory-statistics.png` and `inventory-statistics.json`.
+It also refreshes the one-sentence tracked/vulnerable/fixed summary directly under
+`## Current status`.
+The default chart shows stacked bars for the three most recent UTC dates with
+inventory updates, with totals above the bars and counts inside larger segments.
+The JSON includes current totals, counts by update date, and separate counts for
+each tracked CVE.
+
+Use Python 3.10 or newer, Git with full history, and Matplotlib. Install the plotting
+dependency in a virtual environment (the other generators still use only the
+standard library):
+
+```bash
+python -m venv .venv
+# Bash: source .venv/bin/activate
+# PowerShell: .\.venv\Scripts\Activate.ps1
+python -m pip install -r tools/requirements-statistics.txt
+python tools/generate_inventory_statistics.py
+```
+
+Run statistics after compiling SPDX and generating the Markdown on every inventory
+update, and on periodic refreshes even if no statuses changed. The script itself
+does not schedule jobs or commit files. A scheduled runner must check out full Git
+history (for GitHub Actions, use `fetch-depth: 0`) and run the same commands.
+Shallow clones fail explicitly rather than silently publishing incomplete trends.
+
+```bash
+python tools/build_spdx_inventory.py
+python -m json.tool software/spdx/PHP_Downstream_Inventory.spdx3.json
+python tools/generate_software_list_from_spdx3.py PHP_Downstream_Inventory.spdx3.json -o software --update-history --update-readme
+python tools/generate_inventory_statistics.py --days 3
+```
+
+On a PR branch, add `--history-ref origin/main` to **both** generators after
+fetching and merging the latest mainline. Statistics use the last compiled SPDX
+snapshot in first-parent history per UTC day, dated by the commit's committer time
+(so merged updates appear when they reach mainline). `--days N` selects the last N
+distinct dates that changed the compiled inventory, skipping days without updates
+even when the selected dates are more than N calendar days apart. Multiple updates
+on one day produce one bar using that day's last snapshot. If fewer dates exist,
+only the available dates are shown.
+
+Local inventory changes compared with the latest mainline snapshot count as an
+update today, replacing today's committed bar or adding a new one. A periodic run
+without inventory changes does not add a bar. The README totals and summary always
+use the current local inventory. All historical dates are assessed against the
+current inventory's CVE set; missing assessments count as unknown. JSON schema
+version 2 stores current totals in `current` and the selected update dates in
+`daily`; `days` is the requested number of update dates, not a calendar window.
+
+Each unique SPDX package ID counts as one product/component entry, matching the
+software list. Overall categories are mutually exclusive: any `Vulnerable` status
+takes priority, then any `Investigation`, then missing or unrecognized assessments.
+A product is `Fixed` only if all tracked CVEs are `Fix` or `Not vuln` and at least
+one is `Fix`. It is `Not affected` only if all are `Not vuln`. The status counts
+therefore sum to the tracked total, without counting a product twice for two CVEs.
+Fixed counts describe the listed version scope, not all deployments.
+
+The statistics section has its own UTC snapshot date. Refreshing it preserves the
+operational and latest-status timestamps and other README sections. Repeating the
+command on the same UTC day with the same inputs leaves output bytes unchanged.
+Do not edit the generated summary, section, PNG, or JSON by hand.

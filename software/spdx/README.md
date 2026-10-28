@@ -5,12 +5,17 @@ Edit JSON fragments in `segments/` and `shared/`, then compile them:
 ```bash
 python tools/build_spdx_inventory.py
 python tools/generate_software_list_from_spdx3.py PHP_Downstream_Inventory.spdx3.json -o software --update-history --update-readme
+python tools/generate_inventory_statistics.py
 ```
 
 Run these commands from the repository root. Every `.json` file in those two
 directories, including nested directories, is discovered automatically. Adding a
 source file requires no registration or manifest. Keep non-source JSON files outside these
 directories because every JSON file inside them is an input.
+
+The statistics step refreshes the root README totals and the stacked PNG chart and JSON in
+`software/statistics/`. It requires Matplotlib and full Git history; see the
+[statistics tooling instructions](../../tools/README.md#generate_inventory_statisticspy).
 
 `PHP_Downstream_Inventory.spdx3.json` is the generated full inventory. Keep it in
 version control alongside source edits so the existing Markdown and Git status

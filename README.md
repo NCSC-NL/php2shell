@@ -1,6 +1,6 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
-Operational information: 27 October 2026 15:14 CET<br>
+Operational information: 28 October 2026 12:48 CET<br>
 Software list last status update: 28 October 2026 11:14 CET<br>
 ## TLP:CLEAR
 
@@ -9,6 +9,10 @@ This repository contains operational information regarding the critical PHP vuln
 PHP is a widely used open-source server-side scripting language, so these vulnerabilities may affect a broad range of internet-facing web applications and products that embed or depend on PHP.
 
 ## Current status
+
+<!-- inventory-statistics:summary:start -->
+This repository tracks **757 products**, including **216 vulnerable** and **136 fixed**.
+<!-- inventory-statistics:summary:end -->
 
 On 21 October 2026, PHP published fixed releases for CVE-2026-109618 and CVE-2026-109619: PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. PHP states that both vulnerabilities can allow unauthenticated remote code execution and that all PHP installations serving web requests are at risk, including PHP-FPM, Apache with mod_php, php-cgi, FrankenPHP and LiteSpeed. PHP considers the risk highest for mod_php, where an unauthenticated request can trigger exploitation before application code runs.
 
@@ -43,6 +47,22 @@ For additional information see:
 | [tools](tools) | Contains tools for using/generating files within this repo |
 
 The repository is being updated as the situation develops. Check back for updates.
+
+## Software inventory statistics
+
+<!-- inventory-statistics:start -->
+
+Statistics as of **2026-10-28 (UTC)**, from the current SPDX inventory.
+
+| Products tracked | Fixed | Vulnerable | Under investigation | Not affected | Unassessed / unknown |
+| ---: | ---: | ---: | ---: | ---: | ---: |
+| 757 | 136 | 216 | 364 | 40 | 1 |
+
+![Product status on the last 3 inventory update days](software/statistics/inventory-statistics.png)
+
+[Counts by update day and per-CVE statistics (JSON)](software/statistics/inventory-statistics.json) | [Software list](software/software_list.md)
+
+<!-- inventory-statistics:end -->
 
 ## Latest software status updates
 
