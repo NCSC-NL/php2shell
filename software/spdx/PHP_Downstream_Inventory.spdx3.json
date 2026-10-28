@@ -4709,7 +4709,27 @@
         "urn:php2shell:inventory:package:PHP-0758",
         "urn:php2shell:inventory:relationship:PHP-0758",
         "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:getpagespeed-deb-php-20261026",
-        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:getpagespeed-deb-php-20261026"
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:getpagespeed-deb-php-20261026",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0033-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0033-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0368-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0368-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0369-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0369-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0370-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0370-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0372-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0372-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0377-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0377-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0394-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0394-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0409-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0409-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0700-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0700-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0748-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0748-official-20261028"
       ]
     },
     {
@@ -6113,9 +6133,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:apache-friends:bd50e9af5248",
-      "summary": "Apache Friends explicitly lists PHP in its Apache/MariaDB/Perl native bundles. The browser/Endor environment is separated into its own delivery record.",
+      "summary": "Install a listed fixed Windows bundle and ensure its PHP runtime is selected; restart the bundled services.",
       "description": "Bundled Apache and PHP",
-      "comment": "Inventory record: PHP-0033\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Bundled Apache and PHP\nPHP version scope: Downloads list Windows/Linux 8.0.30/8.1.25/8.2.12, macOS 8.0.28/8.1.17/8.2.4. Linux 8.2.12 label conflicts with included-components prose8.2.4.\nExtensions: Installer/OS-specific; PEAR is tooling rather than a native extension; complete module inventory unresolved\nLimitations: Old available installers are not proof of maintenance/security support. Linux label/prose conflict prevents treating either patch as measured binary contents. Development bundle use is not assumed internet-facing. Browser listing is not a native installer or PHP in every browser.\nPatch owner: Apache Friends/bundle publisher and operator replacing the selected OS installer/runtime\nDownstream surface: Developer systems and any exposed bundled services\nRelease pin: Dated installer catalogue; binary checksums/contents not independently verified\nSource accessed: 2026-10-17\nAliases: xampp:native-installers\nConditional downstream consequence: Analyst judgment: a matching flaw in the selected bundle's PHP or loaded modules could affect that process and accessible files or credentials. Replace the affected OS-specific bundle/runtime and restart its services. A development bundle's presence alone does not establish Internet exposure, production impact or compromise.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0033\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nDeployment status: Not measured\nPHP surface: Bundled Apache and PHP\nExtensions: Installer/OS-specific; PEAR is tooling rather than a native extension; complete module inventory unresolved\nLimitations: Old available installers are not proof of maintenance/security support. Linux label/prose conflict prevents treating either patch as measured binary contents. Development bundle use is not assumed internet-facing. Browser listing is not a native installer or PHP in every browser.\nPatch owner: Apache Friends/bundle publisher and operator replacing the selected OS installer/runtime\nDownstream surface: Developer systems and any exposed bundled services\nAliases: xampp:native-installers\nConditional downstream consequence: Analyst judgment: a matching flaw in the selected bundle's PHP or loaded modules could affect that process and accessible files or credentials. Replace the affected OS-specific bundle/runtime and restart its services. A development bundle's presence alone does not establish Internet exposure, production impact or compromise.\nEvidence status: Official public vendor/upstream CVE assessment\nSource accessed: 2026-10-28\nPublic vendor CVE review: 2026-10-28\nVendor advisory sources: https://www.apachefriends.org/download.html; https://www.php.net/archive/2026.php#2026-10-21-5\nVendor advisory status: Apache Friends publishes Windows installers with matching fixed PHP versions; PHP's advisory confirms both CVE fixes. This finding covers those Windows builds only; Linux, macOS and older installers are not confirmed fixed.\nVulnerability status: Fix. Apache Friends publishes Windows installers with matching fixed PHP versions; PHP's advisory confirms both CVE fixes. This finding covers those Windows builds only; Linux, macOS and older installers are not confirmed fixed.\nCVE assessment limit: Only the documented product, release and platform scope is assessed. Installed versions, runtime selection, reachability and exploitation were not tested.\nCVE-2026-109618: Fix. Apache Friends publishes Windows installers with matching fixed PHP versions; PHP's advisory confirms both CVE fixes. This finding covers those Windows builds only; Linux, macOS and older installers are not confirmed fixed.\nCVE-2026-109619: Fix. Apache Friends publishes Windows installers with matching fixed PHP versions; PHP's advisory confirms both CVE fixes. This finding covers those Windows builds only; Linux, macOS and older installers are not confirmed fixed.\nPHP version scope: Windows x64 installers 8.3.36, 8.4.27 or 8.5.12\nRelease pin: Windows x64 installers 8.3.36, 8.4.27 or 8.5.12",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -6123,7 +6143,7 @@
           "locator": [
             "https://www.apachefriends.org/download.html"
           ],
-          "comment": "Apache Friends OS-specific XAMPP downloads and included-components listings"
+          "comment": "Official public source reviewed 2026-10-28"
         },
         {
           "type": "ExternalRef",
@@ -6132,8 +6152,17 @@
             "https://www.apachefriends.org/index.html"
           ],
           "comment": "Apache Friends XAMPP - Apache Friends describes XAMPP as a distribution containing PHP."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-21-5"
+          ],
+          "comment": "Official public source reviewed 2026-10-28"
         }
-      ]
+      ],
+      "software_packageVersion": "Windows x64 installers 8.3.36, 8.4.27 or 8.5.12"
     },
     {
       "type": "software_Package",
@@ -17420,9 +17449,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:wampserver-maintainers-aviatechno:9497e0abcb8f",
-      "summary": "The publisher distinguishes the full installer, manager updates and separately downloadable PHP add-ons; Apache/PHP and database administration tools are bundled.",
+      "summary": "Install and select a fixed PHP add-on for Apache and every FCGI VirtualHost; follow the publisher's manager-runtime and restart instructions.",
       "description": "Bundled Apache/PHP; Apache fcgi_module add-on supports per-VirtualHost PHP selection",
-      "comment": "Inventory record: PHP-0368\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Bundled Apache/PHP; Apache fcgi_module add-on supports per-VirtualHost PHP selection\nPHP version scope: Full installer 3.4.0 lists PHP 8.0.30/8.1.33/8.2.29/8.3.28/8.4.15/8.5.0; update 3.4.2 and separate add-ons8.2.34/8.3.35/8.4.26/8.5.11 are distinct\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: A manager update or add-on listing is not proof an installed PHP binary was replaced. The page is dated2026-10-14; old available add-ons are not support assurances. PHPMyAdmin/Adminer rows overlap with the bundle. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: WampServer/add-on publisher and developer/operator selecting and updating each PHP version\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Full installer3.4.0 versus update3.4.2 and separately versioned PHP add-ons; binary hashes not verified\nSource accessed: 2026-10-17\nAliases: wampserver:windows\nConditional downstream consequence: If a matching PHP or loaded-parser flaw is reached while processing a project, dependency, fixture or local web request, developer/CI files or available credentials could be affected. Consequences depend on executed inputs and privileges; development use does not establish a public service or a tenant escape.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0368\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nDeployment status: Not measured\nPHP surface: Bundled Apache/PHP; Apache fcgi_module add-on supports per-VirtualHost PHP selection\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: A manager update or add-on listing is not proof an installed PHP binary was replaced. The page is dated2026-10-14; old available add-ons are not support assurances. PHPMyAdmin/Adminer rows overlap with the bundle. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: WampServer/add-on publisher and developer/operator selecting and updating each PHP version\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nAliases: wampserver:windows\nConditional downstream consequence: If a matching PHP or loaded-parser flaw is reached while processing a project, dependency, fixture or local web request, developer/CI files or available credentials could be affected. Consequences depend on executed inputs and privileges; development use does not establish a public service or a tenant escape.\nEvidence status: Official public vendor/upstream CVE assessment\nSource accessed: 2026-10-28\nPublic vendor CVE review: 2026-10-28\nVendor advisory sources: https://wampserver.aviatechno.net/index.php?affiche=addons&lang=en; https://www.php.net/archive/2026.php#2026-10-21-5\nVendor advisory status: The publisher's 2026-10-28 warning supplies these PHP security add-ons. Their PHP source versions match the upstream fixes for both CVEs. The older full installer and a Wampmanager-only update do not establish a fixed runtime.\nVulnerability status: Fix. The publisher's 2026-10-28 warning supplies these PHP security add-ons. Their PHP source versions match the upstream fixes for both CVEs. The older full installer and a Wampmanager-only update do not establish a fixed runtime.\nCVE assessment limit: Only the documented product, release and platform scope is assessed. Installed versions, runtime selection, reachability and exploitation were not tested.\nCVE-2026-109618: Fix. The publisher's 2026-10-28 warning supplies these PHP security add-ons. Their PHP source versions match the upstream fixes for both CVEs. The older full installer and a Wampmanager-only update do not establish a fixed runtime.\nCVE-2026-109619: Fix. The publisher's 2026-10-28 warning supplies these PHP security add-ons. Their PHP source versions match the upstream fixes for both CVEs. The older full installer and a Wampmanager-only update do not establish a fixed runtime.\nPHP version scope: Windows x64 PHP add-ons 8.2.35.1, 8.3.36.1, 8.4.27.1 or 8.5.12.1\nRelease pin: Windows x64 PHP add-ons 8.2.35.1, 8.3.36.1, 8.4.27.1 or 8.5.12.1",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -17431,8 +17460,25 @@
             "https://wampserver.aviatechno.net/"
           ],
           "comment": "Official PHP distribution, package or build declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://wampserver.aviatechno.net/index.php?affiche=addons&lang=en"
+          ],
+          "comment": "Official public source reviewed 2026-10-28"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-21-5"
+          ],
+          "comment": "Official public source reviewed 2026-10-28"
         }
-      ]
+      ],
+      "software_packageVersion": "Windows x64 PHP add-ons 8.2.35.1, 8.3.36.1, 8.4.27.1 or 8.5.12.1"
     },
     {
       "type": "software_Package",
@@ -17448,9 +17494,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:mamp-gmbh:9549a7d179f0",
-      "summary": "MAMP describes an installable local stack containing PHP; its downloads distinguish OS-specific installer versions.",
+      "summary": "Install the Windows 5.0.7 release, select one of its fixed PHP versions and restart the services.",
       "description": "Bundled PHP with Apache/nginx and MySQL; exact SAPI varies by edition/OS",
-      "comment": "Inventory record: PHP-0369\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Bundled PHP with Apache/nginx and MySQL; exact SAPI varies by edition/OS\nPHP version scope: Downloads page lists macOS 7.4.0 and Windows 5.0.6 installers; PHP patch inventory not enumerated on inspected pages\nExtensions: Product page says APC and OPcache integrated; exact module version/selection per installer unresolved\nLimitations: Installer version is not a PHP version. Free MAMP, PRO, Viewer and Cloud Connect are different boundaries; cloud-provider or mobile-viewer PHP internals are not established. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: MAMP bundle publisher and developer/operator updating the selected OS/edition and runtime\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Moving official documentation; immutable artifact pin pending\nSource accessed: 2026-10-17\nAliases: mamp:local-stack\nConditional downstream consequence: If a matching PHP or loaded-parser flaw is reached while processing a project, dependency, fixture or local web request, developer/CI files or available credentials could be affected. Consequences depend on executed inputs and privileges; development use does not establish a public service or a tenant escape.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0369\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nDeployment status: Not measured\nPHP surface: Bundled PHP with Apache/nginx and MySQL; exact SAPI varies by edition/OS\nExtensions: Product page says APC and OPcache integrated; exact module version/selection per installer unresolved\nLimitations: Installer version is not a PHP version. Free MAMP, PRO, Viewer and Cloud Connect are different boundaries; cloud-provider or mobile-viewer PHP internals are not established. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: MAMP bundle publisher and developer/operator updating the selected OS/edition and runtime\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nAliases: mamp:local-stack\nConditional downstream consequence: If a matching PHP or loaded-parser flaw is reached while processing a project, dependency, fixture or local web request, developer/CI files or available credentials could be affected. Consequences depend on executed inputs and privileges; development use does not establish a public service or a tenant escape.\nEvidence status: Official public vendor/upstream CVE assessment\nSource accessed: 2026-10-28\nPublic vendor CVE review: 2026-10-28\nVendor advisory sources: https://www.mamp.info/en/release-notes/windows/; https://www.php.net/archive/2026.php#2026-10-21-5\nVendor advisory status: MAMP's 2026-10-23 Windows release adds the PHP versions identified by upstream as fixing both CVEs. The installer also retains older PHP choices; this confirmation does not cover macOS or use of an older bundled runtime.\nVulnerability status: Fix. MAMP's 2026-10-23 Windows release adds the PHP versions identified by upstream as fixing both CVEs. The installer also retains older PHP choices; this confirmation does not cover macOS or use of an older bundled runtime.\nCVE assessment limit: Only the documented product, release and platform scope is assessed. Installed versions, runtime selection, reachability and exploitation were not tested.\nCVE-2026-109618: Fix. MAMP's 2026-10-23 Windows release adds the PHP versions identified by upstream as fixing both CVEs. The installer also retains older PHP choices; this confirmation does not cover macOS or use of an older bundled runtime.\nCVE-2026-109619: Fix. MAMP's 2026-10-23 Windows release adds the PHP versions identified by upstream as fixing both CVEs. The installer also retains older PHP choices; this confirmation does not cover macOS or use of an older bundled runtime.\nPHP version scope: MAMP / MAMP PRO 5.0.7 for Windows with PHP 8.2.35, 8.3.36, 8.4.27 or 8.5.12 selected\nRelease pin: MAMP / MAMP PRO 5.0.7 for Windows with PHP 8.2.35, 8.3.36, 8.4.27 or 8.5.12 selected",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -17467,8 +17513,25 @@
             "https://www.mamp.info/en/downloads/"
           ],
           "comment": "Official publisher/project distribution evidence - OS-specific MAMP/MAMP PRO installer versions listed; PHP patch set unspecified."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://www.mamp.info/en/release-notes/windows/"
+          ],
+          "comment": "Official public source reviewed 2026-10-28"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-21-5"
+          ],
+          "comment": "Official public source reviewed 2026-10-28"
         }
-      ]
+      ],
+      "software_packageVersion": "MAMP / MAMP PRO 5.0.7 for Windows with PHP 8.2.35, 8.3.36, 8.4.27 or 8.5.12 selected"
     },
     {
       "type": "software_Package",
@@ -17484,9 +17547,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:laragon-project:70489efcd492",
-      "summary": "Laragon explicitly calls PHP bundled, documents terminal PATH use and switching/updating PHP versions in the Full environment.",
+      "summary": "Update Laragon and select its fixed PHP 8.3 runtime; separately update any other installed or per-project PHP runtime.",
       "description": "Bundled PHP for local Apache/nginx and terminal PATH; per-project versions",
-      "comment": "Inventory record: PHP-0370\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Bundled PHP for local Apache/nginx and terminal PATH; per-project versions\nPHP version scope: Full 8.7.0 download page lists PHP 8.1–8.5 families; exact patches and auto-added version state unknown\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: Full installer contents, later quick-add/automatic updates and active per-project PHP are distinct. Database/Node/Python co-bundling does not make those components PHP-based. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Laragon distribution/update publisher and developer/operator selecting updated PHP binaries\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Laragon Full8.7.0 product download declaration; individual runtime binary pins pending\nSource accessed: 2026-10-17\nAliases: laragon:full\nConditional downstream consequence: If a matching PHP or loaded-parser flaw is reached while processing a project, dependency, fixture or local web request, developer/CI files or available credentials could be affected. Consequences depend on executed inputs and privileges; development use does not establish a public service or a tenant escape.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0370\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nDeployment status: Not measured\nPHP surface: Bundled PHP for local Apache/nginx and terminal PATH; per-project versions\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: Full installer contents, later quick-add/automatic updates and active per-project PHP are distinct. Database/Node/Python co-bundling does not make those components PHP-based. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Laragon distribution/update publisher and developer/operator selecting updated PHP binaries\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nAliases: laragon:full\nConditional downstream consequence: If a matching PHP or loaded-parser flaw is reached while processing a project, dependency, fixture or local web request, developer/CI files or available credentials could be affected. Consequences depend on executed inputs and privileges; development use does not establish a public service or a tenant escape.\nEvidence status: Official public vendor/upstream CVE assessment\nSource accessed: 2026-10-28\nPublic vendor CVE review: 2026-10-28\nVendor advisory sources: https://github.com/leokhoa/laragon/releases/tag/8.8.0; https://www.php.net/archive/2026.php#2026-10-21-5\nVendor advisory status: Laragon's 2026-10-22 release updates its PHP 8.3 bundle to 8.3.36 for critical security fixes. PHP upstream confirms this version fixes both CVEs. Other added or selected PHP branches are not covered by this release evidence.\nVulnerability status: Fix. Laragon's 2026-10-22 release updates its PHP 8.3 bundle to 8.3.36 for critical security fixes. PHP upstream confirms this version fixes both CVEs. Other added or selected PHP branches are not covered by this release evidence.\nCVE assessment limit: Only the documented product, release and platform scope is assessed. Installed versions, runtime selection, reachability and exploitation were not tested.\nCVE-2026-109618: Fix. Laragon's 2026-10-22 release updates its PHP 8.3 bundle to 8.3.36 for critical security fixes. PHP upstream confirms this version fixes both CVEs. Other added or selected PHP branches are not covered by this release evidence.\nCVE-2026-109619: Fix. Laragon's 2026-10-22 release updates its PHP 8.3 bundle to 8.3.36 for critical security fixes. PHP upstream confirms this version fixes both CVEs. Other added or selected PHP branches are not covered by this release evidence.\nPHP version scope: Laragon 8.8.0 with bundled PHP 8.3.36 selected\nRelease pin: Laragon 8.8.0 with bundled PHP 8.3.36 selected",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -17495,8 +17558,25 @@
             "https://laragon.org/download"
           ],
           "comment": "Official PHP distribution, package or build declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/leokhoa/laragon/releases/tag/8.8.0"
+          ],
+          "comment": "Official public source reviewed 2026-10-28"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-21-5"
+          ],
+          "comment": "Official public source reviewed 2026-10-28"
         }
-      ]
+      ],
+      "software_packageVersion": "Laragon 8.8.0 with bundled PHP 8.3.36 selected"
     },
     {
       "type": "software_Package",
@@ -17540,9 +17620,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:beyond-code-in-partnership-with-laravel:30722d235511",
-      "summary": "Herd describes a native PHP stack without containers; Windows documentation distinguishes shipped tools from downloaded PHP binaries.",
+      "summary": "Follow Beyond Code's instructions: update Herd, then update the PHP versions in the application and verify the runtime selected for each site.",
       "description": "Native managed PHP binaries and local nginx integration; exact SAPI/build per OS not pinned",
-      "comment": "Inventory record: PHP-0372\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Native managed PHP binaries and local nginx integration; exact SAPI/build per OS not pinned\nPHP version scope: Moving macOS product page and Windows directories guide; site demo shows version choices7.4–8.6 and8.5.10 example, not a release/support catalogue\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: Website screenshots/demo patch numbers are not installed builds or assurance8.6 is stable. Linux is described as not yet shipped. Pro services and the GUI implementation are not all inferred to be PHP. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Herd runtime download/update publisher and developer/operator applying the selected PHP update\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Moving official documentation; immutable artifact pin pending\nSource accessed: 2026-10-17\nAliases: herd:php-runtime\nConditional downstream consequence: If a matching PHP or loaded-parser flaw is reached while processing a project, dependency, fixture or local web request, developer/CI files or available credentials could be affected. Consequences depend on executed inputs and privileges; development use does not establish a public service or a tenant escape.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0372\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nDeployment status: Not measured\nPHP surface: Native managed PHP binaries and local nginx integration; exact SAPI/build per OS not pinned\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: Website screenshots/demo patch numbers are not installed builds or assurance8.6 is stable. Linux is described as not yet shipped. Pro services and the GUI implementation are not all inferred to be PHP. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Herd runtime download/update publisher and developer/operator applying the selected PHP update\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nAliases: herd:php-runtime\nConditional downstream consequence: If a matching PHP or loaded-parser flaw is reached while processing a project, dependency, fixture or local web request, developer/CI files or available credentials could be affected. Consequences depend on executed inputs and privileges; development use does not establish a public service or a tenant escape.\nEvidence status: Official public vendor/upstream CVE assessment\nSource accessed: 2026-10-28\nPublic vendor CVE review: 2026-10-28\nVendor advisory sources: https://beyondco.de/blog/php-security-release; https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/\nVendor advisory status: Beyond Code's 2026-10-22 response confirms patched PHP builds are shipping through Herd and links the PHP Foundation's announcement covering both CVEs. Updating the Herd application alone does not update every selected PHP runtime.\nVulnerability status: Fix. Beyond Code's 2026-10-22 response confirms patched PHP builds are shipping through Herd and links the PHP Foundation's announcement covering both CVEs. Updating the Herd application alone does not update every selected PHP runtime.\nCVE assessment limit: Only the documented product, release and platform scope is assessed. Installed versions, runtime selection, reachability and exploitation were not tested.\nCVE-2026-109618: Fix. Beyond Code's 2026-10-22 response confirms patched PHP builds are shipping through Herd and links the PHP Foundation's announcement covering both CVEs. Updating the Herd application alone does not update every selected PHP runtime.\nCVE-2026-109619: Fix. Beyond Code's 2026-10-22 response confirms patched PHP builds are shipping through Herd and links the PHP Foundation's announcement covering both CVEs. Updating the Herd application alone does not update every selected PHP runtime.\nPHP version scope: Patched PHP builds distributed through Herd after the 2026-10-21 security release\nRelease pin: Patched PHP builds distributed through Herd after the 2026-10-21 security release",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -17559,8 +17639,25 @@
             "https://herd.laravel.com/docs/windows/advanced-usage/directories-and-files"
           ],
           "comment": "Official publisher/project distribution evidence - Windows bin directory contains downloaded PHP versions as well as shipped tools."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://beyondco.de/blog/php-security-release"
+          ],
+          "comment": "Official public source reviewed 2026-10-28"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/"
+          ],
+          "comment": "Official public source reviewed 2026-10-28"
         }
-      ]
+      ],
+      "software_packageVersion": "Patched PHP builds distributed through Herd after the 2026-10-21 security release"
     },
     {
       "type": "software_Package",
@@ -17714,9 +17811,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:nextcloud-snap-maintainers:3471f671bf79",
-      "summary": "The Snap recipe has an explicit PHP autotools part with FPM enabled and separate Redis6.3.0/APCu5.1.28 extension builds.",
+      "summary": "Refresh to Nextcloud Snap 34.0.5snap3 or a later release retaining the fixed PHP runtime.",
       "description": "Source-built PHP-FPM and CLI; CGI/phpdbg disabled in recipe; snap-specific CLI wrapper",
-      "comment": "Inventory record: PHP-0377\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0015\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Source-built PHP-FPM and CLI; CGI/phpdbg disabled in recipe; snap-specific CLI wrapper\nPHP version scope: Moving snapcraft recipe pins php8.4.26 tarball and SHA256 4209694d7b0f63c45a3773e07cdc2bbfc71249265a5d951b1ff53e1147edc5ca\nExtensions: Inspected build selections include mbstring, zip, pdo_mysql, zlib, gd, curl, openssl, bz2, sodium, exif, intl, pcntl, ftp, bcmath, sysvsem, ldap, gmp; separate redis and APCu builds. Full loaded module set unknown.\nLimitations: Source checksum is a recipe declaration, not independently hashed tarball or installed Snap revision. Snap channel/revision, application release and refresh state remain unmeasured; OS apt PHP is a separate installation. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Nextcloud Snap publisher rebuilds the bundled runtime/extensions; operator/channel/refresh policy determines rollout\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: PHP8.4.26 tarball SHA256 declaration in moving snapcraft.yaml; Snap revision/digest pending\nSource accessed: 2026-10-17\nAliases: nextcloud-snap:php-part\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0377\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0015\nDeployment status: Not measured\nPHP surface: Source-built PHP-FPM and CLI; CGI/phpdbg disabled in recipe; snap-specific CLI wrapper\nExtensions: Inspected build selections include mbstring, zip, pdo_mysql, zlib, gd, curl, openssl, bz2, sodium, exif, intl, pcntl, ftp, bcmath, sysvsem, ldap, gmp; separate redis and APCu builds. Full loaded module set unknown.\nLimitations: Source checksum is a recipe declaration, not independently hashed tarball or installed Snap revision. Snap channel/revision, application release and refresh state remain unmeasured; OS apt PHP is a separate installation. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Nextcloud Snap publisher rebuilds the bundled runtime/extensions; operator/channel/refresh policy determines rollout\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nAliases: nextcloud-snap:php-part\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nEvidence status: Official public vendor/upstream CVE assessment\nSource accessed: 2026-10-28\nPublic vendor CVE review: 2026-10-28\nVendor advisory sources: https://github.com/nextcloud-snap/nextcloud-snap/releases/tag/34.0.5snap3; https://github.com/nextcloud-snap/nextcloud-snap/issues/3701; https://www.php.net/archive/2026.php#2026-10-21-5\nVendor advisory status: The official Nextcloud Snap release ships PHP 8.4.27, and its maintainers confirm the security update in issue 3701. PHP upstream identifies 8.4.27 as fixed for both CVEs. This finding applies to the Snap package.\nVulnerability status: Fix. The official Nextcloud Snap release ships PHP 8.4.27, and its maintainers confirm the security update in issue 3701. PHP upstream identifies 8.4.27 as fixed for both CVEs. This finding applies to the Snap package.\nCVE assessment limit: Only the documented product, release and platform scope is assessed. Installed versions, runtime selection, reachability and exploitation were not tested.\nCVE-2026-109618: Fix. The official Nextcloud Snap release ships PHP 8.4.27, and its maintainers confirm the security update in issue 3701. PHP upstream identifies 8.4.27 as fixed for both CVEs. This finding applies to the Snap package.\nCVE-2026-109619: Fix. The official Nextcloud Snap release ships PHP 8.4.27, and its maintainers confirm the security update in issue 3701. PHP upstream identifies 8.4.27 as fixed for both CVEs. This finding applies to the Snap package.\nPHP version scope: 34.0.5snap3 (bundled PHP 8.4.27)\nRelease pin: 34.0.5snap3 (bundled PHP 8.4.27)",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -17725,8 +17822,33 @@
             "https://github.com/nextcloud-snap/nextcloud-snap/blob/master/snap/snapcraft.yaml"
           ],
           "comment": "Official PHP distribution, package or build declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/nextcloud-snap/nextcloud-snap/releases/tag/34.0.5snap3"
+          ],
+          "comment": "Official public source reviewed 2026-10-28"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/nextcloud-snap/nextcloud-snap/issues/3701"
+          ],
+          "comment": "Official public source reviewed 2026-10-28"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-21-5"
+          ],
+          "comment": "Official public source reviewed 2026-10-28"
         }
-      ]
+      ],
+      "software_packageVersion": "34.0.5snap3 (bundled PHP 8.4.27)"
     },
     {
       "type": "software_Package",
@@ -18439,9 +18561,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cyberpanel-project:b379a78237de",
-      "summary": "CyberPanel’s official README advertises selectable PHP families for hosted applications.",
+      "summary": "Apply the vendor's PHP package and panel-copy procedure; this is not a new CyberPanel source release or confirmation that customer installations have been patched.",
       "description": "Customer PHP options alongside OpenLiteSpeed/LiteSpeed; exact selected handler/build unknown",
-      "comment": "Inventory record: PHP-0394\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0037\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Customer PHP options alongside OpenLiteSpeed/LiteSpeed; exact selected handler/build unknown\nPHP version scope: Inspected v3.0.5-dev README lists PHP8.1–8.5 plus older8.0/7.4; not a verified stable-release support schedule\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: README lifecycle dates are not accepted as upstream PHP maintenance evidence. Python entrypoint evidence does not exclude PHP in every optional subcomponent. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: CyberPanel integration maintainers and selected LSPHP repositories publish changes; operator updates runtime packages and site selections\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: cyberpanel:hosted-php\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0394\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0037\nDeployment status: Not measured\nPHP surface: Customer PHP options alongside OpenLiteSpeed/LiteSpeed; exact selected handler/build unknown\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: README lifecycle dates are not accepted as upstream PHP maintenance evidence. Python entrypoint evidence does not exclude PHP in every optional subcomponent. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: CyberPanel integration maintainers and selected LSPHP repositories publish changes; operator updates runtime packages and site selections\nDownstream surface: Only customer workloads configured to use this PHP option\nAliases: cyberpanel:hosted-php\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nEvidence status: Official public vendor/upstream CVE assessment\nSource accessed: 2026-10-28\nPublic vendor CVE review: 2026-10-28\nVendor advisory sources: https://cyberpanel.net/blog/php-security-october-2026-cyberpanel-response\nVendor advisory status: CyberPanel confirms fixed LiteSpeed packages for both CVEs and verifies this Ubuntu 26.04 configuration. The fix requires matching modules, refreshing the separate panel PHP copy and recycling workers. Other OS/package combinations need separate confirmation.\nVulnerability status: Fix. CyberPanel confirms fixed LiteSpeed packages for both CVEs and verifies this Ubuntu 26.04 configuration. The fix requires matching modules, refreshing the separate panel PHP copy and recycling workers. Other OS/package combinations need separate confirmation.\nCVE assessment limit: Only the documented product, release and platform scope is assessed. Installed versions, runtime selection, reachability and exploitation were not tested.\nCVE-2026-109618: Fix. CyberPanel confirms fixed LiteSpeed packages for both CVEs and verifies this Ubuntu 26.04 configuration. The fix requires matching modules, refreshing the separate panel PHP copy and recycling workers. Other OS/package combinations need separate confirmation.\nCVE-2026-109619: Fix. CyberPanel confirms fixed LiteSpeed packages for both CVEs and verifies this Ubuntu 26.04 configuration. The fix requires matching modules, refreshing the separate panel PHP copy and recycling workers. Other OS/package combinations need separate confirmation.\nPHP version scope: Ubuntu 26.04 LSPHP: 8.2.35-1+resolute, 8.3.36-1+resolute, 8.4.27-1+resolute or 8.5.12-1+resolute\nRelease pin: Ubuntu 26.04 LSPHP: 8.2.35-1+resolute, 8.3.36-1+resolute, 8.4.27-1+resolute or 8.5.12-1+resolute",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -18458,8 +18580,17 @@
             "https://github.com/usmannasir/cyberpanel/blob/v3.0.5-dev/manage.py"
           ],
           "comment": "Official publisher/project PHP scope evidence - The inspected manage.py is a Python/Django management entrypoint, contrary to inferring a PHP panel core from PHP hosting."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://cyberpanel.net/blog/php-security-october-2026-cyberpanel-response"
+          ],
+          "comment": "Official public source reviewed 2026-10-28"
         }
-      ]
+      ],
+      "software_packageVersion": "Ubuntu 26.04 LSPHP: 8.2.35-1+resolute, 8.3.36-1+resolute, 8.4.27-1+resolute or 8.5.12-1+resolute"
     },
     {
       "type": "software_Package",
@@ -19039,9 +19170,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:laravel:ab5d684a5cac",
-      "summary": "Vapor’s Docker instructions name its PHP base-image family and architecture/version tag choices.",
+      "summary": "Use the updated PHP 8.2+ base image and create a new deployment; a redeploy of the existing Docker image is insufficient.",
       "description": "PHP Lambda-oriented Docker base runtime; exact handler differs by deployment configuration",
-      "comment": "Inventory record: PHP-0409\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0408\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP Lambda-oriented Docker base runtime; exact handler differs by deployment configuration\nPHP version scope: Eleven documented base tags: php85,php85-arm,php84,php84-arm,php83,php83-arm,php82,php82-arm,php81,php80,php74\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: One family row, not eleven products/installations. Old tags do not establish current patch support; no image digest, SBOM or modules verified. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: Laravel for base-image releases; derived-image publisher/operator for extension builds, updated base resolution and deployment\nDownstream surface: Only the named PHP component and its callers\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: docker.io/laravelphp/vapor\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0409\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0408\nDeployment status: Not measured\nPHP surface: PHP Lambda-oriented Docker base runtime; exact handler differs by deployment configuration\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: One family row, not eleven products/installations. Old tags do not establish current patch support; no image digest, SBOM or modules verified. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: Laravel for base-image releases; derived-image publisher/operator for extension builds, updated base resolution and deployment\nDownstream surface: Only the named PHP component and its callers\nAliases: docker.io/laravelphp/vapor\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nEvidence status: Official public vendor/upstream CVE assessment\nSource accessed: 2026-10-28\nPublic vendor CVE review: 2026-10-28\nVendor advisory sources: https://laravel.com/blog/php-critical-vulnerability-response-updates; https://github.com/laravel/vapor-dockerfiles/pull/24; https://www.php.net/archive/2026.php#2026-10-21-5\nVendor advisory status: Laravel confirms patched Vapor runtimes are live and explicitly requires a new deployment for Docker/custom runtimes. The official base-image repository also merges the PHP 8.2.35 pin. PHP 8.0/8.1 are excluded; existing deployments do not update automatically.\nVulnerability status: Fix. Laravel confirms patched Vapor runtimes are live and explicitly requires a new deployment for Docker/custom runtimes. The official base-image repository also merges the PHP 8.2.35 pin. PHP 8.0/8.1 are excluded; existing deployments do not update automatically.\nCVE assessment limit: Only the documented product, release and platform scope is assessed. Installed versions, runtime selection, reachability and exploitation were not tested.\nCVE-2026-109618: Fix. Laravel confirms patched Vapor runtimes are live and explicitly requires a new deployment for Docker/custom runtimes. The official base-image repository also merges the PHP 8.2.35 pin. PHP 8.0/8.1 are excluded; existing deployments do not update automatically.\nCVE-2026-109619: Fix. Laravel confirms patched Vapor runtimes are live and explicitly requires a new deployment for Docker/custom runtimes. The official base-image repository also merges the PHP 8.2.35 pin. PHP 8.0/8.1 are excluded; existing deployments do not update automatically.\nPHP version scope: Updated Vapor PHP 8.2+ Docker runtimes from the October 2026 security rollout\nRelease pin: Updated Vapor PHP 8.2+ Docker runtimes from the October 2026 security rollout",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -19050,8 +19181,33 @@
             "https://docs.vapor.build/projects/environments"
           ],
           "comment": "Official PHP component, runtime or hosting declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://laravel.com/blog/php-critical-vulnerability-response-updates"
+          ],
+          "comment": "Official public source reviewed 2026-10-28"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/laravel/vapor-dockerfiles/pull/24"
+          ],
+          "comment": "Official public source reviewed 2026-10-28"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-21-5"
+          ],
+          "comment": "Official public source reviewed 2026-10-28"
         }
-      ]
+      ],
+      "software_packageVersion": "Updated Vapor PHP 8.2+ Docker runtimes from the October 2026 security rollout"
     },
     {
       "type": "software_Package",
@@ -26531,9 +26687,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:juniper-networks:d899c5f10f6d",
-      "summary": "Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.",
+      "summary": "CVE-2026-109618 remains Vulnerable: Juniper says the issue is reachable but not exploitable. SRX stops using PHP at 25.2R1; that release boundary must not be applied to EX.",
       "description": "Juniper-authored CVE record expressly identifies PHP in J-Web; later vendor bulletin corroborates inclusion.",
-      "comment": "Inventory record: PHP-0629\nEdge inventory record: EDGE-019\nCategory: Appliances and embedded\nScope group: Network/security appliance\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037 runtime family reference\nEvidence status: Official public vendor/upstream CVE assessment\nRelationship confidence: Source supports the stated scope; actual deployment unknown\nDeployment status: Unknown: no installation count, live build, reachability, permissions, failover or exploitation measured\nService role: Network/security device web administration\nPHP surface: Juniper-authored CVE record expressly identifies PHP in J-Web; later vendor bulletin corroborates inclusion.\nPHP version scope: Junos OS J-Web on EX/SRX using affected PHP; SRX 25.2R1 no longer uses PHP\nExtensions: Unknown unless explicitly recorded\nImportant boundary: Only the named J-Web/release scope is supported. Enabling conditions of an older flaw are not automatically those of the 2026 pair.\nPatch owner: Juniper Networks for supported firmware/component corrections; operator/provider for deployment, restart and service continuity\nPossible abuse: If a matching reachable PHP function is compromised, readable settings/credentials or permitted management actions could be misused. Wider appliance control requires separate privilege/path evidence.\nPHP component loss: The PHP-dependent interface/workflow could be unavailable. Independent traffic processing or other services may continue; exact behaviour is not measured.\nWhole appliance loss: Whole SRX/EX shutdown could interrupt firewall/switch connectivity. Disabling only J-Web is a narrower scenario; actual remaining operations must be verified.\nConditions: Requires a matching affected runtime/vendor build, enabled function, reachable input and relevant process permissions. PHP presence alone is insufficient.\nSource accessed: 2026-10-26\nVendor advisory status: No direct vendor confirmation for CVE-2026-109618 or CVE-2026-109619 identified in official-site review on 2026-10-21.\nVulnerability status: Vulnerable / Investigation. Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.\nCVE-2026-109618: Vulnerable. Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.\nCVE-2026-109619: Investigation. Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.\nCVE assessment limit: The edge inventory confirms a PHP relationship in the cited scope only. Affected/fixed appliance builds, vendor backports, enabled features, reachable inputs and exploitation remain unestablished.\nLimitations: Only the named vendor product and version scope is assessed. Installed versions, exposure and exploitation were not tested.\nPublic vendor CVE review: 2026-10-26\nVendor advisory sources: https://supportportal.juniper.net/s/article/2026-10-Reference-Advisory-Status-of-PHP2Shell-vulnerabilities-on-Juniper-Products-CVE-2026-109618-CVE-2026-109619\nRelease pin: Junos OS J-Web on EX/SRX using affected PHP; SRX 25.2R1 no longer uses PHP",
+      "comment": "Inventory record: PHP-0629\nEdge inventory record: EDGE-019\nCategory: Appliances and embedded\nScope group: Network/security appliance\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037 runtime family reference\nRelationship confidence: Source supports the stated scope; actual deployment unknown\nDeployment status: Unknown: no installation count, live build, reachability, permissions, failover or exploitation measured\nService role: Network/security device web administration\nPHP surface: Juniper-authored CVE record expressly identifies PHP in J-Web; later vendor bulletin corroborates inclusion.\nPHP version scope: Junos OS J-Web on EX/SRX using affected PHP; SRX 25.2R1 no longer uses PHP\nExtensions: Unknown unless explicitly recorded\nImportant boundary: Only the named J-Web/release scope is supported. Enabling conditions of an older flaw are not automatically those of the 2026 pair.\nPatch owner: Juniper Networks for supported firmware/component corrections; operator/provider for deployment, restart and service continuity\nPossible abuse: If a matching reachable PHP function is compromised, readable settings/credentials or permitted management actions could be misused. Wider appliance control requires separate privilege/path evidence.\nPHP component loss: The PHP-dependent interface/workflow could be unavailable. Independent traffic processing or other services may continue; exact behaviour is not measured.\nWhole appliance loss: Whole SRX/EX shutdown could interrupt firewall/switch connectivity. Disabling only J-Web is a narrower scenario; actual remaining operations must be verified.\nConditions: Requires a matching affected runtime/vendor build, enabled function, reachable input and relevant process permissions. PHP presence alone is insufficient.\nLimitations: Only the named vendor product and version scope is assessed. Installed versions, exposure and exploitation were not tested.\nRelease pin: Junos OS J-Web on EX/SRX using affected PHP; SRX 25.2R1 no longer uses PHP\nEvidence status: Official public vendor/upstream CVE assessment\nSource accessed: 2026-10-28\nPublic vendor CVE review: 2026-10-28\nVendor advisory sources: https://supportportal.juniper.net/s/article/2026-10-Reference-Advisory-Status-of-PHP2Shell-vulnerabilities-on-Juniper-Products-CVE-2026-109618-CVE-2026-109619\nVendor advisory status: Juniper JSA112681, updated 2026-10-27, explicitly states that Junos OS is not affected by CVE-2026-109619.\nVulnerability status: Vulnerable / Not vuln. Juniper JSA112681, updated 2026-10-27, explicitly states that Junos OS is not affected by CVE-2026-109619.\nCVE assessment limit: Only the documented product, release and platform scope is assessed. Installed versions, runtime selection, reachability and exploitation were not tested.\nCVE-2026-109619: Not vuln. Juniper JSA112681, updated 2026-10-27, explicitly states that Junos OS is not affected by CVE-2026-109619.\nCVE-2026-109618: Vulnerable. Juniper states that the issue is reachable but not exploitable; SRX does not use PHP starting with 25.2R1.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -26557,7 +26713,7 @@
           "locator": [
             "https://supportportal.juniper.net/s/article/2026-10-Reference-Advisory-Status-of-PHP2Shell-vulnerabilities-on-Juniper-Products-CVE-2026-109618-CVE-2026-109619"
           ],
-          "comment": "Official public vendor source reviewed 2026-10-26"
+          "comment": "Official public source reviewed 2026-10-28"
         }
       ],
       "software_packageVersion": "Junos OS J-Web on EX/SRX using affected PHP; SRX 25.2R1 no longer uses PHP"
@@ -35045,7 +35201,6 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0394",
         "urn:php2shell:inventory:package:PHP-0396",
         "urn:php2shell:inventory:package:PHP-0402",
         "urn:php2shell:inventory:package:PHP-0413",
@@ -35129,7 +35284,6 @@
       "to": [
         "urn:php2shell:inventory:package:PHP-0004",
         "urn:php2shell:inventory:package:PHP-0012",
-        "urn:php2shell:inventory:package:PHP-0033",
         "urn:php2shell:inventory:package:PHP-0038",
         "urn:php2shell:inventory:package:PHP-0039",
         "urn:php2shell:inventory:package:PHP-0040",
@@ -35276,19 +35430,13 @@
         "urn:php2shell:inventory:package:PHP-0346",
         "urn:php2shell:inventory:package:PHP-0347",
         "urn:php2shell:inventory:package:PHP-0349",
-        "urn:php2shell:inventory:package:PHP-0368",
-        "urn:php2shell:inventory:package:PHP-0369",
-        "urn:php2shell:inventory:package:PHP-0370",
         "urn:php2shell:inventory:package:PHP-0371",
-        "urn:php2shell:inventory:package:PHP-0372",
         "urn:php2shell:inventory:package:PHP-0374",
         "urn:php2shell:inventory:package:PHP-0375",
-        "urn:php2shell:inventory:package:PHP-0377",
         "urn:php2shell:inventory:package:PHP-0378",
         "urn:php2shell:inventory:package:PHP-0379",
         "urn:php2shell:inventory:package:PHP-0380",
         "urn:php2shell:inventory:package:PHP-0382",
-        "urn:php2shell:inventory:package:PHP-0409",
         "urn:php2shell:inventory:package:PHP-0410",
         "urn:php2shell:inventory:package:PHP-0427",
         "urn:php2shell:inventory:package:PHP-0429",
@@ -35490,7 +35638,6 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0394",
         "urn:php2shell:inventory:package:PHP-0396",
         "urn:php2shell:inventory:package:PHP-0402",
         "urn:php2shell:inventory:package:PHP-0413",
@@ -35574,7 +35721,6 @@
       "to": [
         "urn:php2shell:inventory:package:PHP-0004",
         "urn:php2shell:inventory:package:PHP-0012",
-        "urn:php2shell:inventory:package:PHP-0033",
         "urn:php2shell:inventory:package:PHP-0038",
         "urn:php2shell:inventory:package:PHP-0039",
         "urn:php2shell:inventory:package:PHP-0040",
@@ -35720,19 +35866,13 @@
         "urn:php2shell:inventory:package:PHP-0346",
         "urn:php2shell:inventory:package:PHP-0347",
         "urn:php2shell:inventory:package:PHP-0349",
-        "urn:php2shell:inventory:package:PHP-0368",
-        "urn:php2shell:inventory:package:PHP-0369",
-        "urn:php2shell:inventory:package:PHP-0370",
         "urn:php2shell:inventory:package:PHP-0371",
-        "urn:php2shell:inventory:package:PHP-0372",
         "urn:php2shell:inventory:package:PHP-0374",
         "urn:php2shell:inventory:package:PHP-0375",
-        "urn:php2shell:inventory:package:PHP-0377",
         "urn:php2shell:inventory:package:PHP-0378",
         "urn:php2shell:inventory:package:PHP-0379",
         "urn:php2shell:inventory:package:PHP-0380",
         "urn:php2shell:inventory:package:PHP-0382",
-        "urn:php2shell:inventory:package:PHP-0409",
         "urn:php2shell:inventory:package:PHP-0410",
         "urn:php2shell:inventory:package:PHP-0427",
         "urn:php2shell:inventory:package:PHP-0429",
@@ -39216,9 +39356,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Unified Industrial Wireless Software as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Follow Cisco's product-specific guidance and release availability for CSCwx37073; no currently available fixed build is confirmed by this advisory.",
       "description": "Industrial wireless software",
-      "comment": "Inventory record: PHP-0700\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.4, updated 2026-10-22 23:00 GMT) lists Unified Industrial Wireless Software under 'Products Under Investigation' (Wireless); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Cisco advisory version 1.4 lists this product under investigation; affected and fixed releases are not published.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Cisco advisory version 1.4 under-investigation product scope",
+      "comment": "Inventory record: PHP-0700\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nExtensions: Unknown\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nEvidence status: Official public vendor/upstream CVE assessment\nSource accessed: 2026-10-28\nPublic vendor CVE review: 2026-10-28\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nVendor advisory status: Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.\nVulnerability status: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.\nCVE assessment limit: Only the documented product, release and platform scope is assessed. Installed versions, runtime selection, reachability and exploitation were not tested.\nCVE-2026-109618: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.\nCVE-2026-109619: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.\nPHP version scope: Affected release numbers not specified by Cisco; see the product-specific advisory status.\nRelease pin: Cisco advisory version 1.8, Final, updated 2026-10-27\nLimitations: The advisory confirms product status but does not establish the installed build, enabled features, reachability or exploitation of an individual deployment.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -39226,7 +39366,7 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Official public CVE review 2026-10-23"
+          "comment": "Official public source reviewed 2026-10-28"
         }
       ]
     },
@@ -41248,9 +41388,7 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0700",
-        "urn:php2shell:inventory:package:PHP-0708",
-        "urn:php2shell:inventory:package:PHP-0748"
+        "urn:php2shell:inventory:package:PHP-0708"
       ],
       "relationshipType": "underInvestigationFor",
       "security_statusNotes": "Retained Investigation: Cisco advisory version 1.4 explicitly lists nine current product scopes under investigation and does not explicitly resolve the retained Panoptica scope. A product's absence from the current list is not treated as confirmed non-vulnerability.",
@@ -41263,9 +41401,7 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0700",
-        "urn:php2shell:inventory:package:PHP-0708",
-        "urn:php2shell:inventory:package:PHP-0748"
+        "urn:php2shell:inventory:package:PHP-0708"
       ],
       "relationshipType": "underInvestigationFor",
       "security_statusNotes": "Retained Investigation: Cisco advisory version 1.4 explicitly lists nine current product scopes under investigation and does not explicitly resolve the retained Panoptica scope. A product's absence from the current list is not treated as confirmed non-vulnerability.",
@@ -42616,9 +42752,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Identity Services Engine (ISE) Portal Builder as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Follow Cisco's remediation status for Portal Builder. Service shutdown is not confirmation of a software fix.",
       "description": "ISE portal customization component",
-      "comment": "Inventory record: PHP-0748\nCategory: Appliances and embedded\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.4, updated 2026-10-22 23:00 GMT) lists Identity Services Engine (ISE) Portal Builder under 'Products Under Investigation' (Network and Content Security Devices); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Cisco advisory version 1.4 lists this product under investigation; affected and fixed releases are not published.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Cisco advisory version 1.4 under-investigation product scope",
+      "comment": "Inventory record: PHP-0748\nCategory: Appliances and embedded\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nExtensions: Unknown\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nEvidence status: Official public vendor/upstream CVE assessment\nSource accessed: 2026-10-28\nPublic vendor CVE review: 2026-10-28\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nVendor advisory status: Cisco advisory version 1.8 (Final, 2026-10-27) lists ISE Portal Builder as vulnerable and offline for remediation. It does not confirm a released fix; the separate ISE product's Not vuln assessment does not cover Portal Builder.\nVulnerability status: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists ISE Portal Builder as vulnerable and offline for remediation. It does not confirm a released fix; the separate ISE product's Not vuln assessment does not cover Portal Builder.\nCVE assessment limit: Only the documented product, release and platform scope is assessed. Installed versions, runtime selection, reachability and exploitation were not tested.\nCVE-2026-109618: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists ISE Portal Builder as vulnerable and offline for remediation. It does not confirm a released fix; the separate ISE product's Not vuln assessment does not cover Portal Builder.\nCVE-2026-109619: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists ISE Portal Builder as vulnerable and offline for remediation. It does not confirm a released fix; the separate ISE product's Not vuln assessment does not cover Portal Builder.\nPHP version scope: Affected release numbers not specified by Cisco; see the product-specific advisory status.\nRelease pin: Cisco advisory version 1.8, Final, updated 2026-10-27\nLimitations: The advisory confirms product status but does not establish the installed build, enabled features, reachability or exploitation of an individual deployment.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -42626,7 +42762,7 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Official public CVE review 2026-10-23"
+          "comment": "Official public source reviewed 2026-10-28"
         }
       ]
     },
@@ -43539,9 +43675,9 @@
         "urn:php2shell:inventory:package:PHP-0629"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable. Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.",
-      "comment": "Official public source reviewed 2026-10-26. Source: https://supportportal.juniper.net/s/article/2026-10-Reference-Advisory-Status-of-PHP2Shell-vulnerabilities-on-Juniper-Products-CVE-2026-109618-CVE-2026-109619",
+      "security_statusNotes": "Juniper JSA112681 states Junos OS is vulnerable to CVE-2026-109618 but not exploitable; the reachable out-of-memory issue is described as harmless. SRX stops using PHP at 25.2R1.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable (vendor reports not exploitable)",
+      "comment": "Official public source reviewed 2026-10-28. Source: https://supportportal.juniper.net/s/article/2026-10-Reference-Advisory-Status-of-PHP2Shell-vulnerabilities-on-Juniper-Products-CVE-2026-109618-CVE-2026-109619",
       "security_actionStatement": "Follow JSA112681: upgrade SRX to 25.2R1 where applicable, or disable/restrict J-Web and the other vendor-named web services. Do not assume the same remediation applies to EX."
     },
     {
@@ -43641,6 +43777,34 @@
       "summary": "CVE-2026-109618 assessment: Vulnerable",
       "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
       "security_actionStatement": "Monitor CSCwx37073 for an available fixed release; do not treat its estimated date as released software."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0700-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0700"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_actionStatement": "Follow Cisco's product-specific guidance and release availability for CSCwx37073; no currently available fixed build is confirmed by this advisory."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0748-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0748"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Cisco advisory version 1.8 (Final, 2026-10-27) lists ISE Portal Builder as vulnerable and offline for remediation. It does not confirm a released fix; the separate ISE product's Not vuln assessment does not cover Portal Builder.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_actionStatement": "Follow Cisco's remediation status for Portal Builder. Service shutdown is not confirmation of a software fix."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -44205,6 +44369,19 @@
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0033-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0033"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Apache Friends publishes Windows installers with matching fixed PHP versions; PHP's advisory confirms both CVE fixes. This finding covers those Windows builds only; Linux, macOS and older installers are not confirmed fixed.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://www.apachefriends.org/download.html; https://www.php.net/archive/2026.php#2026-10-21-5\nAction statement: Install a listed fixed Windows bundle and ensure its PHP runtime is selected; restart the bundled services."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0034-official-20261023",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
@@ -44285,6 +44462,58 @@
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0368-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0368"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "The publisher's 2026-10-28 warning supplies these PHP security add-ons. Their PHP source versions match the upstream fixes for both CVEs. The older full installer and a Wampmanager-only update do not establish a fixed runtime.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://wampserver.aviatechno.net/index.php?affiche=addons&lang=en; https://www.php.net/archive/2026.php#2026-10-21-5\nAction statement: Install and select a fixed PHP add-on for Apache and every FCGI VirtualHost; follow the publisher's manager-runtime and restart instructions."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0369-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0369"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "MAMP's 2026-10-23 Windows release adds the PHP versions identified by upstream as fixing both CVEs. The installer also retains older PHP choices; this confirmation does not cover macOS or use of an older bundled runtime.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://www.mamp.info/en/release-notes/windows/; https://www.php.net/archive/2026.php#2026-10-21-5\nAction statement: Install the Windows 5.0.7 release, select one of its fixed PHP versions and restart the services."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0370-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0370"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Laragon's 2026-10-22 release updates its PHP 8.3 bundle to 8.3.36 for critical security fixes. PHP upstream confirms this version fixes both CVEs. Other added or selected PHP branches are not covered by this release evidence.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://github.com/leokhoa/laragon/releases/tag/8.8.0; https://www.php.net/archive/2026.php#2026-10-21-5\nAction statement: Update Laragon and select its fixed PHP 8.3 runtime; separately update any other installed or per-project PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0372-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0372"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Beyond Code's 2026-10-22 response confirms patched PHP builds are shipping through Herd and links the PHP Foundation's announcement covering both CVEs. Updating the Herd application alone does not update every selected PHP runtime.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://beyondco.de/blog/php-security-release; https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/\nAction statement: Follow Beyond Code's instructions: update Herd, then update the PHP versions in the application and verify the runtime selected for each site."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0373-official-20261023",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
@@ -44295,6 +44524,32 @@
       "security_statusNotes": "DDEV confirms tested AMD64 project-image rebuilds that install fixed PHP packages, including a package upgrade for bundled PHP 8.2-8.5. This is not a claim that stock 1.25.4 images or ARM64 images are fixed, or that planned 1.25.5 has shipped.",
       "summary": "CVE-2026-109618 assessment: Fix",
       "comment": "Public official source reviewed 2026-10-23. Sources: https://ddev.com/blog/php2shell-what-ddev-users-need-to-know/\nAction statement: Follow DDEV's documented AMD64 PHP package-upgrade and no-cache rebuild procedure and verify the runtime. Public casual hosting and ddev share require patching; local-only exposure is treated separately by DDEV."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0377-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0377"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "The official Nextcloud Snap release ships PHP 8.4.27, and its maintainers confirm the security update in issue 3701. PHP upstream identifies 8.4.27 as fixed for both CVEs. This finding applies to the Snap package.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://github.com/nextcloud-snap/nextcloud-snap/releases/tag/34.0.5snap3; https://github.com/nextcloud-snap/nextcloud-snap/issues/3701; https://www.php.net/archive/2026.php#2026-10-21-5\nAction statement: Refresh to Nextcloud Snap 34.0.5snap3 or a later release retaining the fixed PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0394-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0394"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "CyberPanel confirms fixed LiteSpeed packages for both CVEs and verifies this Ubuntu 26.04 configuration. The fix requires matching modules, refreshing the separate panel PHP copy and recycling workers. Other OS/package combinations need separate confirmation.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://cyberpanel.net/blog/php-security-october-2026-cyberpanel-response\nAction statement: Apply the vendor's PHP package and panel-copy procedure; this is not a new CyberPanel source release or confirmation that customer installations have been patched."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -44322,6 +44577,19 @@
       "summary": "CVE-2026-109618 assessment: Fix",
       "comment": "Public official sources reviewed 2026-10-27. Source: https://wordpress.com/support/php-security-update-october-2026-cve-2026-109618-and-cve-2026-109619-php2shell/",
       "security_actionStatement": "No customer PHP patching is required for sites hosted on WordPress.com. Assess sites hosted elsewhere independently."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0409-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0409"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Laravel confirms patched Vapor runtimes are live and explicitly requires a new deployment for Docker/custom runtimes. The official base-image repository also merges the PHP 8.2.35 pin. PHP 8.0/8.1 are excluded; existing deployments do not update automatically.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://laravel.com/blog/php-critical-vulnerability-response-updates; https://github.com/laravel/vapor-dockerfiles/pull/24; https://www.php.net/archive/2026.php#2026-10-21-5\nAction statement: Use the updated PHP 8.2+ base image and create a new deployment; a redeploy of the existing Docker image is insufficient."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -45282,6 +45550,34 @@
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0700-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0700"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_actionStatement": "Follow Cisco's product-specific guidance and release availability for CSCwx37073; no currently available fixed build is confirmed by this advisory."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0748-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0748"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Cisco advisory version 1.8 (Final, 2026-10-27) lists ISE Portal Builder as vulnerable and offline for remediation. It does not confirm a released fix; the separate ISE product's Not vuln assessment does not cover Portal Builder.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_actionStatement": "Follow Cisco's remediation status for Portal Builder. Service shutdown is not confirmation of a software fix."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0749-official-20261023",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
@@ -45858,6 +46154,19 @@
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0033-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0033"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Apache Friends publishes Windows installers with matching fixed PHP versions; PHP's advisory confirms both CVE fixes. This finding covers those Windows builds only; Linux, macOS and older installers are not confirmed fixed.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://www.apachefriends.org/download.html; https://www.php.net/archive/2026.php#2026-10-21-5\nAction statement: Install a listed fixed Windows bundle and ensure its PHP runtime is selected; restart the bundled services."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0034-official-20261023",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
@@ -45952,6 +46261,58 @@
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0368-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0368"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "The publisher's 2026-10-28 warning supplies these PHP security add-ons. Their PHP source versions match the upstream fixes for both CVEs. The older full installer and a Wampmanager-only update do not establish a fixed runtime.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://wampserver.aviatechno.net/index.php?affiche=addons&lang=en; https://www.php.net/archive/2026.php#2026-10-21-5\nAction statement: Install and select a fixed PHP add-on for Apache and every FCGI VirtualHost; follow the publisher's manager-runtime and restart instructions."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0369-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0369"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "MAMP's 2026-10-23 Windows release adds the PHP versions identified by upstream as fixing both CVEs. The installer also retains older PHP choices; this confirmation does not cover macOS or use of an older bundled runtime.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://www.mamp.info/en/release-notes/windows/; https://www.php.net/archive/2026.php#2026-10-21-5\nAction statement: Install the Windows 5.0.7 release, select one of its fixed PHP versions and restart the services."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0370-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0370"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Laragon's 2026-10-22 release updates its PHP 8.3 bundle to 8.3.36 for critical security fixes. PHP upstream confirms this version fixes both CVEs. Other added or selected PHP branches are not covered by this release evidence.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://github.com/leokhoa/laragon/releases/tag/8.8.0; https://www.php.net/archive/2026.php#2026-10-21-5\nAction statement: Update Laragon and select its fixed PHP 8.3 runtime; separately update any other installed or per-project PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0372-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0372"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Beyond Code's 2026-10-22 response confirms patched PHP builds are shipping through Herd and links the PHP Foundation's announcement covering both CVEs. Updating the Herd application alone does not update every selected PHP runtime.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://beyondco.de/blog/php-security-release; https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/\nAction statement: Follow Beyond Code's instructions: update Herd, then update the PHP versions in the application and verify the runtime selected for each site."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0373-official-20261023",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
@@ -45962,6 +46323,32 @@
       "security_statusNotes": "DDEV confirms tested AMD64 project-image rebuilds that install fixed PHP packages, including a package upgrade for bundled PHP 8.2-8.5. This is not a claim that stock 1.25.4 images or ARM64 images are fixed, or that planned 1.25.5 has shipped.",
       "summary": "CVE-2026-109619 assessment: Fix",
       "comment": "Public official source reviewed 2026-10-23. Sources: https://ddev.com/blog/php2shell-what-ddev-users-need-to-know/\nAction statement: Follow DDEV's documented AMD64 PHP package-upgrade and no-cache rebuild procedure and verify the runtime. Public casual hosting and ddev share require patching; local-only exposure is treated separately by DDEV."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0377-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0377"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "The official Nextcloud Snap release ships PHP 8.4.27, and its maintainers confirm the security update in issue 3701. PHP upstream identifies 8.4.27 as fixed for both CVEs. This finding applies to the Snap package.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://github.com/nextcloud-snap/nextcloud-snap/releases/tag/34.0.5snap3; https://github.com/nextcloud-snap/nextcloud-snap/issues/3701; https://www.php.net/archive/2026.php#2026-10-21-5\nAction statement: Refresh to Nextcloud Snap 34.0.5snap3 or a later release retaining the fixed PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0394-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0394"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "CyberPanel confirms fixed LiteSpeed packages for both CVEs and verifies this Ubuntu 26.04 configuration. The fix requires matching modules, refreshing the separate panel PHP copy and recycling workers. Other OS/package combinations need separate confirmation.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://cyberpanel.net/blog/php-security-october-2026-cyberpanel-response\nAction statement: Apply the vendor's PHP package and panel-copy procedure; this is not a new CyberPanel source release or confirmation that customer installations have been patched."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -45989,6 +46376,19 @@
       "summary": "CVE-2026-109619 assessment: Fix",
       "comment": "Public official sources reviewed 2026-10-27. Source: https://wordpress.com/support/php-security-update-october-2026-cve-2026-109618-and-cve-2026-109619-php2shell/",
       "security_actionStatement": "No customer PHP patching is required for sites hosted on WordPress.com. Assess sites hosted elsewhere independently."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0409-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0409"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Laravel confirms patched Vapor runtimes are live and explicitly requires a new deployment for Docker/custom runtimes. The official base-image repository also merges the PHP 8.2.35 pin. PHP 8.0/8.1 are excluded; existing deployments do not update automatically.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://laravel.com/blog/php-critical-vulnerability-response-updates; https://github.com/laravel/vapor-dockerfiles/pull/24; https://www.php.net/archive/2026.php#2026-10-21-5\nAction statement: Use the updated PHP 8.2+ base image and create a new deployment; a redeploy of the existing Docker image is insufficient."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -46682,18 +47082,18 @@
       "comment": "Public official source reviewed 2026-10-24: https://uisp.community.ui.com/releases/UISP-Application-3-1-70/8292c6cb-4eb4-447d-9c90-455ca41b4f67\nAction statement: Update to UISP Application 3.1.70 using vendor instructions and verify successful deployment."
     },
     {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:php-0629-official-20261026",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0629"
       ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.",
-      "summary": "CVE-2026-109619 assessment: Investigation. Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.",
-      "comment": "Official public source reviewed 2026-10-26. Source: https://supportportal.juniper.net/s/article/2026-10-Reference-Advisory-Status-of-PHP2Shell-vulnerabilities-on-Juniper-Products-CVE-2026-109618-CVE-2026-109619",
-      "security_actionStatement": "Follow JSA112681: upgrade SRX to 25.2R1 where applicable, or disable/restrict J-Web and the other vendor-named web services. Do not assume the same remediation applies to EX."
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Juniper JSA112681, updated 2026-10-27, explicitly states that Junos OS is not affected by CVE-2026-109619.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://supportportal.juniper.net/s/article/2026-10-Reference-Advisory-Status-of-PHP2Shell-vulnerabilities-on-Juniper-Products-CVE-2026-109618-CVE-2026-109619",
+      "security_impactStatement": "Juniper JSA112681, updated 2026-10-27, explicitly states that Junos OS is not affected by CVE-2026-109619."
     },
     {
       "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
