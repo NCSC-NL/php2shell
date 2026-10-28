@@ -2211,9 +2211,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:the-php-group:dee81afa915f",
-      "summary": "Session: Session identifiers, serialization and storage handlers. The released build manifest declares this PHP component.",
+      "summary": "Upgrade the complete PHP runtime to a listed fixed release and restart PHP workers. This change assesses only CVE-2026-109619 at the Session component scope.",
       "description": "Session identifiers, serialization and storage handlers",
-      "comment": "Inventory record: PHP-0085\nCategory: PHP bundled modules\nOriginal relationship: component\nRelationship direction: part_of_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Session identifiers, serialization and storage handlers\nPHP version scope: Source-confirmed in PHP 8.5.10; other branches need their own manifest comparison\nExtensions: Required PHP components: date; optional: spl\nLimitations: Part of the parent PHP runtime, not a separate application or installation. Bundled source does not prove the module is installed or enabled. No affected build or reachable PHP flaw has been identified.\nPatch owner: PHP upstream, binary/image/distribution publisher, and deploying operator\nDownstream surface: Session identifiers, serialization and storage handlers\nRelease pin: php-8.5.10, commit 34308a6666b2d489c509541ea9befea9e2b42348\nSource accessed: 2026-10-16\nAliases: session, ext/session\nConditional downstream consequence: A matching session-ID, deserialization or session-handler flaw could affect authentication state or session data if the application uses the affected path. Backend, configuration and request flow must match.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0085\nCategory: PHP bundled modules\nOriginal relationship: component\nRelationship direction: part_of_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Session identifiers, serialization and storage handlers\nPHP version scope: Source-confirmed in PHP 8.5.10; other branches need their own manifest comparison\nExtensions: Required PHP components: date; optional: spl\nLimitations: Part of the parent PHP runtime, not a separate application or installation. Bundled source does not prove the module is installed or enabled. No affected build or reachable PHP flaw has been identified.\nPatch owner: PHP upstream, binary/image/distribution publisher, and deploying operator\nDownstream surface: Session identifiers, serialization and storage handlers\nRelease pin: php-8.5.10, commit 34308a6666b2d489c509541ea9befea9e2b42348\nSource accessed: 2026-10-16\nAliases: session, ext/session\nConditional downstream consequence: A matching session-ID, deserialization or session-handler flaw could affect authentication state or session data if the application uses the affected path. Backend, configuration and request flow must match.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Investigation; CVE-2026-109619: Fix\nScope: Fixed session upload progress lifecycle for CVE-2026-109619 in the listed complete upstream PHP releases. The advisory confirms session lifecycle RCE against mod_php and PHP-FPM on affected builds. No claim about every Session feature or an installed deployment. CVE-2026-109618 remains Investigation at the component scope.\nAssessment: CVE-2026-109619: the upstream advisory confirms the session upload-progress lifecycle and lists the fixed PHP releases. This assessment covers that lifecycle in web workers; CVE-2026-109618 remains Investigation at the Session component scope.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2230,8 +2230,17 @@
             "https://raw.githubusercontent.com/php/php-src/34308a6666b2d489c509541ea9befea9e2b42348/ext/session/config.w32"
           ],
           "comment": "PHP session released build manifest - Released ext/session/config.w32 declares session build integration."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp"
+          ],
+          "comment": "RCE via stale global state - php/php-src advisory; Published 2026-10-21; accessed 2026-10-27; reviewed 2026-10-27"
         }
-      ]
+      ],
+      "software_packageVersion": "CVE-2026-109619: PHP 8.2.35, 8.3.36, 8.4.27, 8.5.12 (session upload-progress lifecycle)"
     },
     {
       "type": "software_Package",
@@ -6808,6 +6817,20 @@
           "comment": "Calif primary research on older affected PHP paths"
         }
       ]
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0085-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0085"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "CVE-2026-109619: the upstream advisory confirms the session upload-progress lifecycle and lists the fixed PHP releases. This assessment covers that lifecycle in web workers; CVE-2026-109618 remains Investigation at the Session component scope.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp",
+      "security_actionStatement": "Upgrade the complete PHP runtime to a listed fixed release and restart PHP workers. This change assesses only CVE-2026-109619 at the Session component scope."
     }
   ]
 }

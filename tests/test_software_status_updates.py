@@ -25,17 +25,43 @@ def table_lines(text):
 
 
 class SoftwareStatusUpdatesTests(unittest.TestCase):
-    def test_readme_preserves_list_columns_statuses_and_notes(self):
+    def test_readme_merges_statuses_in_cve_order_and_omits_notes(self):
         date_time = "2026-10-23 10:00:00 +0200"
-        for statuses in (("Fix", "Fix"), ("Fix", "Investigation"), ("", "Not vuln")):
+        cases = (
+            (("Fix", "Fix"), "Fix"),
+            (("Vulnerable", "Vulnerable"), "Vulnerable"),
+            (("Vulnerable", "Not vuln"), "Vulnerable/Not vuln"),
+            (("Fix", "Investigation"), "Fix/Investigation"),
+            (("", "Not vuln"), "/Not vuln"),
+        )
+        for statuses, expected_status in cases:
             with self.subTest(statuses=statuses):
                 product = entry("Scoped image", statuses)
                 rendered = generator.render_readme_updates(CVES, [(date_time, product)])
+                lines = table_lines(rendered)
                 self.assertEqual(
-                    table_lines(rendered),
-                    generator.table_header(CVES, include_date_time=True)
-                    + [generator.table_row(product, CVES, date_time=date_time)],
+                    [cell.strip() for cell in lines[0].split("|")[1:-1]],
+                    ["Date and time", "Supplier", "Product", "Version (see Status)",
+                     "Status CVE-2026-109618 / CVE-2026-109619", "Links"],
                 )
+                self.assertEqual(lines[2].split("|")[1:-1], [
+                    date_time, product["supplier"], product["product"],
+                    product["version"], expected_status, product["links"],
+                ])
+                self.assertNotIn(product["notes"], rendered)
+
+    def test_full_history_retains_separate_status_columns_and_notes(self):
+        date_time = "2026-10-23 10:00:00 +0200"
+        product = entry("Scoped image", ("Vulnerable", "Not vuln"))
+        rendered = generator.render_updates_history(
+            CVES, [{"date_time": date_time, "entries": [product]}],
+        )
+        self.assertEqual(
+            table_lines(rendered),
+            generator.table_header(CVES, include_date_time=True)
+            + [generator.table_row(product, CVES, date_time=date_time)],
+        )
+        self.assertIn(product["notes"], rendered)
 
     def test_readme_uses_first_five_history_rows_including_ties(self):
         events = [
@@ -48,14 +74,17 @@ class SoftwareStatusUpdatesTests(unittest.TestCase):
         latest = generator.latest_update_entries(events)
         self.assertEqual(len(latest), 5)
         self.assertEqual([row[1]["product"] for row in latest], [f"New {i}" for i in range(5)])
+        readme_rows = table_lines(generator.render_readme_updates(CVES, latest))[2:]
+        history_rows = table_lines(generator.render_updates_history(CVES, events))[2:]
+        self.assertEqual(len(readme_rows), 5)
         self.assertEqual(
-            table_lines(generator.render_readme_updates(CVES, latest)),
-            table_lines(generator.render_updates_history(CVES, events))[:7],
+            [row.split("|")[1:5] for row in readme_rows],
+            [row.split("|")[1:5] for row in history_rows[:5]],
         )
 
     def test_empty_updates_retain_schema_and_history_link(self):
         rendered = generator.render_readme_updates(CVES, [])
-        self.assertEqual(table_lines(rendered), generator.table_header(CVES, include_date_time=True))
+        self.assertEqual(table_lines(rendered), generator.readme_table_header(CVES))
         self.assertIn("(software/changelog_software_list.md)", rendered)
 
     def test_readme_insertion_preserves_surrounding_content_and_crlf(self):
@@ -104,9 +133,15 @@ class SoftwareStatusUpdatesTests(unittest.TestCase):
                 )
             history.assert_called_once_with(document, spdx_path, "origin/main")
             self.assertEqual(count, 6)
+            readme_rows = table_lines((root / "README.md").read_text(encoding="utf-8"))[2:]
+            history_rows = table_lines(
+                (root / generator.CHANGELOG_FILENAME).read_text(encoding="utf-8"),
+            )[2:]
+            self.assertEqual(len(readme_rows), 5)
+            self.assertEqual(len(history_rows), 6)
             self.assertEqual(
-                table_lines((root / "README.md").read_text(encoding="utf-8")),
-                table_lines((root / generator.CHANGELOG_FILENAME).read_text(encoding="utf-8"))[:7],
+                [row.split("|")[1:5] for row in readme_rows],
+                [row.split("|")[1:5] for row in history_rows[:5]],
             )
 
 
