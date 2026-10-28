@@ -13,7 +13,7 @@ directories, including nested directories, is discovered automatically. Adding a
 source file requires no registration or manifest. Keep non-source JSON files outside these
 directories because every JSON file inside them is an input.
 
-The statistics step refreshes the root README totals and the daily PNG/JSON in
+The statistics step refreshes the root README totals and the stacked PNG chart and JSON in
 `software/statistics/`. It requires Matplotlib and full Git history; see the
 [statistics tooling instructions](../../tools/README.md#generate_inventory_statisticspy).
 

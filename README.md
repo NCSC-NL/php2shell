@@ -58,13 +58,9 @@ Statistics as of **2026-10-28 (UTC)**, from the current SPDX inventory.
 | ---: | ---: | ---: | ---: | ---: | ---: |
 | 757 | 136 | 216 | 364 | 40 | 1 |
 
-![Daily product counts and vulnerability status over the last 7 days](software/statistics/inventory-statistics.png)
+![Product status on the last 3 inventory update days](software/statistics/inventory-statistics.png)
 
-Each product/component entry is counted once across CVE-2026-109618, CVE-2026-109619. Vulnerable takes priority, followed by under investigation, then missing/unknown assessments. Fixed means every tracked CVE is fixed or not affected, with at least one fix; not affected means all tracked CVEs are not affected. A fix refers to the listed version scope, not every deployed version.
-
-The chart uses the last mainline SPDX snapshot per UTC day and carries counts forward on days without changes. The latest day includes local inventory changes; dates before available history have no counts.
-
-[Daily counts and per-CVE statistics (JSON)](software/statistics/inventory-statistics.json) | [Software list](software/software_list.md)
+[Counts by update day and per-CVE statistics (JSON)](software/statistics/inventory-statistics.json) | [Software list](software/software_list.md)
 
 <!-- inventory-statistics:end -->
 

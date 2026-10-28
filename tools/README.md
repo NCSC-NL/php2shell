@@ -63,8 +63,10 @@ Updates the generated statistics section in the root `README.md` and writes
 `software/statistics/inventory-statistics.png` and `inventory-statistics.json`.
 It also refreshes the one-sentence tracked/vulnerable/fixed summary directly under
 `## Current status`.
-The default chart covers seven calendar days, including today. The JSON includes
-daily totals and separate counts for each tracked CVE.
+The default chart shows stacked bars for the three most recent UTC dates with
+inventory updates, with totals above the bars and counts inside larger segments.
+The JSON includes current totals, counts by update date, and separate counts for
+each tracked CVE.
 
 Use Python 3.10 or newer, Git with full history, and Matplotlib. Install the plotting
 dependency in a virtual environment (the other generators still use only the
@@ -88,17 +90,25 @@ Shallow clones fail explicitly rather than silently publishing incomplete trends
 python tools/build_spdx_inventory.py
 python -m json.tool software/spdx/PHP_Downstream_Inventory.spdx3.json
 python tools/generate_software_list_from_spdx3.py PHP_Downstream_Inventory.spdx3.json -o software --update-history --update-readme
-python tools/generate_inventory_statistics.py --days 7
+python tools/generate_inventory_statistics.py --days 3
 ```
 
 On a PR branch, add `--history-ref origin/main` to **both** generators after
 fetching and merging the latest mainline. Statistics use the last compiled SPDX
 snapshot in first-parent history per UTC day, dated by the commit's committer time
-(so merged updates appear when they reach mainline). Days without changes retain
-the previous counts. Days before the first available snapshot are missing, not
-zero. Today's point always comes from the local compiled inventory, including
-uncommitted edits. All days are assessed against the current inventory's CVE set;
-missing historical assessments count as unknown.
+(so merged updates appear when they reach mainline). `--days N` selects the last N
+distinct dates that changed the compiled inventory, skipping days without updates
+even when the selected dates are more than N calendar days apart. Multiple updates
+on one day produce one bar using that day's last snapshot. If fewer dates exist,
+only the available dates are shown.
+
+Local inventory changes compared with the latest mainline snapshot count as an
+update today, replacing today's committed bar or adding a new one. A periodic run
+without inventory changes does not add a bar. The README totals and summary always
+use the current local inventory. All historical dates are assessed against the
+current inventory's CVE set; missing assessments count as unknown. JSON schema
+version 2 stores current totals in `current` and the selected update dates in
+`daily`; `days` is the requested number of update dates, not a calendar window.
 
 Each unique SPDX package ID counts as one product/component entry, matching the
 software list. Overall categories are mutually exclusive: any `Vulnerable` status

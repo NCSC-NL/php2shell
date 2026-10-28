@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate README statistics and a daily PNG chart from SPDX and Git history."""
+"""Generate README statistics and stacked bars for recent SPDX update days."""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ import io
 import json
 import re
 import sys
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -39,12 +39,11 @@ LABELS = {
     "unknown": "Unassessed / unknown",
 }
 COLORS = {
-    "tracked": "#2563eb",
-    "fixed": "#15803d",
-    "vulnerable": "#dc2626",
-    "investigation": "#b77909",
-    "not_affected": "#7c3aed",
-    "unknown": "#64748b",
+    "vulnerable": "#d74758",
+    "fixed": "#278f6b",
+    "investigation": "#8190a8",
+    "not_affected": "#4389c9",
+    "unknown": "#a77abb",
 }
 STATUS_KEYS = {
     "Fix": "fixed",
@@ -79,22 +78,15 @@ def count_inventory(document: dict[str, Any], cves: list[str]) -> dict[str, Any]
     return {"counts": counts, "by_cve": by_cve}
 
 
-def daily_snapshots(
+def update_day_snapshots(
     commits: list[tuple[str, date]], end_date: date, days: int
-) -> list[tuple[date, str | None]]:
-    """Select the last mainline snapshot available at each UTC day end.
-
-    Commits are in mainline order, not timestamp order: merged branches and
-    clock skew must not cause an older tree to replace a newer mainline tree.
-    No snapshot before the first observation means missing data, never zero.
-    """
-    start = end_date - timedelta(days=days - 1)
-    snapshots = []
-    for offset in range(days):
-        day = start + timedelta(days=offset)
-        eligible = [commit for commit, committed_on in commits if committed_on <= day]
-        snapshots.append((day, eligible[-1] if eligible else None))
-    return snapshots
+) -> list[tuple[date, str]]:
+    """Select the last mainline snapshot on each of the latest update dates."""
+    by_date = {}
+    for commit, committed_on in commits:
+        if committed_on <= end_date:
+            by_date[committed_on] = commit
+    return sorted(by_date.items())[-days:]
 
 
 def build_statistics(
@@ -117,24 +109,33 @@ def build_statistics(
     cves, _ = build_entry_map(document)
     current = count_inventory(document, cves)
     cache: dict[str, dict[str, Any]] = {}
+
+    def snapshot(commit: str) -> dict[str, Any]:
+        if commit not in cache:
+            cache[commit] = load_history_snapshot(git, repo_root, commit, SPDX_PATH)
+        return cache[commit]
+
+    eligible = [commit for commit, committed_on in commits if committed_on <= today]
+    pending = not eligible or document != snapshot(eligible[-1])
+    selected = update_day_snapshots(commits, today, days)
+    if pending:
+        # Local edits count as today's update, replacing any committed point today.
+        selected = [(day, commit) for day, commit in selected if day != today]
+        selected.append((today, "working-tree"))
+        selected = selected[-days:]
     daily = []
-    for day, commit in daily_snapshots(commits, today, days):
-        if day == today:
-            daily.append({"date": day.isoformat(), "source": "working-tree", **current})
-        elif commit:
-            if commit not in cache:
-                snapshot = load_history_snapshot(git, repo_root, commit, SPDX_PATH)
-                cache[commit] = count_inventory(snapshot, cves)
-            daily.append({"date": day.isoformat(), "source": commit, **cache[commit]})
-        else:
-            daily.append({"date": day.isoformat(), "source": None, "counts": None, "by_cve": None})
+    for day, commit in selected:
+        counts = current if commit == "working-tree" else count_inventory(snapshot(commit), cves)
+        daily.append({"date": day.isoformat(), "source": commit, **counts})
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "as_of_date": today.isoformat(),
         "timezone": "UTC",
         "history_ref": history_ref,
         "cves": cves,
         "days": days,
+        "day_selection": "inventory-updates",
+        "current": current,
         "daily": daily,
     }
 
@@ -152,43 +153,37 @@ def render_chart(statistics: dict[str, Any]) -> bytes:
         ) from exc
 
     daily = statistics["daily"]
-    current = daily[-1]["counts"]
     positions = list(range(len(daily)))
+    peak = max(row["counts"]["tracked"] for row in daily)
     with plt.rc_context({"font.family": "DejaVu Sans", "font.size": 11}):
-        fig, axes = plt.subplots(
-            2, 1, figsize=(12, 7.2), sharex=True,
-            gridspec_kw={"height_ratios": [1, 2]}, layout="constrained",
-        )
-        fig.suptitle("PHP downstream inventory | daily status", fontsize=19, fontweight="bold")
-        axes[0].set_title(
-            f"{daily[0]['date']} to {daily[-1]['date']} (UTC) | {current['tracked']:,} products tracked",
-            loc="left", fontsize=11, color="#475569", pad=12,
-        )
-        for key, label in LABELS.items():
-            axis = axes[0] if key == "tracked" else axes[1]
-            values = [row["counts"][key] if row["counts"] is not None else float("nan") for row in daily]
-            axis.plot(
-                positions, values, color=COLORS[key], linewidth=2.4, marker="o",
-                markersize=4, linestyle="--" if key == "unknown" else "-",
-                label=f"{label} ({current[key]:,})",
-            )
-        for axis in axes:
-            peak = max(
-                (value for line in axis.lines for value in line.get_ydata() if value == value),
-                default=0,
-            )
-            axis.set_ylim(0, max(1, peak * 1.12))
-            axis.yaxis.set_major_locator(MaxNLocator(integer=True, nbins=5))
-            axis.set_ylabel("Products")
-            axis.grid(axis="y", color="#e2e8f0")
-            axis.set_axisbelow(True)
-            axis.spines[["top", "right"]].set_visible(False)
-            axis.spines[["left", "bottom"]].set_color("#cbd5e1")
-            axis.legend(loc="upper left", bbox_to_anchor=(1.01, 1), frameon=False, fontsize=10)
-        step = max(1, (len(daily) + 9) // 10)
-        ticks = sorted(set([*positions[::step], positions[-1]]))
-        axes[1].set_xticks(ticks, [date.fromisoformat(daily[i]["date"]).strftime("%d %b") for i in ticks])
-        axes[1].set_xlabel("End-of-day Git snapshots; latest day uses the current inventory. Gaps mean no history.", labelpad=12, fontsize=9)
+        fig, axis = plt.subplots(figsize=(10, 5.8))
+        fig.subplots_adjust(left=0.09, right=0.98, top=0.85, bottom=0.25)
+        axis.set_title("php2shell | Product status by update day", loc="left", fontsize=18, fontweight="bold", pad=24)
+        bottoms = [0] * len(daily)
+        for key, color in COLORS.items():
+            values = [row["counts"][key] for row in daily]
+            bars = axis.bar(positions, values, bottom=bottoms, width=0.55, color=color, label=LABELS[key])
+            for bar, value, bottom in zip(bars, values, bottoms):
+                # Tiny segments stay in the stack without overlapping number labels.
+                if value and value >= peak * 0.055:
+                    axis.text(bar.get_x() + bar.get_width() / 2, bottom + value / 2,
+                              f"{value:,}", ha="center", va="center", color="white", fontweight="bold", fontsize=12)
+            bottoms = [bottom + value for bottom, value in zip(bottoms, values)]
+        for position, row in zip(positions, daily):
+            total = row["counts"]["tracked"]
+            axis.annotate(f"{total:,}", (position, total), xytext=(0, 6), textcoords="offset points",
+                          ha="center", fontweight="bold", fontsize=13)
+        axis.set_ylim(0, max(1, peak * 1.15))
+        axis.set_xlim(-0.65, len(daily) - 0.35)
+        axis.yaxis.set_major_locator(MaxNLocator(integer=True, nbins=8))
+        axis.set_ylabel("Number of products")
+        axis.set_xlabel("Inventory update date (UTC)", labelpad=8, fontsize=10)
+        axis.grid(axis="y", color="#edf0f3")
+        axis.set_axisbelow(True)
+        axis.spines[["top", "right"]].set_visible(False)
+        axis.spines[["left", "bottom"]].set_color("#475569")
+        axis.set_xticks(positions, [date.fromisoformat(row["date"]).strftime("%d %b %Y") for row in daily])
+        axis.legend(loc="upper center", bbox_to_anchor=(0.5, -0.23), ncol=3, frameon=False, fontsize=10)
         buffer = io.BytesIO()
         fig.savefig(buffer, format="png", dpi=160, facecolor="white", metadata={"Software": "php2shell inventory statistics"})
         plt.close(fig)
@@ -196,22 +191,15 @@ def render_chart(statistics: dict[str, Any]) -> bytes:
 
 
 def render_readme_section(statistics: dict[str, Any]) -> str:
-    current = statistics["daily"][-1]["counts"]
+    current = statistics["current"]["counts"]
     lines = [
         HEADING, "", BEGIN, "",
         f"Statistics as of **{statistics['as_of_date']} (UTC)**, from the current SPDX inventory.", "",
         "| Products tracked | Fixed | Vulnerable | Under investigation | Not affected | Unassessed / unknown |",
         "| ---: | ---: | ---: | ---: | ---: | ---: |",
         "| " + " | ".join(f"{current[key]:,}" for key in LABELS) + " |", "",
-        f"![Daily product counts and vulnerability status over the last {statistics['days']} days]({OUTPUT_DIR}/inventory-statistics.png)", "",
-        "Each product/component entry is counted once across " + ", ".join(statistics["cves"]) + ". "
-        "Vulnerable takes priority, followed by under investigation, then missing/unknown assessments. "
-        "Fixed means every tracked CVE is fixed or not affected, with at least one fix; "
-        "not affected means all tracked CVEs are not affected. "
-        "A fix refers to the listed version scope, not every deployed version.", "",
-        "The chart uses the last mainline SPDX snapshot per UTC day and carries counts forward on days without changes. "
-        "The latest day includes local inventory changes; dates before available history have no counts.", "",
-        f"[Daily counts and per-CVE statistics (JSON)]({OUTPUT_DIR}/inventory-statistics.json) "
+        f"![Product status on the last {len(statistics['daily'])} inventory update days]({OUTPUT_DIR}/inventory-statistics.png)", "",
+        f"[Counts by update day and per-CVE statistics (JSON)]({OUTPUT_DIR}/inventory-statistics.json) "
         "| [Software list](software/software_list.md)", "", END,
     ]
     return "\n".join(lines)
@@ -232,7 +220,7 @@ def update_readme(text: str, statistics: dict[str, Any]) -> str:
             raise GenerationError(f"README is missing expected heading: {marker}")
         text = text.replace(marker, section + "\n\n" + marker, 1)
 
-    counts = statistics["daily"][-1]["counts"]
+    counts = statistics["current"]["counts"]
     summary = (
         f"{SUMMARY_BEGIN}\n"
         f"This repository tracks **{counts['tracked']:,} products**, including "
@@ -259,7 +247,7 @@ def positive_days(value: str) -> int:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--days", type=positive_days, default=7, help="Calendar days including today (default: 7).")
+    parser.add_argument("--days", type=positive_days, default=3, help="Most recent inventory update dates (default: 3).")
     parser.add_argument("--history-ref", default="HEAD", help="Mainline Git revision; use origin/main on PR branches.")
     args = parser.parse_args(argv)
     try:
@@ -279,7 +267,7 @@ def main(argv: list[str] | None = None) -> int:
     except (GenerationError, OSError, ValueError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
-    print(f"Updated README statistics and {OUTPUT_DIR}: {statistics['daily'][-1]['counts']['tracked']} products, {args.days} days.")
+    print(f"Updated README statistics and {OUTPUT_DIR}: {statistics['current']['counts']['tracked']} products, {len(statistics['daily'])} update days.")
     return 0
 
 
