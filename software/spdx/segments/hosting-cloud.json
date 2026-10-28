@@ -1193,9 +1193,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:automattic-wordpress.com:7c0478cd2201",
-      "summary": "WordPress.com publishes PHP8.3/8.4 and a module environment for plugin-enabled hosting plans.",
+      "summary": "No customer PHP patching is required for sites hosted on WordPress.com. Assess sites hosted elsewhere independently.",
       "description": "Server-side PHP hosting with nginx; SAPI label cgi-fcgi in published module list",
-      "comment": "Inventory record: PHP-0406\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0006\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Server-side PHP hosting with nginx; SAPI label cgi-fcgi in published module list\nPHP version scope: PHP environment page reviewed2026-09-08 lists8.3 and8.4; plugin-enabled plans only\nExtensions: Available examples APCu,bcmath,curl,gd,intl,mbstring,mysqli,pdo_mysql,sodium; table blanks do not prove ionCube/Suhosin installation\nLimitations: This page does not establish every WordPress.com plan’s runtime, every module’s enabled state, or PHP in a browser/mobile client. WordPress core auto-updates are not PHP runtime auto-updates. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: WordPress.com for managed PHP platform; site owner for selected compatible version and plugins/themes\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: wordpress.com:plugin-enabled-php\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0406\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0006\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Server-side PHP hosting with nginx; SAPI label cgi-fcgi in published module list\nPHP version scope: PHP environment page reviewed2026-09-08 lists8.3 and8.4; plugin-enabled plans only\nExtensions: Available examples APCu,bcmath,curl,gd,intl,mbstring,mysqli,pdo_mysql,sodium; table blanks do not prove ionCube/Suhosin installation\nLimitations: This page does not establish every WordPress.com plan’s runtime, every module’s enabled state, or PHP in a browser/mobile client. WordPress core auto-updates are not PHP runtime auto-updates. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: WordPress.com for managed PHP platform; site owner for selected compatible version and plugins/themes\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: wordpress.com:plugin-enabled-php\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Fix; CVE-2026-109619: Fix\nScope: Every WordPress.com-hosted site, every plan including plugins, WooCommerce and staging; self-hosted WordPress or other providers excluded\nAssessment: WordPress.com confirms all hosted sites, including plugin-enabled plans, are already protected. Its patched-version FAQ also covers displayed PHP 8.3.35 and 8.4.26. No customer PHP update is required; self-hosted sites and other hosts are excluded.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1204,8 +1204,17 @@
             "https://wordpress.com/support/php-environment/"
           ],
           "comment": "Official PHP component, runtime or hosting declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://wordpress.com/support/php-security-update-october-2026-cve-2026-109618-and-cve-2026-109619-php2shell/"
+          ],
+          "comment": "PHP security update (October2026): CVE-2026-109618 and CVE-2026-109619 (php2shell); Last reviewed 2026-10-21; reviewed 2026-10-27"
         }
-      ]
+      ],
+      "software_packageVersion": "WordPress.com managed service protected as of 2026-10-21; patched build unpublished"
     },
     {
       "type": "software_Package",
@@ -1392,9 +1401,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:antagonist:77d80f447e53",
-      "summary": "Antagonist documents a PHP selector covering all sites in one hosting package, per-version modules and extended support.",
+      "summary": "No customer PHP patch installation is required for this provider-managed hosting scope.",
       "description": "Package-wide PHP version and version-specific extension selection in DirectAdmin",
-      "comment": "Inventory record: PHP-0417\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0386\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Package-wide PHP version and version-specific extension selection in DirectAdmin\nPHP version scope: Exact PHP menu values/builds not established; optional PHP Extended Support described for older versions\nExtensions: Version-specific selectable modules; imagick given as optional example, not universally enabled\nLimitations: Provider extended-support policy does not identify every backport/covered build. Public hosting-package counts are not PHP installations and were not imported. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: Antagonist and its runtime/backport suppliers for hosted PHP; customer for selected version/modules and website compatibility\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: antagonist:php-selector\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0417\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0386\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Package-wide PHP version and version-specific extension selection in DirectAdmin\nPHP version scope: Exact PHP menu values/builds not established; optional PHP Extended Support described for older versions\nExtensions: Version-specific selectable modules; imagick given as optional example, not universally enabled\nLimitations: Provider extended-support policy does not identify every backport/covered build. Public hosting-package counts are not PHP installations and were not imported. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: Antagonist and its runtime/backport suppliers for hosted PHP; customer for selected version/modules and website compatibility\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: antagonist:php-selector\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Fix; CVE-2026-109619: Fix\nScope: Antagonist-managed customer hosting PHP, including older versions covered by PHP Extended Support; no inference about external/custom PHP\nAssessment: Antagonist confirms security updates for both CVEs were installed across its managed hosting systems, including older PHP versions under Extended Support. Original PHP version numbers were retained; exact patched builds are not published.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1403,8 +1412,17 @@
             "https://help.antagonist.nl/hc/nl/articles/8523972848401-Wat-kan-ik-met-de-PHP-selector-in-DirectAdmin"
           ],
           "comment": "Official PHP component, runtime or hosting declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.antagonist.nl/blog/php-lekken-gedicht-zo-hebben-we-het-aangepakt/"
+          ],
+          "comment": "PHP-lekken gedicht: zo hebben we het aangepakt; 2026-10-22; reviewed 2026-10-27"
         }
-      ]
+      ],
+      "software_packageVersion": "Provider-patched managed hosting, including PHP Extended Support, by 2026-10-22; build numbers unpublished"
     },
     {
       "type": "software_Package",
@@ -1420,9 +1438,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:ionos:102c255bf6f5",
-      "summary": "IONOS documents per-domain PHP versions and a separate CLI version/path table.",
+      "summary": "No customer PHP patch installation is required for account-managed hosting PHP. Patch customer-managed server installations separately.",
       "description": "Per-domain PHP hosting selection; separate versioned PHP CLI binaries in webspace",
-      "comment": "Inventory record: PHP-0418\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0037\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Per-domain PHP hosting selection; separate versioned PHP CLI binaries in webspace\nPHP version scope: CLI table includes8.5–8.0,7.4–7.0,5.6 and older legacy entries; CLI paths differ for contracts before/from2026-07-21\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: CLI availability is not necessarily the web handler catalogue. The guide’s statement that only pre8.1 versions are upstream-unmaintained is not accepted as current lifecycle truth. Managed WordPress/MyWebsite have separate applicability notes. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: IONOS for hosting/extended-support runtimes; customer for domain/CLI version choice and application compatibility\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: ionos:webhosting-php\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0418\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0037\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Per-domain PHP hosting selection; separate versioned PHP CLI binaries in webspace\nPHP version scope: CLI table includes8.5–8.0,7.4–7.0,5.6 and older legacy entries; CLI paths differ for contracts before/from2026-07-21\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: CLI availability is not necessarily the web handler catalogue. The guide’s statement that only pre8.1 versions are upstream-unmaintained is not accepted as current lifecycle truth. Managed WordPress/MyWebsite have separate applicability notes. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: IONOS for hosting/extended-support runtimes; customer for domain/CLI version choice and application compatibility\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: ionos:webhosting-php\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Fix; CVE-2026-109619: Fix\nScope: PHP versions managed through IONOS hosting account, including vendor-maintained unsupported branches. Customer-managed VPS/dedicated PHP excluded. No independent claim for arbitrary custom CLI installations.\nAssessment: IONOS confirms PHP2Shell updates are installed on its managed PHP infrastructure, including vendor-maintained older branches. This covers account-managed webhosting PHP; customer-managed VPS, dedicated-server and custom CLI installations require separate updates.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1439,8 +1457,17 @@
             "https://www.ionos.com/help/hosting/using-php-for-web-projects/executing-php-files-via-the-command-line-php-cli/"
           ],
           "comment": "Official publisher/project PHP scope evidence - CLI paths differ by the webhosting contract’s2026-07-21 boundary; several older versions are unavailable on newer contracts."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.ionos.com/help/hosting/php2shell-security-vulnerability-important-information-regarding-your-ionos-contract/"
+          ],
+          "comment": "PHP2Shell security vulnerability - important information regarding your IONOS contract; No explicit article publication/update timestamp exposed; accessed 2026-10-27; reviewed 2026-10-27"
         }
-      ]
+      ],
+      "software_packageVersion": "Provider-patched IONOS-managed webhosting PHP; build numbers unpublished"
     },
     {
       "type": "software_Package",
@@ -1456,9 +1483,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:ovhcloud:71b982cacbde",
-      "summary": "OVHcloud documents PHP hosting families, environment/architecture boundaries and provider versus website-owner responsibilities.",
+      "summary": "No customer PHP patch installation is required for this managed Web Hosting scope. Update customer-managed servers separately.",
       "description": "Provider PHP-FPM or phpcgi options and .ovhconfig version/environment settings",
-      "comment": "Inventory record: PHP-0419\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0037\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Provider PHP-FPM or phpcgi options and .ovhconfig version/environment settings\nPHP version scope: Guide lists PHP5.4–8.5 with runtime compatibility;7.4–8.5 require Stable64. Exact patches/backports unknown\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: The sample8.0 default is not a current universal runtime default. PHP-FPM is a SAPI/process manager, not evidence of the guide’s marketing performance claims. No control-plane or customer-sector PHP inference. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: OVHcloud installs managed runtimes; website owner maintains compatible application/code and selected configuration\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: ovhcloud:webhosting-php\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0419\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0037\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Provider PHP-FPM or phpcgi options and .ovhconfig version/environment settings\nPHP version scope: Guide lists PHP5.4–8.5 with runtime compatibility;7.4–8.5 require Stable64. Exact patches/backports unknown\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: The sample8.0 default is not a current universal runtime default. PHP-FPM is a SAPI/process manager, not evidence of the guide’s marketing performance claims. No control-plane or customer-sector PHP inference. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: OVHcloud installs managed runtimes; website owner maintains compatible application/code and selected configuration\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: ovhcloud:webhosting-php\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Fix; CVE-2026-109619: Fix\nScope: OVHcloud Web Hosting across all clusters; customer-managed BareMetal/VPS PHP excluded. For old branches unchanged version numbers alone do not establish patch state.\nAssessment: OVHcloud confirms PHP 7.4-8.5 patches on all Web Hosting clusters on 21 October and PHP 5.3-7.3 patches on 23 October; maintenance completed 26 October. Customer-managed VPS and dedicated servers are excluded.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1467,8 +1494,25 @@
             "https://docs.ovhcloud.com/en/guides/web-cloud/web-hosting/configure-your-web-hosting"
           ],
           "comment": "Official PHP component, runtime or hosting declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://web-cloud.status-ovhcloud.com/incidents/6ct3ggp512xk"
+          ],
+          "comment": "[GLOBAL][Web Hosting] - All clusters maintenance notification; Completed 2026-10-26 09:50UTC; patch updates2026-10-21 and2026-10-23; reviewed 2026-10-27"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://community.ovhcloud.com/t/faille-critique-php-cve-2026-109618-109619-correctifs-sur-les-hebergements-web-ovhcloud/54166/12"
+          ],
+          "comment": "Faille critique PHP CVE-2026-109618 /109619 : correctifs sur les hébergements web OVHcloud; 2026-10-21; reviewed 2026-10-27"
         }
-      ]
+      ],
+      "software_packageVersion": "Provider-patched Web Hosting PHP 5.3-8.5; deployment completed 2026-10-23"
     },
     {
       "type": "software_Package",
@@ -3446,9 +3490,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:fortinet:0dd4907ae878",
-      "summary": "Fortinet PSIRT advisory FG-IR-26-186 lists FortiClient Cloud Services as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "No customer action is required for the four vendor-remediated FortiClient forensics endpoints.",
       "description": "Hosted endpoint management service",
-      "comment": "Inventory record: PHP-0681\nCategory: Hosting and cloud\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in the FG-IR-26-186 php2shell response; exact PHP component and SAPI are not published\nPHP version scope: Fortinet FG-IR-26-186 (published 2026-10-21, updated 2026-10-22) lists FortiClient Cloud Services under 'Products Under Investigation'; affected and fixed product versions are not published.\nExtensions: Unknown\nLimitations: An under-investigation listing establishes vendor review scope, not a confirmed PHP dependency, affected build or reachable path.\nPatch owner: Fortinet; operator for deployment of fixed releases\nSource accessed: 2026-10-22\nVulnerability status: Vendor advisory FG-IR-26-186: under investigation.\nCVE-2026-109618: Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published\nCVE-2026-109619: Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0681\nCategory: Hosting and cloud\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in the FG-IR-26-186 php2shell response; exact PHP component and SAPI are not published\nPHP version scope: Fortinet FG-IR-26-186 (published 2026-10-21, updated 2026-10-22) lists FortiClient Cloud Services under 'Products Under Investigation'; affected and fixed product versions are not published.\nExtensions: Unknown\nLimitations: An under-investigation listing establishes vendor review scope, not a confirmed PHP dependency, affected build or reachable path.\nPatch owner: Fortinet; operator for deployment of fixed releases\nSource accessed: 2026-10-22\nVulnerability status: Vendor advisory FG-IR-26-186: under investigation.\nCVE-2026-109618: Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published\nCVE-2026-109619: Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Fix; CVE-2026-109619: Fix\nScope: Only forticlient-forensics-dev.forticloud.com, forticlient-forensics-us.forticloud.com, forticlient-forensics-eu.forticloud.com, forticlient-forensics-ap.forticloud.com\nAssessment: Fortinet FG-IR-26-186 confirms remediation of four FortiClient forensics endpoints: dev, us, eu and ap under forticloud.com. No customer action is required. This does not assess other FortiClient Cloud Services endpoints; service build numbers are unpublished.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -3457,8 +3501,17 @@
             "https://fortiguard.fortinet.com/psirt/FG-IR-26-186"
           ],
           "comment": "Fortinet PSIRT FG-IR-26-186, published 2026-10-21 and updated 2026-10-22; current investigation scope"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.fortiguard.com/psirt/FG-IR-26-186"
+          ],
+          "comment": "PHP core RCE vulnerability patches (CVE-2026-109618 and CVE-2026-109619); Published2026-10-21; Updated2026-10-26; reviewed 2026-10-27"
         }
-      ]
+      ],
+      "software_packageVersion": "Remediated forticlient-forensics-{dev,us,eu,ap}.forticloud.com services; build unpublished"
     },
     {
       "type": "software_Package",
@@ -4210,6 +4263,146 @@
       "summary": "CVE-2026-109619 assessment: Not vuln. Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs.",
       "comment": "Official public source reviewed 2026-10-26. Source: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
       "security_impactStatement": "Cisco advisory version 1.6 (2026-10-23) explicitly lists this product under Products Confirmed Not Vulnerable for both CVEs."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0406-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0406"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "WordPress.com confirms all hosted sites, including plugin-enabled plans, are already protected. Its patched-version FAQ also covers displayed PHP 8.3.35 and 8.4.26. No customer PHP update is required; self-hosted sites and other hosts are excluded.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://wordpress.com/support/php-security-update-october-2026-cve-2026-109618-and-cve-2026-109619-php2shell/",
+      "security_actionStatement": "No customer PHP patching is required for sites hosted on WordPress.com. Assess sites hosted elsewhere independently."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0406-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0406"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "WordPress.com confirms all hosted sites, including plugin-enabled plans, are already protected. Its patched-version FAQ also covers displayed PHP 8.3.35 and 8.4.26. No customer PHP update is required; self-hosted sites and other hosts are excluded.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://wordpress.com/support/php-security-update-october-2026-cve-2026-109618-and-cve-2026-109619-php2shell/",
+      "security_actionStatement": "No customer PHP patching is required for sites hosted on WordPress.com. Assess sites hosted elsewhere independently."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0417-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0417"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Antagonist confirms security updates for both CVEs were installed across its managed hosting systems, including older PHP versions under Extended Support. Original PHP version numbers were retained; exact patched builds are not published.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://www.antagonist.nl/blog/php-lekken-gedicht-zo-hebben-we-het-aangepakt/",
+      "security_actionStatement": "No customer PHP patch installation is required for this provider-managed hosting scope."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0417-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0417"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Antagonist confirms security updates for both CVEs were installed across its managed hosting systems, including older PHP versions under Extended Support. Original PHP version numbers were retained; exact patched builds are not published.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://www.antagonist.nl/blog/php-lekken-gedicht-zo-hebben-we-het-aangepakt/",
+      "security_actionStatement": "No customer PHP patch installation is required for this provider-managed hosting scope."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0418-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0418"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "IONOS confirms PHP2Shell updates are installed on its managed PHP infrastructure, including vendor-maintained older branches. This covers account-managed webhosting PHP; customer-managed VPS, dedicated-server and custom CLI installations require separate updates.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://www.ionos.com/help/hosting/php2shell-security-vulnerability-important-information-regarding-your-ionos-contract/",
+      "security_actionStatement": "No customer PHP patch installation is required for account-managed hosting PHP. Patch customer-managed server installations separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0418-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0418"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "IONOS confirms PHP2Shell updates are installed on its managed PHP infrastructure, including vendor-maintained older branches. This covers account-managed webhosting PHP; customer-managed VPS, dedicated-server and custom CLI installations require separate updates.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://www.ionos.com/help/hosting/php2shell-security-vulnerability-important-information-regarding-your-ionos-contract/",
+      "security_actionStatement": "No customer PHP patch installation is required for account-managed hosting PHP. Patch customer-managed server installations separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0419-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0419"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "OVHcloud confirms PHP 7.4-8.5 patches on all Web Hosting clusters on 21 October and PHP 5.3-7.3 patches on 23 October; maintenance completed 26 October. Customer-managed VPS and dedicated servers are excluded.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://web-cloud.status-ovhcloud.com/incidents/6ct3ggp512xk",
+      "security_actionStatement": "No customer PHP patch installation is required for this managed Web Hosting scope. Update customer-managed servers separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0419-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0419"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "OVHcloud confirms PHP 7.4-8.5 patches on all Web Hosting clusters on 21 October and PHP 5.3-7.3 patches on 23 October; maintenance completed 26 October. Customer-managed VPS and dedicated servers are excluded.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://web-cloud.status-ovhcloud.com/incidents/6ct3ggp512xk",
+      "security_actionStatement": "No customer PHP patch installation is required for this managed Web Hosting scope. Update customer-managed servers separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0681-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0681"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fortinet FG-IR-26-186 confirms remediation of four FortiClient forensics endpoints: dev, us, eu and ap under forticloud.com. No customer action is required. This does not assess other FortiClient Cloud Services endpoints; service build numbers are unpublished.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-27. Source: https://www.fortiguard.com/psirt/FG-IR-26-186",
+      "security_actionStatement": "No customer action is required for the four vendor-remediated FortiClient forensics endpoints."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0681-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0681"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fortinet FG-IR-26-186 confirms remediation of four FortiClient forensics endpoints: dev, us, eu and ap under forticloud.com. No customer action is required. This does not assess other FortiClient Cloud Services endpoints; service build numbers are unpublished.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official source reviewed 2026-10-27. Source: https://www.fortiguard.com/psirt/FG-IR-26-186",
+      "security_actionStatement": "No customer action is required for the four vendor-remediated FortiClient forensics endpoints."
     }
   ]
 }

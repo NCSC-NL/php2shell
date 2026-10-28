@@ -555,9 +555,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:sangoma-freepbx-project:0e64d6e9d80d",
-      "summary": "FreePBX17 documents PHP8.2 as its supported tested platform, distinct from its installer minimum guard.",
+      "summary": "Apply the latest system PHP security updates using Sangoma's FreePBX 17 update procedure and verify the installed packages.",
       "description": "Server-side PHP administration and installer/CLI; exact web SAPI not pinned",
-      "comment": "Inventory record: PHP-0432\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP administration and installer/CLI; exact web SAPI not pinned\nPHP version scope: Official17FAQ: PHP8.2.x tested/default; inspected release/17.0 installer only rejects PHP<7.4\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: A permissive installer guard does not override supported-platform or commercial-module constraints. Asterisk SIP/media processing is a separate implementation. No deployment total, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied. Public documents/static source only; no retrieved code or appliance image was installed, executed, built or tested.\nPatch owner: FreePBX/Sangoma for framework/modules and supported distribution; operator for runtime and module updates\nDownstream surface: Only the named management component and its documented callers\nRelease pin: FreePBX17 vendor FAQ plus moving release/17.0 installer; no immutable build pin\nSource accessed: 2026-10-17\nAliases: freepbx:17-management-framework\nConditional downstream consequence: If a matching PHP or enabled-extension flaw is reachable in this management interface, possible effects include worker denial of service, disclosure of accessible credentials, configuration modification or code execution as the service account. Root access, packet/media-plane compromise, tenant escape and lateral movement require separate privilege, reachability and isolation evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0432\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP administration and installer/CLI; exact web SAPI not pinned\nPHP version scope: Official17FAQ: PHP8.2.x tested/default; inspected release/17.0 installer only rejects PHP<7.4\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: A permissive installer guard does not override supported-platform or commercial-module constraints. Asterisk SIP/media processing is a separate implementation. No deployment total, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied. Public documents/static source only; no retrieved code or appliance image was installed, executed, built or tested.\nPatch owner: FreePBX/Sangoma for framework/modules and supported distribution; operator for runtime and module updates\nDownstream surface: Only the named management component and its documented callers\nRelease pin: FreePBX17 vendor FAQ plus moving release/17.0 installer; no immutable build pin\nSource accessed: 2026-10-17\nAliases: freepbx:17-management-framework\nConditional downstream consequence: If a matching PHP or enabled-extension flaw is reachable in this management interface, possible effects include worker denial of service, disclosure of accessible credentials, configuration modification or code execution as the service account. Root access, packet/media-plane compromise, tenant escape and lateral movement require separate privilege, reachability and isolation evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Fix; CVE-2026-109619: Fix\nScope: FreePBX 17 after system PHP security updates; not an assertion that an unupdated FreePBX 17 installation is fixed\nAssessment: Sangoma directs FreePBX 17 operators to install the available PHP security updates for both CVEs. Fixed scope requires those system updates; an unupdated version 17 installation remains affected. The advisory does not specify an exact package build.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -574,8 +574,25 @@
             "https://github.com/FreePBX/framework/blob/release/17.0/install.php"
           ],
           "comment": "Official project/vendor PHP relationship evidence - The installer guard rejects versions below7.4, a different scope from supported17requirements."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://community.freepbx.org/t/critical-php-security-vulnerabilities-action-required-for-freepbx-and-pbxact/110423"
+          ],
+          "comment": "Critical PHP Security Vulnerabilities: Action Required for FreePBX and PBXact; 2026-10-23; reviewed 2026-10-27"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://sangomakb.atlassian.net/wiki/spaces/FP/pages/2121924609/FreePBX%2BOpen%2BSource%2B-%2BUpdate%2Bsystem%2Bsoftware%2Bon%2BFreePBX%2B17"
+          ],
+          "comment": "FreePBX Open Source - Update system software on FreePBX 17; Updated Oct 23 (vendor page); reviewed 2026-10-27"
         }
-      ]
+      ],
+      "software_packageVersion": "FreePBX 17 after latest PHP security updates (Sangoma advisory 2026-10-23); exact build unpublished"
     },
     {
       "type": "software_Package",
@@ -591,9 +608,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:sangoma:fcf1fd5f9a41",
-      "summary": "Sangoma describes PBXact17 as its commercial FreePBX-based system with PHP8.2.",
+      "summary": "Apply the latest system PHP security updates using Sangoma's version 17 update procedure and verify the installed packages.",
       "description": "Commercial PHP-based FreePBX management application; web SAPI unknown",
-      "comment": "Inventory record: PHP-0433\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0432\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Commercial PHP-based FreePBX management application; web SAPI unknown\nPHP version scope: PBXact17 GA announcement specifies PHP8.2 and Debian12\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: Edition and base framework overlap. Appliance model/module compatibility and deployed PHP patches require separate qualification. No deployment total, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied. Public documents/static source only; no retrieved code or appliance image was installed, executed, built or tested.\nPatch owner: Sangoma for supported edition/firmware/modules; administrator for applicable update rollout\nDownstream surface: Only the named management component and its documented callers\nRelease pin: PBXact17 GA announcement; exact appliance build not pinned\nSource accessed: 2026-10-17\nAliases: sangoma:pbxact17\nConditional downstream consequence: If a matching PHP or enabled-extension flaw is reachable in this management interface, possible effects include worker denial of service, disclosure of accessible credentials, configuration modification or code execution as the service account. Root access, packet/media-plane compromise, tenant escape and lateral movement require separate privilege, reachability and isolation evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0433\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0432\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Commercial PHP-based FreePBX management application; web SAPI unknown\nPHP version scope: PBXact17 GA announcement specifies PHP8.2 and Debian12\nExtensions: Required/optional extensions and enabled modules: unknown\nLimitations: Edition and base framework overlap. Appliance model/module compatibility and deployed PHP patches require separate qualification. No deployment total, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied. Public documents/static source only; no retrieved code or appliance image was installed, executed, built or tested.\nPatch owner: Sangoma for supported edition/firmware/modules; administrator for applicable update rollout\nDownstream surface: Only the named management component and its documented callers\nRelease pin: PBXact17 GA announcement; exact appliance build not pinned\nSource accessed: 2026-10-17\nAliases: sangoma:pbxact17\nConditional downstream consequence: If a matching PHP or enabled-extension flaw is reachable in this management interface, possible effects include worker denial of service, disclosure of accessible credentials, configuration modification or code execution as the service account. Root access, packet/media-plane compromise, tenant escape and lateral movement require separate privilege, reachability and isolation evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Fix; CVE-2026-109619: Fix\nScope: PBXact 17 after system PHP security updates; unupdated installations remain outside fixed scope\nAssessment: Sangoma directs PBXact 17 operators to install the available PHP security updates for both CVEs. Fixed scope requires those system updates; an unupdated version 17 installation remains affected. The advisory does not specify an exact package build.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -602,8 +619,17 @@
             "https://www.freepbx.org/pbxact-17-general-availability-announcement/"
           ],
           "comment": "Official project/vendor scope evidence"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://community.freepbx.org/t/critical-php-security-vulnerabilities-action-required-for-freepbx-and-pbxact/110423"
+          ],
+          "comment": "Critical PHP Security Vulnerabilities: Action Required for FreePBX and PBXact; 2026-10-23; reviewed 2026-10-27"
         }
-      ]
+      ],
+      "software_packageVersion": "PBXact 17 after latest PHP security updates (Sangoma advisory 2026-10-23); exact build unpublished"
     },
     {
       "type": "software_Package",
@@ -1285,9 +1311,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:terramaster:1fcc803c1548",
-      "summary": "The Web Server guide documents optional PHP instances, virtual-host version selection and configurable extensions.",
+      "summary": "Migrate to TOS 7, install the vendor-fixed PHP package in App Center and restart PHP-dependent services. Update containers independently.",
       "description": "Configurable PHP instances attached to virtual hosts; server SAPI unverified",
-      "comment": "Inventory record: PHP-0609\nCategory: Appliances and embedded\nOriginal relationship: hosts\nRelationship direction: hosts_php_workloads\nParent component: TerraMaster TOS6\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Configurable PHP instances attached to virtual hosts; server SAPI unverified\nPHP version scope: Versioned TOS6 guide allows choosing PHP versions and creating per-site PHP instances; available branches, PHP patches and firmware builds unspecified.\nExtensions: Xdebug is explicitly optional; other extension names and cache implementation not enumerated\nLimitations: Hosting support does not prove TOS or the management GUI is written in PHP. The guide’s virtual hosts do not establish tenant isolation or shared-process boundaries. Actual PHP/SAPI, package contents, selected extensions, Internet exposure and installations remain unknown.\nPatch owner: TerraMaster for package/firmware integration and distribution; PHP/component upstream for fixes; operator for compatible deployment and process restart\nDownstream surface: Only selected installed/configured NAS PHP workloads, not every NAS service or client\nRelease pin: TOS6-scoped public Web Server guide; firmware/runtime release pin unknown\nSource accessed: 2026-10-19\nAliases: terramaster:tos6-web-server-php-option\nConditional downstream consequence: Analyst judgment: a matching PHP flaw could affect a configured workload using this installed package and a loaded/reachable feature. Disclosure, DoS, integrity or code execution depend on the exact build, input path and privileges. Credentials, tenant crossing and host control are not established by catalogue availability.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0609\nCategory: Appliances and embedded\nOriginal relationship: hosts\nRelationship direction: hosts_php_workloads\nParent component: TerraMaster TOS6\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Configurable PHP instances attached to virtual hosts; server SAPI unverified\nPHP version scope: Versioned TOS6 guide allows choosing PHP versions and creating per-site PHP instances; available branches, PHP patches and firmware builds unspecified.\nExtensions: Xdebug is explicitly optional; other extension names and cache implementation not enumerated\nLimitations: Hosting support does not prove TOS or the management GUI is written in PHP. The guide’s virtual hosts do not establish tenant isolation or shared-process boundaries. Actual PHP/SAPI, package contents, selected extensions, Internet exposure and installations remain unknown.\nPatch owner: TerraMaster for package/firmware integration and distribution; PHP/component upstream for fixes; operator for compatible deployment and process restart\nDownstream surface: Only selected installed/configured NAS PHP workloads, not every NAS service or client\nRelease pin: TOS6-scoped public Web Server guide; firmware/runtime release pin unknown\nSource accessed: 2026-10-19\nAliases: terramaster:tos6-web-server-php-option\nConditional downstream consequence: Analyst judgment: a matching PHP flaw could affect a configured workload using this installed package and a loaded/reachable feature. Disclosure, DoS, integrity or code execution depend on the exact build, input path and privileges. Credentials, tenant crossing and host control are not established by catalogue availability.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Vulnerable; CVE-2026-109619: Vulnerable\nScope: TOS6 PHP-hosting scope in existing entry. TOS7 fixed PHP packages are separate remediation scope, not proof of an in-place TOS6 fix.\nAssessment: TerraMaster support explicitly lists TOS 5/6 as affected by both CVEs and names Web Server among PHP-dependent applications. TOS 6 users must migrate to TOS 7 and install its patched PHP packages; no in-place TOS 6 fix is established.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1296,8 +1322,17 @@
             "https://help.terra-master.com/docs/TOS6/application/web-server"
           ],
           "comment": "Official NAS vendor runtime/hosting declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://forum.terra-master.com/en/viewtopic.php?p=61416&t=10721"
+          ],
+          "comment": "PHP Critical Vulnerability Fix Announcemen; Post displayed 'Yesterday, 19:47' when accessed 2026-10-27; absolute publication date not exposed in retrieved page; reviewed 2026-10-27"
         }
-      ]
+      ],
+      "software_packageVersion": "TOS 6 systems using PHP/Web Server; migration to TOS 7 required"
     },
     {
       "type": "software_Package",
@@ -3605,6 +3640,90 @@
       "comment": "Official public source reviewed 2026-10-26. Source: https://security.netapp.com/advisory/NTAP-20261021-0021",
       "security_impactStatement": "NetApp NTAP-20261021-0021 version 7.0 (2026-10-25) lists these currently available ONTAP 9 patches. ONTAP 9 is affected only by CVE-2026-109618; CVE-2026-109619 does not affect it. Exploitation of an unpatched release is limited to the www user in the PHP jail.",
       "security_actionStatement": "Install the first fixed release for the deployed ONTAP branch. The available workaround options have operational trade-offs."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0432-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0432"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Sangoma directs FreePBX 17 operators to install the available PHP security updates for both CVEs. Fixed scope requires those system updates; an unupdated version 17 installation remains affected. The advisory does not specify an exact package build.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://community.freepbx.org/t/critical-php-security-vulnerabilities-action-required-for-freepbx-and-pbxact/110423",
+      "security_actionStatement": "Apply the latest system PHP security updates using Sangoma's FreePBX 17 update procedure and verify the installed packages."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0432-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0432"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Sangoma directs FreePBX 17 operators to install the available PHP security updates for both CVEs. Fixed scope requires those system updates; an unupdated version 17 installation remains affected. The advisory does not specify an exact package build.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://community.freepbx.org/t/critical-php-security-vulnerabilities-action-required-for-freepbx-and-pbxact/110423",
+      "security_actionStatement": "Apply the latest system PHP security updates using Sangoma's FreePBX 17 update procedure and verify the installed packages."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0433-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0433"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Sangoma directs PBXact 17 operators to install the available PHP security updates for both CVEs. Fixed scope requires those system updates; an unupdated version 17 installation remains affected. The advisory does not specify an exact package build.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://community.freepbx.org/t/critical-php-security-vulnerabilities-action-required-for-freepbx-and-pbxact/110423",
+      "security_actionStatement": "Apply the latest system PHP security updates using Sangoma's version 17 update procedure and verify the installed packages."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0433-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0433"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Sangoma directs PBXact 17 operators to install the available PHP security updates for both CVEs. Fixed scope requires those system updates; an unupdated version 17 installation remains affected. The advisory does not specify an exact package build.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://community.freepbx.org/t/critical-php-security-vulnerabilities-action-required-for-freepbx-and-pbxact/110423",
+      "security_actionStatement": "Apply the latest system PHP security updates using Sangoma's version 17 update procedure and verify the installed packages."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0609-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0609"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "TerraMaster support explicitly lists TOS 5/6 as affected by both CVEs and names Web Server among PHP-dependent applications. TOS 6 users must migrate to TOS 7 and install its patched PHP packages; no in-place TOS 6 fix is established.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://forum.terra-master.com/en/viewtopic.php?p=61416&t=10721",
+      "security_actionStatement": "Migrate to TOS 7, install the vendor-fixed PHP package in App Center and restart PHP-dependent services. Update containers independently."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0609-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0609"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "TerraMaster support explicitly lists TOS 5/6 as affected by both CVEs and names Web Server among PHP-dependent applications. TOS 6 users must migrate to TOS 7 and install its patched PHP packages; no in-place TOS 6 fix is established.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://forum.terra-master.com/en/viewtopic.php?p=61416&t=10721",
+      "security_actionStatement": "Migrate to TOS 7, install the vendor-fixed PHP package in App Center and restart PHP-dependent services. Update containers independently."
     }
   ]
 }

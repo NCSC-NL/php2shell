@@ -66,13 +66,8 @@
         "urn:php2shell:inventory:package:PHP-0394",
         "urn:php2shell:inventory:package:PHP-0396",
         "urn:php2shell:inventory:package:PHP-0402",
-        "urn:php2shell:inventory:package:PHP-0406",
         "urn:php2shell:inventory:package:PHP-0413",
-        "urn:php2shell:inventory:package:PHP-0417",
-        "urn:php2shell:inventory:package:PHP-0418",
-        "urn:php2shell:inventory:package:PHP-0419",
-        "urn:php2shell:inventory:package:PHP-0421",
-        "urn:php2shell:inventory:package:PHP-0609"
+        "urn:php2shell:inventory:package:PHP-0421"
       ],
       "relationshipType": "underInvestigationFor",
       "security_statusNotes": "Hosted PHP option; CVE match unknown",
@@ -299,7 +294,6 @@
         "urn:php2shell:inventory:package:PHP-0346",
         "urn:php2shell:inventory:package:PHP-0347",
         "urn:php2shell:inventory:package:PHP-0349",
-        "urn:php2shell:inventory:package:PHP-0359",
         "urn:php2shell:inventory:package:PHP-0368",
         "urn:php2shell:inventory:package:PHP-0369",
         "urn:php2shell:inventory:package:PHP-0370",
@@ -317,8 +311,6 @@
         "urn:php2shell:inventory:package:PHP-0427",
         "urn:php2shell:inventory:package:PHP-0429",
         "urn:php2shell:inventory:package:PHP-0430",
-        "urn:php2shell:inventory:package:PHP-0432",
-        "urn:php2shell:inventory:package:PHP-0433",
         "urn:php2shell:inventory:package:PHP-0435",
         "urn:php2shell:inventory:package:PHP-0436",
         "urn:php2shell:inventory:package:PHP-0437",
@@ -422,13 +414,8 @@
         "urn:php2shell:inventory:package:PHP-0394",
         "urn:php2shell:inventory:package:PHP-0396",
         "urn:php2shell:inventory:package:PHP-0402",
-        "urn:php2shell:inventory:package:PHP-0406",
         "urn:php2shell:inventory:package:PHP-0413",
-        "urn:php2shell:inventory:package:PHP-0417",
-        "urn:php2shell:inventory:package:PHP-0418",
-        "urn:php2shell:inventory:package:PHP-0419",
-        "urn:php2shell:inventory:package:PHP-0421",
-        "urn:php2shell:inventory:package:PHP-0609"
+        "urn:php2shell:inventory:package:PHP-0421"
       ],
       "relationshipType": "underInvestigationFor",
       "security_statusNotes": "Hosted PHP option; CVE match unknown",
@@ -555,7 +542,6 @@
         "urn:php2shell:inventory:package:PHP-0082",
         "urn:php2shell:inventory:package:PHP-0083",
         "urn:php2shell:inventory:package:PHP-0084",
-        "urn:php2shell:inventory:package:PHP-0085",
         "urn:php2shell:inventory:package:PHP-0086",
         "urn:php2shell:inventory:package:PHP-0087",
         "urn:php2shell:inventory:package:PHP-0088",
@@ -655,7 +641,6 @@
         "urn:php2shell:inventory:package:PHP-0346",
         "urn:php2shell:inventory:package:PHP-0347",
         "urn:php2shell:inventory:package:PHP-0349",
-        "urn:php2shell:inventory:package:PHP-0359",
         "urn:php2shell:inventory:package:PHP-0368",
         "urn:php2shell:inventory:package:PHP-0369",
         "urn:php2shell:inventory:package:PHP-0370",
@@ -673,8 +658,6 @@
         "urn:php2shell:inventory:package:PHP-0427",
         "urn:php2shell:inventory:package:PHP-0429",
         "urn:php2shell:inventory:package:PHP-0430",
-        "urn:php2shell:inventory:package:PHP-0432",
-        "urn:php2shell:inventory:package:PHP-0433",
         "urn:php2shell:inventory:package:PHP-0435",
         "urn:php2shell:inventory:package:PHP-0436",
         "urn:php2shell:inventory:package:PHP-0437",
@@ -1297,7 +1280,6 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0695",
         "urn:php2shell:inventory:package:PHP-0700",
         "urn:php2shell:inventory:package:PHP-0708",
         "urn:php2shell:inventory:package:PHP-0748"
@@ -1313,7 +1295,6 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0695",
         "urn:php2shell:inventory:package:PHP-0700",
         "urn:php2shell:inventory:package:PHP-0708",
         "urn:php2shell:inventory:package:PHP-0748"
@@ -1394,7 +1375,6 @@
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0677",
-        "urn:php2shell:inventory:package:PHP-0681",
         "urn:php2shell:inventory:package:PHP-0682",
         "urn:php2shell:inventory:package:PHP-0683"
       ],
@@ -1410,7 +1390,6 @@
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0677",
-        "urn:php2shell:inventory:package:PHP-0681",
         "urn:php2shell:inventory:package:PHP-0682",
         "urn:php2shell:inventory:package:PHP-0683"
       ],

@@ -3240,6 +3240,18 @@
       "spdxId": "urn:php2shell:inventory:organization:getpagespeed:5d1f0c2a9b3e",
       "creationInfo": "_:creationinfo",
       "name": "GetPageSpeed"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:ubiquiti",
+      "creationInfo": "_:creationinfo",
+      "name": "Ubiquiti"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:cleo:a86b18c73aa8",
+      "creationInfo": "_:creationinfo",
+      "name": "Cleo"
     }
   ]
 }

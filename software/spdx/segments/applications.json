@@ -9229,9 +9229,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:freshrss-project:25e2a9a0ea24",
-      "summary": "Official FreshRSS server requirements state that current releases are PHP web applications requiring PHP 8.1+.",
+      "summary": "Pull and recreate the official default Debian Docker image for release 1.30.3. Do not assume its alternative Alpine images or source deployments are fixed.",
       "description": "Self-hosted RSS web application",
-      "comment": "Inventory record: PHP-0661\nCategory: CMS and publishing\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime\nPHP version scope: Official current server requirements state PHP 8.1+; exact release artifact pin pending.\nExtensions: Official requirements page lists required modules; exact deployed set not measured\nLimitations: Moving requirements documentation does not prove a particular installed release, PHP build, loaded modules or reachable affected path.\nPatch owner: FreshRSS maintainers for application releases; PHP runtime provider and operator for runtime fixes\nDownstream surface: Feed ingestion, reader sessions and administrative configuration\nRelease pin: Moving official server requirements retrieved 2026-10-21; immutable release pin pending\nSource accessed: 2026-10-21\nAliases: FreshRSS/FreshRSS\nConditional downstream consequence: If untrusted requests or media reach a matching PHP core/extension flaw, the PHP worker could suffer denial of service, disclosure or code execution. Application data and configured credentials could then be affected within that worker's permissions; host privilege, tenant escape and lateral movement require separate evidence.\nVulnerability status: Candidate added from official PHP requirement evidence; no product-specific php2shell assessment located in this pass.\nCVE-2026-109618: Official PHP requirement or SBOM evidence only; CVE match unknown\nCVE-2026-109619: Official PHP requirement or SBOM evidence only; CVE match unknown\nCVE assessment limit: This candidate record confirms PHP relationship evidence only. Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path still need deployment-specific evidence.",
+      "comment": "Inventory record: PHP-0661\nCategory: CMS and publishing\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime\nPHP version scope: Official current server requirements state PHP 8.1+; exact release artifact pin pending.\nExtensions: Official requirements page lists required modules; exact deployed set not measured\nLimitations: Moving requirements documentation does not prove a particular installed release, PHP build, loaded modules or reachable affected path.\nPatch owner: FreshRSS maintainers for application releases; PHP runtime provider and operator for runtime fixes\nDownstream surface: Feed ingestion, reader sessions and administrative configuration\nRelease pin: Moving official server requirements retrieved 2026-10-21; immutable release pin pending\nSource accessed: 2026-10-21\nAliases: FreshRSS/FreshRSS\nConditional downstream consequence: If untrusted requests or media reach a matching PHP core/extension flaw, the PHP worker could suffer denial of service, disclosure or code execution. Application data and configured credentials could then be affected within that worker's permissions; host privilege, tenant escape and lateral movement require separate evidence.\nVulnerability status: Candidate added from official PHP requirement evidence; no product-specific php2shell assessment located in this pass.\nCVE-2026-109618: Official PHP requirement or SBOM evidence only; CVE match unknown\nCVE-2026-109619: Official PHP requirement or SBOM evidence only; CVE match unknown\nCVE assessment limit: This candidate record confirms PHP relationship evidence only. Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path still need deployment-specific evidence.\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Fix; CVE-2026-109619: Fix\nScope: Official default Docker images based on Debian only; alternative Alpine images explicitly excluded by the release announcement. Other deployment methods must patch their own PHP runtime.\nAssessment: FreshRSS 1.30.3 fixes both CVEs in the official default Debian Docker images, using PHP 8.4.27-1~deb13u1. The release explicitly excludes delayed alternative Alpine images. Source installations still require their own patched PHP runtime.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -9240,8 +9240,17 @@
             "https://freshrss.github.io/FreshRSS/en/admins/02_Prerequisites.html"
           ],
           "comment": "Official FreshRSS server requirements"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/FreshRSS/FreshRSS/releases/tag/1.30.3"
+          ],
+          "comment": "FreshRSS 1.30.3; 2026-10-21; reviewed 2026-10-27"
         }
-      ]
+      ],
+      "software_packageVersion": "1.30.3 official default Debian Docker images; PHP 8.4.27-1~deb13u1"
     },
     {
       "type": "software_Package",
@@ -9257,9 +9266,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:humhub:e385677572e6",
-      "summary": "Official HumHub requirements document Apache/mod_php or PHP-FPM deployment options and a current PHP compatibility matrix.",
+      "summary": "Update PHP on the HumHub server to a vendor-fixed build. If patching is delayed, restrict access as advised by the vendor.",
       "description": "Social-network web application",
-      "comment": "Inventory record: PHP-0662\nCategory: Collaboration and storage\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime via Apache/mod_php or PHP-FPM\nPHP version scope: Official requirements page publishes a current PHP compatibility matrix; exact release row not pinned here.\nExtensions: Official requirements page lists PHP modules; exact deployed set not measured\nLimitations: A moving requirements page does not prove a particular installed release, PHP build, loaded modules or reachable affected path.\nPatch owner: HumHub maintainers for application releases; PHP runtime provider and operator for runtime fixes\nDownstream surface: Community content, identity, messaging and administrative workflows\nRelease pin: Moving official requirements documentation retrieved 2026-10-21; immutable release pin pending\nSource accessed: 2026-10-21\nAliases: humhub/humhub\nConditional downstream consequence: If untrusted requests or media reach a matching PHP core/extension flaw, the PHP worker could suffer denial of service, disclosure or code execution. Application data and configured credentials could then be affected within that worker's permissions; host privilege, tenant escape and lateral movement require separate evidence.\nVulnerability status: Candidate added from official PHP requirement evidence; no product-specific php2shell assessment located in this pass.\nCVE-2026-109618: Official PHP requirement or SBOM evidence only; CVE match unknown\nCVE-2026-109619: Official PHP requirement or SBOM evidence only; CVE match unknown\nCVE assessment limit: This candidate record confirms PHP relationship evidence only. Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path still need deployment-specific evidence.",
+      "comment": "Inventory record: PHP-0662\nCategory: Collaboration and storage\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime via Apache/mod_php or PHP-FPM\nPHP version scope: Official requirements page publishes a current PHP compatibility matrix; exact release row not pinned here.\nExtensions: Official requirements page lists PHP modules; exact deployed set not measured\nLimitations: A moving requirements page does not prove a particular installed release, PHP build, loaded modules or reachable affected path.\nPatch owner: HumHub maintainers for application releases; PHP runtime provider and operator for runtime fixes\nDownstream surface: Community content, identity, messaging and administrative workflows\nRelease pin: Moving official requirements documentation retrieved 2026-10-21; immutable release pin pending\nSource accessed: 2026-10-21\nAliases: humhub/humhub\nConditional downstream consequence: If untrusted requests or media reach a matching PHP core/extension flaw, the PHP worker could suffer denial of service, disclosure or code execution. Application data and configured credentials could then be affected within that worker's permissions; host privilege, tenant escape and lateral movement require separate evidence.\nVulnerability status: Candidate added from official PHP requirement evidence; no product-specific php2shell assessment located in this pass.\nCVE-2026-109618: Official PHP requirement or SBOM evidence only; CVE match unknown\nCVE-2026-109619: Official PHP requirement or SBOM evidence only; CVE match unknown\nCVE assessment limit: This candidate record confirms PHP relationship evidence only. Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path still need deployment-specific evidence.\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Vulnerable; CVE-2026-109619: Vulnerable\nScope: Self-hosted HumHub deployments on affected PHP; vendor says Docker updates were planned and HumHub Cloud already had protective measures. Neither a released fixed Docker image nor a completed Cloud patch is established by this statement.\nAssessment: The HumHub Team explicitly identifies both CVEs and confirms HumHub installations on unpatched PHP are affected. Update the deployed PHP runtime. The announcement promises Docker updates and describes Cloud protective measures; it does not confirm a released fixed image or completed Cloud patch.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -9268,8 +9277,17 @@
             "https://docs.humhub.org/docs/admin/requirements/"
           ],
           "comment": "Official HumHub system requirements"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://community.humhub.com/s/announcements/post/post/view?id=18588"
+          ],
+          "comment": "Critical PHP vulnerability: Please update PHP on your HumHub servers; 2026-10-21; reviewed 2026-10-27"
         }
-      ]
+      ],
+      "software_packageVersion": "HumHub deployments on unpatched PHP; application versions not specified"
     },
     {
       "type": "software_Package",
@@ -9285,9 +9303,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:wallabag-project:4347649a11df",
-      "summary": "Official wallabag requirements state compatibility with PHP >=7.4 and require PHP-FPM plus extensions.",
+      "summary": "Pull the official wallabag/wallabag:2.6.14.1 image and recreate the container. Patch PHP independently for source deployments.",
       "description": "Self-hosted read-it-later web application",
-      "comment": "Inventory record: PHP-0663\nCategory: Collaboration and storage\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP-FPM web runtime\nPHP version scope: Official requirements state PHP >=7.4; exact release artifact pin pending.\nExtensions: Official requirements page lists PHP extensions; exact deployed set not measured\nLimitations: Moving requirements documentation does not prove a particular installed release, PHP build, loaded modules or reachable affected path.\nPatch owner: wallabag maintainers for application releases; PHP runtime provider and operator for runtime fixes\nDownstream surface: Saved content, user sessions, imports and administrative configuration\nRelease pin: Moving official requirements documentation retrieved 2026-10-21; immutable release pin pending\nSource accessed: 2026-10-21\nAliases: wallabag/wallabag\nConditional downstream consequence: If untrusted requests or media reach a matching PHP core/extension flaw, the PHP worker could suffer denial of service, disclosure or code execution. Application data and configured credentials could then be affected within that worker's permissions; host privilege, tenant escape and lateral movement require separate evidence.\nVulnerability status: Candidate added from official PHP requirement evidence; no product-specific php2shell assessment located in this pass.\nCVE-2026-109618: Official PHP requirement or SBOM evidence only; CVE match unknown\nCVE-2026-109619: Official PHP requirement or SBOM evidence only; CVE match unknown\nCVE assessment limit: This candidate record confirms PHP relationship evidence only. Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path still need deployment-specific evidence.",
+      "comment": "Inventory record: PHP-0663\nCategory: Collaboration and storage\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP-FPM web runtime\nPHP version scope: Official requirements state PHP >=7.4; exact release artifact pin pending.\nExtensions: Official requirements page lists PHP extensions; exact deployed set not measured\nLimitations: Moving requirements documentation does not prove a particular installed release, PHP build, loaded modules or reachable affected path.\nPatch owner: wallabag maintainers for application releases; PHP runtime provider and operator for runtime fixes\nDownstream surface: Saved content, user sessions, imports and administrative configuration\nRelease pin: Moving official requirements documentation retrieved 2026-10-21; immutable release pin pending\nSource accessed: 2026-10-21\nAliases: wallabag/wallabag\nConditional downstream consequence: If untrusted requests or media reach a matching PHP core/extension flaw, the PHP worker could suffer denial of service, disclosure or code execution. Application data and configured credentials could then be affected within that worker's permissions; host privilege, tenant escape and lateral movement require separate evidence.\nVulnerability status: Candidate added from official PHP requirement evidence; no product-specific php2shell assessment located in this pass.\nCVE-2026-109618: Official PHP requirement or SBOM evidence only; CVE match unknown\nCVE-2026-109619: Official PHP requirement or SBOM evidence only; CVE match unknown\nCVE assessment limit: This candidate record confirms PHP relationship evidence only. Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path still need deployment-specific evidence.\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Fix; CVE-2026-109619: Fix\nScope: Published official wallabag Docker image 2.6.14.1 only. This does not establish a fix in an arbitrary source deployment or old Docker image 2.6.14.\nAssessment: The published official wallabag Docker image 2.6.14.1 includes fixes for both CVEs, with PHP 8.2.35 on Alpine 3.22. This is an image rebuild; arbitrary source installations and older Docker images are outside the fixed scope.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -9296,8 +9314,33 @@
             "https://doc.wallabag.org/admin/installation/requirements/"
           ],
           "comment": "Official wallabag requirements"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/wallabag/docker/releases/tag/2.6.14.1"
+          ],
+          "comment": "wallabag Docker 2.6.14.1; 2026-10-24; reviewed 2026-10-27"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/wallabag/docker/pull/485"
+          ],
+          "comment": "chore: move back to alpine 3.22 and php 8.2; 2026-10-24; reviewed 2026-10-27"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/r/wallabag/wallabag/tags"
+          ],
+          "comment": "Official wallabag/wallabag Docker Hub image tags; accessed 2026-10-27; reviewed 2026-10-27"
         }
-      ]
+      ],
+      "software_packageVersion": "Official wallabag/wallabag Docker image 2.6.14.1; PHP 8.2.35"
     },
     {
       "type": "software_Package",
@@ -9912,9 +9955,6 @@
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0660",
-        "urn:php2shell:inventory:package:PHP-0661",
-        "urn:php2shell:inventory:package:PHP-0662",
-        "urn:php2shell:inventory:package:PHP-0663",
         "urn:php2shell:inventory:package:PHP-0664"
       ],
       "relationshipType": "underInvestigationFor",
@@ -9930,9 +9970,6 @@
       "to": [
         "urn:php2shell:inventory:package:PHP-0658",
         "urn:php2shell:inventory:package:PHP-0660",
-        "urn:php2shell:inventory:package:PHP-0661",
-        "urn:php2shell:inventory:package:PHP-0662",
-        "urn:php2shell:inventory:package:PHP-0663",
         "urn:php2shell:inventory:package:PHP-0664"
       ],
       "relationshipType": "underInvestigationFor",
@@ -10277,6 +10314,167 @@
       "summary": "CVE-2026-109619 assessment: Vulnerable. SuiteCRM confirms that both CVEs affect self-hosted installations running unpatched PHP. Updating SuiteCRM alone does not fix PHP. Vendor-hosted SuiteCRM is separately confirmed patched.",
       "comment": "Official public source reviewed 2026-10-26. Source: https://suitecrm.com/critical-php-security-release/",
       "security_actionStatement": "Update the serving PHP runtime to the vendor-supported fixed package and restart PHP workers. Hosted and container scopes must be checked separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0661-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0661"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "FreshRSS 1.30.3 fixes both CVEs in the official default Debian Docker images, using PHP 8.4.27-1~deb13u1. The release explicitly excludes delayed alternative Alpine images. Source installations still require their own patched PHP runtime.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://github.com/FreshRSS/FreshRSS/releases/tag/1.30.3",
+      "security_actionStatement": "Pull and recreate the official default Debian Docker image for release 1.30.3. Do not assume its alternative Alpine images or source deployments are fixed."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0661-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0661"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "FreshRSS 1.30.3 fixes both CVEs in the official default Debian Docker images, using PHP 8.4.27-1~deb13u1. The release explicitly excludes delayed alternative Alpine images. Source installations still require their own patched PHP runtime.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://github.com/FreshRSS/FreshRSS/releases/tag/1.30.3",
+      "security_actionStatement": "Pull and recreate the official default Debian Docker image for release 1.30.3. Do not assume its alternative Alpine images or source deployments are fixed."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0662-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0662"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "The HumHub Team explicitly identifies both CVEs and confirms HumHub installations on unpatched PHP are affected. Update the deployed PHP runtime. The announcement promises Docker updates and describes Cloud protective measures; it does not confirm a released fixed image or completed Cloud patch.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://community.humhub.com/s/announcements/post/post/view?id=18588",
+      "security_actionStatement": "Update PHP on the HumHub server to a vendor-fixed build. If patching is delayed, restrict access as advised by the vendor."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0662-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0662"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "The HumHub Team explicitly identifies both CVEs and confirms HumHub installations on unpatched PHP are affected. Update the deployed PHP runtime. The announcement promises Docker updates and describes Cloud protective measures; it does not confirm a released fixed image or completed Cloud patch.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://community.humhub.com/s/announcements/post/post/view?id=18588",
+      "security_actionStatement": "Update PHP on the HumHub server to a vendor-fixed build. If patching is delayed, restrict access as advised by the vendor."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0663-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0663"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "The published official wallabag Docker image 2.6.14.1 includes fixes for both CVEs, with PHP 8.2.35 on Alpine 3.22. This is an image rebuild; arbitrary source installations and older Docker images are outside the fixed scope.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://github.com/wallabag/docker/releases/tag/2.6.14.1",
+      "security_actionStatement": "Pull the official wallabag/wallabag:2.6.14.1 image and recreate the container. Patch PHP independently for source deployments."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0663-official-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0663"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "The published official wallabag Docker image 2.6.14.1 includes fixes for both CVEs, with PHP 8.2.35 on Alpine 3.22. This is an image rebuild; arbitrary source installations and older Docker images are outside the fixed scope.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public official sources reviewed 2026-10-27. Source: https://github.com/wallabag/docker/releases/tag/2.6.14.1",
+      "security_actionStatement": "Pull the official wallabag/wallabag:2.6.14.1 image and recreate the container. Patch PHP independently for source deployments."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0757",
+      "creationInfo": "_:creationinfo",
+      "name": "Cleo Streem (Streem Print)",
+      "software_primaryPurpose": "application",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0757"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:cleo:a86b18c73aa8",
+      "summary": "Cleo Streem release notes establish a PHP-bearing product scope. PR #41 reports that the PHP2Shell fix is distributed by email from Streem support; no public fixed build was independently verified.",
+      "description": "Fax and communications application",
+      "comment": "Inventory record: PHP-0757\nCategory: Business applications\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Maintainer-accepted pull request report for fix availability; official public product PHP evidence\nDeployment status: Not measured\nPHP surface: Cleo Streem server platform; public release notes for 7.6 state that PHP was updated to PHP 8.3.29\nPHP version scope: Patch available by mail from Cleo Streem support; fixed release not publicly stated\nExtensions: Unknown\nLimitations: PR #41 reports that the security patch is distributed by email from Cleo Streem support. No public Streem PHP2Shell bulletin or fixed build number was independently verified. Cleo's public PHP2Shell advisory reviewed 2026-10-27 does not list Streem. No broader fixed range or deployed installation is inferred.\nPatch owner: Cleo; operator for requesting and applying the support-provided patch\nSource accessed: 2026-10-27 (public Streem release notes, public Cleo PHP2Shell advisory and PR report)\nVulnerability status: Fix available by mail according to maintainer-accepted PR #41; fixed release not publicly stated.\nCVE-2026-109618: Fix available by mail according to maintainer-accepted PR #41; fixed release not publicly stated\nCVE-2026-109619: Fix available by mail according to maintainer-accepted PR #41; fixed release not publicly stated\nCVE assessment limit: This assessment records support-provided patch availability only. It does not establish a public fixed version, installed patch, reachability or exploitation status.\nPull request source: https://github.com/NCSC-NL/php2shell/pull/41\nPublic product source: https://support.cleo.com/hc/en-us/articles/39285811298327-Cleo-Streem-Release-Notes\nPublic advisory context: https://support.cleo.com/hc/en-us/articles/44429839247383-Cleo-Product-Security-Advisory-PHP2Shell-CVE-2026-109618-and-CVE-2026-109619-CVSS-v4-0-Critical\nRelease pin: Patch available by mail; fixed release not publicly stated",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://support.cleo.com/hc/en-us/articles/39285811298327-Cleo-Streem-Release-Notes"
+          ],
+          "comment": "Official Cleo Streem release notes reviewed 2026-10-27; establishes the PHP-bearing product scope only"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/NCSC-NL/php2shell/pull/41"
+          ],
+          "comment": "Contributor report accepted by the maintainer on 2026-10-27; patch available by mail"
+        }
+      ],
+      "software_packageVersion": "Patch available by mail; fixed release not publicly stated"
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0757",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0757",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "dependsOn",
+      "summary": "Inventory relationship for PHP-0757: requires (depends_on_php)",
+      "comment": "Official Cleo Streem release notes state that version 7.6 updated PHP to PHP 8.3.29, establishing a PHP-bearing product scope."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0757-maintainer-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0757"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix available by mail according to maintainer-accepted PR #41; fixed release not publicly stated.",
+      "summary": "CVE-2026-109618 assessment: Fix (maintainer-accepted PR report)",
+      "comment": "PR #41 reviewed and accepted by the maintainer on 2026-10-27: https://github.com/NCSC-NL/php2shell/pull/41\nPublic Cleo Streem release notes reviewed 2026-10-27: https://support.cleo.com/hc/en-us/articles/39285811298327-Cleo-Streem-Release-Notes\nAction statement: Contact Cleo Streem support for the security patch and verify the installed build. This assessment does not establish that existing deployments have been upgraded.",
+      "security_actionStatement": "Contact Cleo Streem support for the security patch and verify the installed build; the public fixed release is not stated."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0757-maintainer-20261027",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0757"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix available by mail according to maintainer-accepted PR #41; fixed release not publicly stated.",
+      "summary": "CVE-2026-109619 assessment: Fix (maintainer-accepted PR report)",
+      "comment": "PR #41 reviewed and accepted by the maintainer on 2026-10-27: https://github.com/NCSC-NL/php2shell/pull/41\nPublic Cleo Streem release notes reviewed 2026-10-27: https://support.cleo.com/hc/en-us/articles/39285811298327-Cleo-Streem-Release-Notes\nAction statement: Contact Cleo Streem support for the security patch and verify the installed build. This assessment does not establish that existing deployments have been upgraded.",
+      "security_actionStatement": "Contact Cleo Streem support for the security patch and verify the installed build; the public fixed release is not stated."
     }
   ]
 }
