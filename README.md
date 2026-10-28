@@ -1,7 +1,7 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
 Operational information: 28 October 2026 13:48 CET<br>
-Software list last status update: 28 October 2026 13:09 CET<br>
+Software list last status update: 28 October 2026 16:22 CET<br>
 ## TLP:CLEAR
 
 This repository contains operational information regarding the critical PHP vulnerabilities tracked by CERT-EU as CVE-2026-109618 and CVE-2026-109619.
@@ -11,7 +11,7 @@ PHP is a widely used open-source server-side scripting language, so these vulner
 ## Current status
 
 <!-- inventory-statistics:summary:start -->
-This repository tracks **757 products**, including **216 vulnerable** and **136 fixed**.
+This repository tracks **757 products**, including **218 vulnerable** and **144 fixed**.
 <!-- inventory-statistics:summary:end -->
 
 On 21 October 2026, PHP published fixed releases for CVE-2026-109618 and CVE-2026-109619: PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. PHP states that both vulnerabilities can allow unauthenticated remote code execution and that all PHP installations serving web requests are at risk, including PHP-FPM, Apache with mod_php, php-cgi, FrankenPHP and LiteSpeed. PHP considers the risk highest for mod_php, where an unauthenticated request can trigger exploitation before application code runs.
@@ -58,7 +58,7 @@ Statistics as of **2026-10-28 (UTC)**, from the current SPDX inventory.
 
 | Products tracked | Fixed | Vulnerable | Under investigation | Not affected | Unassessed / unknown |
 | ---: | ---: | ---: | ---: | ---: | ---: |
-| 757 | 136 | 216 | 364 | 40 | 1 |
+| 757 | 144 | 218 | 354 | 40 | 1 |
 
 ![Product status on the last 3 inventory update days](software/statistics/inventory-statistics.png)
 
@@ -70,11 +70,11 @@ Statistics as of **2026-10-28 (UTC)**, from the current SPDX inventory.
 
 | Date and time | Supplier | Product | Version (see Status) | Status CVE-2026-109618 / CVE-2026-109619 | Links |
 |:------------------------|:---------|:--------|:--------------------:|:----------------------:|------:|
-|2026-10-28 13:09:17 +0100|Apache Friends|XAMPP|Windows x64 installers 8.3.36, 8.4.27 or 8.5.12|Fix|[source 1](<https://www.apachefriends.org/download.html>)<br>[source 2](<https://www.apachefriends.org/index.html>)<br>[source 3](<https://www.php.net/archive/2026.php#2026-10-21-5>)|
-|2026-10-28 13:09:17 +0100|Beyond Code in partnership with Laravel|Laravel Herd managed native PHP environment|Patched PHP builds distributed through Herd after the 2026-10-21 security release|Fix|[source 1](<https://herd.laravel.com/>)<br>[source 2](<https://herd.laravel.com/docs/windows/advanced-usage/directories-and-files>)<br>[source 3](<https://beyondco.de/blog/php-security-release>)<br>[source 4](<https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/>)|
-|2026-10-28 13:09:17 +0100|Cisco|Cisco Identity Services Engine (ISE) Portal Builder||Vulnerable|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
-|2026-10-28 13:09:17 +0100|Cisco|Cisco Unified Industrial Wireless Software||Vulnerable|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
-|2026-10-28 13:09:17 +0100|CyberPanel project|CyberPanel hosted PHP / LSPHP options|Ubuntu 26.04 LSPHP: 8.2.35-1+resolute, 8.3.36-1+resolute, 8.4.27-1+resolute or 8.5.12-1+resolute|Fix|[source 1](<https://github.com/usmannasir/cyberpanel>)<br>[source 2](<https://github.com/usmannasir/cyberpanel/blob/v3.0.5-dev/manage.py>)<br>[source 3](<https://cyberpanel.net/blog/php-security-october-2026-cyberpanel-response>)|
+|2026-10-28 16:22:26 +0100|Apache Friends|XAMPP|Windows x64 installers 8.3.36, 8.4.27 or 8.5.12|Fix|[source 1](<https://www.apachefriends.org/download.html>)<br>[source 2](<https://www.apachefriends.org/index.html>)<br>[source 3](<https://www.php.net/archive/2026.php#2026-10-21-5>)|
+|2026-10-28 16:22:26 +0100|Beyond Code in partnership with Laravel|Laravel Herd managed native PHP environment|Patched PHP builds distributed through Herd after the 2026-10-21 security release|Fix|[source 1](<https://herd.laravel.com/>)<br>[source 2](<https://herd.laravel.com/docs/windows/advanced-usage/directories-and-files>)<br>[source 3](<https://beyondco.de/blog/php-security-release>)<br>[source 4](<https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/>)|
+|2026-10-28 16:22:26 +0100|Cisco|Cisco Identity Services Engine (ISE) Portal Builder||Vulnerable|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
+|2026-10-28 16:22:26 +0100|Cisco|Cisco Unified Industrial Wireless Software||Vulnerable|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
+|2026-10-28 16:22:26 +0100|CyberPanel project|CyberPanel hosted PHP / LSPHP options|Ubuntu 26.04 LSPHP: 8.2.35-1+resolute, 8.3.36-1+resolute, 8.4.27-1+resolute or 8.5.12-1+resolute|Fix|[source 1](<https://github.com/usmannasir/cyberpanel>)<br>[source 2](<https://github.com/usmannasir/cyberpanel/blob/v3.0.5-dev/manage.py>)<br>[source 3](<https://cyberpanel.net/blog/php-security-october-2026-cyberpanel-response>)|
 
 See the [full software status update history](software/changelog_software_list.md).
 
