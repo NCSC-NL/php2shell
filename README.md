@@ -1,7 +1,7 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
-Operational information: 27 October 2026 15:14 CET<br>
-Software list last status update: 27 October 2026 15:17 CET<br>
+Operational information: 28 October 2026 13:48 CET<br>
+Software list last status update: 28 October 2026 16:22 CET<br>
 ## TLP:CLEAR
 
 This repository contains operational information regarding the critical PHP vulnerabilities tracked by CERT-EU as CVE-2026-109618 and CVE-2026-109619.
@@ -9,6 +9,10 @@ This repository contains operational information regarding the critical PHP vuln
 PHP is a widely used open-source server-side scripting language, so these vulnerabilities may affect a broad range of internet-facing web applications and products that embed or depend on PHP.
 
 ## Current status
+
+<!-- inventory-statistics:summary:start -->
+This repository tracks **757 products**, including **218 vulnerable** and **144 fixed**.
+<!-- inventory-statistics:summary:end -->
 
 On 21 October 2026, PHP published fixed releases for CVE-2026-109618 and CVE-2026-109619: PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. PHP states that both vulnerabilities can allow unauthenticated remote code execution and that all PHP installations serving web requests are at risk, including PHP-FPM, Apache with mod_php, php-cgi, FrankenPHP and LiteSpeed. PHP considers the risk highest for mod_php, where an unauthenticated request can trigger exploitation before application code runs.
 
@@ -33,6 +37,7 @@ For additional information see:
 - [PHP security advisory: Critical remote code execution vulnerabilities, update now](https://www.php.net/archive/2026.php#2026-10-21-5)
 - [PHP informational advisory: Session upload progress (23 October 2026)](https://www.php.net/archive/2026.php#2026-10-23-1)
 - [List of advisories from other EU national CSIRT's](https://github.com/enisaeu/CNW/blob/main/advisories/2026/CNW-2026-04_php.md)
+- [PHP2shell observations in the wild (TU Delft)](https://php2shell.delftintellab.com/)
 
 ## Repository contents
 
@@ -41,18 +46,35 @@ For additional information see:
 | [detection_mitigation](detection_mitigation) | Contains detection and mitigation material for the vulnerabilities. |
 | [software](software) | Contains inventory lists of software products with a PHP dependency potentially affected by the vulnerabilities. |
 | [tools](tools) | Contains tools for using/generating files within this repo |
+| [Community contributions](https://github.com/NCSC-NL/php2shell/blob/community-contributions/COMMUNITY_CONTRIBUTIONS.MD) | Community tools, tips, guides, and reference resources. |
 
 The repository is being updated as the situation develops. Check back for updates.
+
+## Software inventory statistics
+
+<!-- inventory-statistics:start -->
+
+Statistics as of **2026-10-28 (UTC)**, from the current SPDX inventory.
+
+| Products tracked | Fixed | Vulnerable | Under investigation | Not affected | Unassessed / unknown |
+| ---: | ---: | ---: | ---: | ---: | ---: |
+| 757 | 144 | 218 | 354 | 40 | 1 |
+
+![Product status on the last 3 inventory update days](software/statistics/inventory-statistics.png)
+
+[Counts by update day and per-CVE statistics (JSON)](software/statistics/inventory-statistics.json) | [Software list](software/software_list.md)
+
+<!-- inventory-statistics:end -->
 
 ## Latest software status updates
 
 | Date and time | Supplier | Product | Version (see Status) | Status CVE-2026-109618 / CVE-2026-109619 | Links |
 |:------------------------|:---------|:--------|:--------------------:|:----------------------:|------:|
-|2026-10-27 15:17:18 +0100|GetPageSpeed|GetPageSpeed PHP 7.2-8.4 packages for Ubuntu 18.04/20.04 and Debian 10|Known patched builds (not necessarily first fixed revisions): bionic PHP 7.2 7.2.34-66+gps1+ubuntu1804+stable.1; buster PHP 7.3 7.3.33-35+gps1+deb10+stable.1; focal PHP 7.4 1:7.4.33-31+gps1+ubuntu2004+stable.1; PHP 8.0 1:8.0.30-25+gps1+ubuntu2004+stable.1; PHP 8.1 8.1.34-9+gps1+ubuntu2004+stable.1; PHP 8.2 8.2.35-1+gps1+ubuntu2004+stable.1; PHP 8.3 8.3.36-1+gps1+ubuntu2004+stable.1; PHP 8.4 8.4.27-1+gps1+ubuntu2004+stable.1|Fix|[source 1](<https://www.getpagespeed.com/server-setup/php/php2shell-on-ubuntu-debian>)<br>[source 2](<https://www.getpagespeed.com/php2shell>)<br>[source 3](<https://extras.getpagespeed.com/ubuntu/dists/bionic/main/binary-amd64/Packages.gz>)<br>[source 4](<https://extras.getpagespeed.com/debian/dists/buster/main/binary-amd64/Packages.gz>)<br>[source 5](<https://extras.getpagespeed.com/ubuntu/dists/focal/main/binary-amd64/Packages.gz>)|
-|2026-10-27 11:55:48 +0100|Cleo|Cleo Streem (Streem Print)|Patch available by mail; fixed release not publicly stated|Fix|[source 1](<https://support.cleo.com/hc/en-us/articles/39285811298327-Cleo-Streem-Release-Notes>)<br>[source 2](<https://github.com/NCSC-NL/php2shell/pull/41>)|
-|2026-10-27 11:35:19 +0100|Broadcom|CloudSOC SpanVA Appliance|Broadcom ESG advisory 39404 affected product scope|Vulnerable|[source](<https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404>)|
-|2026-10-27 11:35:19 +0100|Broadcom|Content Analysis and Malware Analysis (CASMA)|Broadcom ESG advisory 39404 under-investigation product scope|Investigation|[source](<https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404>)|
-|2026-10-27 11:21:24 +0100|Ubiquiti|UISP CRM (UCRM)|UISP Application 3.1.70 (CRM module)|Fix|[source 1](<https://uisp.community.ui.com/releases/UISP-Application-3-1-70/8292c6cb-4eb4-447d-9c90-455ca41b4f67>)<br>[source 2](<https://uisp.community.ui.com/questions/UCRM-4-6-15-remains-exposed-to-CVSS-9-2-RCEs-CVE-2026-109618-109619-ETA-for-PHP-8-3-36/d0fae711-2df1-4550-80e3-2b395a6a5c86>)<br>[source 3](<https://uisp.community.ui.com/releases/UISP-Application-3-1-69/d19ae117-04f7-42b3-bf53-f77d2b9e09fc>)|
+|2026-10-28 16:22:26 +0100|Apache Friends|XAMPP|Windows x64 installers 8.3.36, 8.4.27 or 8.5.12|Fix|[source 1](<https://www.apachefriends.org/download.html>)<br>[source 2](<https://www.apachefriends.org/index.html>)<br>[source 3](<https://www.php.net/archive/2026.php#2026-10-21-5>)|
+|2026-10-28 16:22:26 +0100|Beyond Code in partnership with Laravel|Laravel Herd managed native PHP environment|Patched PHP builds distributed through Herd after the 2026-10-21 security release|Fix|[source 1](<https://herd.laravel.com/>)<br>[source 2](<https://herd.laravel.com/docs/windows/advanced-usage/directories-and-files>)<br>[source 3](<https://beyondco.de/blog/php-security-release>)<br>[source 4](<https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/>)|
+|2026-10-28 16:22:26 +0100|Cisco|Cisco Identity Services Engine (ISE) Portal Builder||Vulnerable|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
+|2026-10-28 16:22:26 +0100|Cisco|Cisco Unified Industrial Wireless Software||Vulnerable|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
+|2026-10-28 16:22:26 +0100|CyberPanel project|CyberPanel hosted PHP / LSPHP options|Ubuntu 26.04 LSPHP: 8.2.35-1+resolute, 8.3.36-1+resolute, 8.4.27-1+resolute or 8.5.12-1+resolute|Fix|[source 1](<https://github.com/usmannasir/cyberpanel>)<br>[source 2](<https://github.com/usmannasir/cyberpanel/blob/v3.0.5-dev/manage.py>)<br>[source 3](<https://cyberpanel.net/blog/php-security-october-2026-cyberpanel-response>)|
 
 See the [full software status update history](software/changelog_software_list.md).
 
