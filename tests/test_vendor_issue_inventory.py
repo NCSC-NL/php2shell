@@ -80,6 +80,22 @@ class VendorIssueInventoryTests(unittest.TestCase):
             vex = self.nodes[PREFIX + f"vex:{cve}:fixedIn:php-0675-maintainer-20261028"]
             self.assertEqual(vex["to"], [PREFIX + "package:PHP-0675"])
 
+    def test_palo_alto_fix_tracks_current_etas_and_exploitation(self):
+        for identifier in ("PHP-0623", "PHP-0625"):
+            with self.subTest(identifier=identifier):
+                product = self.entries[PREFIX + "package:" + identifier]
+                self.assertEqual([product[cve] for cve in CVES], ["Fix", "Fix"])
+                self.assertIn("ETA 2026-10-29", product["version"])
+                self.assertIn("ETA 2026-10-30", product["version"])
+                self.assertIn("active exploitation", product["notes"])
+                self.assertIn("management web interface", product["notes"])
+                self.assertNotIn("No known malicious exploitation", product["notes"])
+                self.assertIn("CVE-2026-109618", product["links"])
+        for cve in CVES:
+            vex = self.nodes[PREFIX + f"vex:{cve}:fixedIn:paloalto-panos-panorama-20261028"]
+            self.assertEqual(vex["to"], [PREFIX + "package:PHP-0623", PREFIX + "package:PHP-0625"])
+            self.assertIn("still lists ETAs", vex["security_actionStatement"])
+
     def test_netscaler_fix_keeps_release_scope_and_management_boundary(self):
         product = self.entries[PREFIX + "package:PHP-0624"]
         self.assertEqual([product[cve] for cve in CVES], ["Fix", "Fix"])
