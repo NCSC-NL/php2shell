@@ -1,0 +1,7 @@
+{
+  "@context": "https://spdx.org/rdf/3.0.1/spdx-context.jsonld",
+  "_compiler": {
+    "element_order": {}
+  },
+  "@graph": []
+}

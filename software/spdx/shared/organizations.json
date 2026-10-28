@@ -1,0 +1,3257 @@
+{
+  "@context": "https://spdx.org/rdf/3.0.1/spdx-context.jsonld",
+  "_compiler": {
+    "element_order": {
+      "urn:php2shell:inventory:organization:php2shell-project:b040d5afc9da": 0,
+      "urn:php2shell:inventory:organization:amphp-project:d7994db57eb7": 2,
+      "urn:php2shell:inventory:organization:apcu-php-extension-maintainers:cf5c30cd91fc": 3,
+      "urn:php2shell:inventory:organization:api-platform-project:baf4e0483bd0": 4,
+      "urn:php2shell:inventory:organization:aws-sdk-common-runtime-team:62de8d84cedd": 5,
+      "urn:php2shell:inventory:organization:acquia:c16250461f3f": 6,
+      "urn:php2shell:inventory:organization:adiscon-loganalyzer-project:6db98724092b": 7,
+      "urn:php2shell:inventory:organization:adobe:72fd3ae07d96": 8,
+      "urn:php2shell:inventory:organization:adyen:bc63f1f0ee7a": 9,
+      "urn:php2shell:inventory:organization:afterlogic:40a6ae8ad3af": 10,
+      "urn:php2shell:inventory:organization:aimeos-project:5b38ef48bc4d": 11,
+      "urn:php2shell:inventory:organization:akaunting:37444b684899": 12,
+      "urn:php2shell:inventory:organization:alpine-linux-package-maintainers:0ceb2d77697f": 13,
+      "urn:php2shell:inventory:organization:amazon-web-services:a940fb838463": 14,
+      "urn:php2shell:inventory:organization:amazon-web-services-third-party-customer-php-runtime-publisher:4bc76ca38195": 15,
+      "urn:php2shell:inventory:organization:antagonist:77d80f447e53": 16,
+      "urn:php2shell:inventory:organization:apache-friends:bd50e9af5248": 17,
+      "urn:php2shell:inventory:organization:arch-linux-package-maintainers:8755a7661d8e": 18,
+      "urn:php2shell:inventory:organization:artefactual-systems-atom-project:abea59b2acbe": 19,
+      "urn:php2shell:inventory:organization:ascensio-system-sia-onlyoffice:9a50403f5ffc": 20,
+      "urn:php2shell:inventory:organization:auth0:2e5576f58d32": 21,
+      "urn:php2shell:inventory:organization:automattic-wordpress.com:7c0478cd2201": 22,
+      "urn:php2shell:inventory:organization:backdrop-cms-project:b4f2ec29a6ea": 23,
+      "urn:php2shell:inventory:organization:behat-project:1d303f33e7db": 24,
+      "urn:php2shell:inventory:organization:belnet:b7e57f711ae1": 25,
+      "urn:php2shell:inventory:organization:ben-ramsey-ramsey-project:12687dc5aa89": 26,
+      "urn:php2shell:inventory:organization:beyond-code-in-partnership-with-laravel:30722d235511": 27,
+      "urn:php2shell:inventory:organization:blackfire-platform.sh-sas-doing-business-as-upsun:1273612a094a": 28,
+      "urn:php2shell:inventory:organization:bolt-cms-project:4215a0aa1c57": 29,
+      "urn:php2shell:inventory:organization:bookstack-project:084007b8fec1": 30,
+      "urn:php2shell:inventory:organization:box-humbug-project:1f782fa623b6": 31,
+      "urn:php2shell:inventory:organization:boxbilling-project:accd6d58835f": 32,
+      "urn:php2shell:inventory:organization:bref-project:1aa69468cecc": 33,
+      "urn:php2shell:inventory:organization:buddypress-community-wordpress-project:877ca36b1643": 34,
+      "urn:php2shell:inventory:organization:circl-luxembourg:99262a322fcb": 35,
+      "urn:php2shell:inventory:organization:cs-cart:5c590254d803": 36,
+      "urn:php2shell:inventory:organization:cakephp-project:47bc62f09236": 37,
+      "urn:php2shell:inventory:organization:canonical-ubuntu-package-maintainers:689af08e8a74": 38,
+      "urn:php2shell:inventory:organization:captainhook-sebastian-feldmann-and-contributors:3b094201e202": 39,
+      "urn:php2shell:inventory:organization:carbonphp-project:5cc6cf75be15": 40,
+      "urn:php2shell:inventory:organization:catalyst-it-mahara-project:eec70ee76480": 41,
+      "urn:php2shell:inventory:organization:centreon:fb564bc80284": 42,
+      "urn:php2shell:inventory:organization:chamilo-association-chamilo-project:c7a9af3a582a": 43,
+      "urn:php2shell:inventory:organization:circleci:c5df5b659139": 44,
+      "urn:php2shell:inventory:organization:civicrm-project:e8af4c3cff9d": 45,
+      "urn:php2shell:inventory:organization:classicpress-project:e5dacc0ca874": 46,
+      "urn:php2shell:inventory:organization:clever-cloud-fork-of-caucho-technology-quercus:323badac89f9": 47,
+      "urn:php2shell:inventory:organization:cloudlinux:daf109985d8c": 48,
+      "urn:php2shell:inventory:organization:cloudlinux-tuxcare:f11bd01ef3af": 49,
+      "urn:php2shell:inventory:organization:cloudflare:f9191531404c": 50,
+      "urn:php2shell:inventory:organization:code-lts-william-desportes-and-contributors:ac38194317a3": 51,
+      "urn:php2shell:inventory:organization:codeigniter-foundation:70108870671e": 52,
+      "urn:php2shell:inventory:organization:codeception-michael-bodnarchuk-and-contributors:0fa25b28c5f3": 53,
+      "urn:php2shell:inventory:organization:combodo:3a64aa8af1bf": 54,
+      "urn:php2shell:inventory:organization:composer-packagist-project:1fd12f984f5f": 55,
+      "urn:php2shell:inventory:organization:composer-satis-maintainers:682ed9ed2a49": 56,
+      "urn:php2shell:inventory:organization:composer-project:43b993df221e": 57,
+      "urn:php2shell:inventory:organization:composer-project-docker-official-images:7b9705b0d6ba": 58,
+      "urn:php2shell:inventory:organization:concrete-cms-portlandlabs:e230e20441de": 59,
+      "urn:php2shell:inventory:organization:contao-project:9914f85f473b": 60,
+      "urn:php2shell:inventory:organization:corporation-for-digital-scholarship-omeka-project:eaecae12d515": 61,
+      "urn:php2shell:inventory:organization:couchbase-inc.:b63c87727da6": 62,
+      "urn:php2shell:inventory:organization:craft-cms-pixel-tonic:eb48f8fe594d": 63,
+      "urn:php2shell:inventory:organization:cyberpanel-project:b379a78237de": 64,
+      "urn:php2shell:inventory:organization:ddev-project:d35232937d19": 65,
+      "urn:php2shell:inventory:organization:devsense-phalanger-project:2441ff277e7b": 66,
+      "urn:php2shell:inventory:organization:dan-phillimore-uniter-project:d968636f2e0d": 67,
+      "urn:php2shell:inventory:organization:datadog-blackfire-integration:35ee2a58a118": 68,
+      "urn:php2shell:inventory:organization:debian-php-maintainers:ebee55ebcf92": 69,
+      "urn:php2shell:inventory:organization:deployer-anton-medvedev-and-contributors:609ad51fee40": 70,
+      "urn:php2shell:inventory:organization:docker-community-docker-official-images-not-wordpress-upstream-image-ownership:b0bb692ad033": 71,
+      "urn:php2shell:inventory:organization:docker-official-images-docker-library-php-maintainers:c1946bfa8981": 72,
+      "urn:php2shell:inventory:organization:docker-official-images-maintainers:fecb8d8e4314": 73,
+      "urn:php2shell:inventory:organization:doctrine-project:3ef6ed00e86e": 74,
+      "urn:php2shell:inventory:organization:dokuwiki-project:3f7f47dcb75e": 75,
+      "urn:php2shell:inventory:organization:dokuwiki-project-splitbrain:30835bfd09cc": 76,
+      "urn:php2shell:inventory:organization:dolibarr-project:23441321f7c2": 77,
+      "urn:php2shell:inventory:organization:drupal-commerce-centarro:5e176788723a": 78,
+      "urn:php2shell:inventory:organization:drupal-project:5f28f6a52a86": 79,
+      "urn:php2shell:inventory:organization:drush-project:bb8606bcfab2": 80,
+      "urn:php2shell:inventory:organization:ec-cube-project:6853f2cc97b4": 81,
+      "urn:php2shell:inventory:organization:egroupware-gmbh-egroupware-project:13e7e9b3cc37": 82,
+      "urn:php2shell:inventory:organization:easyphp-project:7c77231bb1a7": 83,
+      "urn:php2shell:inventory:organization:elastic:5e7c4d821aae": 84,
+      "urn:php2shell:inventory:organization:endor-linked-by-apache-friends:a460561663ea": 85,
+      "urn:php2shell:inventory:organization:enhancesoft-osticket-project:bb49eabf87d0": 86,
+      "urn:php2shell:inventory:organization:espocrm-project:7e115f756914": 87,
+      "urn:php2shell:inventory:organization:european-commission:4c29de14a9cf": 88,
+      "urn:php2shell:inventory:organization:european-commission-openeuropa-contributors:9f1a9ca2a693": 89,
+      "urn:php2shell:inventory:organization:expressionengine-project:ff863db69502": 90,
+      "urn:php2shell:inventory:organization:fossbilling-project:f66ad2cdc581": 91,
+      "urn:php2shell:inventory:organization:facebook-hhvm-project:33d27f3f8d90": 92,
+      "urn:php2shell:inventory:organization:facebook-hiphop-project:c3ae1db0fbc1": 93,
+      "urn:php2shell:inventory:organization:fedora-project-php-maintainers:006582aa5697": 94,
+      "urn:php2shell:inventory:organization:feng-office:bf09c6445ab2": 95,
+      "urn:php2shell:inventory:organization:filecloud:aedb4a5ecb13": 96,
+      "urn:php2shell:inventory:organization:filegator-project:15aad6bbb880": 97,
+      "urn:php2shell:inventory:organization:filerun:e71a668f5e36": 98,
+      "urn:php2shell:inventory:organization:filesender-project:7bc02cb3090d": 99,
+      "urn:php2shell:inventory:organization:flarum-project-flarum-foundation:68d0a192ef33": 100,
+      "urn:php2shell:inventory:organization:fly.io-customer-runtime-image-publisher:965c91fd71fb": 101,
+      "urn:php2shell:inventory:organization:forma-lms-project:c68976f083dc": 102,
+      "urn:php2shell:inventory:organization:frankenphp:c752b8206ab0": 103,
+      "urn:php2shell:inventory:organization:freebsd-project-ports-maintainers:e22487bf0e0d": 104,
+      "urn:php2shell:inventory:organization:freescout-project:06cc013f91e3": 105,
+      "urn:php2shell:inventory:organization:frontaccounting-project:29bf59b7396b": 106,
+      "urn:php2shell:inventory:organization:froxlor-team:e42e18308952": 107,
+      "urn:php2shell:inventory:organization:fusiondirectory:f643dc998a37": 108,
+      "urn:php2shell:inventory:organization:fusionpbx-project:754cb277d042": 109,
+      "urn:php2shell:inventory:organization:glpi-teclib:9df3cd869503": 110,
+      "urn:php2shell:inventory:organization:gentoo-php-maintainers:da62198036e3": 111,
+      "urn:php2shell:inventory:organization:google:ce770667e5f9": 112,
+      "urn:php2shell:inventory:organization:google-protocol-buffers-project:ebc9971e1556": 113,
+      "urn:php2shell:inventory:organization:google-googleapis-contributors:53297ab64763": 114,
+      "urn:php2shell:inventory:organization:google-cloud:69bd2211a05e": 115,
+      "urn:php2shell:inventory:organization:google-cloud-customer-image-publisher:fc34797bfe38": 116,
+      "urn:php2shell:inventory:organization:grav-project:fb8c0ee3f440": 117,
+      "urn:php2shell:inventory:organization:grokability-snipe-it-project:2820c9554c4e": 118,
+      "urn:php2shell:inventory:organization:guzzle-project:71df9dafc07f": 119,
+      "urn:php2shell:inventory:organization:heroku-salesforce:6e234205ed8b": 120,
+      "urn:php2shell:inventory:organization:hestia-control-panel-project:3a40940dadf2": 121,
+      "urn:php2shell:inventory:organization:hikashop-project:47a7e7e13ce4": 122,
+      "urn:php2shell:inventory:organization:hippyvm-contributors:7bd91236f625": 123,
+      "urn:php2shell:inventory:organization:homebrew-maintainers:05554fc9d468": 124,
+      "urn:php2shell:inventory:organization:horde-project:10e41a1c35a5": 125,
+      "urn:php2shell:inventory:organization:hostbill-hostbillapp:d4f070dfff4d": 126,
+      "urn:php2shell:inventory:organization:ilias-society-ilias-project:ec52988d9dbe": 127,
+      "urn:php2shell:inventory:organization:ionos:102c255bf6f5": 128,
+      "urn:php2shell:inventory:organization:ispconfig-project:03341db39e95": 129,
+      "urn:php2shell:inventory:organization:ibexa:7bedfec52320": 130,
+      "urn:php2shell:inventory:organization:icinga-gmbh:c965749e3457": 131,
+      "urn:php2shell:inventory:organization:imagick-project:2bf10a94acac": 132,
+      "urn:php2shell:inventory:organization:infection-project:ea09ab457296": 133,
+      "urn:php2shell:inventory:organization:invision-community-invision-power-services:e02360fa1b98": 134,
+      "urn:php2shell:inventory:organization:invoice-ninja:423cd0125592": 135,
+      "urn:php2shell:inventory:organization:invoiceplane-project:fd70e45b2e6d": 136,
+      "urn:php2shell:inventory:organization:issabel:7b89a9b4d4f2": 137,
+      "urn:php2shell:inventory:organization:jbmc-software-directadmin:af6c0bae30de": 138,
+      "urn:php2shell:inventory:organization:jphp-group:bf72e91b5d2d": 139,
+      "urn:php2shell:inventory:organization:jakub-vrana-adminer-project:891dd9837001": 140,
+      "urn:php2shell:inventory:organization:jetbrains:492cae23f6e5": 141,
+      "urn:php2shell:inventory:organization:joomla-project:6ff342097444": 142,
+      "urn:php2shell:inventory:organization:jordi-boggiano-monolog-contributors:b77868777fa1": 143,
+      "urn:php2shell:inventory:organization:kanboard-project:9933310079d0": 144,
+      "urn:php2shell:inventory:organization:kevin-papst-kimai-project:546060b25090": 145,
+      "urn:php2shell:inventory:organization:kinsta:108a30fa41af": 146,
+      "urn:php2shell:inventory:organization:kirby-cms-project:474c9b38d373": 147,
+      "urn:php2shell:inventory:organization:klemen-stirn-hesk:55cf7a1eb538": 148,
+      "urn:php2shell:inventory:organization:kopano-kopano-dev:cda8e37e3f72": 149,
+      "urn:php2shell:inventory:organization:ldap-account-manager-project:02f6fd3ddf4d": 150,
+      "urn:php2shell:inventory:organization:ladybird-web-solution-faveo:df03e426b714": 151,
+      "urn:php2shell:inventory:organization:laminas-project-linux-foundation:d069656faa64": 152,
+      "urn:php2shell:inventory:organization:laminas-project-mezzio:3c798da87c4b": 153,
+      "urn:php2shell:inventory:organization:lando-project:3d6eff99a44a": 154,
+      "urn:php2shell:inventory:organization:laragon-project:70489efcd492": 155,
+      "urn:php2shell:inventory:organization:laravel:ab5d684a5cac": 156,
+      "urn:php2shell:inventory:organization:laravel-aws-infrastructure:d14ce9e8845b": 157,
+      "urn:php2shell:inventory:organization:leantime-project:f7503d9fd8cd": 158,
+      "urn:php2shell:inventory:organization:librenms-project:af4c5fb4fb65": 159,
+      "urn:php2shell:inventory:organization:lime-technology-unraid:a8ec17054aaf": 160,
+      "urn:php2shell:inventory:organization:limesurvey-gmbh-limesurvey-project:a8485e0f99eb": 161,
+      "urn:php2shell:inventory:organization:livecodes-project:66c47bb4d0d0": 162,
+      "urn:php2shell:inventory:organization:lunar-project:a5ad7d6afd2d": 163,
+      "urn:php2shell:inventory:organization:mamp-gmbh:9549a7d179f0": 164,
+      "urn:php2shell:inventory:organization:misp-project-circl:c90ee4472428": 165,
+      "urn:php2shell:inventory:organization:modx-project:be017b3f39cb": 166,
+      "urn:php2shell:inventory:organization:mage-os-project:b5f3a5003bf6": 167,
+      "urn:php2shell:inventory:organization:magento-adobe:a67a7d2a08e3": 168,
+      "urn:php2shell:inventory:organization:mailwatch-project:72b4af037516": 169,
+      "urn:php2shell:inventory:organization:mantisbt-project:df11d3b0ab3d": 170,
+      "urn:php2shell:inventory:organization:matomo:bf8cee3cfc7f": 171,
+      "urn:php2shell:inventory:organization:matomo-innocraft:2c61af8e5e73": 172,
+      "urn:php2shell:inventory:organization:matomo-team:e70f1e9ef6e1": 173,
+      "urn:php2shell:inventory:organization:mautic-project:ee4842c8fff2": 174,
+      "urn:php2shell:inventory:organization:mediawiki-project:f52d18049d8d": 175,
+      "urn:php2shell:inventory:organization:messagebird:06b3aed2e1d5": 176,
+      "urn:php2shell:inventory:organization:metaways-tine-project:8542633d9bf0": 177,
+      "urn:php2shell:inventory:organization:microsoft:c7bac46904be": 178,
+      "urn:php2shell:inventory:organization:microsoft-azure-storage:40983f106f24": 179,
+      "urn:php2shell:inventory:organization:microsoft-graph-client-tooling:4aecacc45ec9": 180,
+      "urn:php2shell:inventory:organization:mockery-project:1f8def6ca5ea": 181,
+      "urn:php2shell:inventory:organization:mollie:dfdc4f7e0dd5": 182,
+      "urn:php2shell:inventory:organization:mollie-b.v.:8d022861c606": 183,
+      "urn:php2shell:inventory:organization:mongodb-php-driver-team:4582c862d936": 184,
+      "urn:php2shell:inventory:organization:montala-resourcespace:3ee95a5bab5a": 185,
+      "urn:php2shell:inventory:organization:moodle-project:f5c1a844978a": 186,
+      "urn:php2shell:inventory:organization:moodle-project-ralf-krause:5c83c22eaa65": 187,
+      "urn:php2shell:inventory:organization:moodle-project-complete-installer-packagers:fe0555ae235c": 188,
+      "urn:php2shell:inventory:organization:mybb-group:3748ab0ba9ed": 189,
+      "urn:php2shell:inventory:organization:nagios-enterprises:a84a076f21da": 190,
+      "urn:php2shell:inventory:organization:neos-project:d0746de5997e": 191,
+      "urn:php2shell:inventory:organization:netgate-pfsense:0f98ae3101be": 192,
+      "urn:php2shell:inventory:organization:netlify:55c13c730350": 193,
+      "urn:php2shell:inventory:organization:nette-foundation-nette-community:bc8a0e1b8b8d": 194,
+      "urn:php2shell:inventory:organization:nette-community:a34600e3bba7": 195,
+      "urn:php2shell:inventory:organization:nette-community-latte:9ac1e4decbe5": 196,
+      "urn:php2shell:inventory:organization:nette-community-tracy:68d1cb94c3bf": 197,
+      "urn:php2shell:inventory:organization:nextcloud:337128aac2bf": 198,
+      "urn:php2shell:inventory:organization:nextcloud-calendar-project:9097739c1253": 199,
+      "urn:php2shell:inventory:organization:nextcloud-collectives-project:9be07c90f900": 200,
+      "urn:php2shell:inventory:organization:nextcloud-contacts-project:8c829f1ae4ee": 201,
+      "urn:php2shell:inventory:organization:nextcloud-deck-project:9f961cde92ad": 202,
+      "urn:php2shell:inventory:organization:nextcloud-docker-community-volunteers-docker-official-images:04d9c607f775": 203,
+      "urn:php2shell:inventory:organization:nextcloud-gmbh-nextcloud-aio-maintainers:1303c787a6ba": 204,
+      "urn:php2shell:inventory:organization:nextcloud-mail-project:82333a85a37f": 205,
+      "urn:php2shell:inventory:organization:nextcloud-notes-project:5df42c67a6ae": 206,
+      "urn:php2shell:inventory:organization:nextcloud-snap-maintainers:3471f671bf79": 207,
+      "urn:php2shell:inventory:organization:nextcloudpi-project-nextcloud-community:a8e969edbf54": 208,
+      "urn:php2shell:inventory:organization:nikita-popov-php-parser-contributors:ea6aba93c669": 209,
+      "urn:php2shell:inventory:organization:nixos-nixpkgs-maintainers:4f3a9d20c67b": 210,
+      "urn:php2shell:inventory:organization:opnsense-deciso:fee3b393b124": 211,
+      "urn:php2shell:inventory:organization:ovhcloud:71b982cacbde": 212,
+      "urn:php2shell:inventory:organization:oxid-esales:af6009ffca3f": 213,
+      "urn:php2shell:inventory:organization:observium-limited-observium-project:09c602022500": 214,
+      "urn:php2shell:inventory:organization:october-cms-project:51b2ed0d968d": 215,
+      "urn:php2shell:inventory:organization:open-social-project:71ad466969b7": 216,
+      "urn:php2shell:inventory:organization:open-web-analytics-project:7fd2fcff6e80": 217,
+      "urn:php2shell:inventory:organization:open-eclass-project-gunet:cfa18eb6b0c6": 218,
+      "urn:php2shell:inventory:organization:openbsd-ports-maintainers-php-documentation-team:7c89c0b9e1fe": 219,
+      "urn:php2shell:inventory:organization:opencart-project:d1d89c347438": 220,
+      "urn:php2shell:inventory:organization:openconext-surf:28e3bb0c2ad7": 221,
+      "urn:php2shell:inventory:organization:opendocman-project:51e7f2485479": 222,
+      "urn:php2shell:inventory:organization:openmage-project:30d6f5968f68": 223,
+      "urn:php2shell:inventory:organization:opensearch-contributors-inherited-elastic-client-lineage:8e536d255e0a": 224,
+      "urn:php2shell:inventory:organization:openswoole-project:cb93756ac46d": 225,
+      "urn:php2shell:inventory:organization:openwrt-packages-feed-maintainers:c50773432e7c": 226,
+      "urn:php2shell:inventory:organization:orangehrm-inc.:b9e759a6db60": 227,
+      "urn:php2shell:inventory:organization:oro-inc.:bf7f89b3295e": 228,
+      "urn:php2shell:inventory:organization:oro-inc.:bbfdf654907f": 229,
+      "urn:php2shell:inventory:organization:pcov-joe-watkins-and-contributors:59377b1bd5db": 230,
+      "urn:php2shell:inventory:organization:pear-project-php-group:64121e0e38ce": 231,
+      "urn:php2shell:inventory:organization:pecl-xhprof-longxinh-and-contributors:69d6027eeeb5": 232,
+      "urn:php2shell:inventory:organization:phar.io-arne-blankerts-sebastian-heuer-and-contributors:3e39d9e52d66": 233,
+      "urn:php2shell:inventory:organization:php-cs-fixer-project:a1da0b19b4a4": 234,
+      "urn:php2shell:inventory:organization:php-depend-project:a861d9aa9963": 235,
+      "urn:php2shell:inventory:organization:php-ev-extension-project:8acd0e809097": 236,
+      "urn:php2shell:inventory:organization:php-event-extension-project:2806c24ba3dc": 237,
+      "urn:php2shell:inventory:organization:php-gearman-extension-project:8425e14fe90a": 238,
+      "urn:php2shell:inventory:organization:php-mailparse-extension-project:dc0b6a84f165": 239,
+      "urn:php2shell:inventory:organization:php-oauth-extension-project:8f7ed61fc413": 240,
+      "urn:php2shell:inventory:organization:php-ssh2-extension-project:ae8b580dab94": 241,
+      "urn:php2shell:inventory:organization:php-yaml-extension-project:414f13a5c6a4": 242,
+      "urn:php2shell:inventory:organization:php-gnupg-extension-project:f9a4f0d63ffa": 243,
+      "urn:php2shell:inventory:organization:php-fig:fe57c0141bc6": 244,
+      "urn:php2shell:inventory:organization:php-pm-project:0e5b28280cac": 245,
+      "urn:php2shell:inventory:organization:phpbench-daniel-leech-and-contributors:f9e47753ced2": 246,
+      "urn:php2shell:inventory:organization:phpcsstandards-php_codesniffer-project:c2dcd7e2c5ae": 247,
+      "urn:php2shell:inventory:organization:phpmd-project:c0e7ec142f08": 248,
+      "urn:php2shell:inventory:organization:phpmailer-project:60c5aec92369": 249,
+      "urn:php2shell:inventory:organization:phpstan-ondrej-mirtes-and-contributors:ef6201ca2097": 250,
+      "urn:php2shell:inventory:organization:phpstan-project:a03664190f1e": 251,
+      "urn:php2shell:inventory:organization:phpunit-project:a6c8a0db5029": 252,
+      "urn:php2shell:inventory:organization:phpunit-project-sebastian-bergmann:4015277c427f": 253,
+      "urn:php2shell:inventory:organization:phpro-grumphp-contributors:4042f138a038": 254,
+      "urn:php2shell:inventory:organization:pantheon:089b80999032": 255,
+      "urn:php2shell:inventory:organization:paratest-brian-scaturro-filippo-tessarotto-and-contributors:e5468259783f": 256,
+      "urn:php2shell:inventory:organization:part-db-project:4985626f8fec": 257,
+      "urn:php2shell:inventory:organization:passbolt-sa:eb876d3c6dc0": 258,
+      "urn:php2shell:inventory:organization:paypal:ab8a4f6bb84d": 259,
+      "urn:php2shell:inventory:organization:peachpie-wpdotnet-project:ca9057f8eb1b": 260,
+      "urn:php2shell:inventory:organization:peachpie-iolevel:632b4dcc464d": 261,
+      "urn:php2shell:inventory:organization:pestphp-nuno-maduro-and-contributors:dccc9fcfa944": 262,
+      "urn:php2shell:inventory:organization:phalcon-project:e3422b5ff0d8": 263,
+      "urn:php2shell:inventory:organization:phillips-data-blesta:4acaacd4565e": 264,
+      "urn:php2shell:inventory:organization:phing-project-michiel-rook-and-contributors:398a8a34f845": 265,
+      "urn:php2shell:inventory:organization:phpredis-project-michael-grunder-and-contributors:e80e547589c5": 266,
+      "urn:php2shell:inventory:organization:phpspec-project:603c85f6cd8f": 267,
+      "urn:php2shell:inventory:organization:phpactor-project:3e76b4ee9ebc": 268,
+      "urn:php2shell:inventory:organization:pi-hole-project:1dfc9fb3e345": 269,
+      "urn:php2shell:inventory:organization:pimcore-project:f840c4c72468": 270,
+      "urn:php2shell:inventory:organization:pluxml-project:c14a1e04cb4b": 271,
+      "urn:php2shell:inventory:organization:pmwiki-project:07f7f7d1bd83": 272,
+      "urn:php2shell:inventory:organization:postfixadmin-project:97816895f2c0": 273,
+      "urn:php2shell:inventory:organization:predis-project-till-kruss-and-contributors:86be57d1d608": 274,
+      "urn:php2shell:inventory:organization:prestashop-project:5786774c1700": 275,
+      "urn:php2shell:inventory:organization:privatebin-project:aaea8cf78b28": 276,
+      "urn:php2shell:inventory:organization:processwire-project:33aff47f2d2e": 277,
+      "urn:php2shell:inventory:organization:projectsend-project:47b4dd186a7f": 278,
+      "urn:php2shell:inventory:organization:prophecy-phpspec-project:304a8acf3418": 279,
+      "urn:php2shell:inventory:organization:psalm-project-daniil-gentili:6bc77e52df2f": 280,
+      "urn:php2shell:inventory:organization:psalm-project-matthew-brown-daniil-gentili-and-contributors:b517ed413fc7": 281,
+      "urn:php2shell:inventory:organization:psysh-justin-hileman-and-contributors:bdb0c631a2b5": 282,
+      "urn:php2shell:inventory:organization:pterodactyl-project:69626e6dba73": 283,
+      "urn:php2shell:inventory:organization:public-knowledge-project-pkp:7c8630c7aba3": 284,
+      "urn:php2shell:inventory:organization:pydio:7be8af60781b": 285,
+      "urn:php2shell:inventory:organization:qnap:01af88f7bc7a": 286,
+      "urn:php2shell:inventory:organization:rainloop-team:e6e48a3d5a77": 287,
+      "urn:php2shell:inventory:organization:raspap-project:fedc8249a109": 288,
+      "urn:php2shell:inventory:organization:reactphp-project:ddd66e106711": 289,
+      "urn:php2shell:inventory:organization:rector-project:cee097892dd0": 290,
+      "urn:php2shell:inventory:organization:red-hat:2c30c5da9571": 291,
+      "urn:php2shell:inventory:organization:render-customer-base-image-publisher:0ba5e6a95438": 292,
+      "urn:php2shell:inventory:organization:roadrunner-php-community:d42b90d07266": 293,
+      "urn:php2shell:inventory:organization:roadrunner-project:72bb68ad417b": 294,
+      "urn:php2shell:inventory:organization:roave:5fddd06e8463": 295,
+      "urn:php2shell:inventory:organization:roundcube-project:a7c8aa7ae5bb": 296,
+      "urn:php2shell:inventory:organization:spip-project:c69a1b3663f4": 297,
+      "urn:php2shell:inventory:organization:surf:526cb83fb5c6": 298,
+      "urn:php2shell:inventory:organization:surf-surfnet:9ee32df4459a": 299,
+      "urn:php2shell:inventory:organization:suse:26e43032c4d1": 300,
+      "urn:php2shell:inventory:organization:salesagility-suitecrm-project:83e42c3d8ae5": 301,
+      "urn:php2shell:inventory:organization:sangoma:fcf1fd5f9a41": 302,
+      "urn:php2shell:inventory:organization:sangoma-freepbx-project:0e64d6e9d80d": 303,
+      "urn:php2shell:inventory:organization:sean-morris-php-wasm-project:b446bb548b83": 304,
+      "urn:php2shell:inventory:organization:semantic-mediawiki-project:48cf2f4058da": 305,
+      "urn:php2shell:inventory:organization:sendy:065407f5f88b": 306,
+      "urn:php2shell:inventory:organization:serendipity-project:64d51b235ebb": 307,
+      "urn:php2shell:inventory:organization:shaarli-community:1503521bca1c": 308,
+      "urn:php2shell:inventory:organization:shivam-mathur-setup-php-project:710caee86253": 309,
+      "urn:php2shell:inventory:organization:shlink-project:f5039970bb8f": 310,
+      "urn:php2shell:inventory:organization:shopify:5e875bc90a36": 311,
+      "urn:php2shell:inventory:organization:shopware-5-project-shopware-ag-lineage:e52f69e24a48": 312,
+      "urn:php2shell:inventory:organization:silverstripe-cms-project:192485f9083b": 313,
+      "urn:php2shell:inventory:organization:simple-machines-smf-project:ee30bb84f1ce": 314,
+      "urn:php2shell:inventory:organization:simplerisk:5f58bfdf3a6c": 315,
+      "urn:php2shell:inventory:organization:simplesamlphp-project:cd51016cee52": 316,
+      "urn:php2shell:inventory:organization:slim-project:111e59f42659": 317,
+      "urn:php2shell:inventory:organization:snappymail-project:90169daed163": 318,
+      "urn:php2shell:inventory:organization:solidworx-solidinvoice-project:e2587caad284": 319,
+      "urn:php2shell:inventory:organization:spryker-systems-gmbh:24b1ab6feb3d": 320,
+      "urn:php2shell:inventory:organization:squirrelmail-project:636c35631f8e": 321,
+      "urn:php2shell:inventory:organization:statamic-project:9c2ff669b86e": 322,
+      "urn:php2shell:inventory:organization:stripe-and-contributors:ef9bb2637360": 323,
+      "urn:php2shell:inventory:organization:sugarai-sugarcrm:f15019e7b619": 324,
+      "urn:php2shell:inventory:organization:sulu-project:6d450f6b9ca8": 325,
+      "urn:php2shell:inventory:organization:swoole-project:fea8b71a2789": 326,
+      "urn:php2shell:inventory:organization:sylius-project:2ab99f826635": 327,
+      "urn:php2shell:inventory:organization:sylvain-lassaut-noisebynorthwest:7ea8684a5441": 328,
+      "urn:php2shell:inventory:organization:symfony:45eff1960e31": 329,
+      "urn:php2shell:inventory:organization:symplify:4a5491ad08e8": 330,
+      "urn:php2shell:inventory:organization:synology:81dd93975b06": 331,
+      "urn:php2shell:inventory:organization:typo3-project:0cbce3ba4e3d": 332,
+      "urn:php2shell:inventory:organization:teampass-project:9a4410521326": 333,
+      "urn:php2shell:inventory:organization:terramaster:1fcc803c1548": 334,
+      "urn:php2shell:inventory:organization:textpattern-project:f9f97cee94fd": 335,
+      "urn:php2shell:inventory:organization:the-cacti-group:a9660d17ae34": 336,
+      "urn:php2shell:inventory:organization:the-php-foundation-php-pie-project:b2dd69e772c7": 337,
+      "urn:php2shell:inventory:organization:the-php-group:dee81afa915f": 338,
+      "urn:php2shell:inventory:organization:the-php-group-apache-operators:03d5cf75d497": 339,
+      "urn:php2shell:inventory:organization:the-php-group-php-windows-maintainers:0f2d7962643e": 340,
+      "urn:php2shell:inventory:organization:the-php-league:3bed08dc0f5d": 341,
+      "urn:php2shell:inventory:organization:thelia-project:fe9fa48529cb": 342,
+      "urn:php2shell:inventory:organization:thunder-project:2e2e3bc271e6": 343,
+      "urn:php2shell:inventory:organization:tideways-open-source-fork-contributors:11e3c6dad437": 344,
+      "urn:php2shell:inventory:organization:tideways-gmbh:63cf934f3f23": 345,
+      "urn:php2shell:inventory:organization:tiki-software-community-association-tiki-project:fa77d721585c": 346,
+      "urn:php2shell:inventory:organization:totara:4928da53588d": 347,
+      "urn:php2shell:inventory:organization:transip:7333da98c122": 348,
+      "urn:php2shell:inventory:organization:trend-micro:ddb8e439b1bf": 349,
+      "urn:php2shell:inventory:organization:turnkey-linux:b8edb376138d": 350,
+      "urn:php2shell:inventory:organization:tuxcare-cloudlinux:44063b555f7c": 351,
+      "urn:php2shell:inventory:organization:twig-symfony-community:c36cb3285138": 352,
+      "urn:php2shell:inventory:organization:twilio-api-team:9ad331e5879b": 353,
+      "urn:php2shell:inventory:organization:twilio-sendgrid:e63caebf4c65": 354,
+      "urn:php2shell:inventory:organization:upsun:c1d9acf54d99": 355,
+      "urn:php2shell:inventory:organization:utrecht-university-yoda:682576ef81e4": 356,
+      "urn:php2shell:inventory:organization:uwe-steinmann-seeddms-project:d5154896a107": 357,
+      "urn:php2shell:inventory:organization:vk-vkcom-kphp-project:ac1921e7b501": 358,
+      "urn:php2shell:inventory:organization:vance-lucas-graham-campbell-phpdotenv-contributors:6d6a371f082e": 359,
+      "urn:php2shell:inventory:organization:vanderbilt-university-redcap-consortium:b82af8d9527a": 360,
+      "urn:php2shell:inventory:organization:vardot-varbase-project:ef46aa2ed241": 361,
+      "urn:php2shell:inventory:organization:virtualmin:c5c7bfdbe85f": 362,
+      "urn:php2shell:inventory:organization:virtuemart-project:afaee2c2edef": 363,
+      "urn:php2shell:inventory:organization:vitalpbx:cdb51f865789": 364,
+      "urn:php2shell:inventory:organization:vtiger:cbc6c4580857": 365,
+      "urn:php2shell:inventory:organization:vufind-project-villanova-university:26c946a7eb39": 366,
+      "urn:php2shell:inventory:organization:whmcs-ltd.:5a62830fc636": 367,
+      "urn:php2shell:inventory:organization:wp-engine:c79e160ca994": 368,
+      "urn:php2shell:inventory:organization:wp-cli-wordpress-project:bd7373454263": 369,
+      "urn:php2shell:inventory:organization:wampserver-maintainers-aviatechno:9497e0abcb8f": 370,
+      "urn:php2shell:inventory:organization:webpros-plesk:93657c157beb": 371,
+      "urn:php2shell:inventory:organization:webpros-cpanel:bdda7f81a306": 372,
+      "urn:php2shell:inventory:organization:webkul:50c784d84ab7": 373,
+      "urn:php2shell:inventory:organization:webkul-uvdesk:ae6011d4eedf": 374,
+      "urn:php2shell:inventory:organization:whirl-i-gig-collectiveaccess-project:0edaf50f9dea": 375,
+      "urn:php2shell:inventory:organization:wikimedia-mediawiki-platform-maintainers:097237d00b82": 376,
+      "urn:php2shell:inventory:organization:wikimedia-mediawiki-project:cc86fee29469": 377,
+      "urn:php2shell:inventory:organization:wikimedia-foundation:aae4e8ae9cbd": 378,
+      "urn:php2shell:inventory:organization:winter-cms-project:dae787d32b88": 379,
+      "urn:php2shell:inventory:organization:woltlab-gmbh:7d742c201944": 380,
+      "urn:php2shell:inventory:organization:woocommerce:b03e8dbab897": 381,
+      "urn:php2shell:inventory:organization:wordpress-playground-contributors:77d729688b10": 382,
+      "urn:php2shell:inventory:organization:wordpress-project:65a95b5c0c0d": 383,
+      "urn:php2shell:inventory:organization:x-cart:7f70f9da1d3b": 384,
+      "urn:php2shell:inventory:organization:xdebug-derick-rethans-and-contributors:838aea640a0f": 385,
+      "urn:php2shell:inventory:organization:xdebug-vscode-php-debug-contributors:e00cb930fde5": 386,
+      "urn:php2shell:inventory:organization:xenforo-ltd:a7eacbf8f4db": 387,
+      "urn:php2shell:inventory:organization:xigmanas-project:4133838b0ac1": 388,
+      "urn:php2shell:inventory:organization:yourls-project:289cddf0bc8a": 389,
+      "urn:php2shell:inventory:organization:yetiforce-s.a.:83b0bbf54a09": 390,
+      "urn:php2shell:inventory:organization:yii-software-yii-project:9e97631a4a2f": 391,
+      "urn:php2shell:inventory:organization:zabbix:a67c5eade920": 392,
+      "urn:php2shell:inventory:organization:zen-cart-project:cf37a6066422": 393,
+      "urn:php2shell:inventory:organization:zoneminder-project:feccdc3c9d28": 394,
+      "urn:php2shell:inventory:organization:aapanel:455e44d41573": 395,
+      "urn:php2shell:inventory:organization:bbpress-community-wordpress-project:7d24e4475bb2": 396,
+      "urn:php2shell:inventory:organization:bunq:73e242683c7d": 397,
+      "urn:php2shell:inventory:organization:daloradius-project:2f126651173d": 398,
+      "urn:php2shell:inventory:organization:grpc-project:7ba8ac00c3a4": 399,
+      "urn:php2shell:inventory:organization:grommunio-gmbh:87b43b9b84ca": 400,
+      "urn:php2shell:inventory:organization:ibabs:d92a87126ecf": 401,
+      "urn:php2shell:inventory:organization:inextrix-astpp:5cadc909e4cb": 402,
+      "urn:php2shell:inventory:organization:igbinary-project:25a922668b37": 403,
+      "urn:php2shell:inventory:organization:libsmbclient-php-project:d19f16e313db": 404,
+      "urn:php2shell:inventory:organization:libvirt-php-contributors-unraid-distribution:6e34cba581da": 405,
+      "urn:php2shell:inventory:organization:m0n0wall-project:c2892c9539db": 406,
+      "urn:php2shell:inventory:organization:msgpack-php-project:8e58d3b61000": 407,
+      "urn:php2shell:inventory:organization:openmediavault-project:4038096a6d34": 408,
+      "urn:php2shell:inventory:organization:oscommerce:850576e15b41": 409,
+      "urn:php2shell:inventory:organization:oscommerce-legacy-project:36e7eee823ec": 410,
+      "urn:php2shell:inventory:organization:owncloud-kiteworks:440864c9e5aa": 411,
+      "urn:php2shell:inventory:organization:php-amqp-project:c275343b2e2a": 412,
+      "urn:php2shell:inventory:organization:php-memcached-project:ead06791f84d": 413,
+      "urn:php2shell:inventory:organization:php-rdkafka-project:8ab66f697dc6": 414,
+      "urn:php2shell:inventory:organization:phpbb-limited-phpbb-project:11b9148bad7c": 415,
+      "urn:php2shell:inventory:organization:phpdocumentor-project:90d80b67e00b": 416,
+      "urn:php2shell:inventory:organization:phpipam-project:0fbf6e2c0aba": 417,
+      "urn:php2shell:inventory:organization:phpldapadmin-leenooks-project:b63ad108fc59": 418,
+      "urn:php2shell:inventory:organization:phplist-project:ed3556aff1e5": 419,
+      "urn:php2shell:inventory:organization:phpmyadmin-project:2cab7c8d8fb0": 420,
+      "urn:php2shell:inventory:organization:phppgadmin-project:a3bf6804ca35": 421,
+      "urn:php2shell:inventory:organization:phpvirtualbox-project:66cbe05f350c": 422,
+      "urn:php2shell:inventory:organization:phpseclib-project:110dcdd46c01": 423,
+      "urn:php2shell:inventory:organization:shopware-ag:ee7a514250eb": 424,
+      "urn:php2shell:inventory:organization:thirty-development-llc-thirty-bees-project:62b2056a983c": 425,
+      "urn:php2shell:inventory:organization:weberp-project:2502b018e1ed": 426,
+      "urn:php2shell:inventory:organization:webonyx-graphql-php-project:9ccd9d1bc274": 427,
+      "urn:php2shell:inventory:organization:palo-alto-networks:02fbd33c10a8": 428,
+      "urn:php2shell:inventory:organization:citrix-netscaler:410b5f07d390": 429,
+      "urn:php2shell:inventory:organization:f5:6cd28ed32abf": 430,
+      "urn:php2shell:inventory:organization:fortinet:0dd4907ae878": 431,
+      "urn:php2shell:inventory:organization:juniper-networks:d899c5f10f6d": 432,
+      "urn:php2shell:inventory:organization:akeneo:d033cb250354": 433,
+      "urn:php2shell:inventory:organization:clientexec:5a15539081ae": 434,
+      "urn:php2shell:inventory:organization:freshrss-project:25e2a9a0ea24": 435,
+      "urn:php2shell:inventory:organization:humhub:e385677572e6": 436,
+      "urn:php2shell:inventory:organization:n-able:664d55891d79": 437,
+      "urn:php2shell:inventory:organization:openemr-project:6c4b2911c944": 438,
+      "urn:php2shell:inventory:organization:scalingo:7a107972d9c8": 439,
+      "urn:php2shell:inventory:organization:sophos:2fd5c42d49f9": 440,
+      "urn:php2shell:inventory:organization:phpmyfaq-project:ab2e5ba5d190": 441,
+      "urn:php2shell:inventory:organization:wallabag-project:4347649a11df": 442,
+      "urn:php2shell:inventory:organization:coolify:df9a9413e059": 443,
+      "urn:php2shell:inventory:organization:firefly-iii-project:cda8b88c4699": 444,
+      "urn:php2shell:inventory:organization:monica-project:a5b33fcf8db8": 445,
+      "urn:php2shell:inventory:organization:cachet-project:999592b06608": 446,
+      "urn:php2shell:inventory:organization:krayin:de0598c27179": 447,
+      "urn:php2shell:inventory:organization:qloapps:78f5576c47cf": 448,
+      "urn:php2shell:inventory:organization:unopim:5e2db77c3503": 449,
+      "urn:php2shell:inventory:organization:crater-invoice:12a8781dbd68": 450,
+      "urn:php2shell:inventory:organization:quest-software:6a9ebaa7dc77": 451,
+      "urn:php2shell:inventory:organization:checkmk-gmbh:9de9bc86859d": 452,
+      "urn:php2shell:inventory:organization:securepoint-gmbh:5a4cf0fa8caa": 453,
+      "urn:php2shell:inventory:organization:check-point:dbbe390ad85f": 454,
+      "urn:php2shell:inventory:organization:cisco:aa669b285cc1": 455,
+      "urn:php2shell:inventory:organization:efficientip:b1b0f0c4c32a": 456,
+      "urn:php2shell:inventory:organization:entelliweb:73c2d38cb10f": 457
+    }
+  },
+  "@graph": [
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:php2shell-project:b040d5afc9da",
+      "creationInfo": "_:creationinfo",
+      "name": "php2shell project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:amphp-project:d7994db57eb7",
+      "creationInfo": "_:creationinfo",
+      "name": "AMPHP project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:apcu-php-extension-maintainers:cf5c30cd91fc",
+      "creationInfo": "_:creationinfo",
+      "name": "APCu / PHP extension maintainers"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:api-platform-project:baf4e0483bd0",
+      "creationInfo": "_:creationinfo",
+      "name": "API Platform project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:aws-sdk-common-runtime-team:62de8d84cedd",
+      "creationInfo": "_:creationinfo",
+      "name": "AWS SDK Common Runtime team"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:acquia:c16250461f3f",
+      "creationInfo": "_:creationinfo",
+      "name": "Acquia"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:adiscon-loganalyzer-project:6db98724092b",
+      "creationInfo": "_:creationinfo",
+      "name": "Adiscon / LogAnalyzer project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:adobe:72fd3ae07d96",
+      "creationInfo": "_:creationinfo",
+      "name": "Adobe"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:adyen:bc63f1f0ee7a",
+      "creationInfo": "_:creationinfo",
+      "name": "Adyen"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:afterlogic:40a6ae8ad3af",
+      "creationInfo": "_:creationinfo",
+      "name": "AfterLogic"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:aimeos-project:5b38ef48bc4d",
+      "creationInfo": "_:creationinfo",
+      "name": "Aimeos project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:akaunting:37444b684899",
+      "creationInfo": "_:creationinfo",
+      "name": "Akaunting"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:alpine-linux-package-maintainers:0ceb2d77697f",
+      "creationInfo": "_:creationinfo",
+      "name": "Alpine Linux package maintainers"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:amazon-web-services:a940fb838463",
+      "creationInfo": "_:creationinfo",
+      "name": "Amazon Web Services"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:amazon-web-services-third-party-customer-php-runtime-publisher:4bc76ca38195",
+      "creationInfo": "_:creationinfo",
+      "name": "Amazon Web Services; third-party/customer PHP runtime publisher"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:antagonist:77d80f447e53",
+      "creationInfo": "_:creationinfo",
+      "name": "Antagonist"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:apache-friends:bd50e9af5248",
+      "creationInfo": "_:creationinfo",
+      "name": "Apache Friends"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:arch-linux-package-maintainers:8755a7661d8e",
+      "creationInfo": "_:creationinfo",
+      "name": "Arch Linux package maintainers"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:artefactual-systems-atom-project:abea59b2acbe",
+      "creationInfo": "_:creationinfo",
+      "name": "Artefactual Systems / AtoM project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:ascensio-system-sia-onlyoffice:9a50403f5ffc",
+      "creationInfo": "_:creationinfo",
+      "name": "Ascensio System SIA / ONLYOFFICE"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:auth0:2e5576f58d32",
+      "creationInfo": "_:creationinfo",
+      "name": "Auth0"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:automattic-wordpress.com:7c0478cd2201",
+      "creationInfo": "_:creationinfo",
+      "name": "Automattic / WordPress.com"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:backdrop-cms-project:b4f2ec29a6ea",
+      "creationInfo": "_:creationinfo",
+      "name": "Backdrop CMS project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:behat-project:1d303f33e7db",
+      "creationInfo": "_:creationinfo",
+      "name": "Behat project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:belnet:b7e57f711ae1",
+      "creationInfo": "_:creationinfo",
+      "name": "Belnet"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:ben-ramsey-ramsey-project:12687dc5aa89",
+      "creationInfo": "_:creationinfo",
+      "name": "Ben Ramsey / Ramsey project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:beyond-code-in-partnership-with-laravel:30722d235511",
+      "creationInfo": "_:creationinfo",
+      "name": "Beyond Code in partnership with Laravel"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:blackfire-platform.sh-sas-doing-business-as-upsun:1273612a094a",
+      "creationInfo": "_:creationinfo",
+      "name": "Blackfire / Platform.sh SAS doing business as Upsun"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:bolt-cms-project:4215a0aa1c57",
+      "creationInfo": "_:creationinfo",
+      "name": "Bolt CMS project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:bookstack-project:084007b8fec1",
+      "creationInfo": "_:creationinfo",
+      "name": "BookStack project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:box-humbug-project:1f782fa623b6",
+      "creationInfo": "_:creationinfo",
+      "name": "Box / Humbug project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:boxbilling-project:accd6d58835f",
+      "creationInfo": "_:creationinfo",
+      "name": "BoxBilling project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:bref-project:1aa69468cecc",
+      "creationInfo": "_:creationinfo",
+      "name": "Bref project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:buddypress-community-wordpress-project:877ca36b1643",
+      "creationInfo": "_:creationinfo",
+      "name": "BuddyPress community / WordPress project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:circl-luxembourg:99262a322fcb",
+      "creationInfo": "_:creationinfo",
+      "name": "CIRCL, Luxembourg"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:cs-cart:5c590254d803",
+      "creationInfo": "_:creationinfo",
+      "name": "CS-Cart"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:cakephp-project:47bc62f09236",
+      "creationInfo": "_:creationinfo",
+      "name": "CakePHP project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:canonical-ubuntu-package-maintainers:689af08e8a74",
+      "creationInfo": "_:creationinfo",
+      "name": "Canonical / Ubuntu package maintainers"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:captainhook-sebastian-feldmann-and-contributors:3b094201e202",
+      "creationInfo": "_:creationinfo",
+      "name": "CaptainHook / Sebastian Feldmann and contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:carbonphp-project:5cc6cf75be15",
+      "creationInfo": "_:creationinfo",
+      "name": "CarbonPHP project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:catalyst-it-mahara-project:eec70ee76480",
+      "creationInfo": "_:creationinfo",
+      "name": "Catalyst IT / Mahara project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:centreon:fb564bc80284",
+      "creationInfo": "_:creationinfo",
+      "name": "Centreon"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:chamilo-association-chamilo-project:c7a9af3a582a",
+      "creationInfo": "_:creationinfo",
+      "name": "Chamilo Association / Chamilo project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:circleci:c5df5b659139",
+      "creationInfo": "_:creationinfo",
+      "name": "CircleCI"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:civicrm-project:e8af4c3cff9d",
+      "creationInfo": "_:creationinfo",
+      "name": "CiviCRM project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:classicpress-project:e5dacc0ca874",
+      "creationInfo": "_:creationinfo",
+      "name": "ClassicPress project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:clever-cloud-fork-of-caucho-technology-quercus:323badac89f9",
+      "creationInfo": "_:creationinfo",
+      "name": "Clever Cloud fork of Caucho Technology Quercus"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:cloudlinux:daf109985d8c",
+      "creationInfo": "_:creationinfo",
+      "name": "CloudLinux"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:cloudlinux-tuxcare:f11bd01ef3af",
+      "creationInfo": "_:creationinfo",
+      "name": "CloudLinux / TuxCare"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:cloudflare:f9191531404c",
+      "creationInfo": "_:creationinfo",
+      "name": "Cloudflare"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:code-lts-william-desportes-and-contributors:ac38194317a3",
+      "creationInfo": "_:creationinfo",
+      "name": "Code LTS / William Desportes and contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:codeigniter-foundation:70108870671e",
+      "creationInfo": "_:creationinfo",
+      "name": "CodeIgniter Foundation"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:codeception-michael-bodnarchuk-and-contributors:0fa25b28c5f3",
+      "creationInfo": "_:creationinfo",
+      "name": "Codeception / Michael Bodnarchuk and contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:combodo:3a64aa8af1bf",
+      "creationInfo": "_:creationinfo",
+      "name": "Combodo"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:composer-packagist-project:1fd12f984f5f",
+      "creationInfo": "_:creationinfo",
+      "name": "Composer / Packagist project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:composer-satis-maintainers:682ed9ed2a49",
+      "creationInfo": "_:creationinfo",
+      "name": "Composer / Satis maintainers"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:composer-project:43b993df221e",
+      "creationInfo": "_:creationinfo",
+      "name": "Composer project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:composer-project-docker-official-images:7b9705b0d6ba",
+      "creationInfo": "_:creationinfo",
+      "name": "Composer project / Docker Official Images"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:concrete-cms-portlandlabs:e230e20441de",
+      "creationInfo": "_:creationinfo",
+      "name": "Concrete CMS / PortlandLabs"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:contao-project:9914f85f473b",
+      "creationInfo": "_:creationinfo",
+      "name": "Contao project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:corporation-for-digital-scholarship-omeka-project:eaecae12d515",
+      "creationInfo": "_:creationinfo",
+      "name": "Corporation for Digital Scholarship / Omeka project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:couchbase-inc.:b63c87727da6",
+      "creationInfo": "_:creationinfo",
+      "name": "Couchbase, Inc."
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:craft-cms-pixel-tonic:eb48f8fe594d",
+      "creationInfo": "_:creationinfo",
+      "name": "Craft CMS / Pixel & Tonic"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:cyberpanel-project:b379a78237de",
+      "creationInfo": "_:creationinfo",
+      "name": "CyberPanel project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:ddev-project:d35232937d19",
+      "creationInfo": "_:creationinfo",
+      "name": "DDEV project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:devsense-phalanger-project:2441ff277e7b",
+      "creationInfo": "_:creationinfo",
+      "name": "DEVSENSE / Phalanger project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:dan-phillimore-uniter-project:d968636f2e0d",
+      "creationInfo": "_:creationinfo",
+      "name": "Dan Phillimore / Uniter project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:datadog-blackfire-integration:35ee2a58a118",
+      "creationInfo": "_:creationinfo",
+      "name": "Datadog / Blackfire integration"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:debian-php-maintainers:ebee55ebcf92",
+      "creationInfo": "_:creationinfo",
+      "name": "Debian PHP Maintainers"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:deployer-anton-medvedev-and-contributors:609ad51fee40",
+      "creationInfo": "_:creationinfo",
+      "name": "Deployer / Anton Medvedev and contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:docker-community-docker-official-images-not-wordpress-upstream-image-ownership:b0bb692ad033",
+      "creationInfo": "_:creationinfo",
+      "name": "Docker Community / Docker Official Images, not WordPress upstream image ownership"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:docker-official-images-docker-library-php-maintainers:c1946bfa8981",
+      "creationInfo": "_:creationinfo",
+      "name": "Docker Official Images / docker-library PHP maintainers"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:docker-official-images-maintainers:fecb8d8e4314",
+      "creationInfo": "_:creationinfo",
+      "name": "Docker Official Images maintainers"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:doctrine-project:3ef6ed00e86e",
+      "creationInfo": "_:creationinfo",
+      "name": "Doctrine project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:dokuwiki-project:3f7f47dcb75e",
+      "creationInfo": "_:creationinfo",
+      "name": "DokuWiki project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:dokuwiki-project-splitbrain:30835bfd09cc",
+      "creationInfo": "_:creationinfo",
+      "name": "DokuWiki project / splitbrain"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:dolibarr-project:23441321f7c2",
+      "creationInfo": "_:creationinfo",
+      "name": "Dolibarr project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:drupal-commerce-centarro:5e176788723a",
+      "creationInfo": "_:creationinfo",
+      "name": "Drupal Commerce / Centarro"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:drupal-project:5f28f6a52a86",
+      "creationInfo": "_:creationinfo",
+      "name": "Drupal project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:drush-project:bb8606bcfab2",
+      "creationInfo": "_:creationinfo",
+      "name": "Drush project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:ec-cube-project:6853f2cc97b4",
+      "creationInfo": "_:creationinfo",
+      "name": "EC-CUBE project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:egroupware-gmbh-egroupware-project:13e7e9b3cc37",
+      "creationInfo": "_:creationinfo",
+      "name": "EGroupware GmbH / EGroupware project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:easyphp-project:7c77231bb1a7",
+      "creationInfo": "_:creationinfo",
+      "name": "EasyPHP project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:elastic:5e7c4d821aae",
+      "creationInfo": "_:creationinfo",
+      "name": "Elastic"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:endor-linked-by-apache-friends:a460561663ea",
+      "creationInfo": "_:creationinfo",
+      "name": "Endor; linked by Apache Friends"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:enhancesoft-osticket-project:bb49eabf87d0",
+      "creationInfo": "_:creationinfo",
+      "name": "Enhancesoft / osTicket project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:espocrm-project:7e115f756914",
+      "creationInfo": "_:creationinfo",
+      "name": "EspoCRM project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:european-commission:4c29de14a9cf",
+      "creationInfo": "_:creationinfo",
+      "name": "European Commission"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:european-commission-openeuropa-contributors:9f1a9ca2a693",
+      "creationInfo": "_:creationinfo",
+      "name": "European Commission / OpenEuropa contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:expressionengine-project:ff863db69502",
+      "creationInfo": "_:creationinfo",
+      "name": "ExpressionEngine project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:fossbilling-project:f66ad2cdc581",
+      "creationInfo": "_:creationinfo",
+      "name": "FOSSBilling project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:facebook-hhvm-project:33d27f3f8d90",
+      "creationInfo": "_:creationinfo",
+      "name": "Facebook / HHVM project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:facebook-hiphop-project:c3ae1db0fbc1",
+      "creationInfo": "_:creationinfo",
+      "name": "Facebook / HipHop project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:fedora-project-php-maintainers:006582aa5697",
+      "creationInfo": "_:creationinfo",
+      "name": "Fedora Project PHP maintainers"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:feng-office:bf09c6445ab2",
+      "creationInfo": "_:creationinfo",
+      "name": "Feng Office"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:filecloud:aedb4a5ecb13",
+      "creationInfo": "_:creationinfo",
+      "name": "FileCloud"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:filegator-project:15aad6bbb880",
+      "creationInfo": "_:creationinfo",
+      "name": "FileGator project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:filerun:e71a668f5e36",
+      "creationInfo": "_:creationinfo",
+      "name": "FileRun"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:filesender-project:7bc02cb3090d",
+      "creationInfo": "_:creationinfo",
+      "name": "FileSender project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:flarum-project-flarum-foundation:68d0a192ef33",
+      "creationInfo": "_:creationinfo",
+      "name": "Flarum project / Flarum Foundation"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:fly.io-customer-runtime-image-publisher:965c91fd71fb",
+      "creationInfo": "_:creationinfo",
+      "name": "Fly.io; customer runtime-image publisher"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:forma-lms-project:c68976f083dc",
+      "creationInfo": "_:creationinfo",
+      "name": "Forma LMS project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:frankenphp:c752b8206ab0",
+      "creationInfo": "_:creationinfo",
+      "name": "FrankenPHP"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:freebsd-project-ports-maintainers:e22487bf0e0d",
+      "creationInfo": "_:creationinfo",
+      "name": "FreeBSD Project / ports maintainers"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:freescout-project:06cc013f91e3",
+      "creationInfo": "_:creationinfo",
+      "name": "FreeScout project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:frontaccounting-project:29bf59b7396b",
+      "creationInfo": "_:creationinfo",
+      "name": "FrontAccounting project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:froxlor-team:e42e18308952",
+      "creationInfo": "_:creationinfo",
+      "name": "Froxlor Team"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:fusiondirectory:f643dc998a37",
+      "creationInfo": "_:creationinfo",
+      "name": "FusionDirectory"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:fusionpbx-project:754cb277d042",
+      "creationInfo": "_:creationinfo",
+      "name": "FusionPBX project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:glpi-teclib:9df3cd869503",
+      "creationInfo": "_:creationinfo",
+      "name": "GLPI / Teclib"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:gentoo-php-maintainers:da62198036e3",
+      "creationInfo": "_:creationinfo",
+      "name": "Gentoo PHP maintainers"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:google:ce770667e5f9",
+      "creationInfo": "_:creationinfo",
+      "name": "Google"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:google-protocol-buffers-project:ebc9971e1556",
+      "creationInfo": "_:creationinfo",
+      "name": "Google / Protocol Buffers project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:google-googleapis-contributors:53297ab64763",
+      "creationInfo": "_:creationinfo",
+      "name": "Google / googleapis contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:google-cloud:69bd2211a05e",
+      "creationInfo": "_:creationinfo",
+      "name": "Google Cloud"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:google-cloud-customer-image-publisher:fc34797bfe38",
+      "creationInfo": "_:creationinfo",
+      "name": "Google Cloud; customer image publisher"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:grav-project:fb8c0ee3f440",
+      "creationInfo": "_:creationinfo",
+      "name": "Grav project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:grokability-snipe-it-project:2820c9554c4e",
+      "creationInfo": "_:creationinfo",
+      "name": "Grokability / Snipe-IT project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:guzzle-project:71df9dafc07f",
+      "creationInfo": "_:creationinfo",
+      "name": "Guzzle project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:heroku-salesforce:6e234205ed8b",
+      "creationInfo": "_:creationinfo",
+      "name": "Heroku / Salesforce"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:hestia-control-panel-project:3a40940dadf2",
+      "creationInfo": "_:creationinfo",
+      "name": "Hestia Control Panel project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:hikashop-project:47a7e7e13ce4",
+      "creationInfo": "_:creationinfo",
+      "name": "HikaShop project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:hippyvm-contributors:7bd91236f625",
+      "creationInfo": "_:creationinfo",
+      "name": "HippyVM contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:homebrew-maintainers:05554fc9d468",
+      "creationInfo": "_:creationinfo",
+      "name": "Homebrew maintainers"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:horde-project:10e41a1c35a5",
+      "creationInfo": "_:creationinfo",
+      "name": "Horde Project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:hostbill-hostbillapp:d4f070dfff4d",
+      "creationInfo": "_:creationinfo",
+      "name": "HostBill / HostBillApp"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:ilias-society-ilias-project:ec52988d9dbe",
+      "creationInfo": "_:creationinfo",
+      "name": "ILIAS Society / ILIAS project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:ionos:102c255bf6f5",
+      "creationInfo": "_:creationinfo",
+      "name": "IONOS"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:ispconfig-project:03341db39e95",
+      "creationInfo": "_:creationinfo",
+      "name": "ISPConfig project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:ibexa:7bedfec52320",
+      "creationInfo": "_:creationinfo",
+      "name": "Ibexa"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:icinga-gmbh:c965749e3457",
+      "creationInfo": "_:creationinfo",
+      "name": "Icinga GmbH"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:imagick-project:2bf10a94acac",
+      "creationInfo": "_:creationinfo",
+      "name": "Imagick project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:infection-project:ea09ab457296",
+      "creationInfo": "_:creationinfo",
+      "name": "Infection project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:invision-community-invision-power-services:e02360fa1b98",
+      "creationInfo": "_:creationinfo",
+      "name": "Invision Community / Invision Power Services"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:invoice-ninja:423cd0125592",
+      "creationInfo": "_:creationinfo",
+      "name": "Invoice Ninja"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:invoiceplane-project:fd70e45b2e6d",
+      "creationInfo": "_:creationinfo",
+      "name": "InvoicePlane project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:issabel:7b89a9b4d4f2",
+      "creationInfo": "_:creationinfo",
+      "name": "Issabel"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:jbmc-software-directadmin:af6c0bae30de",
+      "creationInfo": "_:creationinfo",
+      "name": "JBMC Software / DirectAdmin"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:jphp-group:bf72e91b5d2d",
+      "creationInfo": "_:creationinfo",
+      "name": "JPHP Group"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:jakub-vrana-adminer-project:891dd9837001",
+      "creationInfo": "_:creationinfo",
+      "name": "Jakub Vrana / Adminer project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:jetbrains:492cae23f6e5",
+      "creationInfo": "_:creationinfo",
+      "name": "JetBrains"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:joomla-project:6ff342097444",
+      "creationInfo": "_:creationinfo",
+      "name": "Joomla project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:jordi-boggiano-monolog-contributors:b77868777fa1",
+      "creationInfo": "_:creationinfo",
+      "name": "Jordi Boggiano / Monolog contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:kanboard-project:9933310079d0",
+      "creationInfo": "_:creationinfo",
+      "name": "Kanboard project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:kevin-papst-kimai-project:546060b25090",
+      "creationInfo": "_:creationinfo",
+      "name": "Kevin Papst / Kimai project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:kinsta:108a30fa41af",
+      "creationInfo": "_:creationinfo",
+      "name": "Kinsta"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:kirby-cms-project:474c9b38d373",
+      "creationInfo": "_:creationinfo",
+      "name": "Kirby CMS project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:klemen-stirn-hesk:55cf7a1eb538",
+      "creationInfo": "_:creationinfo",
+      "name": "Klemen Stirn / Hesk"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:kopano-kopano-dev:cda8e37e3f72",
+      "creationInfo": "_:creationinfo",
+      "name": "Kopano / Kopano-dev"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:ldap-account-manager-project:02f6fd3ddf4d",
+      "creationInfo": "_:creationinfo",
+      "name": "LDAP Account Manager project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:ladybird-web-solution-faveo:df03e426b714",
+      "creationInfo": "_:creationinfo",
+      "name": "Ladybird Web Solution / Faveo"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:laminas-project-linux-foundation:d069656faa64",
+      "creationInfo": "_:creationinfo",
+      "name": "Laminas Project / Linux Foundation"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:laminas-project-mezzio:3c798da87c4b",
+      "creationInfo": "_:creationinfo",
+      "name": "Laminas Project / Mezzio"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:lando-project:3d6eff99a44a",
+      "creationInfo": "_:creationinfo",
+      "name": "Lando project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:laragon-project:70489efcd492",
+      "creationInfo": "_:creationinfo",
+      "name": "Laragon project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:laravel:ab5d684a5cac",
+      "creationInfo": "_:creationinfo",
+      "name": "Laravel"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:laravel-aws-infrastructure:d14ce9e8845b",
+      "creationInfo": "_:creationinfo",
+      "name": "Laravel; AWS infrastructure"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:leantime-project:f7503d9fd8cd",
+      "creationInfo": "_:creationinfo",
+      "name": "Leantime project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:librenms-project:af4c5fb4fb65",
+      "creationInfo": "_:creationinfo",
+      "name": "LibreNMS project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:lime-technology-unraid:a8ec17054aaf",
+      "creationInfo": "_:creationinfo",
+      "name": "Lime Technology / Unraid"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:limesurvey-gmbh-limesurvey-project:a8485e0f99eb",
+      "creationInfo": "_:creationinfo",
+      "name": "LimeSurvey GmbH / LimeSurvey project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:livecodes-project:66c47bb4d0d0",
+      "creationInfo": "_:creationinfo",
+      "name": "LiveCodes project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:lunar-project:a5ad7d6afd2d",
+      "creationInfo": "_:creationinfo",
+      "name": "Lunar project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:mamp-gmbh:9549a7d179f0",
+      "creationInfo": "_:creationinfo",
+      "name": "MAMP GmbH"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:misp-project-circl:c90ee4472428",
+      "creationInfo": "_:creationinfo",
+      "name": "MISP project / CIRCL"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:modx-project:be017b3f39cb",
+      "creationInfo": "_:creationinfo",
+      "name": "MODX project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:mage-os-project:b5f3a5003bf6",
+      "creationInfo": "_:creationinfo",
+      "name": "Mage-OS project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:magento-adobe:a67a7d2a08e3",
+      "creationInfo": "_:creationinfo",
+      "name": "Magento / Adobe"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:mailwatch-project:72b4af037516",
+      "creationInfo": "_:creationinfo",
+      "name": "MailWatch project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:mantisbt-project:df11d3b0ab3d",
+      "creationInfo": "_:creationinfo",
+      "name": "MantisBT project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:matomo:bf8cee3cfc7f",
+      "creationInfo": "_:creationinfo",
+      "name": "Matomo"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:matomo-innocraft:2c61af8e5e73",
+      "creationInfo": "_:creationinfo",
+      "name": "Matomo / InnoCraft"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:matomo-team:e70f1e9ef6e1",
+      "creationInfo": "_:creationinfo",
+      "name": "Matomo team"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:mautic-project:ee4842c8fff2",
+      "creationInfo": "_:creationinfo",
+      "name": "Mautic project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:mediawiki-project:f52d18049d8d",
+      "creationInfo": "_:creationinfo",
+      "name": "MediaWiki project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:messagebird:06b3aed2e1d5",
+      "creationInfo": "_:creationinfo",
+      "name": "MessageBird"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:metaways-tine-project:8542633d9bf0",
+      "creationInfo": "_:creationinfo",
+      "name": "Metaways / tine project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:microsoft:c7bac46904be",
+      "creationInfo": "_:creationinfo",
+      "name": "Microsoft"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:microsoft-azure-storage:40983f106f24",
+      "creationInfo": "_:creationinfo",
+      "name": "Microsoft Azure Storage"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:microsoft-graph-client-tooling:4aecacc45ec9",
+      "creationInfo": "_:creationinfo",
+      "name": "Microsoft Graph Client Tooling"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:mockery-project:1f8def6ca5ea",
+      "creationInfo": "_:creationinfo",
+      "name": "Mockery project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:mollie:dfdc4f7e0dd5",
+      "creationInfo": "_:creationinfo",
+      "name": "Mollie"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:mollie-b.v.:8d022861c606",
+      "creationInfo": "_:creationinfo",
+      "name": "Mollie B.V."
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:mongodb-php-driver-team:4582c862d936",
+      "creationInfo": "_:creationinfo",
+      "name": "MongoDB PHP driver team"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:montala-resourcespace:3ee95a5bab5a",
+      "creationInfo": "_:creationinfo",
+      "name": "Montala / ResourceSpace"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:moodle-project:f5c1a844978a",
+      "creationInfo": "_:creationinfo",
+      "name": "Moodle project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:moodle-project-ralf-krause:5c83c22eaa65",
+      "creationInfo": "_:creationinfo",
+      "name": "Moodle project / Ralf Krause"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:moodle-project-complete-installer-packagers:fe0555ae235c",
+      "creationInfo": "_:creationinfo",
+      "name": "Moodle project / complete-installer packagers"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:mybb-group:3748ab0ba9ed",
+      "creationInfo": "_:creationinfo",
+      "name": "MyBB Group"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:nagios-enterprises:a84a076f21da",
+      "creationInfo": "_:creationinfo",
+      "name": "Nagios Enterprises"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:neos-project:d0746de5997e",
+      "creationInfo": "_:creationinfo",
+      "name": "Neos project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:netgate-pfsense:0f98ae3101be",
+      "creationInfo": "_:creationinfo",
+      "name": "Netgate / pfSense"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:netlify:55c13c730350",
+      "creationInfo": "_:creationinfo",
+      "name": "Netlify"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:nette-foundation-nette-community:bc8a0e1b8b8d",
+      "creationInfo": "_:creationinfo",
+      "name": "Nette Foundation / Nette community"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:nette-community:a34600e3bba7",
+      "creationInfo": "_:creationinfo",
+      "name": "Nette community"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:nette-community-latte:9ac1e4decbe5",
+      "creationInfo": "_:creationinfo",
+      "name": "Nette community / Latte"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:nette-community-tracy:68d1cb94c3bf",
+      "creationInfo": "_:creationinfo",
+      "name": "Nette community / Tracy"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:nextcloud:337128aac2bf",
+      "creationInfo": "_:creationinfo",
+      "name": "Nextcloud"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:nextcloud-calendar-project:9097739c1253",
+      "creationInfo": "_:creationinfo",
+      "name": "Nextcloud Calendar project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:nextcloud-collectives-project:9be07c90f900",
+      "creationInfo": "_:creationinfo",
+      "name": "Nextcloud Collectives project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:nextcloud-contacts-project:8c829f1ae4ee",
+      "creationInfo": "_:creationinfo",
+      "name": "Nextcloud Contacts project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:nextcloud-deck-project:9f961cde92ad",
+      "creationInfo": "_:creationinfo",
+      "name": "Nextcloud Deck project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:nextcloud-docker-community-volunteers-docker-official-images:04d9c607f775",
+      "creationInfo": "_:creationinfo",
+      "name": "Nextcloud Docker community volunteers / Docker Official Images"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:nextcloud-gmbh-nextcloud-aio-maintainers:1303c787a6ba",
+      "creationInfo": "_:creationinfo",
+      "name": "Nextcloud GmbH / Nextcloud AIO maintainers"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:nextcloud-mail-project:82333a85a37f",
+      "creationInfo": "_:creationinfo",
+      "name": "Nextcloud Mail project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:nextcloud-notes-project:5df42c67a6ae",
+      "creationInfo": "_:creationinfo",
+      "name": "Nextcloud Notes project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:nextcloud-snap-maintainers:3471f671bf79",
+      "creationInfo": "_:creationinfo",
+      "name": "Nextcloud Snap maintainers"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:nextcloudpi-project-nextcloud-community:a8e969edbf54",
+      "creationInfo": "_:creationinfo",
+      "name": "NextcloudPi project / Nextcloud community"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:nikita-popov-php-parser-contributors:ea6aba93c669",
+      "creationInfo": "_:creationinfo",
+      "name": "Nikita Popov / PHP-Parser contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:nixos-nixpkgs-maintainers:4f3a9d20c67b",
+      "creationInfo": "_:creationinfo",
+      "name": "NixOS / Nixpkgs maintainers"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:opnsense-deciso:fee3b393b124",
+      "creationInfo": "_:creationinfo",
+      "name": "OPNsense / Deciso"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:ovhcloud:71b982cacbde",
+      "creationInfo": "_:creationinfo",
+      "name": "OVHcloud"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:oxid-esales:af6009ffca3f",
+      "creationInfo": "_:creationinfo",
+      "name": "OXID eSales"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:observium-limited-observium-project:09c602022500",
+      "creationInfo": "_:creationinfo",
+      "name": "Observium Limited / Observium project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:october-cms-project:51b2ed0d968d",
+      "creationInfo": "_:creationinfo",
+      "name": "October CMS project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:open-social-project:71ad466969b7",
+      "creationInfo": "_:creationinfo",
+      "name": "Open Social project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:open-web-analytics-project:7fd2fcff6e80",
+      "creationInfo": "_:creationinfo",
+      "name": "Open Web Analytics project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:open-eclass-project-gunet:cfa18eb6b0c6",
+      "creationInfo": "_:creationinfo",
+      "name": "Open eClass project / GUnet"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:openbsd-ports-maintainers-php-documentation-team:7c89c0b9e1fe",
+      "creationInfo": "_:creationinfo",
+      "name": "OpenBSD ports maintainers / PHP documentation team"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:opencart-project:d1d89c347438",
+      "creationInfo": "_:creationinfo",
+      "name": "OpenCart project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:openconext-surf:28e3bb0c2ad7",
+      "creationInfo": "_:creationinfo",
+      "name": "OpenConext / SURF"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:opendocman-project:51e7f2485479",
+      "creationInfo": "_:creationinfo",
+      "name": "OpenDocMan project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:openmage-project:30d6f5968f68",
+      "creationInfo": "_:creationinfo",
+      "name": "OpenMage project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:opensearch-contributors-inherited-elastic-client-lineage:8e536d255e0a",
+      "creationInfo": "_:creationinfo",
+      "name": "OpenSearch Contributors; inherited Elastic client lineage"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:openswoole-project:cb93756ac46d",
+      "creationInfo": "_:creationinfo",
+      "name": "OpenSwoole project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:openwrt-packages-feed-maintainers:c50773432e7c",
+      "creationInfo": "_:creationinfo",
+      "name": "OpenWrt packages feed maintainers"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:orangehrm-inc.:b9e759a6db60",
+      "creationInfo": "_:creationinfo",
+      "name": "OrangeHRM Inc."
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:oro-inc.:bf7f89b3295e",
+      "creationInfo": "_:creationinfo",
+      "name": "Oro Inc."
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:oro-inc.:bbfdf654907f",
+      "creationInfo": "_:creationinfo",
+      "name": "Oro, Inc."
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:pcov-joe-watkins-and-contributors:59377b1bd5db",
+      "creationInfo": "_:creationinfo",
+      "name": "PCOV / Joe Watkins and contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:pear-project-php-group:64121e0e38ce",
+      "creationInfo": "_:creationinfo",
+      "name": "PEAR project / PHP Group"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:pecl-xhprof-longxinh-and-contributors:69d6027eeeb5",
+      "creationInfo": "_:creationinfo",
+      "name": "PECL XHProf / longxinH and contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phar.io-arne-blankerts-sebastian-heuer-and-contributors:3e39d9e52d66",
+      "creationInfo": "_:creationinfo",
+      "name": "PHAR.io / Arne Blankerts, Sebastian Heuer and contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:php-cs-fixer-project:a1da0b19b4a4",
+      "creationInfo": "_:creationinfo",
+      "name": "PHP CS Fixer project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:php-depend-project:a861d9aa9963",
+      "creationInfo": "_:creationinfo",
+      "name": "PHP Depend project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:php-ev-extension-project:8acd0e809097",
+      "creationInfo": "_:creationinfo",
+      "name": "PHP Ev extension project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:php-event-extension-project:2806c24ba3dc",
+      "creationInfo": "_:creationinfo",
+      "name": "PHP Event extension project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:php-gearman-extension-project:8425e14fe90a",
+      "creationInfo": "_:creationinfo",
+      "name": "PHP Gearman extension project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:php-mailparse-extension-project:dc0b6a84f165",
+      "creationInfo": "_:creationinfo",
+      "name": "PHP Mailparse extension project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:php-oauth-extension-project:8f7ed61fc413",
+      "creationInfo": "_:creationinfo",
+      "name": "PHP OAuth extension project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:php-ssh2-extension-project:ae8b580dab94",
+      "creationInfo": "_:creationinfo",
+      "name": "PHP SSH2 extension project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:php-yaml-extension-project:414f13a5c6a4",
+      "creationInfo": "_:creationinfo",
+      "name": "PHP YAML extension project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:php-gnupg-extension-project:f9a4f0d63ffa",
+      "creationInfo": "_:creationinfo",
+      "name": "PHP gnupg extension project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:php-fig:fe57c0141bc6",
+      "creationInfo": "_:creationinfo",
+      "name": "PHP-FIG"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:php-pm-project:0e5b28280cac",
+      "creationInfo": "_:creationinfo",
+      "name": "PHP-PM project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpbench-daniel-leech-and-contributors:f9e47753ced2",
+      "creationInfo": "_:creationinfo",
+      "name": "PHPBench / Daniel Leech and contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpcsstandards-php_codesniffer-project:c2dcd7e2c5ae",
+      "creationInfo": "_:creationinfo",
+      "name": "PHPCSStandards / PHP_CodeSniffer project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpmd-project:c0e7ec142f08",
+      "creationInfo": "_:creationinfo",
+      "name": "PHPMD project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpmailer-project:60c5aec92369",
+      "creationInfo": "_:creationinfo",
+      "name": "PHPMailer project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpstan-ondrej-mirtes-and-contributors:ef6201ca2097",
+      "creationInfo": "_:creationinfo",
+      "name": "PHPStan / Ond\u0159ej Mirtes and contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpstan-project:a03664190f1e",
+      "creationInfo": "_:creationinfo",
+      "name": "PHPStan project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpunit-project:a6c8a0db5029",
+      "creationInfo": "_:creationinfo",
+      "name": "PHPUnit project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpunit-project-sebastian-bergmann:4015277c427f",
+      "creationInfo": "_:creationinfo",
+      "name": "PHPUnit project / Sebastian Bergmann"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpro-grumphp-contributors:4042f138a038",
+      "creationInfo": "_:creationinfo",
+      "name": "PHPro / GrumPHP contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:pantheon:089b80999032",
+      "creationInfo": "_:creationinfo",
+      "name": "Pantheon"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:paratest-brian-scaturro-filippo-tessarotto-and-contributors:e5468259783f",
+      "creationInfo": "_:creationinfo",
+      "name": "ParaTest / Brian Scaturro, Filippo Tessarotto and contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:part-db-project:4985626f8fec",
+      "creationInfo": "_:creationinfo",
+      "name": "Part-DB project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:passbolt-sa:eb876d3c6dc0",
+      "creationInfo": "_:creationinfo",
+      "name": "Passbolt SA"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:paypal:ab8a4f6bb84d",
+      "creationInfo": "_:creationinfo",
+      "name": "PayPal"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:peachpie-wpdotnet-project:ca9057f8eb1b",
+      "creationInfo": "_:creationinfo",
+      "name": "PeachPie / WpDotNet project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:peachpie-iolevel:632b4dcc464d",
+      "creationInfo": "_:creationinfo",
+      "name": "PeachPie / iolevel"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:pestphp-nuno-maduro-and-contributors:dccc9fcfa944",
+      "creationInfo": "_:creationinfo",
+      "name": "PestPHP / Nuno Maduro and contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phalcon-project:e3422b5ff0d8",
+      "creationInfo": "_:creationinfo",
+      "name": "Phalcon project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phillips-data-blesta:4acaacd4565e",
+      "creationInfo": "_:creationinfo",
+      "name": "Phillips Data / Blesta"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phing-project-michiel-rook-and-contributors:398a8a34f845",
+      "creationInfo": "_:creationinfo",
+      "name": "Phing project / Michiel Rook and contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpredis-project-michael-grunder-and-contributors:e80e547589c5",
+      "creationInfo": "_:creationinfo",
+      "name": "PhpRedis project / Michael Grunder and contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpspec-project:603c85f6cd8f",
+      "creationInfo": "_:creationinfo",
+      "name": "PhpSpec project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpactor-project:3e76b4ee9ebc",
+      "creationInfo": "_:creationinfo",
+      "name": "Phpactor project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:pi-hole-project:1dfc9fb3e345",
+      "creationInfo": "_:creationinfo",
+      "name": "Pi-hole project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:pimcore-project:f840c4c72468",
+      "creationInfo": "_:creationinfo",
+      "name": "Pimcore project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:pluxml-project:c14a1e04cb4b",
+      "creationInfo": "_:creationinfo",
+      "name": "PluXml project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:pmwiki-project:07f7f7d1bd83",
+      "creationInfo": "_:creationinfo",
+      "name": "PmWiki project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:postfixadmin-project:97816895f2c0",
+      "creationInfo": "_:creationinfo",
+      "name": "PostfixAdmin project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:predis-project-till-kruss-and-contributors:86be57d1d608",
+      "creationInfo": "_:creationinfo",
+      "name": "Predis project / Till Kr\u00fcss and contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:prestashop-project:5786774c1700",
+      "creationInfo": "_:creationinfo",
+      "name": "PrestaShop project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:privatebin-project:aaea8cf78b28",
+      "creationInfo": "_:creationinfo",
+      "name": "PrivateBin project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:processwire-project:33aff47f2d2e",
+      "creationInfo": "_:creationinfo",
+      "name": "ProcessWire project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:projectsend-project:47b4dd186a7f",
+      "creationInfo": "_:creationinfo",
+      "name": "ProjectSend project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:prophecy-phpspec-project:304a8acf3418",
+      "creationInfo": "_:creationinfo",
+      "name": "Prophecy / PhpSpec project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:psalm-project-daniil-gentili:6bc77e52df2f",
+      "creationInfo": "_:creationinfo",
+      "name": "Psalm project / Daniil Gentili"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:psalm-project-matthew-brown-daniil-gentili-and-contributors:b517ed413fc7",
+      "creationInfo": "_:creationinfo",
+      "name": "Psalm project / Matthew Brown, Daniil Gentili and contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:psysh-justin-hileman-and-contributors:bdb0c631a2b5",
+      "creationInfo": "_:creationinfo",
+      "name": "PsySH / Justin Hileman and contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:pterodactyl-project:69626e6dba73",
+      "creationInfo": "_:creationinfo",
+      "name": "Pterodactyl project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:public-knowledge-project-pkp:7c8630c7aba3",
+      "creationInfo": "_:creationinfo",
+      "name": "Public Knowledge Project (PKP)"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:pydio:7be8af60781b",
+      "creationInfo": "_:creationinfo",
+      "name": "Pydio"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:qnap:01af88f7bc7a",
+      "creationInfo": "_:creationinfo",
+      "name": "QNAP"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:rainloop-team:e6e48a3d5a77",
+      "creationInfo": "_:creationinfo",
+      "name": "RainLoop Team"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:raspap-project:fedc8249a109",
+      "creationInfo": "_:creationinfo",
+      "name": "RaspAP project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:reactphp-project:ddd66e106711",
+      "creationInfo": "_:creationinfo",
+      "name": "ReactPHP project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:rector-project:cee097892dd0",
+      "creationInfo": "_:creationinfo",
+      "name": "Rector project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:red-hat:2c30c5da9571",
+      "creationInfo": "_:creationinfo",
+      "name": "Red Hat"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:render-customer-base-image-publisher:0ba5e6a95438",
+      "creationInfo": "_:creationinfo",
+      "name": "Render; customer/base-image publisher"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:roadrunner-php-community:d42b90d07266",
+      "creationInfo": "_:creationinfo",
+      "name": "RoadRunner PHP community"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:roadrunner-project:72bb68ad417b",
+      "creationInfo": "_:creationinfo",
+      "name": "RoadRunner project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:roave:5fddd06e8463",
+      "creationInfo": "_:creationinfo",
+      "name": "Roave"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:roundcube-project:a7c8aa7ae5bb",
+      "creationInfo": "_:creationinfo",
+      "name": "Roundcube project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:spip-project:c69a1b3663f4",
+      "creationInfo": "_:creationinfo",
+      "name": "SPIP project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:surf:526cb83fb5c6",
+      "creationInfo": "_:creationinfo",
+      "name": "SURF"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:surf-surfnet:9ee32df4459a",
+      "creationInfo": "_:creationinfo",
+      "name": "SURF / SURFnet"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:suse:26e43032c4d1",
+      "creationInfo": "_:creationinfo",
+      "name": "SUSE"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:salesagility-suitecrm-project:83e42c3d8ae5",
+      "creationInfo": "_:creationinfo",
+      "name": "SalesAgility / SuiteCRM project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:sangoma:fcf1fd5f9a41",
+      "creationInfo": "_:creationinfo",
+      "name": "Sangoma"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:sangoma-freepbx-project:0e64d6e9d80d",
+      "creationInfo": "_:creationinfo",
+      "name": "Sangoma / FreePBX project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:sean-morris-php-wasm-project:b446bb548b83",
+      "creationInfo": "_:creationinfo",
+      "name": "Sean Morris / php-wasm project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:semantic-mediawiki-project:48cf2f4058da",
+      "creationInfo": "_:creationinfo",
+      "name": "Semantic MediaWiki project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:sendy:065407f5f88b",
+      "creationInfo": "_:creationinfo",
+      "name": "Sendy"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:serendipity-project:64d51b235ebb",
+      "creationInfo": "_:creationinfo",
+      "name": "Serendipity project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:shaarli-community:1503521bca1c",
+      "creationInfo": "_:creationinfo",
+      "name": "Shaarli community"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:shivam-mathur-setup-php-project:710caee86253",
+      "creationInfo": "_:creationinfo",
+      "name": "Shivam Mathur / setup-php project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:shlink-project:f5039970bb8f",
+      "creationInfo": "_:creationinfo",
+      "name": "Shlink project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:shopify:5e875bc90a36",
+      "creationInfo": "_:creationinfo",
+      "name": "Shopify"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:shopware-5-project-shopware-ag-lineage:e52f69e24a48",
+      "creationInfo": "_:creationinfo",
+      "name": "Shopware 5 project / shopware AG lineage"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:silverstripe-cms-project:192485f9083b",
+      "creationInfo": "_:creationinfo",
+      "name": "Silverstripe CMS project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:simple-machines-smf-project:ee30bb84f1ce",
+      "creationInfo": "_:creationinfo",
+      "name": "Simple Machines / SMF project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:simplerisk:5f58bfdf3a6c",
+      "creationInfo": "_:creationinfo",
+      "name": "SimpleRisk"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:simplesamlphp-project:cd51016cee52",
+      "creationInfo": "_:creationinfo",
+      "name": "SimpleSAMLphp project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:slim-project:111e59f42659",
+      "creationInfo": "_:creationinfo",
+      "name": "Slim project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:snappymail-project:90169daed163",
+      "creationInfo": "_:creationinfo",
+      "name": "SnappyMail project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:solidworx-solidinvoice-project:e2587caad284",
+      "creationInfo": "_:creationinfo",
+      "name": "SolidWorx / SolidInvoice project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:spryker-systems-gmbh:24b1ab6feb3d",
+      "creationInfo": "_:creationinfo",
+      "name": "Spryker Systems GmbH"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:squirrelmail-project:636c35631f8e",
+      "creationInfo": "_:creationinfo",
+      "name": "SquirrelMail project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:statamic-project:9c2ff669b86e",
+      "creationInfo": "_:creationinfo",
+      "name": "Statamic project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:stripe-and-contributors:ef9bb2637360",
+      "creationInfo": "_:creationinfo",
+      "name": "Stripe and contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:sugarai-sugarcrm:f15019e7b619",
+      "creationInfo": "_:creationinfo",
+      "name": "SugarAI / SugarCRM"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:sulu-project:6d450f6b9ca8",
+      "creationInfo": "_:creationinfo",
+      "name": "Sulu project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:swoole-project:fea8b71a2789",
+      "creationInfo": "_:creationinfo",
+      "name": "Swoole project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:sylius-project:2ab99f826635",
+      "creationInfo": "_:creationinfo",
+      "name": "Sylius project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:sylvain-lassaut-noisebynorthwest:7ea8684a5441",
+      "creationInfo": "_:creationinfo",
+      "name": "Sylvain Lassaut / NoiseByNorthwest"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:symfony:45eff1960e31",
+      "creationInfo": "_:creationinfo",
+      "name": "Symfony"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:symplify:4a5491ad08e8",
+      "creationInfo": "_:creationinfo",
+      "name": "Symplify"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:synology:81dd93975b06",
+      "creationInfo": "_:creationinfo",
+      "name": "Synology"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:typo3-project:0cbce3ba4e3d",
+      "creationInfo": "_:creationinfo",
+      "name": "TYPO3 project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:teampass-project:9a4410521326",
+      "creationInfo": "_:creationinfo",
+      "name": "TeamPass project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:terramaster:1fcc803c1548",
+      "creationInfo": "_:creationinfo",
+      "name": "TerraMaster"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:textpattern-project:f9f97cee94fd",
+      "creationInfo": "_:creationinfo",
+      "name": "Textpattern project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:the-cacti-group:a9660d17ae34",
+      "creationInfo": "_:creationinfo",
+      "name": "The Cacti Group"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:the-php-foundation-php-pie-project:b2dd69e772c7",
+      "creationInfo": "_:creationinfo",
+      "name": "The PHP Foundation / PHP PIE project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:the-php-group:dee81afa915f",
+      "creationInfo": "_:creationinfo",
+      "name": "The PHP Group"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:the-php-group-apache-operators:03d5cf75d497",
+      "creationInfo": "_:creationinfo",
+      "name": "The PHP Group / Apache operators"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:the-php-group-php-windows-maintainers:0f2d7962643e",
+      "creationInfo": "_:creationinfo",
+      "name": "The PHP Group / PHP Windows maintainers"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:the-php-league:3bed08dc0f5d",
+      "creationInfo": "_:creationinfo",
+      "name": "The PHP League"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:thelia-project:fe9fa48529cb",
+      "creationInfo": "_:creationinfo",
+      "name": "Thelia project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:thunder-project:2e2e3bc271e6",
+      "creationInfo": "_:creationinfo",
+      "name": "Thunder project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:tideways-open-source-fork-contributors:11e3c6dad437",
+      "creationInfo": "_:creationinfo",
+      "name": "Tideways / open-source fork contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:tideways-gmbh:63cf934f3f23",
+      "creationInfo": "_:creationinfo",
+      "name": "Tideways GmbH"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:tiki-software-community-association-tiki-project:fa77d721585c",
+      "creationInfo": "_:creationinfo",
+      "name": "Tiki Software Community Association / Tiki project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:totara:4928da53588d",
+      "creationInfo": "_:creationinfo",
+      "name": "Totara"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:transip:7333da98c122",
+      "creationInfo": "_:creationinfo",
+      "name": "TransIP"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:trend-micro:ddb8e439b1bf",
+      "creationInfo": "_:creationinfo",
+      "name": "Trend Micro"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:turnkey-linux:b8edb376138d",
+      "creationInfo": "_:creationinfo",
+      "name": "TurnKey Linux"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:tuxcare-cloudlinux:44063b555f7c",
+      "creationInfo": "_:creationinfo",
+      "name": "TuxCare / CloudLinux"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:twig-symfony-community:c36cb3285138",
+      "creationInfo": "_:creationinfo",
+      "name": "Twig / Symfony community"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:twilio-api-team:9ad331e5879b",
+      "creationInfo": "_:creationinfo",
+      "name": "Twilio API Team"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:twilio-sendgrid:e63caebf4c65",
+      "creationInfo": "_:creationinfo",
+      "name": "Twilio SendGrid"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:upsun:c1d9acf54d99",
+      "creationInfo": "_:creationinfo",
+      "name": "Upsun"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:utrecht-university-yoda:682576ef81e4",
+      "creationInfo": "_:creationinfo",
+      "name": "Utrecht University / Yoda"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:uwe-steinmann-seeddms-project:d5154896a107",
+      "creationInfo": "_:creationinfo",
+      "name": "Uwe Steinmann / SeedDMS project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:vk-vkcom-kphp-project:ac1921e7b501",
+      "creationInfo": "_:creationinfo",
+      "name": "VK / VKCOM KPHP project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:vance-lucas-graham-campbell-phpdotenv-contributors:6d6a371f082e",
+      "creationInfo": "_:creationinfo",
+      "name": "Vance Lucas / Graham Campbell / phpdotenv contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:vanderbilt-university-redcap-consortium:b82af8d9527a",
+      "creationInfo": "_:creationinfo",
+      "name": "Vanderbilt University / REDCap Consortium"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:vardot-varbase-project:ef46aa2ed241",
+      "creationInfo": "_:creationinfo",
+      "name": "Vardot / Varbase project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:virtualmin:c5c7bfdbe85f",
+      "creationInfo": "_:creationinfo",
+      "name": "Virtualmin"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:virtuemart-project:afaee2c2edef",
+      "creationInfo": "_:creationinfo",
+      "name": "VirtueMart project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:vitalpbx:cdb51f865789",
+      "creationInfo": "_:creationinfo",
+      "name": "VitalPBX"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:vtiger:cbc6c4580857",
+      "creationInfo": "_:creationinfo",
+      "name": "Vtiger"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:vufind-project-villanova-university:26c946a7eb39",
+      "creationInfo": "_:creationinfo",
+      "name": "VuFind project / Villanova University"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:whmcs-ltd.:5a62830fc636",
+      "creationInfo": "_:creationinfo",
+      "name": "WHMCS Ltd."
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:wp-engine:c79e160ca994",
+      "creationInfo": "_:creationinfo",
+      "name": "WP Engine"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:wp-cli-wordpress-project:bd7373454263",
+      "creationInfo": "_:creationinfo",
+      "name": "WP-CLI / WordPress project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:wampserver-maintainers-aviatechno:9497e0abcb8f",
+      "creationInfo": "_:creationinfo",
+      "name": "WampServer maintainers / Aviatechno"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:webpros-plesk:93657c157beb",
+      "creationInfo": "_:creationinfo",
+      "name": "Plesk"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:webpros-cpanel:bdda7f81a306",
+      "creationInfo": "_:creationinfo",
+      "name": "WebPros / cPanel"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:webkul:50c784d84ab7",
+      "creationInfo": "_:creationinfo",
+      "name": "Webkul"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:webkul-uvdesk:ae6011d4eedf",
+      "creationInfo": "_:creationinfo",
+      "name": "Webkul / UVdesk"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:whirl-i-gig-collectiveaccess-project:0edaf50f9dea",
+      "creationInfo": "_:creationinfo",
+      "name": "Whirl-i-Gig / CollectiveAccess project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:wikimedia-mediawiki-platform-maintainers:097237d00b82",
+      "creationInfo": "_:creationinfo",
+      "name": "Wikimedia / MediaWiki Platform maintainers"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:wikimedia-mediawiki-project:cc86fee29469",
+      "creationInfo": "_:creationinfo",
+      "name": "Wikimedia / MediaWiki project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:wikimedia-foundation:aae4e8ae9cbd",
+      "creationInfo": "_:creationinfo",
+      "name": "Wikimedia Foundation"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:winter-cms-project:dae787d32b88",
+      "creationInfo": "_:creationinfo",
+      "name": "Winter CMS project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:woltlab-gmbh:7d742c201944",
+      "creationInfo": "_:creationinfo",
+      "name": "WoltLab GmbH"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:woocommerce:b03e8dbab897",
+      "creationInfo": "_:creationinfo",
+      "name": "WooCommerce"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:wordpress-playground-contributors:77d729688b10",
+      "creationInfo": "_:creationinfo",
+      "name": "WordPress Playground contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:wordpress-project:65a95b5c0c0d",
+      "creationInfo": "_:creationinfo",
+      "name": "WordPress project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:x-cart:7f70f9da1d3b",
+      "creationInfo": "_:creationinfo",
+      "name": "X-Cart"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:xdebug-derick-rethans-and-contributors:838aea640a0f",
+      "creationInfo": "_:creationinfo",
+      "name": "Xdebug / Derick Rethans and contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:xdebug-vscode-php-debug-contributors:e00cb930fde5",
+      "creationInfo": "_:creationinfo",
+      "name": "Xdebug / vscode-php-debug contributors"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:xenforo-ltd:a7eacbf8f4db",
+      "creationInfo": "_:creationinfo",
+      "name": "XenForo Ltd"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:xigmanas-project:4133838b0ac1",
+      "creationInfo": "_:creationinfo",
+      "name": "XigmaNAS project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:yourls-project:289cddf0bc8a",
+      "creationInfo": "_:creationinfo",
+      "name": "YOURLS project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:yetiforce-s.a.:83b0bbf54a09",
+      "creationInfo": "_:creationinfo",
+      "name": "YetiForce S.A."
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:yii-software-yii-project:9e97631a4a2f",
+      "creationInfo": "_:creationinfo",
+      "name": "Yii Software / Yii project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:zabbix:a67c5eade920",
+      "creationInfo": "_:creationinfo",
+      "name": "Zabbix"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:zen-cart-project:cf37a6066422",
+      "creationInfo": "_:creationinfo",
+      "name": "Zen Cart project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:zoneminder-project:feccdc3c9d28",
+      "creationInfo": "_:creationinfo",
+      "name": "ZoneMinder project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:aapanel:455e44d41573",
+      "creationInfo": "_:creationinfo",
+      "name": "aaPanel"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:bbpress-community-wordpress-project:7d24e4475bb2",
+      "creationInfo": "_:creationinfo",
+      "name": "bbPress community / WordPress project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:bunq:73e242683c7d",
+      "creationInfo": "_:creationinfo",
+      "name": "bunq"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:daloradius-project:2f126651173d",
+      "creationInfo": "_:creationinfo",
+      "name": "daloRADIUS project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:grpc-project:7ba8ac00c3a4",
+      "creationInfo": "_:creationinfo",
+      "name": "gRPC project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:grommunio-gmbh:87b43b9b84ca",
+      "creationInfo": "_:creationinfo",
+      "name": "grommunio GmbH"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:ibabs:d92a87126ecf",
+      "creationInfo": "_:creationinfo",
+      "name": "iBabs"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:inextrix-astpp:5cadc909e4cb",
+      "creationInfo": "_:creationinfo",
+      "name": "iNextrix / ASTPP"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:igbinary-project:25a922668b37",
+      "creationInfo": "_:creationinfo",
+      "name": "igbinary project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:libsmbclient-php-project:d19f16e313db",
+      "creationInfo": "_:creationinfo",
+      "name": "libsmbclient-php project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:libvirt-php-contributors-unraid-distribution:6e34cba581da",
+      "creationInfo": "_:creationinfo",
+      "name": "libvirt-php contributors / Unraid distribution"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:m0n0wall-project:c2892c9539db",
+      "creationInfo": "_:creationinfo",
+      "name": "m0n0wall project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:msgpack-php-project:8e58d3b61000",
+      "creationInfo": "_:creationinfo",
+      "name": "msgpack-php project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:openmediavault-project:4038096a6d34",
+      "creationInfo": "_:creationinfo",
+      "name": "openmediavault project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:oscommerce:850576e15b41",
+      "creationInfo": "_:creationinfo",
+      "name": "osCommerce"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:oscommerce-legacy-project:36e7eee823ec",
+      "creationInfo": "_:creationinfo",
+      "name": "osCommerce legacy project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:owncloud-kiteworks:440864c9e5aa",
+      "creationInfo": "_:creationinfo",
+      "name": "ownCloud / Kiteworks"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:php-amqp-project:c275343b2e2a",
+      "creationInfo": "_:creationinfo",
+      "name": "php-amqp project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:php-memcached-project:ead06791f84d",
+      "creationInfo": "_:creationinfo",
+      "name": "php-memcached project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:php-rdkafka-project:8ab66f697dc6",
+      "creationInfo": "_:creationinfo",
+      "name": "php-rdkafka project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpbb-limited-phpbb-project:11b9148bad7c",
+      "creationInfo": "_:creationinfo",
+      "name": "phpBB Limited / phpBB project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpdocumentor-project:90d80b67e00b",
+      "creationInfo": "_:creationinfo",
+      "name": "phpDocumentor project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpipam-project:0fbf6e2c0aba",
+      "creationInfo": "_:creationinfo",
+      "name": "phpIPAM project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpldapadmin-leenooks-project:b63ad108fc59",
+      "creationInfo": "_:creationinfo",
+      "name": "phpLDAPadmin / leenooks project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phplist-project:ed3556aff1e5",
+      "creationInfo": "_:creationinfo",
+      "name": "phpList project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpmyadmin-project:2cab7c8d8fb0",
+      "creationInfo": "_:creationinfo",
+      "name": "phpMyAdmin project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phppgadmin-project:a3bf6804ca35",
+      "creationInfo": "_:creationinfo",
+      "name": "phpPgAdmin project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpvirtualbox-project:66cbe05f350c",
+      "creationInfo": "_:creationinfo",
+      "name": "phpVirtualBox project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpseclib-project:110dcdd46c01",
+      "creationInfo": "_:creationinfo",
+      "name": "phpseclib project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:shopware-ag:ee7a514250eb",
+      "creationInfo": "_:creationinfo",
+      "name": "shopware AG"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:thirty-development-llc-thirty-bees-project:62b2056a983c",
+      "creationInfo": "_:creationinfo",
+      "name": "thirty development llc / thirty bees project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:weberp-project:2502b018e1ed",
+      "creationInfo": "_:creationinfo",
+      "name": "webERP project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:webonyx-graphql-php-project:9ccd9d1bc274",
+      "creationInfo": "_:creationinfo",
+      "name": "webonyx / GraphQL-PHP project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:palo-alto-networks:02fbd33c10a8",
+      "creationInfo": "_:creationinfo",
+      "name": "Palo Alto Networks"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:citrix-netscaler:410b5f07d390",
+      "creationInfo": "_:creationinfo",
+      "name": "Citrix / NetScaler"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:f5:6cd28ed32abf",
+      "creationInfo": "_:creationinfo",
+      "name": "F5"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:fortinet:0dd4907ae878",
+      "creationInfo": "_:creationinfo",
+      "name": "Fortinet"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:juniper-networks:d899c5f10f6d",
+      "creationInfo": "_:creationinfo",
+      "name": "Juniper Networks"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:akeneo:d033cb250354",
+      "creationInfo": "_:creationinfo",
+      "name": "Akeneo"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:clientexec:5a15539081ae",
+      "creationInfo": "_:creationinfo",
+      "name": "Clientexec"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:freshrss-project:25e2a9a0ea24",
+      "creationInfo": "_:creationinfo",
+      "name": "FreshRSS project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:humhub:e385677572e6",
+      "creationInfo": "_:creationinfo",
+      "name": "HumHub"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:n-able:664d55891d79",
+      "creationInfo": "_:creationinfo",
+      "name": "N-able"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:openemr-project:6c4b2911c944",
+      "creationInfo": "_:creationinfo",
+      "name": "OpenEMR project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:scalingo:7a107972d9c8",
+      "creationInfo": "_:creationinfo",
+      "name": "Scalingo"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:sophos:2fd5c42d49f9",
+      "creationInfo": "_:creationinfo",
+      "name": "Sophos"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:phpmyfaq-project:ab2e5ba5d190",
+      "creationInfo": "_:creationinfo",
+      "name": "phpMyFAQ project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:wallabag-project:4347649a11df",
+      "creationInfo": "_:creationinfo",
+      "name": "wallabag project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:coolify:df9a9413e059",
+      "creationInfo": "_:creationinfo",
+      "name": "Coolify"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:firefly-iii-project:cda8b88c4699",
+      "creationInfo": "_:creationinfo",
+      "name": "Firefly III project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:monica-project:a5b33fcf8db8",
+      "creationInfo": "_:creationinfo",
+      "name": "Monica project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:cachet-project:999592b06608",
+      "creationInfo": "_:creationinfo",
+      "name": "Cachet project"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:krayin:de0598c27179",
+      "creationInfo": "_:creationinfo",
+      "name": "Krayin"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:qloapps:78f5576c47cf",
+      "creationInfo": "_:creationinfo",
+      "name": "QloApps"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:unopim:5e2db77c3503",
+      "creationInfo": "_:creationinfo",
+      "name": "UnoPim"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:crater-invoice:12a8781dbd68",
+      "creationInfo": "_:creationinfo",
+      "name": "Crater Invoice"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:quest-software:6a9ebaa7dc77",
+      "creationInfo": "_:creationinfo",
+      "name": "Quest Software"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:checkmk-gmbh:9de9bc86859d",
+      "creationInfo": "_:creationinfo",
+      "name": "Checkmk GmbH"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:securepoint-gmbh:5a4cf0fa8caa",
+      "creationInfo": "_:creationinfo",
+      "name": "Securepoint GmbH"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:check-point:dbbe390ad85f",
+      "creationInfo": "_:creationinfo",
+      "name": "Check Point"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
+      "creationInfo": "_:creationinfo",
+      "name": "Cisco"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:efficientip:b1b0f0c4c32a",
+      "creationInfo": "_:creationinfo",
+      "name": "EfficientIP"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:entelliweb:73c2d38cb10f",
+      "creationInfo": "_:creationinfo",
+      "name": "Delta Controls",
+      "comment": "Official supplier name confirmed by Delta Controls SecB0015; existing organization ID retained for compatibility."
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:server-side-up:b8dc6cf91ab8",
+      "creationInfo": "_:creationinfo",
+      "name": "Server Side Up"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:tenable:97a4c423fdc7",
+      "creationInfo": "_:creationinfo",
+      "name": "Tenable"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:broadcom:caf79e01972c",
+      "creationInfo": "_:creationinfo",
+      "name": "Broadcom"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:hewlett-packard-enterprise:e2f8dff0f1e0",
+      "creationInfo": "_:creationinfo",
+      "name": "Hewlett Packard Enterprise"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:netapp:35b1a7722289",
+      "creationInfo": "_:creationinfo",
+      "name": "NetApp"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:getpagespeed:5d1f0c2a9b3e",
+      "creationInfo": "_:creationinfo",
+      "name": "GetPageSpeed"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:ubiquiti",
+      "creationInfo": "_:creationinfo",
+      "name": "Ubiquiti"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:cleo:a86b18c73aa8",
+      "creationInfo": "_:creationinfo",
+      "name": "Cleo"
+    }
+  ]
+}

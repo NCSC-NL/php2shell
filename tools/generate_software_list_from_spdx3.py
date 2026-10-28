@@ -22,8 +22,11 @@ UPDATES_TITLE = "Software product status update history"
 CHANGELOG_FILENAME = "changelog_software_list.md"
 README_UPDATES_HEADING = "## Latest software status updates"
 README_LEGACY_TIMESTAMP_PREFIX = "Readme last significant change:"
-README_OPERATIONAL_TIMESTAMP_PREFIX = "Operational information last significant change:"
+README_OPERATIONAL_LEGACY_TIMESTAMP_PREFIX = "Operational information last significant change:"
+README_OPERATIONAL_TIMESTAMP_PREFIX = "Operational information:"
 README_SOFTWARE_TIMESTAMP_PREFIX = "Software list last status update:"
+README_TLP_TEXT = "TLP:CLEAR"
+README_TLP_HEADING = "## TLP:CLEAR"
 HISTORY_DATE_TIME_FORMAT = "YYYY-MM-DD HH:MM:SS +/-HHMM"
 BUCKETS = ["0-9", *string.ascii_uppercase]
 DEFAULT_SPDX_DIR = Path("software") / "spdx"
@@ -444,7 +447,7 @@ def build_status_history(
     git = git_executable()
     repo_root = repository_root(git)
     try:
-        relative_spdx_path = spdx_path.resolve().relative_to(repo_root).as_posix()
+        relative_spdx_path = spdx_path.resolve().relative_to(repo_root.resolve()).as_posix()
     except ValueError as exc:
         raise GenerationError("SPDX file must be inside the Git repository to generate update history.") from exc
 
@@ -518,9 +521,56 @@ def latest_update_entries(events: list[dict[str, Any]], limit: int = 5) -> list[
     return history_rows(events)[:limit]
 
 
+def combined_status(entry: dict[str, str], cves: list[str]) -> str:
+    statuses = [entry.get(cve, "") for cve in cves]
+    if not statuses:
+        return ""
+    if all(status == statuses[0] for status in statuses[1:]):
+        return statuses[0]
+    return "/".join(statuses)
+
+
+def readme_table_header(cves: list[str]) -> list[str]:
+    status_heading = "Status"
+    if cves:
+        status_heading += " " + " / ".join(cves)
+    columns = [
+        "Date and time",
+        "Supplier",
+        "Product",
+        "Version (see Status)",
+        status_heading,
+        "Links",
+    ]
+    alignment = [
+        ":------------------------",
+        ":---------",
+        ":--------",
+        ":--------------------:",
+        ":----------------------:",
+        "------:",
+    ]
+    return [
+        "| " + " | ".join(columns) + " |",
+        "|" + "|".join(alignment) + "|",
+    ]
+
+
+def readme_table_row(date_time: str, entry: dict[str, str], cves: list[str]) -> str:
+    row = [
+        markdown_cell(date_time),
+        entry["supplier"],
+        entry["product"],
+        entry["version"],
+        markdown_cell(combined_status(entry, cves)),
+        entry["links"],
+    ]
+    return "|" + "|".join(row) + "|"
+
+
 def render_readme_updates(cves: list[str], entries: list[tuple[str, dict[str, str]]]) -> str:
-    lines = [README_UPDATES_HEADING, "", *table_header(cves, include_date_time=True)]
-    lines.extend(table_row(entry, cves, date_time=date_time) for date_time, entry in entries)
+    lines = [README_UPDATES_HEADING, "", *readme_table_header(cves)]
+    lines.extend(readme_table_row(date_time, entry, cves) for date_time, entry in entries)
     lines.extend(["", f"See the [full software status update history](software/{CHANGELOG_FILENAME})."])
     return "\n".join(lines)
 
@@ -532,6 +582,34 @@ def write_generated_text(path: Path, content: str, default_newline: str = "\n") 
     rendered = normalized.replace("\n", newline).encode("utf-8")
     if rendered != existing:
         path.write_bytes(rendered)
+
+
+def ensure_readme_hard_break(text: str, prefix: str) -> str:
+    pattern = re.compile(rf"^{re.escape(prefix)}.*$", re.MULTILINE)
+    match = pattern.search(text)
+    if not match:
+        return text
+    line = match.group(0)
+    if line.endswith("<br>"):
+        return text
+    return text[: match.start()] + line + "<br>" + text[match.end() :]
+
+
+def normalize_readme_header(text: str) -> str:
+    for legacy_prefix in (
+        README_LEGACY_TIMESTAMP_PREFIX,
+        README_OPERATIONAL_LEGACY_TIMESTAMP_PREFIX,
+    ):
+        if legacy_prefix in text:
+            text = text.replace(legacy_prefix, README_OPERATIONAL_TIMESTAMP_PREFIX, 1)
+            break
+    return re.sub(
+        rf"^{re.escape(README_TLP_TEXT)}$",
+        README_TLP_HEADING,
+        text,
+        count=1,
+        flags=re.MULTILINE,
+    )
 
 
 def write_readme_updates(
@@ -558,15 +636,10 @@ def write_readme_updates(
             raise GenerationError(f"README is missing expected heading: {marker}")
         updated = text.replace(marker, section + "\n\n" + marker, 1)
 
+    updated = normalize_readme_header(updated)
     if updated != text or README_SOFTWARE_TIMESTAMP_PREFIX not in updated:
         timestamp = format_readme_timestamp(software_updated_at)
-        if README_LEGACY_TIMESTAMP_PREFIX in updated:
-            updated = updated.replace(
-                README_LEGACY_TIMESTAMP_PREFIX,
-                README_OPERATIONAL_TIMESTAMP_PREFIX,
-                1,
-            )
-        software_timestamp = f"{README_SOFTWARE_TIMESTAMP_PREFIX} {timestamp}"
+        software_timestamp = f"{README_SOFTWARE_TIMESTAMP_PREFIX} {timestamp}<br>"
         timestamp_pattern = re.compile(
             rf"^{re.escape(README_SOFTWARE_TIMESTAMP_PREFIX)}.*$",
             re.MULTILINE,
@@ -583,6 +656,8 @@ def write_readme_updates(
                     "README is missing an operational timestamp line for software timestamp insertion."
                 )
             updated = operational_pattern.sub(rf"\1\n{software_timestamp}", updated, count=1)
+    updated = ensure_readme_hard_break(updated, README_OPERATIONAL_TIMESTAMP_PREFIX)
+    updated = ensure_readme_hard_break(updated, README_SOFTWARE_TIMESTAMP_PREFIX)
     write_generated_text(readme_path, updated)
 
 

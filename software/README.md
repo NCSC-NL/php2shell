@@ -22,7 +22,7 @@ See [software_list.md](software_list.md) for the current list.
 
 For upstream PHP remediation guidance, see the [official PHP security advisory](https://www.php.net/archive/2026.php#2026-10-21-5).
 
-The source of truth for this overview is the SPDX document(s) in [spdx](spdx/). The alphabetized Markdown pages are generated automatically from that data using the tooling in [../tools](../tools/). Status values in the current list are derived from the VEX assessment relationships in the SPDX document.
+The source of truth for this overview is the JSON fragments in [spdx/segments](spdx/segments/) and [spdx/shared](spdx/shared/). Run `python tools/build_spdx_inventory.py` from the repository root to compile every source JSON into `spdx/PHP_Downstream_Inventory.spdx3.json`. See [SPDX source maintenance](spdx/README.md) for the categories and editing workflow. The alphabetized Markdown pages are generated automatically from the compiled inventory using the tooling in [../tools](../tools/). Status values in the current list are derived from the VEX assessment relationships in the SPDX document.
 
 > **Disclaimer:** No guarantees are made regarding the completeness or accuracy of this inventory. Verify entries against upstream or vendor sources before acting on them.
 

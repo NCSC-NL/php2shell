@@ -1,0 +1,245 @@
+{
+  "@context": "https://spdx.org/rdf/3.0.1/spdx-context.jsonld",
+  "_compiler": {
+    "element_order": {
+      "urn:php2shell:inventory:vulnerability:CVE-2026-109618": 1722,
+      "urn:php2shell:inventory:vulnerability:CVE-2026-109619": 1723
+    }
+  },
+  "@graph": [
+    {
+      "type": "security_Vulnerability",
+      "spdxId": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "creationInfo": "_:creationinfo",
+      "name": "CVE-2026-109618",
+      "summary": "Critical PHP vulnerability under preliminary review.",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "cve",
+          "identifier": "CVE-2026-109618",
+          "identifierLocator": [
+            "https://www.cve.org/CVERecord?id=CVE-2026-109618"
+          ]
+        }
+      ],
+      "description": "Reported member of the critical PHP pair. Exact cause, affected/fixed builds and individual exploitation conditions remain unresolved.",
+      "comment": "Review stage: Pre-release initial information\nReview ID: CVE-REVIEW-20261021-01\nVendor notice severity: CVSS 4.0 9.2\nExploitation status: Not established. No global absence or presence claim.\nLimitations: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-20-1"
+          ],
+          "comment": "PHP security team - Upcoming Critical PHP Security Release"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://cert.europa.eu/publications/security-advisories/2026-018/"
+          ],
+          "comment": "CERT-EU - Security Advisory 2026-018: Critical Vulnerabilities in PHP"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-Remote-code-execution-in-PHP-shipped-with-Plesk"
+          ],
+          "comment": "Plesk - Vulnerability CVE-2026-109618 and CVE-2026-109619: Remote code execution in PHP shipped with Plesk"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5"
+          ],
+          "comment": "CloudLinux - Critical PHP vulnerabilities CVE-2026-109618 / CVE-2026-109619"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://cloudlinux.zendesk.com/hc/en-us/articles/31194180517916-PHP-CVE-2026-109618-CVE-2026-109619-reported-pre-disclosure-RCEs-updated-package-availability"
+          ],
+          "comment": "CloudLinux - PHP CVE-2026-109618 / CVE-2026-109619 updated package availability"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/nextcloud/server/issues/65754"
+          ],
+          "comment": "Nextcloud - PHP CVEs. Attention required!"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityOther",
+          "locator": [
+            "https://watchtowr.com/intelligence/php-cve-2026-109618-faq/"
+          ],
+          "comment": "watchTowr - Frequently Asked Questions About PHP Remote Code Execution"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityOther",
+          "locator": [
+            "https://www.php.net/ChangeLog-8.php"
+          ],
+          "comment": "PHP Group - PHP 8 ChangeLog"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityOther",
+          "locator": [
+            "https://www.cve.org/CVERecord?id=CVE-2026-109618"
+          ],
+          "comment": "CVE Program - CVE-2026-109618"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityOther",
+          "locator": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-109618"
+          ],
+          "comment": "NIST NVD - CVE-2026-109618"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityOther",
+          "locator": [
+            "https://www.cve.org/CVERecord?id=CVE-2026-109619"
+          ],
+          "comment": "CVE Program - CVE-2026-109619"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityOther",
+          "locator": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-109619"
+          ],
+          "comment": "NIST NVD - CVE-2026-109619"
+        }
+      ]
+    },
+    {
+      "type": "security_Vulnerability",
+      "spdxId": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "creationInfo": "_:creationinfo",
+      "name": "CVE-2026-109619",
+      "summary": "Critical PHP vulnerability under preliminary review.",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "cve",
+          "identifier": "CVE-2026-109619",
+          "identifierLocator": [
+            "https://www.cve.org/CVERecord?id=CVE-2026-109619"
+          ]
+        }
+      ],
+      "description": "Reported member of the same pair. No supported technical distinction from CVE-2026-109618 can be made yet.",
+      "comment": "Review stage: Pre-release initial information\nReview ID: CVE-REVIEW-20261021-01\nVendor notice severity: CVSS 4.0 9.2\nExploitation status: Not established. No global absence or presence claim.\nLimitations: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-20-1"
+          ],
+          "comment": "PHP security team - Upcoming Critical PHP Security Release"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://cert.europa.eu/publications/security-advisories/2026-018/"
+          ],
+          "comment": "CERT-EU - Security Advisory 2026-018: Critical Vulnerabilities in PHP"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-Remote-code-execution-in-PHP-shipped-with-Plesk"
+          ],
+          "comment": "Plesk - Vulnerability CVE-2026-109618 and CVE-2026-109619: Remote code execution in PHP shipped with Plesk"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://cloudlinux.statuspage.io/incidents/zl0vt1yq3dj5"
+          ],
+          "comment": "CloudLinux - Critical PHP vulnerabilities CVE-2026-109618 / CVE-2026-109619"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://cloudlinux.zendesk.com/hc/en-us/articles/31194180517916-PHP-CVE-2026-109618-CVE-2026-109619-reported-pre-disclosure-RCEs-updated-package-availability"
+          ],
+          "comment": "CloudLinux - PHP CVE-2026-109618 / CVE-2026-109619 updated package availability"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/nextcloud/server/issues/65754"
+          ],
+          "comment": "Nextcloud - PHP CVEs. Attention required!"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityOther",
+          "locator": [
+            "https://watchtowr.com/intelligence/php-cve-2026-109618-faq/"
+          ],
+          "comment": "watchTowr - Frequently Asked Questions About PHP Remote Code Execution"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityOther",
+          "locator": [
+            "https://www.php.net/ChangeLog-8.php"
+          ],
+          "comment": "PHP Group - PHP 8 ChangeLog"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityOther",
+          "locator": [
+            "https://www.cve.org/CVERecord?id=CVE-2026-109618"
+          ],
+          "comment": "CVE Program - CVE-2026-109618"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityOther",
+          "locator": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-109618"
+          ],
+          "comment": "NIST NVD - CVE-2026-109618"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityOther",
+          "locator": [
+            "https://www.cve.org/CVERecord?id=CVE-2026-109619"
+          ],
+          "comment": "CVE Program - CVE-2026-109619"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityOther",
+          "locator": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-109619"
+          ],
+          "comment": "NIST NVD - CVE-2026-109619"
+        }
+      ]
+    }
+  ]
+}
