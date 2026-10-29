@@ -3252,6 +3252,40 @@
       "spdxId": "urn:php2shell:inventory:organization:cleo:a86b18c73aa8",
       "creationInfo": "_:creationinfo",
       "name": "Cleo"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:xerox",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:lexmark",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark",
+      "comment": "Xerox subsidiary; Lexmark product assessments below are explicitly published by Xerox in XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://www.news.xerox.com/news/xerox-completes-the-acquisition-of-lexmark-uniting-two-industry-leaders"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:xmpie",
+      "creationInfo": "_:creationinfo",
+      "name": "XMPie"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:fiery",
+      "creationInfo": "_:creationinfo",
+      "name": "Fiery"
     }
   ]
 }

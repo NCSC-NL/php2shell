@@ -3855,6 +3855,1024 @@
       "summary": "CVE-2026-109619 assessment: Investigation",
       "comment": "Public official sources reviewed 2026-10-27. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
       "security_actionStatement": "Monitor Broadcom advisory 39404 for a resolved product status; do not inherit the separate Content Analysis (CAS) not-vulnerable assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0797",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Command Centre",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0797"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: Command Centre, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0797\nBulletin product row: Command Centre\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0798",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Managed Print Services Application Program Interface V2 (MPS API V2)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0798"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: Managed Print Services Application Program Interface V2 (MPS API V2), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0798\nBulletin product row: Managed Print Services Application Program Interface V2 (MPS API V2)\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0799",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Supplies Automation",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0799"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: Supplies Automation, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0799\nBulletin product row: Supplies Automation\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0800",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Auto Update (AU)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0800"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: Xerox Auto Update (AU), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0800\nBulletin product row: Xerox Auto Update (AU)\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0801",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Device Agent (XDA Lite)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0801"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: Xerox Device Agent (XDA Lite), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0801\nBulletin product row: Xerox Device Agent (XDA Lite)\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0802",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Device Agent Partner Edition (XDA PE)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0802"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: Xerox Device Agent Partner Edition (XDA PE), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0802\nBulletin product row: Xerox Device Agent Partner Edition (XDA PE)\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0803",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Device Manager & CentreWare Web",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0803"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: Xerox Device Manager & CentreWare Web, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0803\nBulletin product row: Xerox Device Manager & CentreWare Web\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0804",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Export Agent",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0804"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: Xerox Export Agent, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0804\nBulletin product row: Xerox Export Agent\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0805",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Fleet Management Portal",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0805"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: Xerox Fleet Management Portal, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0805\nBulletin product row: Xerox Fleet Management Portal\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0806",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Integration Server",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0806"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: Xerox Integration Server, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0806\nBulletin product row: Xerox Integration Server\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0807",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox License Manager",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0807"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: Xerox License Manager, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0807\nBulletin product row: Xerox License Manager\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0808",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Printer Security Assessment Tool",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0808"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: Xerox Printer Security Assessment Tool, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0808\nBulletin product row: Xerox Printer Security Assessment Tool\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0809",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Report Manager (XRM)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0809"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: Xerox Report Manager (XRM), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0809\nBulletin product row: Xerox Report Manager (XRM)\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0810",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Report Manager V2",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0810"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: Xerox Report Manager V2, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0810\nBulletin product row: Xerox Report Manager V2\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0811",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Services Manager (XSM)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0811"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: Xerox Services Manager (XSM), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0811\nBulletin product row: Xerox Services Manager (XSM)\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0812",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Services Manager Contract Adapter",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0812"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: Xerox Services Manager Contract Adapter, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0812\nBulletin product row: Xerox Services Manager Contract Adapter\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0813",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Services Manager Data Warehouse",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0813"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: Xerox Services Manager Data Warehouse, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0813\nBulletin product row: Xerox Services Manager Data Warehouse\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0814",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Services Portal (XSP)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0814"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: Xerox Services Portal (XSP), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0814\nBulletin product row: Xerox Services Portal (XSP)\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0815",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Web Packager (XWP)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0815"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: Xerox Web Packager (XWP), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0815\nBulletin product row: Xerox Web Packager (XWP)\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0816",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox XSM Data Parser",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0816"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Managed Print Services & Fleet Management in the vendor bulletin.",
+      "description": "Managed Print Services & Fleet Management: XSM Data Parser, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0816\nBulletin product row: XSM Data Parser\nBulletin category: Managed Print Services & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0817",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox CFM Fleet Agent",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0817"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Cloud Platforms & Fleet Management in the vendor bulletin.",
+      "description": "Cloud Platforms & Fleet Management: CFM Fleet Agent, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0817\nBulletin product row: CFM Fleet Agent\nBulletin category: Cloud Platforms & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0818",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox CFM Local Agent",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0818"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Cloud Platforms & Fleet Management in the vendor bulletin.",
+      "description": "Cloud Platforms & Fleet Management: CFM Local Agent, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0818\nBulletin product row: CFM Local Agent\nBulletin category: Cloud Platforms & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0819",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox CFM Printer Enrollment Tool",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0819"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Cloud Platforms & Fleet Management in the vendor bulletin.",
+      "description": "Cloud Platforms & Fleet Management: CFM Printer Enrollment Tool, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0819\nBulletin product row: CFM Printer Enrollment Tool\nBulletin category: Cloud Platforms & Fleet Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0827",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Fleet Management Portal for FedRAMP",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0827"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under FedRAMP Offerings in the vendor bulletin.",
+      "description": "FedRAMP Offerings: Fleet Management Portal for FedRAMP, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0827\nBulletin product row: Fleet Management Portal for FedRAMP\nBulletin category: FedRAMP Offerings\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0828",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Integration Server for FedRAMP",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0828"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under FedRAMP Offerings in the vendor bulletin.",
+      "description": "FedRAMP Offerings: Xerox Integration Server for FedRAMP, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0828\nBulletin product row: Xerox Integration Server for FedRAMP\nBulletin category: FedRAMP Offerings\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0829",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Report Manager for FedRAMP",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0829"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under FedRAMP Offerings in the vendor bulletin.",
+      "description": "FedRAMP Offerings: Xerox Report Manager for FedRAMP, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0829\nBulletin product row: Xerox Report Manager for FedRAMP\nBulletin category: FedRAMP Offerings\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0830",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Services Manager Data Warehouse for FedRAMP",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0830"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under FedRAMP Offerings in the vendor bulletin.",
+      "description": "FedRAMP Offerings: Xerox Services Manager Data Warehouse for FedRAMP, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0830\nBulletin product row: Xerox Services Manager Data Warehouse for FedRAMP\nBulletin category: FedRAMP Offerings\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0831",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Services Manager for FedRAMP",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0831"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under FedRAMP Offerings in the vendor bulletin.",
+      "description": "FedRAMP Offerings: Xerox Services Manager for FedRAMP, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0831\nBulletin product row: Xerox Services Manager for FedRAMP\nBulletin category: FedRAMP Offerings\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0832",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Services Portal for FedRAMP",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0832"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under FedRAMP Offerings in the vendor bulletin.",
+      "description": "FedRAMP Offerings: Xerox Services Portal for FedRAMP, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0832\nBulletin product row: Xerox Services Portal for FedRAMP\nBulletin category: FedRAMP Offerings\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0917",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Data Collection Manager (LDCM)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0917"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Lexmark Software & Cloud in the vendor bulletin.",
+      "description": "Lexmark Software & Cloud: Lexmark Data Collection Manager (LDCM), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 7; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0917\nBulletin product row: Lexmark Data Collection Manager (LDCM)\nBulletin category: Lexmark Software & Cloud\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment.\nRevision reconciliation: v2 lists not impacted, v3 lists affected, and v4 restores not impacted. This record follows v4."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0920",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Markvision Enterprise",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0920"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Lexmark Software & Cloud in the vendor bulletin.",
+      "description": "Lexmark Software & Cloud: Lexmark Markvision Enterprise, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 7; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0920\nBulletin product row: Lexmark Markvision Enterprise\nBulletin category: Lexmark Software & Cloud\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0922",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Remote Management Extension (LRME)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0922"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Lexmark Software & Cloud in the vendor bulletin.",
+      "description": "Lexmark Software & Cloud: Lexmark Remote Management Extension (LRME), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 7; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0922\nBulletin product row: Lexmark Remote Management Extension (LRME)\nBulletin category: Lexmark Software & Cloud\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:xerox-xrx26-016-v4-observability-admin",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0797",
+        "urn:php2shell:inventory:package:PHP-0798",
+        "urn:php2shell:inventory:package:PHP-0799",
+        "urn:php2shell:inventory:package:PHP-0800",
+        "urn:php2shell:inventory:package:PHP-0801",
+        "urn:php2shell:inventory:package:PHP-0802",
+        "urn:php2shell:inventory:package:PHP-0803",
+        "urn:php2shell:inventory:package:PHP-0804",
+        "urn:php2shell:inventory:package:PHP-0805",
+        "urn:php2shell:inventory:package:PHP-0806",
+        "urn:php2shell:inventory:package:PHP-0807",
+        "urn:php2shell:inventory:package:PHP-0808",
+        "urn:php2shell:inventory:package:PHP-0809",
+        "urn:php2shell:inventory:package:PHP-0810",
+        "urn:php2shell:inventory:package:PHP-0811",
+        "urn:php2shell:inventory:package:PHP-0812",
+        "urn:php2shell:inventory:package:PHP-0813",
+        "urn:php2shell:inventory:package:PHP-0814",
+        "urn:php2shell:inventory:package:PHP-0815",
+        "urn:php2shell:inventory:package:PHP-0816",
+        "urn:php2shell:inventory:package:PHP-0817",
+        "urn:php2shell:inventory:package:PHP-0818",
+        "urn:php2shell:inventory:package:PHP-0819",
+        "urn:php2shell:inventory:package:PHP-0827",
+        "urn:php2shell:inventory:package:PHP-0828",
+        "urn:php2shell:inventory:package:PHP-0829",
+        "urn:php2shell:inventory:package:PHP-0830",
+        "urn:php2shell:inventory:package:PHP-0831",
+        "urn:php2shell:inventory:package:PHP-0832",
+        "urn:php2shell:inventory:package:PHP-0917",
+        "urn:php2shell:inventory:package:PHP-0920",
+        "urn:php2shell:inventory:package:PHP-0922"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Xerox XRX26-016 v4 (2026-10-28) explicitly lists this product/model scope as not impacted by both PHP2Shell CVEs; exact release numbers are not supplied.",
+      "summary": "CVE-2026-109618 assessment: Not vuln",
+      "comment": "Official vendor bulletin reviewed 2026-10-29. Each target package records its table row and page. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_impactStatement": "Xerox confirms that the evaluated current releases of these named products are not impacted. The statement does not cover unspecified models or all historical releases, and the vendor does not state a technical justification."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:xerox-xrx26-016-v4-observability-admin",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0797",
+        "urn:php2shell:inventory:package:PHP-0798",
+        "urn:php2shell:inventory:package:PHP-0799",
+        "urn:php2shell:inventory:package:PHP-0800",
+        "urn:php2shell:inventory:package:PHP-0801",
+        "urn:php2shell:inventory:package:PHP-0802",
+        "urn:php2shell:inventory:package:PHP-0803",
+        "urn:php2shell:inventory:package:PHP-0804",
+        "urn:php2shell:inventory:package:PHP-0805",
+        "urn:php2shell:inventory:package:PHP-0806",
+        "urn:php2shell:inventory:package:PHP-0807",
+        "urn:php2shell:inventory:package:PHP-0808",
+        "urn:php2shell:inventory:package:PHP-0809",
+        "urn:php2shell:inventory:package:PHP-0810",
+        "urn:php2shell:inventory:package:PHP-0811",
+        "urn:php2shell:inventory:package:PHP-0812",
+        "urn:php2shell:inventory:package:PHP-0813",
+        "urn:php2shell:inventory:package:PHP-0814",
+        "urn:php2shell:inventory:package:PHP-0815",
+        "urn:php2shell:inventory:package:PHP-0816",
+        "urn:php2shell:inventory:package:PHP-0817",
+        "urn:php2shell:inventory:package:PHP-0818",
+        "urn:php2shell:inventory:package:PHP-0819",
+        "urn:php2shell:inventory:package:PHP-0827",
+        "urn:php2shell:inventory:package:PHP-0828",
+        "urn:php2shell:inventory:package:PHP-0829",
+        "urn:php2shell:inventory:package:PHP-0830",
+        "urn:php2shell:inventory:package:PHP-0831",
+        "urn:php2shell:inventory:package:PHP-0832",
+        "urn:php2shell:inventory:package:PHP-0917",
+        "urn:php2shell:inventory:package:PHP-0920",
+        "urn:php2shell:inventory:package:PHP-0922"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Xerox XRX26-016 v4 (2026-10-28) explicitly lists this product/model scope as not impacted by both PHP2Shell CVEs; exact release numbers are not supplied.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "comment": "Official vendor bulletin reviewed 2026-10-29. Each target package records its table row and page. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_impactStatement": "Xerox confirms that the evaluated current releases of these named products are not impacted. The statement does not cover unspecified models or all historical releases, and the vendor does not state a technical justification."
     }
   ]
 }
