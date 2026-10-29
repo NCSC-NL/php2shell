@@ -1,7 +1,7 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
 Operational information: 28 October 2026 16:46 CET<br>
-Software list last status update: 28 October 2026 16:22 CET<br>
+Software list last status update: 29 October 2026 13:43 CET<br>
 ## TLP:CLEAR
 
 This repository contains operational information regarding the critical PHP vulnerabilities tracked by CERT-EU as CVE-2026-109618 and CVE-2026-109619.
@@ -11,7 +11,7 @@ PHP is a widely used open-source server-side scripting language, so these vulner
 ## Current status
 
 <!-- inventory-statistics:summary:start -->
-This repository tracks **757 products**, including **218 vulnerable** and **144 fixed**.
+This repository tracks **757 products**, including **218 vulnerable** and **152 fixed**.
 <!-- inventory-statistics:summary:end -->
 
 On 21 October 2026, PHP published fixed releases for CVE-2026-109618 and CVE-2026-109619: PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. PHP states that both vulnerabilities can allow unauthenticated remote code execution and that all PHP installations serving web requests are at risk, including PHP-FPM, Apache with mod_php, php-cgi, FrankenPHP and LiteSpeed. PHP considers the risk highest for mod_php, where an unauthenticated request can trigger exploitation before application code runs.
@@ -54,11 +54,11 @@ The repository is being updated as the situation develops. Check back for update
 
 <!-- inventory-statistics:start -->
 
-Statistics as of **2026-10-28 (UTC)**, from the current SPDX inventory.
+Statistics as of **2026-10-29 (UTC)**, from the current SPDX inventory.
 
 | Products tracked | Fixed | Vulnerable | Under investigation | Not affected | Unassessed / unknown |
 | ---: | ---: | ---: | ---: | ---: | ---: |
-| 757 | 144 | 218 | 354 | 40 | 1 |
+| 757 | 152 | 218 | 346 | 40 | 1 |
 
 ![Product status on the last 3 inventory update days](software/statistics/inventory-statistics.png)
 
@@ -70,11 +70,11 @@ Statistics as of **2026-10-28 (UTC)**, from the current SPDX inventory.
 
 | Date and time | Supplier | Product | Version (see Status) | Status CVE-2026-109618 / CVE-2026-109619 | Links |
 |:------------------------|:---------|:--------|:--------------------:|:----------------------:|------:|
-|2026-10-28 16:22:26 +0100|Apache Friends|XAMPP|Windows x64 installers 8.3.36, 8.4.27 or 8.5.12|Fix|[source 1](<https://www.apachefriends.org/download.html>)<br>[source 2](<https://www.apachefriends.org/index.html>)<br>[source 3](<https://www.php.net/archive/2026.php#2026-10-21-5>)|
-|2026-10-28 16:22:26 +0100|Beyond Code in partnership with Laravel|Laravel Herd managed native PHP environment|Patched PHP builds distributed through Herd after the 2026-10-21 security release|Fix|[source 1](<https://herd.laravel.com/>)<br>[source 2](<https://herd.laravel.com/docs/windows/advanced-usage/directories-and-files>)<br>[source 3](<https://beyondco.de/blog/php-security-release>)<br>[source 4](<https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/>)|
-|2026-10-28 16:22:26 +0100|Cisco|Cisco Identity Services Engine (ISE) Portal Builder||Vulnerable|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
-|2026-10-28 16:22:26 +0100|Cisco|Cisco Unified Industrial Wireless Software||Vulnerable|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
-|2026-10-28 16:22:26 +0100|CyberPanel project|CyberPanel hosted PHP / LSPHP options|Ubuntu 26.04 LSPHP: 8.2.35-1+resolute, 8.3.36-1+resolute, 8.4.27-1+resolute or 8.5.12-1+resolute|Fix|[source 1](<https://github.com/usmannasir/cyberpanel>)<br>[source 2](<https://github.com/usmannasir/cyberpanel/blob/v3.0.5-dev/manage.py>)<br>[source 3](<https://cyberpanel.net/blog/php-security-october-2026-cyberpanel-response>)|
+|2026-10-29 13:43:09 +0100|Acquia|Acquia Cloud Platform PHP hosting|Cloud Platform 2026-10-22: PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12|Fix|[source 1](<https://docs.acquia.com/acquia-cloud-platform/configuring-php-settings>)<br>[source 2](<https://docs.acquia.com/acquia-cloud-platform/release/2026-10-22/100321-cloud-platform-october-22-2026>)<br>[source 3](<https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w>)<br>[source 4](<https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp>)|
+|2026-10-29 13:43:09 +0100|CircleCI|CircleCI cimg/php CI runtime image family|cimg/php:8.2.35 / 8.3.36 / 8.4.27 / 8.5.12 (linux/amd64 and linux/arm64)|Fix|[source 1](<https://github.com/CircleCI-Public/cimg-php/pull/324>)<br>[source 2](<https://circleci.com/developer/images/image/cimg/php>)<br>[source 3](<https://github.com/CircleCI-Public/cimg-php/commit/76fe1c8bd2ec95f65faaa71159dadbfe23c264d5>)<br>[source 4](<https://github.com/CircleCI-Public/cimg-php/blob/main/README.md>)<br>[source 5](<https://hub.docker.com/v2/repositories/cimg/php/tags/8.2.35>)<br>[source 6](<https://hub.docker.com/v2/repositories/cimg/php/tags/8.3.36>)<br>[source 7](<https://hub.docker.com/v2/repositories/cimg/php/tags/8.4.27>)<br>[source 8](<https://hub.docker.com/v2/repositories/cimg/php/tags/8.5.12>)<br>[source 9](<https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w>)<br>[source 10](<https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp>)|
+|2026-10-29 13:43:09 +0100|Composer / Satis maintainers|Satis official PHP container build recipe|composer/satis:latest with PHP 8.4.27 (2026-10-29 digest scope)|Fix|[source 1](<https://github.com/composer/satis/blob/main/README.md>)<br>[source 2](<https://github.com/composer/satis/blob/main/Dockerfile>)<br>[source 3](<https://hub.docker.com/v2/repositories/composer/satis/tags/latest>)<br>[source 4](<https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w>)<br>[source 5](<https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp>)|
+|2026-10-29 13:43:09 +0100|Composer project / Docker Official Images|Composer default Docker runtime image|composer:2 with PHP 8.5.12 (2026-10-29 digest scope)|Fix|[source 1](<https://github.com/composer/docker>)<br>[source 2](<https://hub.docker.com/layers/library/composer/2/images/sha256-66c00f4ea1c6a01364d75460bb2837886388e1d5b2b1b6e0f22c8788eb4e73ad>)<br>[source 3](<https://github.com/composer/docker/blob/a23788a1b4f65ad2dd090c3ee2a7ad9e35a7d9d1/latest/Dockerfile>)<br>[source 4](<https://github.com/docker-library/official-images/blob/master/library/composer>)<br>[source 5](<https://github.com/docker-library/docs/blob/master/composer/README.md>)<br>[source 6](<https://hub.docker.com/v2/repositories/library/composer/tags/2>)<br>[source 7](<https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w>)<br>[source 8](<https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp>)|
+|2026-10-29 13:43:09 +0100|Docker Community / Docker Official Images, not WordPress upstream image ownership|WordPress Docker Official Image distribution|7.1.4-php8.4-apache: PHP 8.4.27 (2026-10-29 digest scope)|Fix|[source 1](<https://github.com/docker-library/wordpress/issues/1024#issuecomment-6322989456>)<br>[source 2](<https://github.com/docker-library/wordpress/blob/master/Dockerfile.template>)<br>[source 3](<https://github.com/docker-library/wordpress>)<br>[source 4](<https://hub.docker.com/v2/repositories/library/wordpress/tags/7.1.4-php8.4-apache>)<br>[source 5](<https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w>)<br>[source 6](<https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp>)|
 
 See the [full software status update history](software/changelog_software_list.md).
 
