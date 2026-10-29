@@ -1995,7 +1995,23 @@
         "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0700-official-20261028",
         "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0700-official-20261028",
         "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0748-official-20261028",
-        "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0748-official-20261028"
+        "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0748-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:ad337f0dad0b",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:ad337f0dad0b",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:7b176c3ee9eb",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:7b176c3ee9eb",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:d9f0cf272066",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:d9f0cf272066",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:14683505ba10",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:14683505ba10",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:41ef29f55750",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:41ef29f55750",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:8be1173f570f",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:8be1173f570f",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:171f769ce335",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:171f769ce335",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:459e8fa7ff28",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:459e8fa7ff28"
       ]
     }
   ]

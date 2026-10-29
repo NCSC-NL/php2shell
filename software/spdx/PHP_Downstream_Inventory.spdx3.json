@@ -4729,7 +4729,23 @@
         "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0700-official-20261028",
         "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0700-official-20261028",
         "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0748-official-20261028",
-        "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0748-official-20261028"
+        "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0748-official-20261028",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:ad337f0dad0b",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:ad337f0dad0b",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:7b176c3ee9eb",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:7b176c3ee9eb",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:d9f0cf272066",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:d9f0cf272066",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:14683505ba10",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:14683505ba10",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:41ef29f55750",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:41ef29f55750",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:8be1173f570f",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:8be1173f570f",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:171f769ce335",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:171f769ce335",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:459e8fa7ff28",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:459e8fa7ff28"
       ]
     },
     {
@@ -17740,7 +17756,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:nextcloud-docker-community-volunteers-docker-official-images:04d9c607f775",
       "summary": "The repository distinguishes community maintenance from Nextcloud GmbH AIO, and explicitly bases its FPM variant on php-fpm.",
       "description": "Apache variant; FPM variant inherits PHP-FPM and requires separate HTTP server; PHP occ CLI",
-      "comment": "Inventory record: PHP-0375\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0015\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Apache variant; FPM variant inherits PHP-FPM and requires separate HTTP server; PHP occ CLI\nPHP version scope: Moving community image documentation; exact Nextcloud/PHP patch and image digest not pinned\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: AIO and community Docker have different maintainers. Database, Redis and reverse-proxy containers are separate components; image count cannot be added to Nextcloud installation count. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Community image maintainers plus PHP base-image maintainers; operator rebuilds derived images and rolls out containers\nDownstream surface: Nextcloud files, sessions, application configuration, mounted data and configured service credentials\nRelease pin: Moving official documentation; immutable artifact pin pending\nSource accessed: 2026-10-17\nAliases: docker.io/library/nextcloud\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0375\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0015\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Apache variant; FPM variant inherits PHP-FPM and requires separate HTTP server; PHP occ CLI\nPHP version scope: 35.0.2-apache / 34.0.5-fpm: PHP 8.5.12; 32-apache: PHP 8.3.36 (2026-10-29 digest scope)\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: Only the inspected published digests are confirmed; a tag name alone does not identify older cached images. No conclusion for other tags, platforms, Nextcloud AIO or installed deployments. Metadata was read without downloading image layers or executing images.\nPatch owner: Community image maintainers plus PHP base-image maintainers; operator rebuilds derived images and rolls out containers\nDownstream surface: Nextcloud files, sessions, application configuration, mounted data and configured service credentials\nRelease pin: 35.0.2-apache@sha256:e0b1a2af52c82c07b7a0e8e59878bd8769e704447734d5d238a836982f51b9c8; 34.0.5-fpm@sha256:88a938ba385807e6ad91584eeafbc026eaaa4c4c795d8b19b315f11c32aff6ab; 32-apache@sha256:a7ab427cdc56de0bb44152d743b8a2938c65897b9c021f97db1e2ccc3ed9bc46\nSource accessed: 2026-10-29\nAliases: docker.io/library/nextcloud\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nVulnerability status: Fix for both CVEs in the stated runtime/image scope; assessed from current public official sources on 2026-10-29.\nCVE-2026-109618: Fix: 35.0.2-apache / 34.0.5-fpm: PHP 8.5.12; 32-apache: PHP 8.3.36 (2026-10-29 digest scope)\nCVE-2026-109619: Fix: 35.0.2-apache / 34.0.5-fpm: PHP 8.5.12; 32-apache: PHP 8.3.36 (2026-10-29 digest scope)\nCVE assessment limit: Only the inspected published digests are confirmed; a tag name alone does not identify older cached images. No conclusion for other tags, platforms, Nextcloud AIO or installed deployments. Metadata was read without downloading image layers or executing images.\nOfficial fix evidence: The publisher's registry manifests and config JSON for linux/amd64 and linux/arm64 declare PHP_VERSION=8.5.12 in 35.0.2-apache and 34.0.5-fpm, and PHP_VERSION=8.3.36 in 32-apache. Both upstream advisories list these PHP releases as fixed.\nAction statement: Pull the fixed digest, rebuild custom derived images and recreate the relevant containers.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -17749,8 +17765,49 @@
             "https://github.com/nextcloud/docker"
           ],
           "comment": "Official PHP distribution, package or build declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/library/nextcloud/tags/35.0.2-apache"
+          ],
+          "comment": "Official image publication metadata; PHP_VERSION verified through the referenced registry manifest/config JSON for linux/amd64 and linux/arm64 on 2026-10-29."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/library/nextcloud/tags/34.0.5-fpm"
+          ],
+          "comment": "Official image publication metadata; PHP_VERSION verified through the referenced registry manifest/config JSON for linux/amd64 and linux/arm64 on 2026-10-29."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/library/nextcloud/tags/32-apache"
+          ],
+          "comment": "Official image publication metadata; PHP_VERSION verified through the referenced registry manifest/config JSON for linux/amd64 and linux/arm64 on 2026-10-29."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
+          ],
+          "comment": "PHP upstream CVE-2026-109618 advisory identifies the fixed PHP versions."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp"
+          ],
+          "comment": "PHP upstream CVE-2026-109619 advisory identifies the fixed PHP versions."
         }
-      ]
+      ],
+      "software_packageVersion": "35.0.2-apache / 34.0.5-fpm: PHP 8.5.12; 32-apache: PHP 8.3.36 (2026-10-29 digest scope)"
     },
     {
       "type": "software_Package",
@@ -17894,7 +17951,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:dokuwiki-project:3f7f47dcb75e",
       "summary": "The Dockerfile starts from php:8.4-apache, allows optional PHP_EXTENSIONS build arguments and creates the DokuWiki image.",
       "description": "Official PHP 8.4 Apache base; container health.php server-side request",
-      "comment": "Inventory record: PHP-0379\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0182\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Official PHP 8.4 Apache base; container health.php server-side request\nPHP version scope: Moving Dockerfile FROM php:8.4-apache; DOKUWIKI_VERSION stable default; exact PHP patch/application release/digest unresolved\nExtensions: PHP_EXTENSIONS build argument defaults empty; build-deps script and inherited module set not fully enumerated\nLimitations: stable/latest aliases are not immutable versions. ImageMagick executable presence is not proof the imagick PHP extension is loaded; optional build arguments are not default contents. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: DokuWiki image maintainers, Docker PHP base-image maintainers and operator rebuilding/rolling out derived images\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Moving official documentation; immutable artifact pin pending\nSource accessed: 2026-10-17\nAliases: docker.io/dokuwiki/dokuwiki\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0379\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0182\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Official PHP 8.4 Apache base; container health.php server-side request\nPHP version scope: dokuwiki/dokuwiki:stable with PHP 8.4.27 (2026-10-29 digest scope)\nExtensions: PHP_EXTENSIONS build argument defaults empty; build-deps script and inherited module set not fully enumerated\nLimitations: Confirmation is limited to the inspected stable image digest and two architectures. Older cached stable images, other tags and existing deployments are not covered. Metadata only; no image layers downloaded or executed.\nPatch owner: DokuWiki image maintainers, Docker PHP base-image maintainers and operator rebuilding/rolling out derived images\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: stable@sha256:d52c8218ef4140c1fa7200dfef2c34217ec111b344e1b7a79d366c2415e7edeb\nSource accessed: 2026-10-29\nAliases: docker.io/dokuwiki/dokuwiki\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nVulnerability status: Fix for both CVEs in the stated runtime/image scope; assessed from current public official sources on 2026-10-29.\nCVE-2026-109618: Fix: dokuwiki/dokuwiki:stable with PHP 8.4.27 (2026-10-29 digest scope)\nCVE-2026-109619: Fix: dokuwiki/dokuwiki:stable with PHP 8.4.27 (2026-10-29 digest scope)\nCVE assessment limit: Confirmation is limited to the inspected stable image digest and two architectures. Older cached stable images, other tags and existing deployments are not covered. Metadata only; no image layers downloaded or executed.\nOfficial fix evidence: DokuWiki's official Docker repository identifies dokuwiki/dokuwiki as its published image. Registry config for the inspected stable digest declares PHP_VERSION=8.4.27 for linux/amd64 and linux/arm64, matching the fixed release in both PHP advisories.\nAction statement: Pull the fixed image digest and recreate the DokuWiki container.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -17911,8 +17968,41 @@
             "https://github.com/dokuwiki/docker"
           ],
           "comment": "Official publisher/project distribution evidence - Project documents stable/oldstable/master tags and official PHP Apache lineage."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/dokuwiki/dokuwiki/tags/stable"
+          ],
+          "comment": "Publisher image metadata; referenced registry config declares PHP 8.4.27 on both checked architectures."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/dokuwiki/docker/commit/1f796d3969553695c48a3ba594f8b8fde048fe78"
+          ],
+          "comment": "Maintainer removes ineffective mitigations for both named CVEs and states subsequent builds should use fixed PHP; publication independently checked in the registry."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
+          ],
+          "comment": "PHP upstream CVE-2026-109618 advisory identifies the fixed PHP versions."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp"
+          ],
+          "comment": "PHP upstream CVE-2026-109619 advisory identifies the fixed PHP versions."
         }
-      ]
+      ],
+      "software_packageVersion": "dokuwiki/dokuwiki:stable with PHP 8.4.27 (2026-10-29 digest scope)"
     },
     {
       "type": "software_Package",
@@ -17930,7 +18020,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:docker-community-docker-official-images-not-wordpress-upstream-image-ownership:b0bb692ad033",
       "summary": "The packaging template derives from official PHP images and installs WordPress-serving native extensions; the repository identifies Docker Community ownership.",
       "description": "Generated PHP Apache/FPM application images; CLI template mode is a separate operational boundary",
-      "comment": "Inventory record: PHP-0380\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0006\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Generated PHP Apache/FPM application images; CLI template mode is a separate operational boundary\nPHP version scope: Moving template uses php:<phpVersion>-<variant>; exact rendered release/patch/digest unresolved\nExtensions: Template build selections include bcmath, exif, gd, intl, mysqli, zip and PECL imagick3.8.1; conditional CLI/server and OS branches differ\nLimitations: A template is not every rendered image. OPcache defaults cannot be inferred universally from comments; CLI/server and OS differences must be resolved against actual build recipes. WordPress application and derived image overlap. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Docker WordPress image maintainers, PHP image maintainers, derived-image publisher and deploying operator\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Moving official documentation; immutable artifact pin pending\nSource accessed: 2026-10-17\nAliases: docker.io/library/wordpress\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0380\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0006\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Generated PHP Apache/FPM application images; CLI template mode is a separate operational boundary\nPHP version scope: 7.1.4-php8.4-apache: PHP 8.4.27 (2026-10-29 digest scope)\nExtensions: Template build selections include bcmath, exif, gd, intl, mysqli, zip and PECL imagick3.8.1; conditional CLI/server and OS branches differ\nLimitations: Only the inspected Docker Community image digest and two architectures are confirmed; this is not a WordPress application release fix or a claim about other image tags or existing deployments. Metadata only; no image layers downloaded or executed.\nPatch owner: Docker WordPress image maintainers, PHP image maintainers, derived-image publisher and deploying operator\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: 7.1.4-php8.4-apache@sha256:50c808d213d038ad68fdbb8d9ecb35f8181a8670928dc669c1c4595f23b8bcf8\nSource accessed: 2026-10-29\nAliases: docker.io/library/wordpress\nConditional downstream consequence: If a matching flaw in the shipped PHP runtime or a loaded native module is reached through application input, it could cause denial of service, disclosure, data alteration or worker-level code execution. Access would be bounded by worker privileges, mounts and credentials; host or cross-tenant compromise is not established.\nVulnerability status: Fix for both CVEs in the stated runtime/image scope; assessed from current public official sources on 2026-10-29.\nCVE-2026-109618: Fix: 7.1.4-php8.4-apache: PHP 8.4.27 (2026-10-29 digest scope)\nCVE-2026-109619: Fix: 7.1.4-php8.4-apache: PHP 8.4.27 (2026-10-29 digest scope)\nCVE assessment limit: Only the inspected Docker Community image digest and two architectures are confirmed; this is not a WordPress application release fix or a claim about other image tags or existing deployments. Metadata only; no image layers downloaded or executed.\nOfficial fix evidence: The Docker Official Image registry config for wordpress:7.1.4-php8.4-apache declares PHP_VERSION=8.4.27 for linux/amd64 and linux/arm64. Both upstream PHP advisories identify 8.4.27 as fixed.\nAction statement: Pull the fixed image digest, rebuild derived images and recreate containers.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -17947,8 +18037,33 @@
             "https://github.com/docker-library/wordpress"
           ],
           "comment": "Official publisher/project distribution evidence - Docker Community repository explicitly distinguishes this image from WordPress upstream ownership."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/library/wordpress/tags/7.1.4-php8.4-apache"
+          ],
+          "comment": "Official image publication metadata; referenced registry config declares PHP 8.4.27 on both checked architectures."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
+          ],
+          "comment": "PHP upstream CVE-2026-109618 advisory identifies the fixed PHP versions."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp"
+          ],
+          "comment": "PHP upstream CVE-2026-109619 advisory identifies the fixed PHP versions."
         }
-      ]
+      ],
+      "software_packageVersion": "7.1.4-php8.4-apache: PHP 8.4.27 (2026-10-29 digest scope)"
     },
     {
       "type": "software_Package",
@@ -18019,7 +18134,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:composer-project-docker-official-images:7b9705b0d6ba",
       "summary": "The pinned recipe installs Composer 2.10.3 into a PHP8 Alpine runtime stage, makes default inherit it, and separately defines a scratch standalone-binary stage.",
       "description": "PHP CLI inside binary-with-runtime/default build stage; not a production web image",
-      "comment": "Inventory record: PHP-0382\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0019\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP CLI inside binary-with-runtime/default build stage; not a production web image\nPHP version scope: Composer 2.10.3 advertised manifest source a23788a1b4f65ad2dd090c3ee2a7ad9e35a7d9d1; immutable recipe FROM php:8-alpine leaves PHP patch/digest floating\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: Copying Composer PHAR or using the scratch stage does not copy the PHP interpreter. Documentation discourages relying on the container PHP version or using it as a production base. Composer platform overrides do not change the running interpreter. No binary/image was pulled, installed, built or executed. Presence is not proof of an affected build, reachable flaw or compromise. Deployments were not measured.\nPatch owner: Composer Docker image publisher plus PHP base-image maintainers; developer/CI operator replaces build images\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Composer2.10.3 build source a23788a1b4f65ad2dd090c3ee2a7ad9e35a7d9d1; PHP base digest unresolved\nSource accessed: 2026-10-17\nAliases: docker.io/library/composer:default\nConditional downstream consequence: If a matching PHP or loaded-parser flaw is reached while processing a project, dependency, fixture or local web request, developer/CI files or available credentials could be affected. Consequences depend on executed inputs and privileges; development use does not establish a public service or a tenant escape.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0382\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0019\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP CLI inside binary-with-runtime/default build stage; not a production web image\nPHP version scope: composer:2 with PHP 8.5.12 (2026-10-29 digest scope)\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: Only the bundled runtime in the inspected image digest is confirmed fixed. This does not assess the standalone Composer library/tool, other image variants, CLI exploitability or existing deployments. Metadata only; no image layers downloaded or executed.\nPatch owner: Composer Docker image publisher plus PHP base-image maintainers; developer/CI operator replaces build images\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: 2@sha256:2cf275428757e5435a667bfc0d038b14520ca02be2b1b70d44a05c8c19e2de48\nSource accessed: 2026-10-29\nAliases: docker.io/library/composer:default\nConditional downstream consequence: If a matching PHP or loaded-parser flaw is reached while processing a project, dependency, fixture or local web request, developer/CI files or available credentials could be affected. Consequences depend on executed inputs and privileges; development use does not establish a public service or a tenant escape.\nVulnerability status: Fix for both CVEs in the stated runtime/image scope; assessed from current public official sources on 2026-10-29.\nCVE-2026-109618: Fix: composer:2 with PHP 8.5.12 (2026-10-29 digest scope)\nCVE-2026-109619: Fix: composer:2 with PHP 8.5.12 (2026-10-29 digest scope)\nCVE assessment limit: Only the bundled runtime in the inspected image digest is confirmed fixed. This does not assess the standalone Composer library/tool, other image variants, CLI exploitability or existing deployments. Metadata only; no image layers downloaded or executed.\nOfficial fix evidence: The Composer Docker Official Image registry config declares PHP_VERSION=8.5.12 for linux/amd64 and linux/arm64 at the inspected composer:2 digest. Both upstream PHP advisories identify 8.5.12 as fixed.\nAction statement: Pull the fixed image digest and recreate jobs or rebuild derived images using the old runtime.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -18044,8 +18159,33 @@
             "https://github.com/docker-library/docs/blob/master/composer/README.md"
           ],
           "comment": "Official publisher/project distribution evidence - Runtime image is for running Composer, not a guaranteed PHP version or production base."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/library/composer/tags/2"
+          ],
+          "comment": "Official image publication metadata; referenced registry config declares PHP 8.5.12 on both checked architectures."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
+          ],
+          "comment": "PHP upstream CVE-2026-109618 advisory identifies the fixed PHP versions."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp"
+          ],
+          "comment": "PHP upstream CVE-2026-109619 advisory identifies the fixed PHP versions."
         }
-      ]
+      ],
+      "software_packageVersion": "composer:2 with PHP 8.5.12 (2026-10-29 digest scope)"
     },
     {
       "type": "software_Package",
@@ -18874,7 +19014,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:acquia:c16250461f3f",
       "summary": "Acquia publishes selectable PHP runtime settings for Cloud Platform environments.",
       "description": "Managed customer PHP environment and runtime settings; exact SAPI not resolved",
-      "comment": "Inventory record: PHP-0402\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0037\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Managed customer PHP environment and runtime settings; exact SAPI not resolved\nPHP version scope: Guide lists Acquia PHP8.5,8.4,8.3,8.2; both8.5 and8.3 are labeled default without resolved context\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: Two default labels in the same page are retained as a source conflict, not silently resolved. Exact patch, modules and per-plan rollout unknown; hosted Drupal does not prove provider backend PHP. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: Acquia for managed runtime packages; customer app owner for version selection and app dependencies\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: acquia:cloud-platform-php\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0402\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0037\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Managed customer PHP environment and runtime settings; exact SAPI not resolved\nPHP version scope: Cloud Platform 2026-10-22: PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: Only the four explicitly versioned managed PHP runtime updates are confirmed. The release's unversioned PHP 7.4 security-patch mention is not assessed. Individual environment rollout and provider/control-plane internals were not measured.\nPatch owner: Acquia for managed runtime packages; customer app owner for version selection and app dependencies\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Cloud Platform 2026-10-22: PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12\nSource accessed: 2026-10-29\nAliases: acquia:cloud-platform-php\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Fix for both CVEs in the stated runtime/image scope; assessed from current public official sources on 2026-10-29.\nCVE-2026-109618: Fix: Cloud Platform 2026-10-22: PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12\nCVE-2026-109619: Fix: Cloud Platform 2026-10-22: PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12\nCVE assessment limit: Only the four explicitly versioned managed PHP runtime updates are confirmed. The release's unversioned PHP 7.4 security-patch mention is not assessed. Individual environment rollout and provider/control-plane internals were not measured.\nOfficial fix evidence: Acquia's 2026-10-22 Cloud Platform release (NW-17204) names PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12. Both PHP upstream CVE advisories identify these exact releases as patched.\nAction statement: Verify that the selected Cloud Platform environment uses one of the listed patched PHP releases.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -18883,8 +19023,33 @@
             "https://docs.acquia.com/acquia-cloud-platform/configuring-php-settings"
           ],
           "comment": "Official PHP component, runtime or hosting declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://docs.acquia.com/acquia-cloud-platform/release/2026-10-22/100321-cloud-platform-october-22-2026"
+          ],
+          "comment": "Vendor release NW-17204 names the four patched PHP runtime versions."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
+          ],
+          "comment": "PHP upstream CVE-2026-109618 advisory identifies the fixed PHP versions."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp"
+          ],
+          "comment": "PHP upstream CVE-2026-109619 advisory identifies the fixed PHP versions."
         }
-      ]
+      ],
+      "software_packageVersion": "Cloud Platform 2026-10-22: PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12"
     },
     {
       "type": "software_Package",
@@ -21712,7 +21877,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:circleci:c5df5b659139",
       "summary": "CircleCI states each cimg/php tag contains PHP and Composer for CI jobs.",
       "description": "Complete PHP CLI/Composer environment; optional Node/browser-oriented variants",
-      "comment": "Inventory record: PHP-0486\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Complete PHP CLI/Composer environment; optional Node/browser-oriented variants\nPHP version scope: Current guide example8.5.11; full/minor tags and optional variants differ; exact digest/modules unknown\nExtensions: No complete native-extension inventory established; empty subsets do not mean no extensions are used\nLimitations: Rolling minor tags change. Old README7.4.26 examples and browser/browsers suffix wording are not current patch/support promises. This image does not prove CircleCI control-plane PHP. No deployment, loaded-module set or reachability was measured; no specific PHP CVE was supplied. Static public evidence only; no retrieved code/image was installed, run, built or tested.\nPatch owner: Project maintainer for tool/library code; PHP/OS/image maintainer and developer or CI operator for compatible runtime/modules and rollout\nDownstream surface: Developer machines, selected CI jobs and build artifacts using this named tool\nRelease pin: Moving official documentation/source; immutable artifact pin pending\nSource accessed: 2026-10-18\nAliases: cimg/php\nConditional downstream consequence: A matching PHP or enabled native-parser/extension flaw reached through source, package metadata, archives or build input could affect the tool process, its files, CI credentials or generated artifact integrity. Normal configured plugin/test execution is not itself a PHP vulnerability. Production impact needs a separate artifact/deployment or credential-propagation path; sandbox or tenant escape is not automatic.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0486\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Complete PHP CLI/Composer environment; optional Node/browser-oriented variants\nPHP version scope: cimg/php:8.2.35 / 8.3.36 / 8.4.27 / 8.5.12 (linux/amd64 and linux/arm64)\nExtensions: No complete native-extension inventory established; empty subsets do not mean no extensions are used\nLimitations: Fix applies to the four published base image tags. Older tags, optional node/browser variants and the CircleCI control plane are outside this confirmation.\nPatch owner: Project maintainer for tool/library code; PHP/OS/image maintainer and developer or CI operator for compatible runtime/modules and rollout\nDownstream surface: Developer machines, selected CI jobs and build artifacts using this named tool\nRelease pin: cimg/php:8.2.35 / 8.3.36 / 8.4.27 / 8.5.12 (linux/amd64 and linux/arm64)\nSource accessed: 2026-10-29\nAliases: cimg/php\nConditional downstream consequence: A matching PHP or enabled native-parser/extension flaw reached through source, package metadata, archives or build input could affect the tool process, its files, CI credentials or generated artifact integrity. Normal configured plugin/test execution is not itself a PHP vulnerability. Production impact needs a separate artifact/deployment or credential-propagation path; sandbox or tenant escape is not automatic.\nVulnerability status: Fix for both CVEs in the stated runtime/image scope; assessed from current public official sources on 2026-10-29.\nCVE-2026-109618: Fix: cimg/php:8.2.35 / 8.3.36 / 8.4.27 / 8.5.12 (linux/amd64 and linux/arm64)\nCVE-2026-109619: Fix: cimg/php:8.2.35 / 8.3.36 / 8.4.27 / 8.5.12 (linux/amd64 and linux/arm64)\nCVE assessment limit: Fix applies to the four published base image tags. Older tags, optional node/browser variants and the CircleCI control plane are outside this confirmation.\nOfficial fix evidence: CircleCI release PR 324 and commit 76fe1c8bd2ec95f65faaa71159dadbfe23c264d5 update PHP to all four upstream fixed versions. Public Docker Hub metadata confirms publication of the four base tags on 2026-10-22 for linux/amd64 and linux/arm64.\nAction statement: Select a listed fixed cimg/php tag and recreate CI environments; rebuild derived images.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -21729,8 +21894,65 @@
             "https://github.com/CircleCI-Public/cimg-php/blob/main/README.md"
           ],
           "comment": "Official project documentation or publisher package metadata - The repository README uses older example tags; those examples are not current runtime measurements."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/CircleCI-Public/cimg-php/commit/76fe1c8bd2ec95f65faaa71159dadbfe23c264d5"
+          ],
+          "comment": "Official release commit specifies PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/cimg/php/tags/8.2.35"
+          ],
+          "comment": "Published image metadata, checked 2026-10-29."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/cimg/php/tags/8.3.36"
+          ],
+          "comment": "Published image metadata, checked 2026-10-29."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/cimg/php/tags/8.4.27"
+          ],
+          "comment": "Published image metadata, checked 2026-10-29."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/cimg/php/tags/8.5.12"
+          ],
+          "comment": "Published image metadata, checked 2026-10-29."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
+          ],
+          "comment": "PHP upstream CVE-2026-109618 advisory identifies the fixed PHP versions."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp"
+          ],
+          "comment": "PHP upstream CVE-2026-109619 advisory identifies the fixed PHP versions."
         }
-      ]
+      ],
+      "software_packageVersion": "cimg/php:8.2.35 / 8.3.36 / 8.4.27 / 8.5.12 (linux/amd64 and linux/arm64)"
     },
     {
       "type": "software_Package",
@@ -21748,7 +21970,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:composer-satis-maintainers:682ed9ed2a49",
       "summary": "The official Dockerfile uses a Composer build stage and PHP8.4 CLI final runtime.",
       "description": "composer:latest build stage; final php:8.4-cli-alpine stage",
-      "comment": "Inventory record: PHP-0487\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0477\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: composer:latest build stage; final php:8.4-cli-alpine stage\nPHP version scope: Inspected moving main Dockerfile selects PHP8.4 CLI Alpine; exact PHP patch/base digest unknown\nExtensions: Recipe adds bz2,sockets,zip; not universal Satis application requirements\nLimitations: Moving recipe and legacy1.0.0 package constraints are different. Advertised helper hash is not a verified PHP image digest; generated static repositories do not inherit a server PHP requirement. No deployment, loaded-module set or reachability was measured; no specific PHP CVE was supplied. Static public evidence only; no retrieved code/image was installed, run, built or tested.\nPatch owner: Project maintainer for tool/library code; PHP/OS/image maintainer and developer or CI operator for compatible runtime/modules and rollout\nDownstream surface: Developer machines, selected CI jobs and build artifacts using this named tool\nRelease pin: Moving official documentation/source; immutable artifact pin pending\nSource accessed: 2026-10-18\nAliases: composer/satis:official-image, ghcr.io/composer/satis\nConditional downstream consequence: A matching PHP or enabled native-parser/extension flaw reached through source, package metadata, archives or build input could affect the tool process, its files, CI credentials or generated artifact integrity. Normal configured plugin/test execution is not itself a PHP vulnerability. Production impact needs a separate artifact/deployment or credential-propagation path; sandbox or tenant escape is not automatic.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0487\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0477\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: composer:latest build stage; final php:8.4-cli-alpine stage\nPHP version scope: composer/satis:latest with PHP 8.4.27 (2026-10-29 digest scope)\nExtensions: Recipe adds bz2,sockets,zip; not universal Satis application requirements\nLimitations: Fix applies to the inspected published container built from the official recipe. The moving build recipe alone, standalone Satis, older images, CLI exploitability and existing deployments are not assessed. Metadata only; no image layers downloaded or executed.\nPatch owner: Project maintainer for tool/library code; PHP/OS/image maintainer and developer or CI operator for compatible runtime/modules and rollout\nDownstream surface: Developer machines, selected CI jobs and build artifacts using this named tool\nRelease pin: latest@sha256:6e44611cb3d8e108e7dc67d9b2946f10203366140e5fd124b423a2bbf2941b88\nSource accessed: 2026-10-29\nAliases: composer/satis:official-image, ghcr.io/composer/satis\nConditional downstream consequence: A matching PHP or enabled native-parser/extension flaw reached through source, package metadata, archives or build input could affect the tool process, its files, CI credentials or generated artifact integrity. Normal configured plugin/test execution is not itself a PHP vulnerability. Production impact needs a separate artifact/deployment or credential-propagation path; sandbox or tenant escape is not automatic.\nVulnerability status: Fix for both CVEs in the stated runtime/image scope; assessed from current public official sources on 2026-10-29.\nCVE-2026-109618: Fix: composer/satis:latest with PHP 8.4.27 (2026-10-29 digest scope)\nCVE-2026-109619: Fix: composer/satis:latest with PHP 8.4.27 (2026-10-29 digest scope)\nCVE assessment limit: Fix applies to the inspected published container built from the official recipe. The moving build recipe alone, standalone Satis, older images, CLI exploitability and existing deployments are not assessed. Metadata only; no image layers downloaded or executed.\nOfficial fix evidence: The Satis upstream README names composer/satis as its official published container. Its inspected latest digest declares PHP_VERSION=8.4.27 in registry config for linux/amd64 and linux/arm64, matching both upstream PHP fixed-version advisories.\nAction statement: Pull the fixed container digest and recreate jobs or rebuild derived images using older PHP.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -21757,8 +21979,41 @@
             "https://github.com/composer/satis/blob/main/Dockerfile"
           ],
           "comment": "Official project scope or publisher-supplied release requirements"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/composer/satis/blob/main/README.md"
+          ],
+          "comment": "Upstream documentation identifies composer/satis as the official Docker Hub image."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/composer/satis/tags/latest"
+          ],
+          "comment": "Publisher image metadata; referenced registry config declares PHP 8.4.27 on both checked architectures."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
+          ],
+          "comment": "PHP upstream CVE-2026-109618 advisory identifies the fixed PHP versions."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp"
+          ],
+          "comment": "PHP upstream CVE-2026-109619 advisory identifies the fixed PHP versions."
         }
-      ]
+      ],
+      "software_packageVersion": "composer/satis:latest with PHP 8.4.27 (2026-10-29 digest scope)"
     },
     {
       "type": "software_Package",
@@ -25404,7 +25659,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:openbsd-ports-maintainers-php-documentation-team:7c89c0b9e1fe",
       "summary": "PHP documentation confirms split optional OpenBSD packages; dated7.9 release notes list four PHP source-version families.",
       "description": "Manual core package includes engine/FPM/gettext/iconv; Apache and database modules separately selected",
-      "comment": "Inventory record: PHP-0596\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Manual core package includes engine/FPM/gettext/iconv; Apache and database modules separately selected\nPHP version scope: OpenBSD7.9 release page, dated19 May2026, lists PHP8.2.30/8.3.30/8.4.20/8.5.5. Later security package state unknown.\nExtensions: Core-versus-separate-module packaging is documented; mysqli/imap examples are not default presence. Per-version package contents/activation unresolved.\nLimitations: A release-note package catalogue does not mean PHP is in every base installation. Manual installation examples, chroot notes and historical module names are not verified current package/ABI defaults. Availability is not default installation. Exact installed bytes, loaded features, inputs, privileges, deployments and vulnerabilities are not measured. No research code/package/image was installed, built, imported or executed.\nPatch owner: OpenBSD ports/package maintainers for package branch updates; operator for installed package selection, activation and daemon restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: OpenBSD7.9 release page dated19 May2026; later package/backport builds unverified\nSource accessed: 2026-10-19\nAliases: openbsd:php\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0596\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Manual core package includes engine/FPM/gettext/iconv; Apache and database modules separately selected\nPHP version scope: OpenBSD 8.0 amd64 packages-stable: php-8.3.36p1 / php-8.4.27p0 / php-8.5.12p0\nExtensions: Core-versus-separate-module packaging is documented; mysqli/imap examples are not default presence. Per-version package contents/activation unresolved.\nLimitations: Confirmation is limited to these optional OpenBSD 8.0 amd64 packages. It does not assert PHP is installed by default or that older OpenBSD branches, other architectures or existing deployments are patched.\nPatch owner: OpenBSD ports/package maintainers for package branch updates; operator for installed package selection, activation and daemon restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: OpenBSD 8.0 amd64 packages-stable: php-8.3.36p1 / php-8.4.27p0 / php-8.5.12p0\nSource accessed: 2026-10-29\nAliases: openbsd:php\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Fix for both CVEs in the stated runtime/image scope; assessed from current public official sources on 2026-10-29.\nCVE-2026-109618: Fix: OpenBSD 8.0 amd64 packages-stable: php-8.3.36p1 / php-8.4.27p0 / php-8.5.12p0\nCVE-2026-109619: Fix: OpenBSD 8.0 amd64 packages-stable: php-8.3.36p1 / php-8.4.27p0 / php-8.5.12p0\nCVE assessment limit: Confirmation is limited to these optional OpenBSD 8.0 amd64 packages. It does not assert PHP is installed by default or that older OpenBSD branches, other architectures or existing deployments are patched.\nOfficial fix evidence: OpenBSD's public 8.0 packages-stable/amd64 index publishes php-8.3.36p1, php-8.4.27p0 and php-8.5.12p0. The PHP portions of these versions match the fixed releases in both upstream advisories.\nAction statement: Install the appropriate fixed package for the supported OpenBSD branch and restart the PHP-serving processes.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -25421,8 +25676,41 @@
             "https://www.openbsd.org/79.html"
           ],
           "comment": "Primary package, build, release or vendor distribution evidence - Dated OpenBSD7.9 ports/package summary lists four PHP versions; optional family, not default base contents."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://cdn.openbsd.org/pub/OpenBSD/8.0/packages-stable/amd64/"
+          ],
+          "comment": "Official package index publishes the three fixed PHP builds; checked 2026-10-29."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/openbsd/ports/commit/f0c6a3922549ae04b3b84f57035bd179b44619e2"
+          ],
+          "comment": "Official OpenBSD ports mirror records the PHP 8.4.27 source update."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
+          ],
+          "comment": "PHP upstream CVE-2026-109618 advisory identifies the fixed PHP versions."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp"
+          ],
+          "comment": "PHP upstream CVE-2026-109619 advisory identifies the fixed PHP versions."
         }
-      ]
+      ],
+      "software_packageVersion": "OpenBSD 8.0 amd64 packages-stable: php-8.3.36p1 / php-8.4.27p0 / php-8.5.12p0"
     },
     {
       "type": "software_Package",
@@ -35202,7 +35490,6 @@
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0396",
-        "urn:php2shell:inventory:package:PHP-0402",
         "urn:php2shell:inventory:package:PHP-0413",
         "urn:php2shell:inventory:package:PHP-0421"
       ],
@@ -35432,11 +35719,7 @@
         "urn:php2shell:inventory:package:PHP-0349",
         "urn:php2shell:inventory:package:PHP-0371",
         "urn:php2shell:inventory:package:PHP-0374",
-        "urn:php2shell:inventory:package:PHP-0375",
         "urn:php2shell:inventory:package:PHP-0378",
-        "urn:php2shell:inventory:package:PHP-0379",
-        "urn:php2shell:inventory:package:PHP-0380",
-        "urn:php2shell:inventory:package:PHP-0382",
         "urn:php2shell:inventory:package:PHP-0410",
         "urn:php2shell:inventory:package:PHP-0427",
         "urn:php2shell:inventory:package:PHP-0429",
@@ -35453,8 +35736,6 @@
         "urn:php2shell:inventory:package:PHP-0483",
         "urn:php2shell:inventory:package:PHP-0484",
         "urn:php2shell:inventory:package:PHP-0485",
-        "urn:php2shell:inventory:package:PHP-0486",
-        "urn:php2shell:inventory:package:PHP-0487",
         "urn:php2shell:inventory:package:PHP-0513",
         "urn:php2shell:inventory:package:PHP-0514",
         "urn:php2shell:inventory:package:PHP-0515",
@@ -35493,7 +35774,6 @@
         "urn:php2shell:inventory:package:PHP-0586",
         "urn:php2shell:inventory:package:PHP-0587",
         "urn:php2shell:inventory:package:PHP-0588",
-        "urn:php2shell:inventory:package:PHP-0596",
         "urn:php2shell:inventory:package:PHP-0598",
         "urn:php2shell:inventory:package:PHP-0599",
         "urn:php2shell:inventory:package:PHP-0600",
@@ -35639,7 +35919,6 @@
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0396",
-        "urn:php2shell:inventory:package:PHP-0402",
         "urn:php2shell:inventory:package:PHP-0413",
         "urn:php2shell:inventory:package:PHP-0421"
       ],
@@ -35868,11 +36147,7 @@
         "urn:php2shell:inventory:package:PHP-0349",
         "urn:php2shell:inventory:package:PHP-0371",
         "urn:php2shell:inventory:package:PHP-0374",
-        "urn:php2shell:inventory:package:PHP-0375",
         "urn:php2shell:inventory:package:PHP-0378",
-        "urn:php2shell:inventory:package:PHP-0379",
-        "urn:php2shell:inventory:package:PHP-0380",
-        "urn:php2shell:inventory:package:PHP-0382",
         "urn:php2shell:inventory:package:PHP-0410",
         "urn:php2shell:inventory:package:PHP-0427",
         "urn:php2shell:inventory:package:PHP-0429",
@@ -35889,8 +36164,6 @@
         "urn:php2shell:inventory:package:PHP-0483",
         "urn:php2shell:inventory:package:PHP-0484",
         "urn:php2shell:inventory:package:PHP-0485",
-        "urn:php2shell:inventory:package:PHP-0486",
-        "urn:php2shell:inventory:package:PHP-0487",
         "urn:php2shell:inventory:package:PHP-0513",
         "urn:php2shell:inventory:package:PHP-0514",
         "urn:php2shell:inventory:package:PHP-0515",
@@ -35929,7 +36202,6 @@
         "urn:php2shell:inventory:package:PHP-0586",
         "urn:php2shell:inventory:package:PHP-0587",
         "urn:php2shell:inventory:package:PHP-0588",
-        "urn:php2shell:inventory:package:PHP-0596",
         "urn:php2shell:inventory:package:PHP-0598",
         "urn:php2shell:inventory:package:PHP-0599",
         "urn:php2shell:inventory:package:PHP-0600",
@@ -44314,6 +44586,110 @@
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:14683505ba10",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0375"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "35.0.2-apache / 34.0.5-fpm: PHP 8.5.12; 32-apache: PHP 8.3.36 (2026-10-29 digest scope)",
+      "summary": "CVE-2026-109618 assessment: fixed in the stated runtime/image scope",
+      "comment": "Public official-source review on 2026-10-29. The publisher's registry manifests and config JSON for linux/amd64 and linux/arm64 declare PHP_VERSION=8.5.12 in 35.0.2-apache and 34.0.5-fpm, and PHP_VERSION=8.3.36 in 32-apache. Both upstream advisories list these PHP releases as fixed. Only the inspected published digests are confirmed; a tag name alone does not identify older cached images. No conclusion for other tags, platforms, Nextcloud AIO or installed deployments. Metadata was read without downloading image layers or executing images.\nAction statement: Pull the fixed digest, rebuild custom derived images and recreate the relevant containers."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:171f769ce335",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0379"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "dokuwiki/dokuwiki:stable with PHP 8.4.27 (2026-10-29 digest scope)",
+      "summary": "CVE-2026-109618 assessment: fixed in the stated runtime/image scope",
+      "comment": "Public official-source review on 2026-10-29. DokuWiki's official Docker repository identifies dokuwiki/dokuwiki as its published image. Registry config for the inspected stable digest declares PHP_VERSION=8.4.27 for linux/amd64 and linux/arm64, matching the fixed release in both PHP advisories. Confirmation is limited to the inspected stable image digest and two architectures. Older cached stable images, other tags and existing deployments are not covered. Metadata only; no image layers downloaded or executed.\nAction statement: Pull the fixed image digest and recreate the DokuWiki container."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:41ef29f55750",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0380"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "7.1.4-php8.4-apache: PHP 8.4.27 (2026-10-29 digest scope)",
+      "summary": "CVE-2026-109618 assessment: fixed in the stated runtime/image scope",
+      "comment": "Public official-source review on 2026-10-29. The Docker Official Image registry config for wordpress:7.1.4-php8.4-apache declares PHP_VERSION=8.4.27 for linux/amd64 and linux/arm64. Both upstream PHP advisories identify 8.4.27 as fixed. Only the inspected Docker Community image digest and two architectures are confirmed; this is not a WordPress application release fix or a claim about other image tags or existing deployments. Metadata only; no image layers downloaded or executed.\nAction statement: Pull the fixed image digest, rebuild derived images and recreate containers."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:459e8fa7ff28",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0487"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "composer/satis:latest with PHP 8.4.27 (2026-10-29 digest scope)",
+      "summary": "CVE-2026-109618 assessment: fixed in the stated runtime/image scope",
+      "comment": "Public official-source review on 2026-10-29. The Satis upstream README names composer/satis as its official published container. Its inspected latest digest declares PHP_VERSION=8.4.27 in registry config for linux/amd64 and linux/arm64, matching both upstream PHP fixed-version advisories. Fix applies to the inspected published container built from the official recipe. The moving build recipe alone, standalone Satis, older images, CLI exploitability and existing deployments are not assessed. Metadata only; no image layers downloaded or executed.\nAction statement: Pull the fixed container digest and recreate jobs or rebuild derived images using older PHP."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:7b176c3ee9eb",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0486"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "cimg/php:8.2.35 / 8.3.36 / 8.4.27 / 8.5.12 (linux/amd64 and linux/arm64)",
+      "summary": "CVE-2026-109618 assessment: fixed in the stated runtime/image scope",
+      "comment": "Public official-source review on 2026-10-29. CircleCI release PR 324 and commit 76fe1c8bd2ec95f65faaa71159dadbfe23c264d5 update PHP to all four upstream fixed versions. Public Docker Hub metadata confirms publication of the four base tags on 2026-10-22 for linux/amd64 and linux/arm64. Fix applies to the four published base image tags. Older tags, optional node/browser variants and the CircleCI control plane are outside this confirmation.\nAction statement: Select a listed fixed cimg/php tag and recreate CI environments; rebuild derived images."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:8be1173f570f",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0382"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "composer:2 with PHP 8.5.12 (2026-10-29 digest scope)",
+      "summary": "CVE-2026-109618 assessment: fixed in the stated runtime/image scope",
+      "comment": "Public official-source review on 2026-10-29. The Composer Docker Official Image registry config declares PHP_VERSION=8.5.12 for linux/amd64 and linux/arm64 at the inspected composer:2 digest. Both upstream PHP advisories identify 8.5.12 as fixed. Only the bundled runtime in the inspected image digest is confirmed fixed. This does not assess the standalone Composer library/tool, other image variants, CLI exploitability or existing deployments. Metadata only; no image layers downloaded or executed.\nAction statement: Pull the fixed image digest and recreate jobs or rebuild derived images using the old runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:ad337f0dad0b",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0402"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Cloud Platform 2026-10-22: PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12",
+      "summary": "CVE-2026-109618 assessment: fixed in the stated runtime/image scope",
+      "comment": "Public official-source review on 2026-10-29. Acquia's 2026-10-22 Cloud Platform release (NW-17204) names PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12. Both PHP upstream CVE advisories identify these exact releases as patched. Only the four explicitly versioned managed PHP runtime updates are confirmed. The release's unversioned PHP 7.4 security-patch mention is not assessed. Individual environment rollout and provider/control-plane internals were not measured.\nAction statement: Verify that the selected Cloud Platform environment uses one of the listed patched PHP releases."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:d9f0cf272066",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0596"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "OpenBSD 8.0 amd64 packages-stable: php-8.3.36p1 / php-8.4.27p0 / php-8.5.12p0",
+      "summary": "CVE-2026-109618 assessment: fixed in the stated runtime/image scope",
+      "comment": "Public official-source review on 2026-10-29. OpenBSD's public 8.0 packages-stable/amd64 index publishes php-8.3.36p1, php-8.4.27p0 and php-8.5.12p0. The PHP portions of these versions match the fixed releases in both upstream advisories. Confirmation is limited to these optional OpenBSD 8.0 amd64 packages. It does not assert PHP is installed by default or that older OpenBSD branches, other architectures or existing deployments are patched.\nAction statement: Install the appropriate fixed package for the supported OpenBSD branch and restart the PHP-serving processes."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:getpagespeed-deb-php-20261026",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
@@ -46096,6 +46472,110 @@
       "comment": "Official public source reviewed 2026-10-26. Source: https://security.netapp.com/advisory/NTAP-20261021-0021",
       "security_impactStatement": "NetApp NTAP-20261021-0021 version 7.0 (2026-10-25) lists these currently available ONTAP 9 patches. ONTAP 9 is affected only by CVE-2026-109618; CVE-2026-109619 does not affect it. Exploitation of an unpatched release is limited to the www user in the PHP jail.",
       "security_actionStatement": "Install the first fixed release for the deployed ONTAP branch. The available workaround options have operational trade-offs."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:14683505ba10",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0375"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "35.0.2-apache / 34.0.5-fpm: PHP 8.5.12; 32-apache: PHP 8.3.36 (2026-10-29 digest scope)",
+      "summary": "CVE-2026-109619 assessment: fixed in the stated runtime/image scope",
+      "comment": "Public official-source review on 2026-10-29. The publisher's registry manifests and config JSON for linux/amd64 and linux/arm64 declare PHP_VERSION=8.5.12 in 35.0.2-apache and 34.0.5-fpm, and PHP_VERSION=8.3.36 in 32-apache. Both upstream advisories list these PHP releases as fixed. Only the inspected published digests are confirmed; a tag name alone does not identify older cached images. No conclusion for other tags, platforms, Nextcloud AIO or installed deployments. Metadata was read without downloading image layers or executing images.\nAction statement: Pull the fixed digest, rebuild custom derived images and recreate the relevant containers."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:171f769ce335",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0379"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "dokuwiki/dokuwiki:stable with PHP 8.4.27 (2026-10-29 digest scope)",
+      "summary": "CVE-2026-109619 assessment: fixed in the stated runtime/image scope",
+      "comment": "Public official-source review on 2026-10-29. DokuWiki's official Docker repository identifies dokuwiki/dokuwiki as its published image. Registry config for the inspected stable digest declares PHP_VERSION=8.4.27 for linux/amd64 and linux/arm64, matching the fixed release in both PHP advisories. Confirmation is limited to the inspected stable image digest and two architectures. Older cached stable images, other tags and existing deployments are not covered. Metadata only; no image layers downloaded or executed.\nAction statement: Pull the fixed image digest and recreate the DokuWiki container."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:41ef29f55750",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0380"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "7.1.4-php8.4-apache: PHP 8.4.27 (2026-10-29 digest scope)",
+      "summary": "CVE-2026-109619 assessment: fixed in the stated runtime/image scope",
+      "comment": "Public official-source review on 2026-10-29. The Docker Official Image registry config for wordpress:7.1.4-php8.4-apache declares PHP_VERSION=8.4.27 for linux/amd64 and linux/arm64. Both upstream PHP advisories identify 8.4.27 as fixed. Only the inspected Docker Community image digest and two architectures are confirmed; this is not a WordPress application release fix or a claim about other image tags or existing deployments. Metadata only; no image layers downloaded or executed.\nAction statement: Pull the fixed image digest, rebuild derived images and recreate containers."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:459e8fa7ff28",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0487"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "composer/satis:latest with PHP 8.4.27 (2026-10-29 digest scope)",
+      "summary": "CVE-2026-109619 assessment: fixed in the stated runtime/image scope",
+      "comment": "Public official-source review on 2026-10-29. The Satis upstream README names composer/satis as its official published container. Its inspected latest digest declares PHP_VERSION=8.4.27 in registry config for linux/amd64 and linux/arm64, matching both upstream PHP fixed-version advisories. Fix applies to the inspected published container built from the official recipe. The moving build recipe alone, standalone Satis, older images, CLI exploitability and existing deployments are not assessed. Metadata only; no image layers downloaded or executed.\nAction statement: Pull the fixed container digest and recreate jobs or rebuild derived images using older PHP."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:7b176c3ee9eb",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0486"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "cimg/php:8.2.35 / 8.3.36 / 8.4.27 / 8.5.12 (linux/amd64 and linux/arm64)",
+      "summary": "CVE-2026-109619 assessment: fixed in the stated runtime/image scope",
+      "comment": "Public official-source review on 2026-10-29. CircleCI release PR 324 and commit 76fe1c8bd2ec95f65faaa71159dadbfe23c264d5 update PHP to all four upstream fixed versions. Public Docker Hub metadata confirms publication of the four base tags on 2026-10-22 for linux/amd64 and linux/arm64. Fix applies to the four published base image tags. Older tags, optional node/browser variants and the CircleCI control plane are outside this confirmation.\nAction statement: Select a listed fixed cimg/php tag and recreate CI environments; rebuild derived images."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:8be1173f570f",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0382"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "composer:2 with PHP 8.5.12 (2026-10-29 digest scope)",
+      "summary": "CVE-2026-109619 assessment: fixed in the stated runtime/image scope",
+      "comment": "Public official-source review on 2026-10-29. The Composer Docker Official Image registry config declares PHP_VERSION=8.5.12 for linux/amd64 and linux/arm64 at the inspected composer:2 digest. Both upstream PHP advisories identify 8.5.12 as fixed. Only the bundled runtime in the inspected image digest is confirmed fixed. This does not assess the standalone Composer library/tool, other image variants, CLI exploitability or existing deployments. Metadata only; no image layers downloaded or executed.\nAction statement: Pull the fixed image digest and recreate jobs or rebuild derived images using the old runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:ad337f0dad0b",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0402"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Cloud Platform 2026-10-22: PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12",
+      "summary": "CVE-2026-109619 assessment: fixed in the stated runtime/image scope",
+      "comment": "Public official-source review on 2026-10-29. Acquia's 2026-10-22 Cloud Platform release (NW-17204) names PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12. Both PHP upstream CVE advisories identify these exact releases as patched. Only the four explicitly versioned managed PHP runtime updates are confirmed. The release's unversioned PHP 7.4 security-patch mention is not assessed. Individual environment rollout and provider/control-plane internals were not measured.\nAction statement: Verify that the selected Cloud Platform environment uses one of the listed patched PHP releases."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:d9f0cf272066",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0596"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "OpenBSD 8.0 amd64 packages-stable: php-8.3.36p1 / php-8.4.27p0 / php-8.5.12p0",
+      "summary": "CVE-2026-109619 assessment: fixed in the stated runtime/image scope",
+      "comment": "Public official-source review on 2026-10-29. OpenBSD's public 8.0 packages-stable/amd64 index publishes php-8.3.36p1, php-8.4.27p0 and php-8.5.12p0. The PHP portions of these versions match the fixed releases in both upstream advisories. Confirmation is limited to these optional OpenBSD 8.0 amd64 packages. It does not assert PHP is installed by default or that older OpenBSD branches, other architectures or existing deployments are patched.\nAction statement: Install the appropriate fixed package for the supported OpenBSD branch and restart the PHP-serving processes."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
