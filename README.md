@@ -1,6 +1,6 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
-Operational information: 28 October 2026 13:48 CET<br>
+Operational information: 28 October 2026 16:46 CET<br>
 Software list last status update: 28 October 2026 16:22 CET<br>
 ## TLP:CLEAR
 
@@ -46,7 +46,7 @@ For additional information see:
 | [detection_mitigation](detection_mitigation) | Contains detection and mitigation material for the vulnerabilities. |
 | [software](software) | Contains inventory lists of software products with a PHP dependency potentially affected by the vulnerabilities. |
 | [tools](tools) | Contains tools for using/generating files within this repo |
-| [Community contributions](https://github.com/NCSC-NL/php2shell/blob/community-contributions/COMMUNITY_CONTRIBUTIONS.MD) | Community tools, tips, guides, and reference resources. |
+| [Community contributions](COMMUNITY_CONTRIBUTIONS.MD) | Community tools, tips, guides, and reference resources. |
 
 The repository is being updated as the situation develops. Check back for updates.
 
@@ -84,3 +84,4 @@ If you have any additional information to share relevant to these PHP vulnerabil
 
 For updates to the software list: our strong preference is to receive edits in the SPDX source files in `software/spdx/`. The Markdown list pages are generated automatically from those files. In case this proves too difficult: don't worry. We'll attempt to backport edits in the .md files to the SPDX source files, but without any guarantees. 
 
+For a list of other contributions made by our community, see [Community contributions](COMMUNITY_CONTRIBUTIONS.MD).
