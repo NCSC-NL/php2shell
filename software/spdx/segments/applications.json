@@ -10545,6 +10545,2770 @@
       "security_statusNotes": "The official Nextcloud Snap release ships PHP 8.4.27, and its maintainers confirm the security update in issue 3701. PHP upstream identifies 8.4.27 as fixed for both CVEs. This finding applies to the Snap package.",
       "summary": "CVE-2026-109619 assessment: Fix",
       "comment": "Official public sources reviewed 2026-10-28. Sources: https://github.com/nextcloud-snap/nextcloud-snap/releases/tag/34.0.5snap3; https://github.com/nextcloud-snap/nextcloud-snap/issues/3701; https://www.php.net/archive/2026.php#2026-10-21-5\nAction statement: Refresh to Nextcloud Snap 34.0.5snap3 or a later release retaining the fixed PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0764",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Worldwide Ticketing Tool",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0764"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Affected PHP component; the bulletin does not publish exact PHP or product build numbers.",
+      "description": "Affected Products: Worldwide Ticketing Tool, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 1; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0764\nBulletin product row: Worldwide Ticketing Tool\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nA fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0764",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0764",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "dependsOn",
+      "summary": "Worldwide Ticketing Tool has an affected PHP runtime dependency.",
+      "comment": "Xerox XRX26-016 v4 explicitly identifies both PHP runtime CVEs as affecting this product; exact PHP build and packaging are not stated."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:xerox-xrx26-016-v4-php-0764",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0764"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_actionStatement": "A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:xerox-xrx26-016-v4-php-0764",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0764"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_actionStatement": "A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0833",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Print Management",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0833"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Print Management in the vendor bulletin.",
+      "description": "Print Management: Lexmark Print Management, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0833\nBulletin product row: Lexmark Print Management\nBulletin category: Print Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0835",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Workplace Cloud (XWC) Mac Client",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0835"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Print Management in the vendor bulletin.",
+      "description": "Print Management: Xerox Workplace Cloud (XWC) Mac Client, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0835\nBulletin product row: Xerox Workplace Cloud (XWC) Mac Client\nBulletin category: Print Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0836",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Workplace Suite",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0836"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Print Management in the vendor bulletin.",
+      "description": "Print Management: Xerox Workplace Suite, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0836\nBulletin product row: Xerox Workplace Suite\nBulletin category: Print Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0837",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Print Drivers",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0837"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Print Drivers in the vendor bulletin.",
+      "description": "Print Drivers: Lexmark Print Drivers, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0837\nBulletin product row: Lexmark Print Drivers\nBulletin category: Print Drivers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0838",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Print and Scan Experience",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0838"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Print Drivers in the vendor bulletin.",
+      "description": "Print Drivers: Xerox Print and Scan Experience, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0838\nBulletin product row: Xerox Print and Scan Experience\nBulletin category: Print Drivers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0839",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Print Drivers",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0839"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Print Drivers in the vendor bulletin.",
+      "description": "Print Drivers: Xerox Print Drivers, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0839\nBulletin product row: Xerox Print Drivers\nBulletin category: Print Drivers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0840",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Enhanced LPR Filter (XELF)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0840"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Host Printing Software in the vendor bulletin.",
+      "description": "Host Printing Software: Xerox Enhanced LPR Filter (XELF), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0840\nBulletin product row: Xerox Enhanced LPR Filter (XELF)\nBulletin category: Host Printing Software\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0841",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Printer Access Facility (XPAF)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0841"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Host Printing Software in the vendor bulletin.",
+      "description": "Host Printing Software: Xerox Printer Access Facility (XPAF), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0841\nBulletin product row: Xerox Printer Access Facility (XPAF)\nBulletin category: Host Printing Software\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0842",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Connect for Box",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0842"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Connectors in the vendor bulletin.",
+      "description": "Apps - Connectors: Connect for Box, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0842\nBulletin product row: Connect for Box\nBulletin category: Apps - Connectors\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0843",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Connect for DropBox",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0843"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Connectors in the vendor bulletin.",
+      "description": "Apps - Connectors: Connect for DropBox, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0843\nBulletin product row: Connect for DropBox\nBulletin category: Apps - Connectors\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0844",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Connect for Exchange Online",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0844"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Connectors in the vendor bulletin.",
+      "description": "Apps - Connectors: Connect for Exchange Online, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0844\nBulletin product row: Connect for Exchange Online\nBulletin category: Apps - Connectors\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0845",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Connect for Google Drive",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0845"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Connectors in the vendor bulletin.",
+      "description": "Apps - Connectors: Connect for Google Drive, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0845\nBulletin product row: Connect for Google Drive\nBulletin category: Apps - Connectors\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0846",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Connect for Microsoft 365",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0846"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Connectors in the vendor bulletin.",
+      "description": "Apps - Connectors: Connect for Microsoft 365, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0846\nBulletin product row: Connect for Microsoft 365\nBulletin category: Apps - Connectors\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0847",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Connect for Microsoft OneDrive",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0847"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Connectors in the vendor bulletin.",
+      "description": "Apps - Connectors: Connect for Microsoft OneDrive, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0847\nBulletin product row: Connect for Microsoft OneDrive\nBulletin category: Apps - Connectors\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0848",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Intelligent Document Processing (IDP)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0848"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Document Workflow & Productivity in the vendor bulletin.",
+      "description": "Apps - Document Workflow & Productivity: Intelligent Document Processing (IDP), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0848\nBulletin product row: Intelligent Document Processing (IDP)\nBulletin category: Apps - Document Workflow & Productivity\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0849",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Intelligent Filer",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0849"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Document Workflow & Productivity in the vendor bulletin.",
+      "description": "Apps - Document Workflow & Productivity: Intelligent Filer, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0849\nBulletin product row: Intelligent Filer\nBulletin category: Apps - Document Workflow & Productivity\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0850",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Note Converter",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0850"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Document Workflow & Productivity in the vendor bulletin.",
+      "description": "Apps - Document Workflow & Productivity: Note Converter, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0850\nBulletin product row: Note Converter\nBulletin category: Apps - Document Workflow & Productivity\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0851",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox QuickLink",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0851"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Document Workflow & Productivity in the vendor bulletin.",
+      "description": "Apps - Document Workflow & Productivity: QuickLink, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 4; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0851\nBulletin product row: QuickLink\nBulletin category: Apps - Document Workflow & Productivity\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0852",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Scan to Cloud Email",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0852"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Document Workflow & Productivity in the vendor bulletin.",
+      "description": "Apps - Document Workflow & Productivity: Scan to Cloud Email, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0852\nBulletin product row: Scan to Cloud Email\nBulletin category: Apps - Document Workflow & Productivity\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0853",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Scanning App for OnBase",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0853"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Document Workflow & Productivity in the vendor bulletin.",
+      "description": "Apps - Document Workflow & Productivity: Scanning App for OnBase, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0853\nBulletin product row: Scanning App for OnBase\nBulletin category: Apps - Document Workflow & Productivity\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0854",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Share Patient Information V2",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0854"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Document Workflow & Productivity in the vendor bulletin.",
+      "description": "Apps - Document Workflow & Productivity: Share Patient Information V2, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0854\nBulletin product row: Share Patient Information V2\nBulletin category: Apps - Document Workflow & Productivity\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0855",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Summarizer",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0855"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Document Workflow & Productivity in the vendor bulletin.",
+      "description": "Apps - Document Workflow & Productivity: Summarizer, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0855\nBulletin product row: Summarizer\nBulletin category: Apps - Document Workflow & Productivity\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0856",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Supplies Tracker",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0856"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Vendor-remediated app; the bulletin does not publish a numbered fixed release.",
+      "description": "Apps - Document Workflow & Productivity: Supplies Tracker, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v2.pdf"
+          ],
+          "comment": "XRX26-016 v2, page 1, explains removal of the vulnerable PHP component and no customer action; v4 page 5 retains Remediated status."
+        }
+      ],
+      "software_packageVersion": "Vendor-remediated app; release and remediation date not specified",
+      "comment": "Inventory record: PHP-0856\nBulletin product row: Supplies Tracker\nBulletin category: Apps - Document Workflow & Productivity\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nRemediation is vendor-confirmed component removal, not a published PHP upgrade or numbered application release. No current PHP dependency is asserted after removal."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:xerox-xrx26-016-v4-php-0856",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0856"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Xerox reports Supplies Tracker remediated by removing the vulnerable PHP component; customers need take no action.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 5; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_actionStatement": "Xerox removed the vulnerable PHP component; no customer action is required, as described in v2 page 1 and confirmed by the remediated status in v4 page 5."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:xerox-xrx26-016-v4-php-0856",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0856"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Xerox reports Supplies Tracker remediated by removing the vulnerable PHP component; customers need take no action.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 5; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_actionStatement": "Xerox removed the vulnerable PHP component; no customer action is required, as described in v2 page 1 and confirmed by the remediated status in v4 page 5."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0857",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Workflow Central",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0857"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Document Workflow & Productivity in the vendor bulletin.",
+      "description": "Apps - Document Workflow & Productivity: Workflow Central, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0857\nBulletin product row: Workflow Central\nBulletin category: Apps - Document Workflow & Productivity\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0858",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Workplace Kiosk (SOT)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0858"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Xerox App Gallery & Device Apps in the vendor bulletin.",
+      "description": "Apps - Xerox App Gallery & Device Apps: Workplace Kiosk (SOT), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0858\nBulletin product row: Workplace Kiosk (SOT)\nBulletin category: Apps - Xerox App Gallery & Device Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0859",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox App Gallery",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0859"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Xerox App Gallery & Device Apps in the vendor bulletin.",
+      "description": "Apps - Xerox App Gallery & Device Apps: Xerox App Gallery, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0859\nBulletin product row: Xerox App Gallery\nBulletin category: Apps - Xerox App Gallery & Device Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0860",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Auto-Redaction",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0860"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Xerox App Gallery & Device Apps in the vendor bulletin.",
+      "description": "Apps - Xerox App Gallery & Device Apps: Xerox Auto-Redaction, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0860\nBulletin product row: Xerox Auto-Redaction\nBulletin category: Apps - Xerox App Gallery & Device Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0861",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Support Assistant",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0861"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Xerox App Gallery & Device Apps in the vendor bulletin.",
+      "description": "Apps - Xerox App Gallery & Device Apps: Xerox Support Assistant, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0861\nBulletin product row: Xerox Support Assistant\nBulletin category: Apps - Xerox App Gallery & Device Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0862",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Translate and Print",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0862"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Xerox App Gallery & Device Apps in the vendor bulletin.",
+      "description": "Apps - Xerox App Gallery & Device Apps: Xerox Translate and Print, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0862\nBulletin product row: Xerox Translate and Print\nBulletin category: Apps - Xerox App Gallery & Device Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0863",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Card Authentication",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0863"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Cloud eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Cloud eSF Apps: Card Authentication, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0863\nBulletin product row: Card Authentication\nBulletin category: Apps - Lexmark Cloud eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0864",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Cloud Connector",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0864"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Cloud eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Cloud eSF Apps: Cloud Connector, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0864\nBulletin product row: Cloud Connector\nBulletin category: Apps - Lexmark Cloud eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0865",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Cloud Print Management apps",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0865"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Cloud eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Cloud eSF Apps: Cloud Print Management apps, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0865\nBulletin product row: Cloud Print Management apps\nBulletin category: Apps - Lexmark Cloud eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0866",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Cloud Scan",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0866"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Cloud eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Cloud eSF Apps: Cloud Scan, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0866\nBulletin product row: Cloud Scan\nBulletin category: Apps - Lexmark Cloud eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0867",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Cloud Solution Center",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0867"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Cloud eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Cloud eSF Apps: Cloud Solution Center, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0867\nBulletin product row: Cloud Solution Center\nBulletin category: Apps - Lexmark Cloud eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0868",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Keyboard Reader Driver",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0868"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Cloud eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Cloud eSF Apps: Keyboard Reader Driver, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0868\nBulletin product row: Keyboard Reader Driver\nBulletin category: Apps - Lexmark Cloud eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0869",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Omnikey Reader Driver",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0869"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Cloud eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Cloud eSF Apps: Omnikey Reader Driver, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0869\nBulletin product row: Omnikey Reader Driver\nBulletin category: Apps - Lexmark Cloud eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0870",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Printer Configuration Agent",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0870"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Cloud eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Cloud eSF Apps: Printer Configuration Agent, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0870\nBulletin product row: Printer Configuration Agent\nBulletin category: Apps - Lexmark Cloud eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0871",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Translation Assistant",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0871"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Cloud eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Cloud eSF Apps: Translation Assistant, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0871\nBulletin product row: Translation Assistant\nBulletin category: Apps - Lexmark Cloud eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0872",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Accessibility Solution",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0872"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Worldwide eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Worldwide eSF Apps: Accessibility Solution, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0872\nBulletin product row: Accessibility Solution\nBulletin category: Apps - Lexmark Worldwide eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0873",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark AccuRead Automate",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0873"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Worldwide eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Worldwide eSF Apps: AccuRead Automate, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0873\nBulletin product row: AccuRead Automate\nBulletin category: Apps - Lexmark Worldwide eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0874",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Barcode Discovery",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0874"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Worldwide eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Worldwide eSF Apps: Barcode Discovery, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0874\nBulletin product row: Barcode Discovery\nBulletin category: Apps - Lexmark Worldwide eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0875",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Card Copy",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0875"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Worldwide eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Worldwide eSF Apps: Card Copy, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0875\nBulletin product row: Card Copy\nBulletin category: Apps - Lexmark Worldwide eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0876",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Customer Support",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0876"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Worldwide eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Worldwide eSF Apps: Customer Support, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0876\nBulletin product row: Customer Support\nBulletin category: Apps - Lexmark Worldwide eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0877",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Device Quota",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0877"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Worldwide eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Worldwide eSF Apps: Device Quota, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0877\nBulletin product row: Device Quota\nBulletin category: Apps - Lexmark Worldwide eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0878",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Display Customization",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0878"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Worldwide eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Worldwide eSF Apps: Display Customization, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0878\nBulletin product row: Display Customization\nBulletin category: Apps - Lexmark Worldwide eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0879",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Downtime Assistant",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0879"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Worldwide eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Worldwide eSF Apps: Downtime Assistant, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0879\nBulletin product row: Downtime Assistant\nBulletin category: Apps - Lexmark Worldwide eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0880",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Secure Document Monitor",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0880"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Worldwide eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Worldwide eSF Apps: Lexmark Secure Document Monitor, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0880\nBulletin product row: Lexmark Secure Document Monitor\nBulletin category: Apps - Lexmark Worldwide eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0881",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark OnBase Connector",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0881"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Worldwide eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Worldwide eSF Apps: OnBase Connector, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0881\nBulletin product row: OnBase Connector\nBulletin category: Apps - Lexmark Worldwide eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0882",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Scan Center",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0882"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Worldwide eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Worldwide eSF Apps: Scan Center, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0882\nBulletin product row: Scan Center\nBulletin category: Apps - Lexmark Worldwide eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0883",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Scan Center Premium",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0883"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Worldwide eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Worldwide eSF Apps: Scan Center Premium, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0883\nBulletin product row: Scan Center Premium\nBulletin category: Apps - Lexmark Worldwide eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0884",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Scan to FileBound",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0884"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Worldwide eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Worldwide eSF Apps: Scan to FileBound, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 5; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0884\nBulletin product row: Scan to FileBound\nBulletin category: Apps - Lexmark Worldwide eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0885",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Scan to RightFax XML",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0885"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Worldwide eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Worldwide eSF Apps: Scan to RightFax XML, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0885\nBulletin product row: Scan to RightFax XML\nBulletin category: Apps - Lexmark Worldwide eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0886",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Scan to SharePoint Online",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0886"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Worldwide eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Worldwide eSF Apps: Scan to SharePoint Online, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0886\nBulletin product row: Scan to SharePoint Online\nBulletin category: Apps - Lexmark Worldwide eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0887",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Shortcut Center",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0887"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Worldwide eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Worldwide eSF Apps: Shortcut Center, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0887\nBulletin product row: Shortcut Center\nBulletin category: Apps - Lexmark Worldwide eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0888",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Solutions Composer",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0888"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Lexmark Worldwide eSF Apps in the vendor bulletin.",
+      "description": "Apps - Lexmark Worldwide eSF Apps: Solutions Composer, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0888\nBulletin product row: Solutions Composer\nBulletin category: Apps - Lexmark Worldwide eSF Apps\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0889",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Print App (Android Play Store)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0889"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Mobile in the vendor bulletin.",
+      "description": "Apps - Mobile: Lexmark Print App (Android Play Store), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0889\nBulletin product row: Lexmark Print App (Android Play Store)\nBulletin category: Apps - Mobile\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0890",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Print App (iOS App Store)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0890"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Mobile in the vendor bulletin.",
+      "description": "Apps - Mobile: Lexmark Print App (iOS App Store), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0890\nBulletin product row: Lexmark Print App (iOS App Store)\nBulletin category: Apps - Mobile\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0891",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Print Plugin (Android Play Store)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0891"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Apps - Mobile in the vendor bulletin.",
+      "description": "Apps - Mobile: Lexmark Print Plugin (Android Play Store), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0891\nBulletin product row: Lexmark Print Plugin (Android Play Store)\nBulletin category: Apps - Mobile\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0892",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Easy Assist (iOS & Android)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0892"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Mobile in the vendor bulletin.",
+      "description": "Apps - Mobile: Xerox Easy Assist (iOS & Android), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0892\nBulletin product row: Xerox Easy Assist (iOS & Android)\nBulletin category: Apps - Mobile\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0893",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Print Service Plugin (Android)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0893"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Mobile in the vendor bulletin.",
+      "description": "Apps - Mobile: Xerox Print Service Plugin (Android), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0893\nBulletin product row: Xerox Print Service Plugin (Android)\nBulletin category: Apps - Mobile\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0894",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Workplace App (iOS & Android)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0894"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Apps - Mobile in the vendor bulletin.",
+      "description": "Apps - Mobile: Xerox Workplace App (iOS & Android), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0894\nBulletin product row: Xerox Workplace App (iOS & Android)\nBulletin category: Apps - Mobile\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0895",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Doc Intel",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0895"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under DocuShare & Content Management in the vendor bulletin.",
+      "description": "DocuShare & Content Management: Doc Intel, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0895\nBulletin product row: Doc Intel\nBulletin category: DocuShare & Content Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0896",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox DocuShare",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0896"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under DocuShare & Content Management in the vendor bulletin.",
+      "description": "DocuShare & Content Management: DocuShare, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0896\nBulletin product row: DocuShare\nBulletin category: DocuShare & Content Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0897",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox DocuShare Flex",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0897"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under DocuShare & Content Management in the vendor bulletin.",
+      "description": "DocuShare & Content Management: DocuShare Flex, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0897\nBulletin product row: DocuShare Flex\nBulletin category: DocuShare & Content Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0898",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox DocuShare Go",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0898"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under DocuShare & Content Management in the vendor bulletin.",
+      "description": "DocuShare & Content Management: DocuShare Go, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0898\nBulletin product row: DocuShare Go\nBulletin category: DocuShare & Content Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0899",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox mstore",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0899"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under DocuShare & Content Management in the vendor bulletin.",
+      "description": "DocuShare & Content Management: Xerox mstore, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0899\nBulletin product row: Xerox mstore\nBulletin category: DocuShare & Content Management\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0900",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox FreeFlow 9 (Makeready, Express to Print, and Print Manager App)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0900"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under FreeFlow in the vendor bulletin.",
+      "description": "FreeFlow: FreeFlow 9 (Makeready, Express to Print, and Print Manager App), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0900\nBulletin product row: FreeFlow 9 (Makeready, Express to Print, and Print Manager App)\nBulletin category: FreeFlow\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0901",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox FreeFlow Core",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0901"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under FreeFlow in the vendor bulletin.",
+      "description": "FreeFlow: FreeFlow Core, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0901\nBulletin product row: FreeFlow Core\nBulletin category: FreeFlow\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0902",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox FreeFlow Makeready Software",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0902"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under FreeFlow in the vendor bulletin.",
+      "description": "FreeFlow: FreeFlow Makeready Software, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0902\nBulletin product row: FreeFlow Makeready Software\nBulletin category: FreeFlow\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0903",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox FreeFlow Print Server (FFPS) - Solaris and Windows platforms",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0903"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under FreeFlow in the vendor bulletin.",
+      "description": "FreeFlow: FreeFlow Print Server (FFPS) - Solaris and Windows platforms, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0903\nBulletin product row: FreeFlow Print Server (FFPS) - Solaris and Windows platforms\nBulletin category: FreeFlow\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0904",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox FreeFlow VI Suite",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0904"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under FreeFlow in the vendor bulletin.",
+      "description": "FreeFlow: FreeFlow VI Suite, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0904\nBulletin product row: FreeFlow VI Suite\nBulletin category: FreeFlow\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0905",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox FreeFlow Vision Connect",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0905"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under FreeFlow in the vendor bulletin.",
+      "description": "FreeFlow: FreeFlow Vision Connect, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0905\nBulletin product row: FreeFlow Vision Connect\nBulletin category: FreeFlow\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0906",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Empress Studio",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0906"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under FreeFlow in the vendor bulletin.",
+      "description": "FreeFlow: Xerox Empress Studio, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0906\nBulletin product row: Xerox Empress Studio\nBulletin category: FreeFlow\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0907",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Central Publisher (PPR)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0907"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Personalized Print (PPR) in the vendor bulletin.",
+      "description": "Personalized Print (PPR): Central Publisher (PPR), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0907\nBulletin product row: Central Publisher (PPR)\nBulletin category: Personalized Print (PPR)\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0908",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox In-Aisle Publisher (PPR)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0908"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Personalized Print (PPR) in the vendor bulletin.",
+      "description": "Personalized Print (PPR): In-Aisle Publisher (PPR), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0908\nBulletin product row: In-Aisle Publisher (PPR)\nBulletin category: Personalized Print (PPR)\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0909",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox In-Store Publisher (PPR)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0909"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Personalized Print (PPR) in the vendor bulletin.",
+      "description": "Personalized Print (PPR): In-Store Publisher (PPR), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0909\nBulletin product row: In-Store Publisher (PPR)\nBulletin category: Personalized Print (PPR)\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0910",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Platform Administrator (PPR)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0910"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Personalized Print (PPR) in the vendor bulletin.",
+      "description": "Personalized Print (PPR): Platform Administrator (PPR), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0910\nBulletin product row: Platform Administrator (PPR)\nBulletin category: Personalized Print (PPR)\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0911",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Publishing Manager (PPR)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0911"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Personalized Print (PPR) in the vendor bulletin.",
+      "description": "Personalized Print (PPR): Publishing Manager (PPR), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0911\nBulletin product row: Publishing Manager (PPR)\nBulletin category: Personalized Print (PPR)\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0912",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Template Designer (PPR)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0912"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Personalized Print (PPR) in the vendor bulletin.",
+      "description": "Personalized Print (PPR): Template Designer (PPR), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0912\nBulletin product row: Template Designer (PPR)\nBulletin category: Personalized Print (PPR)\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0913",
+      "creationInfo": "_:creationinfo",
+      "name": "XMPie Circle",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0913"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xmpie",
+      "summary": "Listed under XMPie in the vendor bulletin.",
+      "description": "XMPie: XMPie Circle, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0913\nBulletin product row: XMPie Circle\nBulletin category: XMPie\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0914",
+      "creationInfo": "_:creationinfo",
+      "name": "XMPie PersonalEffect (uProduce)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0914"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xmpie",
+      "summary": "Listed under XMPie in the vendor bulletin.",
+      "description": "XMPie: XMPie PersonalEffect (uProduce), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0914\nBulletin product row: XMPie PersonalEffect (uProduce)\nBulletin category: XMPie\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0915",
+      "creationInfo": "_:creationinfo",
+      "name": "XMPie uStore",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0915"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xmpie",
+      "summary": "Listed under XMPie in the vendor bulletin.",
+      "description": "XMPie: XMPie uStore, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 6; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0915\nBulletin product row: XMPie uStore\nBulletin category: XMPie\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0918",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Document Distributor",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0918"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Lexmark Software & Cloud in the vendor bulletin.",
+      "description": "Lexmark Software & Cloud: Lexmark Document Distributor, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 7; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0918\nBulletin product row: Lexmark Document Distributor\nBulletin category: Lexmark Software & Cloud\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0921",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Print",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0921"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Lexmark Software & Cloud in the vendor bulletin.",
+      "description": "Lexmark Software & Cloud: Lexmark Print, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 7; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0921\nBulletin product row: Lexmark Print\nBulletin category: Lexmark Software & Cloud\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0925",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Optra Vision",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0925"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Optra & Edge Solutions in the vendor bulletin.",
+      "description": "Optra & Edge Solutions: Optra Vision, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 7; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0925\nBulletin product row: Optra Vision\nBulletin category: Optra & Edge Solutions\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:xerox-xrx26-016-v4-applications",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0833",
+        "urn:php2shell:inventory:package:PHP-0835",
+        "urn:php2shell:inventory:package:PHP-0836",
+        "urn:php2shell:inventory:package:PHP-0837",
+        "urn:php2shell:inventory:package:PHP-0838",
+        "urn:php2shell:inventory:package:PHP-0839",
+        "urn:php2shell:inventory:package:PHP-0840",
+        "urn:php2shell:inventory:package:PHP-0841",
+        "urn:php2shell:inventory:package:PHP-0842",
+        "urn:php2shell:inventory:package:PHP-0843",
+        "urn:php2shell:inventory:package:PHP-0844",
+        "urn:php2shell:inventory:package:PHP-0845",
+        "urn:php2shell:inventory:package:PHP-0846",
+        "urn:php2shell:inventory:package:PHP-0847",
+        "urn:php2shell:inventory:package:PHP-0848",
+        "urn:php2shell:inventory:package:PHP-0849",
+        "urn:php2shell:inventory:package:PHP-0850",
+        "urn:php2shell:inventory:package:PHP-0851",
+        "urn:php2shell:inventory:package:PHP-0852",
+        "urn:php2shell:inventory:package:PHP-0853",
+        "urn:php2shell:inventory:package:PHP-0854",
+        "urn:php2shell:inventory:package:PHP-0855",
+        "urn:php2shell:inventory:package:PHP-0857",
+        "urn:php2shell:inventory:package:PHP-0858",
+        "urn:php2shell:inventory:package:PHP-0859",
+        "urn:php2shell:inventory:package:PHP-0860",
+        "urn:php2shell:inventory:package:PHP-0861",
+        "urn:php2shell:inventory:package:PHP-0862",
+        "urn:php2shell:inventory:package:PHP-0863",
+        "urn:php2shell:inventory:package:PHP-0864",
+        "urn:php2shell:inventory:package:PHP-0865",
+        "urn:php2shell:inventory:package:PHP-0866",
+        "urn:php2shell:inventory:package:PHP-0867",
+        "urn:php2shell:inventory:package:PHP-0868",
+        "urn:php2shell:inventory:package:PHP-0869",
+        "urn:php2shell:inventory:package:PHP-0870",
+        "urn:php2shell:inventory:package:PHP-0871",
+        "urn:php2shell:inventory:package:PHP-0872",
+        "urn:php2shell:inventory:package:PHP-0873",
+        "urn:php2shell:inventory:package:PHP-0874",
+        "urn:php2shell:inventory:package:PHP-0875",
+        "urn:php2shell:inventory:package:PHP-0876",
+        "urn:php2shell:inventory:package:PHP-0877",
+        "urn:php2shell:inventory:package:PHP-0878",
+        "urn:php2shell:inventory:package:PHP-0879",
+        "urn:php2shell:inventory:package:PHP-0880",
+        "urn:php2shell:inventory:package:PHP-0881",
+        "urn:php2shell:inventory:package:PHP-0882",
+        "urn:php2shell:inventory:package:PHP-0883",
+        "urn:php2shell:inventory:package:PHP-0884",
+        "urn:php2shell:inventory:package:PHP-0885",
+        "urn:php2shell:inventory:package:PHP-0886",
+        "urn:php2shell:inventory:package:PHP-0887",
+        "urn:php2shell:inventory:package:PHP-0888",
+        "urn:php2shell:inventory:package:PHP-0889",
+        "urn:php2shell:inventory:package:PHP-0890",
+        "urn:php2shell:inventory:package:PHP-0891",
+        "urn:php2shell:inventory:package:PHP-0892",
+        "urn:php2shell:inventory:package:PHP-0893",
+        "urn:php2shell:inventory:package:PHP-0894",
+        "urn:php2shell:inventory:package:PHP-0895",
+        "urn:php2shell:inventory:package:PHP-0896",
+        "urn:php2shell:inventory:package:PHP-0897",
+        "urn:php2shell:inventory:package:PHP-0898",
+        "urn:php2shell:inventory:package:PHP-0899",
+        "urn:php2shell:inventory:package:PHP-0900",
+        "urn:php2shell:inventory:package:PHP-0901",
+        "urn:php2shell:inventory:package:PHP-0902",
+        "urn:php2shell:inventory:package:PHP-0903",
+        "urn:php2shell:inventory:package:PHP-0904",
+        "urn:php2shell:inventory:package:PHP-0905",
+        "urn:php2shell:inventory:package:PHP-0906",
+        "urn:php2shell:inventory:package:PHP-0907",
+        "urn:php2shell:inventory:package:PHP-0908",
+        "urn:php2shell:inventory:package:PHP-0909",
+        "urn:php2shell:inventory:package:PHP-0910",
+        "urn:php2shell:inventory:package:PHP-0911",
+        "urn:php2shell:inventory:package:PHP-0912",
+        "urn:php2shell:inventory:package:PHP-0913",
+        "urn:php2shell:inventory:package:PHP-0914",
+        "urn:php2shell:inventory:package:PHP-0915",
+        "urn:php2shell:inventory:package:PHP-0918",
+        "urn:php2shell:inventory:package:PHP-0921",
+        "urn:php2shell:inventory:package:PHP-0925"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Xerox XRX26-016 v4 (2026-10-28) explicitly lists this product/model scope as not impacted by both PHP2Shell CVEs; exact release numbers are not supplied.",
+      "summary": "CVE-2026-109618 assessment: Not vuln",
+      "comment": "Official vendor bulletin reviewed 2026-10-29. Each target package records its table row and page. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_impactStatement": "Xerox confirms that the evaluated current releases of these named products are not impacted. The statement does not cover unspecified models or all historical releases, and the vendor does not state a technical justification."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:xerox-xrx26-016-v4-applications",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0833",
+        "urn:php2shell:inventory:package:PHP-0835",
+        "urn:php2shell:inventory:package:PHP-0836",
+        "urn:php2shell:inventory:package:PHP-0837",
+        "urn:php2shell:inventory:package:PHP-0838",
+        "urn:php2shell:inventory:package:PHP-0839",
+        "urn:php2shell:inventory:package:PHP-0840",
+        "urn:php2shell:inventory:package:PHP-0841",
+        "urn:php2shell:inventory:package:PHP-0842",
+        "urn:php2shell:inventory:package:PHP-0843",
+        "urn:php2shell:inventory:package:PHP-0844",
+        "urn:php2shell:inventory:package:PHP-0845",
+        "urn:php2shell:inventory:package:PHP-0846",
+        "urn:php2shell:inventory:package:PHP-0847",
+        "urn:php2shell:inventory:package:PHP-0848",
+        "urn:php2shell:inventory:package:PHP-0849",
+        "urn:php2shell:inventory:package:PHP-0850",
+        "urn:php2shell:inventory:package:PHP-0851",
+        "urn:php2shell:inventory:package:PHP-0852",
+        "urn:php2shell:inventory:package:PHP-0853",
+        "urn:php2shell:inventory:package:PHP-0854",
+        "urn:php2shell:inventory:package:PHP-0855",
+        "urn:php2shell:inventory:package:PHP-0857",
+        "urn:php2shell:inventory:package:PHP-0858",
+        "urn:php2shell:inventory:package:PHP-0859",
+        "urn:php2shell:inventory:package:PHP-0860",
+        "urn:php2shell:inventory:package:PHP-0861",
+        "urn:php2shell:inventory:package:PHP-0862",
+        "urn:php2shell:inventory:package:PHP-0863",
+        "urn:php2shell:inventory:package:PHP-0864",
+        "urn:php2shell:inventory:package:PHP-0865",
+        "urn:php2shell:inventory:package:PHP-0866",
+        "urn:php2shell:inventory:package:PHP-0867",
+        "urn:php2shell:inventory:package:PHP-0868",
+        "urn:php2shell:inventory:package:PHP-0869",
+        "urn:php2shell:inventory:package:PHP-0870",
+        "urn:php2shell:inventory:package:PHP-0871",
+        "urn:php2shell:inventory:package:PHP-0872",
+        "urn:php2shell:inventory:package:PHP-0873",
+        "urn:php2shell:inventory:package:PHP-0874",
+        "urn:php2shell:inventory:package:PHP-0875",
+        "urn:php2shell:inventory:package:PHP-0876",
+        "urn:php2shell:inventory:package:PHP-0877",
+        "urn:php2shell:inventory:package:PHP-0878",
+        "urn:php2shell:inventory:package:PHP-0879",
+        "urn:php2shell:inventory:package:PHP-0880",
+        "urn:php2shell:inventory:package:PHP-0881",
+        "urn:php2shell:inventory:package:PHP-0882",
+        "urn:php2shell:inventory:package:PHP-0883",
+        "urn:php2shell:inventory:package:PHP-0884",
+        "urn:php2shell:inventory:package:PHP-0885",
+        "urn:php2shell:inventory:package:PHP-0886",
+        "urn:php2shell:inventory:package:PHP-0887",
+        "urn:php2shell:inventory:package:PHP-0888",
+        "urn:php2shell:inventory:package:PHP-0889",
+        "urn:php2shell:inventory:package:PHP-0890",
+        "urn:php2shell:inventory:package:PHP-0891",
+        "urn:php2shell:inventory:package:PHP-0892",
+        "urn:php2shell:inventory:package:PHP-0893",
+        "urn:php2shell:inventory:package:PHP-0894",
+        "urn:php2shell:inventory:package:PHP-0895",
+        "urn:php2shell:inventory:package:PHP-0896",
+        "urn:php2shell:inventory:package:PHP-0897",
+        "urn:php2shell:inventory:package:PHP-0898",
+        "urn:php2shell:inventory:package:PHP-0899",
+        "urn:php2shell:inventory:package:PHP-0900",
+        "urn:php2shell:inventory:package:PHP-0901",
+        "urn:php2shell:inventory:package:PHP-0902",
+        "urn:php2shell:inventory:package:PHP-0903",
+        "urn:php2shell:inventory:package:PHP-0904",
+        "urn:php2shell:inventory:package:PHP-0905",
+        "urn:php2shell:inventory:package:PHP-0906",
+        "urn:php2shell:inventory:package:PHP-0907",
+        "urn:php2shell:inventory:package:PHP-0908",
+        "urn:php2shell:inventory:package:PHP-0909",
+        "urn:php2shell:inventory:package:PHP-0910",
+        "urn:php2shell:inventory:package:PHP-0911",
+        "urn:php2shell:inventory:package:PHP-0912",
+        "urn:php2shell:inventory:package:PHP-0913",
+        "urn:php2shell:inventory:package:PHP-0914",
+        "urn:php2shell:inventory:package:PHP-0915",
+        "urn:php2shell:inventory:package:PHP-0918",
+        "urn:php2shell:inventory:package:PHP-0921",
+        "urn:php2shell:inventory:package:PHP-0925"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Xerox XRX26-016 v4 (2026-10-28) explicitly lists this product/model scope as not impacted by both PHP2Shell CVEs; exact release numbers are not supplied.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "comment": "Official vendor bulletin reviewed 2026-10-29. Each target package records its table row and page. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_impactStatement": "Xerox confirms that the evaluated current releases of these named products are not impacted. The statement does not cover unspecified models or all historical releases, and the vendor does not state a technical justification."
     }
   ]
 }

@@ -3163,6 +3163,63 @@
       "security_statusNotes": "Beyond Code's 2026-10-22 response confirms patched PHP builds are shipping through Herd and links the PHP Foundation's announcement covering both CVEs. Updating the Herd application alone does not update every selected PHP runtime.",
       "summary": "CVE-2026-109619 assessment: Fix",
       "comment": "Official public sources reviewed 2026-10-28. Sources: https://beyondco.de/blog/php-security-release; https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/\nAction statement: Follow Beyond Code's instructions: update Herd, then update the PHP versions in the application and verify the runtime selected for each site."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0919",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark eSF/SDK",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0919"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Lexmark Software & Cloud in the vendor bulletin.",
+      "description": "Lexmark Software & Cloud: Lexmark eSF/SDK, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 7; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0919\nBulletin product row: Lexmark eSF/SDK\nBulletin category: Lexmark Software & Cloud\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:xerox-xrx26-016-v4-developer-tooling",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0919"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Xerox XRX26-016 v4 (2026-10-28) explicitly lists this product/model scope as not impacted by both PHP2Shell CVEs; exact release numbers are not supplied.",
+      "summary": "CVE-2026-109618 assessment: Not vuln",
+      "comment": "Official vendor bulletin reviewed 2026-10-29. Each target package records its table row and page. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_impactStatement": "Xerox confirms that the evaluated current releases of these named products are not impacted. The statement does not cover unspecified models or all historical releases, and the vendor does not state a technical justification."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:xerox-xrx26-016-v4-developer-tooling",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0919"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Xerox XRX26-016 v4 (2026-10-28) explicitly lists this product/model scope as not impacted by both PHP2Shell CVEs; exact release numbers are not supplied.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "comment": "Official vendor bulletin reviewed 2026-10-29. Each target package records its table row and page. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_impactStatement": "Xerox confirms that the evaluated current releases of these named products are not impacted. The statement does not cover unspecified models or all historical releases, and the vendor does not state a technical justification."
     }
   ]
 }

@@ -1,7 +1,7 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
 Operational information: 28 October 2026 16:46 CET<br>
-Software list last status update: 29 October 2026 13:43 CET<br>
+Software list last status update: 29 October 2026 15:29 CET<br>
 ## TLP:CLEAR
 
 This repository contains operational information regarding the critical PHP vulnerabilities tracked by CERT-EU as CVE-2026-109618 and CVE-2026-109619.
@@ -11,7 +11,7 @@ PHP is a widely used open-source server-side scripting language, so these vulner
 ## Current status
 
 <!-- inventory-statistics:summary:start -->
-This repository tracks **757 products**, including **218 vulnerable** and **152 fixed**.
+This repository tracks **925 products**, including **223 vulnerable** and **153 fixed**.
 <!-- inventory-statistics:summary:end -->
 
 On 21 October 2026, PHP published fixed releases for CVE-2026-109618 and CVE-2026-109619: PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. PHP states that both vulnerabilities can allow unauthenticated remote code execution and that all PHP installations serving web requests are at risk, including PHP-FPM, Apache with mod_php, php-cgi, FrankenPHP and LiteSpeed. PHP considers the risk highest for mod_php, where an unauthenticated request can trigger exploitation before application code runs.
@@ -58,7 +58,7 @@ Statistics as of **2026-10-29 (UTC)**, from the current SPDX inventory.
 
 | Products tracked | Fixed | Vulnerable | Under investigation | Not affected | Unassessed / unknown |
 | ---: | ---: | ---: | ---: | ---: | ---: |
-| 757 | 152 | 218 | 346 | 40 | 1 |
+| 925 | 153 | 223 | 348 | 200 | 1 |
 
 ![Product status on the last 3 inventory update days](software/statistics/inventory-statistics.png)
 
@@ -70,11 +70,11 @@ Statistics as of **2026-10-29 (UTC)**, from the current SPDX inventory.
 
 | Date and time | Supplier | Product | Version (see Status) | Status CVE-2026-109618 / CVE-2026-109619 | Links |
 |:------------------------|:---------|:--------|:--------------------:|:----------------------:|------:|
-|2026-10-29 13:43:09 +0100|Acquia|Acquia Cloud Platform PHP hosting|Cloud Platform 2026-10-22: PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12|Fix|[source 1](<https://docs.acquia.com/acquia-cloud-platform/configuring-php-settings>)<br>[source 2](<https://docs.acquia.com/acquia-cloud-platform/release/2026-10-22/100321-cloud-platform-october-22-2026>)<br>[source 3](<https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w>)<br>[source 4](<https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp>)|
-|2026-10-29 13:43:09 +0100|CircleCI|CircleCI cimg/php CI runtime image family|cimg/php:8.2.35 / 8.3.36 / 8.4.27 / 8.5.12 (linux/amd64 and linux/arm64)|Fix|[source 1](<https://github.com/CircleCI-Public/cimg-php/pull/324>)<br>[source 2](<https://circleci.com/developer/images/image/cimg/php>)<br>[source 3](<https://github.com/CircleCI-Public/cimg-php/commit/76fe1c8bd2ec95f65faaa71159dadbfe23c264d5>)<br>[source 4](<https://github.com/CircleCI-Public/cimg-php/blob/main/README.md>)<br>[source 5](<https://hub.docker.com/v2/repositories/cimg/php/tags/8.2.35>)<br>[source 6](<https://hub.docker.com/v2/repositories/cimg/php/tags/8.3.36>)<br>[source 7](<https://hub.docker.com/v2/repositories/cimg/php/tags/8.4.27>)<br>[source 8](<https://hub.docker.com/v2/repositories/cimg/php/tags/8.5.12>)<br>[source 9](<https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w>)<br>[source 10](<https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp>)|
-|2026-10-29 13:43:09 +0100|Composer / Satis maintainers|Satis official PHP container build recipe|composer/satis:latest with PHP 8.4.27 (2026-10-29 digest scope)|Fix|[source 1](<https://github.com/composer/satis/blob/main/README.md>)<br>[source 2](<https://github.com/composer/satis/blob/main/Dockerfile>)<br>[source 3](<https://hub.docker.com/v2/repositories/composer/satis/tags/latest>)<br>[source 4](<https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w>)<br>[source 5](<https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp>)|
-|2026-10-29 13:43:09 +0100|Composer project / Docker Official Images|Composer default Docker runtime image|composer:2 with PHP 8.5.12 (2026-10-29 digest scope)|Fix|[source 1](<https://github.com/composer/docker>)<br>[source 2](<https://hub.docker.com/layers/library/composer/2/images/sha256-66c00f4ea1c6a01364d75460bb2837886388e1d5b2b1b6e0f22c8788eb4e73ad>)<br>[source 3](<https://github.com/composer/docker/blob/a23788a1b4f65ad2dd090c3ee2a7ad9e35a7d9d1/latest/Dockerfile>)<br>[source 4](<https://github.com/docker-library/official-images/blob/master/library/composer>)<br>[source 5](<https://github.com/docker-library/docs/blob/master/composer/README.md>)<br>[source 6](<https://hub.docker.com/v2/repositories/library/composer/tags/2>)<br>[source 7](<https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w>)<br>[source 8](<https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp>)|
-|2026-10-29 13:43:09 +0100|Docker Community / Docker Official Images, not WordPress upstream image ownership|WordPress Docker Official Image distribution|7.1.4-php8.4-apache: PHP 8.4.27 (2026-10-29 digest scope)|Fix|[source 1](<https://github.com/docker-library/wordpress/issues/1024#issuecomment-6322989456>)<br>[source 2](<https://github.com/docker-library/wordpress/blob/master/Dockerfile.template>)<br>[source 3](<https://github.com/docker-library/wordpress>)<br>[source 4](<https://hub.docker.com/v2/repositories/library/wordpress/tags/7.1.4-php8.4-apache>)<br>[source 5](<https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w>)<br>[source 6](<https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp>)|
+|2026-10-29 15:29:45 +0100|Fiery|Fiery Digital Front End (DFE)|Fiery FS200/300/350/400/500/600/700/800, including Pro variants; patch releases are planned, not yet confirmed available|Vulnerable|[source 1](<https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf>)<br>[source 2](<https://communities.fiery.com/s/article/PHP-Vulnerability-CVE-2026-109618-and-CVE-2026-109619>)|
+|2026-10-29 15:29:45 +0100|Lexmark|Lexmark Accessibility Solution|Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified|Not vuln|[source](<https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf>)|
+|2026-10-29 15:29:45 +0100|Lexmark|Lexmark AccuRead Automate|Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified|Not vuln|[source](<https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf>)|
+|2026-10-29 15:29:45 +0100|Lexmark|Lexmark Barcode Discovery|Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified|Not vuln|[source](<https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf>)|
+|2026-10-29 15:29:45 +0100|Lexmark|Lexmark Card Authentication|Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified|Not vuln|[source](<https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf>)|
 
 See the [full software status update history](software/changelog_software_list.md).
 

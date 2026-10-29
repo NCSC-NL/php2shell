@@ -3778,6 +3778,1500 @@
       "summary": "CVE-2026-109619 assessment: Vulnerable",
       "comment": "Official public sources reviewed 2026-10-28. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
       "security_actionStatement": "Follow Cisco's remediation status for Portal Builder. Service shutdown is not confirmation of a software fix."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0760",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox AltaLink and EC81xx products",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0760"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Affected PHP component; the bulletin does not publish exact PHP or product build numbers.",
+      "description": "Affected Products: Xerox AltaLink and EC81xx products, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 1; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0760\nBulletin product row: Xerox AltaLink and EC81xx products\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nXerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0760",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0760",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "dependsOn",
+      "summary": "Xerox AltaLink and EC81xx products has an affected PHP runtime dependency.",
+      "comment": "Xerox XRX26-016 v4 explicitly identifies both PHP runtime CVEs as affecting this product; exact PHP build and packaging are not stated."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:xerox-xrx26-016-v4-php-0760",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0760"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_actionStatement": "Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:xerox-xrx26-016-v4-php-0760",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0760"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_actionStatement": "Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0761",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox VersaLink C/B415, C/B625, C/B620",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0761"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Affected PHP component; the bulletin does not publish exact PHP or product build numbers.",
+      "description": "Affected Products: Xerox VersaLink C/B415, C/B625, C/B620, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 1; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0761\nBulletin product row: Xerox VersaLink C/B415, C/B625, C/B620\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nXerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0761",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0761",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "dependsOn",
+      "summary": "Xerox VersaLink C/B415, C/B625, C/B620 has an affected PHP runtime dependency.",
+      "comment": "Xerox XRX26-016 v4 explicitly identifies both PHP runtime CVEs as affecting this product; exact PHP build and packaging are not stated."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:xerox-xrx26-016-v4-php-0761",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0761"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_actionStatement": "Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:xerox-xrx26-016-v4-php-0761",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0761"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_actionStatement": "Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0762",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox WorkCentre 3655, EC7836, EC7856",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0762"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Affected PHP component; the bulletin does not publish exact PHP or product build numbers.",
+      "description": "Affected Products: Xerox WorkCentre 3655, EC7836, EC7856, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 1; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0762\nBulletin product row: Xerox WorkCentre 3655, EC7836, EC7856\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nA fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates.\nThe v2 generic WorkCentre affected family is superseded by the specific model list in v4; WorkCentre 3335/3345 and 6515 are separately not impacted."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0762",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0762",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "dependsOn",
+      "summary": "Xerox WorkCentre 3655, EC7836, EC7856 has an affected PHP runtime dependency.",
+      "comment": "Xerox XRX26-016 v4 explicitly identifies both PHP runtime CVEs as affecting this product; exact PHP build and packaging are not stated."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:xerox-xrx26-016-v4-php-0762",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0762"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_actionStatement": "A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:xerox-xrx26-016-v4-php-0762",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0762"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_actionStatement": "A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0763",
+      "creationInfo": "_:creationinfo",
+      "name": "Fiery Digital Front End (DFE)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0763"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:fiery",
+      "summary": "Affected PHP component; the bulletin does not publish exact PHP or product build numbers.",
+      "description": "Affected Products: Fiery Digital Front End (DFE), as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 1; reviewed 2026-10-29."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://communities.fiery.com/s/article/PHP-Vulnerability-CVE-2026-109618-and-CVE-2026-109619"
+          ],
+          "comment": "Official Fiery advisory linked from Xerox v4; its page body was not readable during this review. Assessment and target dates are taken from Xerox v4 pages 1-2."
+        }
+      ],
+      "software_packageVersion": "Fiery FS200/300/350/400/500/600/700/800, including Pro variants; patch releases are planned, not yet confirmed available",
+      "comment": "Inventory record: PHP-0763\nBulletin product row: Fiery Digital Front End (DFE)\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nTarget patches: FS800/700/600/500, including Pro variants, by 2026-11-09; FS400/350/300, including Pro variants, by 2026-11-16; FS200 and FS200 Pro by 2026-11-23. These are planned dates, not released fixes. Monitor Xerox and Fiery advisories.\nScope: Fiery DFE as assessed for the Xerox portfolio; the release targets on page 2 do not establish patch availability."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0763",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0763",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "dependsOn",
+      "summary": "Fiery Digital Front End (DFE) has an affected PHP runtime dependency.",
+      "comment": "Xerox XRX26-016 v4 explicitly identifies both PHP runtime CVEs as affecting this product; exact PHP build and packaging are not stated."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:xerox-xrx26-016-v4-php-0763",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0763"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. Target patches: FS800/700/600/500, including Pro variants, by 2026-11-09; FS400/350/300, including Pro variants, by 2026-11-16; FS200 and FS200 Pro by 2026-11-23. These are planned dates, not released fixes. Monitor Xerox and Fiery advisories.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_actionStatement": "Target patches: FS800/700/600/500, including Pro variants, by 2026-11-09; FS400/350/300, including Pro variants, by 2026-11-16; FS200 and FS200 Pro by 2026-11-23. These are planned dates, not released fixes. Monitor Xerox and Fiery advisories."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:xerox-xrx26-016-v4-php-0763",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0763"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. Target patches: FS800/700/600/500, including Pro variants, by 2026-11-09; FS400/350/300, including Pro variants, by 2026-11-16; FS200 and FS200 Pro by 2026-11-23. These are planned dates, not released fixes. Monitor Xerox and Fiery advisories.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_actionStatement": "Target patches: FS800/700/600/500, including Pro variants, by 2026-11-09; FS400/350/300, including Pro variants, by 2026-11-16; FS200 and FS200 Pro by 2026-11-23. These are planned dates, not released fixes. Monitor Xerox and Fiery advisories."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0765",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox B225, B230, B235, B305, B310, B315, B410",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0765"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: B225, B230, B235, B305, B310, B315, B410, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0765\nBulletin product row: B225, B230, B235, B305, B310, B315, B410\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0766",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox C230, C235, C240, C245, C255a, C300, C303a, C305ae, C320, C325, C410",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0766"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: C230, C235, C240, C245, C255a, C300, C303a, C305ae, C320, C325, C410, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0766\nBulletin product row: C230, C235, C240, C245, C255a, C300, C303a, C305ae, C320, C325, C410\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0767",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark CX833, CX950, CX951, CX961, CX962, CX963, CS963",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0767"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: CX833, CX950, CX951, CX961, CX962, CX963, CS963, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0767\nBulletin product row: CX833, CX950, CX951, CX961, CX962, CX963, CS963\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0768",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Printer Firmware",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0768"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Lexmark Printer Firmware, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0768\nBulletin product row: Lexmark Printer Firmware\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0769",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark MX953",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0769"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: MX953, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0769\nBulletin product row: MX953\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0770",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox B105, B110, B115",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0770"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox B105, B110, B115, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0770\nBulletin product row: Xerox B105, B110, B115\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0771",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox B205, B210, B215",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0771"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox B205, B210, B215, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0771\nBulletin product row: Xerox B205, B210, B215\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0772",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox B1022, B1025",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0772"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox B1022, B1025, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0772\nBulletin product row: Xerox B1022, B1025\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0773",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Baltoro",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0773"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox Baltoro, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0773\nBulletin product row: Xerox Baltoro\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0774",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox D95, D110, D125, D136",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0774"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox D95, D110, D125, D136, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0774\nBulletin product row: Xerox D95, D110, D125, D136\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0775",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox iGen",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0775"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox iGen, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0775\nBulletin product row: Xerox iGen\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0776",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox IJP900",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0776"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox IJP900, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0776\nBulletin product row: Xerox IJP900\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0777",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Iridesse Press",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0777"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox Iridesse Press, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0777\nBulletin product row: Xerox Iridesse Press\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0778",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Nuvera",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0778"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox Nuvera, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0778\nBulletin product row: Xerox Nuvera\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0779",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Phaser 3020",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0779"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox Phaser 3020, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0779\nBulletin product row: Xerox Phaser 3020\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0780",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Phaser 3052, 3260",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0780"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox Phaser 3052, 3260, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0780\nBulletin product row: Xerox Phaser 3052, 3260\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0781",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Phaser 3330",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0781"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox Phaser 3330, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0781\nBulletin product row: Xerox Phaser 3330\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0782",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox PrimeLink B91xx",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0782"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox PrimeLink B91xx, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0782\nBulletin product row: Xerox PrimeLink B91xx\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0783",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox PrimeLink C90xx",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0783"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox PrimeLink C90xx, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0783\nBulletin product row: Xerox PrimeLink C90xx\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0784",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox PrimeLink C92xx",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0784"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox PrimeLink C92xx, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0784\nBulletin product row: Xerox PrimeLink C92xx\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0785",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Proficio PX300",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0785"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox Proficio PX300, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0785\nBulletin product row: Xerox Proficio PX300\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0786",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Proficio PX500",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0786"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox Proficio PX500, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0786\nBulletin product row: Xerox Proficio PX500\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0787",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Rialto",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0787"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox Rialto, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 2; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0787\nBulletin product row: Xerox Rialto\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0788",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Trivor",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0788"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox Trivor, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0788\nBulletin product row: Xerox Trivor\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0789",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox VersaLink B400, B405, B600, B605, B610, B615",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0789"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox VersaLink B400, B405, B600, B605, B610, B615, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0789\nBulletin product row: Xerox VersaLink B400, B405, B600, B605, B610, B615\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0790",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox VersaLink C400, C405, C500, C505, C600, C605",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0790"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox VersaLink C400, C405, C500, C505, C600, C605, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0790\nBulletin product row: Xerox VersaLink C400, C405, C500, C505, C600, C605\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0791",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox VersaLink C8000, C9000, C8000W",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0791"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox VersaLink C8000, C9000, C8000W, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0791\nBulletin product row: Xerox VersaLink C8000, C9000, C8000W\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0792",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox VersaLink C/B71xx, C/B70xx",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0792"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox VersaLink C/B71xx, C/B70xx, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0792\nBulletin product row: Xerox VersaLink C/B71xx, C/B70xx\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0793",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Versant 280, 4100",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0793"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox Versant 280, 4100, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0793\nBulletin product row: Xerox Versant 280, 4100\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0794",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox WorkCentre 3335, 3345",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0794"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox WorkCentre 3335, 3345, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0794\nBulletin product row: Xerox WorkCentre 3335, 3345\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0795",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox WorkCentre 6515",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0795"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: Xerox WorkCentre 6515, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0795\nBulletin product row: Xerox WorkCentre 6515\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0796",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox ZC364",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0796"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Printers & Multifunction Printers in the vendor bulletin.",
+      "description": "Printers & Multifunction Printers: ZC364, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 3; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0796\nBulletin product row: ZC364\nBulletin category: Printers & Multifunction Printers\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0923",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Alphastream Controllers",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0923"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Listed under Optra & Edge Solutions in the vendor bulletin.",
+      "description": "Optra & Edge Solutions: Alphastream Controllers, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 7; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0923\nBulletin product row: Alphastream Controllers\nBulletin category: Optra & Edge Solutions\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0924",
+      "creationInfo": "_:creationinfo",
+      "name": "Lexmark Optra Compute",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0924"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:lexmark",
+      "summary": "Listed under Optra & Edge Solutions in the vendor bulletin.",
+      "description": "Optra & Edge Solutions: Optra Compute, as scoped in Xerox XRX26-016 v4.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 7; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
+      "comment": "Inventory record: PHP-0924\nBulletin product row: Optra Compute\nBulletin category: Optra & Edge Solutions\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nThe vendor gives no technical non-impact justification. No PHP dependency or absence of PHP is inferred from the not-impacted assessment."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:xerox-xrx26-016-v4-edge-devices",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0765",
+        "urn:php2shell:inventory:package:PHP-0766",
+        "urn:php2shell:inventory:package:PHP-0767",
+        "urn:php2shell:inventory:package:PHP-0768",
+        "urn:php2shell:inventory:package:PHP-0769",
+        "urn:php2shell:inventory:package:PHP-0770",
+        "urn:php2shell:inventory:package:PHP-0771",
+        "urn:php2shell:inventory:package:PHP-0772",
+        "urn:php2shell:inventory:package:PHP-0773",
+        "urn:php2shell:inventory:package:PHP-0774",
+        "urn:php2shell:inventory:package:PHP-0775",
+        "urn:php2shell:inventory:package:PHP-0776",
+        "urn:php2shell:inventory:package:PHP-0777",
+        "urn:php2shell:inventory:package:PHP-0778",
+        "urn:php2shell:inventory:package:PHP-0779",
+        "urn:php2shell:inventory:package:PHP-0780",
+        "urn:php2shell:inventory:package:PHP-0781",
+        "urn:php2shell:inventory:package:PHP-0782",
+        "urn:php2shell:inventory:package:PHP-0783",
+        "urn:php2shell:inventory:package:PHP-0784",
+        "urn:php2shell:inventory:package:PHP-0785",
+        "urn:php2shell:inventory:package:PHP-0786",
+        "urn:php2shell:inventory:package:PHP-0787",
+        "urn:php2shell:inventory:package:PHP-0788",
+        "urn:php2shell:inventory:package:PHP-0789",
+        "urn:php2shell:inventory:package:PHP-0790",
+        "urn:php2shell:inventory:package:PHP-0791",
+        "urn:php2shell:inventory:package:PHP-0792",
+        "urn:php2shell:inventory:package:PHP-0793",
+        "urn:php2shell:inventory:package:PHP-0794",
+        "urn:php2shell:inventory:package:PHP-0795",
+        "urn:php2shell:inventory:package:PHP-0796",
+        "urn:php2shell:inventory:package:PHP-0923",
+        "urn:php2shell:inventory:package:PHP-0924"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Xerox XRX26-016 v4 (2026-10-28) explicitly lists this product/model scope as not impacted by both PHP2Shell CVEs; exact release numbers are not supplied.",
+      "summary": "CVE-2026-109618 assessment: Not vuln",
+      "comment": "Official vendor bulletin reviewed 2026-10-29. Each target package records its table row and page. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_impactStatement": "Xerox confirms that the evaluated current releases of these named products are not impacted. The statement does not cover unspecified models or all historical releases, and the vendor does not state a technical justification."
+    },
+    {
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:xerox-xrx26-016-v4-edge-devices",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0765",
+        "urn:php2shell:inventory:package:PHP-0766",
+        "urn:php2shell:inventory:package:PHP-0767",
+        "urn:php2shell:inventory:package:PHP-0768",
+        "urn:php2shell:inventory:package:PHP-0769",
+        "urn:php2shell:inventory:package:PHP-0770",
+        "urn:php2shell:inventory:package:PHP-0771",
+        "urn:php2shell:inventory:package:PHP-0772",
+        "urn:php2shell:inventory:package:PHP-0773",
+        "urn:php2shell:inventory:package:PHP-0774",
+        "urn:php2shell:inventory:package:PHP-0775",
+        "urn:php2shell:inventory:package:PHP-0776",
+        "urn:php2shell:inventory:package:PHP-0777",
+        "urn:php2shell:inventory:package:PHP-0778",
+        "urn:php2shell:inventory:package:PHP-0779",
+        "urn:php2shell:inventory:package:PHP-0780",
+        "urn:php2shell:inventory:package:PHP-0781",
+        "urn:php2shell:inventory:package:PHP-0782",
+        "urn:php2shell:inventory:package:PHP-0783",
+        "urn:php2shell:inventory:package:PHP-0784",
+        "urn:php2shell:inventory:package:PHP-0785",
+        "urn:php2shell:inventory:package:PHP-0786",
+        "urn:php2shell:inventory:package:PHP-0787",
+        "urn:php2shell:inventory:package:PHP-0788",
+        "urn:php2shell:inventory:package:PHP-0789",
+        "urn:php2shell:inventory:package:PHP-0790",
+        "urn:php2shell:inventory:package:PHP-0791",
+        "urn:php2shell:inventory:package:PHP-0792",
+        "urn:php2shell:inventory:package:PHP-0793",
+        "urn:php2shell:inventory:package:PHP-0794",
+        "urn:php2shell:inventory:package:PHP-0795",
+        "urn:php2shell:inventory:package:PHP-0796",
+        "urn:php2shell:inventory:package:PHP-0923",
+        "urn:php2shell:inventory:package:PHP-0924"
+      ],
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Xerox XRX26-016 v4 (2026-10-28) explicitly lists this product/model scope as not impacted by both PHP2Shell CVEs; exact release numbers are not supplied.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "comment": "Official vendor bulletin reviewed 2026-10-29. Each target package records its table row and page. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
+      "security_impactStatement": "Xerox confirms that the evaluated current releases of these named products are not impacted. The statement does not cover unspecified models or all historical releases, and the vendor does not state a technical justification."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0926",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox PrimeLink product family (unresolved scope)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0926"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Family-level assessment remains unresolved outside the model/release scopes explicitly cleared in the newer bulletin.",
+      "description": "The remaining PrimeLink family scope from the Assessment in Progress table in Xerox XRX26-016 v2.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v2.pdf"
+          ],
+          "comment": "Page 2 explicitly lists Xerox PrimeLink products as In progress."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Page 2 clears the evaluated current releases of B91xx, C90xx and C92xx; page 7 states that review of remaining products is still underway. Updated 2026-10-28; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Outside the current releases of B91xx, C90xx and C92xx evaluated in v4; no resolved family-wide version scope",
+      "comment": "Inventory record: PHP-0926\nScope reconciliation: This is the unresolved remainder of the named v2 family, not an assessment of models already explicitly cleared by v4. The current releases evaluated by v4 remain in their separate Not vuln entries.\nStatus rationale: Absence of an explicit resolution for the broader model/version scope is retained conservatively as Investigation, not as vendor-confirmed vulnerability.\nPHP dependency: Not established for this unresolved scope; no runtime dependency is asserted.\nEvidence reviewed: 2026-10-29"
+    },
+    {
+      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:xerox-xrx26-016-primelink-unresolved",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0926"
+      ],
+      "relationshipType": "underInvestigationFor",
+      "security_statusNotes": "XRX26-016 v2 places the PrimeLink family under assessment. V4 confirms only the evaluated current releases of B91xx, C90xx and C92xx as not impacted and says review of remaining products continues. The unresolved model/version scope is retained as Investigation; it is not a confirmed vulnerability finding.",
+      "summary": "CVE-2026-109618 assessment: Investigation",
+      "comment": "Reconciled XRX26-016 v2 page 2 with v4 pages 2 and 7 on 2026-10-29. The older family-wide investigation is narrowed to scopes without an explicit result in v4.",
+      "security_actionStatement": "Check the deployed model and release against Xerox bulletin updates. Do not transfer a model-specific current-release clearance to the whole product family."
+    },
+    {
+      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:xerox-xrx26-016-primelink-unresolved",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0926"
+      ],
+      "relationshipType": "underInvestigationFor",
+      "security_statusNotes": "XRX26-016 v2 places the PrimeLink family under assessment. V4 confirms only the evaluated current releases of B91xx, C90xx and C92xx as not impacted and says review of remaining products continues. The unresolved model/version scope is retained as Investigation; it is not a confirmed vulnerability finding.",
+      "summary": "CVE-2026-109619 assessment: Investigation",
+      "comment": "Reconciled XRX26-016 v2 page 2 with v4 pages 2 and 7 on 2026-10-29. The older family-wide investigation is narrowed to scopes without an explicit result in v4.",
+      "security_actionStatement": "Check the deployed model and release against Xerox bulletin updates. Do not transfer a model-specific current-release clearance to the whole product family."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0927",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox Phaser product family (unresolved scope)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0927"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "summary": "Family-level assessment remains unresolved outside the model/release scopes explicitly cleared in the newer bulletin.",
+      "description": "The remaining Phaser family scope from the Assessment in Progress table in Xerox XRX26-016 v2.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v2.pdf"
+          ],
+          "comment": "Page 2 explicitly lists Xerox Phaser products as In progress."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf"
+          ],
+          "comment": "Page 2 clears the evaluated current releases of 3020, 3052, 3260 and 3330; page 7 states that review of remaining products is still underway. Updated 2026-10-28; reviewed 2026-10-29."
+        }
+      ],
+      "software_packageVersion": "Outside the current releases of 3020, 3052, 3260 and 3330 evaluated in v4; no resolved family-wide version scope",
+      "comment": "Inventory record: PHP-0927\nScope reconciliation: This is the unresolved remainder of the named v2 family, not an assessment of models already explicitly cleared by v4. The current releases evaluated by v4 remain in their separate Not vuln entries.\nStatus rationale: Absence of an explicit resolution for the broader model/version scope is retained conservatively as Investigation, not as vendor-confirmed vulnerability.\nPHP dependency: Not established for this unresolved scope; no runtime dependency is asserted.\nEvidence reviewed: 2026-10-29"
+    },
+    {
+      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:xerox-xrx26-016-phaser-unresolved",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0927"
+      ],
+      "relationshipType": "underInvestigationFor",
+      "security_statusNotes": "XRX26-016 v2 places the Phaser family under assessment. V4 confirms only the evaluated current releases of 3020, 3052, 3260 and 3330 as not impacted and says review of remaining products continues. The unresolved model/version scope is retained as Investigation; it is not a confirmed vulnerability finding.",
+      "summary": "CVE-2026-109618 assessment: Investigation",
+      "comment": "Reconciled XRX26-016 v2 page 2 with v4 pages 2 and 7 on 2026-10-29. The older family-wide investigation is narrowed to scopes without an explicit result in v4.",
+      "security_actionStatement": "Check the deployed model and release against Xerox bulletin updates. Do not transfer a model-specific current-release clearance to the whole product family."
+    },
+    {
+      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:xerox-xrx26-016-phaser-unresolved",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0927"
+      ],
+      "relationshipType": "underInvestigationFor",
+      "security_statusNotes": "XRX26-016 v2 places the Phaser family under assessment. V4 confirms only the evaluated current releases of 3020, 3052, 3260 and 3330 as not impacted and says review of remaining products continues. The unresolved model/version scope is retained as Investigation; it is not a confirmed vulnerability finding.",
+      "summary": "CVE-2026-109619 assessment: Investigation",
+      "comment": "Reconciled XRX26-016 v2 page 2 with v4 pages 2 and 7 on 2026-10-29. The older family-wide investigation is narrowed to scopes without an explicit result in v4.",
+      "security_actionStatement": "Check the deployed model and release against Xerox bulletin updates. Do not transfer a model-specific current-release clearance to the whole product family."
     }
   ]
 }
