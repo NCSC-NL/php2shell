@@ -1,7 +1,7 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
-Operational information: 27 October 2026 15:14 CET<br>
-Software list last status update: 28 October 2026 19:30 UTC+07:00<br>
+Operational information: 28 October 2026 16:46 CET<br>
+Software list last status update: 29 October 2026 15:04 CET<br>
 ## TLP:CLEAR
 
 This repository contains operational information regarding the critical PHP vulnerabilities tracked by CERT-EU as CVE-2026-109618 and CVE-2026-109619.
@@ -9,6 +9,10 @@ This repository contains operational information regarding the critical PHP vuln
 PHP is a widely used open-source server-side scripting language, so these vulnerabilities may affect a broad range of internet-facing web applications and products that embed or depend on PHP.
 
 ## Current status
+
+<!-- inventory-statistics:summary:start -->
+This repository tracks **758 products**, including **218 vulnerable** and **153 fixed**.
+<!-- inventory-statistics:summary:end -->
 
 On 21 October 2026, PHP published fixed releases for CVE-2026-109618 and CVE-2026-109619: PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. PHP states that both vulnerabilities can allow unauthenticated remote code execution and that all PHP installations serving web requests are at risk, including PHP-FPM, Apache with mod_php, php-cgi, FrankenPHP and LiteSpeed. PHP considers the risk highest for mod_php, where an unauthenticated request can trigger exploitation before application code runs.
 
@@ -33,6 +37,7 @@ For additional information see:
 - [PHP security advisory: Critical remote code execution vulnerabilities, update now](https://www.php.net/archive/2026.php#2026-10-21-5)
 - [PHP informational advisory: Session upload progress (23 October 2026)](https://www.php.net/archive/2026.php#2026-10-23-1)
 - [List of advisories from other EU national CSIRT's](https://github.com/enisaeu/CNW/blob/main/advisories/2026/CNW-2026-04_php.md)
+- [PHP2shell observations in the wild (TU Delft)](https://php2shell.delftintellab.com/)
 
 ## Repository contents
 
@@ -41,18 +46,35 @@ For additional information see:
 | [detection_mitigation](detection_mitigation) | Contains detection and mitigation material for the vulnerabilities. |
 | [software](software) | Contains inventory lists of software products with a PHP dependency potentially affected by the vulnerabilities. |
 | [tools](tools) | Contains tools for using/generating files within this repo |
+| [Community contributions](COMMUNITY_CONTRIBUTIONS.MD) | Community tools, tips, guides, and reference resources. |
 
 The repository is being updated as the situation develops. Check back for updates.
+
+## Software inventory statistics
+
+<!-- inventory-statistics:start -->
+
+Statistics as of **2026-10-29 (UTC)**, from the current SPDX inventory.
+
+| Products tracked | Fixed | Vulnerable | Under investigation | Not affected | Unassessed / unknown |
+| ---: | ---: | ---: | ---: | ---: | ---: |
+| 758 | 153 | 218 | 346 | 40 | 1 |
+
+![Product status on the last 3 inventory update days](software/statistics/inventory-statistics.png)
+
+[Counts by update day and per-CVE statistics (JSON)](software/statistics/inventory-statistics.json) | [Software list](software/software_list.md)
+
+<!-- inventory-statistics:end -->
 
 ## Latest software status updates
 
 | Date and time | Supplier | Product | Version (see Status) | Status CVE-2026-109618 / CVE-2026-109619 | Links |
 |:------------------------|:---------|:--------|:--------------------:|:----------------------:|------:|
-|2026-10-28 19:30:43 +0700|GetPageSpeed|GetPageSpeed PHP 7.2 packages for Amazon Linux 2 (x86_64 and aarch64)|Known patched build (not necessarily the first fixed release): 7.2.34-33.amzn2, base php-* and SCL php72-php-* packages, x86_64 and aarch64|Fix|[source 1](<https://www.getpagespeed.com/server-setup/php/php2shell-on-amazon-linux-2>)<br>[source 2](<https://extras.getpagespeed.com/amzn/2/php72/x86_64/repodata/repomd.xml>)<br>[source 3](<https://extras.getpagespeed.com/amzn/2/php72/aarch64/repodata/repomd.xml>)<br>[source 4](<https://extras.getpagespeed.com/amzn/2/x86_64/repodata/repomd.xml>)<br>[source 5](<https://extras.getpagespeed.com/amzn/2/aarch64/repodata/repomd.xml>)|
-|2026-10-28 11:14:56 +0100|Palo Alto Networks|PAN-OS|Fixed thresholds in PAN-OS 12.2.4-h1; 12.1.4-h13 (ETA 2026-10-29), 12.1.7-h11, 12.1.10-h3 (ETA 2026-10-30); 11.2.4-h23 (ETA 2026-10-30), 11.2.7-h23, 11.2.10-h16, 11.2.13-h4, 11.2.16-h1; 11.1.4-h38, 11.1.6-h40, 11.1.7-h12 (ETA 2026-10-30), 11.1.10-h36, 11.1.13-h16, 11.1.16-h4; 10.2.7-h39 (ETA 2026-10-30), 10.2.10-h42 (ETA 2026-10-29), 10.2.13-h27, 10.2.16-h12, 10.2.18-h13; earlier builds affected|Fix|[source 1](<https://docs.paloaltonetworks.com/oss-listings/pan-os-oss-listings/pan-os-12-2-open-source-software-oss-listing>)<br>[source 2](<https://security.paloaltonetworks.com/CVE-2025-0108>)<br>[source 3](<https://security.paloaltonetworks.com/CVE-2026-109618>)|
-|2026-10-28 11:14:56 +0100|Palo Alto Networks|Panorama|Fixed thresholds in Panorama 12.2.4-h1; 12.1.4-h13 (ETA 2026-10-29), 12.1.7-h11, 12.1.10-h3 (ETA 2026-10-30); 11.2.4-h23 (ETA 2026-10-30), 11.2.7-h23, 11.2.10-h16, 11.2.13-h4, 11.2.16-h1; 11.1.4-h38, 11.1.6-h40, 11.1.7-h12 (ETA 2026-10-30), 11.1.10-h36, 11.1.13-h16, 11.1.16-h4; 10.2.7-h39 (ETA 2026-10-30), 10.2.10-h42 (ETA 2026-10-29), 10.2.13-h27, 10.2.16-h12, 10.2.18-h13; earlier builds affected|Fix|[source 1](<https://docs.paloaltonetworks.com/oss-listings/panorama-oss-listings/panorama-12-2-open-source-software-oss-listing>)<br>[source 2](<https://docs.paloaltonetworks.com/panorama/getting-started/panorama-overview/about-panorama>)<br>[source 3](<https://security.paloaltonetworks.com/CVE-2026-109618>)|
-|2026-10-28 10:58:25 +0100|Citrix / NetScaler|Citrix NetScaler ADC and Citrix NetScaler Gateway|Fixed in NetScaler ADC and Gateway 14.1-73.49 and later; 13.1-64.32 and later releases of 13.1; ADC 14.1-FIPS 14.1-73.49 FIPS and later; ADC 13.1-FIPS and 13.1-NDcPP 13.1.37.286 and later; earlier builds impacted|Fix|[source 1](<https://www.citrix.com/content/dam/citrix/en_us/documents/downloads/netscaler-adc/NetScaler_ADC_ADM_FreeBSD_14.1_Third_Party_Notices.pdf>)<br>[source 2](<https://prod-docs.netscaler.com/en-us/citrix-adc/current-release/application-firewall/signatures/signature-auto-update>)<br>[source 3](<https://support.citrix.com/external/article/CTX697263/citrix-security-advisory-for-cve20261096.html>)<br>[source 4](<https://community.citrix.com/techzone-blogs/110_security-updates/protecting-netscaler-management-access-from-php-cve-2026-109618-cve-2026-109619-r1640/>)|
-|2026-10-28 10:44:24 +0100|Securepoint GmbH|Securepoint Resellerportal|Patched before 2026-10-22 inventory entry; fixed release not publicly stated|Fix|[source 1](<https://my.securepoint.de/>)<br>[source 2](<https://laravel.com/framework/docs/deployment>)<br>[source 3](<https://github.com/NCSC-NL/php2shell/issues/58>)<br>[source 4](<https://github.com/NCSC-NL/php2shell/pull/10>)|
+|2026-10-29 15:04:42 +0100|GetPageSpeed|GetPageSpeed PHP 7.2 packages for Amazon Linux 2 (x86_64 and aarch64)|Known patched build (not necessarily the first fixed release): 7.2.34-33.amzn2, base php-* and SCL php72-php-* packages, x86_64 and aarch64|Fix|[source 1](<https://www.getpagespeed.com/server-setup/php/php2shell-on-amazon-linux-2>)<br>[source 2](<https://extras.getpagespeed.com/amzn/2/php72/x86_64/repodata/repomd.xml>)<br>[source 3](<https://extras.getpagespeed.com/amzn/2/php72/aarch64/repodata/repomd.xml>)<br>[source 4](<https://extras.getpagespeed.com/amzn/2/x86_64/repodata/repomd.xml>)<br>[source 5](<https://extras.getpagespeed.com/amzn/2/aarch64/repodata/repomd.xml>)|
+|2026-10-29 14:02:06 +0100|Acquia|Acquia Cloud Platform PHP hosting|Cloud Platform 2026-10-22: PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12|Fix|[source 1](<https://docs.acquia.com/acquia-cloud-platform/configuring-php-settings>)<br>[source 2](<https://docs.acquia.com/acquia-cloud-platform/release/2026-10-22/100321-cloud-platform-october-22-2026>)<br>[source 3](<https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w>)<br>[source 4](<https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp>)|
+|2026-10-29 14:02:06 +0100|CircleCI|CircleCI cimg/php CI runtime image family|cimg/php:8.2.35 / 8.3.36 / 8.4.27 / 8.5.12 (linux/amd64 and linux/arm64)|Fix|[source 1](<https://github.com/CircleCI-Public/cimg-php/pull/324>)<br>[source 2](<https://circleci.com/developer/images/image/cimg/php>)<br>[source 3](<https://github.com/CircleCI-Public/cimg-php/commit/76fe1c8bd2ec95f65faaa71159dadbfe23c264d5>)<br>[source 4](<https://github.com/CircleCI-Public/cimg-php/blob/main/README.md>)<br>[source 5](<https://hub.docker.com/v2/repositories/cimg/php/tags/8.2.35>)<br>[source 6](<https://hub.docker.com/v2/repositories/cimg/php/tags/8.3.36>)<br>[source 7](<https://hub.docker.com/v2/repositories/cimg/php/tags/8.4.27>)<br>[source 8](<https://hub.docker.com/v2/repositories/cimg/php/tags/8.5.12>)<br>[source 9](<https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w>)<br>[source 10](<https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp>)|
+|2026-10-29 14:02:06 +0100|Composer / Satis maintainers|Satis official PHP container build recipe|composer/satis:latest with PHP 8.4.27 (2026-10-29 digest scope)|Fix|[source 1](<https://github.com/composer/satis/blob/main/README.md>)<br>[source 2](<https://github.com/composer/satis/blob/main/Dockerfile>)<br>[source 3](<https://hub.docker.com/v2/repositories/composer/satis/tags/latest>)<br>[source 4](<https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w>)<br>[source 5](<https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp>)|
+|2026-10-29 14:02:06 +0100|Composer project / Docker Official Images|Composer default Docker runtime image|composer:2 with PHP 8.5.12 (2026-10-29 digest scope)|Fix|[source 1](<https://github.com/composer/docker>)<br>[source 2](<https://hub.docker.com/layers/library/composer/2/images/sha256-66c00f4ea1c6a01364d75460bb2837886388e1d5b2b1b6e0f22c8788eb4e73ad>)<br>[source 3](<https://github.com/composer/docker/blob/a23788a1b4f65ad2dd090c3ee2a7ad9e35a7d9d1/latest/Dockerfile>)<br>[source 4](<https://github.com/docker-library/official-images/blob/master/library/composer>)<br>[source 5](<https://github.com/docker-library/docs/blob/master/composer/README.md>)<br>[source 6](<https://hub.docker.com/v2/repositories/library/composer/tags/2>)<br>[source 7](<https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w>)<br>[source 8](<https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp>)|
 
 See the [full software status update history](software/changelog_software_list.md).
 
@@ -62,3 +84,4 @@ If you have any additional information to share relevant to these PHP vulnerabil
 
 For updates to the software list: our strong preference is to receive edits in the SPDX source files in `software/spdx/`. The Markdown list pages are generated automatically from those files. In case this proves too difficult: don't worry. We'll attempt to backport edits in the .md files to the SPDX source files, but without any guarantees. 
 
+For a list of other contributions made by our community, see [Community contributions](COMMUNITY_CONTRIBUTIONS.MD).

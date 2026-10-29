@@ -3,13 +3,11 @@
   "_compiler": {
     "element_order": {
       "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:1d89b3eaf66f": 1734,
-      "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:24f98eaee735": 1735,
       "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:9fe2f4bd84e1": 1736,
       "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:6f4f7fc812ed": 1737,
       "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:4292cdcd32c3": 1738,
       "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:f70b575bbd8c": 1739,
       "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:1d89b3eaf66f": 1742,
-      "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:24f98eaee735": 1743,
       "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:9fe2f4bd84e1": 1744,
       "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:6f4f7fc812ed": 1745,
       "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:4292cdcd32c3": 1746,
@@ -20,8 +18,6 @@
       "urn:php2shell:inventory:vex:CVE-2026-109619:affects:documented-php-web-products-20261021": 1863,
       "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:github-sbom-php-web-candidates-20261021": 2004,
       "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:github-sbom-php-web-candidates-20261021": 2005,
-      "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:cisco-sa-php-october26-20261022": 2042,
-      "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:cisco-sa-php-october26-20261022": 2043,
       "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:cisco-sa-php-october26-20261022": 2044,
       "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:cisco-sa-php-october26-20261022": 2045,
       "urn:php2shell:inventory:vex:CVE-2026-109618:affects:qnap-qsa-26-18-20261022": 2046,
@@ -53,23 +49,6 @@
       "relationshipType": "underInvestigationFor",
       "security_statusNotes": "Historical scope; current use unknown",
       "summary": "CVE-2026-109618 assessment: Historical scope; current use unknown",
-      "comment": "Generated from inventory field 'cve_2026_109618'. This assessment preserves the source inventory wording and does not assert an affected deployment."
-    },
-    {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:24f98eaee735",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0394",
-        "urn:php2shell:inventory:package:PHP-0396",
-        "urn:php2shell:inventory:package:PHP-0402",
-        "urn:php2shell:inventory:package:PHP-0413",
-        "urn:php2shell:inventory:package:PHP-0421"
-      ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Hosted PHP option; CVE match unknown",
-      "summary": "CVE-2026-109618 assessment: Hosted PHP option; CVE match unknown",
       "comment": "Generated from inventory field 'cve_2026_109618'. This assessment preserves the source inventory wording and does not assert an affected deployment."
     },
     {
@@ -145,7 +124,6 @@
       "to": [
         "urn:php2shell:inventory:package:PHP-0004",
         "urn:php2shell:inventory:package:PHP-0012",
-        "urn:php2shell:inventory:package:PHP-0033",
         "urn:php2shell:inventory:package:PHP-0038",
         "urn:php2shell:inventory:package:PHP-0039",
         "urn:php2shell:inventory:package:PHP-0040",
@@ -292,19 +270,9 @@
         "urn:php2shell:inventory:package:PHP-0346",
         "urn:php2shell:inventory:package:PHP-0347",
         "urn:php2shell:inventory:package:PHP-0349",
-        "urn:php2shell:inventory:package:PHP-0368",
-        "urn:php2shell:inventory:package:PHP-0369",
-        "urn:php2shell:inventory:package:PHP-0370",
         "urn:php2shell:inventory:package:PHP-0371",
-        "urn:php2shell:inventory:package:PHP-0372",
         "urn:php2shell:inventory:package:PHP-0374",
-        "urn:php2shell:inventory:package:PHP-0375",
-        "urn:php2shell:inventory:package:PHP-0377",
         "urn:php2shell:inventory:package:PHP-0378",
-        "urn:php2shell:inventory:package:PHP-0379",
-        "urn:php2shell:inventory:package:PHP-0380",
-        "urn:php2shell:inventory:package:PHP-0382",
-        "urn:php2shell:inventory:package:PHP-0409",
         "urn:php2shell:inventory:package:PHP-0410",
         "urn:php2shell:inventory:package:PHP-0427",
         "urn:php2shell:inventory:package:PHP-0429",
@@ -321,8 +289,6 @@
         "urn:php2shell:inventory:package:PHP-0483",
         "urn:php2shell:inventory:package:PHP-0484",
         "urn:php2shell:inventory:package:PHP-0485",
-        "urn:php2shell:inventory:package:PHP-0486",
-        "urn:php2shell:inventory:package:PHP-0487",
         "urn:php2shell:inventory:package:PHP-0513",
         "urn:php2shell:inventory:package:PHP-0514",
         "urn:php2shell:inventory:package:PHP-0515",
@@ -361,7 +327,6 @@
         "urn:php2shell:inventory:package:PHP-0586",
         "urn:php2shell:inventory:package:PHP-0587",
         "urn:php2shell:inventory:package:PHP-0588",
-        "urn:php2shell:inventory:package:PHP-0596",
         "urn:php2shell:inventory:package:PHP-0598",
         "urn:php2shell:inventory:package:PHP-0599",
         "urn:php2shell:inventory:package:PHP-0600",
@@ -401,23 +366,6 @@
       "relationshipType": "underInvestigationFor",
       "security_statusNotes": "Historical scope; current use unknown",
       "summary": "CVE-2026-109619 assessment: Historical scope; current use unknown",
-      "comment": "Generated from inventory field 'cve_2026_109619'. This assessment preserves the source inventory wording and does not assert an affected deployment."
-    },
-    {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:24f98eaee735",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0394",
-        "urn:php2shell:inventory:package:PHP-0396",
-        "urn:php2shell:inventory:package:PHP-0402",
-        "urn:php2shell:inventory:package:PHP-0413",
-        "urn:php2shell:inventory:package:PHP-0421"
-      ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Hosted PHP option; CVE match unknown",
-      "summary": "CVE-2026-109619 assessment: Hosted PHP option; CVE match unknown",
       "comment": "Generated from inventory field 'cve_2026_109619'. This assessment preserves the source inventory wording and does not assert an affected deployment."
     },
     {
@@ -493,7 +441,6 @@
       "to": [
         "urn:php2shell:inventory:package:PHP-0004",
         "urn:php2shell:inventory:package:PHP-0012",
-        "urn:php2shell:inventory:package:PHP-0033",
         "urn:php2shell:inventory:package:PHP-0038",
         "urn:php2shell:inventory:package:PHP-0039",
         "urn:php2shell:inventory:package:PHP-0040",
@@ -639,19 +586,9 @@
         "urn:php2shell:inventory:package:PHP-0346",
         "urn:php2shell:inventory:package:PHP-0347",
         "urn:php2shell:inventory:package:PHP-0349",
-        "urn:php2shell:inventory:package:PHP-0368",
-        "urn:php2shell:inventory:package:PHP-0369",
-        "urn:php2shell:inventory:package:PHP-0370",
         "urn:php2shell:inventory:package:PHP-0371",
-        "urn:php2shell:inventory:package:PHP-0372",
         "urn:php2shell:inventory:package:PHP-0374",
-        "urn:php2shell:inventory:package:PHP-0375",
-        "urn:php2shell:inventory:package:PHP-0377",
         "urn:php2shell:inventory:package:PHP-0378",
-        "urn:php2shell:inventory:package:PHP-0379",
-        "urn:php2shell:inventory:package:PHP-0380",
-        "urn:php2shell:inventory:package:PHP-0382",
-        "urn:php2shell:inventory:package:PHP-0409",
         "urn:php2shell:inventory:package:PHP-0410",
         "urn:php2shell:inventory:package:PHP-0427",
         "urn:php2shell:inventory:package:PHP-0429",
@@ -668,8 +605,6 @@
         "urn:php2shell:inventory:package:PHP-0483",
         "urn:php2shell:inventory:package:PHP-0484",
         "urn:php2shell:inventory:package:PHP-0485",
-        "urn:php2shell:inventory:package:PHP-0486",
-        "urn:php2shell:inventory:package:PHP-0487",
         "urn:php2shell:inventory:package:PHP-0513",
         "urn:php2shell:inventory:package:PHP-0514",
         "urn:php2shell:inventory:package:PHP-0515",
@@ -708,7 +643,6 @@
         "urn:php2shell:inventory:package:PHP-0586",
         "urn:php2shell:inventory:package:PHP-0587",
         "urn:php2shell:inventory:package:PHP-0588",
-        "urn:php2shell:inventory:package:PHP-0596",
         "urn:php2shell:inventory:package:PHP-0598",
         "urn:php2shell:inventory:package:PHP-0599",
         "urn:php2shell:inventory:package:PHP-0600",
@@ -1271,36 +1205,6 @@
       "security_statusNotes": "Official PHP requirement or GitHub SBOM evidence only; CVE match unknown",
       "summary": "CVE-2026-109619 assessment: Official PHP requirement or GitHub SBOM evidence only; CVE match unknown",
       "comment": "Added from official repositories, manifests, requirements and GitHub dependency-graph SPDX SBOM exports reviewed 2026-10-21. These sources establish PHP product relationships and dependency-graph presence, not CVE-specific affected or fixed deployment scope."
-    },
-    {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:cisco-sa-php-october26-20261022",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0700",
-        "urn:php2shell:inventory:package:PHP-0708",
-        "urn:php2shell:inventory:package:PHP-0748"
-      ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Retained Investigation: Cisco advisory version 1.4 explicitly lists nine current product scopes under investigation and does not explicitly resolve the retained Panoptica scope. A product's absence from the current list is not treated as confirmed non-vulnerability.",
-      "summary": "CVE-2026-109618 assessment: Investigation retained for unresolved Cisco product scopes",
-      "comment": "Public official review 2026-10-23: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq (version 1.4, updated 2026-10-22 23:00 GMT). Nine current products are explicitly under investigation. Panoptica is absent from the updated lists; Cisco's preliminary absence-based indication is not an explicit product confirmation. Separately confirmed affected and not-vulnerable products have been removed from this assessment."
-    },
-    {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:cisco-sa-php-october26-20261022",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0700",
-        "urn:php2shell:inventory:package:PHP-0708",
-        "urn:php2shell:inventory:package:PHP-0748"
-      ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Retained Investigation: Cisco advisory version 1.4 explicitly lists nine current product scopes under investigation and does not explicitly resolve the retained Panoptica scope. A product's absence from the current list is not treated as confirmed non-vulnerability.",
-      "summary": "CVE-2026-109619 assessment: Investigation retained for unresolved Cisco product scopes",
-      "comment": "Public official review 2026-10-23: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq (version 1.4, updated 2026-10-22 23:00 GMT). Nine current products are explicitly under investigation. Panoptica is absent from the updated lists; Cisco's preliminary absence-based indication is not an explicit product confirmation. Separately confirmed affected and not-vulnerable products have been removed from this assessment."
     },
     {
       "type": "security_VexNotAffectedVulnAssessmentRelationship",

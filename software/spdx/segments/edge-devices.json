@@ -1607,9 +1607,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:juniper-networks:d899c5f10f6d",
-      "summary": "Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.",
+      "summary": "CVE-2026-109618 remains Vulnerable: Juniper says the issue is reachable but not exploitable. SRX stops using PHP at 25.2R1; that release boundary must not be applied to EX.",
       "description": "Juniper-authored CVE record expressly identifies PHP in J-Web; later vendor bulletin corroborates inclusion.",
-      "comment": "Inventory record: PHP-0629\nEdge inventory record: EDGE-019\nCategory: Appliances and embedded\nScope group: Network/security appliance\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037 runtime family reference\nEvidence status: Official public vendor/upstream CVE assessment\nRelationship confidence: Source supports the stated scope; actual deployment unknown\nDeployment status: Unknown: no installation count, live build, reachability, permissions, failover or exploitation measured\nService role: Network/security device web administration\nPHP surface: Juniper-authored CVE record expressly identifies PHP in J-Web; later vendor bulletin corroborates inclusion.\nPHP version scope: Junos OS J-Web on EX/SRX using affected PHP; SRX 25.2R1 no longer uses PHP\nExtensions: Unknown unless explicitly recorded\nImportant boundary: Only the named J-Web/release scope is supported. Enabling conditions of an older flaw are not automatically those of the 2026 pair.\nPatch owner: Juniper Networks for supported firmware/component corrections; operator/provider for deployment, restart and service continuity\nPossible abuse: If a matching reachable PHP function is compromised, readable settings/credentials or permitted management actions could be misused. Wider appliance control requires separate privilege/path evidence.\nPHP component loss: The PHP-dependent interface/workflow could be unavailable. Independent traffic processing or other services may continue; exact behaviour is not measured.\nWhole appliance loss: Whole SRX/EX shutdown could interrupt firewall/switch connectivity. Disabling only J-Web is a narrower scenario; actual remaining operations must be verified.\nConditions: Requires a matching affected runtime/vendor build, enabled function, reachable input and relevant process permissions. PHP presence alone is insufficient.\nSource accessed: 2026-10-26\nVendor advisory status: No direct vendor confirmation for CVE-2026-109618 or CVE-2026-109619 identified in official-site review on 2026-10-21.\nVulnerability status: Vulnerable / Investigation. Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.\nCVE-2026-109618: Vulnerable. Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.\nCVE-2026-109619: Investigation. Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.\nCVE assessment limit: The edge inventory confirms a PHP relationship in the cited scope only. Affected/fixed appliance builds, vendor backports, enabled features, reachable inputs and exploitation remain unestablished.\nLimitations: Only the named vendor product and version scope is assessed. Installed versions, exposure and exploitation were not tested.\nPublic vendor CVE review: 2026-10-26\nVendor advisory sources: https://supportportal.juniper.net/s/article/2026-10-Reference-Advisory-Status-of-PHP2Shell-vulnerabilities-on-Juniper-Products-CVE-2026-109618-CVE-2026-109619\nRelease pin: Junos OS J-Web on EX/SRX using affected PHP; SRX 25.2R1 no longer uses PHP",
+      "comment": "Inventory record: PHP-0629\nEdge inventory record: EDGE-019\nCategory: Appliances and embedded\nScope group: Network/security appliance\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037 runtime family reference\nRelationship confidence: Source supports the stated scope; actual deployment unknown\nDeployment status: Unknown: no installation count, live build, reachability, permissions, failover or exploitation measured\nService role: Network/security device web administration\nPHP surface: Juniper-authored CVE record expressly identifies PHP in J-Web; later vendor bulletin corroborates inclusion.\nPHP version scope: Junos OS J-Web on EX/SRX using affected PHP; SRX 25.2R1 no longer uses PHP\nExtensions: Unknown unless explicitly recorded\nImportant boundary: Only the named J-Web/release scope is supported. Enabling conditions of an older flaw are not automatically those of the 2026 pair.\nPatch owner: Juniper Networks for supported firmware/component corrections; operator/provider for deployment, restart and service continuity\nPossible abuse: If a matching reachable PHP function is compromised, readable settings/credentials or permitted management actions could be misused. Wider appliance control requires separate privilege/path evidence.\nPHP component loss: The PHP-dependent interface/workflow could be unavailable. Independent traffic processing or other services may continue; exact behaviour is not measured.\nWhole appliance loss: Whole SRX/EX shutdown could interrupt firewall/switch connectivity. Disabling only J-Web is a narrower scenario; actual remaining operations must be verified.\nConditions: Requires a matching affected runtime/vendor build, enabled function, reachable input and relevant process permissions. PHP presence alone is insufficient.\nLimitations: Only the named vendor product and version scope is assessed. Installed versions, exposure and exploitation were not tested.\nRelease pin: Junos OS J-Web on EX/SRX using affected PHP; SRX 25.2R1 no longer uses PHP\nEvidence status: Official public vendor/upstream CVE assessment\nSource accessed: 2026-10-28\nPublic vendor CVE review: 2026-10-28\nVendor advisory sources: https://supportportal.juniper.net/s/article/2026-10-Reference-Advisory-Status-of-PHP2Shell-vulnerabilities-on-Juniper-Products-CVE-2026-109618-CVE-2026-109619\nVendor advisory status: Juniper JSA112681, updated 2026-10-27, explicitly states that Junos OS is not affected by CVE-2026-109619.\nVulnerability status: Vulnerable / Not vuln. Juniper JSA112681, updated 2026-10-27, explicitly states that Junos OS is not affected by CVE-2026-109619.\nCVE assessment limit: Only the documented product, release and platform scope is assessed. Installed versions, runtime selection, reachability and exploitation were not tested.\nCVE-2026-109619: Not vuln. Juniper JSA112681, updated 2026-10-27, explicitly states that Junos OS is not affected by CVE-2026-109619.\nCVE-2026-109618: Vulnerable. Juniper states that the issue is reachable but not exploitable; SRX does not use PHP starting with 25.2R1.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -1633,7 +1633,7 @@
           "locator": [
             "https://supportportal.juniper.net/s/article/2026-10-Reference-Advisory-Status-of-PHP2Shell-vulnerabilities-on-Juniper-Products-CVE-2026-109618-CVE-2026-109619"
           ],
-          "comment": "Official public vendor source reviewed 2026-10-26"
+          "comment": "Official public source reviewed 2026-10-28"
         }
       ],
       "software_packageVersion": "Junos OS J-Web on EX/SRX using affected PHP; SRX 25.2R1 no longer uses PHP"
@@ -2372,9 +2372,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Unified Industrial Wireless Software as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Follow Cisco's product-specific guidance and release availability for CSCwx37073; no currently available fixed build is confirmed by this advisory.",
       "description": "Industrial wireless software",
-      "comment": "Inventory record: PHP-0700\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.4, updated 2026-10-22 23:00 GMT) lists Unified Industrial Wireless Software under 'Products Under Investigation' (Wireless); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Cisco advisory version 1.4 lists this product under investigation; affected and fixed releases are not published.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Cisco advisory version 1.4 under-investigation product scope",
+      "comment": "Inventory record: PHP-0700\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nExtensions: Unknown\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nEvidence status: Official public vendor/upstream CVE assessment\nSource accessed: 2026-10-28\nPublic vendor CVE review: 2026-10-28\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nVendor advisory status: Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.\nVulnerability status: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.\nCVE assessment limit: Only the documented product, release and platform scope is assessed. Installed versions, runtime selection, reachability and exploitation were not tested.\nCVE-2026-109618: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.\nCVE-2026-109619: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.\nPHP version scope: Affected release numbers not specified by Cisco; see the product-specific advisory status.\nRelease pin: Cisco advisory version 1.8, Final, updated 2026-10-27\nLimitations: The advisory confirms product status but does not establish the installed build, enabled features, reachability or exploitation of an individual deployment.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2382,7 +2382,7 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Official public CVE review 2026-10-23"
+          "comment": "Official public source reviewed 2026-10-28"
         }
       ]
     },
@@ -3181,9 +3181,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Cisco advisory cisco-sa-php-october26-Jj384Daq lists Identity Services Engine (ISE) Portal Builder as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Follow Cisco's remediation status for Portal Builder. Service shutdown is not confirmation of a software fix.",
       "description": "ISE portal customization component",
-      "comment": "Inventory record: PHP-0748\nCategory: Appliances and embedded\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.4, updated 2026-10-22 23:00 GMT) lists Identity Services Engine (ISE) Portal Builder under 'Products Under Investigation' (Network and Content Security Devices); affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Cisco advisory version 1.4 lists this product under investigation; affected and fixed releases are not published.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Cisco advisory version 1.4 under-investigation product scope",
+      "comment": "Inventory record: PHP-0748\nCategory: Appliances and embedded\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nExtensions: Unknown\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nEvidence status: Official public vendor/upstream CVE assessment\nSource accessed: 2026-10-28\nPublic vendor CVE review: 2026-10-28\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nVendor advisory status: Cisco advisory version 1.8 (Final, 2026-10-27) lists ISE Portal Builder as vulnerable and offline for remediation. It does not confirm a released fix; the separate ISE product's Not vuln assessment does not cover Portal Builder.\nVulnerability status: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists ISE Portal Builder as vulnerable and offline for remediation. It does not confirm a released fix; the separate ISE product's Not vuln assessment does not cover Portal Builder.\nCVE assessment limit: Only the documented product, release and platform scope is assessed. Installed versions, runtime selection, reachability and exploitation were not tested.\nCVE-2026-109618: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists ISE Portal Builder as vulnerable and offline for remediation. It does not confirm a released fix; the separate ISE product's Not vuln assessment does not cover Portal Builder.\nCVE-2026-109619: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists ISE Portal Builder as vulnerable and offline for remediation. It does not confirm a released fix; the separate ISE product's Not vuln assessment does not cover Portal Builder.\nPHP version scope: Affected release numbers not specified by Cisco; see the product-specific advisory status.\nRelease pin: Cisco advisory version 1.8, Final, updated 2026-10-27\nLimitations: The advisory confirms product status but does not establish the installed build, enabled features, reachability or exploitation of an individual deployment.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -3191,7 +3191,7 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Official public CVE review 2026-10-23"
+          "comment": "Official public source reviewed 2026-10-28"
         }
       ]
     },
@@ -3479,24 +3479,24 @@
         "urn:php2shell:inventory:package:PHP-0629"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable. Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.",
-      "comment": "Official public source reviewed 2026-10-26. Source: https://supportportal.juniper.net/s/article/2026-10-Reference-Advisory-Status-of-PHP2Shell-vulnerabilities-on-Juniper-Products-CVE-2026-109618-CVE-2026-109619",
+      "security_statusNotes": "Juniper JSA112681 states Junos OS is vulnerable to CVE-2026-109618 but not exploitable; the reachable out-of-memory issue is described as harmless. SRX stops using PHP at 25.2R1.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable (vendor reports not exploitable)",
+      "comment": "Official public source reviewed 2026-10-28. Source: https://supportportal.juniper.net/s/article/2026-10-Reference-Advisory-Status-of-PHP2Shell-vulnerabilities-on-Juniper-Products-CVE-2026-109618-CVE-2026-109619",
       "security_actionStatement": "Follow JSA112681: upgrade SRX to 25.2R1 where applicable, or disable/restrict J-Web and the other vendor-named web services. Do not assume the same remediation applies to EX."
     },
     {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:php-0629-official-20261026",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0629"
       ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.",
-      "summary": "CVE-2026-109619 assessment: Investigation. Juniper JSA112681 (2026-10-23) explicitly confirms Junos OS is vulnerable to CVE-2026-109618. SRX no longer uses PHP starting with 25.2R1. The advisory names both CVEs overall but does not explicitly resolve CVE-2026-109619 for the Junos OS row; its status remains Investigation.",
-      "comment": "Official public source reviewed 2026-10-26. Source: https://supportportal.juniper.net/s/article/2026-10-Reference-Advisory-Status-of-PHP2Shell-vulnerabilities-on-Juniper-Products-CVE-2026-109618-CVE-2026-109619",
-      "security_actionStatement": "Follow JSA112681: upgrade SRX to 25.2R1 where applicable, or disable/restrict J-Web and the other vendor-named web services. Do not assume the same remediation applies to EX."
+      "relationshipType": "doesNotAffect",
+      "security_statusNotes": "Juniper JSA112681, updated 2026-10-27, explicitly states that Junos OS is not affected by CVE-2026-109619.",
+      "summary": "CVE-2026-109619 assessment: Not vuln",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://supportportal.juniper.net/s/article/2026-10-Reference-Advisory-Status-of-PHP2Shell-vulnerabilities-on-Juniper-Products-CVE-2026-109618-CVE-2026-109619",
+      "security_impactStatement": "Juniper JSA112681, updated 2026-10-27, explicitly states that Junos OS is not affected by CVE-2026-109619."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -3722,6 +3722,62 @@
       "summary": "CVE-2026-109619 assessment: Vulnerable",
       "comment": "Public official sources reviewed 2026-10-27. Source: https://forum.terra-master.com/en/viewtopic.php?p=61416&t=10721",
       "security_actionStatement": "Migrate to TOS 7, install the vendor-fixed PHP package in App Center and restart PHP-dependent services. Update containers independently."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0700-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0700"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_actionStatement": "Follow Cisco's product-specific guidance and release availability for CSCwx37073; no currently available fixed build is confirmed by this advisory."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0700-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0700"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_actionStatement": "Follow Cisco's product-specific guidance and release availability for CSCwx37073; no currently available fixed build is confirmed by this advisory."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0748-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0748"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Cisco advisory version 1.8 (Final, 2026-10-27) lists ISE Portal Builder as vulnerable and offline for remediation. It does not confirm a released fix; the separate ISE product's Not vuln assessment does not cover Portal Builder.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_actionStatement": "Follow Cisco's remediation status for Portal Builder. Service shutdown is not confirmation of a software fix."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0748-official-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0748"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Cisco advisory version 1.8 (Final, 2026-10-27) lists ISE Portal Builder as vulnerable and offline for remediation. It does not confirm a released fix; the separate ISE product's Not vuln assessment does not cover Portal Builder.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Official public sources reviewed 2026-10-28. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_actionStatement": "Follow Cisco's remediation status for Portal Builder. Service shutdown is not confirmation of a software fix."
     }
   ]
 }

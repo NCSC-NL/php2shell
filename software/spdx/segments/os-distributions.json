@@ -925,7 +925,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:openbsd-ports-maintainers-php-documentation-team:7c89c0b9e1fe",
       "summary": "PHP documentation confirms split optional OpenBSD packages; dated7.9 release notes list four PHP source-version families.",
       "description": "Manual core package includes engine/FPM/gettext/iconv; Apache and database modules separately selected",
-      "comment": "Inventory record: PHP-0596\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Manual core package includes engine/FPM/gettext/iconv; Apache and database modules separately selected\nPHP version scope: OpenBSD7.9 release page, dated19 May2026, lists PHP8.2.30/8.3.30/8.4.20/8.5.5. Later security package state unknown.\nExtensions: Core-versus-separate-module packaging is documented; mysqli/imap examples are not default presence. Per-version package contents/activation unresolved.\nLimitations: A release-note package catalogue does not mean PHP is in every base installation. Manual installation examples, chroot notes and historical module names are not verified current package/ABI defaults. Availability is not default installation. Exact installed bytes, loaded features, inputs, privileges, deployments and vulnerabilities are not measured. No research code/package/image was installed, built, imported or executed.\nPatch owner: OpenBSD ports/package maintainers for package branch updates; operator for installed package selection, activation and daemon restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: OpenBSD7.9 release page dated19 May2026; later package/backport builds unverified\nSource accessed: 2026-10-19\nAliases: openbsd:php\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0596\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Manual core package includes engine/FPM/gettext/iconv; Apache and database modules separately selected\nPHP version scope: OpenBSD 8.0 amd64 packages-stable: php-8.3.36p1 / php-8.4.27p0 / php-8.5.12p0\nExtensions: Core-versus-separate-module packaging is documented; mysqli/imap examples are not default presence. Per-version package contents/activation unresolved.\nLimitations: Confirmation is limited to these optional OpenBSD 8.0 amd64 packages. It does not assert PHP is installed by default or that older OpenBSD branches, other architectures or existing deployments are patched.\nPatch owner: OpenBSD ports/package maintainers for package branch updates; operator for installed package selection, activation and daemon restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: OpenBSD 8.0 amd64 packages-stable: php-8.3.36p1 / php-8.4.27p0 / php-8.5.12p0\nSource accessed: 2026-10-29\nAliases: openbsd:php\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Fix for both CVEs in the stated runtime/image scope; assessed from current public official sources on 2026-10-29.\nCVE-2026-109618: Fix: OpenBSD 8.0 amd64 packages-stable: php-8.3.36p1 / php-8.4.27p0 / php-8.5.12p0\nCVE-2026-109619: Fix: OpenBSD 8.0 amd64 packages-stable: php-8.3.36p1 / php-8.4.27p0 / php-8.5.12p0\nCVE assessment limit: Confirmation is limited to these optional OpenBSD 8.0 amd64 packages. It does not assert PHP is installed by default or that older OpenBSD branches, other architectures or existing deployments are patched.\nOfficial fix evidence: OpenBSD's public 8.0 packages-stable/amd64 index publishes php-8.3.36p1, php-8.4.27p0 and php-8.5.12p0. The PHP portions of these versions match the fixed releases in both upstream advisories.\nAction statement: Install the appropriate fixed package for the supported OpenBSD branch and restart the PHP-serving processes.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -942,8 +942,41 @@
             "https://www.openbsd.org/79.html"
           ],
           "comment": "Primary package, build, release or vendor distribution evidence - Dated OpenBSD7.9 ports/package summary lists four PHP versions; optional family, not default base contents."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://cdn.openbsd.org/pub/OpenBSD/8.0/packages-stable/amd64/"
+          ],
+          "comment": "Official package index publishes the three fixed PHP builds; checked 2026-10-29."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/openbsd/ports/commit/f0c6a3922549ae04b3b84f57035bd179b44619e2"
+          ],
+          "comment": "Official OpenBSD ports mirror records the PHP 8.4.27 source update."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
+          ],
+          "comment": "PHP upstream CVE-2026-109618 advisory identifies the fixed PHP versions."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp"
+          ],
+          "comment": "PHP upstream CVE-2026-109619 advisory identifies the fixed PHP versions."
         }
-      ]
+      ],
+      "software_packageVersion": "OpenBSD 8.0 amd64 packages-stable: php-8.3.36p1 / php-8.4.27p0 / php-8.5.12p0"
     },
     {
       "type": "software_Package",
@@ -3356,6 +3389,32 @@
       "security_statusNotes": "Fixed in GetPageSpeed PHP 7.2 build 7.2.34-33.amzn2 for Amazon Linux 2, base php-* and SCL php72-php-* packages, on x86_64 and aarch64.",
       "summary": "CVE-2026-109619 assessment: Fixed in GetPageSpeed PHP 7.2 build 7.2.34-33.amzn2 for Amazon Linux 2, base php-* and SCL php72-php-* packages, on x86_64 and aarch64.",
       "comment": "Vendor guide reviewed 2026-10-28: https://www.getpagespeed.com/server-setup/php/php2shell-on-amazon-linux-2.\nAction statement: Follow the guide to upgrade the installed base php-* packages from getpagespeed-extras-php72, or the php72-php-* software collection from getpagespeed-extras, and restart the serving PHP workers. Assessment is limited to known patched build 7.2.34-33.amzn2 for Amazon Linux 2 on x86_64 and aarch64. First-fixed revision was not established; package availability does not establish rollout or restart."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:d9f0cf272066",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0596"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "OpenBSD 8.0 amd64 packages-stable: php-8.3.36p1 / php-8.4.27p0 / php-8.5.12p0",
+      "summary": "CVE-2026-109618 assessment: fixed in the stated runtime/image scope",
+      "comment": "Public official-source review on 2026-10-29. OpenBSD's public 8.0 packages-stable/amd64 index publishes php-8.3.36p1, php-8.4.27p0 and php-8.5.12p0. The PHP portions of these versions match the fixed releases in both upstream advisories. Confirmation is limited to these optional OpenBSD 8.0 amd64 packages. It does not assert PHP is installed by default or that older OpenBSD branches, other architectures or existing deployments are patched.\nAction statement: Install the appropriate fixed package for the supported OpenBSD branch and restart the PHP-serving processes."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:d9f0cf272066",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0596"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "OpenBSD 8.0 amd64 packages-stable: php-8.3.36p1 / php-8.4.27p0 / php-8.5.12p0",
+      "summary": "CVE-2026-109619 assessment: fixed in the stated runtime/image scope",
+      "comment": "Public official-source review on 2026-10-29. OpenBSD's public 8.0 packages-stable/amd64 index publishes php-8.3.36p1, php-8.4.27p0 and php-8.5.12p0. The PHP portions of these versions match the fixed releases in both upstream advisories. Confirmation is limited to these optional OpenBSD 8.0 amd64 packages. It does not assert PHP is installed by default or that older OpenBSD branches, other architectures or existing deployments are patched.\nAction statement: Install the appropriate fixed package for the supported OpenBSD branch and restart the PHP-serving processes."
     }
   ]
 }
