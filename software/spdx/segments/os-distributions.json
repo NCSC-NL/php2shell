@@ -3292,6 +3292,105 @@
       "security_actionStatement": "Install php84 8.4.27-r0 or a later vendor-fixed build from Alpine v3.22 and restart PHP workers."
     },
     {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0759",
+      "creationInfo": "_:creationinfo",
+      "name": "GetPageSpeed PHP 7.2 packages for Amazon Linux 2 (x86_64 and aarch64)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0759"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:getpagespeed:5d1f0c2a9b3e",
+      "summary": "GetPageSpeed released PHP2Shell-fixed PHP 7.2 RPMs for Amazon Linux 2, as base php-* packages and php72-php-* software collections on x86_64 and aarch64.",
+      "description": "GetPageSpeed packaged PHP 7.2 web runtimes and CLI for Amazon Linux 2, x86_64 and aarch64 (AWS Graviton) only",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.getpagespeed.com/server-setup/php/php2shell-on-amazon-linux-2"
+          ],
+          "comment": "Vendor guide confirms both CVEs fixed in build 7.2.34-33.amzn2 for both package forms and architectures"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://extras.getpagespeed.com/amzn/2/php72/x86_64/repodata/repomd.xml"
+          ],
+          "comment": "Public repository metadata for the specified package form and architecture; CLI, common and FPM build 7.2.34-33.amzn2 availability verified."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://extras.getpagespeed.com/amzn/2/php72/aarch64/repodata/repomd.xml"
+          ],
+          "comment": "Public repository metadata for the specified package form and architecture; CLI, common and FPM build 7.2.34-33.amzn2 availability verified."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://extras.getpagespeed.com/amzn/2/x86_64/repodata/repomd.xml"
+          ],
+          "comment": "Public repository metadata for the specified package form and architecture; CLI, common and FPM build 7.2.34-33.amzn2 availability verified."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://extras.getpagespeed.com/amzn/2/aarch64/repodata/repomd.xml"
+          ],
+          "comment": "Public repository metadata for the specified package form and architecture; CLI, common and FPM build 7.2.34-33.amzn2 availability verified."
+        }
+      ],
+      "software_packageVersion": "Known patched build (not necessarily the first fixed release): 7.2.34-33.amzn2, base php-* and SCL php72-php-* packages, x86_64 and aarch64",
+      "comment": "Inventory record: PHP-0759\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix in the specified scope\nDeployment status: Not measured\nPHP surface: GetPageSpeed PHP 7.2 base php-* packages and php72-php-* software collections for Amazon Linux 2, x86_64 and aarch64 only; PHP-FPM, mod_php and CLI.\nPHP version scope: Known patched build 7.2.34-33.amzn2 for both package forms and architectures. First-fixed revision was not established; no assessment of other PHP branches, operating systems, architectures, or later releases.\nLimitations: Upstream PHP version remains 7.2.34; match the complete RPM release, package form and architecture. Published metadata and package availability do not establish operator rollout, installation, or worker restart.\nPatch owner: GetPageSpeed for the packaged fixes; system administrator for upgrade and service rollout\nDownstream surface: Only applications/jobs using the installed GetPageSpeed PHP runtime\nRelease pin: 7.2.34-33.amzn2\nSource accessed: 2026-10-28\nPublic vendor CVE review: 2026-10-28\nVendor advisory sources: https://www.getpagespeed.com/server-setup/php/php2shell-on-amazon-linux-2\nAliases: getpagespeed:extras/amzn2/php72\nVulnerability status: Fixed in the specified GetPageSpeed PHP 7.2 build for both CVEs.\nMapped from inventory relationship 'bundles' and direction 'distributes_php' to SPDX relationshipType 'contains'."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0759",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0759",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "Inventory relationship for PHP-0759: bundles (distributes_php)",
+      "comment": "Mapped from inventory relationship 'bundles' and direction 'distributes_php' to SPDX relationshipType 'contains'."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:getpagespeed-amzn2-php72-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0759"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in GetPageSpeed PHP 7.2 build 7.2.34-33.amzn2 for Amazon Linux 2, base php-* and SCL php72-php-* packages, on x86_64 and aarch64.",
+      "summary": "CVE-2026-109618 assessment: Fixed in GetPageSpeed PHP 7.2 build 7.2.34-33.amzn2 for Amazon Linux 2, base php-* and SCL php72-php-* packages, on x86_64 and aarch64.",
+      "comment": "Vendor guide reviewed 2026-10-28: https://www.getpagespeed.com/server-setup/php/php2shell-on-amazon-linux-2.\nAction statement: Follow the guide to upgrade the installed base php-* packages from getpagespeed-extras-php72, or the php72-php-* software collection from getpagespeed-extras, and restart the serving PHP workers. Assessment is limited to known patched build 7.2.34-33.amzn2 for Amazon Linux 2 on x86_64 and aarch64. First-fixed revision was not established; package availability does not establish rollout or restart."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:getpagespeed-amzn2-php72-20261028",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0759"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in GetPageSpeed PHP 7.2 build 7.2.34-33.amzn2 for Amazon Linux 2, base php-* and SCL php72-php-* packages, on x86_64 and aarch64.",
+      "summary": "CVE-2026-109619 assessment: Fixed in GetPageSpeed PHP 7.2 build 7.2.34-33.amzn2 for Amazon Linux 2, base php-* and SCL php72-php-* packages, on x86_64 and aarch64.",
+      "comment": "Vendor guide reviewed 2026-10-28: https://www.getpagespeed.com/server-setup/php/php2shell-on-amazon-linux-2.\nAction statement: Follow the guide to upgrade the installed base php-* packages from getpagespeed-extras-php72, or the php72-php-* software collection from getpagespeed-extras, and restart the serving PHP workers. Assessment is limited to known patched build 7.2.34-33.amzn2 for Amazon Linux 2 on x86_64 and aarch64. First-fixed revision was not established; package availability does not establish rollout or restart."
+    },
+    {
       "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:d9f0cf272066",
       "creationInfo": "_:creationinfo",

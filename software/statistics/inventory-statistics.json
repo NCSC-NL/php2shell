@@ -11,8 +11,8 @@
   "day_selection": "inventory-updates",
   "current": {
     "counts": {
-      "tracked": 757,
-      "fixed": 152,
+      "tracked": 758,
+      "fixed": 153,
       "vulnerable": 218,
       "investigation": 346,
       "not_affected": 40,
@@ -20,14 +20,14 @@
     },
     "by_cve": {
       "CVE-2026-109618": {
-        "fixed": 152,
+        "fixed": 153,
         "vulnerable": 218,
         "investigation": 346,
         "not_affected": 40,
         "unknown": 1
       },
       "CVE-2026-109619": {
-        "fixed": 152,
+        "fixed": 153,
         "vulnerable": 216,
         "investigation": 346,
         "not_affected": 42,
@@ -96,8 +96,8 @@
       "date": "2026-10-29",
       "source": "working-tree",
       "counts": {
-        "tracked": 757,
-        "fixed": 152,
+        "tracked": 758,
+        "fixed": 153,
         "vulnerable": 218,
         "investigation": 346,
         "not_affected": 40,
@@ -105,14 +105,14 @@
       },
       "by_cve": {
         "CVE-2026-109618": {
-          "fixed": 152,
+          "fixed": 153,
           "vulnerable": 218,
           "investigation": 346,
           "not_affected": 40,
           "unknown": 1
         },
         "CVE-2026-109619": {
-          "fixed": 152,
+          "fixed": 153,
           "vulnerable": 216,
           "investigation": 346,
           "not_affected": 42,
