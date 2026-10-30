@@ -1,7 +1,7 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
 Operational information: 28 October 2026 16:46 CET<br>
-Software list last status update: 30 October 2026 09:03 CET<br>
+Software list last status update: 30 October 2026 09:14 CET<br>
 ## TLP:CLEAR
 
 This repository contains operational information regarding the critical PHP vulnerabilities tracked by CERT-EU as CVE-2026-109618 and CVE-2026-109619.
@@ -11,7 +11,7 @@ PHP is a widely used open-source server-side scripting language, so these vulner
 ## Current status
 
 <!-- inventory-statistics:summary:start -->
-This repository tracks **928 products**, including **217 vulnerable** and **164 fixed**.
+This repository tracks **929 products**, including **217 vulnerable** and **165 fixed**.
 <!-- inventory-statistics:summary:end -->
 
 On 21 October 2026, PHP published fixed releases for CVE-2026-109618 and CVE-2026-109619: PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. PHP states that both vulnerabilities can allow unauthenticated remote code execution and that all PHP installations serving web requests are at risk, including PHP-FPM, Apache with mod_php, php-cgi, FrankenPHP and LiteSpeed. PHP considers the risk highest for mod_php, where an unauthenticated request can trigger exploitation before application code runs.
@@ -58,7 +58,7 @@ Statistics as of **2026-10-30 (UTC)**, from the current SPDX inventory.
 
 | Products tracked | Fixed | Vulnerable | Under investigation | Not affected | Unassessed / unknown |
 | ---: | ---: | ---: | ---: | ---: | ---: |
-| 928 | 164 | 217 | 345 | 201 | 1 |
+| 929 | 165 | 217 | 345 | 201 | 1 |
 
 ![Product status on the last 3 inventory update days](software/statistics/inventory-statistics.png)
 
@@ -70,11 +70,11 @@ Statistics as of **2026-10-30 (UTC)**, from the current SPDX inventory.
 
 | Date and time | Supplier | Product | Version (see Status) | Status CVE-2026-109618 / CVE-2026-109619 | Links |
 |:------------------------|:---------|:--------|:--------------------:|:----------------------:|------:|
-|2026-10-30 09:03:20 +0100|VitalPBX|VitalPBX 4.0 PHP management runtime|VitalPBX 4.0 / 4.0.0 R4 on Debian 11 with unpatched PHP 8.1|Vulnerable|[source 1](<https://forums.vitalpbx.org/t/vitalpbx-4-0-0-r4-is-now-available/1863/1>)<br>[source 2](<https://forums.vitalpbx.org/t/php-cve-2026-109618-cve-2026-109619/6481/5>)<br>[source 3](<https://forums.vitalpbx.org/t/php-cve-2026-109618-cve-2026-109619/6481/7>)<br>[source 4](<https://docs.vitalpbx.com/vitalpbx/installation-vitalpbx/migrating-from-vitalpbx-4-debian-11-to-vitalpbx-4-5-debian-12/>)|
+|2026-10-30 09:14:54 +0100|VitalPBX|VitalPBX 4.5 PHP management runtime (Debian 12)|VitalPBX 4.5 on Debian 12 with PHP 8.2.35 or a later patched 8.2 release|Fix|[source 1](<https://vitalpbx.com/blog/php-8-2-vulnerability-debian-12/>)<br>[source 2](<https://forums.vitalpbx.org/t/critical-security-update-php-8-2-35-now-available-for-debian-12/6482>)<br>[source 3](<https://vitalpbx.com/blog/vitalpbx-4-5-release-enhancing-performance-security-and-scalability/>)<br>[source 4](<https://vitalpbx.com/cbxchangelog/vitalpbx-4-5/>)|
+|2026-10-30 09:10:24 +0100|VitalPBX|VitalPBX 4.0 PHP management runtime|VitalPBX 4.0 / 4.0.0 R4 on Debian 11 with unpatched PHP 8.1|Vulnerable|[source 1](<https://forums.vitalpbx.org/t/vitalpbx-4-0-0-r4-is-now-available/1863/1>)<br>[source 2](<https://forums.vitalpbx.org/t/php-cve-2026-109618-cve-2026-109619/6481/5>)<br>[source 3](<https://forums.vitalpbx.org/t/php-cve-2026-109618-cve-2026-109619/6481/7>)<br>[source 4](<https://docs.vitalpbx.com/vitalpbx/installation-vitalpbx/migrating-from-vitalpbx-4-debian-11-to-vitalpbx-4-5-debian-12/>)|
 |2026-10-30 08:50:46 +0100|Broadcom|Carbon Black App Control Server|8.12.2 or 8.13.2|Fix|[source 1](<https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404>)<br>[source 2](<https://knowledge.broadcom.com/external/article?articleNumber=459982>)|
 |2026-10-30 08:50:46 +0100|Check Point|Check Point firewall web interfaces|sk1000302 hotfix: R81.10 / R81.20 / R82 / R82.10 / R82.20; Spark R81.10.17 build 996004992 or R82.00.11 build 998002823|Fix|[source](<https://support.checkpoint.com/results/sk/sk1000302>)|
 |2026-10-30 08:50:46 +0100|Cisco|Cisco Expressway Select Series|15.5.21|Fix|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
-|2026-10-30 08:50:46 +0100|Cisco|Cisco Expressway Series|15.5.21|Fix|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
 
 See the [full software status update history](software/changelog_software_list.md).
 
