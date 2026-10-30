@@ -2190,7 +2190,7 @@
       "creationInfo": "_:creationinfo",
       "name": "Check Point firewall web interfaces",
       "software_primaryPurpose": "module",
-      "software_packageVersion": "Force/Cloud: R81.20, R82, R82.10, R82.20; EoS R80, R80.10, R80.20, R80.30, R80.40, R81, R81.10. Spark: R81.10.x, R82.00.x; EoS R77.20.x, R80.20.x",
+      "software_packageVersion": "sk1000302 hotfix: R81.10 / R81.20 / R82 / R82.10 / R82.20; Spark R81.10.17 build 996004992 or R82.00.11 build 998002823",
       "externalIdentifier": [
         {
           "type": "ExternalIdentifier",
@@ -2199,9 +2199,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:check-point:dbbe390ad85f",
-      "summary": "Check Point sk1000302 identifies both CVEs as affecting listed Force, Spark and Cloud Firewall web interfaces only when specified portal or VPN features are enabled; Check Point Portal and SaaS services are already patched.",
+      "summary": "Install the matching sk1000302 hotfix and reboot. R81.20 requires Jumbo Hotfix Take 166 or higher. Older end-of-support versions outside the listed fix scope are not declared fixed.",
       "description": "Vendor-confirmed feature-dependent firewall web-interface scope",
-      "comment": "Inventory record: PHP-0676\nCategory: Appliances and embedded\nOriginal relationship: component\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected product scope\nDeployment status: Not measured\nPHP surface: Check Point says PHP vulnerabilities may allow remote code execution through firewall web interfaces under certain circumstances.\nPHP version scope: Force and Cloud Firewalls: R81.20, R82, R82.10, R82.20; EoS R80, R80.10, R80.20, R80.30, R80.40, R81 and R81.10. Spark Firewalls: R81.10.x and R82.00.x; EoS R77.20.x and R80.20.x.\nExtensions: Unknown\nImportant boundary: Exposure requires one or more listed features: Mobile Access Portal, Remote Access VPN with SSL Network Extender, Remote Access VPN with SAML Realm authentication, or Identity Awareness Captive Portal. Mobile Access Portal and SSL Network Extender do not apply to Spark Firewalls. Check Point Portal and SaaS services are already patched, and this assessment does not extend to unrelated firewall paths.\nPatch owner: Check Point for firewall software and mitigations; operator for Automatic Updates, manual mitigation and future Jumbo Hotfix rollout\nPossible abuse: The vendor states that the PHP flaws may allow remote code execution through the affected firewall web interfaces. Wider appliance control and downstream impact remain deployment-specific.\nPHP component loss: The affected portal or authentication interface could be unavailable after mitigation or compromise; packet forwarding and other appliance functions are not independently assessed here.\nWhole appliance loss: Whole-firewall shutdown could interrupt protected traffic if failover or alternative routing does not preserve connectivity.\nConditions: Requires an affected listed version and at least one vendor-listed portal or VPN feature enabled; deployment, exposure and mitigation state remain unmeasured.\nSource accessed: 2026-10-22\nPublic vendor CVE review: 2026-10-22\nVendor advisory sources: https://support.checkpoint.com/results/sk/sk1000302\nVulnerability status: Check Point sk1000302 identifies both CVEs as affecting listed Force, Spark and Cloud Firewall web interfaces when specified portal or VPN features are enabled; fixes are planned for 2026-11-11.\nCVE-2026-109618: Vendor-confirmed affected firewall web-interface scope with feature-dependent exposure; fix planned for 2026-11-11\nCVE-2026-109619: Vendor-confirmed affected firewall web-interface scope with feature-dependent exposure; fix planned for 2026-11-11\nCVE assessment limit: Installed versions, enabled features, Automatic Updates state, manual mitigation state, reachable inputs and exploitation remain deployment-specific.",
+      "comment": "Inventory record: PHP-0676\nCategory: Appliances and embedded\nOriginal relationship: component\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: Check Point says PHP vulnerabilities may allow remote code execution through firewall web interfaces under certain circumstances.\nPHP version scope: sk1000302 hotfix: R81.10 / R81.20 / R82 / R82.10 / R82.20; Spark R81.10.17 build 996004992 or R82.00.11 build 998002823\nExtensions: Unknown\nImportant boundary: Exposure requires one or more listed features: Mobile Access Portal, Remote Access VPN with SSL Network Extender, Remote Access VPN with SAML Realm authentication, or Identity Awareness Captive Portal. Mobile Access Portal and SSL Network Extender do not apply to Spark Firewalls. Check Point Portal and SaaS services are already patched, and this assessment does not extend to unrelated firewall paths.\nPatch owner: Check Point for the released hotfix; operator for installation and reboot\nPossible abuse: The vendor states that the PHP flaws may allow remote code execution through the affected firewall web interfaces. Wider appliance control and downstream impact remain deployment-specific.\nPHP component loss: The affected portal or authentication interface could be unavailable after mitigation or compromise; packet forwarding and other appliance functions are not independently assessed here.\nWhole appliance loss: Whole-firewall shutdown could interrupt protected traffic if failover or alternative routing does not preserve connectivity.\nConditions: Requires an affected listed version and at least one vendor-listed portal or VPN feature enabled; deployment, exposure and mitigation state remain unmeasured.\nSource accessed: 2026-10-30\nPublic vendor CVE review: 2026-10-30\nVendor advisory sources: https://support.checkpoint.com/results/sk/sk1000302\nVulnerability status: Fix. Check Point sk1000302 confirms released hotfixes implementing the PHP 7.4 fix for both CVEs.\nCVE-2026-109618: Fix in sk1000302 hotfix: R81.10 / R81.20 / R82 / R82.10 / R82.20; Spark R81.10.17 build 996004992 or R82.00.11 build 998002823\nCVE-2026-109619: Fix in sk1000302 hotfix: R81.10 / R81.20 / R82 / R82.10 / R82.20; Spark R81.10.17 build 996004992 or R82.00.11 build 998002823\nCVE assessment limit: Installed versions, enabled features, Automatic Updates state, manual mitigation state, reachable inputs and exploitation remain deployment-specific.\nLimitations: Fix applies only to the listed hotfix/build scopes, including the separately listed 3900 packages. Older end-of-support releases are not declared fixed. Jumbo Hotfix inclusion planned for 2026-11-11 is distinct from these released fixes.\nRelease pin: sk1000302 hotfix: R81.10 / R81.20 / R82 / R82.10 / R82.20; Spark R81.10.17 build 996004992 or R82.00.11 build 998002823\nRemediation: Install the platform-specific sk1000302 hotfix and reboot; remove the manual mitigation as instructed by the vendor. R81.20 requires Jumbo Hotfix Take 166 or higher.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2209,7 +2209,7 @@
           "locator": [
             "https://support.checkpoint.com/results/sk/sk1000302"
           ],
-          "comment": "Check Point sk1000302 public CVE assessment reviewed 2026-10-22"
+          "comment": "Public official released-fix evidence reviewed 2026-10-30."
         }
       ]
     },
@@ -2314,9 +2314,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Monitor CSCwx37062 for an available fixed release; Cisco lists no workaround.",
+      "summary": "Upgrade to Expressway 15.5.21; Cisco confirms availability under CSCwx37062.",
       "description": "Collaboration edge and traversal gateway",
-      "comment": "Inventory record: PHP-0698\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Expressway Series; affected release range not specified\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Vulnerable. Cisco lists Expressway Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.\nCVE-2026-109618: Vulnerable. Cisco lists Expressway Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.\nCVE-2026-109619: Vulnerable. Cisco lists Expressway Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Expressway Series; affected release range not specified",
+      "comment": "Inventory record: PHP-0698\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: 15.5.21\nExtensions: Unknown\nLimitations: Only the listed fixed product release is assessed; this does not establish the installed version, exposure or exploitation.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-30\nVulnerability status: Fix. Cisco advisory v1.9 lists 15.5.21 as an available fixed release for Expressway Series (CSCwx37062).\nCVE-2026-109618: Fix in 15.5.21\nCVE-2026-109619: Fix in 15.5.21\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-30\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: 15.5.21\nRemediation: Upgrade to Expressway 15.5.21.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2324,10 +2324,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Official public CVE review 2026-10-23"
+          "comment": "Public official released-fix evidence reviewed 2026-10-30."
         }
       ],
-      "software_packageVersion": "Expressway Series; affected release range not specified"
+      "software_packageVersion": "15.5.21"
     },
     {
       "type": "software_Package",
@@ -2421,7 +2421,7 @@
       "creationInfo": "_:creationinfo",
       "name": "QNAP TVR OS",
       "software_primaryPurpose": "firmware",
-      "software_packageVersion": "TVR OS 1.0.4 and earlier",
+      "software_packageVersion": "1.0.5",
       "externalIdentifier": [
         {
           "type": "ExternalIdentifier",
@@ -2430,9 +2430,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:qnap:01af88f7bc7a",
-      "summary": "QNAP QSA-26-18 lists TVR OS 1.0.4 and earlier as affected by CVE-2026-109618 and CVE-2026-109619; fixed version is to be announced.",
+      "summary": "Update TVR OS to 1.0.5; third-party PHP applications and containers require separate updates.",
       "description": "Surveillance appliance operating system web components",
-      "comment": "Inventory record: PHP-0722\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected product scope\nDeployment status: Not measured\nPHP surface: QNAP says PHP is used in web components of QNAP operating systems and several QNAP applications; exact component boundary and SAPI are not published for this product.\nPHP version scope: QSA-26-18 lists TVR OS 1.0.4 and earlier as affected; fixed version to be announced.\nExtensions: Unknown\nLimitations: QSA-26-18 establishes affected product scope, not a live deployment, exact embedded PHP build, enabled feature set, reachable path or exploitation. PHP included in containers running on Container Station or in third-party applications is outside QNAP update coverage.\nPatch owner: QNAP for supported product updates; operator for exposure reduction and update rollout\nSource accessed: 2026-10-22\nVulnerability status: QNAP QSA-26-18 lists QNAP TVR OS as affected; fixed version to be announced.\nCVE-2026-109618: Vendor-confirmed affected product scope; fixed version to be announced\nCVE-2026-109619: Vendor-confirmed affected product scope; fixed version to be announced\nCVE assessment limit: Affected product release scope is vendor-confirmed; installed version, exposure, configuration and exploitation need separate evidence.",
+      "comment": "Inventory record: PHP-0722\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: QNAP says PHP is used in web components of QNAP operating systems and several QNAP applications; exact component boundary and SAPI are not published for this product.\nPHP version scope: 1.0.5\nExtensions: Unknown\nLimitations: TVR OS 1.0.4 and earlier are affected; third-party PHP applications and containers need separate updates.\nPatch owner: QNAP for supported product updates; operator for exposure reduction and update rollout\nSource accessed: 2026-10-30\nVulnerability status: Fix. QNAP QSA-26-18 lists TVR OS 1.0.5 as the released fix for both PHP2Shell CVEs.\nCVE-2026-109618: Fix in 1.0.5\nCVE-2026-109619: Fix in 1.0.5\nCVE assessment limit: Affected product release scope is vendor-confirmed; installed version, exposure, configuration and exploitation need separate evidence.\nPublic vendor CVE review: 2026-10-30\nRelease pin: 1.0.5\nRemediation: Update TVR OS to 1.0.5.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2440,7 +2440,7 @@
           "locator": [
             "https://www.qnap.com/en/security-advisory/qsa-26-18"
           ],
-          "comment": "QNAP Security Advisory QSA-26-18 (2026-10-22)"
+          "comment": "Public official released-fix evidence reviewed 2026-10-30."
         }
       ]
     },
@@ -2603,32 +2603,30 @@
       "comment": "Added from the Checkmk Appliance 1.7.25 changed-package manifest published 2026-10-21 and the PHP upstream advisory. The manifest upgrades bundled PHP 8.2 packages from 8.2.34-1~deb12u1 to 8.2.35-1~deb12u1; PHP upstream identifies 8.2.35 as fixed for both CVEs.\nAction statement: Update the appliance to firmware 1.7.25 or later and verify the running appliance services use the updated packages."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:checkpoint-firewall-web-interfaces-20261021",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0676"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Check Point sk1000302 identifies listed Force, Spark and Cloud Firewall web interfaces as affected when specified portal or VPN features are enabled; Jumbo Hotfix fixes are planned for 2026-11-11.",
-      "summary": "CVE-2026-109618 assessment: Check Point sk1000302 identifies listed Force, Spark and Cloud Firewall web interfaces as affected when specified portal or VPN features are enabled; Jumbo Hotfix fixes are planned for 2026-11-11.",
-      "comment": "Added from Check Point sk1000302 created 2026-10-21 and updated/reviewed 2026-10-22. The vendor identifies both CVEs as affecting listed Force, Spark and Cloud Firewall versions that use Mobile Access Portal, Remote Access VPN with SSL Network Extender, Remote Access VPN with SAML Realm authentication, or Identity Awareness Captive Portal. Check Point says Portal and SaaS services are already patched, plans an Automatic Updates mitigation before 2026-10-22 21:00 GMT, and plans fixes in Jumbo Hotfix Accumulators on 2026-11-11.",
-      "security_actionStatement": "Follow the vendor mitigation guidance pending the planned Jumbo Hotfix release, and verify Automatic Updates or manual mitigation state on affected firewall deployments."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Check Point sk1000302 confirms released hotfixes implementing the PHP 7.4 fix for both CVEs.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://support.checkpoint.com/results/sk/sk1000302\nAction statement: Install the platform-specific sk1000302 hotfix and reboot; remove the manual mitigation as instructed by the vendor. R81.20 requires Jumbo Hotfix Take 166 or higher."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:checkpoint-firewall-web-interfaces-20261021",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0676"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Check Point sk1000302 identifies listed Force, Spark and Cloud Firewall web interfaces as affected when specified portal or VPN features are enabled; Jumbo Hotfix fixes are planned for 2026-11-11.",
-      "summary": "CVE-2026-109619 assessment: Check Point sk1000302 identifies listed Force, Spark and Cloud Firewall web interfaces as affected when specified portal or VPN features are enabled; Jumbo Hotfix fixes are planned for 2026-11-11.",
-      "comment": "Added from Check Point sk1000302 created 2026-10-21 and updated/reviewed 2026-10-22. The vendor identifies both CVEs as affecting listed Force, Spark and Cloud Firewall versions that use Mobile Access Portal, Remote Access VPN with SSL Network Extender, Remote Access VPN with SAML Realm authentication, or Identity Awareness Captive Portal. Check Point says Portal and SaaS services are already patched, plans an Automatic Updates mitigation before 2026-10-22 21:00 GMT, and plans fixes in Jumbo Hotfix Accumulators on 2026-11-11.",
-      "security_actionStatement": "Follow the vendor mitigation guidance pending the planned Jumbo Hotfix release, and verify Automatic Updates or manual mitigation state on affected firewall deployments."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Check Point sk1000302 confirms released hotfixes implementing the PHP 7.4 fix for both CVEs.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://support.checkpoint.com/results/sk/sk1000302\nAction statement: Install the platform-specific sk1000302 hotfix and reboot; remove the manual mitigation as instructed by the vendor. R81.20 requires Jumbo Hotfix Take 166 or higher."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -2848,32 +2846,30 @@
       "security_impactStatement": "Cisco confirms ISE is not vulnerable. ISE Portal Builder remains separately under investigation; that component is not covered by this conclusion."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0698-official-20261023",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0698"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Cisco lists Expressway Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
-      "security_actionStatement": "Monitor CSCwx37062 for an available fixed release; Cisco lists no workaround."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Cisco advisory v1.9 lists 15.5.21 as an available fixed release for Expressway Series (CSCwx37062).",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nAction statement: Upgrade to Expressway 15.5.21."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0698-official-20261023",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0698"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Cisco lists Expressway Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.",
-      "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
-      "security_actionStatement": "Monitor CSCwx37062 for an available fixed release; Cisco lists no workaround."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Cisco advisory v1.9 lists 15.5.21 as an available fixed release for Expressway Series (CSCwx37062).",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nAction statement: Upgrade to Expressway 15.5.21."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -3209,9 +3205,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Monitor CSCwx37062 for an available fixed release; Cisco lists no workaround.",
+      "summary": "Upgrade to Expressway Select 15.5.21; Cisco confirms availability under CSCwx37062.",
       "description": "Collaboration edge and traversal gateway",
-      "comment": "Inventory record: PHP-0749\nCategory: Appliances and embedded\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Expressway Select Series; affected release range not specified\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Vulnerable. Cisco lists Expressway Select Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.\nCVE-2026-109618: Vulnerable. Cisco lists Expressway Select Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.\nCVE-2026-109619: Vulnerable. Cisco lists Expressway Select Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Expressway Select Series; affected release range not specified",
+      "comment": "Inventory record: PHP-0749\nCategory: Appliances and embedded\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: 15.5.21\nExtensions: Unknown\nLimitations: Only the listed fixed product release is assessed; this does not establish the installed version, exposure or exploitation.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-30\nVulnerability status: Fix. Cisco advisory v1.9 lists 15.5.21 as an available fixed release for Expressway Select Series (CSCwx37062).\nCVE-2026-109618: Fix in 15.5.21\nCVE-2026-109619: Fix in 15.5.21\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-30\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: 15.5.21\nRemediation: Upgrade to Expressway Select 15.5.21.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -3219,10 +3215,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Official public CVE review 2026-10-23"
+          "comment": "Public official released-fix evidence reviewed 2026-10-30."
         }
       ],
-      "software_packageVersion": "Expressway Select Series; affected release range not specified"
+      "software_packageVersion": "15.5.21"
     },
     {
       "type": "Relationship",
@@ -3249,32 +3245,30 @@
       "comment": "Cisco advisory version 1.4 lists this product as vulnerable to PHP2Shell. This association records vendor review scope only; the exact PHP dependency is not published."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0749-official-20261023",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0749"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Cisco lists Expressway Select Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
-      "security_actionStatement": "Monitor CSCwx37062 for an available fixed release; Cisco lists no workaround."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Cisco advisory v1.9 lists 15.5.21 as an available fixed release for Expressway Select Series (CSCwx37062).",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nAction statement: Upgrade to Expressway Select 15.5.21."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0749-official-20261023",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0749"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Cisco lists Expressway Select Series as vulnerable under CSCwx37062. The listed 15.5.21 fix has a TBD availability date and is not a confirmed released fix.",
-      "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
-      "security_actionStatement": "Monitor CSCwx37062 for an available fixed release; Cisco lists no workaround."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Cisco advisory v1.9 lists 15.5.21 as an available fixed release for Expressway Select Series (CSCwx37062).",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nAction statement: Upgrade to Expressway Select 15.5.21."
     },
     {
       "type": "software_Package",
@@ -5272,6 +5266,32 @@
       "summary": "CVE-2026-109619 assessment: Investigation",
       "comment": "Reconciled XRX26-016 v2 page 2 with v4 pages 2 and 7 on 2026-10-29. The older family-wide investigation is narrowed to scopes without an explicit result in v4.",
       "security_actionStatement": "Check the deployed model and release against Xerox bulletin updates. Do not transfer a model-specific current-release clearance to the whole product family."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0722-released-20261030",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0722"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "QNAP QSA-26-18 lists TVR OS 1.0.5 as the released fix for both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://www.qnap.com/en/security-advisory/qsa-26-18\nAction statement: Update TVR OS to 1.0.5."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0722-released-20261030",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0722"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "QNAP QSA-26-18 lists TVR OS 1.0.5 as the released fix for both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://www.qnap.com/en/security-advisory/qsa-26-18\nAction statement: Update TVR OS to 1.0.5."
     }
   ]
 }

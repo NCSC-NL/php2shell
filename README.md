@@ -1,7 +1,7 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
 Operational information: 28 October 2026 16:46 CET<br>
-Software list last status update: 30 October 2026 08:26 CET<br>
+Software list last status update: 30 October 2026 08:45 CET<br>
 ## TLP:CLEAR
 
 This repository contains operational information regarding the critical PHP vulnerabilities tracked by CERT-EU as CVE-2026-109618 and CVE-2026-109619.
@@ -11,7 +11,7 @@ PHP is a widely used open-source server-side scripting language, so these vulner
 ## Current status
 
 <!-- inventory-statistics:summary:start -->
-This repository tracks **925 products**, including **223 vulnerable** and **154 fixed**.
+This repository tracks **928 products**, including **216 vulnerable** and **164 fixed**.
 <!-- inventory-statistics:summary:end -->
 
 On 21 October 2026, PHP published fixed releases for CVE-2026-109618 and CVE-2026-109619: PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. PHP states that both vulnerabilities can allow unauthenticated remote code execution and that all PHP installations serving web requests are at risk, including PHP-FPM, Apache with mod_php, php-cgi, FrankenPHP and LiteSpeed. PHP considers the risk highest for mod_php, where an unauthenticated request can trigger exploitation before application code runs.
@@ -58,7 +58,7 @@ Statistics as of **2026-10-30 (UTC)**, from the current SPDX inventory.
 
 | Products tracked | Fixed | Vulnerable | Under investigation | Not affected | Unassessed / unknown |
 | ---: | ---: | ---: | ---: | ---: | ---: |
-| 925 | 154 | 223 | 346 | 201 | 1 |
+| 928 | 164 | 216 | 346 | 201 | 1 |
 
 ![Product status on the last 3 inventory update days](software/statistics/inventory-statistics.png)
 
@@ -70,11 +70,11 @@ Statistics as of **2026-10-30 (UTC)**, from the current SPDX inventory.
 
 | Date and time | Supplier | Product | Version (see Status) | Status CVE-2026-109618 / CVE-2026-109619 | Links |
 |:------------------------|:---------|:--------|:--------------------:|:----------------------:|------:|
-|2026-10-30 08:26:08 +0100|Cisco|Cisco Panoptica|Cisco final advisory v1.9 (2026-10-28): unlisted-product scope|Not vuln|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
-|2026-10-30 08:26:08 +0100|WordPress Playground contributors|WordPress Playground PHP.wasm binary family|PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12; Git dcd8e50fb651 (web/Node, JSPI/Asyncify)|Fix|[source 1](<https://github.com/WordPress/wordpress-playground/pull/4487>)<br>[source 2](<https://github.com/WordPress/wordpress-playground/pull/4487#issuecomment-6340964082>)<br>[source 3](<https://github.com/WordPress/wordpress-playground/commit/11ddfdc9858269b131536f3052648f0a74d95387>)<br>[source 4](<https://github.com/WordPress/wordpress-playground/tree/dcd8e50fb65121726bb23a686746f68032ff1cb1/packages/php-wasm/web-builds>)<br>[source 5](<https://github.com/WordPress/wordpress-playground/tree/dcd8e50fb65121726bb23a686746f68032ff1cb1/packages/php-wasm/node-builds>)<br>[source 6](<https://github.com/WordPress/wordpress-playground/blob/1e779217fceedb5b29b1359a196dc97ce40f31de/packages/php-wasm/supported-php-versions.mjs>)<br>[source 7](<https://developer.wordpress.org/playground/developers/architecture/wasm-php-overview/>)<br>[source 8](<https://github.com/WordPress/wordpress-playground/blob/trunk/packages/php-wasm/universal/src/lib/supported-php-versions.ts>)|
-|2026-10-29 15:42:02 +0100|Fiery|Fiery Digital Front End (DFE)|Fiery FS200/300/350/400/500/600/700/800, including Pro variants; patch releases are planned, not yet confirmed available|Vulnerable|[source 1](<https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf>)<br>[source 2](<https://communities.fiery.com/s/article/PHP-Vulnerability-CVE-2026-109618-and-CVE-2026-109619>)|
-|2026-10-29 15:42:02 +0100|Lexmark|Lexmark Accessibility Solution|Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified|Not vuln|[source](<https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf>)|
-|2026-10-29 15:42:02 +0100|Lexmark|Lexmark AccuRead Automate|Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified|Not vuln|[source](<https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf>)|
+|2026-10-30 08:45:04 +0100|Broadcom|Carbon Black App Control Server|8.12.2 or 8.13.2|Fix|[source 1](<https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404>)<br>[source 2](<https://knowledge.broadcom.com/external/article?articleNumber=459982>)|
+|2026-10-30 08:45:04 +0100|Check Point|Check Point firewall web interfaces|sk1000302 hotfix: R81.10 / R81.20 / R82 / R82.10 / R82.20; Spark R81.10.17 build 996004992 or R82.00.11 build 998002823|Fix|[source](<https://support.checkpoint.com/results/sk/sk1000302>)|
+|2026-10-30 08:45:04 +0100|Cisco|Cisco Expressway Select Series|15.5.21|Fix|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
+|2026-10-30 08:45:04 +0100|Cisco|Cisco Expressway Series|15.5.21|Fix|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
+|2026-10-30 08:45:04 +0100|Mautic project|Mautic official Docker images (PHP security rebuilds)|Mautic 5 / 6 / 7 Docker image rebuilds announced 2026-10-21|Fix|[source](<https://mautic.org/blog/critical-php-security-release-today-please-get-your-mautic-servers-ready/>)|
 
 See the [full software status update history](software/changelog_software_list.md).
 

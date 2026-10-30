@@ -2193,7 +2193,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:spryker-systems-gmbh:24b1ab6feb3d",
       "summary": "The vendor documents PHP-backed commerce and marketplace applications; its upgrade guide distinguishes the 8.3 floor from the 8.5 recommendation.",
       "description": "Server-side PHP web runtime; CLI where separately documented; exact SAPI deployment-dependent",
-      "comment": "Inventory record: PHP-0159\nCategory: Commerce\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime; CLI where separately documented; exact SAPI deployment-dependent\nPHP version scope: System requirements displayed as 202608.0, updated 31 August 2026: PHP >=8.3; 3 September upgrade guide recommends 8.5.\nExtensions: Required (documented scope): curl, json, gd, intl, xml, mbstring. Partial or inherited list; see version/extension limitations\nLimitations: The extension table mixes modern and legacy/ambiguous names, including mysql and twig. Only an explicit subset is normalized here; exact resolved project/image requirements remain unknown. Modular apps and marketplace variants overlap. PHP presence does not establish an affected build, reachable flaw or exploitation. Installations and enabled integrations were not measured.\nPatch owner: PHP package/image/hosting provider and operator for runtime; application/plugin maintainer and merchant for application updates\nDownstream surface: Storefront/API, privileged back office, imports, queues and jobs\nRelease pin: Version-scoped/moving official documentation; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: Spryker, SCOS, Spryker Marketplace\nConditional downstream consequence: A matching PHP memory-safety or parser flaw reached through store requests, imports or media handling could cause denial of service, disclosure or code execution in the PHP worker. Code execution could expose configured commerce/payment credentials or alter orders and content. Provider compromise, tenant escape and lateral movement would require additional permissions or flaws.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0159\nCategory: Commerce\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime; CLI where separately documented; exact SAPI deployment-dependent\nPHP version scope: System requirements displayed as 202608.0, updated 31 August 2026: PHP >=8.3; 3 September upgrade guide recommends 8.5.\nExtensions: Required (documented scope): curl, json, gd, intl, xml, mbstring. Partial or inherited list; see version/extension limitations\nLimitations: The extension table mixes modern and legacy/ambiguous names, including mysql and twig. Only an explicit subset is normalized here; exact resolved project/image requirements remain unknown. Modular apps and marketplace variants overlap. PHP presence does not establish an affected build, reachable flaw or exploitation. Installations and enabled integrations were not measured.\nPatch owner: PHP package/image/hosting provider and operator for runtime; application/plugin maintainer and merchant for application updates\nDownstream surface: Storefront/API, privileged back office, imports, queues and jobs\nRelease pin: Version-scoped/moving official documentation; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: Spryker, SCOS, Spryker Marketplace\nConditional downstream consequence: A matching PHP memory-safety or parser flaw reached through store requests, imports or media handling could cause denial of service, disclosure or code execution in the PHP worker. Code execution could expose configured commerce/payment credentials or alter orders and content. Provider compromise, tenant escape and lateral movement would require additional permissions or flaws.\nVulnerability status: Vulnerable when served by an unpatched PHP runtime; the vendor-published fixed image is assessed separately in PHP-0928.\nCVE-2026-109618: Vulnerable on an unpatched PHP runtime; fixed image scope: PHP-0928\nCVE-2026-109619: Vulnerable on an unpatched PHP runtime; fixed image scope: PHP-0928\nCVE assessment limit: Application code alone does not establish a patched runtime. The fixed image scope does not change assessments of independent PHP installations.\nPublic vendor fix review: 2026-10-30. Spryker release 20261021 updates the supported PHP runtime images to fix both CVEs. See PHP-0928 for the fixed distribution scope.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2210,6 +2210,14 @@
             "https://docs.spryker.com/docs/dg/dev/upgrade-and-migrate/upgrade-to-php-85"
           ],
           "comment": "Official project/vendor documentation or publisher-supplied package metadata - The guide states that PHP 8.5 is recommended while PHP 8.3 remains the module minimum."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://docs.spryker.com/docs/about/all/releases/image-releases/spryker-php/release-notes-spryker-php-20261021"
+          ],
+          "comment": "Public official source reviewed 2026-10-30."
         }
       ]
     },
@@ -5864,7 +5872,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:snappymail-project:90169daed163",
       "summary": "The project documents PHP for its server-side webmail implementation and identifies its RainLoop lineage.",
       "description": "Server-side PHP web runtime; exact SAPI and any separate CLI phase deployment-dependent/unpinned",
-      "comment": "Inventory record: PHP-0289\nCategory: Mail and analytics\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime; exact SAPI and any separate CLI phase deployment-dependent/unpinned\nPHP version scope: Official README: PHP >=7.4 and mbstring. Exact application release, other mandatory modules and runtime build unknown.\nExtensions: Required in stated source scope: mbstring\nLimitations: The archive APIs described in the README do not alone prove every archive extension is mandatory. The browser UI and external IMAP/SMTP services are distinct; RainLoop’s older PHP range is not inherited. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Application/module maintainer for product code; PHP package/image/hosting provider and deploying operator for compatible runtime/module updates\nDownstream surface: Webmail, messages, attachments, authentication and mailbox session credentials\nRelease pin: Version-scoped/moving official documentation or source branch; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: the-djmaze/snappymail\nConditional downstream consequence: A matching PHP runtime or loaded-extension flaw reached through web requests, messages, attachments or PHP mail/admin jobs could cause denial of service, disclosure or worker-level code execution. Mail, subscriber data, quarantine metadata and configured or session-held credentials could be affected according to permissions. Native IMAP/SMTP/scanning services, browser/mobile clients, privileged host actions and tenant isolation require separate evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0289\nCategory: Mail and analytics\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime; exact SAPI and any separate CLI phase deployment-dependent/unpinned\nPHP version scope: Official README: PHP >=7.4 and mbstring. Exact application release, other mandatory modules and runtime build unknown.\nExtensions: Required in stated source scope: mbstring\nLimitations: The archive APIs described in the README do not alone prove every archive extension is mandatory. The browser UI and external IMAP/SMTP services are distinct; RainLoop’s older PHP range is not inherited. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Application/module maintainer for product code; PHP package/image/hosting provider and deploying operator for compatible runtime/module updates\nDownstream surface: Webmail, messages, attachments, authentication and mailbox session credentials\nRelease pin: Version-scoped/moving official documentation or source branch; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: the-djmaze/snappymail\nConditional downstream consequence: A matching PHP runtime or loaded-extension flaw reached through web requests, messages, attachments or PHP mail/admin jobs could cause denial of service, disclosure or worker-level code execution. Mail, subscriber data, quarantine metadata and configured or session-held credentials could be affected according to permissions. Native IMAP/SMTP/scanning services, browser/mobile clients, privileged host actions and tenant isolation require separate evidence.\nVulnerability status: Vulnerable when served by an unpatched PHP runtime; the vendor-published fixed image is assessed separately in PHP-0930.\nCVE-2026-109618: Vulnerable on an unpatched PHP runtime; fixed image scope: PHP-0930\nCVE-2026-109619: Vulnerable on an unpatched PHP runtime; fixed image scope: PHP-0930\nCVE assessment limit: Application code alone does not establish a patched runtime. The fixed image scope does not change assessments of independent PHP installations.\nPublic vendor fix review: 2026-10-30. The SnappyMail maintainer released v2.38.2.1 specifically as the Docker PHP2Shell fix; its linked publication workflow completed successfully. See PHP-0930 for the fixed distribution scope.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -5873,6 +5881,14 @@
             "https://github.com/the-djmaze/snappymail"
           ],
           "comment": "Official SnappyMail PHP relationship / requirements evidence"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/the-djmaze/snappymail/releases/tag/v2.38.2.1"
+          ],
+          "comment": "Public official source reviewed 2026-10-30."
         }
       ]
     },
@@ -6040,7 +6056,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:mautic-project:ee4842c8fff2",
       "summary": "The official installation guide documents PHP web settings and console execution for marketing automation.",
       "description": "PHP web/front-controller environment and bin/console CLI installation/update/operations",
-      "comment": "Inventory record: PHP-0295\nCategory: Mail and analytics\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP web/front-controller environment and bin/console CLI installation/update/operations\nPHP version scope: Official 7.0-labelled install guide confirms PHP web/console operations but retains an old PHP 7.4 example. Inspected 7.x manifest has a PHP 8.2 resolution target; no verified effective released runtime minimum was derived from it.\nExtensions: Full required extension set unknown\nLimitations: config.platform.php and old Composer examples are not promoted to an application floor. The linked authoritative requirements page was inaccessible. Development DDEV services such as PHPMyAdmin/Mailhog are not assumed present in production. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Application/module maintainer for product code; PHP package/image/hosting provider and deploying operator for compatible runtime/module updates\nDownstream surface: Marketing/customer data, campaigns, forms, email delivery, reports and background jobs\nRelease pin: Version-scoped/moving official documentation or source branch; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: mautic/mautic, Mautic marketing automation\nConditional downstream consequence: A matching PHP runtime or loaded-extension flaw reached through web requests, messages, attachments or PHP mail/admin jobs could cause denial of service, disclosure or worker-level code execution. Mail, subscriber data, quarantine metadata and configured or session-held credentials could be affected according to permissions. Native IMAP/SMTP/scanning services, browser/mobile clients, privileged host actions and tenant isolation require separate evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0295\nCategory: Mail and analytics\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP web/front-controller environment and bin/console CLI installation/update/operations\nPHP version scope: Official 7.0-labelled install guide confirms PHP web/console operations but retains an old PHP 7.4 example. Inspected 7.x manifest has a PHP 8.2 resolution target; no verified effective released runtime minimum was derived from it.\nExtensions: Full required extension set unknown\nLimitations: config.platform.php and old Composer examples are not promoted to an application floor. The linked authoritative requirements page was inaccessible. Development DDEV services such as PHPMyAdmin/Mailhog are not assumed present in production. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Application/module maintainer for product code; PHP package/image/hosting provider and deploying operator for compatible runtime/module updates\nDownstream surface: Marketing/customer data, campaigns, forms, email delivery, reports and background jobs\nRelease pin: Version-scoped/moving official documentation or source branch; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: mautic/mautic, Mautic marketing automation\nConditional downstream consequence: A matching PHP runtime or loaded-extension flaw reached through web requests, messages, attachments or PHP mail/admin jobs could cause denial of service, disclosure or worker-level code execution. Mail, subscriber data, quarantine metadata and configured or session-held credentials could be affected according to permissions. Native IMAP/SMTP/scanning services, browser/mobile clients, privileged host actions and tenant isolation require separate evidence.\nVulnerability status: Vulnerable when served by an unpatched PHP runtime; the vendor-published fixed image is assessed separately in PHP-0929.\nCVE-2026-109618: Vulnerable on an unpatched PHP runtime; fixed image scope: PHP-0929\nCVE-2026-109619: Vulnerable on an unpatched PHP runtime; fixed image scope: PHP-0929\nCVE assessment limit: Application code alone does not establish a patched runtime. The fixed image scope does not change assessments of independent PHP installations.\nPublic vendor fix review: 2026-10-30. Mautic confirms security rebuilds of its 5, 6 and 7 Docker images were released on 2026-10-21 following the fixes for both CVEs. See PHP-0929 for the fixed distribution scope.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -6057,6 +6073,14 @@
             "https://github.com/mautic/mautic/blob/7.x/composer.json"
           ],
           "comment": "Official project/vendor documentation, repository manifest or publisher package metadata - Root manifest separates application/dependency tooling from require-dev and a PHP resolution target; it does not alone establish a deployed PHP build."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://mautic.org/blog/critical-php-security-release-today-please-get-your-mautic-servers-ready/"
+          ],
+          "comment": "Public official source reviewed 2026-10-30."
         }
       ]
     },
@@ -9723,9 +9747,9 @@
       "type": "software_Package",
       "spdxId": "urn:php2shell:inventory:package:PHP-0719",
       "creationInfo": "_:creationinfo",
-      "name": "QNAP Note Station 3",
+      "name": "QNAP Notes Station 3",
       "software_primaryPurpose": "application",
-      "software_packageVersion": "Note Station 3 3.9.14 and earlier",
+      "software_packageVersion": "3.9.15",
       "externalIdentifier": [
         {
           "type": "ExternalIdentifier",
@@ -9734,9 +9758,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:qnap:01af88f7bc7a",
-      "summary": "QNAP QSA-26-18 lists Note Station 3 3.9.14 and earlier as affected by CVE-2026-109618 and CVE-2026-109619; fixed version is to be announced.",
+      "summary": "Update Notes Station 3 to 3.9.15 through QNAP App Center.",
       "description": "Note-taking application web components",
-      "comment": "Inventory record: PHP-0719\nCategory: Content management\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected product scope\nDeployment status: Not measured\nPHP surface: QNAP says PHP is used in web components of QNAP operating systems and several QNAP applications; exact component boundary and SAPI are not published for this product.\nPHP version scope: QSA-26-18 lists Note Station 3 3.9.14 and earlier as affected; fixed version to be announced.\nExtensions: Unknown\nLimitations: QSA-26-18 establishes affected product scope, not a live deployment, exact embedded PHP build, enabled feature set, reachable path or exploitation. PHP included in containers running on Container Station or in third-party applications is outside QNAP update coverage.\nPatch owner: QNAP for supported product updates; operator for exposure reduction and update rollout\nSource accessed: 2026-10-22\nVulnerability status: QNAP QSA-26-18 lists QNAP Note Station 3 as affected; fixed version to be announced.\nCVE-2026-109618: Vendor-confirmed affected product scope; fixed version to be announced\nCVE-2026-109619: Vendor-confirmed affected product scope; fixed version to be announced\nCVE assessment limit: Affected product release scope is vendor-confirmed; installed version, exposure, configuration and exploitation need separate evidence.",
+      "comment": "Inventory record: PHP-0719\nCategory: Content management\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: QNAP says PHP is used in web components of QNAP operating systems and several QNAP applications; exact component boundary and SAPI are not published for this product.\nPHP version scope: 3.9.15\nExtensions: Unknown\nLimitations: Notes Station 3 3.9.14 and earlier are affected; this fix does not cover third-party applications or containers.\nPatch owner: QNAP for supported product updates; operator for exposure reduction and update rollout\nSource accessed: 2026-10-30\nVulnerability status: Fix. QNAP QSA-26-18 lists Notes Station 3 3.9.15 as the released fix for both PHP2Shell CVEs.\nCVE-2026-109618: Fix in 3.9.15\nCVE-2026-109619: Fix in 3.9.15\nCVE assessment limit: Affected product release scope is vendor-confirmed; installed version, exposure, configuration and exploitation need separate evidence.\nPublic vendor CVE review: 2026-10-30\nRelease pin: 3.9.15\nRemediation: Update Notes Station 3 to 3.9.15.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -9744,7 +9768,7 @@
           "locator": [
             "https://www.qnap.com/en/security-advisory/qsa-26-18"
           ],
-          "comment": "QNAP Security Advisory QSA-26-18 (2026-10-22)"
+          "comment": "Public official released-fix evidence reviewed 2026-10-30."
         }
       ]
     },
@@ -13309,6 +13333,32 @@
       "summary": "CVE-2026-109619 assessment: Not vuln",
       "comment": "Official vendor bulletin reviewed 2026-10-29. Each target package records its table row and page. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
       "security_impactStatement": "Xerox confirms that the evaluated current releases of these named products are not impacted. The statement does not cover unspecified models or all historical releases, and the vendor does not state a technical justification."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0719-released-20261030",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0719"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "QNAP QSA-26-18 lists Notes Station 3 3.9.15 as the released fix for both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://www.qnap.com/en/security-advisory/qsa-26-18\nAction statement: Update Notes Station 3 to 3.9.15."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0719-released-20261030",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0719"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "QNAP QSA-26-18 lists Notes Station 3 3.9.15 as the released fix for both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://www.qnap.com/en/security-advisory/qsa-26-18\nAction statement: Update Notes Station 3 to 3.9.15."
     }
   ]
 }

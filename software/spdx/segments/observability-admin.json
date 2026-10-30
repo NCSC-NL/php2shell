@@ -2120,7 +2120,7 @@
       "creationInfo": "_:creationinfo",
       "name": "QNAP QVR Surveillance",
       "software_primaryPurpose": "application",
-      "software_packageVersion": "QVR Surveillance 3.0.3 and earlier (ARM32 models)",
+      "software_packageVersion": "3.0.3.1756 (ARM32 models)",
       "externalIdentifier": [
         {
           "type": "ExternalIdentifier",
@@ -2129,9 +2129,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:qnap:01af88f7bc7a",
-      "summary": "QNAP QSA-26-18 lists QVR Surveillance 3.0.3 and earlier on ARM32 models as affected by CVE-2026-109618 and CVE-2026-109619; fixed version is to be announced.",
+      "summary": "Update affected ARM32 QVR Surveillance installations to 3.0.3.1756.",
       "description": "Surveillance application web components",
-      "comment": "Inventory record: PHP-0721\nCategory: Monitoring and administration\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected product scope\nDeployment status: Not measured\nPHP surface: QNAP says PHP is used in web components of QNAP operating systems and several QNAP applications; exact component boundary and SAPI are not published for this product.\nPHP version scope: QSA-26-18 lists QVR Surveillance 3.0.3 and earlier (ARM32 models) as affected; fixed version to be announced.\nExtensions: Unknown\nLimitations: QSA-26-18 establishes affected product scope, not a live deployment, exact embedded PHP build, enabled feature set, reachable path or exploitation. PHP included in containers running on Container Station or in third-party applications is outside QNAP update coverage.\nPatch owner: QNAP for supported product updates; operator for exposure reduction and update rollout\nSource accessed: 2026-10-22\nVulnerability status: QNAP QSA-26-18 lists QNAP QVR Surveillance as affected; fixed version to be announced.\nCVE-2026-109618: Vendor-confirmed affected product scope; fixed version to be announced\nCVE-2026-109619: Vendor-confirmed affected product scope; fixed version to be announced\nCVE assessment limit: Affected product release scope is vendor-confirmed; installed version, exposure, configuration and exploitation need separate evidence.",
+      "comment": "Inventory record: PHP-0721\nCategory: Monitoring and administration\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: QNAP says PHP is used in web components of QNAP operating systems and several QNAP applications; exact component boundary and SAPI are not published for this product.\nPHP version scope: 3.0.3.1756 (ARM32 models)\nExtensions: Unknown\nLimitations: The vendor affected scope is QVR Surveillance 3.0.3 and earlier on ARM32 models; do not extend this assessment to other architectures.\nPatch owner: QNAP for supported product updates; operator for exposure reduction and update rollout\nSource accessed: 2026-10-30\nVulnerability status: Fix. QNAP QSA-26-18 lists QVR Surveillance 3.0.3.1756 as the released fix for the affected ARM32 models.\nCVE-2026-109618: Fix in 3.0.3.1756 (ARM32 models)\nCVE-2026-109619: Fix in 3.0.3.1756 (ARM32 models)\nCVE assessment limit: Affected product release scope is vendor-confirmed; installed version, exposure, configuration and exploitation need separate evidence.\nPublic vendor CVE review: 2026-10-30\nRelease pin: 3.0.3.1756 (ARM32 models)\nRemediation: Update QVR Surveillance on affected ARM32 models to 3.0.3.1756.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2139,7 +2139,7 @@
           "locator": [
             "https://www.qnap.com/en/security-advisory/qsa-26-18"
           ],
-          "comment": "QNAP Security Advisory QSA-26-18 (2026-10-22)"
+          "comment": "Public official released-fix evidence reviewed 2026-10-30."
         }
       ]
     },
@@ -3273,9 +3273,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:broadcom:caf79e01972c",
-      "summary": "Broadcom ESG advisory 39404 lists Carbon Black App Control Server under Affected Product(s) for CVE-2026-109618 and CVE-2026-109619; the umbrella advisory does not state fixed releases.",
+      "summary": "Upgrade to 8.12.2 or 8.13.2; installations already on 8.13 must use 8.13.2.",
       "description": "Application control management server",
-      "comment": "Inventory record: PHP-0730\nCategory: Security operations and management consoles\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected product scope\nDeployment status: Not measured\nPHP surface: Vendor-named product in Broadcom ESG advisory 39404; exact PHP component and SAPI are not published\nPHP version scope: Broadcom ESG advisory 39404, updated 2026-10-22, lists Carbon Black App Control Server under Affected Product(s); affected and fixed releases are not stated in the umbrella advisory.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes product review scope, not a live deployment, exact embedded PHP build, enabled feature set, reachable path or exploitation. The umbrella advisory links a product-specific advisory, but this record does not infer unpublished version or remediation scope from that link.\nPatch owner: Broadcom; operator for exposure reduction and update rollout\nSource accessed: 2026-10-23\nVulnerability status: Vulnerable. Broadcom ESG advisory 39404 lists Carbon Black App Control Server under Affected Product(s) for both PHP2Shell CVEs; no fixed version is stated in the umbrella advisory.\nCVE-2026-109618: Vendor-confirmed affected product scope; fixed version not stated in umbrella advisory\nCVE-2026-109619: Vendor-confirmed affected product scope; fixed version not stated in umbrella advisory\nCVE assessment limit: Only the stated product scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404\nRelease pin: Broadcom ESG advisory 39404 affected product scope",
+      "comment": "Inventory record: PHP-0730\nCategory: Security operations and management consoles\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: Vendor-named product in Broadcom ESG advisory 39404; exact PHP component and SAPI are not published\nPHP version scope: 8.12.2 or 8.13.2\nExtensions: Unknown\nLimitations: This assessment covers App Control Server, not other Carbon Black products; deployment and exposure were not measured.\nPatch owner: Broadcom; operator for exposure reduction and update rollout\nSource accessed: 2026-10-30\nVulnerability status: Fix. Broadcom KB 459982 confirms App Control Server 8.12.2 and 8.13.2 are available to address both PHP2Shell CVEs.\nCVE-2026-109618: Fix in 8.12.2 or 8.13.2\nCVE-2026-109619: Fix in 8.12.2 or 8.13.2\nCVE assessment limit: Only the stated product scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-30\nVendor advisory sources: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404\nRelease pin: 8.12.2 or 8.13.2\nRemediation: Upgrade to 8.12.2 or 8.13.2; installations already on 8.13 must use 8.13.2.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -3284,9 +3284,17 @@
             "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404"
           ],
           "comment": "Broadcom ESG advisory 39404 reviewed 2026-10-23"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://knowledge.broadcom.com/external/article?articleNumber=459982"
+          ],
+          "comment": "Public official source reviewed 2026-10-30."
         }
       ],
-      "software_packageVersion": "Broadcom ESG advisory 39404 affected product scope"
+      "software_packageVersion": "8.12.2 or 8.13.2"
     },
     {
       "type": "software_Package",
@@ -3440,32 +3448,30 @@
       "comment": "Broadcom ESG advisory 39404 lists this product under investigation for PHP2Shell. This association records vendor review scope only; a PHP dependency is not confirmed."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:broadcom-esg-39404-20261022",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0730"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Broadcom ESG advisory 39404 lists Carbon Black App Control Server under Affected Product(s) for both PHP2Shell CVEs; the umbrella advisory does not state affected or fixed releases.",
-      "summary": "CVE-2026-109618 assessment: Broadcom ESG advisory 39404 affected product scope",
-      "comment": "Public official source reviewed 2026-10-23. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
-      "security_actionStatement": "Monitor the linked Broadcom product advisories for remediation details and restrict management exposure until a fixed release is verified."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Broadcom KB 459982 confirms App Control Server 8.12.2 and 8.13.2 are available to address both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://knowledge.broadcom.com/external/article?articleNumber=459982\nAction statement: Upgrade to 8.12.2 or 8.13.2; installations already on 8.13 must use 8.13.2."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:broadcom-esg-39404-20261022",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0730"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Broadcom ESG advisory 39404 lists Carbon Black App Control Server under Affected Product(s) for both PHP2Shell CVEs; the umbrella advisory does not state affected or fixed releases.",
-      "summary": "CVE-2026-109619 assessment: Broadcom ESG advisory 39404 affected product scope",
-      "comment": "Public official source reviewed 2026-10-23. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
-      "security_actionStatement": "Monitor the linked Broadcom product advisories for remediation details and restrict management exposure until a fixed release is verified."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Broadcom KB 459982 confirms App Control Server 8.12.2 and 8.13.2 are available to address both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://knowledge.broadcom.com/external/article?articleNumber=459982\nAction statement: Upgrade to 8.12.2 or 8.13.2; installations already on 8.13 must use 8.13.2."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -4873,6 +4879,32 @@
       "summary": "CVE-2026-109619 assessment: Not vuln",
       "comment": "Official vendor bulletin reviewed 2026-10-29. Each target package records its table row and page. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
       "security_impactStatement": "Xerox confirms that the evaluated current releases of these named products are not impacted. The statement does not cover unspecified models or all historical releases, and the vendor does not state a technical justification."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0721-released-20261030",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0721"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "QNAP QSA-26-18 lists QVR Surveillance 3.0.3.1756 as the released fix for the affected ARM32 models.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://www.qnap.com/en/security-advisory/qsa-26-18\nAction statement: Update QVR Surveillance on affected ARM32 models to 3.0.3.1756."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0721-released-20261030",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0721"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "QNAP QSA-26-18 lists QVR Surveillance 3.0.3.1756 as the released fix for the affected ARM32 models.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://www.qnap.com/en/security-advisory/qsa-26-18\nAction statement: Update QVR Surveillance on affected ARM32 models to 3.0.3.1756."
     }
   ]
 }
