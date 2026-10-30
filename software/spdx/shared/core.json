@@ -2214,7 +2214,9 @@
         "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:xerox-xrx26-016-primelink-unresolved",
         "urn:php2shell:inventory:package:PHP-0927",
         "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:xerox-xrx26-016-phaser-unresolved",
-        "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:xerox-xrx26-016-phaser-unresolved"
+        "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:xerox-xrx26-016-phaser-unresolved",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:PHP-0539-20261030",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:PHP-0539-20261030"
       ]
     }
   ]

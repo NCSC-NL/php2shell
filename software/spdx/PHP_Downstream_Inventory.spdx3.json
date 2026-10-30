@@ -4948,7 +4948,9 @@
         "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:xerox-xrx26-016-primelink-unresolved",
         "urn:php2shell:inventory:package:PHP-0927",
         "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:xerox-xrx26-016-phaser-unresolved",
-        "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:xerox-xrx26-016-phaser-unresolved"
+        "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:xerox-xrx26-016-phaser-unresolved",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:PHP-0539-20261030",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:PHP-0539-20261030"
       ]
     },
     {
@@ -23885,10 +23887,58 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:wordpress-playground-contributors:77d729688b10",
-      "summary": "The architecture compiles the PHP interpreter to WebAssembly rather than reimplementing it in JavaScript.",
+      "summary": "Fix for the rebuilt PHP 8.2-8.5 Wasm binaries available at pinned Git commit dcd8e50fb651. A maintainer confirmed the rebuild for both CVEs. This assessment does not confirm an npm release, legacy PHP builds or a deployed Playground instance.",
       "description": "Actual PHP interpreter compiled by Emscripten to WebAssembly with a C/JavaScript API",
-      "comment": "Inventory record: PHP-0539\nCategory: Embedded runtimes\nOriginal relationship: bundles\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Actual PHP interpreter compiled by Emscripten to WebAssembly with a C/JavaScript API\nPHP version scope: Moving source declares supported minors 8.5,8.4,8.3,8.2,8.1,8.0,7.4; legacy 5.2 and next pseudo-version are separate. Exact PHP patch/build and published matrix unverified.\nExtensions: Extension/backend inventory not fully enumerated for the scoped implementation/build\nLimitations: Documentation examples naming older files are not the current build catalogue. Supported here is project build coverage, not PHP Group security support. No Wasm hashes, binaries, extension artifacts or npm lock graph verified. No installed artifact, loaded-module set, input reachability, deployment total, tenant escape or compromise was measured. No specific PHP CVE was supplied. Public static evidence only; no retrieved code, package, image or test was installed, built or executed.\nPatch owner: Playground PHP.wasm build publisher plus PHP/upstream maintainers; package consumers must refresh JS/Wasm assets together\nDownstream surface: Actual PHP interpreter compiled by Emscripten to WebAssembly with a C/JavaScript API\nRelease pin: Architecture page updated 2026-10-14; moving supported-php-versions.ts inspected 2026-10-18\nSource accessed: 2026-10-18\nAliases: WordPress PHP.wasm binaries, @php-wasm/node-X-Y, @php-wasm/web-X-Y\nConditional downstream consequence: A matching PHP/Wasm flaw may conditionally crash the sandboxed runtime or affect its PHP data and granted browser/Node capabilities. Native server RCE, host escape or tenant compromise does not follow without a separate sandbox/bridge flaw and reachable path.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP Wasm scope; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP Wasm scope; CVE match unknown\nCVE-2026-109619: PHP Wasm scope; CVE match unknown\nCVE assessment limit: Read browser, Node, edge and build-only boundaries separately. A PHP runtime flaw does not establish sandbox/tenant escape. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0539\nCategory: Embedded runtimes\nOriginal relationship: bundles\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Maintainer-confirmed rebuilt binaries in merged upstream Git tree\nDeployment status: Not measured\nPHP surface: Actual PHP interpreter compiled by Emscripten to WebAssembly with a C/JavaScript API\nPHP version scope: PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12 in web and Node builds, each with JSPI and Asyncify variants (16 binary artifacts). Fixed Git tree dcd8e50fb65121726bb23a686746f68032ff1cb1 includes rebuild 11ddfdc9858269b131536f3052648f0a74d95387.\nExtensions: Extension/backend inventory not fully enumerated for the scoped implementation/build\nLimitations: Fix is limited to the named PHP 8.2-8.5 artifacts in the pinned Git tree. Legacy PHP 5.2/7.4/8.0/8.1 and next are outside this confirmation. The checked npm 3.1.61 publication points to earlier Git head 1e779217fceedb5b29b1359a196dc97ce40f31de, whose version metadata still lists older PHP releases; it is not confirmed fixed. No npm release, hosted deployment, installed binary, exploit reachability or sandbox/host escape is established. Public source and Git artifact metadata were inspected; binaries were not downloaded or executed.\nPatch owner: Playground PHP.wasm build publisher plus PHP/upstream maintainers; package consumers must refresh JS/Wasm assets together\nDownstream surface: Actual PHP interpreter compiled by Emscripten to WebAssembly with a C/JavaScript API\nRelease pin: PR #4487 merged 2026-10-26 09:57:44 UTC as dcd8e50fb65121726bb23a686746f68032ff1cb1; rebuilt binaries commit 11ddfdc9858269b131536f3052648f0a74d95387\nSource accessed: 2026-10-30\nAliases: WordPress PHP.wasm binaries, @php-wasm/node-X-Y, @php-wasm/web-X-Y\nConditional downstream consequence: A matching PHP/Wasm flaw may conditionally crash the sandboxed runtime or affect its PHP data and granted browser/Node capabilities. Native server RCE, host escape or tenant compromise does not follow without a separate sandbox/bridge flaw and reachable path.\nVulnerability status: Fix for both CVEs in the explicitly pinned PHP 8.2-8.5 Git binaries; no broader release or deployment claim.\nCVE-2026-109618: Fix; pinned Git binaries built from PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12\nCVE-2026-109619: Fix; pinned Git binaries built from PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12\nCVE assessment limit: The maintainer rebuild confirmation and immutable artifact paths support this version scope. PHP.wasm is separate from the browser-local runtime and JS adapter inventory entries; those entries retain their existing assessments. Native server RCE or sandbox escape is not inferred.\nPublic vendor CVE review: 2026-10-30\nVendor advisory sources: https://github.com/WordPress/wordpress-playground/pull/4487 ; https://github.com/WordPress/wordpress-playground/pull/4487#issuecomment-6340964082",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/WordPress/wordpress-playground/pull/4487"
+          ],
+          "comment": "Merged official upstream PR explicitly addresses both CVEs; initial metadata-only description is superseded by the maintainer rebuild confirmation and included binaries."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/WordPress/wordpress-playground/pull/4487#issuecomment-6340964082"
+          ],
+          "comment": "Maintainer mho22 confirms rebuilt binaries, fixed PHP 8.2-8.5 tags and web/Node JSPI/Asyncify coverage."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/WordPress/wordpress-playground/commit/11ddfdc9858269b131536f3052648f0a74d95387"
+          ],
+          "comment": "Immutable upstream commit adding the rebuilt PHP.wasm binaries."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/WordPress/wordpress-playground/tree/dcd8e50fb65121726bb23a686746f68032ff1cb1/packages/php-wasm/web-builds"
+          ],
+          "comment": "Published immutable Git tree: web builds; PHP 8.2-8.5 JSPI and Asyncify artifact paths verified."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/WordPress/wordpress-playground/tree/dcd8e50fb65121726bb23a686746f68032ff1cb1/packages/php-wasm/node-builds"
+          ],
+          "comment": "Published immutable Git tree: Node builds; PHP 8.2-8.5 JSPI and Asyncify artifact paths verified."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/WordPress/wordpress-playground/blob/1e779217fceedb5b29b1359a196dc97ce40f31de/packages/php-wasm/supported-php-versions.mjs"
+          ],
+          "comment": "Earlier Git head recorded by npm 3.1.61 still declares PHP 8.2.33, 8.3.33, 8.4.25 and 8.5.10; npm publication is outside the confirmed fix scope."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "other",
@@ -23905,7 +23955,8 @@
           ],
           "comment": "Primary project documentation, released announcement or publisher package declaration - The source separately enumerates seven supported minor labels, one legacy label and next."
         }
-      ]
+      ],
+      "software_packageVersion": "PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12; Git dcd8e50fb651 (web/Node, JSPI/Asyncify)"
     },
     {
       "type": "software_Package",
@@ -35795,7 +35846,6 @@
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0383",
-        "urn:php2shell:inventory:package:PHP-0539",
         "urn:php2shell:inventory:package:PHP-0540",
         "urn:php2shell:inventory:package:PHP-0541",
         "urn:php2shell:inventory:package:PHP-0542",
@@ -36224,7 +36274,6 @@
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0383",
-        "urn:php2shell:inventory:package:PHP-0539",
         "urn:php2shell:inventory:package:PHP-0540",
         "urn:php2shell:inventory:package:PHP-0541",
         "urn:php2shell:inventory:package:PHP-0542",
@@ -40110,9 +40159,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Investigation retained: Cisco Panoptica appeared under investigation in advisory version 1.1 but is absent from the explicit version 1.4 status lists.",
+      "summary": "Not vuln under Cisco final advisory v1.9: Cisco states that products absent from the advisory are not affected; Panoptica is absent. This applies the explicit vendor coverage rule, rather than an individually named not-vulnerable entry.",
       "description": "Hosted cloud-native application security",
-      "comment": "Inventory record: PHP-0708\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco advisory cisco-sa-php-october26-Jj384Daq version 1.1 listed Cisco Panoptica under 'Products Under Investigation' (Cisco Cloud Hosted Services). Version 1.4, updated 2026-10-22 23:00 GMT, no longer names Panoptica in its explicit under-investigation, vulnerable or confirmed-not-vulnerable sections.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. Cisco's statement that unlisted products are initially indicated not affected is not an explicit product confirmation for this retained inventory scope.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Investigation retained. Cisco advisory version 1.4 does not explicitly confirm affected, released-fixed or not-vulnerable status for this inventory scope.\nCVE-2026-109618: Investigation retained pending explicit Cisco product status\nCVE-2026-109619: Investigation retained pending explicit Cisco product status\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Retained investigation pending explicit Cisco status",
+      "comment": "Inventory record: PHP-0708\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed by final vendor advisory coverage rule\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: Cisco final advisory v1.9, updated 2026-10-28 16:48 GMT, covers both CVEs and explicitly considers products not listed in the advisory not affected. Panoptica is not listed. No PHP component version is disclosed.\nExtensions: Unknown\nLimitations: Panoptica is not individually named in the final not-vulnerable list. The conclusion applies Cisco's explicit rule for unlisted products, introduced in v1.5 and retained in final v1.9; it does not infer absence of a PHP dependency or identify a fixed build.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-30\nVulnerability status: Not vuln for both CVEs under the final advisory's explicit unlisted-product rule.\nCVE-2026-109618: Not vuln; Cisco final v1.9 unlisted-product rule\nCVE-2026-109619: Not vuln; Cisco final v1.9 unlisted-product rule\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-30\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: Cisco advisory v1.9, final, updated 2026-10-28 16:48 GMT",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -40120,9 +40169,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Official public CVE review 2026-10-23"
+          "comment": "Official public review 2026-10-30: final v1.9; explicit not-affected rule for unlisted products, retained from v1.5."
         }
-      ]
+      ],
+      "software_packageVersion": "Cisco final advisory v1.9 (2026-10-28): unlisted-product scope"
     },
     {
       "type": "software_Package",
@@ -41906,30 +41956,30 @@
       "comment": "Official public vendor/upstream evidence independently reviewed 2026-10-22: https://github.com/firefly-iii/firefly-iii/issues/13087#issuecomment-6324447202\nAction statement: Pull the rebuilt container tag and recreate the workload, then verify PHP 8.5.12. Non-container installations must update their own PHP runtime."
     },
     {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:cisco-sa-php-october26-20261022",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0708"
       ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Retained Investigation: Cisco advisory version 1.4 explicitly lists nine current product scopes under investigation and does not explicitly resolve the retained Panoptica scope. A product's absence from the current list is not treated as confirmed non-vulnerability.",
-      "summary": "CVE-2026-109618 assessment: Investigation retained for unresolved Cisco product scopes",
-      "comment": "Public official review 2026-10-23: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq (version 1.4, updated 2026-10-22 23:00 GMT). Nine current products are explicitly under investigation. Panoptica is absent from the updated lists; Cisco's preliminary absence-based indication is not an explicit product confirmation. Separately confirmed affected and not-vulnerable products have been removed from this assessment."
+      "relationshipType": "doesNotAffect",
+      "summary": "CVE-2026-109618 assessment: Not vuln for Cisco Panoptica under the final advisory unlisted-product rule",
+      "comment": "Public official review 2026-10-30: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq (final v1.9, updated 2026-10-28 16:48 GMT). The revision history records the explicit unlisted-product rule from v1.5. Panoptica is not individually named in the final not-vulnerable list. The existing assessment identifier is preserved.",
+      "security_impactStatement": "Cisco final advisory v1.9 explicitly considers products absent from the advisory not affected by the two PHP vulnerabilities. Panoptica is absent; this assessment applies that vendor coverage rule. Cisco does not disclose a technical non-impact justification for this product."
     },
     {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+      "type": "security_VexNotAffectedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:cisco-sa-php-october26-20261022",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0708"
       ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Retained Investigation: Cisco advisory version 1.4 explicitly lists nine current product scopes under investigation and does not explicitly resolve the retained Panoptica scope. A product's absence from the current list is not treated as confirmed non-vulnerability.",
-      "summary": "CVE-2026-109619 assessment: Investigation retained for unresolved Cisco product scopes",
-      "comment": "Public official review 2026-10-23: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq (version 1.4, updated 2026-10-22 23:00 GMT). Nine current products are explicitly under investigation. Panoptica is absent from the updated lists; Cisco's preliminary absence-based indication is not an explicit product confirmation. Separately confirmed affected and not-vulnerable products have been removed from this assessment."
+      "relationshipType": "doesNotAffect",
+      "summary": "CVE-2026-109619 assessment: Not vuln for Cisco Panoptica under the final advisory unlisted-product rule",
+      "comment": "Public official review 2026-10-30: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq (final v1.9, updated 2026-10-28 16:48 GMT). The revision history records the explicit unlisted-product rule from v1.5. Panoptica is not individually named in the final not-vulnerable list. The existing assessment identifier is preserved.",
+      "security_impactStatement": "Cisco final advisory v1.9 explicitly considers products absent from the advisory not affected by the two PHP vulnerabilities. Panoptica is absent; this assessment applies that vendor coverage rule. Cisco does not disclose a technical non-impact justification for this product."
     },
     {
       "type": "security_VexNotAffectedVulnAssessmentRelationship",
@@ -50208,6 +50258,19 @@
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:PHP-0539-20261030",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0539"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in the public Git binaries at dcd8e50fb65121726bb23a686746f68032ff1cb1 (rebuild 11ddfdc9858269b131536f3052648f0a74d95387): PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12, web and Node, JSPI and Asyncify. No npm release, legacy build or deployed Playground instance is confirmed by this assessment.",
+      "summary": "CVE-2026-109618 assessment: Fix for the pinned WordPress Playground PHP 8.2-8.5 Wasm binaries",
+      "comment": "Public official review 2026-10-30: https://github.com/WordPress/wordpress-playground/pull/4487 merged 2026-10-26. Maintainer rebuild confirmation: https://github.com/WordPress/wordpress-playground/pull/4487#issuecomment-6340964082. Immutable web-builds and node-builds trees at dcd8e50fb65121726bb23a686746f68032ff1cb1 contain all 16 scoped Wasm artifacts. Other PHP.wasm product/adapter scopes remain separately assessed."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:ad337f0dad0b",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
@@ -52431,6 +52494,19 @@
       "security_statusNotes": "composer:2 with PHP 8.5.12 (2026-10-29 digest scope)",
       "summary": "CVE-2026-109619 assessment: fixed in the stated runtime/image scope",
       "comment": "Public official-source review on 2026-10-29. The Composer Docker Official Image registry config declares PHP_VERSION=8.5.12 for linux/amd64 and linux/arm64 at the inspected composer:2 digest. Both upstream PHP advisories identify 8.5.12 as fixed. Only the bundled runtime in the inspected image digest is confirmed fixed. This does not assess the standalone Composer library/tool, other image variants, CLI exploitability or existing deployments. Metadata only; no image layers downloaded or executed.\nAction statement: Pull the fixed image digest and recreate jobs or rebuild derived images using the old runtime.\nReadable source review: The official Docker repository and readable image-details page identify the publisher and inspected artifact. No product-specific CVE-fix announcement was found. Fix remains a bundled-runtime determination from publisher registry config and PHP's advisories, not a standalone Composer security release or CLI-exploitability claim."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:PHP-0539-20261030",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0539"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in the public Git binaries at dcd8e50fb65121726bb23a686746f68032ff1cb1 (rebuild 11ddfdc9858269b131536f3052648f0a74d95387): PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12, web and Node, JSPI and Asyncify. No npm release, legacy build or deployed Playground instance is confirmed by this assessment.",
+      "summary": "CVE-2026-109619 assessment: Fix for the pinned WordPress Playground PHP 8.2-8.5 Wasm binaries",
+      "comment": "Public official review 2026-10-30: https://github.com/WordPress/wordpress-playground/pull/4487 merged 2026-10-26. Maintainer rebuild confirmation: https://github.com/WordPress/wordpress-playground/pull/4487#issuecomment-6340964082. Immutable web-builds and node-builds trees at dcd8e50fb65121726bb23a686746f68032ff1cb1 contain all 16 scoped Wasm artifacts. Other PHP.wasm product/adapter scopes remain separately assessed."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
