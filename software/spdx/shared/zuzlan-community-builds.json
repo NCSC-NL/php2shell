@@ -1,0 +1,20 @@
+{
+  "@context": "https://spdx.org/rdf/3.0.1/spdx-context.jsonld",
+  "@graph": [
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:zuzlan-community-builds",
+      "creationInfo": "_:creationinfo-zuzlan-20261031",
+      "name": "Artem Loboda / Zuzlan community builds"
+    },
+    {
+      "type": "CreationInfo",
+      "@id": "_:creationinfo-zuzlan-20261031",
+      "specVersion": "3.0.1",
+      "created": "2026-10-31T00:00:00Z",
+      "createdBy": [
+        "urn:php2shell:inventory:organization:zuzlan-community-builds"
+      ]
+    }
+  ]
+}
