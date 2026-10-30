@@ -7,7 +7,7 @@
 
 | Supplier | Product | Version (see Status) | Status CVE-2026-109618 | Status CVE-2026-109619 | Notes | Links |
 |:---------|:--------|:--------------------:|:----------------------:|:----------------------:|:------|------:|
-|iBabs|iBabs bestuursportaal||Not vuln|Not vuln|PHP is not being used in iBabs. This is confirmed by an email of the supplier.||
+|iBabs|iBabs bestuursportaal||Not vuln|Not vuln|PHP is not being used in iBabs. This is confirmed by an email from the supplier.||
 |Ibexa|Ibexa DXP||Vulnerable|Vulnerable|CVE assessment: Affected when deployed on an affected web-serving PHP runtime; product evidence establishes a PHP web application, web interface, web service or HTTP framework scope, and the PHP defect is below the application layer.<br>The versioned requirements page lists PHP 8.3/8.4 for DXP 5.0, PHP CLI/FPM packages and runtime extensions.|[source](<https://doc.ibexa.co/en/5.0/getting_started/requirements/>)|
 |Icinga GmbH|Icinga Certificate Monitoring||Investigation|Investigation|CVE assessment: PHP relationship confirmed; CVE match unknown<br>The official module guide requires Icinga Web; the release announcement explicitly identifies this PHP module and version support.|[source 1](<https://icinga.com/docs/icinga-certificate-monitoring/latest/doc/02-Installation/>)<br>[source 2](<https://icinga.com/blog/icinga-web-2-14-security-releases-and-module-updates>)|
 |Icinga GmbH|Icinga DB Web||Investigation|Investigation|CVE assessment: PHP relationship confirmed; CVE match unknown<br>The named web module has its own PHP/module requirements and is installed into Icinga Web.|[source](<https://icinga.com/docs/icinga-db-web/latest/doc/02-Installation/From-Source/>)|
