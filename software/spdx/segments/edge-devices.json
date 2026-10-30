@@ -5338,6 +5338,97 @@
       "summary": "CVE-2026-109619 assessment: Vulnerable in the legacy VitalPBX 4.0 Debian 11/PHP 8.1 scope; vendor mitigation available, no vendor patch for this PHP version.",
       "comment": "Public official vendor statements reviewed 2026-10-30. Sources: https://forums.vitalpbx.org/t/php-cve-2026-109618-cve-2026-109619/6481/5; https://forums.vitalpbx.org/t/php-cve-2026-109618-cve-2026-109619/6481/7",
       "security_actionStatement": "Follow the vendor mitigation guidance and plan migration to a supported platform with a verified patched PHP runtime. The vendor states that these mitigations are not a full fix; do not apply the separate Debian 12/PHP 8.2.35 fix claim to PHP 8.1."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0931",
+      "creationInfo": "_:creationinfo",
+      "name": "VitalPBX 4.5 PHP management runtime (Debian 12)",
+      "software_primaryPurpose": "firmware",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0931"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:vitalpbx:cdb51f865789",
+      "software_packageVersion": "VitalPBX 4.5 on Debian 12 with PHP 8.2.35 or a later patched 8.2 release",
+      "summary": "Apply the vendor PHP package update to each Debian 12 installation and verify PHP 8.2.35 or a later patched 8.2 release. Existing installations running older PHP require the update.",
+      "description": "VitalPBX 4.5 management runtime on Debian 12 with PHP 8.2 and NGINX; separate from the legacy VitalPBX 4.0/PHP 8.1 runtime.",
+      "comment": "Inventory record: PHP-0931\nCategory: Appliances and embedded\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed fixed PHP runtime scope\nPublic vendor CVE review: 2026-10-30\nCVE-2026-109618: Fix. The vendor security article and forum announcement dated 2026-10-21 identify PHP 8.2.35 as the released fix for VitalPBX on Debian 12.\nCVE-2026-109619: Fix. The same vendor sources explicitly identify both CVEs and the PHP 8.2.35 package update.\nRemediation: Follow the vendor targeted upgrade procedure for installed PHP 8.2 packages on every Debian 12 server and verify the installed PHP version.\nVersion scope: The official VitalPBX 4.5 release announcement establishes Debian 12 and PHP 8.2. The latest listed application release at review is 4.5.4 R2, dated 2026-10-15; that application version alone is not a fixed PHP runtime threshold.\nLimitations: This Fix status applies to the updated Debian 12/PHP 8.2 runtime only. It does not cover unpatched installations, the legacy VitalPBX 4.0/PHP 8.1 entry PHP-0436, or separately assessed VitXi components. No installed system or runtime was tested; only public vendor documentation was reviewed.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://vitalpbx.com/blog/php-8-2-vulnerability-debian-12/"
+          ],
+          "comment": "Official VitalPBX security article, 21 October 2026: both CVEs, PHP 8.2.35 fix, package update and verification instructions for Debian 12."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://forums.vitalpbx.org/t/critical-security-update-php-8-2-35-now-available-for-debian-12/6482"
+          ],
+          "comment": "Official VitalPBX security announcement, 21 October 2026: PHP 8.2.35 or newer and update instructions for affected Debian 12 systems."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://vitalpbx.com/blog/vitalpbx-4-5-release-enhancing-performance-security-and-scalability/"
+          ],
+          "comment": "Official VitalPBX 4.5 release announcement establishes Debian 12 and PHP 8.2 runtime scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://vitalpbx.com/cbxchangelog/vitalpbx-4-5/"
+          ],
+          "comment": "Official changelog lists 4.5.4 R2 on 15 October 2026; this application release number is not asserted as the PHP fix threshold."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0931",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0931",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "VitalPBX 4.5 distributes PHP 8.2 in its Debian 12 management stack.",
+      "comment": "Runtime relationship established by the official VitalPBX 4.5 release announcement and vendor PHP security update instructions."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0931-official-20261030",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0931"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "VitalPBX confirms that updating its Debian 12 PHP 8.2 packages to PHP 8.2.35 fixes both PHP2Shell CVEs. The fix is a PHP package update; the VitalPBX application version alone does not establish that it has been applied.",
+      "summary": "CVE-2026-109618 assessment: Fix for the updated VitalPBX 4.5 Debian 12/PHP 8.2 runtime.",
+      "comment": "Official vendor evidence reviewed 2026-10-30. Sources: https://vitalpbx.com/blog/php-8-2-vulnerability-debian-12/; https://forums.vitalpbx.org/t/critical-security-update-php-8-2-35-now-available-for-debian-12/6482\nRemediation: Apply the vendor PHP package update and verify PHP 8.2.35 or a later patched 8.2 release on each Debian 12 server. Unpatched installations and legacy PHP 8.1 are outside this fixed scope."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0931-official-20261030",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0931"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "VitalPBX confirms that updating its Debian 12 PHP 8.2 packages to PHP 8.2.35 fixes both PHP2Shell CVEs. The fix is a PHP package update; the VitalPBX application version alone does not establish that it has been applied.",
+      "summary": "CVE-2026-109619 assessment: Fix for the updated VitalPBX 4.5 Debian 12/PHP 8.2 runtime.",
+      "comment": "Official vendor evidence reviewed 2026-10-30. Sources: https://vitalpbx.com/blog/php-8-2-vulnerability-debian-12/; https://forums.vitalpbx.org/t/critical-security-update-php-8-2-35-now-available-for-debian-12/6482\nRemediation: Apply the vendor PHP package update and verify PHP 8.2.35 or a later patched 8.2 release on each Debian 12 server. Unpatched installations and legacy PHP 8.1 are outside this fixed scope."
     }
   ]
 }
