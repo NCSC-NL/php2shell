@@ -13,23 +13,23 @@
     "counts": {
       "tracked": 928,
       "fixed": 164,
-      "vulnerable": 216,
-      "investigation": 346,
+      "vulnerable": 217,
+      "investigation": 345,
       "not_affected": 201,
       "unknown": 1
     },
     "by_cve": {
       "CVE-2026-109618": {
         "fixed": 164,
-        "vulnerable": 216,
-        "investigation": 346,
+        "vulnerable": 217,
+        "investigation": 345,
         "not_affected": 201,
         "unknown": 1
       },
       "CVE-2026-109619": {
         "fixed": 164,
-        "vulnerable": 214,
-        "investigation": 346,
+        "vulnerable": 215,
+        "investigation": 345,
         "not_affected": 203,
         "unknown": 1
       }
@@ -98,23 +98,23 @@
       "counts": {
         "tracked": 928,
         "fixed": 164,
-        "vulnerable": 216,
-        "investigation": 346,
+        "vulnerable": 217,
+        "investigation": 345,
         "not_affected": 201,
         "unknown": 1
       },
       "by_cve": {
         "CVE-2026-109618": {
           "fixed": 164,
-          "vulnerable": 216,
-          "investigation": 346,
+          "vulnerable": 217,
+          "investigation": 345,
           "not_affected": 201,
           "unknown": 1
         },
         "CVE-2026-109619": {
           "fixed": 164,
-          "vulnerable": 214,
-          "investigation": 346,
+          "vulnerable": 215,
+          "investigation": 345,
           "not_affected": 203,
           "unknown": 1
         }

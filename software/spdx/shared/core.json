@@ -2234,7 +2234,9 @@
         "urn:php2shell:inventory:package:PHP-0930",
         "urn:php2shell:inventory:relationship:PHP-0930",
         "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0930-released-20261030",
-        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0930-released-20261030"
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0930-released-20261030",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0436-official-20261030",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0436-official-20261030"
       ]
     }
   ]
