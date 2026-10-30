@@ -1239,10 +1239,7 @@
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0718",
-        "urn:php2shell:inventory:package:PHP-0719",
-        "urn:php2shell:inventory:package:PHP-0720",
-        "urn:php2shell:inventory:package:PHP-0721",
-        "urn:php2shell:inventory:package:PHP-0722"
+        "urn:php2shell:inventory:package:PHP-0720"
       ],
       "relationshipType": "affects",
       "security_statusNotes": "QNAP QSA-26-18 lists these product versions as affected by both PHP2Shell CVEs; fixed versions are to be announced.",
@@ -1257,10 +1254,7 @@
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0718",
-        "urn:php2shell:inventory:package:PHP-0719",
-        "urn:php2shell:inventory:package:PHP-0720",
-        "urn:php2shell:inventory:package:PHP-0721",
-        "urn:php2shell:inventory:package:PHP-0722"
+        "urn:php2shell:inventory:package:PHP-0720"
       ],
       "relationshipType": "affects",
       "security_statusNotes": "QNAP QSA-26-18 lists these product versions as affected by both PHP2Shell CVEs; fixed versions are to be announced.",

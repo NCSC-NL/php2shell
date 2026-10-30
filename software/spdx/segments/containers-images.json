@@ -2663,6 +2663,223 @@
       "security_statusNotes": "composer/satis:latest with PHP 8.4.27 (2026-10-29 digest scope)",
       "summary": "CVE-2026-109619 assessment: fixed in the stated runtime/image scope",
       "comment": "Public official-source review on 2026-10-29. The Satis upstream README names composer/satis as its official published container. Its inspected latest digest declares PHP_VERSION=8.4.27 in registry config for linux/amd64 and linux/arm64, matching both upstream PHP fixed-version advisories. Fix applies to the inspected published container built from the official recipe. The moving build recipe alone, standalone Satis, older images, CLI exploitability and existing deployments are not assessed. Metadata only; no image layers downloaded or executed.\nAction statement: Pull the fixed container digest and recreate jobs or rebuild derived images using older PHP.\nReadable source review: The official README identifies composer/satis as the publisher's image and the Dockerfile establishes its PHP runtime lineage. Neither is a CVE-fix announcement, and no stronger product-specific announcement was found. Fix remains based on the inspected image digest's PHP 8.4.27 registry config and PHP's advisories."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0928",
+      "creationInfo": "_:creationinfo",
+      "name": "Spryker spryker-php runtime images",
+      "software_packageVersion": "20261021: PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0928"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:spryker-systems-gmbh:24b1ab6feb3d",
+      "summary": "Rebuild and redeploy using the vendor procedure; normal deployments may reuse cached images. Older PHP branches are outside this fix scope.",
+      "description": "Fixed distribution scope of PHP-0159 (Spryker Commerce OS).",
+      "comment": "Inventory record: PHP-0928\nParent inventory record: PHP-0159\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nSource accessed: 2026-10-30\nPHP version scope: 20261021: PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12\nLimitations: Only the patched PHP 8.2-8.5 runtime image scope is fixed. Older PHP branches and existing deployments using cached images are not covered.\nRemediation: Rebuild and redeploy using the vendor security-update procedure; a normal deployment can reuse a cached image.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://docs.spryker.com/docs/about/all/releases/image-releases/spryker-php/release-notes-spryker-php-20261021"
+          ],
+          "comment": "Public official source reviewed 2026-10-30."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0928",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0928",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor image distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of PHP-0159; other deployments are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0928-released-20261030",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0928"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Spryker release 20261021 updates the supported PHP runtime images to fix both CVEs.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://docs.spryker.com/docs/about/all/releases/image-releases/spryker-php/release-notes-spryker-php-20261021\nAction statement: Rebuild and redeploy using the vendor security-update procedure; a normal deployment can reuse a cached image."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0928-released-20261030",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0928"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Spryker release 20261021 updates the supported PHP runtime images to fix both CVEs.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://docs.spryker.com/docs/about/all/releases/image-releases/spryker-php/release-notes-spryker-php-20261021\nAction statement: Rebuild and redeploy using the vendor security-update procedure; a normal deployment can reuse a cached image."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0929",
+      "creationInfo": "_:creationinfo",
+      "name": "Mautic official Docker images (PHP security rebuilds)",
+      "software_packageVersion": "Mautic 5 / 6 / 7 Docker image rebuilds announced 2026-10-21",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0929"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:mautic-project:ee4842c8fff2",
+      "summary": "Pull and recreate the announced security rebuilds. Historic or cached images and independent PHP installations are outside this fix scope.",
+      "description": "Fixed distribution scope of PHP-0295 (Mautic).",
+      "comment": "Inventory record: PHP-0929\nParent inventory record: PHP-0295\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nSource accessed: 2026-10-30\nPHP version scope: Mautic 5 / 6 / 7 Docker image rebuilds announced 2026-10-21\nLimitations: Fix is limited to the announced security rebuilds, not every historic or cached tag. Non-container installations require a separately patched PHP runtime.\nRemediation: Pull and recreate the announced patched Docker images and verify the serving PHP runtime.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://mautic.org/blog/critical-php-security-release-today-please-get-your-mautic-servers-ready/"
+          ],
+          "comment": "Public official source reviewed 2026-10-30."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0929",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0929",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor image distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of PHP-0295; other deployments are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0929-released-20261030",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0929"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Mautic confirms security rebuilds of its 5, 6 and 7 Docker images were released on 2026-10-21 following the fixes for both CVEs.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://mautic.org/blog/critical-php-security-release-today-please-get-your-mautic-servers-ready/\nAction statement: Pull and recreate the announced patched Docker images and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0929-released-20261030",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0929"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Mautic confirms security rebuilds of its 5, 6 and 7 Docker images were released on 2026-10-21 following the fixes for both CVEs.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://mautic.org/blog/critical-php-security-release-today-please-get-your-mautic-servers-ready/\nAction statement: Pull and recreate the announced patched Docker images and verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0930",
+      "creationInfo": "_:creationinfo",
+      "name": "SnappyMail official Docker image (PHP2Shell rebuild)",
+      "software_packageVersion": "v2.38.2.1 Docker release, published 2026-10-23",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0930"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:snappymail-project:90169daed163",
+      "summary": "Pull and recreate the v2.38.2.1 Docker release; updating application files alone does not patch an independently installed PHP runtime.",
+      "description": "Fixed distribution scope of PHP-0289 (SnappyMail).",
+      "comment": "Inventory record: PHP-0930\nParent inventory record: PHP-0289\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nSource accessed: 2026-10-30\nPHP version scope: v2.38.2.1 Docker release, published 2026-10-23\nLimitations: Fix applies to the Docker release. Updating SnappyMail application files alone does not update an independently installed PHP runtime.\nRemediation: Pull and recreate the container from the v2.38.2.1 Docker release.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/the-djmaze/snappymail/releases/tag/v2.38.2.1"
+          ],
+          "comment": "Public official source reviewed 2026-10-30."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/the-djmaze/snappymail/issues/2085#issuecomment-6361614495"
+          ],
+          "comment": "Public official source reviewed 2026-10-30."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/the-djmaze/snappymail/actions/runs/39929891169"
+          ],
+          "comment": "Public official source reviewed 2026-10-30."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0930",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0930",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor image distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of PHP-0289; other deployments are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0930-released-20261030",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0930"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "The SnappyMail maintainer released v2.38.2.1 specifically as the Docker PHP2Shell fix; its linked publication workflow completed successfully.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://github.com/the-djmaze/snappymail/releases/tag/v2.38.2.1\nAction statement: Pull and recreate the container from the v2.38.2.1 Docker release."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0930-released-20261030",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0930"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "The SnappyMail maintainer released v2.38.2.1 specifically as the Docker PHP2Shell fix; its linked publication workflow completed successfully.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified released version",
+      "comment": "Public official source reviewed 2026-10-30: https://github.com/the-djmaze/snappymail/releases/tag/v2.38.2.1\nAction statement: Pull and recreate the container from the v2.38.2.1 Docker release."
     }
   ]
 }
