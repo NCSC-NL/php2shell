@@ -3095,7 +3095,7 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:getpagespeed:5d1f0c2a9b3e",
-      "summary": "GetPageSpeed released fixed PHP 5.6 to 8.4 RPMs for CentOS 7 / EL7, including backports for the branches upstream no longer supports (5.6 to 8.1).",
+      "summary": "SAFETY WARNING: GetPageSpeed terms describe modifying served HTML in unlicensed Everpatch PHP installations. Review GETPAGESPEED_SAFETY_NOTICE.md before installation. GetPageSpeed released fixed PHP 5.6 to 8.4 RPMs for CentOS 7 / EL7, including backports for the branches upstream no longer supports (5.6 to 8.1).",
       "description": "Remi-compatible EL7 PHP RPMs (base-name and software collection packages)",
       "externalRef": [
         {
@@ -3178,7 +3178,7 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:getpagespeed:5d1f0c2a9b3e",
-      "summary": "GetPageSpeed released PHP2Shell-fixed DEB packages for the specified PHP branches on Ubuntu 18.04/20.04 and Debian 10, on amd64.",
+      "summary": "SAFETY WARNING: GetPageSpeed terms describe modifying served HTML in unlicensed Everpatch PHP installations. Review GETPAGESPEED_SAFETY_NOTICE.md before installation. GetPageSpeed released PHP2Shell-fixed DEB packages for the specified PHP branches on Ubuntu 18.04/20.04 and Debian 10, on amd64.",
       "description": "GetPageSpeed packaged PHP web runtimes and CLI for Ubuntu bionic/focal and Debian buster, amd64 (x86_64)",
       "externalRef": [
         {

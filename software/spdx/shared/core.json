@@ -2240,7 +2240,15 @@
         "urn:php2shell:inventory:package:PHP-0931",
         "urn:php2shell:inventory:relationship:PHP-0931",
         "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0931-official-20261030",
-        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0931-official-20261030"
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0931-official-20261030",
+        "urn:php2shell:inventory:package:PHP-0932",
+        "urn:php2shell:inventory:relationship:PHP-0932",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:zuzlan-php56-el6-i686-20261031",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:zuzlan-php56-el6-i686-20261031",
+        "urn:php2shell:inventory:package:PHP-0933",
+        "urn:php2shell:inventory:relationship:PHP-0933",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:zuzlan-php80-el7-x86-64-20261031",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:zuzlan-php80-el7-x86-64-20261031"
       ]
     }
   ]

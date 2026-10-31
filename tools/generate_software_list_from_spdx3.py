@@ -16,6 +16,7 @@ from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlsplit
 
 TITLE = "List of software with PHP dependency potentially affected by php2shell CVEs"
 UPDATES_TITLE = "Software product status update history"
@@ -137,6 +138,11 @@ def markdown_cell(value: Any) -> str:
 
 
 def markdown_link(label: str, url: str) -> str:
+    hostname = (urlsplit(url).hostname or "").lower().rstrip(".")
+    if hostname == "getpagespeed.com" or hostname.endswith(".getpagespeed.com"):
+        reference = re.sub(r"^http", "hxxp", ascii_text(url), flags=re.IGNORECASE)
+        reference = re.sub(r"getpagespeed\.com", "getpagespeed[.]com", reference, flags=re.IGNORECASE)
+        return f"{markdown_cell(label)}: `{markdown_cell(reference)}` (link disabled)"
     return f"[{markdown_cell(label)}](<{ascii_text(url)}>)"
 
 
@@ -355,6 +361,14 @@ def render_bucket(bucket: str, cves: list[str], entries: list[dict[str, str]]) -
         "",
         *table_header(cves),
     ]
+    if any(entry["supplier"] == "GetPageSpeed" for entry in entries):
+        lines[1:1] = [
+            "",
+            "> [!CAUTION]",
+            "> **GetPageSpeed: HTML modification and service-blocking risk.**",
+            "> Review the [documented safety concerns](../GETPAGESPEED_SAFETY_NOTICE.md) before using these packages. Vendor links are disabled. The CVE status does not assess these additional behaviours.",
+            "",
+        ]
     for entry in entries:
         lines.append(table_row(entry, cves))
     lines.append("")

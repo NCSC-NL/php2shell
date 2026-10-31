@@ -1,0 +1,177 @@
+{
+  "@context": "https://spdx.org/rdf/3.0.1/spdx-context.jsonld",
+  "@graph": [
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0932",
+      "creationInfo": "_:creationinfo-zuzlan-20261031",
+      "name": "Zuzlan community PHP 5.6 RPMs for CentOS 6.10 i686",
+      "software_primaryPurpose": "platform",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0932"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:zuzlan-community-builds",
+      "summary": "Maintainer-published PHP2Shell backport RPMs for CentOS 6.10 i686, with source and build materials. Full regression suites retain failures.",
+      "description": "Independent community PHP RPM build for CentOS 6.10 i686. It is not an official CentOS or Remi distribution release.",
+      "comment": "Inventory record: PHP-0932\nEvidence status: Maintainer-reported backport availability\nDeployment status: Not assessed\nPHP version scope: 5.6.40-47.3.el6.local for CentOS 6.10 i686 only\nLimitations: 33 PHP binary RPMs and one source RPM. The October minimal backport from Anton Barinov is combined with Remi security patches and local allocation/lifecycle corrections. Focused Apache/FPM and LDAP checks passed in the supplied report. Full suites retain 55 NTS/CGI, 48 ZTS and 11 FPM failures. Regression failures remain unresolved. No general production-readiness or dependency-security claim is made. Both builds disable session upload progress. OOM can terminate a worker without application cleanup. PHP and CentOS are EOL. Inclusion does not establish NCSC endorsement or eliminate unrelated vulnerabilities.\nPatch owner: PHP and upstream backport authors for the source fixes. Artem Loboda for the community integration and release.\nCVE assessment limit: The fixedIn entries record the maintainer-provided backport for each named RPM build, based on linked source and reports. Complete exploit coverage has not been demonstrated.\nSource accessed: 2026-10-31",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/Zuzlan/php56-centos6-i686-security-backports/releases/tag/v5.6.40-47.3-el6-i686"
+          ]
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/Zuzlan/php56-centos6-i686-security-backports/blob/main/BUILD_REPORT.md"
+          ]
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/Zuzlan/php56-centos6-i686-security-backports/blob/main/docs/VALIDATION.md"
+          ]
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/Zuzlan/php56-centos6-i686-security-backports/blob/main/docs/source-provenance.json"
+          ]
+        }
+      ],
+      "software_packageVersion": "5.6.40-47.3.el6.local"
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0932",
+      "creationInfo": "_:creationinfo-zuzlan-20261031",
+      "from": "urn:php2shell:inventory:package:PHP-0932",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The named community RPM set contains the PHP core runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:zuzlan-php56-el6-i686-20261031",
+      "creationInfo": "_:creationinfo-zuzlan-20261031",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0932"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Maintainer-reported minimal EOL mitigation in 5.6.40-47.3.el6.local for CentOS 6.10 i686. This assessment is limited to the named community artifacts. It does not describe unmodified CentOS packages, all PHP installations, deployment or service restart.",
+      "summary": "CVE-2026-109618: maintainer-reported backport in 5.6.40-47.3.el6.local for CentOS 6.10 i686.",
+      "comment": "Evidence: https://github.com/Zuzlan/php56-centos6-i686-security-backports/releases/tag/v5.6.40-47.3-el6-i686 and linked build/source reports. Check package release, architecture, signatures and the documented limitations. Rehearse the target workload before deployment. This is a package-availability record, not a claim that existing deployments are patched."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:zuzlan-php56-el6-i686-20261031",
+      "creationInfo": "_:creationinfo-zuzlan-20261031",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0932"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Maintainer-reported minimal EOL mitigation in 5.6.40-47.3.el6.local for CentOS 6.10 i686. This assessment is limited to the named community artifacts. It does not describe unmodified CentOS packages, all PHP installations, deployment or service restart.",
+      "summary": "CVE-2026-109619: maintainer-reported backport in 5.6.40-47.3.el6.local for CentOS 6.10 i686.",
+      "comment": "Evidence: https://github.com/Zuzlan/php56-centos6-i686-security-backports/releases/tag/v5.6.40-47.3-el6-i686 and linked build/source reports. Check package release, architecture, signatures and the documented limitations. Rehearse the target workload before deployment. This is a package-availability record, not a claim that existing deployments are patched."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0933",
+      "creationInfo": "_:creationinfo-zuzlan-20261031",
+      "name": "Zuzlan community PHP 8.0 RPMs for CentOS 7.9 x86_64",
+      "software_primaryPurpose": "platform",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0933"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:zuzlan-community-builds",
+      "summary": "Maintainer-provided PHP2Shell backport RPMs for CentOS 7.9 x86_64, with source and build materials. Published as a locally validated upgrade candidate.",
+      "description": "Independent community PHP RPM build for CentOS 7.9 x86_64. It is not an official CentOS or Remi distribution release.",
+      "comment": "Inventory record: PHP-0933\nEvidence status: Maintainer-reported backport availability\nDeployment status: Not assessed\nPHP version scope: 8.0.30-100.local.sec20261030.el7 for CentOS 7.9 x86_64 only\nLimitations: 19 binary RPMs and one source RPM. The official PHP October EOL mitigation is carried through Remi, pinned through 2026-10-29. The reported NTS suite has 14338 PASS, 0 FAIL, 38 XFAIL, 4 WARN and 2806 SKIP. Recorded installed-RPM checks have 45 CLI and 10 Apache passes. Upgrade and recovery checks were container-based. Production packages and applications were unavailable. FPM is not delivered. Both builds disable session upload progress. OOM can terminate a worker without application cleanup. PHP and CentOS are EOL. Inclusion does not establish NCSC endorsement or eliminate unrelated vulnerabilities.\nPatch owner: PHP and upstream backport authors for the source fixes. Artem Loboda for the community integration and release.\nCVE assessment limit: The fixedIn entries record the maintainer-provided backport for each named RPM build, based on linked source and reports. Complete exploit coverage has not been demonstrated.\nSource accessed: 2026-10-31",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/Zuzlan/php80-centos7-x86_64-security-backports/releases/tag/v8.0.30-100-sec20261030-el7-x86_64"
+          ]
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/Zuzlan/php80-centos7-x86_64-security-backports/blob/main/BUILD_REPORT.md"
+          ]
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/Zuzlan/php80-centos7-x86_64-security-backports/blob/main/KNOWN_LIMITATIONS.md"
+          ]
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/Zuzlan/php80-centos7-x86_64-security-backports/blob/main/sources/october-equivalence.json"
+          ]
+        }
+      ],
+      "software_packageVersion": "8.0.30-100.local.sec20261030.el7"
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0933",
+      "creationInfo": "_:creationinfo-zuzlan-20261031",
+      "from": "urn:php2shell:inventory:package:PHP-0933",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The named community RPM set contains the PHP core runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:zuzlan-php80-el7-x86-64-20261031",
+      "creationInfo": "_:creationinfo-zuzlan-20261031",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0933"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Maintainer-reported minimal EOL mitigation in 8.0.30-100.local.sec20261030.el7 for CentOS 7.9 x86_64. This assessment is limited to the named community artifacts. It does not describe unmodified CentOS packages, all PHP installations, deployment or service restart.",
+      "summary": "CVE-2026-109618: maintainer-reported backport in 8.0.30-100.local.sec20261030.el7 for CentOS 7.9 x86_64.",
+      "comment": "Evidence: https://github.com/Zuzlan/php80-centos7-x86_64-security-backports/releases/tag/v8.0.30-100-sec20261030-el7-x86_64 and linked build/source reports. Check package release, architecture, signatures and the documented limitations. Rehearse the target workload before deployment. This is a package-availability record, not a claim that existing deployments are patched."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:zuzlan-php80-el7-x86-64-20261031",
+      "creationInfo": "_:creationinfo-zuzlan-20261031",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0933"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Maintainer-reported minimal EOL mitigation in 8.0.30-100.local.sec20261030.el7 for CentOS 7.9 x86_64. This assessment is limited to the named community artifacts. It does not describe unmodified CentOS packages, all PHP installations, deployment or service restart.",
+      "summary": "CVE-2026-109619: maintainer-reported backport in 8.0.30-100.local.sec20261030.el7 for CentOS 7.9 x86_64.",
+      "comment": "Evidence: https://github.com/Zuzlan/php80-centos7-x86_64-security-backports/releases/tag/v8.0.30-100-sec20261030-el7-x86_64 and linked build/source reports. Check package release, architecture, signatures and the documented limitations. Rehearse the target workload before deployment. This is a package-availability record, not a claim that existing deployments are patched."
+    }
+  ]
+}
