@@ -1,5 +1,9 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
+> [!CAUTION]
+> **GetPageSpeed: HTML modification and service-blocking risk.**
+> Review the [documented safety concerns](GETPAGESPEED_SAFETY_NOTICE.md) before using these packages. Vendor links are disabled in the rendered inventory. The CVE status does not assess these additional behaviours.
+
 Operational information: 28 October 2026 16:46 CET<br>
 Software list last status update: 31 October 2026 01:30 CEST<br>
 ## TLP:CLEAR

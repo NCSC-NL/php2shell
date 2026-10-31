@@ -1,5 +1,9 @@
 # Overview of software potentially affected by php2shell
 
+> [!CAUTION]
+> **GetPageSpeed: HTML modification and service-blocking risk.**
+> Review the [documented safety concerns](../GETPAGESPEED_SAFETY_NOTICE.md) before using these packages. Vendor links are disabled in the rendered inventory. The CVE status does not assess these additional behaviours.
+
 This directory contains an overview of software products that may be affected by CVE-2026-109618 and CVE-2026-109619. PHP's official advisory states that all PHP installations serving web requests are at risk and identifies PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 as fixed upstream releases. Product entries should still be treated as investigation leads until they are backed by an upstream or vendor source, or by direct primary research scoped to a named product and runtime, because products may ship embedded runtimes, delayed rebuilds or vendor backports.
 
 Please note that these vulnerabilities may also occur in custom PHP applications deployed within your organisation. Those occurrences are not registered in this overview.
