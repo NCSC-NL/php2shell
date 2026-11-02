@@ -66,6 +66,11 @@ README so it remains valid after the contribution branch is merged or deleted.
 
 History defaults to `HEAD`. On a pull request branch, fetch the latest `main`, merge it before editing SPDX, and add `--history-ref origin/main` to the command above. This preserves the mainline update timestamps instead of treating merges into the PR branch as new status updates. Status changes not yet present on the selected history reference are included as pending updates.
 
+Historical snapshots retain their original assessments. Exact package-ID and summary
+matches in `HISTORICAL_SUMMARY_CORRECTIONS` apply editorial corrections when rendering
+those snapshots, without changing historical dates, versions or statuses. Correct
+current wording in the SPDX source fragments as well.
+
 When only a filename is provided, the tool reads it from `software/spdx/`. An explicit path may also be provided.
 
 ## `generate_inventory_statistics.py`

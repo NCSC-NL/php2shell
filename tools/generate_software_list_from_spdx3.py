@@ -42,6 +42,31 @@ VEX_STATUS_MAP = {
     "fixedIn": "Fix",
     "doesNotAffect": "Not vuln",
 }
+# Correct editorial wording in immutable snapshots without changing their assessments.
+HISTORICAL_SUMMARY_CORRECTIONS = {
+    (
+        "urn:php2shell:inventory:package:PHP-0630",
+        "PHP is not being used in iBabs. This is confirmed by an email of the supplier.",
+    ): "PHP is not being used in iBabs. This is confirmed by an email from the supplier.",
+    (
+        "urn:php2shell:inventory:package:PHP-0596",
+        "PHP documentation confirms split optional OpenBSD packages; "
+        "dated7.9 release notes list four PHP source-version families.",
+    ): (
+        "PHP documentation confirms split optional OpenBSD packages; "
+        "dated 7.9 release notes list four PHP source-version families."
+    ),
+    (
+        "urn:php2shell:inventory:package:PHP-0031",
+        "Versioned release entries distinguish the PHP8.5.11/Phalcon5.22.1 declaration "
+        "in26.7.6 from the newer26.7.7 release identity; no patch payload is inferred "
+        "from absence of a changed-package line.",
+    ): (
+        "Versioned release entries distinguish the PHP 8.5.11/Phalcon 5.22.1 declaration "
+        "in 26.7.6 from the newer 26.7.7 release identity; no patch payload is inferred "
+        "from absence of a changed-package line."
+    ),
+}
 
 
 class GenerationError(ValueError):
@@ -235,6 +260,7 @@ def package_notes(package: dict[str, Any], status_notes: list[str]) -> str:
         parts.append("CVE assessment: " + "; ".join(status_notes))
     summary = raw_text(package.get("summary"))
     if summary:
+        summary = HISTORICAL_SUMMARY_CORRECTIONS.get((package.get("spdxId"), summary), summary)
         parts.append(summary)
     return markdown_cell("\n".join(parts))
 
