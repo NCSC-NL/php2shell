@@ -6679,7 +6679,7 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:ibabs:d92a87126ecf",
-      "summary": "PHP is not being used in iBabs. This is confirmed by an email of the supplier.",
+      "summary": "PHP is not being used in iBabs. This is confirmed by an email from the supplier.",
       "comment": "Source: Supplier email\nEvidence: Supplier confirmed that PHP is not used in iBabs.\nVulnerability status: Not affected because the PHP component is not present."
     },
     {
