@@ -123,15 +123,18 @@ update today, replacing today's committed bar or adding a new one. A periodic ru
 without inventory changes does not add a bar. The README totals and summary always
 use the current local inventory. All historical dates are assessed against the
 current inventory's CVE set; missing assessments count as unknown. JSON schema
-version 2 stores current totals in `current` and the selected update dates in
+version 3 stores current totals in `current` and the selected update dates in
 `daily`; `days` is the requested number of update dates, not a calendar window.
 
 Each unique SPDX package ID counts as one product/component entry, matching the
 software list. Overall categories are mutually exclusive: any `Vulnerable` status
-takes priority, then any `Investigation`, then missing or unrecognized assessments.
+takes priority, then any `Investigation`, then `Runtime-dependent`, then missing or unrecognized assessments.
 A product is `Fixed` only if all tracked CVEs are `Fix` or `Not vuln` and at least
 one is `Fix`. It is `Not affected` only if all are `Not vuln`. The status counts
 therefore sum to the tracked total, without counting a product twice for two CVEs.
+`Runtime-dependent` is a presentation status derived from `hasProvidedDependency`,
+`hasOptionalDependency`, or containment beneath the PHP runtime family; it is not
+an SPDX VEX status and does not propagate affectedness or fixedness automatically.
 Fixed counts describe the listed version scope, not all deployments.
 
 The statistics section has its own UTC snapshot date. Refreshing it preserves the

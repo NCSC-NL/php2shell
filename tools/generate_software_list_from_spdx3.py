@@ -42,6 +42,9 @@ VEX_STATUS_MAP = {
     "fixedIn": "Fix",
     "doesNotAffect": "Not vuln",
 }
+RUNTIME_STATUS = "Runtime-dependent"
+RUNTIME_RELATIONSHIPS = {"hasProvidedDependency", "hasOptionalDependency"}
+PHP_RUNTIME_FAMILY_ID = "urn:php2shell:inventory:package:PHP-0037"
 # Correct editorial wording in immutable snapshots without changing their assessments.
 HISTORICAL_SUMMARY_CORRECTIONS = {
     (
@@ -221,6 +224,29 @@ def package_statuses(
     return dict(statuses), dict(notes)
 
 
+def runtime_scoped_packages(graph: list[dict[str, Any]]) -> set[str]:
+    """Return packages whose CVE status belongs to a supplied/containing runtime."""
+    scoped = set()
+    contains: defaultdict[str, set[str]] = defaultdict(set)
+    for element in graph_by_type(graph, "Relationship"):
+        relationship_type = raw_text(element.get("relationshipType"))
+        source = raw_text(element.get("from"))
+        targets = element.get("to") or []
+        if source and relationship_type in RUNTIME_RELATIONSHIPS:
+            scoped.add(source)
+        if source and relationship_type == "contains":
+            contains[source].update(raw_text(target) or "" for target in targets)
+
+    pending = list(contains.get(PHP_RUNTIME_FAMILY_ID, set()))
+    while pending:
+        package_id = pending.pop()
+        if not package_id or package_id in scoped:
+            continue
+        scoped.add(package_id)
+        pending.extend(contains.get(package_id, set()))
+    return scoped
+
+
 def external_links(package: dict[str, Any]) -> str:
     refs = package.get("externalRef") or []
     urls: list[str] = []
@@ -290,6 +316,15 @@ def build_entry_map(document: dict[str, Any]) -> tuple[list[str], dict[str, dict
     vulnerabilities = vulnerability_ids(graph)
     cves = sorted(vulnerabilities.values())
     statuses, status_notes = package_statuses(graph, vulnerabilities)
+    for package_id in runtime_scoped_packages(graph):
+        used_runtime_fallback = False
+        for cve in cves:
+            if cve not in statuses.setdefault(package_id, {}):
+                statuses[package_id][cve] = RUNTIME_STATUS
+                used_runtime_fallback = True
+        note = "Runtime-scoped: assess the linked PHP runtime or deployment; no direct product VEX status is asserted."
+        if used_runtime_fallback and note not in status_notes.setdefault(package_id, []):
+            status_notes[package_id].append(note)
     entries: dict[str, dict[str, str]] = {}
 
     for package in graph_by_type(graph, "software_Package"):

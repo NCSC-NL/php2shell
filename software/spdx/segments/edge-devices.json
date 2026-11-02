@@ -463,6 +463,14 @@
             "https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/srv/salt/omv/deploy/phpfpm/10webgui.sls"
           ],
           "comment": "Official project/vendor scope evidence"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityOther",
+          "locator": [
+            "https://github.com/openmediavault/openmediavault/issues/2305"
+          ],
+          "comment": "Official project issue with maintainer participation and observed PHP-FPM web-GUI runtime evidence; not a fleet-wide VEX determination."
         }
       ]
     },

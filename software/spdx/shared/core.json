@@ -1301,16 +1301,12 @@
         "urn:php2shell:inventory:relationship:PHP-0627:parent",
         "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
         "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
-        "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:5d17eab4e4a1",
-        "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:65f7ee24fb62",
         "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:1d89b3eaf66f",
         "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:24f98eaee735",
         "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:9fe2f4bd84e1",
         "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:6f4f7fc812ed",
         "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:4292cdcd32c3",
         "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:f70b575bbd8c",
-        "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:5d17eab4e4a1",
-        "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:65f7ee24fb62",
         "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:1d89b3eaf66f",
         "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:24f98eaee735",
         "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:9fe2f4bd84e1",
@@ -2240,7 +2236,16 @@
         "urn:php2shell:inventory:package:PHP-0931",
         "urn:php2shell:inventory:relationship:PHP-0931",
         "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0931-official-20261030",
-        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0931-official-20261030"
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0931-official-20261030",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:independent-runtime-artifacts-20261102",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:non-web-execution-scope-20261102",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:independent-runtime-artifacts-20261102",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:non-web-execution-scope-20261102",
+        "urn:php2shell:inventory:relationship:PHP-0019:runtime-scope-20261102",
+        "urn:php2shell:inventory:relationship:PHP-0520:runtime-scope-20261102",
+        "urn:php2shell:inventory:relationship:PHP-0521:runtime-scope-20261102",
+        "urn:php2shell:inventory:relationship:PHP-0569:runtime-scope-20261102",
+        "urn:php2shell:inventory:relationship:PHP-0614:runtime-scope-20261102"
       ]
     }
   ]
