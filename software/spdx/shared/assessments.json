@@ -332,7 +332,7 @@
       "comment": "Public vendor assessment reviewed 2026-10-28; replaces the earlier 'affects' assessment (fixed releases not yet announced). The advisory now reports active exploitation against internet-exposed management interfaces and lists fixed thresholds for all supported branches; six listed hotfixes still have 2026-10-29/30 ETAs. The 2026-10-28 timeline entry says 11.2.7-h23, 11.2.13-h4 and 11.2.16-h1 were released. Sources: https://security.paloaltonetworks.com/CVE-2026-109618\nAction statement: Upgrade PAN-OS and Panorama to an available fixed hotfix for the deployed branch, or to a later fixed release when the branch-specific hotfix becomes available. The advisory still lists ETAs for 12.1.4-h13, 12.1.10-h3, 11.2.4-h23, 11.1.7-h12, 10.2.7-h39 and 10.2.10-h42. Until upgraded, limit HTTPS web UI and XML API access to trusted internal IP addresses; Threat Prevention signatures (Applications and Threats content 9162, 9163, 9164 and later) are a mitigation, not a software fix."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:calif-confirmed-php-apps-20261021",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
@@ -884,14 +884,14 @@
         "urn:php2shell:inventory:package:PHP-0718",
         "urn:php2shell:inventory:package:PHP-0720"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "QNAP QSA-26-18 lists these product versions as affected by both PHP2Shell CVEs; fixed versions are to be announced.",
-      "summary": "CVE-2026-109618 assessment: QNAP QSA-26-18 lists these product versions as affected by both PHP2Shell CVEs; fixed versions are to be announced.",
-      "comment": "Added from QNAP Security Advisory QSA-26-18 released 2026-10-22 and reviewed 2026-10-22. The advisory states that PHP is used in web components of QNAP operating systems and several QNAP applications, lists these product versions as affected, and says fixed versions will be published later. The QuMagie scope is taken from the advisory's explicit affected-products header; the rendered affected-products table on the same page omits a separate QuMagie row.",
-      "security_actionStatement": "Keep affected devices off the internet where possible, disable direct exposure and unnecessary PHP-based services, use VPN and trusted-network restrictions, and apply QNAP fixes when released."
+      "relationshipType": "underInvestigationFor",
+      "security_statusNotes": "Earlier official regional QSA-26-18 content names these versions as affected, while the current canonical resolved advisory omits them without documenting a fix or a not-affected conclusion.",
+      "summary": "CVE-2026-109618 assessment: conflicting current QNAP advisory presentations require clarification",
+      "comment": "QNAP Security Advisory QSA-26-18 reviewed 2026-11-02. Earlier official regional content names QuMagie 2.10.1 and earlier and QNE (ADRA) 1.0.7 and earlier as affected. The current canonical resolved advisory omits both products and publishes neither fixed versions nor not-affected conclusions for them. Sources: https://www.qnap.com/en/security-advisory/qsa-26-18 and https://www.qnap.com/th-th/security-advisory/qsa-26-18.",
+      "security_actionStatement": "Request QNAP clarification and continue applying the vendor's exposure-reduction guidance until the affected/fixed status is reconciled."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:qnap-qsa-26-18-20261022",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
@@ -899,11 +899,11 @@
         "urn:php2shell:inventory:package:PHP-0718",
         "urn:php2shell:inventory:package:PHP-0720"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "QNAP QSA-26-18 lists these product versions as affected by both PHP2Shell CVEs; fixed versions are to be announced.",
-      "summary": "CVE-2026-109619 assessment: QNAP QSA-26-18 lists these product versions as affected by both PHP2Shell CVEs; fixed versions are to be announced.",
-      "comment": "Added from QNAP Security Advisory QSA-26-18 released 2026-10-22 and reviewed 2026-10-22. The advisory states that PHP is used in web components of QNAP operating systems and several QNAP applications, lists these product versions as affected, and says fixed versions will be published later. The QuMagie scope is taken from the advisory's explicit affected-products header; the rendered affected-products table on the same page omits a separate QuMagie row.",
-      "security_actionStatement": "Keep affected devices off the internet where possible, disable direct exposure and unnecessary PHP-based services, use VPN and trusted-network restrictions, and apply QNAP fixes when released."
+      "relationshipType": "underInvestigationFor",
+      "security_statusNotes": "Earlier official regional QSA-26-18 content names these versions as affected, while the current canonical resolved advisory omits them without documenting a fix or a not-affected conclusion.",
+      "summary": "CVE-2026-109619 assessment: conflicting current QNAP advisory presentations require clarification",
+      "comment": "QNAP Security Advisory QSA-26-18 reviewed 2026-11-02. Earlier official regional content names QuMagie 2.10.1 and earlier and QNE (ADRA) 1.0.7 and earlier as affected. The current canonical resolved advisory omits both products and publishes neither fixed versions nor not-affected conclusions for them. Sources: https://www.qnap.com/en/security-advisory/qsa-26-18 and https://www.qnap.com/th-th/security-advisory/qsa-26-18.",
+      "security_actionStatement": "Request QNAP clarification and continue applying the vendor's exposure-reduction guidance until the affected/fixed status is reconciled."
     },
     {
       "type": "security_VexUnderInvestigationVulnAssessmentRelationship",

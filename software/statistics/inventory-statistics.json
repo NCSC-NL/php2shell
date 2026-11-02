@@ -2,7 +2,7 @@
   "schema_version": 3,
   "as_of_date": "2026-11-02",
   "timezone": "UTC",
-  "history_ref": "origin/main",
+  "history_ref": "HEAD",
   "cves": [
     "CVE-2026-109618",
     "CVE-2026-109619"
@@ -12,26 +12,26 @@
   "current": {
     "counts": {
       "tracked": 929,
-      "fixed": 165,
-      "vulnerable": 217,
-      "investigation": 94,
+      "fixed": 166,
+      "vulnerable": 214,
+      "investigation": 96,
       "runtime_dependent": 238,
       "not_affected": 214,
       "unknown": 1
     },
     "by_cve": {
       "CVE-2026-109618": {
-        "fixed": 165,
-        "vulnerable": 217,
-        "investigation": 94,
+        "fixed": 166,
+        "vulnerable": 214,
+        "investigation": 96,
         "runtime_dependent": 238,
         "not_affected": 214,
         "unknown": 1
       },
       "CVE-2026-109619": {
-        "fixed": 165,
-        "vulnerable": 215,
-        "investigation": 95,
+        "fixed": 166,
+        "vulnerable": 212,
+        "investigation": 97,
         "runtime_dependent": 237,
         "not_affected": 216,
         "unknown": 1
@@ -106,26 +106,26 @@
       "source": "working-tree",
       "counts": {
         "tracked": 929,
-        "fixed": 165,
-        "vulnerable": 217,
-        "investigation": 94,
+        "fixed": 166,
+        "vulnerable": 214,
+        "investigation": 96,
         "runtime_dependent": 238,
         "not_affected": 214,
         "unknown": 1
       },
       "by_cve": {
         "CVE-2026-109618": {
-          "fixed": 165,
-          "vulnerable": 217,
-          "investigation": 94,
+          "fixed": 166,
+          "vulnerable": 214,
+          "investigation": 96,
           "runtime_dependent": 238,
           "not_affected": 214,
           "unknown": 1
         },
         "CVE-2026-109619": {
-          "fixed": 165,
-          "vulnerable": 215,
-          "investigation": 95,
+          "fixed": 166,
+          "vulnerable": 212,
+          "investigation": 97,
           "runtime_dependent": 237,
           "not_affected": 216,
           "unknown": 1
