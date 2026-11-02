@@ -3885,9 +3885,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:wordpress-playground-contributors:77d729688b10",
-      "summary": "Fix for the rebuilt PHP 8.2-8.5 Wasm binaries available at pinned Git commit dcd8e50fb651. A maintainer confirmed the rebuild for both CVEs. This assessment does not confirm an npm release, legacy PHP builds or a deployed Playground instance.",
+      "summary": "Fixed PHP 8.2-8.5 binaries are available in the eight @php-wasm/web-8-{2,3,4,5} and @php-wasm/node-8-{2,3,4,5} npm packages at 3.1.62, as well as the previously verified Git tree. Refresh matching JavaScript/Wasm assets together. Legacy builds and deployed Playground instances require separate assessment.",
       "description": "Actual PHP interpreter compiled by Emscripten to WebAssembly with a C/JavaScript API",
-      "comment": "Inventory record: PHP-0539\nCategory: Embedded runtimes\nOriginal relationship: bundles\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Maintainer-confirmed rebuilt binaries in merged upstream Git tree\nDeployment status: Not measured\nPHP surface: Actual PHP interpreter compiled by Emscripten to WebAssembly with a C/JavaScript API\nPHP version scope: PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12 in web and Node builds, each with JSPI and Asyncify variants (16 binary artifacts). Fixed Git tree dcd8e50fb65121726bb23a686746f68032ff1cb1 includes rebuild 11ddfdc9858269b131536f3052648f0a74d95387.\nExtensions: Extension/backend inventory not fully enumerated for the scoped implementation/build\nLimitations: Fix is limited to the named PHP 8.2-8.5 artifacts in the pinned Git tree. Legacy PHP 5.2/7.4/8.0/8.1 and next are outside this confirmation. The checked npm 3.1.61 publication points to earlier Git head 1e779217fceedb5b29b1359a196dc97ce40f31de, whose version metadata still lists older PHP releases; it is not confirmed fixed. No npm release, hosted deployment, installed binary, exploit reachability or sandbox/host escape is established. Public source and Git artifact metadata were inspected; binaries were not downloaded or executed.\nPatch owner: Playground PHP.wasm build publisher plus PHP/upstream maintainers; package consumers must refresh JS/Wasm assets together\nDownstream surface: Actual PHP interpreter compiled by Emscripten to WebAssembly with a C/JavaScript API\nRelease pin: PR #4487 merged 2026-10-26 09:57:44 UTC as dcd8e50fb65121726bb23a686746f68032ff1cb1; rebuilt binaries commit 11ddfdc9858269b131536f3052648f0a74d95387\nSource accessed: 2026-10-30\nAliases: WordPress PHP.wasm binaries, @php-wasm/node-X-Y, @php-wasm/web-X-Y\nConditional downstream consequence: A matching PHP/Wasm flaw may conditionally crash the sandboxed runtime or affect its PHP data and granted browser/Node capabilities. Native server RCE, host escape or tenant compromise does not follow without a separate sandbox/bridge flaw and reachable path.\nVulnerability status: Fix for both CVEs in the explicitly pinned PHP 8.2-8.5 Git binaries; no broader release or deployment claim.\nCVE-2026-109618: Fix; pinned Git binaries built from PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12\nCVE-2026-109619: Fix; pinned Git binaries built from PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12\nCVE assessment limit: The maintainer rebuild confirmation and immutable artifact paths support this version scope. PHP.wasm is separate from the browser-local runtime and JS adapter inventory entries; those entries retain their existing assessments. Native server RCE or sandbox escape is not inferred.\nPublic vendor CVE review: 2026-10-30\nVendor advisory sources: https://github.com/WordPress/wordpress-playground/pull/4487 ; https://github.com/WordPress/wordpress-playground/pull/4487#issuecomment-6340964082",
+      "comment": "Inventory record: PHP-0539\nCategory: Embedded runtimes\nOriginal relationship: bundles\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Maintainer-confirmed security rebuild plus independently inspected official npm publication\nDeployment status: Not measured\nPHP surface: Actual PHP interpreter compiled by Emscripten to WebAssembly with a C/JavaScript API\nPHP version scope: PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12; web and Node packages at npm 3.1.62, each with JSPI and Asyncify variants (16 Wasm artifacts). Previously verified Git tree dcd8e50fb65121726bb23a686746f68032ff1cb1 remains within scope.\nExtensions: Extension/backend inventory not fully enumerated for the scoped implementation/build\nLimitations: Fix covers the sixteen JSPI/Asyncify binaries in the eight named npm 3.1.62 packages and the previously verified PHP 8.2-8.5 Git binaries. It does not cover npm 3.1.61, legacy PHP 5.2/7.4/8.0/8.1, next, custom builds or unmeasured hosted/local deployments. Package integrity and Wasm version strings were inspected as data; no downloaded code was executed and no reachability or sandbox-escape test was performed.\nPatch owner: Playground PHP.wasm build publisher plus PHP/upstream maintainers; package consumers must refresh JS/Wasm assets together\nDownstream surface: Actual PHP interpreter compiled by Emscripten to WebAssembly with a C/JavaScript API\nRelease pin: Eight npm packages at 3.1.62, gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e; tarball SHA-512 integrity and individual Wasm SHA-256 recorded in externalRef comments. This Git head contains the merged security rebuild dcd8e50fb65121726bb23a686746f68032ff1cb1.\nSource accessed: 2026-11-02\nAliases: WordPress PHP.wasm binaries, @php-wasm/node-X-Y, @php-wasm/web-X-Y\nConditional downstream consequence: A matching PHP/Wasm flaw may conditionally crash the sandboxed runtime or affect its PHP data and granted browser/Node capabilities. Native server RCE, host escape or tenant compromise does not follow without a separate sandbox/bridge flaw and reachable path.\nVulnerability status: Fix for both CVEs in the explicitly named npm 3.1.62 packages and pinned PHP 8.2-8.5 Git binaries.\nCVE-2026-109618: Fix; named npm 3.1.62 packages and pinned Git binaries contain PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12.\nCVE-2026-109619: Fix; named npm 3.1.62 packages and pinned Git binaries contain PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12.\nCVE assessment limit: Fix covers the sixteen JSPI/Asyncify binaries in the eight named npm 3.1.62 packages and the previously verified PHP 8.2-8.5 Git binaries. It does not cover npm 3.1.61, legacy PHP 5.2/7.4/8.0/8.1, next, custom builds or unmeasured hosted/local deployments. Package integrity and Wasm version strings were inspected as data; no downloaded code was executed and no reachability or sandbox-escape test was performed.\nPublic vendor CVE review: 2026-11-02\nVendor advisory sources: https://github.com/WordPress/wordpress-playground/pull/4487 ; https://github.com/WordPress/wordpress-playground/pull/4487#issuecomment-6340964082",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -3935,7 +3935,7 @@
           "locator": [
             "https://github.com/WordPress/wordpress-playground/blob/1e779217fceedb5b29b1359a196dc97ce40f31de/packages/php-wasm/supported-php-versions.mjs"
           ],
-          "comment": "Earlier Git head recorded by npm 3.1.61 still declares PHP 8.2.33, 8.3.33, 8.4.25 and 8.5.10; npm publication is outside the confirmed fix scope."
+          "comment": "Earlier npm 3.1.61 Git head still declares older PHP releases; that publication remains outside the confirmed fix scope. npm 3.1.62 is assessed separately below."
         },
         {
           "type": "ExternalRef",
@@ -3952,9 +3952,81 @@
             "https://github.com/WordPress/wordpress-playground/blob/trunk/packages/php-wasm/universal/src/lib/supported-php-versions.ts"
           ],
           "comment": "Primary project documentation, released announcement or publisher package declaration - The source separately enumerates seven supported minor labels, one legacy label and next."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://registry.npmjs.org/@php-wasm/web-8-2/3.1.62"
+          ],
+          "comment": "Publisher npm metadata and tarball inspected 2026-11-02. Tarball https://registry.npmjs.org/@php-wasm/web-8-2/-/web-8-2-3.1.62.tgz; verified integrity sha512-J58NRkGZPIne2+SKeaz6bfKmOjxr4NIRQlXFdlEYyF9zidX6ZJvZqXKwG/KgmODcJkwBvHyx+7qJo2LHChCu0Q==; gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e. package/asyncify/8_2_35/php_8_2.wasm SHA-256 530789a362b3a35c131784c7f281af5eec6c070102755695cc2af076476fd18b; package/jspi/8_2_35/php_8_2.wasm SHA-256 6d0068ff127aaa6e1f52ca5facc3165bde243eb5544d96329b4adf4490d8ea37."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://registry.npmjs.org/@php-wasm/web-8-3/3.1.62"
+          ],
+          "comment": "Publisher npm metadata and tarball inspected 2026-11-02. Tarball https://registry.npmjs.org/@php-wasm/web-8-3/-/web-8-3-3.1.62.tgz; verified integrity sha512-Q4qVDG6H5+XJ6VgEgrTlGEwWEnrfoTKo7Mbl0bg99rAvbBj9aZdJAbMJudF32TvSiv8YRtbN5fTjYnzscyI+iQ==; gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e. package/asyncify/8_3_36/php_8_3.wasm SHA-256 474c4dd02f79f2719558fbe8ecbcbeae0580933f465861c9c357b715ca0f59ee; package/jspi/8_3_36/php_8_3.wasm SHA-256 4a35d44ed3decb9b9db529c6802a7c4e16bf921c469cc7613478a645b5e68da8."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://registry.npmjs.org/@php-wasm/web-8-4/3.1.62"
+          ],
+          "comment": "Publisher npm metadata and tarball inspected 2026-11-02. Tarball https://registry.npmjs.org/@php-wasm/web-8-4/-/web-8-4-3.1.62.tgz; verified integrity sha512-Sl8GS0Ebvc+iIndL2s06Smjx6/r2U3zyUtL8XObRCrnpcvDf98vycBw5KzUeNRSl8ij1aHLh5HlJSM507CFfxg==; gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e. package/asyncify/8_4_27/php_8_4.wasm SHA-256 0c1645e3ae597c07c508f72b1ed44092736ac8a6a6b2508bc1186814cc6c409b; package/jspi/8_4_27/php_8_4.wasm SHA-256 40716c5c30e87d3ee3a9751040b6f48c31a4b15515bec58ddd5882400a2a8b4e."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://registry.npmjs.org/@php-wasm/web-8-5/3.1.62"
+          ],
+          "comment": "Publisher npm metadata and tarball inspected 2026-11-02. Tarball https://registry.npmjs.org/@php-wasm/web-8-5/-/web-8-5-3.1.62.tgz; verified integrity sha512-9r7I5j3+z8kjb2ykzp3T3uPbiYtQnqIo+9mKfMFQS82I3D29yKVEHeCTNOGOo8Tw5+lPmvlL8++bivpDpUZt7Q==; gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e. package/asyncify/8_5_12/php_8_5.wasm SHA-256 6ad5fbac2f2fe3c074d97f2a8aa47422933343d341a6924b8c626ba122e33fce; package/jspi/8_5_12/php_8_5.wasm SHA-256 bac70f3d9fd5d8717a4fe4f54f24557fe799816b0131f931d2e8c2248d757c1a."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://registry.npmjs.org/@php-wasm/node-8-2/3.1.62"
+          ],
+          "comment": "Publisher npm metadata and tarball inspected 2026-11-02. Tarball https://registry.npmjs.org/@php-wasm/node-8-2/-/node-8-2-3.1.62.tgz; verified integrity sha512-klLZQKvt7R0KIqom3HWpHYJ+p32OnWReOmydGlUTFOk44a8uhCyKYGWiP7TzFuTYuZRtFreZCuFy8G7hIbDeng==; gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e. package/asyncify/8_2_35/php_8_2.wasm SHA-256 4cecee51c4ea7094d5d46031a316926d6f2dee3c42ba7fcca8838f8ef9ab9b11; package/jspi/8_2_35/php_8_2.wasm SHA-256 e763eee330fa54f7e36cfec2f8f0e32de8c267601ca24c8affbb1d5ddb406f9b."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://registry.npmjs.org/@php-wasm/node-8-3/3.1.62"
+          ],
+          "comment": "Publisher npm metadata and tarball inspected 2026-11-02. Tarball https://registry.npmjs.org/@php-wasm/node-8-3/-/node-8-3-3.1.62.tgz; verified integrity sha512-lv8ijc82QOmODIGqePk28nxtxAg4d0p1RZbMpzOwZOHOHfyRa+PSVKYnoXn+4QjDnqKK9LbMXV67oHdsdhvmJQ==; gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e. package/asyncify/8_3_36/php_8_3.wasm SHA-256 ae8b11a99af162fa84172cffde03d87da76d268a476df8f9c778f62c86ebe811; package/jspi/8_3_36/php_8_3.wasm SHA-256 f135c017bbef4e6c9cd4ff381c80e6795298a4f3797059882c5138874bef07c8."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://registry.npmjs.org/@php-wasm/node-8-4/3.1.62"
+          ],
+          "comment": "Publisher npm metadata and tarball inspected 2026-11-02. Tarball https://registry.npmjs.org/@php-wasm/node-8-4/-/node-8-4-3.1.62.tgz; verified integrity sha512-gowQN8+Hfh0ABr/Jv0oAeq0Yy3ODOIDzCKriSF32fj2MK54dpn2XB3dFad5f5LitCUcjMenNnsHtw9+OKGA3RA==; gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e. package/asyncify/8_4_27/php_8_4.wasm SHA-256 2c8847bea9817dbeb9bd23676b5fe3748536de5a6b3b0bedfa3bedc5e6a4920b; package/jspi/8_4_27/php_8_4.wasm SHA-256 a199a70c082b3d121ff410447a5656083e744902fa8e3dad49ed65344d1e3819."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://registry.npmjs.org/@php-wasm/node-8-5/3.1.62"
+          ],
+          "comment": "Publisher npm metadata and tarball inspected 2026-11-02. Tarball https://registry.npmjs.org/@php-wasm/node-8-5/-/node-8-5-3.1.62.tgz; verified integrity sha512-69a6WkN+g3qHNthAXTYmHDPJHIN9CffUH5CAHTO9V18nKjjfnyayKQKms+30QaDw/udK/Un6LYdaRppv/w/UQQ==; gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e. package/asyncify/8_5_12/php_8_5.wasm SHA-256 8b2934b27f9660500a0b7e3f82c73224c21a2f4a6bea48d57d1b889dd6fe58fe; package/jspi/8_5_12/php_8_5.wasm SHA-256 aec8018aa4213b697c07bf3958113b12d6fc39892f4a037ee4dc9f55dad6ed10."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/WordPress/wordpress-playground/blob/8c52f103f3ce30668994c0e75c2c530b82097a5e/packages/php-wasm/supported-php-versions.mjs"
+          ],
+          "comment": "Immutable version declarations at the npm release Git head; ancestor check confirms inclusion of the merged security rebuild."
         }
       ],
-      "software_packageVersion": "PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12; Git dcd8e50fb651 (web/Node, JSPI/Asyncify)"
+      "software_packageVersion": "npm 3.1.62 and Git dcd8e50fb651: PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12 (web/Node, JSPI/Asyncify)"
     },
     {
       "type": "software_Package",
@@ -3970,9 +4042,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:wordpress-playground-contributors:77d729688b10",
-      "summary": "Playground uses a WebAssembly build of the PHP interpreter to run WordPress.",
+      "summary": "Playground uses the PHP.wasm interpreter. Fixed npm 3.1.62 PHP 8.2-8.5 binary scopes are recorded under PHP-0539; the selected runtime and rollout for this broader browser/local deployment scope remain unverified.",
       "description": "WordPress executed with the actual PHP.wasm interpreter; a remote PHP server is not required for browser execution",
-      "comment": "Inventory record: PHP-0540\nCategory: Embedded runtimes\nOriginal relationship: component\nRelationship direction: depends_on_php\nParent component: PHP-0539\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: WordPress executed with the actual PHP.wasm interpreter; a remote PHP server is not required for browser execution\nPHP version scope: Moving architecture/docs updated 2026-10-14; selected WordPress/PHP releases and deployed hosted instance versions unknown.\nExtensions: Extension/backend inventory not fully enumerated for the scoped implementation/build\nLimitations: A browser demo, Node.js process and hosted service are distinct boundaries. The WordPress, runtime-family and adapter entries overlap. No installed artifact, loaded-module set, input reachability, deployment total, tenant escape or compromise was measured. No specific PHP CVE was supplied. Public static evidence only; no retrieved code, package, image or test was installed, built or executed.\nPatch owner: Playground project and PHP.wasm publisher; embedding application/operator for selecting and refreshing builds\nDownstream surface: WordPress executed with the actual PHP.wasm interpreter; a remote PHP server is not required for browser execution\nRelease pin: Moving Playground architecture page, updated 2026-10-14; no instance measurement\nSource accessed: 2026-10-18\nAliases: WordPress Playground\nConditional downstream consequence: A matching flaw in the selected PHP engine, enabled extension or integration path could conditionally affect worker availability, confidentiality or integrity, and code execution only where the flaw class and privileges permit it. Presence does not establish a reachable path. Host control, credentials, tenant isolation and lateral movement require separate evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP Wasm scope; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP Wasm scope; CVE match unknown\nCVE-2026-109619: PHP Wasm scope; CVE match unknown\nCVE assessment limit: Read browser, Node, edge and build-only boundaries separately. A PHP runtime flaw does not establish sandbox/tenant escape. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0540\nCategory: Embedded runtimes\nOriginal relationship: component\nRelationship direction: depends_on_php\nParent component: PHP-0539\nEvidence status: Runtime relationship confirmed; published fixed binary subset assessed separately as PHP-0539\nDeployment status: Not measured\nPHP surface: WordPress executed with the actual PHP.wasm interpreter; a remote PHP server is not required for browser execution\nPHP version scope: Selected WordPress/PHP releases and deployed hosted/local instance versions are unverified. PHP-0539 records the verified PHP 8.2-8.5 npm 3.1.62 and pinned Git binary scopes.\nExtensions: Extension/backend inventory not fully enumerated for the scoped implementation/build\nLimitations: A browser demo, Node.js process and hosted service are distinct deployment boundaries. Published fixes for the PHP-0539 artifact subset do not establish the selected runtime or rollout in this generic scope. Legacy PHP branches and unverified deployments remain unresolved. No deployment, exploit reachability or sandbox escape was measured.\nPatch owner: Playground project and PHP.wasm publisher; embedding application/operator for selecting and refreshing builds\nDownstream surface: WordPress executed with the actual PHP.wasm interpreter; a remote PHP server is not required for browser execution\nRelease pin: Moving Playground architecture page, updated 2026-10-14; no instance measurement\nSource accessed: 2026-11-02\nAliases: WordPress Playground\nConditional downstream consequence: A matching flaw in the selected PHP engine, enabled extension or integration path could conditionally affect worker availability, confidentiality or integrity, and code execution only where the flaw class and privileges permit it. Presence does not establish a reachable path. Host control, credentials, tenant isolation and lateral movement require separate evidence.\nVulnerability status: Investigation for the unresolved generic deployment scope; published fixed binary subsets are recorded separately in PHP-0539.\nCVE-2026-109618: Investigation for unverified runtime selections and deployments; fixed PHP 8.2-8.5 binary scopes are recorded under PHP-0539.\nCVE-2026-109619: Investigation for unverified runtime selections and deployments; fixed PHP 8.2-8.5 binary scopes are recorded under PHP-0539.\nCVE assessment limit: Do not transfer a binary-level fixed assessment to an unmeasured hosted or local deployment, an older/legacy runtime selection, or a modified build. Browser and Node capabilities require separate assessment.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -3981,6 +4053,14 @@
             "https://developer.wordpress.org/playground/developers/architecture/wasm-php-overview/"
           ],
           "comment": "Primary project/vendor scope and release/branch declarations"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/WordPress/wordpress-playground/pull/4487"
+          ],
+          "comment": "Official security fix for the binary subset assessed as PHP-0539; not a deployment attestation."
         }
       ]
     },
@@ -6890,9 +6970,9 @@
         "urn:php2shell:inventory:package:PHP-0539"
       ],
       "relationshipType": "fixedIn",
-      "security_statusNotes": "Fixed in the public Git binaries at dcd8e50fb65121726bb23a686746f68032ff1cb1 (rebuild 11ddfdc9858269b131536f3052648f0a74d95387): PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12, web and Node, JSPI and Asyncify. No npm release, legacy build or deployed Playground instance is confirmed by this assessment.",
-      "summary": "CVE-2026-109618 assessment: Fix for the pinned WordPress Playground PHP 8.2-8.5 Wasm binaries",
-      "comment": "Public official review 2026-10-30: https://github.com/WordPress/wordpress-playground/pull/4487 merged 2026-10-26. Maintainer rebuild confirmation: https://github.com/WordPress/wordpress-playground/pull/4487#issuecomment-6340964082. Immutable web-builds and node-builds trees at dcd8e50fb65121726bb23a686746f68032ff1cb1 contain all 16 scoped Wasm artifacts. Other PHP.wasm product/adapter scopes remain separately assessed."
+      "security_statusNotes": "Fixed in the eight @php-wasm web/Node PHP 8.2-8.5 npm packages at 3.1.62 (JSPI and Asyncify) and the previously verified Git tree dcd8e50fb65121726bb23a686746f68032ff1cb1. These contain PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12. Legacy builds, older npm publications and unmeasured Playground deployments remain outside scope.",
+      "summary": "CVE-2026-109618 assessment: Fix for the named npm 3.1.62 packages and pinned PHP 8.2-8.5 Git binaries",
+      "comment": "Official security PR and maintainer rebuild confirmation: https://github.com/WordPress/wordpress-playground/pull/4487 and https://github.com/WordPress/wordpress-playground/pull/4487#issuecomment-6340964082. On 2026-11-02, independently verified SHA-512 integrity for all eight official npm tarballs and recorded SHA-256 plus embedded PHP version strings for all sixteen Wasm files. npm gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e contains the previously assessed rebuild. Package metadata links and hashes are retained in PHP-0539."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -6903,9 +6983,9 @@
         "urn:php2shell:inventory:package:PHP-0539"
       ],
       "relationshipType": "fixedIn",
-      "security_statusNotes": "Fixed in the public Git binaries at dcd8e50fb65121726bb23a686746f68032ff1cb1 (rebuild 11ddfdc9858269b131536f3052648f0a74d95387): PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12, web and Node, JSPI and Asyncify. No npm release, legacy build or deployed Playground instance is confirmed by this assessment.",
-      "summary": "CVE-2026-109619 assessment: Fix for the pinned WordPress Playground PHP 8.2-8.5 Wasm binaries",
-      "comment": "Public official review 2026-10-30: https://github.com/WordPress/wordpress-playground/pull/4487 merged 2026-10-26. Maintainer rebuild confirmation: https://github.com/WordPress/wordpress-playground/pull/4487#issuecomment-6340964082. Immutable web-builds and node-builds trees at dcd8e50fb65121726bb23a686746f68032ff1cb1 contain all 16 scoped Wasm artifacts. Other PHP.wasm product/adapter scopes remain separately assessed."
+      "security_statusNotes": "Fixed in the eight @php-wasm web/Node PHP 8.2-8.5 npm packages at 3.1.62 (JSPI and Asyncify) and the previously verified Git tree dcd8e50fb65121726bb23a686746f68032ff1cb1. These contain PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12. Legacy builds, older npm publications and unmeasured Playground deployments remain outside scope.",
+      "summary": "CVE-2026-109619 assessment: Fix for the named npm 3.1.62 packages and pinned PHP 8.2-8.5 Git binaries",
+      "comment": "Official security PR and maintainer rebuild confirmation: https://github.com/WordPress/wordpress-playground/pull/4487 and https://github.com/WordPress/wordpress-playground/pull/4487#issuecomment-6340964082. On 2026-11-02, independently verified SHA-512 integrity for all eight official npm tarballs and recorded SHA-256 plus embedded PHP version strings for all sixteen Wasm files. npm gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e contains the previously assessed rebuild. Package metadata links and hashes are retained in PHP-0539."
     },
     {
       "type": "Relationship",

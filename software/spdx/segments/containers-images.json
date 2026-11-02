@@ -2880,6 +2880,121 @@
       "security_statusNotes": "The SnappyMail maintainer released v2.38.2.1 specifically as the Docker PHP2Shell fix; its linked publication workflow completed successfully.",
       "summary": "CVE-2026-109619 assessment: Fix in the specified released version",
       "comment": "Public official source reviewed 2026-10-30: https://github.com/the-djmaze/snappymail/releases/tag/v2.38.2.1\nAction statement: Pull and recreate the container from the v2.38.2.1 Docker release."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0932",
+      "creationInfo": "_:creationinfo",
+      "name": "phpMyFAQ official Docker images (4.2.0-RC.1)",
+      "software_packageVersion": "4.2.0-RC.1 / 4.2.0-RC.1-frankenphp: PHP 8.4.27 (linux/amd64 and linux/arm64; inspected digests)",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0932"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:phpmyfaq-project:ab2e5ba5d190",
+      "summary": "Fix for both CVEs in the inspected Apache and FrankenPHP release-candidate image digests. Registry metadata and the pinned production build identify PHP 8.4.27, although the release announcement says 8.5.12; both are upstream fixed releases. Pull and recreate the selected image; assess source installations separately.",
+      "description": "Fixed official container distribution scope of PHP-0658 (phpMyFAQ), limited to the recorded 4.2.0-RC.1 image digests.",
+      "comment": "Inventory record: PHP-0932\nParent inventory record: PHP-0658\nEvidence status: Official CVE-specific release notice corroborated by publisher OCI metadata, immutable build sources and upstream PHP fixed-release guidance\nDeployment status: Not measured\nSource accessed: 2026-11-02\nPHP version scope: PHP 8.4.27 in ghcr.io/thorsten/phpmyfaq:4.2.0-RC.1 and :4.2.0-RC.1-frankenphp; linux/amd64 and linux/arm64 only, pinned by recorded index and child manifest digests.\nRelease type: Release candidate; not a stable-release recommendation. FrankenPHP worker mode is documented as experimental.\nPublisher source revision: 5de0d36bf69049a6dd7414f6a39dc9246d2281ce\nEvidence discrepancy: The 1 November release announcement says Docker images were updated to PHP 8.5.12. The inspected release image configs declare PHP_VERSION=8.4.27 and PHP_URL for php-8.4.27.tar.xz; the immutable production Dockerfile defaults PHP_VERSION to 8.4. The assessment records the observed 8.4.27 image scope and preserves the announcement as a separate vendor statement.\nVerification method: OCI index, platform-manifest and config SHA-256 digests verified; image revision labels and PHP environment values compared with immutable publisher build sources. Image layers and running binaries were not executed or measured.\nLimitations: The fixed assessment covers only the recorded release-candidate image digests for the two named architectures. Older tags, cached images, nightly/stable channels, custom builds, source installations and actual deployments are outside scope. No application-code fix or complete configuration workaround is asserted.\nRemediation: Select the verified image digest, pull and recreate containers, and confirm the active serving runtime after rollout. Source installations require an independently patched PHP runtime.\nCVE-2026-109618: Fix in the recorded PHP 8.4.27 image digests.\nCVE-2026-109619: Fix in the recorded PHP 8.4.27 image digests.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.phpmyfaq.de/news/2026/#2026-11-01"
+          ],
+          "comment": "Official 1 November release announcement explicitly names both CVEs; its claimed PHP 8.5.12 version differs from the inspected release image metadata."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-21-5"
+          ],
+          "comment": "PHP upstream confirms PHP 8.4.27 fixes both tracked CVEs."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/thorsten/phpMyFAQ/blob/5de0d36bf69049a6dd7414f6a39dc9246d2281ce/.docker/production/Dockerfile"
+          ],
+          "comment": "Immutable publisher build recipe: PHP_VERSION defaults to 8.4 for both Apache and FrankenPHP targets."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/thorsten/phpMyFAQ/blob/5de0d36bf69049a6dd7414f6a39dc9246d2281ce/.github/workflows/docker-publish.yml"
+          ],
+          "comment": "Publisher release workflow builds both image variants for linux/amd64 and linux/arm64."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/thorsten/phpMyFAQ/blob/5de0d36bf69049a6dd7414f6a39dc9246d2281ce/docs/deployment.md"
+          ],
+          "comment": "Official image variants and deployment instructions; FrankenPHP worker mode is experimental."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://ghcr.io/v2/thorsten/phpmyfaq/manifests/sha256:2c723712bed8d1e8ffee37677d7283a7706244d4f2f5925338e106a6b502cb18"
+          ],
+          "comment": "ghcr.io/thorsten/phpmyfaq:4.2.0-RC.1 resolved on 2026-11-02 to index sha256:2c723712bed8d1e8ffee37677d7283a7706244d4f2f5925338e106a6b502cb18. linux/amd64 manifest sha256:4bf4fb92d7f599b80b213acbbba60aab55b793680f570fbb19faad4ebbb0b067, config sha256:7fd10fccabbed65c06f0aebdb47b2259d179130e59abcca182d68fee835b977d; linux/arm64 manifest sha256:00c18003d7fee16fdca93b1417a86fc3e049e9b8ab459bdda96b29604974fd46, config sha256:36105771a10263e1816e7658c4a620e0eefc8e243507ec6b0e23cfece6ec333b. Each image declares PHP_VERSION=8.4.27 and source revision 5de0d36bf69049a6dd7414f6a39dc9246d2281ce. Digests verified against downloaded JSON bytes; registry access uses an anonymous pull token."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://ghcr.io/v2/thorsten/phpmyfaq/manifests/sha256:1e05470771f0b58a4d082b45b00a096411eb812d4b2f7cac8d4d891bc5ae3170"
+          ],
+          "comment": "ghcr.io/thorsten/phpmyfaq:4.2.0-RC.1-frankenphp resolved on 2026-11-02 to index sha256:1e05470771f0b58a4d082b45b00a096411eb812d4b2f7cac8d4d891bc5ae3170. linux/amd64 manifest sha256:9e8b99b9a901b34c5199416b426ba32b4a7b13b59135adb97caa5fe3403449e3, config sha256:5d6c2d46d66d1ef62f99673c06b060fd6070c87a1f2f882eabe53bbbfe107c54; linux/arm64 manifest sha256:290369c971caa11a292f2120c3065d63c5788a3be4317196dbc8d3f4d0db5912, config sha256:733db872e78ae5454c4eede459da0dfb1f8f26b5ae65e9788611a86fce694531. Each image declares PHP_VERSION=8.4.27 and source revision 5de0d36bf69049a6dd7414f6a39dc9246d2281ce. Digests verified against downloaded JSON bytes; registry access uses an anonymous pull token."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0932",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0932",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped official phpMyFAQ release images distribute patched PHP 8.4.27.",
+      "comment": "Fixed container distribution of PHP-0658; other product variants and deployments remain separately assessed."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:PHP-0932-20261102",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0932"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in the recorded ghcr.io/thorsten/phpmyfaq 4.2.0-RC.1 Apache and FrankenPHP image digests for linux/amd64 and linux/arm64, identifying PHP 8.4.27. This release-candidate scope does not establish a stable application fix or deployed remediation.",
+      "summary": "CVE-2026-109618 assessment: Fix for the inspected phpMyFAQ 4.2.0-RC.1 Docker image digests",
+      "comment": "Official vendor announcement https://www.phpmyfaq.de/news/2026/#2026-11-01 names both CVEs. Its PHP 8.5.12 claim differs from the inspected image configs and pinned build sources, which identify 8.4.27. Both releases are fixed according to https://www.php.net/archive/2026.php#2026-10-21-5. Digest, architecture and source-revision evidence are recorded in PHP-0932. Reviewed 2026-11-02."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:PHP-0932-20261102",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0932"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in the recorded ghcr.io/thorsten/phpmyfaq 4.2.0-RC.1 Apache and FrankenPHP image digests for linux/amd64 and linux/arm64, identifying PHP 8.4.27. This release-candidate scope does not establish a stable application fix or deployed remediation.",
+      "summary": "CVE-2026-109619 assessment: Fix for the inspected phpMyFAQ 4.2.0-RC.1 Docker image digests",
+      "comment": "Official vendor announcement https://www.phpmyfaq.de/news/2026/#2026-11-01 names both CVEs. Its PHP 8.5.12 claim differs from the inspected image configs and pinned build sources, which identify 8.4.27. Both releases are fixed according to https://www.php.net/archive/2026.php#2026-10-21-5. Digest, architecture and source-revision evidence are recorded in PHP-0932. Reviewed 2026-11-02."
     }
   ]
 }
