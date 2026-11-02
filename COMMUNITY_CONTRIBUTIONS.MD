@@ -7,7 +7,7 @@
 
 # Community contributions
 
-This catalog records community tools, tips, guides, and reference resources submitted through pull requests and issues in [NCSC-NL/php2shell](https://github.com/NCSC-NL/php2shell). The catalog was initially reviewed on **28 October 2026** and last updated on **29 October 2026**; the resources below were proposed in five pull requests and four issues. Source submissions may now be closed. Submissions concerned solely with software inventory changes are outside this catalog.
+This catalog records community tools, tips, guides, and reference resources submitted through pull requests and issues in [NCSC-NL/php2shell](https://github.com/NCSC-NL/php2shell). The catalog was initially reviewed on **28 October 2026** and last updated on **2 November 2026**; the resources below were proposed in six pull requests and four issues. Source submissions may now be closed. Submissions concerned solely with software inventory changes are outside this catalog.
 
 **Contributor** identifies the PR or issue author's GitHub username, which does not necessarily identify the tool's author or maintainer. Descriptions summarize the submissions and linked documentation; their functionality, effectiveness, and claims have not been independently validated. Listing a contribution does not mean that its source PR has been accepted. Links to proposed files use the reviewed commit, because those files may not exist on `main`.
 
@@ -27,6 +27,14 @@ This catalog records community tools, tips, guides, and reference resources subm
 | --- | --- | --- | --- | --- |
 | [@xbuddhi](https://github.com/xbuddhi) | php2shell-fix | Linux PHP inventory and remediation script covering distribution packages, control-panel installations, and custom builds. Remediation can upgrade packages, rebuild PHP, and restart services; installer and script defaults differ, so execution is not necessarily report-only. | [Project](https://github.com/xbuddhi/php2shell-fix) | \[[PR #15](https://github.com/NCSC-NL/php2shell/pull/15)\] |
 | [@it-reinbek](https://github.com/it-reinbek) | PHP2Shell Auditor & Remediation Tool | Interactive Bash tool for host/container discovery, package and configuration checks, log inspection, and reporting. Remediation functions can change PHP/systemd settings and stop and recreate Docker stacks. | [php2shell-auditor project](https://github.com/it-reinbek/php2shell-auditor) | [Issue #45](https://github.com/NCSC-NL/php2shell/issues/45) |
+
+## Third-party replacement packages
+
+These submissions describe externally maintained package sources, not official updates from the platform vendor. Package provenance, compatibility, licensing, and claimed security fixes require independent validation before deployment.
+
+| Contributor | Package or guide | Short description | Package/guide URL | Source PR/issue link |
+| --- | --- | --- | --- | --- |
+| [@dvershinin](https://github.com/dvershinin) | GetPageSpeed Everpatch PHP for Amazon Linux 2 | Third-party RPM repositories and upgrade guidance claiming backported PHP2Shell fixes for PHP 7.2 build 7.2.34-33.amzn2 and PHP 7.4 build 7.4.33-40.amzn2 on x86_64 and aarch64. These are GetPageSpeed builds, not Amazon Linux security updates; NCSC-NL has not independently validated the patch or binaries. Amazon Linux 2 remains end of support, and production use may require a commercial license. | [Guide](https://www.getpagespeed.com/server-setup/php/php2shell-on-amazon-linux-2) | [PR #63](https://github.com/NCSC-NL/php2shell/pull/63) |
 
 ## Verification and operational guidance
 
