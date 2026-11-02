@@ -36,6 +36,7 @@ LABELS = {
     "fixed": "Fixed",
     "vulnerable": "Vulnerable",
     "investigation": "Under investigation",
+    "runtime_dependent": "Runtime-dependent",
     "not_affected": "Not affected",
     "unknown": "Unassessed / unknown",
 }
@@ -43,6 +44,7 @@ COLORS = {
     "vulnerable": "#d74758",
     "fixed": "#278f6b",
     "investigation": "#8190a8",
+    "runtime_dependent": "#c88719",
     "not_affected": "#4389c9",
     "unknown": "#a77abb",
 }
@@ -50,6 +52,7 @@ STATUS_KEYS = {
     "Fix": "fixed",
     "Vulnerable": "vulnerable",
     "Investigation": "investigation",
+    "Runtime-dependent": "runtime_dependent",
     "Not vuln": "not_affected",
 }
 
@@ -60,6 +63,8 @@ def product_status(statuses: list[str]) -> str:
         return "vulnerable"
     if "Investigation" in statuses:
         return "investigation"
+    if "Runtime-dependent" in statuses:
+        return "runtime_dependent"
     if not statuses or any(status not in STATUS_KEYS for status in statuses):
         return "unknown"
     if "Fix" in statuses:
@@ -129,7 +134,7 @@ def build_statistics(
         counts = current if commit == "working-tree" else count_inventory(snapshot(commit), cves)
         daily.append({"date": day.isoformat(), "source": commit, **counts})
     return {
-        "schema_version": 2,
+        "schema_version": 3,
         "as_of_date": today.isoformat(),
         "timezone": "UTC",
         "history_ref": history_ref,
@@ -196,8 +201,8 @@ def render_readme_section(statistics: dict[str, Any]) -> str:
     lines = [
         HEADING, "", BEGIN, "",
         f"Statistics as of **{statistics['as_of_date']} (UTC)**, from the current SPDX inventory.", "",
-        "| Products tracked | Fixed | Vulnerable | Under investigation | Not affected | Unassessed / unknown |",
-        "| ---: | ---: | ---: | ---: | ---: | ---: |",
+        "| Products tracked | Fixed | Vulnerable | Under investigation | Runtime-dependent | Not affected | Unassessed / unknown |",
+        "| ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
         "| " + " | ".join(f"{current[key]:,}" for key in LABELS) + " |", "",
         f"![Product status on the last {len(statistics['daily'])} inventory update days]({OUTPUT_DIR}/inventory-statistics.png)", "",
         f"[Counts by update day and per-CVE statistics (JSON)]({OUTPUT_DIR}/inventory-statistics.json) "

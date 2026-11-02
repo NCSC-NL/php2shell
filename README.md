@@ -1,7 +1,7 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
 Operational information: 28 October 2026 16:46 CET<br>
-Software list last status update: 30 October 2026 09:16 CET<br>
+Software list last status update: 2 November 2026 09:55 CET<br>
 ## TLP:CLEAR
 
 This repository contains operational information regarding the critical PHP vulnerabilities tracked by CERT-EU as CVE-2026-109618 and CVE-2026-109619.
@@ -56,9 +56,9 @@ The repository is being updated as the situation develops. Check back for update
 
 Statistics as of **2026-11-02 (UTC)**, from the current SPDX inventory.
 
-| Products tracked | Fixed | Vulnerable | Under investigation | Not affected | Unassessed / unknown |
-| ---: | ---: | ---: | ---: | ---: | ---: |
-| 929 | 165 | 217 | 345 | 201 | 1 |
+| Products tracked | Fixed | Vulnerable | Under investigation | Runtime-dependent | Not affected | Unassessed / unknown |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 929 | 165 | 217 | 94 | 238 | 214 | 1 |
 
 ![Product status on the last 3 inventory update days](software/statistics/inventory-statistics.png)
 
@@ -70,11 +70,11 @@ Statistics as of **2026-11-02 (UTC)**, from the current SPDX inventory.
 
 | Date and time | Supplier | Product | Version (see Status) | Status CVE-2026-109618 / CVE-2026-109619 | Links |
 |:------------------------|:---------|:--------|:--------------------:|:----------------------:|------:|
-|2026-10-30 09:16:55 +0100|VitalPBX|VitalPBX 4.5 PHP management runtime (Debian 12)|VitalPBX 4.5 on Debian 12 with PHP 8.2.35 or a later patched 8.2 release|Fix|[source 1](<https://vitalpbx.com/blog/php-8-2-vulnerability-debian-12/>)<br>[source 2](<https://forums.vitalpbx.org/t/critical-security-update-php-8-2-35-now-available-for-debian-12/6482>)<br>[source 3](<https://vitalpbx.com/blog/vitalpbx-4-5-release-enhancing-performance-security-and-scalability/>)<br>[source 4](<https://vitalpbx.com/cbxchangelog/vitalpbx-4-5/>)|
-|2026-10-30 09:10:24 +0100|VitalPBX|VitalPBX 4.0 PHP management runtime|VitalPBX 4.0 / 4.0.0 R4 on Debian 11 with unpatched PHP 8.1|Vulnerable|[source 1](<https://forums.vitalpbx.org/t/vitalpbx-4-0-0-r4-is-now-available/1863/1>)<br>[source 2](<https://forums.vitalpbx.org/t/php-cve-2026-109618-cve-2026-109619/6481/5>)<br>[source 3](<https://forums.vitalpbx.org/t/php-cve-2026-109618-cve-2026-109619/6481/7>)<br>[source 4](<https://docs.vitalpbx.com/vitalpbx/installation-vitalpbx/migrating-from-vitalpbx-4-debian-11-to-vitalpbx-4-5-debian-12/>)|
-|2026-10-30 08:50:46 +0100|Broadcom|Carbon Black App Control Server|8.12.2 or 8.13.2|Fix|[source 1](<https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404>)<br>[source 2](<https://knowledge.broadcom.com/external/article?articleNumber=459982>)|
-|2026-10-30 08:50:46 +0100|Check Point|Check Point firewall web interfaces|sk1000302 hotfix: R81.10 / R81.20 / R82 / R82.10 / R82.20; Spark R81.10.17 build 996004992 or R82.00.11 build 998002823|Fix|[source](<https://support.checkpoint.com/results/sk/sk1000302>)|
-|2026-10-30 08:50:46 +0100|Cisco|Cisco Expressway Select Series|15.5.21|Fix|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
+|2026-11-02 09:55:01 +0100|Adyen|Adyen API PHP library||Runtime-dependent|[source](<https://packagist.org/packages/adyen/php-api-library>)|
+|2026-11-02 09:55:01 +0100|Amazon Web Services|AWS SDK for PHP v3||Runtime-dependent|[source 1](<https://packagist.org/packages/aws/aws-sdk-php>)<br>[source 2](<https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/getting-started_installation.html>)|
+|2026-11-02 09:55:01 +0100|AMPHP project|AMP asynchronous PHP framework||Runtime-dependent|[source](<https://packagist.org/packages/amphp/amp>)|
+|2026-11-02 09:55:01 +0100|APCu / PHP extension maintainers|APCu native PHP user-cache extension||Runtime-dependent|[source](<https://pecl.php.net/package/apcu>)|
+|2026-11-02 09:55:01 +0100|Auth0|Auth0 PHP SDK||Runtime-dependent|[source](<https://packagist.org/packages/auth0/auth0-php>)|
 
 See the [full software status update history](software/changelog_software_list.md).
 

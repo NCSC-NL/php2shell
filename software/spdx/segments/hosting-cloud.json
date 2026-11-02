@@ -1385,6 +1385,14 @@
             "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html"
           ],
           "comment": "Official publisher/project PHP scope evidence - AWS runtime documentation was read for runtime/custom environment boundaries; no PHP first-party family was identified."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://aws.amazon.com/security/security-bulletins/2026-143-aws/"
+          ],
+          "comment": "AWS Security Bulletin 2026-143 explicitly covers customer-supplied PHP custom runtimes on Lambda."
         }
       ]
     },

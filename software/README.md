@@ -11,6 +11,7 @@ The following status labels are in use:
 | Status | Description |
 | --- | --- |
 | Investigation | The product may be affected and is being assessed. |
+| Runtime-dependent | The product/component has no direct VEX assertion; assess the linked supplied or containing PHP runtime/deployment. |
 | Vulnerable | An upstream or vendor source, or direct primary research, confirms that the product is vulnerable in the stated scope. |
 | Fix | An upstream or vendor source confirms that the listed version contains a fix. |
 | Workaround | The product is vulnerable, but mitigation steps are available. |
