@@ -9729,17 +9729,18 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:qnap:01af88f7bc7a",
-      "summary": "QNAP QSA-26-18 identifies QuMagie 2.10.1 and earlier in its affected-products header for CVE-2026-109618 and CVE-2026-109619; fixed version is not yet published.",
+      "summary": "QNAP's earlier QSA-26-18 scope named QuMagie 2.10.1 and earlier, but the current canonical resolved advisory omits QuMagie without documenting a fix or a not-affected conclusion.",
       "description": "Multimedia application web components",
-      "comment": "Inventory record: PHP-0718\nCategory: Content management\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected product scope\nDeployment status: Not measured\nPHP surface: QNAP says PHP is used in web components of QNAP operating systems and several QNAP applications; exact component boundary and SAPI are not published for this product.\nPHP version scope: QSA-26-18 lists QuMagie 2.10.1 and earlier as affected; fixed version to be announced.\nExtensions: Unknown\nLimitations: QSA-26-18 establishes affected product scope, not a live deployment, exact embedded PHP build, enabled feature set, reachable path or exploitation. PHP included in containers running on Container Station or in third-party applications is outside QNAP update coverage. QSA-26-18's affected-products header explicitly names QuMagie 2.10.1 and earlier, although the rendered affected-products table on the same page omits a separate QuMagie row; no fixed version is published.\nPatch owner: QNAP for supported product updates; operator for exposure reduction and update rollout\nSource accessed: 2026-10-22\nVulnerability status: QNAP QSA-26-18 lists QNAP QuMagie as affected; fixed version to be announced.\nCVE-2026-109618: Vendor-confirmed affected product scope; fixed version to be announced\nCVE-2026-109619: Vendor-confirmed affected product scope; fixed version to be announced\nCVE assessment limit: Affected product release scope is vendor-confirmed; installed version, exposure, configuration and exploitation need separate evidence.",
+      "comment": "Inventory record: PHP-0718\nCategory: Content management\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Conflicting current official QNAP advisory scope\nDeployment status: Not measured\nPHP surface: QNAP says PHP is used in web components of QNAP operating systems and several QNAP applications; exact component boundary and SAPI are not published for this product.\nPHP version scope: Earlier official regional QSA-26-18 content names QuMagie 2.10.1 and earlier as affected; the current canonical resolved advisory omits the product without publishing a fixed version.\nExtensions: Unknown\nLimitations: QNAP has not documented whether QuMagie was removed because the original affected scope was incorrect or because remediation occurred. Omission alone does not establish fixed or not-affected status. PHP included in containers running on Container Station or in third-party applications is outside QNAP update coverage.\nPatch owner: QNAP for product-status clarification and any supported update; operator for exposure reduction\nSource accessed: 2026-11-02\nVulnerability status: Under investigation pending reconciliation of conflicting official QNAP advisory presentations.\nCVE-2026-109618: Under investigation; earlier affected scope remains live while the current canonical page omits the product\nCVE-2026-109619: Under investigation; earlier affected scope remains live while the current canonical page omits the product\nCVE assessment limit: Current vendor evidence does not support fixed, not-affected, or still-affected status conclusively.",
       "externalRef": [
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
           "locator": [
-            "https://www.qnap.com/en/security-advisory/qsa-26-18"
+            "https://www.qnap.com/en/security-advisory/qsa-26-18",
+            "https://www.qnap.com/th-th/security-advisory/qsa-26-18"
           ],
-          "comment": "QNAP Security Advisory QSA-26-18 (2026-10-22)"
+          "comment": "QNAP Security Advisory QSA-26-18; conflicting canonical and regional presentations reviewed 2026-11-02"
         }
       ]
     },

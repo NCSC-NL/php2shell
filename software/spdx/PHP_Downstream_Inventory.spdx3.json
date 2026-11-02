@@ -37584,7 +37584,7 @@
       ]
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:calif-confirmed-php-apps-20261021",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
@@ -39992,17 +39992,18 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:qnap:01af88f7bc7a",
-      "summary": "QNAP QSA-26-18 identifies QuMagie 2.10.1 and earlier in its affected-products header for CVE-2026-109618 and CVE-2026-109619; fixed version is not yet published.",
+      "summary": "QNAP's earlier QSA-26-18 scope named QuMagie 2.10.1 and earlier, but the current canonical resolved advisory omits QuMagie without documenting a fix or a not-affected conclusion.",
       "description": "Multimedia application web components",
-      "comment": "Inventory record: PHP-0718\nCategory: Content management\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected product scope\nDeployment status: Not measured\nPHP surface: QNAP says PHP is used in web components of QNAP operating systems and several QNAP applications; exact component boundary and SAPI are not published for this product.\nPHP version scope: QSA-26-18 lists QuMagie 2.10.1 and earlier as affected; fixed version to be announced.\nExtensions: Unknown\nLimitations: QSA-26-18 establishes affected product scope, not a live deployment, exact embedded PHP build, enabled feature set, reachable path or exploitation. PHP included in containers running on Container Station or in third-party applications is outside QNAP update coverage. QSA-26-18's affected-products header explicitly names QuMagie 2.10.1 and earlier, although the rendered affected-products table on the same page omits a separate QuMagie row; no fixed version is published.\nPatch owner: QNAP for supported product updates; operator for exposure reduction and update rollout\nSource accessed: 2026-10-22\nVulnerability status: QNAP QSA-26-18 lists QNAP QuMagie as affected; fixed version to be announced.\nCVE-2026-109618: Vendor-confirmed affected product scope; fixed version to be announced\nCVE-2026-109619: Vendor-confirmed affected product scope; fixed version to be announced\nCVE assessment limit: Affected product release scope is vendor-confirmed; installed version, exposure, configuration and exploitation need separate evidence.",
+      "comment": "Inventory record: PHP-0718\nCategory: Content management\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Conflicting current official QNAP advisory scope\nDeployment status: Not measured\nPHP surface: QNAP says PHP is used in web components of QNAP operating systems and several QNAP applications; exact component boundary and SAPI are not published for this product.\nPHP version scope: Earlier official regional QSA-26-18 content names QuMagie 2.10.1 and earlier as affected; the current canonical resolved advisory omits the product without publishing a fixed version.\nExtensions: Unknown\nLimitations: QNAP has not documented whether QuMagie was removed because the original affected scope was incorrect or because remediation occurred. Omission alone does not establish fixed or not-affected status. PHP included in containers running on Container Station or in third-party applications is outside QNAP update coverage.\nPatch owner: QNAP for product-status clarification and any supported update; operator for exposure reduction\nSource accessed: 2026-11-02\nVulnerability status: Under investigation pending reconciliation of conflicting official QNAP advisory presentations.\nCVE-2026-109618: Under investigation; earlier affected scope remains live while the current canonical page omits the product\nCVE-2026-109619: Under investigation; earlier affected scope remains live while the current canonical page omits the product\nCVE assessment limit: Current vendor evidence does not support fixed, not-affected, or still-affected status conclusively.",
       "externalRef": [
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
           "locator": [
-            "https://www.qnap.com/en/security-advisory/qsa-26-18"
+            "https://www.qnap.com/en/security-advisory/qsa-26-18",
+            "https://www.qnap.com/th-th/security-advisory/qsa-26-18"
           ],
-          "comment": "QNAP Security Advisory QSA-26-18 (2026-10-22)"
+          "comment": "QNAP Security Advisory QSA-26-18; conflicting canonical and regional presentations reviewed 2026-11-02"
         }
       ]
     },
@@ -40050,17 +40051,18 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:qnap:01af88f7bc7a",
-      "summary": "QNAP QSA-26-18 lists QNE (ADRA) 1.0.7 and earlier as affected by CVE-2026-109618 and CVE-2026-109619; fixed version is to be announced.",
+      "summary": "QNAP's earlier QSA-26-18 scope named QNE (ADRA) 1.0.7 and earlier, but the current canonical resolved advisory omits QNE without documenting a fix or a not-affected conclusion.",
       "description": "Network appliance operating system web components",
-      "comment": "Inventory record: PHP-0720\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected product scope\nDeployment status: Not measured\nPHP surface: QNAP says PHP is used in web components of QNAP operating systems and several QNAP applications; exact component boundary and SAPI are not published for this product.\nPHP version scope: QSA-26-18 lists QNE (ADRA) 1.0.7 and earlier as affected; fixed version to be announced.\nExtensions: Unknown\nLimitations: QSA-26-18 establishes affected product scope, not a live deployment, exact embedded PHP build, enabled feature set, reachable path or exploitation. PHP included in containers running on Container Station or in third-party applications is outside QNAP update coverage.\nPatch owner: QNAP for supported product updates; operator for exposure reduction and update rollout\nSource accessed: 2026-10-22\nVulnerability status: QNAP QSA-26-18 lists QNAP QNE (ADRA) as affected; fixed version to be announced.\nCVE-2026-109618: Vendor-confirmed affected product scope; fixed version to be announced\nCVE-2026-109619: Vendor-confirmed affected product scope; fixed version to be announced\nCVE assessment limit: Affected product release scope is vendor-confirmed; installed version, exposure, configuration and exploitation need separate evidence.",
+      "comment": "Inventory record: PHP-0720\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Conflicting current official QNAP advisory scope\nDeployment status: Not measured\nPHP surface: QNAP says PHP is used in web components of QNAP operating systems and several QNAP applications; exact component boundary and SAPI are not published for this product.\nPHP version scope: Earlier official regional QSA-26-18 content names QNE (ADRA) 1.0.7 and earlier as affected; the current canonical resolved advisory omits the product without publishing a fixed version.\nExtensions: Unknown\nLimitations: QNAP has not documented whether QNE was removed because the original affected scope was incorrect or because remediation occurred. Omission alone does not establish fixed or not-affected status. PHP included in containers running on Container Station or in third-party applications is outside QNAP update coverage.\nPatch owner: QNAP for product-status clarification and any supported update; operator for exposure reduction\nSource accessed: 2026-11-02\nVulnerability status: Under investigation pending reconciliation of conflicting official QNAP advisory presentations.\nCVE-2026-109618: Under investigation; earlier affected scope remains live while the current canonical page omits the product\nCVE-2026-109619: Under investigation; earlier affected scope remains live while the current canonical page omits the product\nCVE assessment limit: Current vendor evidence does not support fixed, not-affected, or still-affected status conclusively.",
       "externalRef": [
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
           "locator": [
-            "https://www.qnap.com/en/security-advisory/qsa-26-18"
+            "https://www.qnap.com/en/security-advisory/qsa-26-18",
+            "https://www.qnap.com/th-th/security-advisory/qsa-26-18"
           ],
-          "comment": "QNAP Security Advisory QSA-26-18 (2026-10-22)"
+          "comment": "QNAP Security Advisory QSA-26-18; conflicting canonical and regional presentations reviewed 2026-11-02"
         }
       ]
     },
@@ -41560,14 +41562,14 @@
         "urn:php2shell:inventory:package:PHP-0718",
         "urn:php2shell:inventory:package:PHP-0720"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "QNAP QSA-26-18 lists these product versions as affected by both PHP2Shell CVEs; fixed versions are to be announced.",
-      "summary": "CVE-2026-109618 assessment: QNAP QSA-26-18 lists these product versions as affected by both PHP2Shell CVEs; fixed versions are to be announced.",
-      "comment": "Added from QNAP Security Advisory QSA-26-18 released 2026-10-22 and reviewed 2026-10-22. The advisory states that PHP is used in web components of QNAP operating systems and several QNAP applications, lists these product versions as affected, and says fixed versions will be published later. The QuMagie scope is taken from the advisory's explicit affected-products header; the rendered affected-products table on the same page omits a separate QuMagie row.",
-      "security_actionStatement": "Keep affected devices off the internet where possible, disable direct exposure and unnecessary PHP-based services, use VPN and trusted-network restrictions, and apply QNAP fixes when released."
+      "relationshipType": "underInvestigationFor",
+      "security_statusNotes": "Earlier official regional QSA-26-18 content names these versions as affected, while the current canonical resolved advisory omits them without documenting a fix or a not-affected conclusion.",
+      "summary": "CVE-2026-109618 assessment: conflicting current QNAP advisory presentations require clarification",
+      "comment": "QNAP Security Advisory QSA-26-18 reviewed 2026-11-02. Earlier official regional content names QuMagie 2.10.1 and earlier and QNE (ADRA) 1.0.7 and earlier as affected. The current canonical resolved advisory omits both products and publishes neither fixed versions nor not-affected conclusions for them. Sources: https://www.qnap.com/en/security-advisory/qsa-26-18 and https://www.qnap.com/th-th/security-advisory/qsa-26-18.",
+      "security_actionStatement": "Request QNAP clarification and continue applying the vendor's exposure-reduction guidance until the affected/fixed status is reconciled."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:qnap-qsa-26-18-20261022",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
@@ -41575,11 +41577,11 @@
         "urn:php2shell:inventory:package:PHP-0718",
         "urn:php2shell:inventory:package:PHP-0720"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "QNAP QSA-26-18 lists these product versions as affected by both PHP2Shell CVEs; fixed versions are to be announced.",
-      "summary": "CVE-2026-109619 assessment: QNAP QSA-26-18 lists these product versions as affected by both PHP2Shell CVEs; fixed versions are to be announced.",
-      "comment": "Added from QNAP Security Advisory QSA-26-18 released 2026-10-22 and reviewed 2026-10-22. The advisory states that PHP is used in web components of QNAP operating systems and several QNAP applications, lists these product versions as affected, and says fixed versions will be published later. The QuMagie scope is taken from the advisory's explicit affected-products header; the rendered affected-products table on the same page omits a separate QuMagie row.",
-      "security_actionStatement": "Keep affected devices off the internet where possible, disable direct exposure and unnecessary PHP-based services, use VPN and trusted-network restrictions, and apply QNAP fixes when released."
+      "relationshipType": "underInvestigationFor",
+      "security_statusNotes": "Earlier official regional QSA-26-18 content names these versions as affected, while the current canonical resolved advisory omits them without documenting a fix or a not-affected conclusion.",
+      "summary": "CVE-2026-109619 assessment: conflicting current QNAP advisory presentations require clarification",
+      "comment": "QNAP Security Advisory QSA-26-18 reviewed 2026-11-02. Earlier official regional content names QuMagie 2.10.1 and earlier and QNE (ADRA) 1.0.7 and earlier as affected. The current canonical resolved advisory omits both products and publishes neither fixed versions nor not-affected conclusions for them. Sources: https://www.qnap.com/en/security-advisory/qsa-26-18 and https://www.qnap.com/th-th/security-advisory/qsa-26-18.",
+      "security_actionStatement": "Request QNAP clarification and continue applying the vendor's exposure-reduction guidance until the affected/fixed status is reconciled."
     },
     {
       "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
@@ -42903,9 +42905,10 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Follow Cisco's remediation status for Portal Builder. Service shutdown is not confirmation of a software fix.",
+      "summary": "Cisco advisory version 1.10 states that the ISE Portal Builder fix is deployed and no customer action is required.",
       "description": "ISE portal customization component",
-      "comment": "Inventory record: PHP-0748\nCategory: Appliances and embedded\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nExtensions: Unknown\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nEvidence status: Official public vendor/upstream CVE assessment\nSource accessed: 2026-10-28\nPublic vendor CVE review: 2026-10-28\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nVendor advisory status: Cisco advisory version 1.8 (Final, 2026-10-27) lists ISE Portal Builder as vulnerable and offline for remediation. It does not confirm a released fix; the separate ISE product's Not vuln assessment does not cover Portal Builder.\nVulnerability status: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists ISE Portal Builder as vulnerable and offline for remediation. It does not confirm a released fix; the separate ISE product's Not vuln assessment does not cover Portal Builder.\nCVE assessment limit: Only the documented product, release and platform scope is assessed. Installed versions, runtime selection, reachability and exploitation were not tested.\nCVE-2026-109618: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists ISE Portal Builder as vulnerable and offline for remediation. It does not confirm a released fix; the separate ISE product's Not vuln assessment does not cover Portal Builder.\nCVE-2026-109619: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists ISE Portal Builder as vulnerable and offline for remediation. It does not confirm a released fix; the separate ISE product's Not vuln assessment does not cover Portal Builder.\nPHP version scope: Affected release numbers not specified by Cisco; see the product-specific advisory status.\nRelease pin: Cisco advisory version 1.8, Final, updated 2026-10-27\nLimitations: The advisory confirms product status but does not establish the installed build, enabled features, reachability or exploitation of an individual deployment.",
+      "software_packageVersion": "Managed-service fix deployed by 2026-10-30; build not published",
+      "comment": "Inventory record: PHP-0748\nCategory: Appliances and embedded\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nDeployment status: Cisco-managed service fix deployed\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nExtensions: Unknown\nPatch owner: Cisco for the deployed managed-service remediation\nEvidence status: Official public vendor CVE assessment\nSource accessed: 2026-11-02\nPublic vendor CVE review: 2026-11-02\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nVendor advisory status: Cisco advisory version 1.10 (Final, updated 2026-10-30) states: Fix deployed, no customer action required.\nVulnerability status: Fixed. Cisco confirms that the managed Portal Builder remediation is deployed.\nCVE assessment limit: The fixed status applies to the Cisco-managed Portal Builder service described by the advisory; Cisco does not publish an affected or fixed build number.\nCVE-2026-109618: Fixed; managed-service fix deployed\nCVE-2026-109619: Fixed; managed-service fix deployed\nPHP version scope: Cisco does not publish the remediated PHP version.\nRelease pin: Cisco advisory version 1.10, Final, updated 2026-10-30\nLimitations: The advisory does not establish the PHP build used before or after remediation.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -42913,7 +42916,7 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Official public source reviewed 2026-10-28"
+          "comment": "Cisco advisory version 1.10 (Final, updated 2026-10-30); reviewed 2026-11-02"
         }
       ]
     },
@@ -49184,18 +49187,18 @@
       "security_actionStatement": "Follow Cisco's product-specific guidance and release availability for CSCwx37073; no currently available fixed build is confirmed by this advisory."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0748-official-20261028",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0748"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Cisco advisory version 1.8 (Final, 2026-10-27) lists ISE Portal Builder as vulnerable and offline for remediation. It does not confirm a released fix; the separate ISE product's Not vuln assessment does not cover Portal Builder.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Official public sources reviewed 2026-10-28. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
-      "security_actionStatement": "Follow Cisco's remediation status for Portal Builder. Service shutdown is not confirmation of a software fix."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Cisco advisory version 1.10 (Final, updated 2026-10-30) states that the ISE Portal Builder fix is deployed and no customer action is required; no build number is published.",
+      "summary": "CVE-2026-109618 assessment: managed-service fix deployed",
+      "comment": "Official public source reviewed 2026-11-02: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_actionStatement": "No customer action is required for the Cisco-managed Portal Builder fix."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -51547,18 +51550,18 @@
       "security_actionStatement": "Follow Cisco's product-specific guidance and release availability for CSCwx37073; no currently available fixed build is confirmed by this advisory."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0748-official-20261028",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0748"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Cisco advisory version 1.8 (Final, 2026-10-27) lists ISE Portal Builder as vulnerable and offline for remediation. It does not confirm a released fix; the separate ISE product's Not vuln assessment does not cover Portal Builder.",
-      "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Official public sources reviewed 2026-10-28. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
-      "security_actionStatement": "Follow Cisco's remediation status for Portal Builder. Service shutdown is not confirmation of a software fix."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Cisco advisory version 1.10 (Final, updated 2026-10-30) states that the ISE Portal Builder fix is deployed and no customer action is required; no build number is published.",
+      "summary": "CVE-2026-109619 assessment: managed-service fix deployed",
+      "comment": "Official public source reviewed 2026-11-02: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
+      "security_actionStatement": "No customer action is required for the Cisco-managed Portal Builder fix."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
