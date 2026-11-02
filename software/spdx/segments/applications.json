@@ -9168,9 +9168,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:phpmyfaq-project:ab2e5ba5d190",
-      "summary": "Update the deployed PHP runtime using the official PHP security guidance; do not treat the notice's CGI configuration suggestion as a complete fix.",
+      "summary": "Update the deployed PHP runtime using the official PHP security guidance; do not treat the notice's CGI configuration suggestion as a complete fix. The separately assessed official 4.2.0-RC.1 Docker images are recorded as PHP-0932; their fixed runtime does not establish remediation of other installations.",
       "description": "Self-hosted FAQ and knowledge-base web application",
-      "comment": "Inventory record: PHP-0658\nCategory: Education and knowledge\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime and CLI tooling where configured\nPHP version scope: phpMyFAQ deployments on affected PHP-CGI runtimes\nExtensions: Manifest-declared extension set not exhaustively resolved in this candidate pass\nLimitations: A moving branch manifest and release-process SBOM documentation do not prove an installed release, PHP build, loaded modules or reachable affected path.\nPatch owner: phpMyFAQ maintainers for application releases; PHP runtime provider and operator for runtime fixes\nDownstream surface: FAQ content, administration and configured integrations\nRelease pin: phpMyFAQ deployments on affected PHP-CGI runtimes\nSource accessed: 2026-10-23\nAliases: thorsten/phpMyFAQ\nConditional downstream consequence: If untrusted requests or media reach a matching PHP core/extension flaw, the PHP worker could suffer denial of service, disclosure or code execution. Application data and configured credentials could then be affected within that worker's permissions; host privilege, tenant escape and lateral movement require separate evidence.\nVulnerability status: Vulnerable. The phpMyFAQ team's 21 October notice explicitly reports CVE-2026-109618 exposure on PHP-CGI. It does not assess CVE-2026-109619; that CVE remains Investigation. No application-code fix or complete configuration workaround is asserted.\nCVE-2026-109618: Vulnerable. The phpMyFAQ team's 21 October notice explicitly reports CVE-2026-109618 exposure on PHP-CGI. It does not assess CVE-2026-109619; that CVE remains Investigation. No application-code fix or complete configuration workaround is asserted.\nCVE-2026-109619: Official PHP requirement or SBOM evidence only; CVE match unknown\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://phpmyfaq.de/",
+      "comment": "Inventory record: PHP-0658\nCategory: Education and knowledge\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime and CLI tooling where configured\nPHP version scope: phpMyFAQ deployments on affected PHP-CGI runtimes\nExtensions: Manifest-declared extension set not exhaustively resolved in this candidate pass\nLimitations: A moving branch manifest and release-process SBOM documentation do not prove an installed release, PHP build, loaded modules or reachable affected path.\nPatch owner: phpMyFAQ maintainers for application releases; PHP runtime provider and operator for runtime fixes\nDownstream surface: FAQ content, administration and configured integrations\nRelease pin: phpMyFAQ deployments on affected PHP-CGI runtimes\nSource accessed: 2026-10-23\nAliases: thorsten/phpMyFAQ\nConditional downstream consequence: If untrusted requests or media reach a matching PHP core/extension flaw, the PHP worker could suffer denial of service, disclosure or code execution. Application data and configured credentials could then be affected within that worker's permissions; host privilege, tenant escape and lateral movement require separate evidence.\nVulnerability status: Vulnerable. The phpMyFAQ team's 21 October notice explicitly reports CVE-2026-109618 exposure on PHP-CGI. It does not assess CVE-2026-109619; that CVE remains Investigation. No application-code fix or complete configuration workaround is asserted.\nCVE-2026-109618: Vulnerable. The phpMyFAQ team's 21 October notice explicitly reports CVE-2026-109618 exposure on PHP-CGI. It does not assess CVE-2026-109619; that CVE remains Investigation. No application-code fix or complete configuration workaround is asserted.\nCVE-2026-109619: Official PHP requirement or SBOM evidence only; CVE match unknown\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://phpmyfaq.de/\nRelated fixed distribution: PHP-0932 covers only the inspected official 4.2.0-RC.1 Apache and FrankenPHP image digests. This generic record retains its existing per-CVE assessments.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -9195,6 +9195,14 @@
             "https://phpmyfaq.de/"
           ],
           "comment": "Official public CVE review 2026-10-23"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.phpmyfaq.de/news/2026/#2026-11-01"
+          ],
+          "comment": "Official release announcement for the separate PHP-0932 Docker scope; does not resolve all generic phpMyFAQ installations."
         }
       ],
       "software_packageVersion": "phpMyFAQ deployments on affected PHP-CGI runtimes"
@@ -13380,6 +13388,18 @@
       "relationshipType": "hasProvidedDependency",
       "summary": "WooCommerce uses the PHP runtime supplied by its hosting environment",
       "comment": "The WooCommerce security advisory assigns PHP remediation to the hosting provider or operator. Runtime status is assessed separately from the application. Source: https://developer.woocommerce.com/2026/10/21/php-security-release/"
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0658:docker-release-variants",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0658",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0932"
+      ],
+      "relationshipType": "hasVariant",
+      "summary": "phpMyFAQ has a separately assessed official release-candidate container distribution.",
+      "comment": "Version-specific VEX is carried by PHP-0932; it does not replace the generic product assessments on PHP-0658."
     }
   ]
 }

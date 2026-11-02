@@ -2246,7 +2246,12 @@
         "urn:php2shell:inventory:relationship:PHP-0521:runtime-scope-20261102",
         "urn:php2shell:inventory:relationship:PHP-0569:runtime-scope-20261102",
         "urn:php2shell:inventory:relationship:PHP-0614:runtime-scope-20261102",
-        "urn:php2shell:inventory:relationship:PHP-0012-provided-runtime"
+        "urn:php2shell:inventory:relationship:PHP-0012-provided-runtime",
+        "urn:php2shell:inventory:package:PHP-0932",
+        "urn:php2shell:inventory:relationship:PHP-0932",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:PHP-0932-20261102",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:PHP-0932-20261102",
+        "urn:php2shell:inventory:relationship:PHP-0658:docker-release-variants"
       ]
     }
   ]

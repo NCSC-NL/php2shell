@@ -1,7 +1,7 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
 Operational information: 28 October 2026 16:46 CET<br>
-Software list last status update: 2 November 2026 15:28 CET<br>
+Software list last status update: 2 November 2026 16:26 CET<br>
 ## TLP:CLEAR
 
 This repository contains operational information regarding the critical PHP vulnerabilities tracked by CERT-EU as CVE-2026-109618 and CVE-2026-109619.
@@ -11,7 +11,7 @@ PHP is a widely used open-source server-side scripting language, so these vulner
 ## Current status
 
 <!-- inventory-statistics:summary:start -->
-This repository tracks **929 products**, including **215 vulnerable** and **166 fixed**.
+This repository tracks **930 products**, including **215 vulnerable** and **167 fixed**.
 <!-- inventory-statistics:summary:end -->
 
 On 21 October 2026, PHP published fixed releases for CVE-2026-109618 and CVE-2026-109619: PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. PHP states that both vulnerabilities can allow unauthenticated remote code execution and that all PHP installations serving web requests are at risk, including PHP-FPM, Apache with mod_php, php-cgi, FrankenPHP and LiteSpeed. PHP considers the risk highest for mod_php, where an unauthenticated request can trigger exploitation before application code runs.
@@ -58,7 +58,7 @@ Statistics as of **2026-11-02 (UTC)**, from the current SPDX inventory.
 
 | Products tracked | Fixed | Vulnerable | Under investigation | Runtime-dependent | Not affected | Unassessed / unknown |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 929 | 166 | 215 | 93 | 240 | 214 | 1 |
+| 930 | 167 | 215 | 93 | 240 | 214 | 1 |
 
 ![Product status on the last 3 inventory update days](software/statistics/inventory-statistics.png)
 
@@ -70,11 +70,11 @@ Statistics as of **2026-11-02 (UTC)**, from the current SPDX inventory.
 
 | Date and time | Supplier | Product | Version (see Status) | Status CVE-2026-109618 / CVE-2026-109619 | Links |
 |:------------------------|:---------|:--------|:--------------------:|:----------------------:|------:|
-|2026-11-02 15:28:37 +0100|Broadcom|Content Analysis and Malware Analysis (CASMA)|Broadcom ESG advisory 39404 affected CASMA scope; exact releases unspecified in the public umbrella advisory|Vulnerable|[source 1](<https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404>)<br>[source 2](<https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39475>)|
-|2026-11-02 15:28:37 +0100|Virtualmin|Virtualmin hosted PHP execution modes||Runtime-dependent|[source 1](<https://www.virtualmin.com/docs/server-components/php-execution-modes/>)<br>[source 2](<https://forum.virtualmin.com/t/security-advisory-critical-remote-code-execution-vulnerabilities-update-now-php/138200/2>)|
-|2026-11-02 15:28:37 +0100|WooCommerce|WooCommerce||Runtime-dependent|[source 1](<https://woocommerce.com/document/server-requirements/>)<br>[source 2](<https://developer.woocommerce.com/2026/10/21/php-security-release/>)|
+|2026-11-02 16:26:31 +0100|phpMyFAQ project|phpMyFAQ official Docker images (4.2.0-RC.1)|4.2.0-RC.1 / 4.2.0-RC.1-frankenphp: PHP 8.4.27 (linux/amd64 and linux/arm64; inspected digests)|Fix|[source 1](<https://www.phpmyfaq.de/news/2026/#2026-11-01>)<br>[source 2](<https://www.php.net/archive/2026.php#2026-10-21-5>)<br>[source 3](<https://github.com/thorsten/phpMyFAQ/blob/5de0d36bf69049a6dd7414f6a39dc9246d2281ce/.docker/production/Dockerfile>)<br>[source 4](<https://github.com/thorsten/phpMyFAQ/blob/5de0d36bf69049a6dd7414f6a39dc9246d2281ce/.github/workflows/docker-publish.yml>)<br>[source 5](<https://github.com/thorsten/phpMyFAQ/blob/5de0d36bf69049a6dd7414f6a39dc9246d2281ce/docs/deployment.md>)<br>[source 6](<https://ghcr.io/v2/thorsten/phpmyfaq/manifests/sha256:2c723712bed8d1e8ffee37677d7283a7706244d4f2f5925338e106a6b502cb18>)<br>[source 7](<https://ghcr.io/v2/thorsten/phpmyfaq/manifests/sha256:1e05470771f0b58a4d082b45b00a096411eb812d4b2f7cac8d4d891bc5ae3170>)|
+|2026-11-02 15:35:18 +0100|Broadcom|Content Analysis and Malware Analysis (CASMA)|Broadcom ESG advisory 39404 affected CASMA scope; exact releases unspecified in the public umbrella advisory|Vulnerable|[source 1](<https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404>)<br>[source 2](<https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39475>)|
+|2026-11-02 15:35:18 +0100|Virtualmin|Virtualmin hosted PHP execution modes||Runtime-dependent|[source 1](<https://www.virtualmin.com/docs/server-components/php-execution-modes/>)<br>[source 2](<https://forum.virtualmin.com/t/security-advisory-critical-remote-code-execution-vulnerabilities-update-now-php/138200/2>)|
+|2026-11-02 15:35:18 +0100|WooCommerce|WooCommerce||Runtime-dependent|[source 1](<https://woocommerce.com/document/server-requirements/>)<br>[source 2](<https://developer.woocommerce.com/2026/10/21/php-security-release/>)|
 |2026-11-02 11:52:03 +0100|Cisco|Cisco Identity Services Engine (ISE) Portal Builder|Managed-service fix deployed by 2026-10-30; build not published|Fix|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
-|2026-11-02 11:52:03 +0100|QNAP|QNAP QNE (ADRA)|QNE (ADRA) 1.0.7 and earlier|Investigation|[source 1](<https://www.qnap.com/en/security-advisory/qsa-26-18>)<br>[source 2](<https://www.qnap.com/th-th/security-advisory/qsa-26-18>)|
 
 See the [full software status update history](software/changelog_software_list.md).
 

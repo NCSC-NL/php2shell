@@ -4980,7 +4980,12 @@
         "urn:php2shell:inventory:relationship:PHP-0521:runtime-scope-20261102",
         "urn:php2shell:inventory:relationship:PHP-0569:runtime-scope-20261102",
         "urn:php2shell:inventory:relationship:PHP-0614:runtime-scope-20261102",
-        "urn:php2shell:inventory:relationship:PHP-0012-provided-runtime"
+        "urn:php2shell:inventory:relationship:PHP-0012-provided-runtime",
+        "urn:php2shell:inventory:package:PHP-0932",
+        "urn:php2shell:inventory:relationship:PHP-0932",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:PHP-0932-20261102",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:PHP-0932-20261102",
+        "urn:php2shell:inventory:relationship:PHP-0658:docker-release-variants"
       ]
     },
     {
@@ -23999,9 +24004,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:wordpress-playground-contributors:77d729688b10",
-      "summary": "Fix for the rebuilt PHP 8.2-8.5 Wasm binaries available at pinned Git commit dcd8e50fb651. A maintainer confirmed the rebuild for both CVEs. This assessment does not confirm an npm release, legacy PHP builds or a deployed Playground instance.",
+      "summary": "Fixed PHP 8.2-8.5 binaries are available in the eight @php-wasm/web-8-{2,3,4,5} and @php-wasm/node-8-{2,3,4,5} npm packages at 3.1.62, as well as the previously verified Git tree. Refresh matching JavaScript/Wasm assets together. Legacy builds and deployed Playground instances require separate assessment.",
       "description": "Actual PHP interpreter compiled by Emscripten to WebAssembly with a C/JavaScript API",
-      "comment": "Inventory record: PHP-0539\nCategory: Embedded runtimes\nOriginal relationship: bundles\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Maintainer-confirmed rebuilt binaries in merged upstream Git tree\nDeployment status: Not measured\nPHP surface: Actual PHP interpreter compiled by Emscripten to WebAssembly with a C/JavaScript API\nPHP version scope: PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12 in web and Node builds, each with JSPI and Asyncify variants (16 binary artifacts). Fixed Git tree dcd8e50fb65121726bb23a686746f68032ff1cb1 includes rebuild 11ddfdc9858269b131536f3052648f0a74d95387.\nExtensions: Extension/backend inventory not fully enumerated for the scoped implementation/build\nLimitations: Fix is limited to the named PHP 8.2-8.5 artifacts in the pinned Git tree. Legacy PHP 5.2/7.4/8.0/8.1 and next are outside this confirmation. The checked npm 3.1.61 publication points to earlier Git head 1e779217fceedb5b29b1359a196dc97ce40f31de, whose version metadata still lists older PHP releases; it is not confirmed fixed. No npm release, hosted deployment, installed binary, exploit reachability or sandbox/host escape is established. Public source and Git artifact metadata were inspected; binaries were not downloaded or executed.\nPatch owner: Playground PHP.wasm build publisher plus PHP/upstream maintainers; package consumers must refresh JS/Wasm assets together\nDownstream surface: Actual PHP interpreter compiled by Emscripten to WebAssembly with a C/JavaScript API\nRelease pin: PR #4487 merged 2026-10-26 09:57:44 UTC as dcd8e50fb65121726bb23a686746f68032ff1cb1; rebuilt binaries commit 11ddfdc9858269b131536f3052648f0a74d95387\nSource accessed: 2026-10-30\nAliases: WordPress PHP.wasm binaries, @php-wasm/node-X-Y, @php-wasm/web-X-Y\nConditional downstream consequence: A matching PHP/Wasm flaw may conditionally crash the sandboxed runtime or affect its PHP data and granted browser/Node capabilities. Native server RCE, host escape or tenant compromise does not follow without a separate sandbox/bridge flaw and reachable path.\nVulnerability status: Fix for both CVEs in the explicitly pinned PHP 8.2-8.5 Git binaries; no broader release or deployment claim.\nCVE-2026-109618: Fix; pinned Git binaries built from PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12\nCVE-2026-109619: Fix; pinned Git binaries built from PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12\nCVE assessment limit: The maintainer rebuild confirmation and immutable artifact paths support this version scope. PHP.wasm is separate from the browser-local runtime and JS adapter inventory entries; those entries retain their existing assessments. Native server RCE or sandbox escape is not inferred.\nPublic vendor CVE review: 2026-10-30\nVendor advisory sources: https://github.com/WordPress/wordpress-playground/pull/4487 ; https://github.com/WordPress/wordpress-playground/pull/4487#issuecomment-6340964082",
+      "comment": "Inventory record: PHP-0539\nCategory: Embedded runtimes\nOriginal relationship: bundles\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Maintainer-confirmed security rebuild plus independently inspected official npm publication\nDeployment status: Not measured\nPHP surface: Actual PHP interpreter compiled by Emscripten to WebAssembly with a C/JavaScript API\nPHP version scope: PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12; web and Node packages at npm 3.1.62, each with JSPI and Asyncify variants (16 Wasm artifacts). Previously verified Git tree dcd8e50fb65121726bb23a686746f68032ff1cb1 remains within scope.\nExtensions: Extension/backend inventory not fully enumerated for the scoped implementation/build\nLimitations: Fix covers the sixteen JSPI/Asyncify binaries in the eight named npm 3.1.62 packages and the previously verified PHP 8.2-8.5 Git binaries. It does not cover npm 3.1.61, legacy PHP 5.2/7.4/8.0/8.1, next, custom builds or unmeasured hosted/local deployments. Package integrity and Wasm version strings were inspected as data; no downloaded code was executed and no reachability or sandbox-escape test was performed.\nPatch owner: Playground PHP.wasm build publisher plus PHP/upstream maintainers; package consumers must refresh JS/Wasm assets together\nDownstream surface: Actual PHP interpreter compiled by Emscripten to WebAssembly with a C/JavaScript API\nRelease pin: Eight npm packages at 3.1.62, gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e; tarball SHA-512 integrity and individual Wasm SHA-256 recorded in externalRef comments. This Git head contains the merged security rebuild dcd8e50fb65121726bb23a686746f68032ff1cb1.\nSource accessed: 2026-11-02\nAliases: WordPress PHP.wasm binaries, @php-wasm/node-X-Y, @php-wasm/web-X-Y\nConditional downstream consequence: A matching PHP/Wasm flaw may conditionally crash the sandboxed runtime or affect its PHP data and granted browser/Node capabilities. Native server RCE, host escape or tenant compromise does not follow without a separate sandbox/bridge flaw and reachable path.\nVulnerability status: Fix for both CVEs in the explicitly named npm 3.1.62 packages and pinned PHP 8.2-8.5 Git binaries.\nCVE-2026-109618: Fix; named npm 3.1.62 packages and pinned Git binaries contain PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12.\nCVE-2026-109619: Fix; named npm 3.1.62 packages and pinned Git binaries contain PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12.\nCVE assessment limit: Fix covers the sixteen JSPI/Asyncify binaries in the eight named npm 3.1.62 packages and the previously verified PHP 8.2-8.5 Git binaries. It does not cover npm 3.1.61, legacy PHP 5.2/7.4/8.0/8.1, next, custom builds or unmeasured hosted/local deployments. Package integrity and Wasm version strings were inspected as data; no downloaded code was executed and no reachability or sandbox-escape test was performed.\nPublic vendor CVE review: 2026-11-02\nVendor advisory sources: https://github.com/WordPress/wordpress-playground/pull/4487 ; https://github.com/WordPress/wordpress-playground/pull/4487#issuecomment-6340964082",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -24049,7 +24054,7 @@
           "locator": [
             "https://github.com/WordPress/wordpress-playground/blob/1e779217fceedb5b29b1359a196dc97ce40f31de/packages/php-wasm/supported-php-versions.mjs"
           ],
-          "comment": "Earlier Git head recorded by npm 3.1.61 still declares PHP 8.2.33, 8.3.33, 8.4.25 and 8.5.10; npm publication is outside the confirmed fix scope."
+          "comment": "Earlier npm 3.1.61 Git head still declares older PHP releases; that publication remains outside the confirmed fix scope. npm 3.1.62 is assessed separately below."
         },
         {
           "type": "ExternalRef",
@@ -24066,9 +24071,81 @@
             "https://github.com/WordPress/wordpress-playground/blob/trunk/packages/php-wasm/universal/src/lib/supported-php-versions.ts"
           ],
           "comment": "Primary project documentation, released announcement or publisher package declaration - The source separately enumerates seven supported minor labels, one legacy label and next."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://registry.npmjs.org/@php-wasm/web-8-2/3.1.62"
+          ],
+          "comment": "Publisher npm metadata and tarball inspected 2026-11-02. Tarball https://registry.npmjs.org/@php-wasm/web-8-2/-/web-8-2-3.1.62.tgz; verified integrity sha512-J58NRkGZPIne2+SKeaz6bfKmOjxr4NIRQlXFdlEYyF9zidX6ZJvZqXKwG/KgmODcJkwBvHyx+7qJo2LHChCu0Q==; gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e. package/asyncify/8_2_35/php_8_2.wasm SHA-256 530789a362b3a35c131784c7f281af5eec6c070102755695cc2af076476fd18b; package/jspi/8_2_35/php_8_2.wasm SHA-256 6d0068ff127aaa6e1f52ca5facc3165bde243eb5544d96329b4adf4490d8ea37."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://registry.npmjs.org/@php-wasm/web-8-3/3.1.62"
+          ],
+          "comment": "Publisher npm metadata and tarball inspected 2026-11-02. Tarball https://registry.npmjs.org/@php-wasm/web-8-3/-/web-8-3-3.1.62.tgz; verified integrity sha512-Q4qVDG6H5+XJ6VgEgrTlGEwWEnrfoTKo7Mbl0bg99rAvbBj9aZdJAbMJudF32TvSiv8YRtbN5fTjYnzscyI+iQ==; gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e. package/asyncify/8_3_36/php_8_3.wasm SHA-256 474c4dd02f79f2719558fbe8ecbcbeae0580933f465861c9c357b715ca0f59ee; package/jspi/8_3_36/php_8_3.wasm SHA-256 4a35d44ed3decb9b9db529c6802a7c4e16bf921c469cc7613478a645b5e68da8."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://registry.npmjs.org/@php-wasm/web-8-4/3.1.62"
+          ],
+          "comment": "Publisher npm metadata and tarball inspected 2026-11-02. Tarball https://registry.npmjs.org/@php-wasm/web-8-4/-/web-8-4-3.1.62.tgz; verified integrity sha512-Sl8GS0Ebvc+iIndL2s06Smjx6/r2U3zyUtL8XObRCrnpcvDf98vycBw5KzUeNRSl8ij1aHLh5HlJSM507CFfxg==; gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e. package/asyncify/8_4_27/php_8_4.wasm SHA-256 0c1645e3ae597c07c508f72b1ed44092736ac8a6a6b2508bc1186814cc6c409b; package/jspi/8_4_27/php_8_4.wasm SHA-256 40716c5c30e87d3ee3a9751040b6f48c31a4b15515bec58ddd5882400a2a8b4e."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://registry.npmjs.org/@php-wasm/web-8-5/3.1.62"
+          ],
+          "comment": "Publisher npm metadata and tarball inspected 2026-11-02. Tarball https://registry.npmjs.org/@php-wasm/web-8-5/-/web-8-5-3.1.62.tgz; verified integrity sha512-9r7I5j3+z8kjb2ykzp3T3uPbiYtQnqIo+9mKfMFQS82I3D29yKVEHeCTNOGOo8Tw5+lPmvlL8++bivpDpUZt7Q==; gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e. package/asyncify/8_5_12/php_8_5.wasm SHA-256 6ad5fbac2f2fe3c074d97f2a8aa47422933343d341a6924b8c626ba122e33fce; package/jspi/8_5_12/php_8_5.wasm SHA-256 bac70f3d9fd5d8717a4fe4f54f24557fe799816b0131f931d2e8c2248d757c1a."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://registry.npmjs.org/@php-wasm/node-8-2/3.1.62"
+          ],
+          "comment": "Publisher npm metadata and tarball inspected 2026-11-02. Tarball https://registry.npmjs.org/@php-wasm/node-8-2/-/node-8-2-3.1.62.tgz; verified integrity sha512-klLZQKvt7R0KIqom3HWpHYJ+p32OnWReOmydGlUTFOk44a8uhCyKYGWiP7TzFuTYuZRtFreZCuFy8G7hIbDeng==; gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e. package/asyncify/8_2_35/php_8_2.wasm SHA-256 4cecee51c4ea7094d5d46031a316926d6f2dee3c42ba7fcca8838f8ef9ab9b11; package/jspi/8_2_35/php_8_2.wasm SHA-256 e763eee330fa54f7e36cfec2f8f0e32de8c267601ca24c8affbb1d5ddb406f9b."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://registry.npmjs.org/@php-wasm/node-8-3/3.1.62"
+          ],
+          "comment": "Publisher npm metadata and tarball inspected 2026-11-02. Tarball https://registry.npmjs.org/@php-wasm/node-8-3/-/node-8-3-3.1.62.tgz; verified integrity sha512-lv8ijc82QOmODIGqePk28nxtxAg4d0p1RZbMpzOwZOHOHfyRa+PSVKYnoXn+4QjDnqKK9LbMXV67oHdsdhvmJQ==; gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e. package/asyncify/8_3_36/php_8_3.wasm SHA-256 ae8b11a99af162fa84172cffde03d87da76d268a476df8f9c778f62c86ebe811; package/jspi/8_3_36/php_8_3.wasm SHA-256 f135c017bbef4e6c9cd4ff381c80e6795298a4f3797059882c5138874bef07c8."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://registry.npmjs.org/@php-wasm/node-8-4/3.1.62"
+          ],
+          "comment": "Publisher npm metadata and tarball inspected 2026-11-02. Tarball https://registry.npmjs.org/@php-wasm/node-8-4/-/node-8-4-3.1.62.tgz; verified integrity sha512-gowQN8+Hfh0ABr/Jv0oAeq0Yy3ODOIDzCKriSF32fj2MK54dpn2XB3dFad5f5LitCUcjMenNnsHtw9+OKGA3RA==; gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e. package/asyncify/8_4_27/php_8_4.wasm SHA-256 2c8847bea9817dbeb9bd23676b5fe3748536de5a6b3b0bedfa3bedc5e6a4920b; package/jspi/8_4_27/php_8_4.wasm SHA-256 a199a70c082b3d121ff410447a5656083e744902fa8e3dad49ed65344d1e3819."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://registry.npmjs.org/@php-wasm/node-8-5/3.1.62"
+          ],
+          "comment": "Publisher npm metadata and tarball inspected 2026-11-02. Tarball https://registry.npmjs.org/@php-wasm/node-8-5/-/node-8-5-3.1.62.tgz; verified integrity sha512-69a6WkN+g3qHNthAXTYmHDPJHIN9CffUH5CAHTO9V18nKjjfnyayKQKms+30QaDw/udK/Un6LYdaRppv/w/UQQ==; gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e. package/asyncify/8_5_12/php_8_5.wasm SHA-256 8b2934b27f9660500a0b7e3f82c73224c21a2f4a6bea48d57d1b889dd6fe58fe; package/jspi/8_5_12/php_8_5.wasm SHA-256 aec8018aa4213b697c07bf3958113b12d6fc39892f4a037ee4dc9f55dad6ed10."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/WordPress/wordpress-playground/blob/8c52f103f3ce30668994c0e75c2c530b82097a5e/packages/php-wasm/supported-php-versions.mjs"
+          ],
+          "comment": "Immutable version declarations at the npm release Git head; ancestor check confirms inclusion of the merged security rebuild."
         }
       ],
-      "software_packageVersion": "PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12; Git dcd8e50fb651 (web/Node, JSPI/Asyncify)"
+      "software_packageVersion": "npm 3.1.62 and Git dcd8e50fb651: PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12 (web/Node, JSPI/Asyncify)"
     },
     {
       "type": "software_Package",
@@ -24084,9 +24161,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:wordpress-playground-contributors:77d729688b10",
-      "summary": "Playground uses a WebAssembly build of the PHP interpreter to run WordPress.",
+      "summary": "Playground uses the PHP.wasm interpreter. Fixed npm 3.1.62 PHP 8.2-8.5 binary scopes are recorded under PHP-0539; the selected runtime and rollout for this broader browser/local deployment scope remain unverified.",
       "description": "WordPress executed with the actual PHP.wasm interpreter; a remote PHP server is not required for browser execution",
-      "comment": "Inventory record: PHP-0540\nCategory: Embedded runtimes\nOriginal relationship: component\nRelationship direction: depends_on_php\nParent component: PHP-0539\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: WordPress executed with the actual PHP.wasm interpreter; a remote PHP server is not required for browser execution\nPHP version scope: Moving architecture/docs updated 2026-10-14; selected WordPress/PHP releases and deployed hosted instance versions unknown.\nExtensions: Extension/backend inventory not fully enumerated for the scoped implementation/build\nLimitations: A browser demo, Node.js process and hosted service are distinct boundaries. The WordPress, runtime-family and adapter entries overlap. No installed artifact, loaded-module set, input reachability, deployment total, tenant escape or compromise was measured. No specific PHP CVE was supplied. Public static evidence only; no retrieved code, package, image or test was installed, built or executed.\nPatch owner: Playground project and PHP.wasm publisher; embedding application/operator for selecting and refreshing builds\nDownstream surface: WordPress executed with the actual PHP.wasm interpreter; a remote PHP server is not required for browser execution\nRelease pin: Moving Playground architecture page, updated 2026-10-14; no instance measurement\nSource accessed: 2026-10-18\nAliases: WordPress Playground\nConditional downstream consequence: A matching flaw in the selected PHP engine, enabled extension or integration path could conditionally affect worker availability, confidentiality or integrity, and code execution only where the flaw class and privileges permit it. Presence does not establish a reachable path. Host control, credentials, tenant isolation and lateral movement require separate evidence.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP Wasm scope; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP Wasm scope; CVE match unknown\nCVE-2026-109619: PHP Wasm scope; CVE match unknown\nCVE assessment limit: Read browser, Node, edge and build-only boundaries separately. A PHP runtime flaw does not establish sandbox/tenant escape. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0540\nCategory: Embedded runtimes\nOriginal relationship: component\nRelationship direction: depends_on_php\nParent component: PHP-0539\nEvidence status: Runtime relationship confirmed; published fixed binary subset assessed separately as PHP-0539\nDeployment status: Not measured\nPHP surface: WordPress executed with the actual PHP.wasm interpreter; a remote PHP server is not required for browser execution\nPHP version scope: Selected WordPress/PHP releases and deployed hosted/local instance versions are unverified. PHP-0539 records the verified PHP 8.2-8.5 npm 3.1.62 and pinned Git binary scopes.\nExtensions: Extension/backend inventory not fully enumerated for the scoped implementation/build\nLimitations: A browser demo, Node.js process and hosted service are distinct deployment boundaries. Published fixes for the PHP-0539 artifact subset do not establish the selected runtime or rollout in this generic scope. Legacy PHP branches and unverified deployments remain unresolved. No deployment, exploit reachability or sandbox escape was measured.\nPatch owner: Playground project and PHP.wasm publisher; embedding application/operator for selecting and refreshing builds\nDownstream surface: WordPress executed with the actual PHP.wasm interpreter; a remote PHP server is not required for browser execution\nRelease pin: Moving Playground architecture page, updated 2026-10-14; no instance measurement\nSource accessed: 2026-11-02\nAliases: WordPress Playground\nConditional downstream consequence: A matching flaw in the selected PHP engine, enabled extension or integration path could conditionally affect worker availability, confidentiality or integrity, and code execution only where the flaw class and privileges permit it. Presence does not establish a reachable path. Host control, credentials, tenant isolation and lateral movement require separate evidence.\nVulnerability status: Investigation for the unresolved generic deployment scope; published fixed binary subsets are recorded separately in PHP-0539.\nCVE-2026-109618: Investigation for unverified runtime selections and deployments; fixed PHP 8.2-8.5 binary scopes are recorded under PHP-0539.\nCVE-2026-109619: Investigation for unverified runtime selections and deployments; fixed PHP 8.2-8.5 binary scopes are recorded under PHP-0539.\nCVE assessment limit: Do not transfer a binary-level fixed assessment to an unmeasured hosted or local deployment, an older/legacy runtime selection, or a modified build. Browser and Node capabilities require separate assessment.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -24095,6 +24172,14 @@
             "https://developer.wordpress.org/playground/developers/architecture/wasm-php-overview/"
           ],
           "comment": "Primary project/vendor scope and release/branch declarations"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/WordPress/wordpress-playground/pull/4487"
+          ],
+          "comment": "Official security fix for the binary subset assessed as PHP-0539; not a deployment attestation."
         }
       ]
     },
@@ -38295,9 +38380,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:phpmyfaq-project:ab2e5ba5d190",
-      "summary": "Update the deployed PHP runtime using the official PHP security guidance; do not treat the notice's CGI configuration suggestion as a complete fix.",
+      "summary": "Update the deployed PHP runtime using the official PHP security guidance; do not treat the notice's CGI configuration suggestion as a complete fix. The separately assessed official 4.2.0-RC.1 Docker images are recorded as PHP-0932; their fixed runtime does not establish remediation of other installations.",
       "description": "Self-hosted FAQ and knowledge-base web application",
-      "comment": "Inventory record: PHP-0658\nCategory: Education and knowledge\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime and CLI tooling where configured\nPHP version scope: phpMyFAQ deployments on affected PHP-CGI runtimes\nExtensions: Manifest-declared extension set not exhaustively resolved in this candidate pass\nLimitations: A moving branch manifest and release-process SBOM documentation do not prove an installed release, PHP build, loaded modules or reachable affected path.\nPatch owner: phpMyFAQ maintainers for application releases; PHP runtime provider and operator for runtime fixes\nDownstream surface: FAQ content, administration and configured integrations\nRelease pin: phpMyFAQ deployments on affected PHP-CGI runtimes\nSource accessed: 2026-10-23\nAliases: thorsten/phpMyFAQ\nConditional downstream consequence: If untrusted requests or media reach a matching PHP core/extension flaw, the PHP worker could suffer denial of service, disclosure or code execution. Application data and configured credentials could then be affected within that worker's permissions; host privilege, tenant escape and lateral movement require separate evidence.\nVulnerability status: Vulnerable. The phpMyFAQ team's 21 October notice explicitly reports CVE-2026-109618 exposure on PHP-CGI. It does not assess CVE-2026-109619; that CVE remains Investigation. No application-code fix or complete configuration workaround is asserted.\nCVE-2026-109618: Vulnerable. The phpMyFAQ team's 21 October notice explicitly reports CVE-2026-109618 exposure on PHP-CGI. It does not assess CVE-2026-109619; that CVE remains Investigation. No application-code fix or complete configuration workaround is asserted.\nCVE-2026-109619: Official PHP requirement or SBOM evidence only; CVE match unknown\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://phpmyfaq.de/",
+      "comment": "Inventory record: PHP-0658\nCategory: Education and knowledge\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime and CLI tooling where configured\nPHP version scope: phpMyFAQ deployments on affected PHP-CGI runtimes\nExtensions: Manifest-declared extension set not exhaustively resolved in this candidate pass\nLimitations: A moving branch manifest and release-process SBOM documentation do not prove an installed release, PHP build, loaded modules or reachable affected path.\nPatch owner: phpMyFAQ maintainers for application releases; PHP runtime provider and operator for runtime fixes\nDownstream surface: FAQ content, administration and configured integrations\nRelease pin: phpMyFAQ deployments on affected PHP-CGI runtimes\nSource accessed: 2026-10-23\nAliases: thorsten/phpMyFAQ\nConditional downstream consequence: If untrusted requests or media reach a matching PHP core/extension flaw, the PHP worker could suffer denial of service, disclosure or code execution. Application data and configured credentials could then be affected within that worker's permissions; host privilege, tenant escape and lateral movement require separate evidence.\nVulnerability status: Vulnerable. The phpMyFAQ team's 21 October notice explicitly reports CVE-2026-109618 exposure on PHP-CGI. It does not assess CVE-2026-109619; that CVE remains Investigation. No application-code fix or complete configuration workaround is asserted.\nCVE-2026-109618: Vulnerable. The phpMyFAQ team's 21 October notice explicitly reports CVE-2026-109618 exposure on PHP-CGI. It does not assess CVE-2026-109619; that CVE remains Investigation. No application-code fix or complete configuration workaround is asserted.\nCVE-2026-109619: Official PHP requirement or SBOM evidence only; CVE match unknown\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://phpmyfaq.de/\nRelated fixed distribution: PHP-0932 covers only the inspected official 4.2.0-RC.1 Apache and FrankenPHP image digests. This generic record retains its existing per-CVE assessments.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -38322,6 +38407,14 @@
             "https://phpmyfaq.de/"
           ],
           "comment": "Official public CVE review 2026-10-23"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.phpmyfaq.de/news/2026/#2026-11-01"
+          ],
+          "comment": "Official release announcement for the separate PHP-0932 Docker scope; does not resolve all generic phpMyFAQ installations."
         }
       ],
       "software_packageVersion": "phpMyFAQ deployments on affected PHP-CGI runtimes"
@@ -48364,6 +48457,83 @@
       ]
     },
     {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0932",
+      "creationInfo": "_:creationinfo",
+      "name": "phpMyFAQ official Docker images (4.2.0-RC.1)",
+      "software_packageVersion": "4.2.0-RC.1 / 4.2.0-RC.1-frankenphp: PHP 8.4.27 (linux/amd64 and linux/arm64; inspected digests)",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0932"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:phpmyfaq-project:ab2e5ba5d190",
+      "summary": "Fix for both CVEs in the inspected Apache and FrankenPHP release-candidate image digests. Registry metadata and the pinned production build identify PHP 8.4.27, although the release announcement says 8.5.12; both are upstream fixed releases. Pull and recreate the selected image; assess source installations separately.",
+      "description": "Fixed official container distribution scope of PHP-0658 (phpMyFAQ), limited to the recorded 4.2.0-RC.1 image digests.",
+      "comment": "Inventory record: PHP-0932\nParent inventory record: PHP-0658\nEvidence status: Official CVE-specific release notice corroborated by publisher OCI metadata, immutable build sources and upstream PHP fixed-release guidance\nDeployment status: Not measured\nSource accessed: 2026-11-02\nPHP version scope: PHP 8.4.27 in ghcr.io/thorsten/phpmyfaq:4.2.0-RC.1 and :4.2.0-RC.1-frankenphp; linux/amd64 and linux/arm64 only, pinned by recorded index and child manifest digests.\nRelease type: Release candidate; not a stable-release recommendation. FrankenPHP worker mode is documented as experimental.\nPublisher source revision: 5de0d36bf69049a6dd7414f6a39dc9246d2281ce\nEvidence discrepancy: The 1 November release announcement says Docker images were updated to PHP 8.5.12. The inspected release image configs declare PHP_VERSION=8.4.27 and PHP_URL for php-8.4.27.tar.xz; the immutable production Dockerfile defaults PHP_VERSION to 8.4. The assessment records the observed 8.4.27 image scope and preserves the announcement as a separate vendor statement.\nVerification method: OCI index, platform-manifest and config SHA-256 digests verified; image revision labels and PHP environment values compared with immutable publisher build sources. Image layers and running binaries were not executed or measured.\nLimitations: The fixed assessment covers only the recorded release-candidate image digests for the two named architectures. Older tags, cached images, nightly/stable channels, custom builds, source installations and actual deployments are outside scope. No application-code fix or complete configuration workaround is asserted.\nRemediation: Select the verified image digest, pull and recreate containers, and confirm the active serving runtime after rollout. Source installations require an independently patched PHP runtime.\nCVE-2026-109618: Fix in the recorded PHP 8.4.27 image digests.\nCVE-2026-109619: Fix in the recorded PHP 8.4.27 image digests.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.phpmyfaq.de/news/2026/#2026-11-01"
+          ],
+          "comment": "Official 1 November release announcement explicitly names both CVEs; its claimed PHP 8.5.12 version differs from the inspected release image metadata."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-21-5"
+          ],
+          "comment": "PHP upstream confirms PHP 8.4.27 fixes both tracked CVEs."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/thorsten/phpMyFAQ/blob/5de0d36bf69049a6dd7414f6a39dc9246d2281ce/.docker/production/Dockerfile"
+          ],
+          "comment": "Immutable publisher build recipe: PHP_VERSION defaults to 8.4 for both Apache and FrankenPHP targets."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/thorsten/phpMyFAQ/blob/5de0d36bf69049a6dd7414f6a39dc9246d2281ce/.github/workflows/docker-publish.yml"
+          ],
+          "comment": "Publisher release workflow builds both image variants for linux/amd64 and linux/arm64."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://github.com/thorsten/phpMyFAQ/blob/5de0d36bf69049a6dd7414f6a39dc9246d2281ce/docs/deployment.md"
+          ],
+          "comment": "Official image variants and deployment instructions; FrankenPHP worker mode is experimental."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://ghcr.io/v2/thorsten/phpmyfaq/manifests/sha256:2c723712bed8d1e8ffee37677d7283a7706244d4f2f5925338e106a6b502cb18"
+          ],
+          "comment": "ghcr.io/thorsten/phpmyfaq:4.2.0-RC.1 resolved on 2026-11-02 to index sha256:2c723712bed8d1e8ffee37677d7283a7706244d4f2f5925338e106a6b502cb18. linux/amd64 manifest sha256:4bf4fb92d7f599b80b213acbbba60aab55b793680f570fbb19faad4ebbb0b067, config sha256:7fd10fccabbed65c06f0aebdb47b2259d179130e59abcca182d68fee835b977d; linux/arm64 manifest sha256:00c18003d7fee16fdca93b1417a86fc3e049e9b8ab459bdda96b29604974fd46, config sha256:36105771a10263e1816e7658c4a620e0eefc8e243507ec6b0e23cfece6ec333b. Each image declares PHP_VERSION=8.4.27 and source revision 5de0d36bf69049a6dd7414f6a39dc9246d2281ce. Digests verified against downloaded JSON bytes; registry access uses an anonymous pull token."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://ghcr.io/v2/thorsten/phpmyfaq/manifests/sha256:1e05470771f0b58a4d082b45b00a096411eb812d4b2f7cac8d4d891bc5ae3170"
+          ],
+          "comment": "ghcr.io/thorsten/phpmyfaq:4.2.0-RC.1-frankenphp resolved on 2026-11-02 to index sha256:1e05470771f0b58a4d082b45b00a096411eb812d4b2f7cac8d4d891bc5ae3170. linux/amd64 manifest sha256:9e8b99b9a901b34c5199416b426ba32b4a7b13b59135adb97caa5fe3403449e3, config sha256:5d6c2d46d66d1ef62f99673c06b060fd6070c87a1f2f882eabe53bbbfe107c54; linux/arm64 manifest sha256:290369c971caa11a292f2120c3065d63c5788a3be4317196dbc8d3f4d0db5912, config sha256:733db872e78ae5454c4eede459da0dfb1f8f26b5ae65e9788611a86fce694531. Each image declares PHP_VERSION=8.4.27 and source revision 5de0d36bf69049a6dd7414f6a39dc9246d2281ce. Digests verified against downloaded JSON bytes; registry access uses an anonymous pull token."
+        }
+      ]
+    },
+    {
       "type": "Relationship",
       "spdxId": "urn:php2shell:inventory:relationship:PHP-0012-provided-runtime",
       "creationInfo": "_:creationinfo",
@@ -48434,6 +48604,18 @@
       "relationshipType": "hasProvidedDependency",
       "summary": "Runtime/deployment relationship for PHP-0614",
       "comment": "The PHP runtime is not part of this product artifact; assess the supplied runtime and its execution mode separately."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0658:docker-release-variants",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0658",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0932"
+      ],
+      "relationshipType": "hasVariant",
+      "summary": "phpMyFAQ has a separately assessed official release-candidate container distribution.",
+      "comment": "Version-specific VEX is carried by PHP-0932; it does not replace the generic product assessments on PHP-0658."
     },
     {
       "type": "Relationship",
@@ -48926,6 +49108,18 @@
       "relationshipType": "contains",
       "summary": "VitalPBX 4.5 distributes PHP 8.2 in its Debian 12 management stack.",
       "comment": "Runtime relationship established by the official VitalPBX 4.5 release announcement and vendor PHP security update instructions."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0932",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0932",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped official phpMyFAQ release images distribute patched PHP 8.4.27.",
+      "comment": "Fixed container distribution of PHP-0658; other product variants and deployments remain separately assessed."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -50157,9 +50351,22 @@
         "urn:php2shell:inventory:package:PHP-0539"
       ],
       "relationshipType": "fixedIn",
-      "security_statusNotes": "Fixed in the public Git binaries at dcd8e50fb65121726bb23a686746f68032ff1cb1 (rebuild 11ddfdc9858269b131536f3052648f0a74d95387): PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12, web and Node, JSPI and Asyncify. No npm release, legacy build or deployed Playground instance is confirmed by this assessment.",
-      "summary": "CVE-2026-109618 assessment: Fix for the pinned WordPress Playground PHP 8.2-8.5 Wasm binaries",
-      "comment": "Public official review 2026-10-30: https://github.com/WordPress/wordpress-playground/pull/4487 merged 2026-10-26. Maintainer rebuild confirmation: https://github.com/WordPress/wordpress-playground/pull/4487#issuecomment-6340964082. Immutable web-builds and node-builds trees at dcd8e50fb65121726bb23a686746f68032ff1cb1 contain all 16 scoped Wasm artifacts. Other PHP.wasm product/adapter scopes remain separately assessed."
+      "security_statusNotes": "Fixed in the eight @php-wasm web/Node PHP 8.2-8.5 npm packages at 3.1.62 (JSPI and Asyncify) and the previously verified Git tree dcd8e50fb65121726bb23a686746f68032ff1cb1. These contain PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12. Legacy builds, older npm publications and unmeasured Playground deployments remain outside scope.",
+      "summary": "CVE-2026-109618 assessment: Fix for the named npm 3.1.62 packages and pinned PHP 8.2-8.5 Git binaries",
+      "comment": "Official security PR and maintainer rebuild confirmation: https://github.com/WordPress/wordpress-playground/pull/4487 and https://github.com/WordPress/wordpress-playground/pull/4487#issuecomment-6340964082. On 2026-11-02, independently verified SHA-512 integrity for all eight official npm tarballs and recorded SHA-256 plus embedded PHP version strings for all sixteen Wasm files. npm gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e contains the previously assessed rebuild. Package metadata links and hashes are retained in PHP-0539."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:PHP-0932-20261102",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0932"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in the recorded ghcr.io/thorsten/phpmyfaq 4.2.0-RC.1 Apache and FrankenPHP image digests for linux/amd64 and linux/arm64, identifying PHP 8.4.27. This release-candidate scope does not establish a stable application fix or deployed remediation.",
+      "summary": "CVE-2026-109618 assessment: Fix for the inspected phpMyFAQ 4.2.0-RC.1 Docker image digests",
+      "comment": "Official vendor announcement https://www.phpmyfaq.de/news/2026/#2026-11-01 names both CVEs. Its PHP 8.5.12 claim differs from the inspected image configs and pinned build sources, which identify 8.4.27. Both releases are fixed according to https://www.php.net/archive/2026.php#2026-10-21-5. Digest, architecture and source-revision evidence are recorded in PHP-0932. Reviewed 2026-11-02."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -52535,9 +52742,22 @@
         "urn:php2shell:inventory:package:PHP-0539"
       ],
       "relationshipType": "fixedIn",
-      "security_statusNotes": "Fixed in the public Git binaries at dcd8e50fb65121726bb23a686746f68032ff1cb1 (rebuild 11ddfdc9858269b131536f3052648f0a74d95387): PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12, web and Node, JSPI and Asyncify. No npm release, legacy build or deployed Playground instance is confirmed by this assessment.",
-      "summary": "CVE-2026-109619 assessment: Fix for the pinned WordPress Playground PHP 8.2-8.5 Wasm binaries",
-      "comment": "Public official review 2026-10-30: https://github.com/WordPress/wordpress-playground/pull/4487 merged 2026-10-26. Maintainer rebuild confirmation: https://github.com/WordPress/wordpress-playground/pull/4487#issuecomment-6340964082. Immutable web-builds and node-builds trees at dcd8e50fb65121726bb23a686746f68032ff1cb1 contain all 16 scoped Wasm artifacts. Other PHP.wasm product/adapter scopes remain separately assessed."
+      "security_statusNotes": "Fixed in the eight @php-wasm web/Node PHP 8.2-8.5 npm packages at 3.1.62 (JSPI and Asyncify) and the previously verified Git tree dcd8e50fb65121726bb23a686746f68032ff1cb1. These contain PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12. Legacy builds, older npm publications and unmeasured Playground deployments remain outside scope.",
+      "summary": "CVE-2026-109619 assessment: Fix for the named npm 3.1.62 packages and pinned PHP 8.2-8.5 Git binaries",
+      "comment": "Official security PR and maintainer rebuild confirmation: https://github.com/WordPress/wordpress-playground/pull/4487 and https://github.com/WordPress/wordpress-playground/pull/4487#issuecomment-6340964082. On 2026-11-02, independently verified SHA-512 integrity for all eight official npm tarballs and recorded SHA-256 plus embedded PHP version strings for all sixteen Wasm files. npm gitHead 8c52f103f3ce30668994c0e75c2c530b82097a5e contains the previously assessed rebuild. Package metadata links and hashes are retained in PHP-0539."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:PHP-0932-20261102",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0932"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in the recorded ghcr.io/thorsten/phpmyfaq 4.2.0-RC.1 Apache and FrankenPHP image digests for linux/amd64 and linux/arm64, identifying PHP 8.4.27. This release-candidate scope does not establish a stable application fix or deployed remediation.",
+      "summary": "CVE-2026-109619 assessment: Fix for the inspected phpMyFAQ 4.2.0-RC.1 Docker image digests",
+      "comment": "Official vendor announcement https://www.phpmyfaq.de/news/2026/#2026-11-01 names both CVEs. Its PHP 8.5.12 claim differs from the inspected image configs and pinned build sources, which identify 8.4.27. Both releases are fixed according to https://www.php.net/archive/2026.php#2026-10-21-5. Digest, architecture and source-revision evidence are recorded in PHP-0932. Reviewed 2026-11-02."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
