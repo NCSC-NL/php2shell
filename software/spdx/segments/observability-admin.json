@@ -3386,7 +3386,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:broadcom:caf79e01972c",
       "summary": "No remediation is required for Content Analysis (CAS) for these CVEs. Do not extend this conclusion to CASMA.",
       "description": "Content analysis security product",
-      "comment": "Inventory record: PHP-0733\nCategory: Security operations and management consoles\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Broadcom ESG advisory 39404; exact PHP component and SAPI are not published\nPHP version scope: Broadcom ESG advisory 39404, updated 2026-10-22, lists Content Analysis under investigation; affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes product review scope, not a confirmed PHP dependency, affected build, enabled feature set, reachable path or exploitation.\nPatch owner: Broadcom; operator for exposure review and future remediation rollout\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Broadcom ESG advisory 39404 lists Content Analysis under investigation for both PHP2Shell CVEs.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404\nRelease pin: Broadcom ESG advisory 39404 under-investigation product scope\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Not vuln; CVE-2026-109619: Not vuln\nScope: Content Analysis (CAS) only. Distinct Content Analysis and Malware Analysis (CASMA) remains under investigation and must not inherit this assessment.\nAssessment: Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) remains under investigation and is excluded.",
+      "comment": "Inventory record: PHP-0733\nCategory: Security operations and management consoles\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Broadcom ESG advisory 39404; exact PHP component and SAPI are not published\nPHP version scope: Broadcom ESG advisory 39404, updated 2026-10-22, lists Content Analysis under investigation; affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes product review scope, not a confirmed PHP dependency, affected build, enabled feature set, reachable path or exploitation.\nPatch owner: Broadcom; operator for exposure review and future remediation rollout\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Broadcom ESG advisory 39404 lists Content Analysis under investigation for both PHP2Shell CVEs.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404\nRelease pin: Broadcom ESG advisory 39404 under-investigation product scope\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Not vuln; CVE-2026-109619: Not vuln\nScope: Content Analysis (CAS) only. Distinct Content Analysis and Malware Analysis (CASMA) has a separate assessment and must not inherit this assessment.\nAssessment: Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) has a separate assessment and is excluded.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -3622,11 +3622,11 @@
         "urn:php2shell:inventory:package:PHP-0733"
       ],
       "relationshipType": "doesNotAffect",
-      "security_statusNotes": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) remains under investigation and is excluded.",
+      "security_statusNotes": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) has a separate assessment and is excluded.",
       "summary": "CVE-2026-109618 assessment: Not vuln",
       "comment": "Public official sources reviewed 2026-10-27. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
       "security_actionStatement": "No remediation is required for Content Analysis (CAS) for these CVEs. Do not extend this conclusion to CASMA.",
-      "security_impactStatement": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) remains under investigation and is excluded."
+      "security_impactStatement": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) has a separate assessment and is excluded."
     },
     {
       "type": "security_VexNotAffectedVulnAssessmentRelationship",
@@ -3637,11 +3637,11 @@
         "urn:php2shell:inventory:package:PHP-0733"
       ],
       "relationshipType": "doesNotAffect",
-      "security_statusNotes": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) remains under investigation and is excluded.",
+      "security_statusNotes": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) has a separate assessment and is excluded.",
       "summary": "CVE-2026-109619 assessment: Not vuln",
       "comment": "Public official sources reviewed 2026-10-27. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
       "security_actionStatement": "No remediation is required for Content Analysis (CAS) for these CVEs. Do not extend this conclusion to CASMA.",
-      "security_impactStatement": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) remains under investigation and is excluded."
+      "security_impactStatement": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) has a separate assessment and is excluded."
     },
     {
       "type": "software_Package",
@@ -3767,9 +3767,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:broadcom:caf79e01972c",
-      "summary": "Broadcom advisory 39404, updated 26 October, lists Content Analysis and Malware Analysis (CASMA) under investigation for both PHP2Shell CVEs; affected and fixed releases are not published.",
+      "summary": "Broadcom moved Content Analysis and Malware Analysis (CASMA) to Affected on 30 October 2026 for both PHP2Shell CVEs; release-specific remediation is in the linked product advisory.",
       "description": "Content analysis and malware analysis security product",
-      "comment": "Inventory record: PHP-0756\nCategory: Security operations and management consoles\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor-confirmed under-investigation product scope\nDeployment status: Not measured\nPHP surface: Vendor-named product in Broadcom ESG advisory 39404; exact PHP component and SAPI are not published\nPHP version scope: Broadcom ESG advisory 39404, updated 2026-10-26, lists Content Analysis and Malware Analysis (CASMA) under investigation; affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes product review scope, not a confirmed PHP dependency, affected build, enabled feature set, reachable path or exploitation. The separate Content Analysis (CAS) not-vulnerable assessment does not transfer to CASMA.\nPatch owner: Broadcom; operator for exposure review and future remediation rollout\nSource accessed: 2026-10-27\nVulnerability status: Investigation. Broadcom ESG advisory 39404 lists Content Analysis and Malware Analysis (CASMA) under investigation for both PHP2Shell CVEs.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-27\nVendor advisory sources: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404\nRelease pin: Broadcom ESG advisory 39404 under-investigation product scope",
+      "comment": "Inventory record: PHP-0756\nCategory: Security operations and management consoles\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected product scope\nDeployment status: Not measured\nPHP surface: Vendor-confirmed PHP2Shell impact; exact PHP component and SAPI are not specified in the public umbrella advisory\nPHP version scope: Advisory 39404, updated 2026-10-30, lists CASMA as affected and links product advisory 39475 for details.\nExtensions: Unknown\nLimitations: The public umbrella advisory does not specify affected or fixed releases. Product advisory 39475 required login during this review. Content Analysis (CAS) is a separate product; its assessment is not applied to CASMA.\nPatch owner: Broadcom; operator for product-specific remediation rollout\nSource accessed: 2026-11-02\nVulnerability status: Vulnerable. Broadcom explicitly lists CASMA as affected by both PHP2Shell CVEs.\nCVE-2026-109618: Vulnerable; vendor-confirmed affected CASMA product scope\nCVE-2026-109619: Vulnerable; vendor-confirmed affected CASMA product scope\nCVE assessment limit: Only the stated product scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-11-02\nVendor advisory sources: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404\nRelease pin: Broadcom ESG advisory 39404 affected product scope, revision 2026-10-30",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -3777,10 +3777,18 @@
           "locator": [
             "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404"
           ],
-          "comment": "Enterprise Security Group Advisory for PHP2Shell; 2026-10-26; reviewed 2026-10-27"
+          "comment": "Enterprise Security Group Advisory for PHP2Shell; updated 2026-10-30; reviewed 2026-11-02"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39475"
+          ],
+          "comment": "CASMA product advisory linked by advisory 39404; login required during review, so release details were not verified"
         }
       ],
-      "software_packageVersion": "Broadcom ESG advisory 39404 under-investigation product scope"
+      "software_packageVersion": "Broadcom ESG advisory 39404 affected CASMA scope; exact releases unspecified in the public umbrella advisory"
     },
     {
       "type": "Relationship",
@@ -3803,8 +3811,8 @@
         "urn:php2shell:inventory:package:PHP-0037"
       ],
       "relationshipType": "other",
-      "summary": "Inventory association for PHP-0756: vendor PHP advisory candidate",
-      "comment": "Broadcom ESG advisory 39404 lists this product under investigation for PHP2Shell. This association records vendor review scope only; a PHP dependency is not confirmed."
+      "summary": "Inventory association for PHP-0756: vendor-confirmed PHP2Shell affected scope",
+      "comment": "Broadcom ESG advisory 39404 lists CASMA as affected. This association records vendor assessment scope; the exact internal PHP dependency is not specified in the public umbrella advisory."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -3835,32 +3843,32 @@
       "security_actionStatement": "Monitor the linked Broadcom product advisory for remediation details and restrict management exposure until a fixed release is verified."
     },
     {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+      "type": "security_VexAffectedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:php-0756-official-20261027",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0756"
       ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Broadcom advisory 39404, updated 26 October, lists Content Analysis and Malware Analysis (CASMA) under investigation for both PHP2Shell CVEs. The separate Content Analysis (CAS) product is not vulnerable; that assessment does not transfer to CASMA.",
-      "summary": "CVE-2026-109618 assessment: Investigation",
-      "comment": "Public official sources reviewed 2026-10-27. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
-      "security_actionStatement": "Monitor Broadcom advisory 39404 for a resolved product status; do not inherit the separate Content Analysis (CAS) not-vulnerable assessment."
+      "relationshipType": "affects",
+      "security_statusNotes": "Broadcom ESG advisory 39404, updated 2026-10-30, explicitly lists CASMA under Affected Product(s) for both PHP2Shell CVEs. Release-specific fixes are not established by the public umbrella advisory.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Official public advisory reviewed 2026-11-02. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
+      "security_actionStatement": "Consult Broadcom product advisory 39475 for applicable releases and remediation; verify a product-specific fix before treating a deployment as fixed."
     },
     {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+      "type": "security_VexAffectedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:php-0756-official-20261027",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0756"
       ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Broadcom advisory 39404, updated 26 October, lists Content Analysis and Malware Analysis (CASMA) under investigation for both PHP2Shell CVEs. The separate Content Analysis (CAS) product is not vulnerable; that assessment does not transfer to CASMA.",
-      "summary": "CVE-2026-109619 assessment: Investigation",
-      "comment": "Public official sources reviewed 2026-10-27. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
-      "security_actionStatement": "Monitor Broadcom advisory 39404 for a resolved product status; do not inherit the separate Content Analysis (CAS) not-vulnerable assessment."
+      "relationshipType": "affects",
+      "security_statusNotes": "Broadcom ESG advisory 39404, updated 2026-10-30, explicitly lists CASMA under Affected Product(s) for both PHP2Shell CVEs. Release-specific fixes are not established by the public umbrella advisory.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Official public advisory reviewed 2026-11-02. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
+      "security_actionStatement": "Consult Broadcom product advisory 39475 for applicable releases and remediation; verify a product-specific fix before treating a deployment as fixed."
     },
     {
       "type": "software_Package",

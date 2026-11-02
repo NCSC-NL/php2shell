@@ -4979,7 +4979,8 @@
         "urn:php2shell:inventory:relationship:PHP-0520:runtime-scope-20261102",
         "urn:php2shell:inventory:relationship:PHP-0521:runtime-scope-20261102",
         "urn:php2shell:inventory:relationship:PHP-0569:runtime-scope-20261102",
-        "urn:php2shell:inventory:relationship:PHP-0614:runtime-scope-20261102"
+        "urn:php2shell:inventory:relationship:PHP-0614:runtime-scope-20261102",
+        "urn:php2shell:inventory:relationship:PHP-0012-provided-runtime"
       ]
     },
     {
@@ -5470,9 +5471,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:woocommerce:b03e8dbab897",
-      "summary": "The vendor distinguishes its recommended PHP stack from a still-compatible legacy floor and names optional integration requirements.",
+      "summary": "WooCommerce directs store owners to update the hosting PHP runtime for PHP2Shell; no WooCommerce or WordPress application update is planned for these issues.",
       "description": "PHP through WordPress",
-      "comment": "Inventory record: PHP-0012\nCategory: Commerce\nOriginal relationship: transitive\nRelationship direction: depends_on_php\nParent component: PHP-0006\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP through WordPress\nPHP version scope: WooCommerce 10.8+ guidance recommends PHP >=8.3, tested through 8.4; same page says legacy PHP >=7.4 still works. Recommendation and compatibility floor are distinct.\nExtensions: Inherited WordPress requirements. Conditional: curl or fsockopen for selected network integrations; soap for some extensions; mbstring for the documented non-English-store use case.\nLimitations: A recommendation is not an observed runtime or release manifest. WordPress, WooCommerce and payment extensions may share one PHP worker and database. Compatible legacy PHP is not evidence of an installed old system. PHP presence does not establish an affected build, reachable flaw or exploitation. Installations and enabled integrations were not measured.\nPatch owner: Hosting provider or operator\nDownstream surface: Storefront and checkout\nRelease pin: Documentation labelled WooCommerce 10.8+; immutable release pin pending\nSource accessed: 2026-10-17\nConditional downstream consequence: A matching PHP memory-safety or parser flaw reached through store requests, imports or media handling could cause denial of service, disclosure or code execution in the PHP worker. Code execution could expose configured commerce/payment credentials or alter orders and content. Provider compromise, tenant escape and lateral movement would require additional permissions or flaws.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0012\nCategory: Commerce\nOriginal relationship: transitive\nRelationship direction: depends_on_php\nParent component: PHP-0006\nEvidence status: Vendor-confirmed runtime remediation responsibility\nDeployment status: Not measured\nPHP surface: PHP through WordPress\nPHP version scope: WooCommerce 10.8+ guidance recommends PHP >=8.3, tested through 8.4; same page says legacy PHP >=7.4 still works. Recommendation and compatibility floor are distinct.\nExtensions: Inherited WordPress requirements. Conditional: curl or fsockopen for selected network integrations; soap for some extensions; mbstring for the documented non-English-store use case.\nLimitations: A recommendation is not an observed runtime or release manifest. WordPress, WooCommerce and payment extensions may share one PHP worker and database. Compatible legacy PHP is not evidence of an installed old system. PHP presence does not establish an affected build, reachable flaw or exploitation. Installations and enabled integrations were not measured.\nPatch owner: Hosting provider or operator\nDownstream surface: Storefront and checkout\nRelease pin: Documentation labelled WooCommerce 10.8+; immutable release pin pending\nSource accessed: 2026-10-17\nConditional downstream consequence: A matching PHP memory-safety or parser flaw reached through store requests, imports or media handling could cause denial of service, disclosure or code execution in the PHP worker. Code execution could expose configured commerce/payment credentials or alter orders and content. Provider compromise, tenant escape and lateral movement would require additional permissions or flaws.\nVulnerability status: Runtime-scoped. Assess the externally supplied PHP runtime for both CVEs; no direct WooCommerce VEX status is asserted.\nCVE-2026-109618: Assess the linked PHP runtime and deployment\nCVE-2026-109619: Assess the linked PHP runtime and deployment\nCVE assessment limit: The generic WooCommerce entry does not identify an installed PHP build. Runtime affectedness and fixes require the selected package/image or hosting-provider evidence.\nPublic vendor CVE review: 2026-11-02\nRuntime dependency target: PHP-0037; the existing WordPress dependency (PHP-0006) is retained",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -5481,6 +5482,14 @@
             "https://woocommerce.com/document/server-requirements/"
           ],
           "comment": "WooCommerce 10.8+ server requirements and recommendations"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://developer.woocommerce.com/2026/10/21/php-security-release/"
+          ],
+          "comment": "WooCommerce developer security advisory, 2026-10-21; reviewed 2026-11-02"
         }
       ]
     },
@@ -19081,9 +19090,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:virtualmin:c5c7bfdbe85f",
-      "summary": "Virtualmin documents PHP-FPM and FCGId/CGI wrapper execution for customer PHP applications.",
+      "summary": "Virtualmin configures customer PHP execution using OS-supplied PHP packages; assess the selected runtime for PHP2Shell.",
       "description": "Default/recommended PHP-FPM; FCGId/CGI wrapper with suEXEC; per-virtual-server configuration",
-      "comment": "Inventory record: PHP-0396\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0037\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Default/recommended PHP-FPM; FCGId/CGI wrapper with suEXEC; per-virtual-server configuration\nPHP version scope: Moving PHP execution guide; no exact currently installed branch/patch established\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: The guide’s pool/isolation design is not measured isolation or a tenant-escape claim. This does not replace prior contrary evidence about Webmin core implementation. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: OS/PHP package publisher and server operator; Virtualmin for integration/configuration code\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: virtualmin:hosted-php\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0396\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0037\nEvidence status: Vendor staff confirms externally supplied PHP packages\nDeployment status: Not measured\nPHP surface: Default/recommended PHP-FPM; FCGId/CGI wrapper with suEXEC; per-virtual-server configuration\nPHP version scope: Moving PHP execution guide; no exact currently installed branch/patch established\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: This entry covers configured customer PHP execution. The exact installed runtime, enabled modules and reachability are not measured; the assessment does not cover the Virtualmin/Webmin control plane or establish tenant isolation.\nPatch owner: OS/PHP package publisher and server operator; Virtualmin for integration/configuration code\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: virtualmin:hosted-php\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Runtime-scoped. Assess the OS-supplied PHP runtime for both CVEs; no direct Virtualmin VEX status is asserted.\nCVE-2026-109618: Assess the linked PHP runtime and deployment\nCVE-2026-109619: Assess the linked PHP runtime and deployment\nCVE assessment limit: Selected customer PHP only. Runtime affectedness and fixes depend on the installed package, any backport and the configured execution mode.\nPublic vendor CVE review: 2026-11-02",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -19092,6 +19101,14 @@
             "https://www.virtualmin.com/docs/server-components/php-execution-modes/"
           ],
           "comment": "Official PHP component, runtime or hosting declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://forum.virtualmin.com/t/security-advisory-critical-remote-code-execution-vulnerabilities-update-now-php/138200/2"
+          ],
+          "comment": "Virtualmin staff reply by Joe, 2026-10-21; staff identity and response reviewed 2026-11-02"
         }
       ]
     },
@@ -32748,9 +32765,9 @@
       "to": [
         "urn:php2shell:inventory:package:PHP-0037"
       ],
-      "relationshipType": "other",
-      "summary": "Inventory relationship for PHP-0396: hosts (hosts_customer_php)",
-      "comment": "Mapped from inventory relationship 'hosts' and direction 'hosts_customer_php' to SPDX relationshipType 'other'."
+      "relationshipType": "hasProvidedDependency",
+      "summary": "Virtualmin hosted PHP execution uses an externally supplied PHP runtime",
+      "comment": "Virtualmin staff confirms that the OS supplies PHP packages. This relationship covers configured customer PHP execution and does not assert PHP use in the control plane. Source: https://forum.virtualmin.com/t/security-advisory-critical-remote-code-execution-vulnerabilities-update-now-php/138200/2"
     },
     {
       "type": "Relationship",
@@ -35780,7 +35797,6 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0396",
         "urn:php2shell:inventory:package:PHP-0413",
         "urn:php2shell:inventory:package:PHP-0421"
       ],
@@ -35841,7 +35857,6 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0012",
         "urn:php2shell:inventory:package:PHP-0141",
         "urn:php2shell:inventory:package:PHP-0142",
         "urn:php2shell:inventory:package:PHP-0143",
@@ -35932,7 +35947,6 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0396",
         "urn:php2shell:inventory:package:PHP-0413",
         "urn:php2shell:inventory:package:PHP-0421"
       ],
@@ -35993,7 +36007,6 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0012",
         "urn:php2shell:inventory:package:PHP-0141",
         "urn:php2shell:inventory:package:PHP-0142",
         "urn:php2shell:inventory:package:PHP-0143",
@@ -42408,7 +42421,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:broadcom:caf79e01972c",
       "summary": "No remediation is required for Content Analysis (CAS) for these CVEs. Do not extend this conclusion to CASMA.",
       "description": "Content analysis security product",
-      "comment": "Inventory record: PHP-0733\nCategory: Security operations and management consoles\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Broadcom ESG advisory 39404; exact PHP component and SAPI are not published\nPHP version scope: Broadcom ESG advisory 39404, updated 2026-10-22, lists Content Analysis under investigation; affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes product review scope, not a confirmed PHP dependency, affected build, enabled feature set, reachable path or exploitation.\nPatch owner: Broadcom; operator for exposure review and future remediation rollout\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Broadcom ESG advisory 39404 lists Content Analysis under investigation for both PHP2Shell CVEs.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404\nRelease pin: Broadcom ESG advisory 39404 under-investigation product scope\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Not vuln; CVE-2026-109619: Not vuln\nScope: Content Analysis (CAS) only. Distinct Content Analysis and Malware Analysis (CASMA) remains under investigation and must not inherit this assessment.\nAssessment: Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) remains under investigation and is excluded.",
+      "comment": "Inventory record: PHP-0733\nCategory: Security operations and management consoles\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in Broadcom ESG advisory 39404; exact PHP component and SAPI are not published\nPHP version scope: Broadcom ESG advisory 39404, updated 2026-10-22, lists Content Analysis under investigation; affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes product review scope, not a confirmed PHP dependency, affected build, enabled feature set, reachable path or exploitation.\nPatch owner: Broadcom; operator for exposure review and future remediation rollout\nSource accessed: 2026-10-23\nVulnerability status: Investigation. Broadcom ESG advisory 39404 lists Content Analysis under investigation for both PHP2Shell CVEs.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404\nRelease pin: Broadcom ESG advisory 39404 under-investigation product scope\n\nOfficial public-source review 2026-10-27 (supersedes preliminary CVE assessment above): CVE-2026-109618: Not vuln; CVE-2026-109619: Not vuln\nScope: Content Analysis (CAS) only. Distinct Content Analysis and Malware Analysis (CASMA) has a separate assessment and must not inherit this assessment.\nAssessment: Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) has a separate assessment and is excluded.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -43169,9 +43182,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:broadcom:caf79e01972c",
-      "summary": "Broadcom advisory 39404, updated 26 October, lists Content Analysis and Malware Analysis (CASMA) under investigation for both PHP2Shell CVEs; affected and fixed releases are not published.",
+      "summary": "Broadcom moved Content Analysis and Malware Analysis (CASMA) to Affected on 30 October 2026 for both PHP2Shell CVEs; release-specific remediation is in the linked product advisory.",
       "description": "Content analysis and malware analysis security product",
-      "comment": "Inventory record: PHP-0756\nCategory: Security operations and management consoles\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor-confirmed under-investigation product scope\nDeployment status: Not measured\nPHP surface: Vendor-named product in Broadcom ESG advisory 39404; exact PHP component and SAPI are not published\nPHP version scope: Broadcom ESG advisory 39404, updated 2026-10-26, lists Content Analysis and Malware Analysis (CASMA) under investigation; affected and fixed releases are not published.\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes product review scope, not a confirmed PHP dependency, affected build, enabled feature set, reachable path or exploitation. The separate Content Analysis (CAS) not-vulnerable assessment does not transfer to CASMA.\nPatch owner: Broadcom; operator for exposure review and future remediation rollout\nSource accessed: 2026-10-27\nVulnerability status: Investigation. Broadcom ESG advisory 39404 lists Content Analysis and Malware Analysis (CASMA) under investigation for both PHP2Shell CVEs.\nCVE-2026-109618: Under investigation; affected and fixed releases not published\nCVE-2026-109619: Under investigation; affected and fixed releases not published\nCVE assessment limit: Only the stated product scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-27\nVendor advisory sources: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404\nRelease pin: Broadcom ESG advisory 39404 under-investigation product scope",
+      "comment": "Inventory record: PHP-0756\nCategory: Security operations and management consoles\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected product scope\nDeployment status: Not measured\nPHP surface: Vendor-confirmed PHP2Shell impact; exact PHP component and SAPI are not specified in the public umbrella advisory\nPHP version scope: Advisory 39404, updated 2026-10-30, lists CASMA as affected and links product advisory 39475 for details.\nExtensions: Unknown\nLimitations: The public umbrella advisory does not specify affected or fixed releases. Product advisory 39475 required login during this review. Content Analysis (CAS) is a separate product; its assessment is not applied to CASMA.\nPatch owner: Broadcom; operator for product-specific remediation rollout\nSource accessed: 2026-11-02\nVulnerability status: Vulnerable. Broadcom explicitly lists CASMA as affected by both PHP2Shell CVEs.\nCVE-2026-109618: Vulnerable; vendor-confirmed affected CASMA product scope\nCVE-2026-109619: Vulnerable; vendor-confirmed affected CASMA product scope\nCVE assessment limit: Only the stated product scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-11-02\nVendor advisory sources: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404\nRelease pin: Broadcom ESG advisory 39404 affected product scope, revision 2026-10-30",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -43179,10 +43192,18 @@
           "locator": [
             "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404"
           ],
-          "comment": "Enterprise Security Group Advisory for PHP2Shell; 2026-10-26; reviewed 2026-10-27"
+          "comment": "Enterprise Security Group Advisory for PHP2Shell; updated 2026-10-30; reviewed 2026-11-02"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39475"
+          ],
+          "comment": "CASMA product advisory linked by advisory 39404; login required during review, so release details were not verified"
         }
       ],
-      "software_packageVersion": "Broadcom ESG advisory 39404 under-investigation product scope"
+      "software_packageVersion": "Broadcom ESG advisory 39404 affected CASMA scope; exact releases unspecified in the public umbrella advisory"
     },
     {
       "type": "software_Package",
@@ -48344,6 +48365,18 @@
     },
     {
       "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0012-provided-runtime",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0012",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "hasProvidedDependency",
+      "summary": "WooCommerce uses the PHP runtime supplied by its hosting environment",
+      "comment": "The WooCommerce security advisory assigns PHP remediation to the hosting provider or operator. Runtime status is assessed separately from the application. Source: https://developer.woocommerce.com/2026/10/21/php-security-release/"
+    },
+    {
+      "type": "Relationship",
       "spdxId": "urn:php2shell:inventory:relationship:PHP-0019:runtime-scope-20261102",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:package:PHP-0019",
@@ -48759,8 +48792,8 @@
         "urn:php2shell:inventory:package:PHP-0037"
       ],
       "relationshipType": "other",
-      "summary": "Inventory association for PHP-0756: vendor PHP advisory candidate",
-      "comment": "Broadcom ESG advisory 39404 lists this product under investigation for PHP2Shell. This association records vendor review scope only; a PHP dependency is not confirmed."
+      "summary": "Inventory association for PHP-0756: vendor-confirmed PHP2Shell affected scope",
+      "comment": "Broadcom ESG advisory 39404 lists CASMA as affected. This association records vendor assessment scope; the exact internal PHP dependency is not specified in the public umbrella advisory."
     },
     {
       "type": "Relationship",
@@ -49792,11 +49825,11 @@
         "urn:php2shell:inventory:package:PHP-0733"
       ],
       "relationshipType": "doesNotAffect",
-      "security_statusNotes": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) remains under investigation and is excluded.",
+      "security_statusNotes": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) has a separate assessment and is excluded.",
       "summary": "CVE-2026-109618 assessment: Not vuln",
       "comment": "Public official sources reviewed 2026-10-27. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
       "security_actionStatement": "No remediation is required for Content Analysis (CAS) for these CVEs. Do not extend this conclusion to CASMA.",
-      "security_impactStatement": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) remains under investigation and is excluded."
+      "security_impactStatement": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) has a separate assessment and is excluded."
     },
     {
       "type": "security_VexNotAffectedVulnAssessmentRelationship",
@@ -51244,18 +51277,18 @@
       "security_actionStatement": "Xerox removed the vulnerable PHP component; no customer action is required, as described in v2 page 1 and confirmed by the remediated status in v4 page 5."
     },
     {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+      "type": "security_VexAffectedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:php-0756-official-20261027",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0756"
       ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Broadcom advisory 39404, updated 26 October, lists Content Analysis and Malware Analysis (CASMA) under investigation for both PHP2Shell CVEs. The separate Content Analysis (CAS) product is not vulnerable; that assessment does not transfer to CASMA.",
-      "summary": "CVE-2026-109618 assessment: Investigation",
-      "comment": "Public official sources reviewed 2026-10-27. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
-      "security_actionStatement": "Monitor Broadcom advisory 39404 for a resolved product status; do not inherit the separate Content Analysis (CAS) not-vulnerable assessment."
+      "relationshipType": "affects",
+      "security_statusNotes": "Broadcom ESG advisory 39404, updated 2026-10-30, explicitly lists CASMA under Affected Product(s) for both PHP2Shell CVEs. Release-specific fixes are not established by the public umbrella advisory.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Official public advisory reviewed 2026-11-02. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
+      "security_actionStatement": "Consult Broadcom product advisory 39475 for applicable releases and remediation; verify a product-specific fix before treating a deployment as fixed."
     },
     {
       "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
@@ -52155,11 +52188,11 @@
         "urn:php2shell:inventory:package:PHP-0733"
       ],
       "relationshipType": "doesNotAffect",
-      "security_statusNotes": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) remains under investigation and is excluded.",
+      "security_statusNotes": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) has a separate assessment and is excluded.",
       "summary": "CVE-2026-109619 assessment: Not vuln",
       "comment": "Public official sources reviewed 2026-10-27. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
       "security_actionStatement": "No remediation is required for Content Analysis (CAS) for these CVEs. Do not extend this conclusion to CASMA.",
-      "security_impactStatement": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) remains under investigation and is excluded."
+      "security_impactStatement": "Broadcom advisory 39404, updated 26 October, explicitly confirms Content Analysis (CAS) is not vulnerable to both CVEs. Distinct Content Analysis and Malware Analysis (CASMA) has a separate assessment and is excluded."
     },
     {
       "type": "security_VexNotAffectedVulnAssessmentRelationship",
@@ -53636,18 +53669,18 @@
       "security_impactStatement": "Juniper JSA112681, updated 2026-10-27, explicitly states that Junos OS is not affected by CVE-2026-109619."
     },
     {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+      "type": "security_VexAffectedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:php-0756-official-20261027",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0756"
       ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Broadcom advisory 39404, updated 26 October, lists Content Analysis and Malware Analysis (CASMA) under investigation for both PHP2Shell CVEs. The separate Content Analysis (CAS) product is not vulnerable; that assessment does not transfer to CASMA.",
-      "summary": "CVE-2026-109619 assessment: Investigation",
-      "comment": "Public official sources reviewed 2026-10-27. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
-      "security_actionStatement": "Monitor Broadcom advisory 39404 for a resolved product status; do not inherit the separate Content Analysis (CAS) not-vulnerable assessment."
+      "relationshipType": "affects",
+      "security_statusNotes": "Broadcom ESG advisory 39404, updated 2026-10-30, explicitly lists CASMA under Affected Product(s) for both PHP2Shell CVEs. Release-specific fixes are not established by the public umbrella advisory.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Official public advisory reviewed 2026-11-02. Source: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404",
+      "security_actionStatement": "Consult Broadcom product advisory 39475 for applicable releases and remediation; verify a product-specific fix before treating a deployment as fixed."
     },
     {
       "type": "security_VexUnderInvestigationVulnAssessmentRelationship",

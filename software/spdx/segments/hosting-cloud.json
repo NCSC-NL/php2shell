@@ -814,9 +814,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:virtualmin:c5c7bfdbe85f",
-      "summary": "Virtualmin documents PHP-FPM and FCGId/CGI wrapper execution for customer PHP applications.",
+      "summary": "Virtualmin configures customer PHP execution using OS-supplied PHP packages; assess the selected runtime for PHP2Shell.",
       "description": "Default/recommended PHP-FPM; FCGId/CGI wrapper with suEXEC; per-virtual-server configuration",
-      "comment": "Inventory record: PHP-0396\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0037\nEvidence status: Hosting support\nDeployment status: Not measured\nPHP surface: Default/recommended PHP-FPM; FCGId/CGI wrapper with suEXEC; per-virtual-server configuration\nPHP version scope: Moving PHP execution guide; no exact currently installed branch/patch established\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: The guide’s pool/isolation design is not measured isolation or a tenant-escape claim. This does not replace prior contrary evidence about Webmin core implementation. No package/image was installed, pulled, built, executed or tested. No deployment, loaded-module set, reachability or exploitation was measured; no specific CVE was supplied.\nPatch owner: OS/PHP package publisher and server operator; Virtualmin for integration/configuration code\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: virtualmin:hosted-php\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: Hosted PHP option; CVE match unknown. No affected deployment established.\nCVE-2026-109618: Hosted PHP option; CVE match unknown\nCVE-2026-109619: Hosted PHP option; CVE match unknown\nCVE assessment limit: Selected customer PHP only. Activation and provider/control-plane PHP are not inferred. Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0396\nCategory: Hosting and cloud\nOriginal relationship: hosts\nRelationship direction: hosts_customer_php\nParent component: PHP-0037\nEvidence status: Vendor staff confirms externally supplied PHP packages\nDeployment status: Not measured\nPHP surface: Default/recommended PHP-FPM; FCGId/CGI wrapper with suEXEC; per-virtual-server configuration\nPHP version scope: Moving PHP execution guide; no exact currently installed branch/patch established\nExtensions: Required/available/loaded module inventory unknown; resolve the selected version and configuration\nLimitations: This entry covers configured customer PHP execution. The exact installed runtime, enabled modules and reachability are not measured; the assessment does not cover the Virtualmin/Webmin control plane or establish tenant isolation.\nPatch owner: OS/PHP package publisher and server operator; Virtualmin for integration/configuration code\nDownstream surface: Only customer workloads configured to use this PHP option\nRelease pin: Moving official documentation; immutable runtime build pin pending\nSource accessed: 2026-10-17\nAliases: virtualmin:hosted-php\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through customer application inputs, possible effects include worker denial of service, disclosure of app-accessible secrets, data modification or code execution with the worker identity. Crossing customer, container or provider boundaries requires separate evidence; runtime presence alone establishes none of these outcomes.\nVulnerability status: Runtime-scoped. Assess the OS-supplied PHP runtime for both CVEs; no direct Virtualmin VEX status is asserted.\nCVE-2026-109618: Assess the linked PHP runtime and deployment\nCVE-2026-109619: Assess the linked PHP runtime and deployment\nCVE assessment limit: Selected customer PHP only. Runtime affectedness and fixes depend on the installed package, any backport and the configured execution mode.\nPublic vendor CVE review: 2026-11-02",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -825,6 +825,14 @@
             "https://www.virtualmin.com/docs/server-components/php-execution-modes/"
           ],
           "comment": "Official PHP component, runtime or hosting declaration"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://forum.virtualmin.com/t/security-advisory-critical-remote-code-execution-vulnerabilities-update-now-php/138200/2"
+          ],
+          "comment": "Virtualmin staff reply by Joe, 2026-10-21; staff identity and response reviewed 2026-11-02"
         }
       ]
     },
@@ -1957,9 +1965,9 @@
       "to": [
         "urn:php2shell:inventory:package:PHP-0037"
       ],
-      "relationshipType": "other",
-      "summary": "Inventory relationship for PHP-0396: hosts (hosts_customer_php)",
-      "comment": "Mapped from inventory relationship 'hosts' and direction 'hosts_customer_php' to SPDX relationshipType 'other'."
+      "relationshipType": "hasProvidedDependency",
+      "summary": "Virtualmin hosted PHP execution uses an externally supplied PHP runtime",
+      "comment": "Virtualmin staff confirms that the OS supplies PHP packages. This relationship covers configured customer PHP execution and does not assert PHP use in the control plane. Source: https://forum.virtualmin.com/t/security-advisory-critical-remote-code-execution-vulnerabilities-update-now-php/138200/2"
     },
     {
       "type": "Relationship",
@@ -4483,7 +4491,6 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0396",
         "urn:php2shell:inventory:package:PHP-0413",
         "urn:php2shell:inventory:package:PHP-0421"
       ],
@@ -4498,7 +4505,6 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0396",
         "urn:php2shell:inventory:package:PHP-0413",
         "urn:php2shell:inventory:package:PHP-0421"
       ],

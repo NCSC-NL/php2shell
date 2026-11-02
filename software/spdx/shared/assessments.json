@@ -94,7 +94,6 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0012",
         "urn:php2shell:inventory:package:PHP-0141",
         "urn:php2shell:inventory:package:PHP-0142",
         "urn:php2shell:inventory:package:PHP-0143",
@@ -231,7 +230,6 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0012",
         "urn:php2shell:inventory:package:PHP-0141",
         "urn:php2shell:inventory:package:PHP-0142",
         "urn:php2shell:inventory:package:PHP-0143",

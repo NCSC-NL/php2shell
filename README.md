@@ -1,7 +1,7 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
 Operational information: 28 October 2026 16:46 CET<br>
-Software list last status update: 2 November 2026 11:41 CET<br>
+Software list last status update: 2 November 2026 15:28 CET<br>
 ## TLP:CLEAR
 
 This repository contains operational information regarding the critical PHP vulnerabilities tracked by CERT-EU as CVE-2026-109618 and CVE-2026-109619.
@@ -11,7 +11,7 @@ PHP is a widely used open-source server-side scripting language, so these vulner
 ## Current status
 
 <!-- inventory-statistics:summary:start -->
-This repository tracks **929 products**, including **214 vulnerable** and **166 fixed**.
+This repository tracks **929 products**, including **215 vulnerable** and **166 fixed**.
 <!-- inventory-statistics:summary:end -->
 
 On 21 October 2026, PHP published fixed releases for CVE-2026-109618 and CVE-2026-109619: PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. PHP states that both vulnerabilities can allow unauthenticated remote code execution and that all PHP installations serving web requests are at risk, including PHP-FPM, Apache with mod_php, php-cgi, FrankenPHP and LiteSpeed. PHP considers the risk highest for mod_php, where an unauthenticated request can trigger exploitation before application code runs.
@@ -58,7 +58,7 @@ Statistics as of **2026-11-02 (UTC)**, from the current SPDX inventory.
 
 | Products tracked | Fixed | Vulnerable | Under investigation | Runtime-dependent | Not affected | Unassessed / unknown |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 929 | 166 | 214 | 96 | 238 | 214 | 1 |
+| 929 | 166 | 215 | 93 | 240 | 214 | 1 |
 
 ![Product status on the last 3 inventory update days](software/statistics/inventory-statistics.png)
 
@@ -70,11 +70,11 @@ Statistics as of **2026-11-02 (UTC)**, from the current SPDX inventory.
 
 | Date and time | Supplier | Product | Version (see Status) | Status CVE-2026-109618 / CVE-2026-109619 | Links |
 |:------------------------|:---------|:--------|:--------------------:|:----------------------:|------:|
-|2026-11-02 11:41:08 +0100|Cisco|Cisco Identity Services Engine (ISE) Portal Builder|Managed-service fix deployed by 2026-10-30; build not published|Fix|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
-|2026-11-02 11:41:08 +0100|QNAP|QNAP QNE (ADRA)|QNE (ADRA) 1.0.7 and earlier|Investigation|[source 1](<https://www.qnap.com/en/security-advisory/qsa-26-18>)<br>[source 2](<https://www.qnap.com/th-th/security-advisory/qsa-26-18>)|
-|2026-11-02 11:41:08 +0100|QNAP|QNAP QuMagie|QuMagie 2.10.1 and earlier|Investigation|[source 1](<https://www.qnap.com/en/security-advisory/qsa-26-18>)<br>[source 2](<https://www.qnap.com/th-th/security-advisory/qsa-26-18>)|
-|2026-11-02 10:43:29 +0100|Adyen|Adyen API PHP library||Runtime-dependent|[source](<https://packagist.org/packages/adyen/php-api-library>)|
-|2026-11-02 10:43:29 +0100|Amazon Web Services|AWS SDK for PHP v3||Runtime-dependent|[source 1](<https://packagist.org/packages/aws/aws-sdk-php>)<br>[source 2](<https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/getting-started_installation.html>)|
+|2026-11-02 15:28:37 +0100|Broadcom|Content Analysis and Malware Analysis (CASMA)|Broadcom ESG advisory 39404 affected CASMA scope; exact releases unspecified in the public umbrella advisory|Vulnerable|[source 1](<https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/Enterprise-Security-Group-Advisory-for-PHP2Shell/39404>)<br>[source 2](<https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39475>)|
+|2026-11-02 15:28:37 +0100|Virtualmin|Virtualmin hosted PHP execution modes||Runtime-dependent|[source 1](<https://www.virtualmin.com/docs/server-components/php-execution-modes/>)<br>[source 2](<https://forum.virtualmin.com/t/security-advisory-critical-remote-code-execution-vulnerabilities-update-now-php/138200/2>)|
+|2026-11-02 15:28:37 +0100|WooCommerce|WooCommerce||Runtime-dependent|[source 1](<https://woocommerce.com/document/server-requirements/>)<br>[source 2](<https://developer.woocommerce.com/2026/10/21/php-security-release/>)|
+|2026-11-02 11:52:03 +0100|Cisco|Cisco Identity Services Engine (ISE) Portal Builder|Managed-service fix deployed by 2026-10-30; build not published|Fix|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
+|2026-11-02 11:52:03 +0100|QNAP|QNAP QNE (ADRA)|QNE (ADRA) 1.0.7 and earlier|Investigation|[source 1](<https://www.qnap.com/en/security-advisory/qsa-26-18>)<br>[source 2](<https://www.qnap.com/th-th/security-advisory/qsa-26-18>)|
 
 See the [full software status update history](software/changelog_software_list.md).
 
