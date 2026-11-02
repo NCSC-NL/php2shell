@@ -2245,7 +2245,8 @@
         "urn:php2shell:inventory:relationship:PHP-0520:runtime-scope-20261102",
         "urn:php2shell:inventory:relationship:PHP-0521:runtime-scope-20261102",
         "urn:php2shell:inventory:relationship:PHP-0569:runtime-scope-20261102",
-        "urn:php2shell:inventory:relationship:PHP-0614:runtime-scope-20261102"
+        "urn:php2shell:inventory:relationship:PHP-0614:runtime-scope-20261102",
+        "urn:php2shell:inventory:relationship:PHP-0012-provided-runtime"
       ]
     }
   ]

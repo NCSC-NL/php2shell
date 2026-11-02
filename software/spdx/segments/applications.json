@@ -701,9 +701,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:woocommerce:b03e8dbab897",
-      "summary": "The vendor distinguishes its recommended PHP stack from a still-compatible legacy floor and names optional integration requirements.",
+      "summary": "WooCommerce directs store owners to update the hosting PHP runtime for PHP2Shell; no WooCommerce or WordPress application update is planned for these issues.",
       "description": "PHP through WordPress",
-      "comment": "Inventory record: PHP-0012\nCategory: Commerce\nOriginal relationship: transitive\nRelationship direction: depends_on_php\nParent component: PHP-0006\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: PHP through WordPress\nPHP version scope: WooCommerce 10.8+ guidance recommends PHP >=8.3, tested through 8.4; same page says legacy PHP >=7.4 still works. Recommendation and compatibility floor are distinct.\nExtensions: Inherited WordPress requirements. Conditional: curl or fsockopen for selected network integrations; soap for some extensions; mbstring for the documented non-English-store use case.\nLimitations: A recommendation is not an observed runtime or release manifest. WordPress, WooCommerce and payment extensions may share one PHP worker and database. Compatible legacy PHP is not evidence of an installed old system. PHP presence does not establish an affected build, reachable flaw or exploitation. Installations and enabled integrations were not measured.\nPatch owner: Hosting provider or operator\nDownstream surface: Storefront and checkout\nRelease pin: Documentation labelled WooCommerce 10.8+; immutable release pin pending\nSource accessed: 2026-10-17\nConditional downstream consequence: A matching PHP memory-safety or parser flaw reached through store requests, imports or media handling could cause denial of service, disclosure or code execution in the PHP worker. Code execution could expose configured commerce/payment credentials or alter orders and content. Provider compromise, tenant escape and lateral movement would require additional permissions or flaws.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0012\nCategory: Commerce\nOriginal relationship: transitive\nRelationship direction: depends_on_php\nParent component: PHP-0006\nEvidence status: Vendor-confirmed runtime remediation responsibility\nDeployment status: Not measured\nPHP surface: PHP through WordPress\nPHP version scope: WooCommerce 10.8+ guidance recommends PHP >=8.3, tested through 8.4; same page says legacy PHP >=7.4 still works. Recommendation and compatibility floor are distinct.\nExtensions: Inherited WordPress requirements. Conditional: curl or fsockopen for selected network integrations; soap for some extensions; mbstring for the documented non-English-store use case.\nLimitations: A recommendation is not an observed runtime or release manifest. WordPress, WooCommerce and payment extensions may share one PHP worker and database. Compatible legacy PHP is not evidence of an installed old system. PHP presence does not establish an affected build, reachable flaw or exploitation. Installations and enabled integrations were not measured.\nPatch owner: Hosting provider or operator\nDownstream surface: Storefront and checkout\nRelease pin: Documentation labelled WooCommerce 10.8+; immutable release pin pending\nSource accessed: 2026-10-17\nConditional downstream consequence: A matching PHP memory-safety or parser flaw reached through store requests, imports or media handling could cause denial of service, disclosure or code execution in the PHP worker. Code execution could expose configured commerce/payment credentials or alter orders and content. Provider compromise, tenant escape and lateral movement would require additional permissions or flaws.\nVulnerability status: Runtime-scoped. Assess the externally supplied PHP runtime for both CVEs; no direct WooCommerce VEX status is asserted.\nCVE-2026-109618: Assess the linked PHP runtime and deployment\nCVE-2026-109619: Assess the linked PHP runtime and deployment\nCVE assessment limit: The generic WooCommerce entry does not identify an installed PHP build. Runtime affectedness and fixes require the selected package/image or hosting-provider evidence.\nPublic vendor CVE review: 2026-11-02\nRuntime dependency target: PHP-0037; the existing WordPress dependency (PHP-0006) is retained",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -712,6 +712,14 @@
             "https://woocommerce.com/document/server-requirements/"
           ],
           "comment": "WooCommerce 10.8+ server requirements and recommendations"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://developer.woocommerce.com/2026/10/21/php-security-release/"
+          ],
+          "comment": "WooCommerce developer security advisory, 2026-10-21; reviewed 2026-11-02"
         }
       ]
     },
@@ -13360,6 +13368,18 @@
       "security_statusNotes": "QNAP QSA-26-18 lists Notes Station 3 3.9.15 as the released fix for both PHP2Shell CVEs.",
       "summary": "CVE-2026-109619 assessment: Fix in the specified released version",
       "comment": "Public official source reviewed 2026-10-30: https://www.qnap.com/en/security-advisory/qsa-26-18\nAction statement: Update Notes Station 3 to 3.9.15."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0012-provided-runtime",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0012",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "hasProvidedDependency",
+      "summary": "WooCommerce uses the PHP runtime supplied by its hosting environment",
+      "comment": "The WooCommerce security advisory assigns PHP remediation to the hosting provider or operator. Runtime status is assessed separately from the application. Source: https://developer.woocommerce.com/2026/10/21/php-security-release/"
     }
   ]
 }
