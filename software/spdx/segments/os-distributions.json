@@ -470,9 +470,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:red-hat:2c30c5da9571",
-      "summary": "Red Hat has fixed RHEL 9 PHP 8.0, 8.2 and 8.3; the PHP 8.4 stream remains affected.",
+      "summary": "The broader RHEL 9 PHP family retains its affected scope, including PHP 8.4. Additional fixed SAP Update Services and EUS packages are recorded separately in PHP-0945, PHP-0946, PHP-0947, PHP-0948, PHP-0949, PHP-0950.",
       "description": "Common profile includes php-fpm for Apache/nginx; minimal profile is CLI only",
-      "comment": "Inventory record: PHP-0364\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected scope with separately recorded fixed releases\nDeployment status: Not measured\nPHP surface: Common profile includes php-fpm for Apache/nginx; minimal profile is CLI only\nPHP version scope: Red Hat lists fixed RHEL 9 PHP 8.0 and php:8.3 packages in RHSA-2026:87151 and RHSA-2026:87079, alongside the existing php:8.2 fix. The php:8.4/php stream remains Affected for both CVEs, so the family stays Vulnerable; fixed package scopes are separate entries.\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: Red Hat lists fixed RHEL 9 PHP 8.0 and php:8.3 packages in RHSA-2026:87151 and RHSA-2026:87079, alongside the existing php:8.2 fix. The php:8.4/php stream remains Affected for both CVEs, so the family stays Vulnerable; fixed package scopes are separate entries.\nPatch owner: Red Hat for supported backported RPMs/AppStreams; subscriber/operator for supported stream selection, update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Official advisory reviewed 2026-10-23; fixed scope recorded separately\nSource accessed: 2026-10-23\nAliases: rhel9:php-appstreams\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nVulnerability status: Red Hat lists fixed RHEL 9 PHP 8.0 and php:8.3 packages in RHSA-2026:87151 and RHSA-2026:87079, alongside the existing php:8.2 fix. The php:8.4/php stream remains Affected for both CVEs, so the family stays Vulnerable; fixed package scopes are separate entries.\nCVE-2026-109618: Vulnerable in the stated scope; see VEX assessment\nCVE-2026-109619: Vulnerable in the stated scope; see VEX assessment\nCVE assessment limit: Red Hat lists fixed RHEL 9 PHP 8.0 and php:8.3 packages in RHSA-2026:87151 and RHSA-2026:87079, alongside the existing php:8.2 fix. The php:8.4/php stream remains Affected for both CVEs, so the family stays Vulnerable; fixed package scopes are separate entries.\nFix sources: https://access.redhat.com/errata/RHSA-2026:87151; https://access.redhat.com/errata/RHSA-2026:87079",
+      "comment": "Inventory record: PHP-0364\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected scope with separately recorded fixed releases\nDeployment status: Not measured\nPHP surface: Common profile includes php-fpm for Apache/nginx; minimal profile is CLI only\nPHP version scope: Red Hat lists fixed RHEL 9 PHP 8.0 and php:8.3 packages in RHSA-2026:87151 and RHSA-2026:87079, alongside the existing php:8.2 fix. The php:8.4/php stream remains Affected for both CVEs, so the family stays Vulnerable; fixed package scopes are separate entries.\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: Red Hat lists fixed RHEL 9 PHP 8.0 and php:8.3 packages in RHSA-2026:87151 and RHSA-2026:87079, alongside the existing php:8.2 fix. The php:8.4/php stream remains Affected for both CVEs, so the family stays Vulnerable; fixed package scopes are separate entries.\nPatch owner: Red Hat for supported backported RPMs/AppStreams; subscriber/operator for supported stream selection, update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Official advisory reviewed 2026-10-23; fixed scope recorded separately\nSource accessed: 2026-10-23\nAliases: rhel9:php-appstreams\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nFix sources: https://access.redhat.com/errata/RHSA-2026:87151; https://access.redhat.com/errata/RHSA-2026:87079\nVulnerability status: Vulnerable when using an affected PHP runtime; fixed scopes are recorded separately.\nCVE-2026-109618: Vulnerable on affected PHP; see separate fixed scopes.\nCVE-2026-109619: Vulnerable on affected PHP; see separate fixed scopes.\nCVE assessment limit: The published fixed scopes do not establish that other installations have updated PHP; deployed runtimes were not tested.\nPublished fix review (2026-11-04): The broader RHEL 9 PHP family retains its affected scope, including PHP 8.4. Additional fixed SAP Update Services and EUS packages are recorded separately in PHP-0945, PHP-0946, PHP-0947, PHP-0948, PHP-0949, PHP-0950.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -521,6 +521,46 @@
             "https://access.redhat.com/errata/RHSA-2026:87079"
           ],
           "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json"
+          ],
+          "comment": "Official source reviewed 2026-11-04; fixed scope is recorded separately."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json"
+          ],
+          "comment": "Official source reviewed 2026-11-04; fixed scope is recorded separately."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/errata/RHSA-2026:89111"
+          ],
+          "comment": "Official source reviewed 2026-11-04; fixed scope is recorded separately."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/errata/RHSA-2026:88835"
+          ],
+          "comment": "Official source reviewed 2026-11-04; fixed scope is recorded separately."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/errata/RHSA-2026:88720"
+          ],
+          "comment": "Official source reviewed 2026-11-04; fixed scope is recorded separately."
         }
       ],
       "software_packageVersion": "Unpatched PHP builds; fixed release scopes listed separately"
@@ -3316,6 +3356,504 @@
       "security_statusNotes": "OpenBSD 8.0 amd64 packages-stable: php-8.3.36p1 / php-8.4.27p0 / php-8.5.12p0",
       "summary": "CVE-2026-109619 assessment: fixed in the stated runtime/image scope",
       "comment": "Public official-source review on 2026-10-29. OpenBSD's public 8.0 packages-stable/amd64 index publishes php-8.3.36p1, php-8.4.27p0 and php-8.5.12p0. The PHP portions of these versions match the fixed releases in both upstream advisories. Confirmation is limited to these optional OpenBSD 8.0 amd64 packages. It does not assert PHP is installed by default or that older OpenBSD branches, other architectures or existing deployments are patched.\nAction statement: Install the appropriate fixed package for the supported OpenBSD branch and restart the PHP-serving processes."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0945",
+      "creationInfo": "_:creationinfo",
+      "name": "Red Hat Enterprise Linux 9.2 Update Services for SAP Solutions PHP 8.0 packages",
+      "software_packageVersion": "php-0:8.0.30-1.el9_2.2 (RHSA-2026:88659)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0945"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:red-hat:2c30c5da9571",
+      "summary": "Red Hat lists RHSA-2026:88659 and php-0:8.0.30-1.el9_2.2 as the released fix for both CVEs in Red Hat Enterprise Linux 9.2 Update Services for SAP Solutions.",
+      "description": "Fixed distribution scope of PHP-0364 (Red Hat Enterprise Linux 9 PHP RPM/AppStreams).",
+      "comment": "Inventory record: PHP-0945\nParent inventory record: PHP-0364\nEvidence status: Vendor-confirmed released fix in the specified distribution\nDeployment status: Not measured\nSource accessed: 2026-11-04\nPHP version scope: php-0:8.0.30-1.el9_2.2 (RHSA-2026:88659)\nCVE-2026-109618: Fix in the stated scope.\nCVE-2026-109619: Fix in the stated scope.\nLimitations: This backport applies only to the named RHEL minor version, subscription channel and package/module stream. Other channels, unpatched packages and the still-affected RHEL 9 PHP 8.4 scope are excluded. Package installation and running services were not tested.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/errata/RHSA-2026:88659"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0945",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0945",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The specified distribution includes PHP with the cited security fixes.",
+      "comment": "Related product PHP-0364 retains its independently assessed unpatched runtime scope."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0945-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0945"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Red Hat lists RHSA-2026:88659 and php-0:8.0.30-1.el9_2.2 as the released fix for both CVEs in Red Hat Enterprise Linux 9.2 Update Services for SAP Solutions. This backport applies only to the named RHEL minor version, subscription channel and package/module stream. Other channels, unpatched packages and the still-affected RHEL 9 PHP 8.4 scope are excluded. Package installation and running services were not tested.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://access.redhat.com/errata/RHSA-2026:88659; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0945-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0945"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Red Hat lists RHSA-2026:88659 and php-0:8.0.30-1.el9_2.2 as the released fix for both CVEs in Red Hat Enterprise Linux 9.2 Update Services for SAP Solutions. This backport applies only to the named RHEL minor version, subscription channel and package/module stream. Other channels, unpatched packages and the still-affected RHEL 9 PHP 8.4 scope are excluded. Package installation and running services were not tested.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://access.redhat.com/errata/RHSA-2026:88659; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0946",
+      "creationInfo": "_:creationinfo",
+      "name": "Red Hat Enterprise Linux 9.4 Update Services for SAP Solutions PHP 8.0 packages",
+      "software_packageVersion": "php-0:8.0.30-1.el9_4.2 (RHSA-2026:88725)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0946"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:red-hat:2c30c5da9571",
+      "summary": "Red Hat lists RHSA-2026:88725 and php-0:8.0.30-1.el9_4.2 as the released fix for both CVEs in Red Hat Enterprise Linux 9.4 Update Services for SAP Solutions.",
+      "description": "Fixed distribution scope of PHP-0364 (Red Hat Enterprise Linux 9 PHP RPM/AppStreams).",
+      "comment": "Inventory record: PHP-0946\nParent inventory record: PHP-0364\nEvidence status: Vendor-confirmed released fix in the specified distribution\nDeployment status: Not measured\nSource accessed: 2026-11-04\nPHP version scope: php-0:8.0.30-1.el9_4.2 (RHSA-2026:88725)\nCVE-2026-109618: Fix in the stated scope.\nCVE-2026-109619: Fix in the stated scope.\nLimitations: This backport applies only to the named RHEL minor version, subscription channel and package/module stream. Other channels, unpatched packages and the still-affected RHEL 9 PHP 8.4 scope are excluded. Package installation and running services were not tested.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/errata/RHSA-2026:88725"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0946",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0946",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The specified distribution includes PHP with the cited security fixes.",
+      "comment": "Related product PHP-0364 retains its independently assessed unpatched runtime scope."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0946-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0946"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Red Hat lists RHSA-2026:88725 and php-0:8.0.30-1.el9_4.2 as the released fix for both CVEs in Red Hat Enterprise Linux 9.4 Update Services for SAP Solutions. This backport applies only to the named RHEL minor version, subscription channel and package/module stream. Other channels, unpatched packages and the still-affected RHEL 9 PHP 8.4 scope are excluded. Package installation and running services were not tested.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://access.redhat.com/errata/RHSA-2026:88725; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0946-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0946"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Red Hat lists RHSA-2026:88725 and php-0:8.0.30-1.el9_4.2 as the released fix for both CVEs in Red Hat Enterprise Linux 9.4 Update Services for SAP Solutions. This backport applies only to the named RHEL minor version, subscription channel and package/module stream. Other channels, unpatched packages and the still-affected RHEL 9 PHP 8.4 scope are excluded. Package installation and running services were not tested.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://access.redhat.com/errata/RHSA-2026:88725; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0947",
+      "creationInfo": "_:creationinfo",
+      "name": "Red Hat Enterprise Linux 9.4 Update Services for SAP Solutions php:8.2 module",
+      "software_packageVersion": "php:8.2-9040020261023103113.9 (RHSA-2026:88835)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0947"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:red-hat:2c30c5da9571",
+      "summary": "Red Hat lists RHSA-2026:88835 and php:8.2-9040020261023103113.9 as the released fix for both CVEs in Red Hat Enterprise Linux 9.4 Update Services for SAP Solutions.",
+      "description": "Fixed distribution scope of PHP-0364 (Red Hat Enterprise Linux 9 PHP RPM/AppStreams).",
+      "comment": "Inventory record: PHP-0947\nParent inventory record: PHP-0364\nEvidence status: Vendor-confirmed released fix in the specified distribution\nDeployment status: Not measured\nSource accessed: 2026-11-04\nPHP version scope: php:8.2-9040020261023103113.9 (RHSA-2026:88835)\nCVE-2026-109618: Fix in the stated scope.\nCVE-2026-109619: Fix in the stated scope.\nLimitations: This backport applies only to the named RHEL minor version, subscription channel and package/module stream. Other channels, unpatched packages and the still-affected RHEL 9 PHP 8.4 scope are excluded. Package installation and running services were not tested.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/errata/RHSA-2026:88835"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0947",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0947",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The specified distribution includes PHP with the cited security fixes.",
+      "comment": "Related product PHP-0364 retains its independently assessed unpatched runtime scope."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0947-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0947"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Red Hat lists RHSA-2026:88835 and php:8.2-9040020261023103113.9 as the released fix for both CVEs in Red Hat Enterprise Linux 9.4 Update Services for SAP Solutions. This backport applies only to the named RHEL minor version, subscription channel and package/module stream. Other channels, unpatched packages and the still-affected RHEL 9 PHP 8.4 scope are excluded. Package installation and running services were not tested.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://access.redhat.com/errata/RHSA-2026:88835; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0947-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0947"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Red Hat lists RHSA-2026:88835 and php:8.2-9040020261023103113.9 as the released fix for both CVEs in Red Hat Enterprise Linux 9.4 Update Services for SAP Solutions. This backport applies only to the named RHEL minor version, subscription channel and package/module stream. Other channels, unpatched packages and the still-affected RHEL 9 PHP 8.4 scope are excluded. Package installation and running services were not tested.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://access.redhat.com/errata/RHSA-2026:88835; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0948",
+      "creationInfo": "_:creationinfo",
+      "name": "Red Hat Enterprise Linux 9.6 Extended Update Support PHP 8.0 packages",
+      "software_packageVersion": "php-0:8.0.30-3.el9_6.2 (RHSA-2026:88720)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0948"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:red-hat:2c30c5da9571",
+      "summary": "Red Hat lists RHSA-2026:88720 and php-0:8.0.30-3.el9_6.2 as the released fix for both CVEs in Red Hat Enterprise Linux 9.6 Extended Update Support.",
+      "description": "Fixed distribution scope of PHP-0364 (Red Hat Enterprise Linux 9 PHP RPM/AppStreams).",
+      "comment": "Inventory record: PHP-0948\nParent inventory record: PHP-0364\nEvidence status: Vendor-confirmed released fix in the specified distribution\nDeployment status: Not measured\nSource accessed: 2026-11-04\nPHP version scope: php-0:8.0.30-3.el9_6.2 (RHSA-2026:88720)\nCVE-2026-109618: Fix in the stated scope.\nCVE-2026-109619: Fix in the stated scope.\nLimitations: This backport applies only to the named RHEL minor version, subscription channel and package/module stream. Other channels, unpatched packages and the still-affected RHEL 9 PHP 8.4 scope are excluded. Package installation and running services were not tested.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/errata/RHSA-2026:88720"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0948",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0948",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The specified distribution includes PHP with the cited security fixes.",
+      "comment": "Related product PHP-0364 retains its independently assessed unpatched runtime scope."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0948-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0948"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Red Hat lists RHSA-2026:88720 and php-0:8.0.30-3.el9_6.2 as the released fix for both CVEs in Red Hat Enterprise Linux 9.6 Extended Update Support. This backport applies only to the named RHEL minor version, subscription channel and package/module stream. Other channels, unpatched packages and the still-affected RHEL 9 PHP 8.4 scope are excluded. Package installation and running services were not tested.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://access.redhat.com/errata/RHSA-2026:88720; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0948-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0948"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Red Hat lists RHSA-2026:88720 and php-0:8.0.30-3.el9_6.2 as the released fix for both CVEs in Red Hat Enterprise Linux 9.6 Extended Update Support. This backport applies only to the named RHEL minor version, subscription channel and package/module stream. Other channels, unpatched packages and the still-affected RHEL 9 PHP 8.4 scope are excluded. Package installation and running services were not tested.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://access.redhat.com/errata/RHSA-2026:88720; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0949",
+      "creationInfo": "_:creationinfo",
+      "name": "Red Hat Enterprise Linux 9.6 Extended Update Support php:8.2 module",
+      "software_packageVersion": "php:8.2-9060020261023092136.9 (RHSA-2026:88834)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0949"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:red-hat:2c30c5da9571",
+      "summary": "Red Hat lists RHSA-2026:88834 and php:8.2-9060020261023092136.9 as the released fix for both CVEs in Red Hat Enterprise Linux 9.6 Extended Update Support.",
+      "description": "Fixed distribution scope of PHP-0364 (Red Hat Enterprise Linux 9 PHP RPM/AppStreams).",
+      "comment": "Inventory record: PHP-0949\nParent inventory record: PHP-0364\nEvidence status: Vendor-confirmed released fix in the specified distribution\nDeployment status: Not measured\nSource accessed: 2026-11-04\nPHP version scope: php:8.2-9060020261023092136.9 (RHSA-2026:88834)\nCVE-2026-109618: Fix in the stated scope.\nCVE-2026-109619: Fix in the stated scope.\nLimitations: This backport applies only to the named RHEL minor version, subscription channel and package/module stream. Other channels, unpatched packages and the still-affected RHEL 9 PHP 8.4 scope are excluded. Package installation and running services were not tested.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/errata/RHSA-2026:88834"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0949",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0949",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The specified distribution includes PHP with the cited security fixes.",
+      "comment": "Related product PHP-0364 retains its independently assessed unpatched runtime scope."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0949-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0949"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Red Hat lists RHSA-2026:88834 and php:8.2-9060020261023092136.9 as the released fix for both CVEs in Red Hat Enterprise Linux 9.6 Extended Update Support. This backport applies only to the named RHEL minor version, subscription channel and package/module stream. Other channels, unpatched packages and the still-affected RHEL 9 PHP 8.4 scope are excluded. Package installation and running services were not tested.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://access.redhat.com/errata/RHSA-2026:88834; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0949-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0949"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Red Hat lists RHSA-2026:88834 and php:8.2-9060020261023092136.9 as the released fix for both CVEs in Red Hat Enterprise Linux 9.6 Extended Update Support. This backport applies only to the named RHEL minor version, subscription channel and package/module stream. Other channels, unpatched packages and the still-affected RHEL 9 PHP 8.4 scope are excluded. Package installation and running services were not tested.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://access.redhat.com/errata/RHSA-2026:88834; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0950",
+      "creationInfo": "_:creationinfo",
+      "name": "Red Hat Enterprise Linux 9.6 Extended Update Support php:8.3 module",
+      "software_packageVersion": "php:8.3-9060020261022173106.9 (RHSA-2026:89111)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0950"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:red-hat:2c30c5da9571",
+      "summary": "Red Hat lists RHSA-2026:89111 and php:8.3-9060020261022173106.9 as the released fix for both CVEs in Red Hat Enterprise Linux 9.6 Extended Update Support.",
+      "description": "Fixed distribution scope of PHP-0364 (Red Hat Enterprise Linux 9 PHP RPM/AppStreams).",
+      "comment": "Inventory record: PHP-0950\nParent inventory record: PHP-0364\nEvidence status: Vendor-confirmed released fix in the specified distribution\nDeployment status: Not measured\nSource accessed: 2026-11-04\nPHP version scope: php:8.3-9060020261022173106.9 (RHSA-2026:89111)\nCVE-2026-109618: Fix in the stated scope.\nCVE-2026-109619: Fix in the stated scope.\nLimitations: This backport applies only to the named RHEL minor version, subscription channel and package/module stream. Other channels, unpatched packages and the still-affected RHEL 9 PHP 8.4 scope are excluded. Package installation and running services were not tested.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/errata/RHSA-2026:89111"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0950",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0950",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The specified distribution includes PHP with the cited security fixes.",
+      "comment": "Related product PHP-0364 retains its independently assessed unpatched runtime scope."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0950-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0950"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Red Hat lists RHSA-2026:89111 and php:8.3-9060020261022173106.9 as the released fix for both CVEs in Red Hat Enterprise Linux 9.6 Extended Update Support. This backport applies only to the named RHEL minor version, subscription channel and package/module stream. Other channels, unpatched packages and the still-affected RHEL 9 PHP 8.4 scope are excluded. Package installation and running services were not tested.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://access.redhat.com/errata/RHSA-2026:89111; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0950-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0950"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Red Hat lists RHSA-2026:89111 and php:8.3-9060020261022173106.9 as the released fix for both CVEs in Red Hat Enterprise Linux 9.6 Extended Update Support. This backport applies only to the named RHEL minor version, subscription channel and package/module stream. Other channels, unpatched packages and the still-affected RHEL 9 PHP 8.4 scope are excluded. Package installation and running services were not tested.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://access.redhat.com/errata/RHSA-2026:89111; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
     }
   ]
 }

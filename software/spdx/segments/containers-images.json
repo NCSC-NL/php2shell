@@ -2186,8 +2186,8 @@
       "type": "software_Package",
       "spdxId": "urn:php2shell:inventory:package:PHP-0737",
       "creationInfo": "_:creationinfo",
-      "name": "Part-DB official Docker image (PHP 8.4.27 rebuild)",
-      "software_packageVersion": "jbtronics/part-db1:2.20.2 rebuild containing PHP 8.4.27",
+      "name": "Part-DB official Docker images with patched PHP",
+      "software_packageVersion": "2.20.2 rebuild containing PHP 8.4.27; Docker releases 2.20.3 and 2.20.4",
       "software_primaryPurpose": "container",
       "externalIdentifier": [
         {
@@ -2197,9 +2197,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:part-db-project:4985626f8fec",
-      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package or image scope.",
+      "summary": "The Part-DB maintainer confirms the patched 2.20.2 rebuild; release notes for 2.20.3 and 2.20.4 explicitly confirm patched Docker images for both CVEs.",
       "description": "Fixed distribution scope of PHP-0265 (Part-DB server).",
-      "comment": "Inventory record: PHP-0737\nParent inventory record: PHP-0265\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nSource accessed: 2026-10-23\nPHP version scope: jbtronics/part-db1:2.20.2 rebuild containing PHP 8.4.27\nLimitations: The Part-DB maintainer confirms a republished 2.20.2 image with PHP 8.4.27. This Fix is limited to that rebuilt image content: later ARM64 reports still show PHP 8.4.26 and have no maintainer resolution. Do not treat every architecture or cached 2.20.2 image as fixed; verify the selected image's serving runtime.",
+      "comment": "Inventory record: PHP-0737\nParent inventory record: PHP-0265\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nSource accessed: 2026-11-04\nPHP version scope: 2.20.2 rebuild containing PHP 8.4.27; Docker releases 2.20.3 and 2.20.4\nLimitations: Docker releases 2.20.3 and 2.20.4 are explicitly reported as patched for both CVEs. For 2.20.2, the Fix remains limited to the rebuild containing PHP 8.4.27: unresolved ARM64 reports of PHP 8.4.26 and cached old images are excluded. Verify the selected image runtime; source installations require their own PHP update.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2216,6 +2216,22 @@
             "https://github.com/Part-DB/Part-DB-server/issues/1615"
           ],
           "comment": "Official source reviewed 2026-10-23 for the scoped PHP2Shell fix."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/Part-DB/Part-DB-server/releases/tag/v2.20.3"
+          ],
+          "comment": "Upstream release explicitly confirms a patched Docker image for both PHP2Shell CVEs; reviewed 2026-11-04."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/Part-DB/Part-DB-server/releases/tag/v2.20.4"
+          ],
+          "comment": "Upstream release explicitly confirms a patched Docker image for both PHP2Shell CVEs; reviewed 2026-11-04."
         }
       ]
     },
@@ -2240,9 +2256,9 @@
         "urn:php2shell:inventory:package:PHP-0737"
       ],
       "relationshipType": "fixedIn",
-      "security_statusNotes": "The Part-DB maintainer confirms a republished 2.20.2 image with PHP 8.4.27. This Fix is limited to that rebuilt image content: later ARM64 reports still show PHP 8.4.26 and have no maintainer resolution. Do not treat every architecture or cached 2.20.2 image as fixed; verify the selected image's serving runtime.",
+      "security_statusNotes": "Docker releases 2.20.3 and 2.20.4 are explicitly reported as patched for both CVEs. For 2.20.2, the Fix remains limited to the rebuild containing PHP 8.4.27: unresolved ARM64 reports of PHP 8.4.26 and cached old images are excluded. Verify the selected image runtime; source installations require their own PHP update.",
       "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
-      "comment": "Official sources reviewed 2026-10-23: https://github.com/Part-DB/Part-DB-server/issues/1615#issuecomment-6324675679; https://github.com/Part-DB/Part-DB-server/issues/1615.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/Part-DB/Part-DB-server/issues/1615#issuecomment-6324675679; https://github.com/Part-DB/Part-DB-server/issues/1615.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime.\nAdditional release review 2026-11-04: https://github.com/Part-DB/Part-DB-server/releases/tag/v2.20.3; https://github.com/Part-DB/Part-DB-server/releases/tag/v2.20.4."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -2253,9 +2269,9 @@
         "urn:php2shell:inventory:package:PHP-0737"
       ],
       "relationshipType": "fixedIn",
-      "security_statusNotes": "The Part-DB maintainer confirms a republished 2.20.2 image with PHP 8.4.27. This Fix is limited to that rebuilt image content: later ARM64 reports still show PHP 8.4.26 and have no maintainer resolution. Do not treat every architecture or cached 2.20.2 image as fixed; verify the selected image's serving runtime.",
+      "security_statusNotes": "Docker releases 2.20.3 and 2.20.4 are explicitly reported as patched for both CVEs. For 2.20.2, the Fix remains limited to the rebuild containing PHP 8.4.27: unresolved ARM64 reports of PHP 8.4.26 and cached old images are excluded. Verify the selected image runtime; source installations require their own PHP update.",
       "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
-      "comment": "Official sources reviewed 2026-10-23: https://github.com/Part-DB/Part-DB-server/issues/1615#issuecomment-6324675679; https://github.com/Part-DB/Part-DB-server/issues/1615.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime."
+      "comment": "Official sources reviewed 2026-10-23: https://github.com/Part-DB/Part-DB-server/issues/1615#issuecomment-6324675679; https://github.com/Part-DB/Part-DB-server/issues/1615.\nAction statement: Install the stated fixed package or pull and recreate the stated container image, then verify the serving PHP runtime.\nAdditional release review 2026-11-04: https://github.com/Part-DB/Part-DB-server/releases/tag/v2.20.3; https://github.com/Part-DB/Part-DB-server/releases/tag/v2.20.4."
     },
     {
       "type": "software_Package",
@@ -2995,6 +3011,595 @@
       "security_statusNotes": "Fixed in the recorded ghcr.io/thorsten/phpmyfaq 4.2.0-RC.1 Apache and FrankenPHP image digests for linux/amd64 and linux/arm64, identifying PHP 8.4.27. This release-candidate scope does not establish a stable application fix or deployed remediation.",
       "summary": "CVE-2026-109619 assessment: Fix for the inspected phpMyFAQ 4.2.0-RC.1 Docker image digests",
       "comment": "Official vendor announcement https://www.phpmyfaq.de/news/2026/#2026-11-01 names both CVEs. Its PHP 8.5.12 claim differs from the inspected image configs and pinned build sources, which identify 8.4.27. Both releases are fixed according to https://www.php.net/archive/2026.php#2026-10-21-5. Digest, architecture and source-revision evidence are recorded in PHP-0932. Reviewed 2026-11-02."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0933",
+      "creationInfo": "_:creationinfo",
+      "name": "EGroupware official Docker images with patched PHP",
+      "software_packageVersion": "26.10.20261021 and 23.1.20261021; PHP 8.5.12",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0933"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:egroupware-gmbh-egroupware-project:13e7e9b3cc37",
+      "summary": "EGroupware confirms both PHP2Shell fixes in its October 21 images with PHP 8.5.12; the Univention App Center rollout followed on October 23.",
+      "description": "Fixed distribution scope of PHP-0218 (EGroupware).",
+      "comment": "Inventory record: PHP-0933\nParent inventory record: PHP-0218\nEvidence status: Vendor-confirmed released fix in the specified distribution\nDeployment status: Not measured\nSource accessed: 2026-11-04\nPHP version scope: 26.10.20261021 and 23.1.20261021; PHP 8.5.12\nCVE-2026-109618: Fix in the stated scope.\nCVE-2026-109619: Fix in the stated scope.\nLimitations: This Fix covers only the named distribution. Older or cached images and installations using independently supplied, unpatched PHP remain affected; no deployed runtime was tested.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.egroupware.org/en/general/php2shell-and-our-strategy"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/EGroupware/egroupware/releases/tag/26.10.20261021"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/EGroupware/egroupware/releases/tag/23.1.20261021"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0933",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0933",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The specified distribution includes PHP with the cited security fixes.",
+      "comment": "Related product PHP-0218 retains its independently assessed unpatched runtime scope."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0933-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0933"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "EGroupware confirms both PHP2Shell fixes in its October 21 images with PHP 8.5.12; the Univention App Center rollout followed on October 23. This Fix covers only the named distribution. Older or cached images and installations using independently supplied, unpatched PHP remain affected; no deployed runtime was tested.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://www.egroupware.org/en/general/php2shell-and-our-strategy; https://github.com/EGroupware/egroupware/releases/tag/26.10.20261021; https://github.com/EGroupware/egroupware/releases/tag/23.1.20261021.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0933-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0933"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "EGroupware confirms both PHP2Shell fixes in its October 21 images with PHP 8.5.12; the Univention App Center rollout followed on October 23. This Fix covers only the named distribution. Older or cached images and installations using independently supplied, unpatched PHP remain affected; no deployed runtime was tested.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://www.egroupware.org/en/general/php2shell-and-our-strategy; https://github.com/EGroupware/egroupware/releases/tag/26.10.20261021; https://github.com/EGroupware/egroupware/releases/tag/23.1.20261021.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0934",
+      "creationInfo": "_:creationinfo",
+      "name": "Snipe-IT official Ubuntu and Alpine Docker images with patched PHP",
+      "software_packageVersion": "snipe/snipe-it:v8.8.2 (Ubuntu); snipe/snipe-it:v8.8.3-alpine",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0934"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:grokability-snipe-it-project:2820c9554c4e",
+      "summary": "Snipe-IT confirms fixed Ubuntu v8.8.2 and Alpine v8.8.3-alpine images for both PHP2Shell CVEs.",
+      "description": "Fixed distribution scope of PHP-0252 (Snipe-IT).",
+      "comment": "Inventory record: PHP-0934\nParent inventory record: PHP-0252\nEvidence status: Vendor-confirmed released fix in the specified distribution\nDeployment status: Not measured\nSource accessed: 2026-11-04\nPHP version scope: snipe/snipe-it:v8.8.2 (Ubuntu); snipe/snipe-it:v8.8.3-alpine\nCVE-2026-109618: Fix in the stated scope.\nCVE-2026-109619: Fix in the stated scope.\nLimitations: The v8.8.2-alpine image was built before patched Alpine packages were available and is excluded. Use the named variant and recorded digest, recreate containers, and verify PHP. Independent PHP installations remain separate.\nImage index digest: snipe/snipe-it:v8.8.2 = sha256:321b37a65a3a9ed3cc8da9b999e1cbb60e15aef7deed47efd65c31290af6f501\nImage index digest: snipe/snipe-it:v8.8.3-alpine = sha256:20d2499aeed9973b2a44f879bdd5a5a8d40e76970ebd1194aec7871bc9a535a8",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://grokstar.dev/security/2026/10/critical-php-security-update-php2shell/"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/grokability/snipe-it/releases/tag/v8.8.3"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/snipe/snipe-it/tags/v8.8.3-alpine"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/snipe/snipe-it/tags/v8.8.2"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0934",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0934",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The specified distribution includes PHP with the cited security fixes.",
+      "comment": "Related product PHP-0252 retains its independently assessed unpatched runtime scope."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0934-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0934"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Snipe-IT confirms fixed Ubuntu v8.8.2 and Alpine v8.8.3-alpine images for both PHP2Shell CVEs. The v8.8.2-alpine image was built before patched Alpine packages were available and is excluded. Use the named variant and recorded digest, recreate containers, and verify PHP. Independent PHP installations remain separate.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://grokstar.dev/security/2026/10/critical-php-security-update-php2shell/; https://github.com/grokability/snipe-it/releases/tag/v8.8.3; https://hub.docker.com/v2/repositories/snipe/snipe-it/tags/v8.8.3-alpine; https://hub.docker.com/v2/repositories/snipe/snipe-it/tags/v8.8.2.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0934-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0934"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Snipe-IT confirms fixed Ubuntu v8.8.2 and Alpine v8.8.3-alpine images for both PHP2Shell CVEs. The v8.8.2-alpine image was built before patched Alpine packages were available and is excluded. Use the named variant and recorded digest, recreate containers, and verify PHP. Independent PHP installations remain separate.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://grokstar.dev/security/2026/10/critical-php-security-update-php2shell/; https://github.com/grokability/snipe-it/releases/tag/v8.8.3; https://hub.docker.com/v2/repositories/snipe/snipe-it/tags/v8.8.3-alpine; https://hub.docker.com/v2/repositories/snipe/snipe-it/tags/v8.8.2.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0935",
+      "creationInfo": "_:creationinfo",
+      "name": "ProjectSend official Docker image with patched PHP",
+      "software_packageVersion": "v2.7.1 Docker release; PHP 8.4.27",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0935"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:projectsend-project:47b4dd186a7f",
+      "summary": "ProjectSend v2.7.1 release notes explicitly identify both CVEs and confirm PHP 8.4.27 in the Docker image.",
+      "description": "Fixed distribution scope of PHP-0213 (ProjectSend).",
+      "comment": "Inventory record: PHP-0935\nParent inventory record: PHP-0213\nEvidence status: Vendor-confirmed released fix in the specified distribution\nDeployment status: Not measured\nSource accessed: 2026-11-04\nPHP version scope: v2.7.1 Docker release; PHP 8.4.27\nCVE-2026-109618: Fix in the stated scope.\nCVE-2026-109619: Fix in the stated scope.\nLimitations: This Fix covers only the named distribution. Older or cached images and installations using independently supplied, unpatched PHP remain affected; no deployed runtime was tested. ZIP/source releases require a separate PHP update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/projectsend/projectsend/releases/tag/v2.7.1"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0935",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0935",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The specified distribution includes PHP with the cited security fixes.",
+      "comment": "Related product PHP-0213 retains its independently assessed unpatched runtime scope."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0935-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0935"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "ProjectSend v2.7.1 release notes explicitly identify both CVEs and confirm PHP 8.4.27 in the Docker image. This Fix covers only the named distribution. Older or cached images and installations using independently supplied, unpatched PHP remain affected; no deployed runtime was tested. ZIP/source releases require a separate PHP update.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://github.com/projectsend/projectsend/releases/tag/v2.7.1.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0935-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0935"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "ProjectSend v2.7.1 release notes explicitly identify both CVEs and confirm PHP 8.4.27 in the Docker image. This Fix covers only the named distribution. Older or cached images and installations using independently supplied, unpatched PHP remain affected; no deployed runtime was tested. ZIP/source releases require a separate PHP update.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://github.com/projectsend/projectsend/releases/tag/v2.7.1.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0936",
+      "creationInfo": "_:creationinfo",
+      "name": "Pterodactyl Panel official Docker image with patched PHP",
+      "software_packageVersion": "v1.15.2 Docker release; PHP 8.3.36",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0936"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:pterodactyl-project:69626e6dba73",
+      "summary": "Pterodactyl Panel v1.15.2 explicitly addresses both CVEs and updates the Docker runtime to PHP 8.3.36.",
+      "description": "Fixed distribution scope of PHP-0393 (Pterodactyl Panel PHP application).",
+      "comment": "Inventory record: PHP-0936\nParent inventory record: PHP-0393\nEvidence status: Vendor-confirmed released fix in the specified distribution\nDeployment status: Not measured\nSource accessed: 2026-11-04\nPHP version scope: v1.15.2 Docker release; PHP 8.3.36\nCVE-2026-109618: Fix in the stated scope.\nCVE-2026-109619: Fix in the stated scope.\nLimitations: This Fix covers only the named distribution. Older or cached images and installations using independently supplied, unpatched PHP remain affected; no deployed runtime was tested. This is the Panel image; the Wings service and non-Docker Panel installs are separate scopes.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/pterodactyl/panel/releases/tag/v1.15.2"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0936",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0936",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The specified distribution includes PHP with the cited security fixes.",
+      "comment": "Related product PHP-0393 retains its independently assessed unpatched runtime scope."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0936-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0936"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Pterodactyl Panel v1.15.2 explicitly addresses both CVEs and updates the Docker runtime to PHP 8.3.36. This Fix covers only the named distribution. Older or cached images and installations using independently supplied, unpatched PHP remain affected; no deployed runtime was tested. This is the Panel image; the Wings service and non-Docker Panel installs are separate scopes.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://github.com/pterodactyl/panel/releases/tag/v1.15.2.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0936-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0936"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Pterodactyl Panel v1.15.2 explicitly addresses both CVEs and updates the Docker runtime to PHP 8.3.36. This Fix covers only the named distribution. Older or cached images and installations using independently supplied, unpatched PHP remain affected; no deployed runtime was tested. This is the Panel image; the Wings service and non-Docker Panel installs are separate scopes.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://github.com/pterodactyl/panel/releases/tag/v1.15.2.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0937",
+      "creationInfo": "_:creationinfo",
+      "name": "ownCloud Classic 11 official Docker image with patched PHP",
+      "software_packageVersion": "owncloud/server:11.0.1-20261022; PHP 8.3.6-0ubuntu0.24.04.13; amd64/arm64",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0937"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:owncloud-kiteworks:440864c9e5aa",
+      "summary": "ownCloud confirms both CVEs fixed in the dated Classic 11 image using the Ubuntu PHP backport on amd64 and arm64.",
+      "description": "Fixed distribution scope of PHP-0016 (ownCloud Classic 11).",
+      "comment": "Inventory record: PHP-0937\nParent inventory record: PHP-0016\nEvidence status: Vendor-confirmed released fix in the specified distribution\nDeployment status: Not measured\nSource accessed: 2026-11-04\nPHP version scope: owncloud/server:11.0.1-20261022; PHP 8.3.6-0ubuntu0.24.04.13; amd64/arm64\nCVE-2026-109618: Fix in the stated scope.\nCVE-2026-109619: Fix in the stated scope.\nLimitations: The old upstream version string alone does not identify the backport. This assessment requires the recorded package revision and image digest; other builds and independent runtimes are separate.\nImage index digest: owncloud/server:11.0.1-20261022 = sha256:bacdc811aa792944e8c1e09a8a5572165fec16296a1a265a26e965b8b72caf6e",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/orgs/owncloud/discussions/27"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/owncloud-docker/php/issues/324"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://ubuntu.com/security/notices/USN-8948-1"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/owncloud/server/tags/11.0.1-20261022"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0937",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0937",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The specified distribution includes PHP with the cited security fixes.",
+      "comment": "Related product PHP-0016 retains its independently assessed unpatched runtime scope."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0937-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0937"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "ownCloud confirms both CVEs fixed in the dated Classic 11 image using the Ubuntu PHP backport on amd64 and arm64. The old upstream version string alone does not identify the backport. This assessment requires the recorded package revision and image digest; other builds and independent runtimes are separate.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://github.com/orgs/owncloud/discussions/27; https://github.com/owncloud-docker/php/issues/324; https://ubuntu.com/security/notices/USN-8948-1; https://hub.docker.com/v2/repositories/owncloud/server/tags/11.0.1-20261022.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0937-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0937"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "ownCloud confirms both CVEs fixed in the dated Classic 11 image using the Ubuntu PHP backport on amd64 and arm64. The old upstream version string alone does not identify the backport. This assessment requires the recorded package revision and image digest; other builds and independent runtimes are separate.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://github.com/orgs/owncloud/discussions/27; https://github.com/owncloud-docker/php/issues/324; https://ubuntu.com/security/notices/USN-8948-1; https://hub.docker.com/v2/repositories/owncloud/server/tags/11.0.1-20261022.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0938",
+      "creationInfo": "_:creationinfo",
+      "name": "ownCloud Server 10 official Docker image with patched PHP",
+      "software_packageVersion": "owncloud/server:10.16.6-20261022 corrected rebuild; PHP 1:7.4.33-31+freexian22.04.1+php+1; amd64/arm64",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0938"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:owncloud-kiteworks:440864c9e5aa",
+      "summary": "ownCloud confirms both CVEs fixed in the corrected October 22 Server 10 image using the Freexian PHP 7.4 backport.",
+      "description": "Fixed distribution scope of PHP-0208 (ownCloud Server 10).",
+      "comment": "Inventory record: PHP-0938\nParent inventory record: PHP-0208\nEvidence status: Vendor-confirmed released fix in the specified distribution\nDeployment status: Not measured\nSource accessed: 2026-11-04\nPHP version scope: owncloud/server:10.16.6-20261022 corrected rebuild; PHP 1:7.4.33-31+freexian22.04.1+php+1; amd64/arm64\nCVE-2026-109618: Fix in the stated scope.\nCVE-2026-109619: Fix in the stated scope.\nLimitations: The earlier same-day image contained unpatched package revision -30 and is excluded. Use the corrected image digest and -31 package revision; independent or unreplaced installations remain separate.\nImage index digest: owncloud/server:10.16.6-20261022 = sha256:879638cd818b4c60c79f0dbf351fe1814e899c74782b0c20ecb055e542c260b6",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/orgs/owncloud/discussions/27"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/owncloud-docker/php/issues/324"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/owncloud/server/tags/10.16.6-20261022"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0938",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0938",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The specified distribution includes PHP with the cited security fixes.",
+      "comment": "Related product PHP-0208 retains its independently assessed unpatched runtime scope."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0938-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0938"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "ownCloud confirms both CVEs fixed in the corrected October 22 Server 10 image using the Freexian PHP 7.4 backport. The earlier same-day image contained unpatched package revision -30 and is excluded. Use the corrected image digest and -31 package revision; independent or unreplaced installations remain separate.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://github.com/orgs/owncloud/discussions/27; https://github.com/owncloud-docker/php/issues/324; https://hub.docker.com/v2/repositories/owncloud/server/tags/10.16.6-20261022.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0938-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0938"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "ownCloud confirms both CVEs fixed in the corrected October 22 Server 10 image using the Freexian PHP 7.4 backport. The earlier same-day image contained unpatched package revision -30 and is excluded. Use the corrected image digest and -31 package revision; independent or unreplaced installations remain separate.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://github.com/orgs/owncloud/discussions/27; https://github.com/owncloud-docker/php/issues/324; https://hub.docker.com/v2/repositories/owncloud/server/tags/10.16.6-20261022.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0939",
+      "creationInfo": "_:creationinfo",
+      "name": "Invoice Ninja Debian and Octane Docker images with patched PHP",
+      "software_packageVersion": "invoiceninja/invoiceninja-debian:5.13.50 and invoiceninja/invoiceninja-octane:5.13.50; PHP 8.5.12; amd64/arm64",
+      "software_primaryPurpose": "container",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0939"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:invoice-ninja:423cd0125592",
+      "summary": "Invoice Ninja maintainers confirm patched PHP 8.5.12 in the Debian and Octane image rebuilds; the published 5.13.50 configurations corroborate that runtime on amd64 and arm64.",
+      "description": "Fixed distribution scope of PHP-0253 (Invoice Ninja self-hosted server).",
+      "comment": "Inventory record: PHP-0939\nParent inventory record: PHP-0253\nEvidence status: Vendor-confirmed released fix in the specified distribution\nDeployment status: Not measured\nSource accessed: 2026-11-04\nPHP version scope: invoiceninja/invoiceninja-debian:5.13.50 and invoiceninja/invoiceninja-octane:5.13.50; PHP 8.5.12; amd64/arm64\nCVE-2026-109618: Fix in the stated scope.\nCVE-2026-109619: Fix in the stated scope.\nLimitations: Assessment is tied to the recorded image digests and the maintainer-confirmed Debian/Octane variants. The deprecated Alpine image, source installs and unreplaced deployments are outside this fixed scope. Image configurations were inspected; no image or PHP binary was executed.\nImage index digest: invoiceninja/invoiceninja-debian:5.13.50 = sha256:a441339c959b7e8e8a9f346dd4eff2759f0f39a87a5b3eff875c465fbca1566b\nImage index digest: invoiceninja/invoiceninja-octane:5.13.50 = sha256:45a2ae859111d475b6e8eb5c901cf79d6010ddd21472134b889546173c94474f",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/invoiceninja/dockerfiles/issues/899#issuecomment-6324094741"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/invoiceninja/dockerfiles/pull/897#issuecomment-6321743591"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/invoiceninja/dockerfiles/releases/tag/5.13.50"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/invoiceninja/invoiceninja-debian/tags/5.13.50"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://hub.docker.com/v2/repositories/invoiceninja/invoiceninja-octane/tags/5.13.50"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.php.net/archive/2026.php#2026-10-21-5"
+          ],
+          "comment": "Official source reviewed 2026-11-04 for this exact PHP2Shell scope."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0939",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0939",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The specified distribution includes PHP with the cited security fixes.",
+      "comment": "Related product PHP-0253 retains its independently assessed unpatched runtime scope."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0939-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0939"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Invoice Ninja maintainers confirm patched PHP 8.5.12 in the Debian and Octane image rebuilds; the published 5.13.50 configurations corroborate that runtime on amd64 and arm64. Assessment is tied to the recorded image digests and the maintainer-confirmed Debian/Octane variants. The deprecated Alpine image, source installs and unreplaced deployments are outside this fixed scope. Image configurations were inspected; no image or PHP binary was executed.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://github.com/invoiceninja/dockerfiles/issues/899#issuecomment-6324094741; https://github.com/invoiceninja/dockerfiles/pull/897#issuecomment-6321743591; https://github.com/invoiceninja/dockerfiles/releases/tag/5.13.50; https://hub.docker.com/v2/repositories/invoiceninja/invoiceninja-debian/tags/5.13.50; https://hub.docker.com/v2/repositories/invoiceninja/invoiceninja-octane/tags/5.13.50; https://www.php.net/archive/2026.php#2026-10-21-5.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0939-reviewed-20261104",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0939"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Invoice Ninja maintainers confirm patched PHP 8.5.12 in the Debian and Octane image rebuilds; the published 5.13.50 configurations corroborate that runtime on amd64 and arm64. Assessment is tied to the recorded image digests and the maintainer-confirmed Debian/Octane variants. The deprecated Alpine image, source installs and unreplaced deployments are outside this fixed scope. Image configurations were inspected; no image or PHP binary was executed.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified vendor-confirmed scope",
+      "comment": "Official sources reviewed 2026-11-04: https://github.com/invoiceninja/dockerfiles/issues/899#issuecomment-6324094741; https://github.com/invoiceninja/dockerfiles/pull/897#issuecomment-6321743591; https://github.com/invoiceninja/dockerfiles/releases/tag/5.13.50; https://hub.docker.com/v2/repositories/invoiceninja/invoiceninja-debian/tags/5.13.50; https://hub.docker.com/v2/repositories/invoiceninja/invoiceninja-octane/tags/5.13.50; https://www.php.net/archive/2026.php#2026-10-21-5.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
     }
   ]
 }
