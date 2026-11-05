@@ -3286,6 +3286,18 @@
       "spdxId": "urn:php2shell:inventory:organization:fiery",
       "creationInfo": "_:creationinfo",
       "name": "Fiery"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:almalinux:342470c0d875",
+      "creationInfo": "_:creationinfo",
+      "name": "AlmaLinux"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:php2shell:inventory:organization:rocky-linux:817d0b8a1a25",
+      "creationInfo": "_:creationinfo",
+      "name": "Rocky Linux"
     }
   ]
 }

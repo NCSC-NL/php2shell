@@ -3854,6 +3854,1380 @@
       "security_statusNotes": "Red Hat lists RHSA-2026:89111 and php:8.3-9060020261022173106.9 as the released fix for both CVEs in Red Hat Enterprise Linux 9.6 Extended Update Support. This backport applies only to the named RHEL minor version, subscription channel and package/module stream. Other channels, unpatched packages and the still-affected RHEL 9 PHP 8.4 scope are excluded. Package installation and running services were not tested.",
       "summary": "CVE-2026-109619 assessment: Fix in the specified vendor-confirmed scope",
       "comment": "Official sources reviewed 2026-11-04: https://access.redhat.com/errata/RHSA-2026:89111; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109618.json; https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-109619.json.\nAction statement: Install the exact fixed package or pull and recreate the specified container, then verify the PHP runtime serving requests."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0951",
+      "creationInfo": "_:creationinfo",
+      "name": "AlmaLinux 8 php:7.2 module",
+      "software_packageVersion": "7.2.24-1.module_el8.10.0+4315+7b734bf3.alma.1 (ALSA-2026:A011)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0951"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:almalinux:342470c0d875",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package scope.",
+      "description": "AlmaLinux 8 php:7.2 packages",
+      "comment": "Inventory record: PHP-0951\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: AlmaLinux 8 php:7.2 PHP packages (x86_64 build reviewed; the advisory lists the other architectures)\nPHP version scope: 7.2.24-1.module_el8.10.0+4315+7b734bf3.alma.1 (ALSA-2026:A011)\nLimitations: ALSA-2026:A011 names the PHP2Shell CVEs and the fixed build for this stream only. AlmaLinux-built backport for a stream Red Hat no longer updates; no RHSA counterpart. Package availability does not establish operator rollout or a restart of serving PHP workers; no package was installed or executed.\nPatch owner: AlmaLinux for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: ALSA-2026:A011; 7.2.24-1.module_el8.10.0+4315+7b734bf3.alma.1\nSource accessed: 2026-11-05\nAliases: almalinux8:php:7.2\nVulnerability status: Fixed in 7.2.24-1.module_el8.10.0+4315+7b734bf3.alma.1.\nCVE-2026-109618: Fixed in 7.2.24-1.module_el8.10.0+4315+7b734bf3.alma.1\nCVE-2026-109619: Fixed in 7.2.24-1.module_el8.10.0+4315+7b734bf3.alma.1\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.almalinux.org/8/ALSA-2026-A011.html"
+          ],
+          "comment": "AlmaLinux ALSA-2026:A011 - Important: php:7.2 security update"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0951",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0951",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of AlmaLinux 8 php:7.2; deployment and other streams are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0951-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0951"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:A011 and 7.2.24-1.module_el8.10.0+4315+7b734bf3.alma.1 as the released fix for both CVEs in AlmaLinux 8 php:7.2. This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0951-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0951"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:A011 and 7.2.24-1.module_el8.10.0+4315+7b734bf3.alma.1 as the released fix for both CVEs in AlmaLinux 8 php:7.2. This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0952",
+      "creationInfo": "_:creationinfo",
+      "name": "AlmaLinux 8 php:7.3 module",
+      "software_packageVersion": "7.3.20-1.module_el8.10.0+4316+90ea5fe5.alma.1 (ALSA-2026:A012)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0952"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:almalinux:342470c0d875",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package scope.",
+      "description": "AlmaLinux 8 php:7.3 packages",
+      "comment": "Inventory record: PHP-0952\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: AlmaLinux 8 php:7.3 PHP packages (x86_64 build reviewed; the advisory lists the other architectures)\nPHP version scope: 7.3.20-1.module_el8.10.0+4316+90ea5fe5.alma.1 (ALSA-2026:A012)\nLimitations: ALSA-2026:A012 names the PHP2Shell CVEs and the fixed build for this stream only. AlmaLinux-built backport for a stream Red Hat no longer updates; no RHSA counterpart. Package availability does not establish operator rollout or a restart of serving PHP workers; no package was installed or executed.\nPatch owner: AlmaLinux for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: ALSA-2026:A012; 7.3.20-1.module_el8.10.0+4316+90ea5fe5.alma.1\nSource accessed: 2026-11-05\nAliases: almalinux8:php:7.3\nVulnerability status: Fixed in 7.3.20-1.module_el8.10.0+4316+90ea5fe5.alma.1.\nCVE-2026-109618: Fixed in 7.3.20-1.module_el8.10.0+4316+90ea5fe5.alma.1\nCVE-2026-109619: Fixed in 7.3.20-1.module_el8.10.0+4316+90ea5fe5.alma.1\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.almalinux.org/8/ALSA-2026-A012.html"
+          ],
+          "comment": "AlmaLinux ALSA-2026:A012 - Important: php:7.3 security update"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0952",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0952",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of AlmaLinux 8 php:7.3; deployment and other streams are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0952-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0952"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:A012 and 7.3.20-1.module_el8.10.0+4316+90ea5fe5.alma.1 as the released fix for both CVEs in AlmaLinux 8 php:7.3. This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0952-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0952"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:A012 and 7.3.20-1.module_el8.10.0+4316+90ea5fe5.alma.1 as the released fix for both CVEs in AlmaLinux 8 php:7.3. This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0953",
+      "creationInfo": "_:creationinfo",
+      "name": "AlmaLinux 8 php:7.4 module",
+      "software_packageVersion": "7.4.33-8.module_el8.10.0+4321+cf5fd4bb (ALSA-2026:87080)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0953"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:almalinux:342470c0d875",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package scope.",
+      "description": "AlmaLinux 8 php:7.4 packages",
+      "comment": "Inventory record: PHP-0953\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: AlmaLinux 8 php:7.4 PHP packages (x86_64 build reviewed; the advisory lists the other architectures)\nPHP version scope: 7.4.33-8.module_el8.10.0+4321+cf5fd4bb (ALSA-2026:87080)\nLimitations: ALSA-2026:87080 names the PHP2Shell CVEs and the fixed build for this stream only. Rebuild of RHSA-2026:87080. Package availability does not establish operator rollout or a restart of serving PHP workers; no package was installed or executed.\nPatch owner: AlmaLinux for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: ALSA-2026:87080; 7.4.33-8.module_el8.10.0+4321+cf5fd4bb\nSource accessed: 2026-11-05\nAliases: almalinux8:php:7.4\nVulnerability status: Fixed in 7.4.33-8.module_el8.10.0+4321+cf5fd4bb.\nCVE-2026-109618: Fixed in 7.4.33-8.module_el8.10.0+4321+cf5fd4bb\nCVE-2026-109619: Fixed in 7.4.33-8.module_el8.10.0+4321+cf5fd4bb\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.almalinux.org/8/ALSA-2026-87080.html"
+          ],
+          "comment": "AlmaLinux ALSA-2026:87080 - Important: php:7.4 security update"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0953",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0953",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of AlmaLinux 8 php:7.4; deployment and other streams are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0953-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0953"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:87080 and 7.4.33-8.module_el8.10.0+4321+cf5fd4bb as the released fix for both CVEs in AlmaLinux 8 php:7.4. This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0953-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0953"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:87080 and 7.4.33-8.module_el8.10.0+4321+cf5fd4bb as the released fix for both CVEs in AlmaLinux 8 php:7.4. This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0954",
+      "creationInfo": "_:creationinfo",
+      "name": "AlmaLinux 8 php:8.0 module",
+      "software_packageVersion": "8.0.30-1.module_el8.10.0+4319+26f10322.alma.1 (ALSA-2026:A013)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0954"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:almalinux:342470c0d875",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package scope.",
+      "description": "AlmaLinux 8 php:8.0 packages",
+      "comment": "Inventory record: PHP-0954\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: AlmaLinux 8 php:8.0 PHP packages (x86_64 build reviewed; the advisory lists the other architectures)\nPHP version scope: 8.0.30-1.module_el8.10.0+4319+26f10322.alma.1 (ALSA-2026:A013)\nLimitations: ALSA-2026:A013 names the PHP2Shell CVEs and the fixed build for this stream only. AlmaLinux-built backport for a stream Red Hat no longer updates; no RHSA counterpart. Package availability does not establish operator rollout or a restart of serving PHP workers; no package was installed or executed.\nPatch owner: AlmaLinux for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: ALSA-2026:A013; 8.0.30-1.module_el8.10.0+4319+26f10322.alma.1\nSource accessed: 2026-11-05\nAliases: almalinux8:php:8.0\nVulnerability status: Fixed in 8.0.30-1.module_el8.10.0+4319+26f10322.alma.1.\nCVE-2026-109618: Fixed in 8.0.30-1.module_el8.10.0+4319+26f10322.alma.1\nCVE-2026-109619: Fixed in 8.0.30-1.module_el8.10.0+4319+26f10322.alma.1\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.almalinux.org/8/ALSA-2026-A013.html"
+          ],
+          "comment": "AlmaLinux ALSA-2026:A013 - Important: php:8.0 security update"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0954",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0954",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of AlmaLinux 8 php:8.0; deployment and other streams are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0954-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0954"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:A013 and 8.0.30-1.module_el8.10.0+4319+26f10322.alma.1 as the released fix for both CVEs in AlmaLinux 8 php:8.0. This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0954-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0954"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:A013 and 8.0.30-1.module_el8.10.0+4319+26f10322.alma.1 as the released fix for both CVEs in AlmaLinux 8 php:8.0. This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0955",
+      "creationInfo": "_:creationinfo",
+      "name": "AlmaLinux 8 php:8.2 module",
+      "software_packageVersion": "8.2.35-1.module_el8.10.0+4323+fc907035 (ALSA-2026:87073)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0955"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:almalinux:342470c0d875",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package scope.",
+      "description": "AlmaLinux 8 php:8.2 packages",
+      "comment": "Inventory record: PHP-0955\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: AlmaLinux 8 php:8.2 PHP packages (x86_64 build reviewed; the advisory lists the other architectures)\nPHP version scope: 8.2.35-1.module_el8.10.0+4323+fc907035 (ALSA-2026:87073)\nLimitations: ALSA-2026:87073 names the PHP2Shell CVEs and the fixed build for this stream only. Rebuild of RHSA-2026:87073. Package availability does not establish operator rollout or a restart of serving PHP workers; no package was installed or executed.\nPatch owner: AlmaLinux for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: ALSA-2026:87073; 8.2.35-1.module_el8.10.0+4323+fc907035\nSource accessed: 2026-11-05\nAliases: almalinux8:php:8.2\nVulnerability status: Fixed in 8.2.35-1.module_el8.10.0+4323+fc907035.\nCVE-2026-109618: Fixed in 8.2.35-1.module_el8.10.0+4323+fc907035\nCVE-2026-109619: Fixed in 8.2.35-1.module_el8.10.0+4323+fc907035\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.almalinux.org/8/ALSA-2026-87073.html"
+          ],
+          "comment": "AlmaLinux ALSA-2026:87073 - Important: php:8.2 security update"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0955",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0955",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of AlmaLinux 8 php:8.2; deployment and other streams are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0955-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0955"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:87073 and 8.2.35-1.module_el8.10.0+4323+fc907035 as the released fix for both CVEs in AlmaLinux 8 php:8.2. This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0955-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0955"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:87073 and 8.2.35-1.module_el8.10.0+4323+fc907035 as the released fix for both CVEs in AlmaLinux 8 php:8.2. This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0956",
+      "creationInfo": "_:creationinfo",
+      "name": "AlmaLinux 9 PHP 8.0 packages",
+      "software_packageVersion": "8.0.30-8.el9_8.1 (ALSA-2026:87151)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0956"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:almalinux:342470c0d875",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package scope.",
+      "description": "AlmaLinux 9 default php (8.0) packages",
+      "comment": "Inventory record: PHP-0956\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: AlmaLinux 9 default php (8.0) PHP packages (x86_64 build reviewed; the advisory lists the other architectures)\nPHP version scope: 8.0.30-8.el9_8.1 (ALSA-2026:87151)\nLimitations: ALSA-2026:87151 names the PHP2Shell CVEs and the fixed build for this stream only. Rebuild of RHSA-2026:87151. Package availability does not establish operator rollout or a restart of serving PHP workers; no package was installed or executed.\nPatch owner: AlmaLinux for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: ALSA-2026:87151; 8.0.30-8.el9_8.1\nSource accessed: 2026-11-05\nAliases: almalinux9:default php (8.0)\nVulnerability status: Fixed in 8.0.30-8.el9_8.1.\nCVE-2026-109618: Fixed in 8.0.30-8.el9_8.1\nCVE-2026-109619: Fixed in 8.0.30-8.el9_8.1\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.almalinux.org/9/ALSA-2026-87151.html"
+          ],
+          "comment": "AlmaLinux ALSA-2026:87151 - Important: php security update"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0956",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0956",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of AlmaLinux 9 default php (8.0); deployment and other streams are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0956-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0956"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:87151 and 8.0.30-8.el9_8.1 as the released fix for both CVEs in AlmaLinux 9 default php (8.0). This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0956-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0956"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:87151 and 8.0.30-8.el9_8.1 as the released fix for both CVEs in AlmaLinux 9 default php (8.0). This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0957",
+      "creationInfo": "_:creationinfo",
+      "name": "AlmaLinux 9 php:8.1 module",
+      "software_packageVersion": "8.1.32-1.module_el9.8.0+326+528679fc.alma.1 (ALSA-2026:A014)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0957"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:almalinux:342470c0d875",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package scope.",
+      "description": "AlmaLinux 9 php:8.1 packages",
+      "comment": "Inventory record: PHP-0957\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: AlmaLinux 9 php:8.1 PHP packages (x86_64 build reviewed; the advisory lists the other architectures)\nPHP version scope: 8.1.32-1.module_el9.8.0+326+528679fc.alma.1 (ALSA-2026:A014)\nLimitations: ALSA-2026:A014 names the PHP2Shell CVEs and the fixed build for this stream only. AlmaLinux-built backport for a stream Red Hat no longer updates; no RHSA counterpart. Package availability does not establish operator rollout or a restart of serving PHP workers; no package was installed or executed.\nPatch owner: AlmaLinux for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: ALSA-2026:A014; 8.1.32-1.module_el9.8.0+326+528679fc.alma.1\nSource accessed: 2026-11-05\nAliases: almalinux9:php:8.1\nVulnerability status: Fixed in 8.1.32-1.module_el9.8.0+326+528679fc.alma.1.\nCVE-2026-109618: Fixed in 8.1.32-1.module_el9.8.0+326+528679fc.alma.1\nCVE-2026-109619: Fixed in 8.1.32-1.module_el9.8.0+326+528679fc.alma.1\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.almalinux.org/9/ALSA-2026-A014.html"
+          ],
+          "comment": "AlmaLinux ALSA-2026:A014 - Important: php:8.1 security update"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0957",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0957",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of AlmaLinux 9 php:8.1; deployment and other streams are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0957-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0957"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:A014 and 8.1.32-1.module_el9.8.0+326+528679fc.alma.1 as the released fix for both CVEs in AlmaLinux 9 php:8.1. This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0957-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0957"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:A014 and 8.1.32-1.module_el9.8.0+326+528679fc.alma.1 as the released fix for both CVEs in AlmaLinux 9 php:8.1. This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0958",
+      "creationInfo": "_:creationinfo",
+      "name": "AlmaLinux 9 php:8.2 module",
+      "software_packageVersion": "8.2.35-1.module_el9.8.0+329+e5668d75 (ALSA-2026:87072)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0958"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:almalinux:342470c0d875",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package scope.",
+      "description": "AlmaLinux 9 php:8.2 packages",
+      "comment": "Inventory record: PHP-0958\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: AlmaLinux 9 php:8.2 PHP packages (x86_64 build reviewed; the advisory lists the other architectures)\nPHP version scope: 8.2.35-1.module_el9.8.0+329+e5668d75 (ALSA-2026:87072)\nLimitations: ALSA-2026:87072 names the PHP2Shell CVEs and the fixed build for this stream only. Rebuild of RHSA-2026:87072. The ALSA-2026:87072 page lists only the module companion packages (php-pecl-apcu, php-pecl-rrd, php-pecl-xdebug3, php-pecl-zip, apcu-panel), not the php core RPMs; the core NVR is taken from the AlmaLinux 9 AppStream repository (https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/), whose php-common changelog for this build reads \"rebase to 8.2.35\". Package availability does not establish operator rollout or a restart of serving PHP workers; no package was installed or executed.\nPatch owner: AlmaLinux for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: ALSA-2026:87072; 8.2.35-1.module_el9.8.0+329+e5668d75\nSource accessed: 2026-11-05\nAliases: almalinux9:php:8.2\nVulnerability status: Fixed in 8.2.35-1.module_el9.8.0+329+e5668d75.\nCVE-2026-109618: Fixed in 8.2.35-1.module_el9.8.0+329+e5668d75\nCVE-2026-109619: Fixed in 8.2.35-1.module_el9.8.0+329+e5668d75\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.almalinux.org/9/ALSA-2026-87072.html"
+          ],
+          "comment": "AlmaLinux ALSA-2026:87072 - Important: php:8.2 security update"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0958",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0958",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of AlmaLinux 9 php:8.2; deployment and other streams are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0958-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0958"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:87072 as the php:8.2 security update for both CVEs for AlmaLinux 9; its package list names only the module companion packages, and the php core build 8.2.35-1.module_el9.8.0+329+e5668d75 is published in the AlmaLinux 9 AppStream repository (changelog: rebase to 8.2.35, the upstream fixed release). This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0958-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0958"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:87072 as the php:8.2 security update for both CVEs for AlmaLinux 9; its package list names only the module companion packages, and the php core build 8.2.35-1.module_el9.8.0+329+e5668d75 is published in the AlmaLinux 9 AppStream repository (changelog: rebase to 8.2.35, the upstream fixed release). This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0959",
+      "creationInfo": "_:creationinfo",
+      "name": "AlmaLinux 9 php:8.3 module",
+      "software_packageVersion": "8.3.36-1.module_el9.8.0+330+fdc30075 (ALSA-2026:87079)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0959"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:almalinux:342470c0d875",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package scope.",
+      "description": "AlmaLinux 9 php:8.3 packages",
+      "comment": "Inventory record: PHP-0959\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: AlmaLinux 9 php:8.3 PHP packages (x86_64 build reviewed; the advisory lists the other architectures)\nPHP version scope: 8.3.36-1.module_el9.8.0+330+fdc30075 (ALSA-2026:87079)\nLimitations: ALSA-2026:87079 names the PHP2Shell CVEs and the fixed build for this stream only. Rebuild of RHSA-2026:87079. Package availability does not establish operator rollout or a restart of serving PHP workers; no package was installed or executed.\nPatch owner: AlmaLinux for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: ALSA-2026:87079; 8.3.36-1.module_el9.8.0+330+fdc30075\nSource accessed: 2026-11-05\nAliases: almalinux9:php:8.3\nVulnerability status: Fixed in 8.3.36-1.module_el9.8.0+330+fdc30075.\nCVE-2026-109618: Fixed in 8.3.36-1.module_el9.8.0+330+fdc30075\nCVE-2026-109619: Fixed in 8.3.36-1.module_el9.8.0+330+fdc30075\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.almalinux.org/9/ALSA-2026-87079.html"
+          ],
+          "comment": "AlmaLinux ALSA-2026:87079 - Important: php:8.3 security update"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0959",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0959",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of AlmaLinux 9 php:8.3; deployment and other streams are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0959-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0959"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:87079 and 8.3.36-1.module_el9.8.0+330+fdc30075 as the released fix for both CVEs in AlmaLinux 9 php:8.3. This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0959-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0959"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:87079 and 8.3.36-1.module_el9.8.0+330+fdc30075 as the released fix for both CVEs in AlmaLinux 9 php:8.3. This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0960",
+      "creationInfo": "_:creationinfo",
+      "name": "AlmaLinux 10 PHP 8.3 packages",
+      "software_packageVersion": "8.3.36-1.el10_2 (ALSA-2026:87070)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0960"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:almalinux:342470c0d875",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package scope.",
+      "description": "AlmaLinux 10 default php (8.3) packages",
+      "comment": "Inventory record: PHP-0960\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: AlmaLinux 10 default php (8.3) PHP packages (x86_64 build reviewed; the advisory lists the other architectures)\nPHP version scope: 8.3.36-1.el10_2 (ALSA-2026:87070)\nLimitations: ALSA-2026:87070 names the PHP2Shell CVEs and the fixed build for this stream only. Rebuild of RHSA-2026:87070. Package availability does not establish operator rollout or a restart of serving PHP workers; no package was installed or executed.\nPatch owner: AlmaLinux for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: ALSA-2026:87070; 8.3.36-1.el10_2\nSource accessed: 2026-11-05\nAliases: almalinux10:default php (8.3)\nVulnerability status: Fixed in 8.3.36-1.el10_2.\nCVE-2026-109618: Fixed in 8.3.36-1.el10_2\nCVE-2026-109619: Fixed in 8.3.36-1.el10_2\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.almalinux.org/10/ALSA-2026-87070.html"
+          ],
+          "comment": "AlmaLinux ALSA-2026:87070 - Important: php security update"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0960",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0960",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of AlmaLinux 10 default php (8.3); deployment and other streams are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0960-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0960"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:87070 and 8.3.36-1.el10_2 as the released fix for both CVEs in AlmaLinux 10 default php (8.3). This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0960-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0960"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:87070 and 8.3.36-1.el10_2 as the released fix for both CVEs in AlmaLinux 10 default php (8.3). This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0961",
+      "creationInfo": "_:creationinfo",
+      "name": "AlmaLinux 10 PHP 8.4 packages (php8.4)",
+      "software_packageVersion": "8.4.27-1.el10_2 (ALSA-2026:87071)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0961"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:almalinux:342470c0d875",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package scope.",
+      "description": "AlmaLinux 10 php8.4 packages",
+      "comment": "Inventory record: PHP-0961\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: AlmaLinux 10 php8.4 PHP packages (x86_64 build reviewed; the advisory lists the other architectures)\nPHP version scope: 8.4.27-1.el10_2 (ALSA-2026:87071)\nLimitations: ALSA-2026:87071 names the PHP2Shell CVEs and the fixed build for this stream only. Rebuild of RHSA-2026:87071. Package availability does not establish operator rollout or a restart of serving PHP workers; no package was installed or executed.\nPatch owner: AlmaLinux for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: ALSA-2026:87071; 8.4.27-1.el10_2\nSource accessed: 2026-11-05\nAliases: almalinux10:php8.4\nVulnerability status: Fixed in 8.4.27-1.el10_2.\nCVE-2026-109618: Fixed in 8.4.27-1.el10_2\nCVE-2026-109619: Fixed in 8.4.27-1.el10_2\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.almalinux.org/10/ALSA-2026-87071.html"
+          ],
+          "comment": "AlmaLinux ALSA-2026:87071 - Important: php8.4 security update"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0961",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0961",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of AlmaLinux 10 php8.4; deployment and other streams are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0961-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0961"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:87071 and 8.4.27-1.el10_2 as the released fix for both CVEs in AlmaLinux 10 php8.4. This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0961-almalinux-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0961"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "AlmaLinux lists ALSA-2026:87071 and 8.4.27-1.el10_2 as the released fix for both CVEs in AlmaLinux 10 php8.4. This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0964",
+      "creationInfo": "_:creationinfo",
+      "name": "Rocky Linux 8 php:7.4 module",
+      "software_packageVersion": "7.4.33-8.module+el8.10.0+40393+c071e357 (RLSA-2026:87080)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0964"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:rocky-linux:817d0b8a1a25",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package scope.",
+      "description": "Rocky Linux 8 php:7.4 packages",
+      "comment": "Inventory record: PHP-0964\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: Rocky Linux 8 php:7.4 PHP packages (x86_64 build reviewed; the advisory lists the other architectures)\nPHP version scope: 7.4.33-8.module+el8.10.0+40393+c071e357 (RLSA-2026:87080)\nLimitations: RLSA-2026:87080 is a rebuild of RHSA-2026:87080 and names the PHP2Shell CVEs and the fixed build for this stream only. Package availability does not establish operator rollout or a restart of serving PHP workers; no package was installed or executed.\nPatch owner: Rocky Enterprise Software Foundation for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: RLSA-2026:87080; 7.4.33-8.module+el8.10.0+40393+c071e357\nSource accessed: 2026-11-05\nAliases: rocky8:php:7.4\nVulnerability status: Fixed in 7.4.33-8.module+el8.10.0+40393+c071e357.\nCVE-2026-109618: Fixed in 7.4.33-8.module+el8.10.0+40393+c071e357\nCVE-2026-109619: Fixed in 7.4.33-8.module+el8.10.0+40393+c071e357\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.rockylinux.org/RLSA-2026:87080"
+          ],
+          "comment": "Rocky Linux RLSA-2026:87080 - Important: php:7.4 security update"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0964",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0964",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of Rocky Linux 8 php:7.4; deployment and other streams are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0964-rocky-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0964"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Rocky Linux lists RLSA-2026:87080 (rebuild of RHSA-2026:87080) and 7.4.33-8.module+el8.10.0+40393+c071e357 as the released fix for both CVEs in Rocky Linux 8 php:7.4. This fix is specific to the named release and stream; retired or unpatched Rocky Linux streams are assessed separately.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0964-rocky-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0964"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Rocky Linux lists RLSA-2026:87080 (rebuild of RHSA-2026:87080) and 7.4.33-8.module+el8.10.0+40393+c071e357 as the released fix for both CVEs in Rocky Linux 8 php:7.4. This fix is specific to the named release and stream; retired or unpatched Rocky Linux streams are assessed separately.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0965",
+      "creationInfo": "_:creationinfo",
+      "name": "Rocky Linux 8 php:8.2 module",
+      "software_packageVersion": "8.2.35-1.module+el8.10.0+40394+d21b33fb (RLSA-2026:87073)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0965"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:rocky-linux:817d0b8a1a25",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package scope.",
+      "description": "Rocky Linux 8 php:8.2 packages",
+      "comment": "Inventory record: PHP-0965\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: Rocky Linux 8 php:8.2 PHP packages (x86_64 build reviewed; the advisory lists the other architectures)\nPHP version scope: 8.2.35-1.module+el8.10.0+40394+d21b33fb (RLSA-2026:87073)\nLimitations: RLSA-2026:87073 is a rebuild of RHSA-2026:87073 and names the PHP2Shell CVEs and the fixed build for this stream only. Package availability does not establish operator rollout or a restart of serving PHP workers; no package was installed or executed.\nPatch owner: Rocky Enterprise Software Foundation for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: RLSA-2026:87073; 8.2.35-1.module+el8.10.0+40394+d21b33fb\nSource accessed: 2026-11-05\nAliases: rocky8:php:8.2\nVulnerability status: Fixed in 8.2.35-1.module+el8.10.0+40394+d21b33fb.\nCVE-2026-109618: Fixed in 8.2.35-1.module+el8.10.0+40394+d21b33fb\nCVE-2026-109619: Fixed in 8.2.35-1.module+el8.10.0+40394+d21b33fb\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.rockylinux.org/RLSA-2026:87073"
+          ],
+          "comment": "Rocky Linux RLSA-2026:87073 - Important: php:8.2 security update"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0965",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0965",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of Rocky Linux 8 php:8.2; deployment and other streams are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0965-rocky-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0965"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Rocky Linux lists RLSA-2026:87073 (rebuild of RHSA-2026:87073) and 8.2.35-1.module+el8.10.0+40394+d21b33fb as the released fix for both CVEs in Rocky Linux 8 php:8.2. This fix is specific to the named release and stream; retired or unpatched Rocky Linux streams are assessed separately.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0965-rocky-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0965"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Rocky Linux lists RLSA-2026:87073 (rebuild of RHSA-2026:87073) and 8.2.35-1.module+el8.10.0+40394+d21b33fb as the released fix for both CVEs in Rocky Linux 8 php:8.2. This fix is specific to the named release and stream; retired or unpatched Rocky Linux streams are assessed separately.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0966",
+      "creationInfo": "_:creationinfo",
+      "name": "Rocky Linux 9 PHP 8.0 packages",
+      "software_packageVersion": "8.0.30-8.el9_8.1 (RLSA-2026:87151)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0966"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:rocky-linux:817d0b8a1a25",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package scope.",
+      "description": "Rocky Linux 9 default php (8.0) packages",
+      "comment": "Inventory record: PHP-0966\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: Rocky Linux 9 default php (8.0) PHP packages (x86_64 build reviewed; the advisory lists the other architectures)\nPHP version scope: 8.0.30-8.el9_8.1 (RLSA-2026:87151)\nLimitations: RLSA-2026:87151 is a rebuild of RHSA-2026:87151 and names the PHP2Shell CVEs and the fixed build for this stream only. Package availability does not establish operator rollout or a restart of serving PHP workers; no package was installed or executed.\nPatch owner: Rocky Enterprise Software Foundation for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: RLSA-2026:87151; 8.0.30-8.el9_8.1\nSource accessed: 2026-11-05\nAliases: rocky9:default php (8.0)\nVulnerability status: Fixed in 8.0.30-8.el9_8.1.\nCVE-2026-109618: Fixed in 8.0.30-8.el9_8.1\nCVE-2026-109619: Fixed in 8.0.30-8.el9_8.1\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.rockylinux.org/RLSA-2026:87151"
+          ],
+          "comment": "Rocky Linux RLSA-2026:87151 - Important: php security update"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0966",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0966",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of Rocky Linux 9 default php (8.0); deployment and other streams are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0966-rocky-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0966"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Rocky Linux lists RLSA-2026:87151 (rebuild of RHSA-2026:87151) and 8.0.30-8.el9_8.1 as the released fix for both CVEs in Rocky Linux 9 default php (8.0). This fix is specific to the named release and stream; retired or unpatched Rocky Linux streams are assessed separately.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0966-rocky-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0966"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Rocky Linux lists RLSA-2026:87151 (rebuild of RHSA-2026:87151) and 8.0.30-8.el9_8.1 as the released fix for both CVEs in Rocky Linux 9 default php (8.0). This fix is specific to the named release and stream; retired or unpatched Rocky Linux streams are assessed separately.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0967",
+      "creationInfo": "_:creationinfo",
+      "name": "Rocky Linux 9 php:8.2 module",
+      "software_packageVersion": "8.2.35-1.module+el9.8.0+40395+2f706e64 (RLSA-2026:87072)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0967"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:rocky-linux:817d0b8a1a25",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package scope.",
+      "description": "Rocky Linux 9 php:8.2 packages",
+      "comment": "Inventory record: PHP-0967\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: Rocky Linux 9 php:8.2 PHP packages (x86_64 build reviewed; the advisory lists the other architectures)\nPHP version scope: 8.2.35-1.module+el9.8.0+40395+2f706e64 (RLSA-2026:87072)\nLimitations: RLSA-2026:87072 is a rebuild of RHSA-2026:87072 and names the PHP2Shell CVEs and the fixed build for this stream only. Package availability does not establish operator rollout or a restart of serving PHP workers; no package was installed or executed.\nPatch owner: Rocky Enterprise Software Foundation for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: RLSA-2026:87072; 8.2.35-1.module+el9.8.0+40395+2f706e64\nSource accessed: 2026-11-05\nAliases: rocky9:php:8.2\nVulnerability status: Fixed in 8.2.35-1.module+el9.8.0+40395+2f706e64.\nCVE-2026-109618: Fixed in 8.2.35-1.module+el9.8.0+40395+2f706e64\nCVE-2026-109619: Fixed in 8.2.35-1.module+el9.8.0+40395+2f706e64\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.rockylinux.org/RLSA-2026:87072"
+          ],
+          "comment": "Rocky Linux RLSA-2026:87072 - Important: php:8.2 security update"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0967",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0967",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of Rocky Linux 9 php:8.2; deployment and other streams are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0967-rocky-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0967"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Rocky Linux lists RLSA-2026:87072 (rebuild of RHSA-2026:87072) and 8.2.35-1.module+el9.8.0+40395+2f706e64 as the released fix for both CVEs in Rocky Linux 9 php:8.2. This fix is specific to the named release and stream; retired or unpatched Rocky Linux streams are assessed separately.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0967-rocky-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0967"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Rocky Linux lists RLSA-2026:87072 (rebuild of RHSA-2026:87072) and 8.2.35-1.module+el9.8.0+40395+2f706e64 as the released fix for both CVEs in Rocky Linux 9 php:8.2. This fix is specific to the named release and stream; retired or unpatched Rocky Linux streams are assessed separately.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0968",
+      "creationInfo": "_:creationinfo",
+      "name": "Rocky Linux 9 php:8.3 module",
+      "software_packageVersion": "8.3.36-1.module+el9.8.0+40396+4e680bb7 (RLSA-2026:87079)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0968"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:rocky-linux:817d0b8a1a25",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package scope.",
+      "description": "Rocky Linux 9 php:8.3 packages",
+      "comment": "Inventory record: PHP-0968\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: Rocky Linux 9 php:8.3 PHP packages (x86_64 build reviewed; the advisory lists the other architectures)\nPHP version scope: 8.3.36-1.module+el9.8.0+40396+4e680bb7 (RLSA-2026:87079)\nLimitations: RLSA-2026:87079 is a rebuild of RHSA-2026:87079 and names the PHP2Shell CVEs and the fixed build for this stream only. Package availability does not establish operator rollout or a restart of serving PHP workers; no package was installed or executed.\nPatch owner: Rocky Enterprise Software Foundation for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: RLSA-2026:87079; 8.3.36-1.module+el9.8.0+40396+4e680bb7\nSource accessed: 2026-11-05\nAliases: rocky9:php:8.3\nVulnerability status: Fixed in 8.3.36-1.module+el9.8.0+40396+4e680bb7.\nCVE-2026-109618: Fixed in 8.3.36-1.module+el9.8.0+40396+4e680bb7\nCVE-2026-109619: Fixed in 8.3.36-1.module+el9.8.0+40396+4e680bb7\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.rockylinux.org/RLSA-2026:87079"
+          ],
+          "comment": "Rocky Linux RLSA-2026:87079 - Important: php:8.3 security update"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0968",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0968",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of Rocky Linux 9 php:8.3; deployment and other streams are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0968-rocky-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0968"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Rocky Linux lists RLSA-2026:87079 (rebuild of RHSA-2026:87079) and 8.3.36-1.module+el9.8.0+40396+4e680bb7 as the released fix for both CVEs in Rocky Linux 9 php:8.3. This fix is specific to the named release and stream; retired or unpatched Rocky Linux streams are assessed separately.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0968-rocky-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0968"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Rocky Linux lists RLSA-2026:87079 (rebuild of RHSA-2026:87079) and 8.3.36-1.module+el9.8.0+40396+4e680bb7 as the released fix for both CVEs in Rocky Linux 9 php:8.3. This fix is specific to the named release and stream; retired or unpatched Rocky Linux streams are assessed separately.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0969",
+      "creationInfo": "_:creationinfo",
+      "name": "Rocky Linux 10 PHP 8.3 packages",
+      "software_packageVersion": "8.3.36-1.el10_2 (RLSA-2026:87070)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0969"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:rocky-linux:817d0b8a1a25",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package scope.",
+      "description": "Rocky Linux 10 default php (8.3) packages",
+      "comment": "Inventory record: PHP-0969\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: Rocky Linux 10 default php (8.3) PHP packages (x86_64 build reviewed; the advisory lists the other architectures)\nPHP version scope: 8.3.36-1.el10_2 (RLSA-2026:87070)\nLimitations: RLSA-2026:87070 is a rebuild of RHSA-2026:87070 and names the PHP2Shell CVEs and the fixed build for this stream only. Package availability does not establish operator rollout or a restart of serving PHP workers; no package was installed or executed.\nPatch owner: Rocky Enterprise Software Foundation for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: RLSA-2026:87070; 8.3.36-1.el10_2\nSource accessed: 2026-11-05\nAliases: rocky10:default php (8.3)\nVulnerability status: Fixed in 8.3.36-1.el10_2.\nCVE-2026-109618: Fixed in 8.3.36-1.el10_2\nCVE-2026-109619: Fixed in 8.3.36-1.el10_2\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.rockylinux.org/RLSA-2026:87070"
+          ],
+          "comment": "Rocky Linux RLSA-2026:87070 - Important: php security update"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0969",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0969",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of Rocky Linux 10 default php (8.3); deployment and other streams are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0969-rocky-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0969"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Rocky Linux lists RLSA-2026:87070 (rebuild of RHSA-2026:87070) and 8.3.36-1.el10_2 as the released fix for both CVEs in Rocky Linux 10 default php (8.3). This fix is specific to the named release and stream; retired or unpatched Rocky Linux streams are assessed separately.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0969-rocky-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0969"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Rocky Linux lists RLSA-2026:87070 (rebuild of RHSA-2026:87070) and 8.3.36-1.el10_2 as the released fix for both CVEs in Rocky Linux 10 default php (8.3). This fix is specific to the named release and stream; retired or unpatched Rocky Linux streams are assessed separately.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0970",
+      "creationInfo": "_:creationinfo",
+      "name": "Rocky Linux 10 PHP 8.4 packages (php8.4)",
+      "software_packageVersion": "8.4.27-1.el10_2 (RLSA-2026:87071)",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0970"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:rocky-linux:817d0b8a1a25",
+      "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package scope.",
+      "description": "Rocky Linux 10 php8.4 packages",
+      "comment": "Inventory record: PHP-0970\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: Rocky Linux 10 php8.4 PHP packages (x86_64 build reviewed; the advisory lists the other architectures)\nPHP version scope: 8.4.27-1.el10_2 (RLSA-2026:87071)\nLimitations: RLSA-2026:87071 is a rebuild of RHSA-2026:87071 and names the PHP2Shell CVEs and the fixed build for this stream only. Package availability does not establish operator rollout or a restart of serving PHP workers; no package was installed or executed.\nPatch owner: Rocky Enterprise Software Foundation for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: RLSA-2026:87071; 8.4.27-1.el10_2\nSource accessed: 2026-11-05\nAliases: rocky10:php8.4\nVulnerability status: Fixed in 8.4.27-1.el10_2.\nCVE-2026-109618: Fixed in 8.4.27-1.el10_2\nCVE-2026-109619: Fixed in 8.4.27-1.el10_2\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.rockylinux.org/RLSA-2026:87071"
+          ],
+          "comment": "Rocky Linux RLSA-2026:87071 - Important: php8.4 security update"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0970",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0970",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "The scoped vendor package distributes PHP with the cited security fixes.",
+      "comment": "Fixed distribution of Rocky Linux 10 php8.4; deployment and other streams are assessed separately."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0970-rocky-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0970"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Rocky Linux lists RLSA-2026:87071 (rebuild of RHSA-2026:87071) and 8.4.27-1.el10_2 as the released fix for both CVEs in Rocky Linux 10 php8.4. This fix is specific to the named release and stream; retired or unpatched Rocky Linux streams are assessed separately.",
+      "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0970-rocky-reviewed-20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0970"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Rocky Linux lists RLSA-2026:87071 (rebuild of RHSA-2026:87071) and 8.4.27-1.el10_2 as the released fix for both CVEs in Rocky Linux 10 php8.4. This fix is specific to the named release and stream; retired or unpatched Rocky Linux streams are assessed separately.",
+      "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
+      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0962",
+      "creationInfo": "_:creationinfo",
+      "name": "Rocky Linux 8 PHP RPM/AppStreams",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0962"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:rocky-linux:817d0b8a1a25",
+      "summary": "Rocky Linux 8 PHP streams without a published fix remain affected; fixed release scopes are listed separately (php:7.4 and php:8.2 fixes are recorded separately in PHP-0964 and PHP-0965).",
+      "description": "Rocky Linux 8 PHP RPM/AppStream streams",
+      "comment": "Inventory record: PHP-0962\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Affected scope inferred from absence of a vendor fix; fixed releases recorded separately\nDeployment status: Not measured\nPHP surface: Rocky Linux 8 PHP module streams that are retired upstream and in RHEL\nPHP version scope: php:7.2 (7.2.24-1.module+el8.4.0+413+c9202dda), php:7.3 (7.3.20-1.module+el8.4.0+414+2e7afcdd) and php:8.0 (8.0.30-1.module+el8.10.0+1605+02e07af7)\nLimitations: Rocky Linux rebuilds Red Hat Enterprise Linux sources and Red Hat issued no RHSA for these streams, so no Rocky RLSA exists. Neither Rocky Linux nor Red Hat states a per-stream affected status for them; the Vulnerable status rests on the absence of a fixed build in the Rocky Linux repository and on AlmaLinux having fixed the same streams with its own builds. Check the installed package release, not the PHP version alone. Fixed scopes: php:7.4 and php:8.2 fixes are recorded separately in PHP-0964 and PHP-0965.\nPatch owner: Rocky Enterprise Software Foundation for any future packaged fix; system administrator for stream selection, update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Rocky Linux 8 AppStream x86_64 listing reviewed 2026-11-05; fixed scopes recorded separately\nSource accessed: 2026-11-05\nAliases: rocky8:php-appstreams\nVulnerability status: Vulnerable when using an affected PHP stream; fixed scopes are recorded separately.\nCVE-2026-109618: Vulnerable on affected PHP; see separate fixed scopes.\nCVE-2026-109619: Vulnerable on affected PHP; see separate fixed scopes.\nCVE assessment limit: The published fixed scopes do not establish that other installations have updated PHP; deployed runtimes were not tested.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.almalinux.org/8/ALSA-2026-A011.html"
+          ],
+          "comment": "AlmaLinux ALSA-2026:A011 fixes php:7.2 with its own build, showing the stream is affected"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.almalinux.org/8/ALSA-2026-A012.html"
+          ],
+          "comment": "AlmaLinux ALSA-2026:A012 fixes php:7.3 with its own build, showing the stream is affected"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.almalinux.org/8/ALSA-2026-A013.html"
+          ],
+          "comment": "AlmaLinux ALSA-2026:A013 fixes php:8.0 with its own build, showing the stream is affected"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://dl.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/p/"
+          ],
+          "comment": "Rocky Linux 8 AppStream x86_64 package listing reviewed 2026-11-05: newest php:7.2, php:7.3 and php:8.0 builds are the unfixed ones named here"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0962",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0962",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "Inventory relationship for PHP-0962: bundles (distributes_php)",
+      "comment": "Mapped from inventory relationship 'bundles' and direction 'distributes_php' to SPDX relationshipType 'contains'."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:rocky8php20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0962"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Rocky Linux 8 streams without a published fix remain affected: php:7.2 (7.2.24-1.module+el8.4.0+413+c9202dda), php:7.3 (7.3.20-1.module+el8.4.0+414+2e7afcdd) and php:8.0 (8.0.30-1.module+el8.10.0+1605+02e07af7). Rocky Linux has published no RLSA for them and Red Hat issued no RHSA for them. Fixed scopes are separate entries.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable in the remaining unpatched scope",
+      "comment": "Sources reviewed 2026-11-05: https://errata.almalinux.org/8/ALSA-2026-A011.html; https://errata.almalinux.org/8/ALSA-2026-A012.html; https://errata.almalinux.org/8/ALSA-2026-A013.html; https://dl.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/p/",
+      "security_actionStatement": "Move to a fixed stream listed in the separate Rocky Linux 8 entries, or apply a fix if Rocky Linux publishes one for the installed stream; do not apply other streams' fix status to these."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:rocky8php20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0962"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Rocky Linux 8 streams without a published fix remain affected: php:7.2 (7.2.24-1.module+el8.4.0+413+c9202dda), php:7.3 (7.3.20-1.module+el8.4.0+414+2e7afcdd) and php:8.0 (8.0.30-1.module+el8.10.0+1605+02e07af7). Rocky Linux has published no RLSA for them and Red Hat issued no RHSA for them. Fixed scopes are separate entries.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable in the remaining unpatched scope",
+      "comment": "Sources reviewed 2026-11-05: https://errata.almalinux.org/8/ALSA-2026-A011.html; https://errata.almalinux.org/8/ALSA-2026-A012.html; https://errata.almalinux.org/8/ALSA-2026-A013.html; https://dl.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/p/",
+      "security_actionStatement": "Move to a fixed stream listed in the separate Rocky Linux 8 entries, or apply a fix if Rocky Linux publishes one for the installed stream; do not apply other streams' fix status to these."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0963",
+      "creationInfo": "_:creationinfo",
+      "name": "Rocky Linux 9 PHP RPM/AppStreams",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0963"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:rocky-linux:817d0b8a1a25",
+      "summary": "Rocky Linux 9 PHP streams without a published fix remain affected; fixed release scopes are listed separately (PHP 8.0, php:8.2 and php:8.3 fixes are recorded separately in PHP-0966, PHP-0967 and PHP-0968).",
+      "description": "Rocky Linux 9 PHP RPM/AppStream streams",
+      "comment": "Inventory record: PHP-0963\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Affected scope inferred from absence of a vendor fix; fixed releases recorded separately\nDeployment status: Not measured\nPHP surface: Rocky Linux 9 PHP module streams that are retired upstream and in RHEL\nPHP version scope: php:8.1 (8.1.32-1.module+el9.7.0+40003+454ed3c4)\nLimitations: Rocky Linux rebuilds Red Hat Enterprise Linux sources and Red Hat issued no RHSA for these streams, so no Rocky RLSA exists. Neither Rocky Linux nor Red Hat states a per-stream affected status for them; the Vulnerable status rests on the absence of a fixed build in the Rocky Linux repository and on AlmaLinux having fixed the same streams with its own builds. Check the installed package release, not the PHP version alone. Fixed scopes: PHP 8.0, php:8.2 and php:8.3 fixes are recorded separately in PHP-0966, PHP-0967 and PHP-0968.\nPatch owner: Rocky Enterprise Software Foundation for any future packaged fix; system administrator for stream selection, update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Rocky Linux 9 AppStream x86_64 listing reviewed 2026-11-05; fixed scopes recorded separately\nSource accessed: 2026-11-05\nAliases: rocky9:php-appstreams\nVulnerability status: Vulnerable when using an affected PHP stream; fixed scopes are recorded separately.\nCVE-2026-109618: Vulnerable on affected PHP; see separate fixed scopes.\nCVE-2026-109619: Vulnerable on affected PHP; see separate fixed scopes.\nCVE assessment limit: The published fixed scopes do not establish that other installations have updated PHP; deployed runtimes were not tested.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://errata.almalinux.org/9/ALSA-2026-A014.html"
+          ],
+          "comment": "AlmaLinux ALSA-2026:A014 fixes php:8.1 with its own build, showing the stream is affected"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/p/"
+          ],
+          "comment": "Rocky Linux 9 AppStream x86_64 package listing reviewed 2026-11-05: newest php:8.1 build is the unfixed one named here"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0963",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0963",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "Inventory relationship for PHP-0963: bundles (distributes_php)",
+      "comment": "Mapped from inventory relationship 'bundles' and direction 'distributes_php' to SPDX relationshipType 'contains'."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:rocky9php20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0963"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Rocky Linux 9 streams without a published fix remain affected: php:8.1 (8.1.32-1.module+el9.7.0+40003+454ed3c4). Rocky Linux has published no RLSA for them and Red Hat issued no RHSA for them. Fixed scopes are separate entries.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable in the remaining unpatched scope",
+      "comment": "Sources reviewed 2026-11-05: https://errata.almalinux.org/9/ALSA-2026-A014.html; https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/p/",
+      "security_actionStatement": "Move to a fixed stream listed in the separate Rocky Linux 9 entries, or apply a fix if Rocky Linux publishes one for the installed stream; do not apply other streams' fix status to these."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:rocky9php20261105",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0963"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Rocky Linux 9 streams without a published fix remain affected: php:8.1 (8.1.32-1.module+el9.7.0+40003+454ed3c4). Rocky Linux has published no RLSA for them and Red Hat issued no RHSA for them. Fixed scopes are separate entries.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable in the remaining unpatched scope",
+      "comment": "Sources reviewed 2026-11-05: https://errata.almalinux.org/9/ALSA-2026-A014.html; https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/p/",
+      "security_actionStatement": "Move to a fixed stream listed in the separate Rocky Linux 9 entries, or apply a fix if Rocky Linux publishes one for the installed stream; do not apply other streams' fix status to these."
     }
   ]
 }
