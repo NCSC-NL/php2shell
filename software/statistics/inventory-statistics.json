@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "as_of_date": "2026-11-04",
+  "as_of_date": "2026-11-06",
   "timezone": "UTC",
   "history_ref": "origin/main",
   "cves": [
@@ -12,26 +12,26 @@
   "current": {
     "counts": {
       "tracked": 948,
-      "fixed": 185,
+      "fixed": 187,
       "vulnerable": 215,
-      "investigation": 93,
+      "investigation": 91,
       "runtime_dependent": 240,
       "not_affected": 214,
       "unknown": 1
     },
     "by_cve": {
       "CVE-2026-109618": {
-        "fixed": 185,
+        "fixed": 187,
         "vulnerable": 215,
-        "investigation": 93,
+        "investigation": 91,
         "runtime_dependent": 240,
         "not_affected": 214,
         "unknown": 1
       },
       "CVE-2026-109619": {
-        "fixed": 185,
+        "fixed": 187,
         "vulnerable": 213,
-        "investigation": 94,
+        "investigation": 92,
         "runtime_dependent": 239,
         "not_affected": 216,
         "unknown": 1
@@ -39,37 +39,6 @@
     }
   },
   "daily": [
-    {
-      "date": "2026-10-30",
-      "source": "b88f1e9dfb47e95aa063b27ffd0ed3e573caaaa3",
-      "counts": {
-        "tracked": 929,
-        "fixed": 165,
-        "vulnerable": 217,
-        "investigation": 345,
-        "runtime_dependent": 0,
-        "not_affected": 201,
-        "unknown": 1
-      },
-      "by_cve": {
-        "CVE-2026-109618": {
-          "fixed": 165,
-          "vulnerable": 217,
-          "investigation": 345,
-          "runtime_dependent": 0,
-          "not_affected": 201,
-          "unknown": 1
-        },
-        "CVE-2026-109619": {
-          "fixed": 165,
-          "vulnerable": 215,
-          "investigation": 345,
-          "runtime_dependent": 0,
-          "not_affected": 203,
-          "unknown": 1
-        }
-      }
-    },
     {
       "date": "2026-11-02",
       "source": "9337d58ecd50ff5625262cd1f2e28f6f912d6c0b",
@@ -103,7 +72,7 @@
     },
     {
       "date": "2026-11-04",
-      "source": "working-tree",
+      "source": "6673c70f39c81a3821496c9c98d0896de2853fee",
       "counts": {
         "tracked": 948,
         "fixed": 185,
@@ -126,6 +95,37 @@
           "fixed": 185,
           "vulnerable": 213,
           "investigation": 94,
+          "runtime_dependent": 239,
+          "not_affected": 216,
+          "unknown": 1
+        }
+      }
+    },
+    {
+      "date": "2026-11-06",
+      "source": "working-tree",
+      "counts": {
+        "tracked": 948,
+        "fixed": 187,
+        "vulnerable": 215,
+        "investigation": 91,
+        "runtime_dependent": 240,
+        "not_affected": 214,
+        "unknown": 1
+      },
+      "by_cve": {
+        "CVE-2026-109618": {
+          "fixed": 187,
+          "vulnerable": 215,
+          "investigation": 91,
+          "runtime_dependent": 240,
+          "not_affected": 214,
+          "unknown": 1
+        },
+        "CVE-2026-109619": {
+          "fixed": 187,
+          "vulnerable": 213,
+          "investigation": 92,
           "runtime_dependent": 239,
           "not_affected": 216,
           "unknown": 1
