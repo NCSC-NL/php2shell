@@ -2323,7 +2323,11 @@
         "urn:php2shell:inventory:package:PHP-0950",
         "urn:php2shell:inventory:relationship:PHP-0950",
         "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0950-reviewed-20261104",
-        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0950-reviewed-20261104"
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0950-reviewed-20261104",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0682-fg-ir-26-186-20261106",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0682-fg-ir-26-186-20261106",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0683-fg-ir-26-186-20261106",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0683-fg-ir-26-186-20261106"
       ]
     }
   ]

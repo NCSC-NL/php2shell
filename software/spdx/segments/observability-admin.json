@@ -2544,9 +2544,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:fortinet:0dd4907ae878",
-      "summary": "Fortinet PSIRT advisory FG-IR-26-186 lists FortiSOAR as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Fortinet confirms both CVEs affect FortiSOAR and provides a fixed release and security patches. The patches update bundled PHP to 8.2.35; confirmed impact is limited to PHP-service and GUI availability.",
       "description": "Security orchestration, automation and response platform",
-      "comment": "Inventory record: PHP-0682\nCategory: Monitoring and administration\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in the FG-IR-26-186 php2shell response; exact PHP component and SAPI are not published\nPHP version scope: Fortinet FG-IR-26-186 (published 2026-10-21, updated 2026-10-22) lists FortiSOAR under 'Products Under Investigation'; affected and fixed product versions are not published.\nExtensions: Unknown\nLimitations: An under-investigation listing establishes vendor review scope, not a confirmed PHP dependency, affected build or reachable path.\nPatch owner: Fortinet; operator for deployment of fixed releases\nSource accessed: 2026-10-22\nVulnerability status: Vendor advisory FG-IR-26-186: under investigation.\nCVE-2026-109618: Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published\nCVE-2026-109619: Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0682\nCategory: Monitoring and administration\nOriginal relationship: contains\nRelationship direction: downstream_contains_parent\nParent component: PHP-0037\nEvidence status: Confirmed vendor advisory and security-patch documentation\nDeployment status: Not measured\nPHP surface: Vendor-managed PHP service used by the GUI; exact SAPI is not published\nPHP version scope: Security Patch #2 for 8.0.0 and Security Patch #1 for 7.6.7 / 7.5.4 update PHP to 8.2.35. FG-IR-26-186 identifies 8.0.1 or later as a fixed application release.\nAffected product scope: Unpatched 8.0.0, 7.6.0 through 7.6.7, 7.5.0 through 7.5.4, and all versions of the 7.4, 7.3, 7.2 and 7.0 branches. Legacy branches must migrate to a fixed release.\nExtensions: Not specified\nLimitations: Fix applies only to the listed release or installed security-patch scopes. The advisory still labels 7.6.8 and 7.5.5 as upcoming; their availability is not asserted. Patch availability does not establish installation on any particular deployment or PaaS tenant.\nImpact: Fortinet limits confirmed impact to denial of service affecting the PHP service and GUI availability; product CVSS 3.1 score 5.3. Remote code execution is not confirmed for these products.\nPatch owner: Fortinet; deployment operator must verify the applicable release or security patch is installed\nSource accessed: 2026-11-06\nVulnerability status: Fix available for both CVEs in the specified release and security-patch scopes.\nCVE-2026-109618: Fixed in 8.0.1 or later, or by Security Patch #2 for 8.0.0 / Security Patch #1 for 7.6.7 and 7.5.4. Fortinet confirms PHP-service/GUI denial of service only (CVSS 3.1: 5.3). Unpatched older releases remain affected; 7.6.8 and 7.5.5 are still described as upcoming.\nCVE-2026-109619: Fixed in 8.0.1 or later, or by Security Patch #2 for 8.0.0 / Security Patch #1 for 7.6.7 and 7.5.4. Fortinet confirms PHP-service/GUI denial of service only (CVSS 3.1: 5.3). Unpatched older releases remain affected; 7.6.8 and 7.5.5 are still described as upcoming.\nCVE assessment limit: This assessment concerns CVE-2026-109618 and CVE-2026-109619 only; verify installed product version and security-patch level.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2554,9 +2554,34 @@
           "locator": [
             "https://fortiguard.fortinet.com/psirt/FG-IR-26-186"
           ],
-          "comment": "Fortinet PSIRT FG-IR-26-186, published 2026-10-21 and updated 2026-10-22; current investigation scope"
+          "comment": "Fortinet PSIRT FG-IR-26-186, updated 2026-11-05; affected versions, fixes and product-specific denial-of-service impact for both CVEs; reviewed 2026-11-06."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://docs.fortinet.com/document/fortisoar/8.0.0/fortisoar-os-update-lifecycle/749719"
+          ],
+          "comment": "Official FortiSOAR OS update documentation: 8.0.0 Security Patch #2 updates PHP to 8.2.35; FG-IR-26-186 confirms the patch applies to FortiSOAR and FortiSOAR PaaS. Reviewed 2026-11-06."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://docs.fortinet.com/document/fortisoar/7.6.7/fortisoar-os-update-lifecycle/749719"
+          ],
+          "comment": "Official FortiSOAR OS update documentation: 7.6.7 Security Patch #1 updates PHP to 8.2.35; FG-IR-26-186 confirms the patch applies to FortiSOAR and FortiSOAR PaaS. Reviewed 2026-11-06."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://docs.fortinet.com/document/fortisoar/7.5.4/fortisoar-os-update-lifecycle/749719"
+          ],
+          "comment": "Official FortiSOAR OS update documentation: 7.5.4 Security Patch #1 updates PHP to 8.2.35; FG-IR-26-186 confirms the patch applies to FortiSOAR and FortiSOAR PaaS. Reviewed 2026-11-06."
         }
-      ]
+      ],
+      "software_packageVersion": "8.0.1 or later; 8.0.0 + Security Patch #2; 7.6.7 or 7.5.4 + Security Patch #1"
     },
     {
       "type": "software_Package",
@@ -2631,9 +2656,9 @@
       "to": [
         "urn:php2shell:inventory:package:PHP-0037"
       ],
-      "relationshipType": "other",
-      "summary": "Inventory association for PHP-0682: vendor PHP advisory candidate",
-      "comment": "The vendor is investigating this product in its PHP advisory. This association records review scope only; a PHP dependency is not confirmed."
+      "relationshipType": "contains",
+      "summary": "FortiSOAR includes a vendor-managed PHP service",
+      "comment": "Fortinet FG-IR-26-186 confirms impact on the PHP service and GUI; the linked security-patch documentation updates PHP to 8.2.35. The target is the unversioned PHP runtime family; fixed versions are scoped by this product record."
     },
     {
       "type": "Relationship",
@@ -4921,6 +4946,32 @@
       "security_statusNotes": "QNAP QSA-26-18 lists QVR Surveillance 3.0.3.1756 as the released fix for the affected ARM32 models.",
       "summary": "CVE-2026-109619 assessment: Fix in the specified released version",
       "comment": "Public official source reviewed 2026-10-30: https://www.qnap.com/en/security-advisory/qsa-26-18\nAction statement: Update QVR Surveillance on affected ARM32 models to 3.0.3.1756."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0682-fg-ir-26-186-20261106",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0682"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in 8.0.1 or later, or by Security Patch #2 for 8.0.0 / Security Patch #1 for 7.6.7 and 7.5.4. Fortinet confirms PHP-service/GUI denial of service only (CVSS 3.1: 5.3). Unpatched older releases remain affected; 7.6.8 and 7.5.5 are still described as upcoming.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public Fortinet advisory updated 2026-11-05 and linked patch documentation reviewed 2026-11-06. Source: https://fortiguard.fortinet.com/psirt/FG-IR-26-186\nAction statement: Upgrade to 8.0.1 or later, or install the security patch for the exact listed application version. Confirm patch installation; unpatched deployments remain affected. Legacy branches must migrate to a fixed release."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0682-fg-ir-26-186-20261106",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0682"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in 8.0.1 or later, or by Security Patch #2 for 8.0.0 / Security Patch #1 for 7.6.7 and 7.5.4. Fortinet confirms PHP-service/GUI denial of service only (CVSS 3.1: 5.3). Unpatched older releases remain affected; 7.6.8 and 7.5.5 are still described as upcoming.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public Fortinet advisory updated 2026-11-05 and linked patch documentation reviewed 2026-11-06. Source: https://fortiguard.fortinet.com/psirt/FG-IR-26-186\nAction statement: Upgrade to 8.0.1 or later, or install the security patch for the exact listed application version. Confirm patch installation; unpatched deployments remain affected. Legacy branches must migrate to a fixed release."
     }
   ]
 }
