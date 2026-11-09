@@ -1,7 +1,7 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
 Operational information: 28 October 2026 16:46 CET<br>
-Software list last status update: 5 November 2026 05:47 CET<br>
+Software list last status update: 9 November 2026 09:49 CET<br>
 ## TLP:CLEAR
 
 This repository contains operational information regarding the critical PHP vulnerabilities tracked by CERT-EU as CVE-2026-109618 and CVE-2026-109619.
@@ -11,7 +11,7 @@ PHP is a widely used open-source server-side scripting language, so these vulner
 ## Current status
 
 <!-- inventory-statistics:summary:start -->
-This repository tracks **968 products**, including **217 vulnerable** and **203 fixed**.
+This repository tracks **968 products**, including **215 vulnerable** and **205 fixed**.
 <!-- inventory-statistics:summary:end -->
 
 On 21 October 2026, PHP published fixed releases for CVE-2026-109618 and CVE-2026-109619: PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. PHP states that both vulnerabilities can allow unauthenticated remote code execution and that all PHP installations serving web requests are at risk, including PHP-FPM, Apache with mod_php, php-cgi, FrankenPHP and LiteSpeed. PHP considers the risk highest for mod_php, where an unauthenticated request can trigger exploitation before application code runs.
@@ -54,11 +54,11 @@ The repository is being updated as the situation develops. Check back for update
 
 <!-- inventory-statistics:start -->
 
-Statistics as of **2026-11-05 (UTC)**, from the current SPDX inventory.
+Statistics as of **2026-11-09 (UTC)**, from the current SPDX inventory.
 
 | Products tracked | Fixed | Vulnerable | Under investigation | Runtime-dependent | Not affected | Unassessed / unknown |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 968 | 203 | 217 | 93 | 240 | 214 | 1 |
+| 968 | 205 | 215 | 93 | 240 | 214 | 1 |
 
 ![Product status on the last 3 inventory update days](software/statistics/inventory-statistics.png)
 
@@ -70,11 +70,11 @@ Statistics as of **2026-11-05 (UTC)**, from the current SPDX inventory.
 
 | Date and time | Supplier | Product | Version (see Status) | Status CVE-2026-109618 / CVE-2026-109619 | Links |
 |:------------------------|:---------|:--------|:--------------------:|:----------------------:|------:|
-|2026-11-05 05:47:10 +0100|AlmaLinux|AlmaLinux 10 PHP 8.3 packages|8.3.36-1.el10_2 (ALSA-2026:87070)|Fix|[source](<https://errata.almalinux.org/10/ALSA-2026-87070.html>)|
-|2026-11-05 05:47:10 +0100|AlmaLinux|AlmaLinux 10 PHP 8.4 packages (php8.4)|8.4.27-1.el10_2 (ALSA-2026:87071)|Fix|[source](<https://errata.almalinux.org/10/ALSA-2026-87071.html>)|
-|2026-11-05 05:47:10 +0100|AlmaLinux|AlmaLinux 8 php:7.2 module|7.2.24-1.module_el8.10.0+4315+7b734bf3.alma.1 (ALSA-2026:A011)|Fix|[source](<https://errata.almalinux.org/8/ALSA-2026-A011.html>)|
-|2026-11-05 05:47:10 +0100|AlmaLinux|AlmaLinux 8 php:7.3 module|7.3.20-1.module_el8.10.0+4316+90ea5fe5.alma.1 (ALSA-2026:A012)|Fix|[source](<https://errata.almalinux.org/8/ALSA-2026-A012.html>)|
-|2026-11-05 05:47:10 +0100|AlmaLinux|AlmaLinux 8 php:7.4 module|7.4.33-8.module_el8.10.0+4321+cf5fd4bb (ALSA-2026:87080)|Fix|[source](<https://errata.almalinux.org/8/ALSA-2026-87080.html>)|
+|2026-11-09 09:49:16 +0100|AlmaLinux|AlmaLinux 10 PHP 8.3 packages|8.3.36-1.el10_2 (ALSA-2026:87070)|Fix|[source](<https://errata.almalinux.org/10/ALSA-2026-87070.html>)|
+|2026-11-09 09:49:16 +0100|AlmaLinux|AlmaLinux 10 PHP 8.4 packages (php8.4)|8.4.27-1.el10_2 (ALSA-2026:87071)|Fix|[source](<https://errata.almalinux.org/10/ALSA-2026-87071.html>)|
+|2026-11-09 09:49:16 +0100|AlmaLinux|AlmaLinux 8 php:7.2 module|7.2.24-1.module_el8.10.0+4315+7b734bf3.alma.1 (ALSA-2026:A011)|Fix|[source](<https://errata.almalinux.org/8/ALSA-2026-A011.html>)|
+|2026-11-09 09:49:16 +0100|AlmaLinux|AlmaLinux 8 php:7.3 module|7.3.20-1.module_el8.10.0+4316+90ea5fe5.alma.1 (ALSA-2026:A012)|Fix|[source](<https://errata.almalinux.org/8/ALSA-2026-A012.html>)|
+|2026-11-09 09:49:16 +0100|AlmaLinux|AlmaLinux 8 php:7.4 module|7.4.33-8.module_el8.10.0+4321+cf5fd4bb (ALSA-2026:87080)|Fix|[source](<https://errata.almalinux.org/8/ALSA-2026-87080.html>)|
 
 See the [full software status update history](software/changelog_software_list.md).
 

@@ -5058,6 +5058,10 @@
         "urn:php2shell:inventory:relationship:PHP-0950",
         "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0950-reviewed-20261104",
         "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0950-reviewed-20261104",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0682-fg-ir-26-186-20261106",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0682-fg-ir-26-186-20261106",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0683-fg-ir-26-186-20261106",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0683-fg-ir-26-186-20261106",
         "urn:php2shell:inventory:organization:almalinux:342470c0d875",
         "urn:php2shell:inventory:organization:rocky-linux:817d0b8a1a25",
         "urn:php2shell:inventory:package:PHP-0951",
@@ -42272,9 +42276,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:fortinet:0dd4907ae878",
-      "summary": "Fortinet PSIRT advisory FG-IR-26-186 lists FortiSOAR as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Fortinet confirms both CVEs affect FortiSOAR and provides a fixed release and security patches. The patches update bundled PHP to 8.2.35; confirmed impact is limited to PHP-service and GUI availability.",
       "description": "Security orchestration, automation and response platform",
-      "comment": "Inventory record: PHP-0682\nCategory: Monitoring and administration\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in the FG-IR-26-186 php2shell response; exact PHP component and SAPI are not published\nPHP version scope: Fortinet FG-IR-26-186 (published 2026-10-21, updated 2026-10-22) lists FortiSOAR under 'Products Under Investigation'; affected and fixed product versions are not published.\nExtensions: Unknown\nLimitations: An under-investigation listing establishes vendor review scope, not a confirmed PHP dependency, affected build or reachable path.\nPatch owner: Fortinet; operator for deployment of fixed releases\nSource accessed: 2026-10-22\nVulnerability status: Vendor advisory FG-IR-26-186: under investigation.\nCVE-2026-109618: Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published\nCVE-2026-109619: Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0682\nCategory: Monitoring and administration\nOriginal relationship: contains\nRelationship direction: downstream_contains_parent\nParent component: PHP-0037\nEvidence status: Confirmed vendor advisory and security-patch documentation\nDeployment status: Not measured\nPHP surface: Vendor-managed PHP service used by the GUI; exact SAPI is not published\nPHP version scope: Security Patch #2 for 8.0.0 and Security Patch #1 for 7.6.7 / 7.5.4 update PHP to 8.2.35. FG-IR-26-186 identifies 8.0.1 or later as a fixed application release.\nAffected product scope: Unpatched 8.0.0, 7.6.0 through 7.6.7, 7.5.0 through 7.5.4, and all versions of the 7.4, 7.3, 7.2 and 7.0 branches. Legacy branches must migrate to a fixed release.\nExtensions: Not specified\nLimitations: Fix applies only to the listed release or installed security-patch scopes. The advisory still labels 7.6.8 and 7.5.5 as upcoming; their availability is not asserted. Patch availability does not establish installation on any particular deployment or PaaS tenant.\nImpact: Fortinet limits confirmed impact to denial of service affecting the PHP service and GUI availability; product CVSS 3.1 score 5.3. Remote code execution is not confirmed for these products.\nPatch owner: Fortinet; deployment operator must verify the applicable release or security patch is installed\nSource accessed: 2026-11-06\nVulnerability status: Fix available for both CVEs in the specified release and security-patch scopes.\nCVE-2026-109618: Fixed in 8.0.1 or later, or by Security Patch #2 for 8.0.0 / Security Patch #1 for 7.6.7 and 7.5.4. Fortinet confirms PHP-service/GUI denial of service only (CVSS 3.1: 5.3). Unpatched older releases remain affected; 7.6.8 and 7.5.5 are still described as upcoming.\nCVE-2026-109619: Fixed in 8.0.1 or later, or by Security Patch #2 for 8.0.0 / Security Patch #1 for 7.6.7 and 7.5.4. Fortinet confirms PHP-service/GUI denial of service only (CVSS 3.1: 5.3). Unpatched older releases remain affected; 7.6.8 and 7.5.5 are still described as upcoming.\nCVE assessment limit: This assessment concerns CVE-2026-109618 and CVE-2026-109619 only; verify installed product version and security-patch level.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -42282,9 +42286,34 @@
           "locator": [
             "https://fortiguard.fortinet.com/psirt/FG-IR-26-186"
           ],
-          "comment": "Fortinet PSIRT FG-IR-26-186, published 2026-10-21 and updated 2026-10-22; current investigation scope"
+          "comment": "Fortinet PSIRT FG-IR-26-186, updated 2026-11-05; affected versions, fixes and product-specific denial-of-service impact for both CVEs; reviewed 2026-11-06."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://docs.fortinet.com/document/fortisoar/8.0.0/fortisoar-os-update-lifecycle/749719"
+          ],
+          "comment": "Official FortiSOAR OS update documentation: 8.0.0 Security Patch #2 updates PHP to 8.2.35; FG-IR-26-186 confirms the patch applies to FortiSOAR and FortiSOAR PaaS. Reviewed 2026-11-06."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://docs.fortinet.com/document/fortisoar/7.6.7/fortisoar-os-update-lifecycle/749719"
+          ],
+          "comment": "Official FortiSOAR OS update documentation: 7.6.7 Security Patch #1 updates PHP to 8.2.35; FG-IR-26-186 confirms the patch applies to FortiSOAR and FortiSOAR PaaS. Reviewed 2026-11-06."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://docs.fortinet.com/document/fortisoar/7.5.4/fortisoar-os-update-lifecycle/749719"
+          ],
+          "comment": "Official FortiSOAR OS update documentation: 7.5.4 Security Patch #1 updates PHP to 8.2.35; FG-IR-26-186 confirms the patch applies to FortiSOAR and FortiSOAR PaaS. Reviewed 2026-11-06."
         }
-      ]
+      ],
+      "software_packageVersion": "8.0.1 or later; 8.0.0 + Security Patch #2; 7.6.7 or 7.5.4 + Security Patch #1"
     },
     {
       "type": "software_Package",
@@ -42300,9 +42329,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:fortinet:0dd4907ae878",
-      "summary": "Fortinet PSIRT advisory FG-IR-26-186 lists FortiSOAR PaaS as under investigation for CVE-2026-109618 and CVE-2026-109619.",
+      "summary": "Fortinet confirms both CVEs affect FortiSOAR PaaS and provides a fixed release and security patches. The patches update bundled PHP to 8.2.35; confirmed impact is limited to PHP-service and GUI availability.",
       "description": "Hosted security orchestration, automation and response service",
-      "comment": "Inventory record: PHP-0683\nCategory: Hosting and cloud\nOriginal relationship: candidate association\nRelationship direction: unconfirmed\nParent component: PHP-0037\nEvidence status: Vendor advisory candidate\nDeployment status: Not measured\nPHP surface: Vendor-named product in the FG-IR-26-186 php2shell response; exact PHP component and SAPI are not published\nPHP version scope: Fortinet FG-IR-26-186 (published 2026-10-21, updated 2026-10-22) lists FortiSOAR PaaS under 'Products Under Investigation'; affected and fixed product versions are not published.\nExtensions: Unknown\nLimitations: An under-investigation listing establishes vendor review scope, not a confirmed PHP dependency, affected build or reachable path.\nPatch owner: Fortinet; operator for deployment of fixed releases\nSource accessed: 2026-10-22\nVulnerability status: Vendor advisory FG-IR-26-186: under investigation.\nCVE-2026-109618: Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published\nCVE-2026-109619: Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published\nCVE assessment limit: Installed version, vendor backport, configuration, SAPI, loaded modules and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0683\nCategory: Hosting and cloud\nOriginal relationship: contains\nRelationship direction: downstream_contains_parent\nParent component: PHP-0037\nEvidence status: Confirmed vendor advisory and security-patch documentation\nDeployment status: Not measured\nPHP surface: Vendor-managed PHP service used by the GUI; exact SAPI is not published\nPHP version scope: Security Patch #2 for 8.0.0 and Security Patch #1 for 7.6.7 / 7.5.4 update PHP to 8.2.35. FG-IR-26-186 identifies 8.0.1 or later as a fixed application release.\nAffected product scope: Unpatched 8.0.0, 7.6.0 through 7.6.7, 7.5.0 through 7.5.4, and all versions of the 7.4 and 7.3 branches. Legacy branches must migrate to a fixed release.\nExtensions: Not specified\nLimitations: Fix applies only to the listed release or installed security-patch scopes. The advisory still labels 7.6.8 and 7.5.5 as upcoming; their availability is not asserted. Patch availability does not establish installation on any particular deployment or PaaS tenant.\nImpact: Fortinet limits confirmed impact to denial of service affecting the PHP service and GUI availability; product CVSS 3.1 score 5.3. Remote code execution is not confirmed for these products.\nPatch owner: Fortinet; deployment operator must verify the applicable release or security patch is installed\nSource accessed: 2026-11-06\nVulnerability status: Fix available for both CVEs in the specified release and security-patch scopes.\nCVE-2026-109618: Fixed in 8.0.1 or later, or by Security Patch #2 for 8.0.0 / Security Patch #1 for 7.6.7 and 7.5.4. Fortinet confirms PHP-service/GUI denial of service only (CVSS 3.1: 5.3). Unpatched older releases remain affected; 7.6.8 and 7.5.5 are still described as upcoming.\nCVE-2026-109619: Fixed in 8.0.1 or later, or by Security Patch #2 for 8.0.0 / Security Patch #1 for 7.6.7 and 7.5.4. Fortinet confirms PHP-service/GUI denial of service only (CVSS 3.1: 5.3). Unpatched older releases remain affected; 7.6.8 and 7.5.5 are still described as upcoming.\nCVE assessment limit: This assessment concerns CVE-2026-109618 and CVE-2026-109619 only; verify installed product version and security-patch level.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -42310,9 +42339,34 @@
           "locator": [
             "https://fortiguard.fortinet.com/psirt/FG-IR-26-186"
           ],
-          "comment": "Fortinet PSIRT FG-IR-26-186, published 2026-10-21 and updated 2026-10-22; current investigation scope"
+          "comment": "Fortinet PSIRT FG-IR-26-186, updated 2026-11-05; affected versions, fixes and product-specific denial-of-service impact for both CVEs; reviewed 2026-11-06."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://docs.fortinet.com/document/fortisoar/8.0.0/fortisoar-os-update-lifecycle/749719"
+          ],
+          "comment": "Official FortiSOAR OS update documentation: 8.0.0 Security Patch #2 updates PHP to 8.2.35; FG-IR-26-186 confirms the patch applies to FortiSOAR and FortiSOAR PaaS. Reviewed 2026-11-06."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://docs.fortinet.com/document/fortisoar/7.6.7/fortisoar-os-update-lifecycle/749719"
+          ],
+          "comment": "Official FortiSOAR OS update documentation: 7.6.7 Security Patch #1 updates PHP to 8.2.35; FG-IR-26-186 confirms the patch applies to FortiSOAR and FortiSOAR PaaS. Reviewed 2026-11-06."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://docs.fortinet.com/document/fortisoar/7.5.4/fortisoar-os-update-lifecycle/749719"
+          ],
+          "comment": "Official FortiSOAR OS update documentation: 7.5.4 Security Patch #1 updates PHP to 8.2.35; FG-IR-26-186 confirms the patch applies to FortiSOAR and FortiSOAR PaaS. Reviewed 2026-11-06."
         }
-      ]
+      ],
+      "software_packageVersion": "8.0.1 or later; 8.0.0 + Security Patch #2; 7.6.7 or 7.5.4 + Security Patch #1"
     },
     {
       "type": "software_Package",
@@ -42423,9 +42477,9 @@
       "to": [
         "urn:php2shell:inventory:package:PHP-0037"
       ],
-      "relationshipType": "other",
-      "summary": "Inventory association for PHP-0682: vendor PHP advisory candidate",
-      "comment": "The vendor is investigating this product in its PHP advisory. This association records review scope only; a PHP dependency is not confirmed."
+      "relationshipType": "contains",
+      "summary": "FortiSOAR includes a vendor-managed PHP service",
+      "comment": "Fortinet FG-IR-26-186 confirms impact on the PHP service and GUI; the linked security-patch documentation updates PHP to 8.2.35. The target is the unversioned PHP runtime family; fixed versions are scoped by this product record."
     },
     {
       "type": "Relationship",
@@ -42435,9 +42489,9 @@
       "to": [
         "urn:php2shell:inventory:package:PHP-0037"
       ],
-      "relationshipType": "other",
-      "summary": "Inventory association for PHP-0683: vendor PHP advisory candidate",
-      "comment": "The vendor is investigating this product in its PHP advisory. This association records review scope only; a PHP dependency is not confirmed."
+      "relationshipType": "contains",
+      "summary": "FortiSOAR PaaS includes a vendor-managed PHP service",
+      "comment": "Fortinet FG-IR-26-186 confirms impact on the PHP service and GUI; the linked security-patch documentation updates PHP to 8.2.35. The target is the unversioned PHP runtime family; fixed versions are scoped by this product record."
     },
     {
       "type": "Relationship",
@@ -42457,14 +42511,12 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0677",
-        "urn:php2shell:inventory:package:PHP-0682",
-        "urn:php2shell:inventory:package:PHP-0683"
+        "urn:php2shell:inventory:package:PHP-0677"
       ],
       "relationshipType": "underInvestigationFor",
       "security_statusNotes": "Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published",
       "summary": "CVE-2026-109618 assessment: Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published",
-      "comment": "Reviewed Fortinet PSIRT FG-IR-26-186, published 2026-10-21 and updated 2026-10-22. These products remain under investigation; no affected or fixed builds are specified. The advisory links OT IPS signatures 10009977 and 10009978, released in version 37.316, while its Virtual Patch field remains No. Signature availability does not establish a software fix. FortiADC retains its existing separate VEX assessments."
+      "comment": "Fortinet FG-IR-26-186, updated 2026-11-05 and reviewed 2026-11-06, still lists FortiDDoS under investigation. FortiDDoS-F is a separate product listed as not impacted. FortiSOAR and FortiSOAR PaaS now have separate fixed assessments."
     },
     {
       "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
@@ -42472,14 +42524,12 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0677",
-        "urn:php2shell:inventory:package:PHP-0682",
-        "urn:php2shell:inventory:package:PHP-0683"
+        "urn:php2shell:inventory:package:PHP-0677"
       ],
       "relationshipType": "underInvestigationFor",
       "security_statusNotes": "Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published",
       "summary": "CVE-2026-109619 assessment: Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published",
-      "comment": "Reviewed Fortinet PSIRT FG-IR-26-186, published 2026-10-21 and updated 2026-10-22. These products remain under investigation; no affected or fixed builds are specified. The advisory links OT IPS signatures 10009977 and 10009978, released in version 37.316, while its Virtual Patch field remains No. Signature availability does not establish a software fix. FortiADC retains its existing separate VEX assessments."
+      "comment": "Fortinet FG-IR-26-186, updated 2026-11-05 and reviewed 2026-11-06, still lists FortiDDoS under investigation. FortiDDoS-F is a separate product listed as not impacted. FortiSOAR and FortiSOAR PaaS now have separate fixed assessments."
     },
     {
       "type": "software_Package",
@@ -49881,7 +49931,7 @@
       "suppliedBy": "urn:php2shell:inventory:organization:almalinux:342470c0d875",
       "summary": "Vendor-confirmed published fix for both PHP2Shell CVEs in this specific package scope.",
       "description": "AlmaLinux 9 php:8.2 packages",
-      "comment": "Inventory record: PHP-0958\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: AlmaLinux 9 php:8.2 PHP packages (x86_64 build reviewed; the advisory lists the other architectures)\nPHP version scope: 8.2.35-1.module_el9.8.0+329+e5668d75 (ALSA-2026:87072)\nLimitations: ALSA-2026:87072 names the PHP2Shell CVEs and the fixed build for this stream only. Rebuild of RHSA-2026:87072. The ALSA-2026:87072 page lists only the module companion packages (php-pecl-apcu, php-pecl-rrd, php-pecl-xdebug3, php-pecl-zip, apcu-panel), not the php core RPMs; the core NVR is taken from the AlmaLinux 9 AppStream repository (https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/), whose php-common changelog for this build reads \"rebase to 8.2.35\". Package availability does not establish operator rollout or a restart of serving PHP workers; no package was installed or executed.\nPatch owner: AlmaLinux for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: ALSA-2026:87072; 8.2.35-1.module_el9.8.0+329+e5668d75\nSource accessed: 2026-11-05\nAliases: almalinux9:php:8.2\nVulnerability status: Fixed in 8.2.35-1.module_el9.8.0+329+e5668d75.\nCVE-2026-109618: Fixed in 8.2.35-1.module_el9.8.0+329+e5668d75\nCVE-2026-109619: Fixed in 8.2.35-1.module_el9.8.0+329+e5668d75\nCVE assessment limit: Vendor advisory establishes fixed package scope, not deployment status or whether an operator has applied the update.",
+      "comment": "Inventory record: PHP-0958\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed released fix\nDeployment status: Not measured\nPHP surface: AlmaLinux 9 php:8.2 PHP packages; core RPM evidence reviewed for x86_64 only\nPHP version scope: 8.2.35-1.module_el9.8.0+329+e5668d75 (ALSA-2026:87072)\nLimitations: ALSA-2026:87072 identifies the php:8.2 security update and both CVEs, but lists companion RPMs only, not core PHP RPMs. The exact x86_64 core build comes from the official AlmaLinux AppStream RPM metadata, which identifies module php:8.2 and a rebase to 8.2.35. Both PHP upstream advisories explicitly identify 8.2.35 as patched. The companion-package table does not establish core builds on other architectures. Package availability does not establish operator rollout or restart of serving PHP workers; no package was installed or executed.\nPatch owner: AlmaLinux for the packaged fix; system administrator for update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: ALSA-2026:87072; 8.2.35-1.module_el9.8.0+329+e5668d75\nSource accessed: 2026-11-09\nAliases: almalinux9:php:8.2\nVulnerability status: Fixed in 8.2.35-1.module_el9.8.0+329+e5668d75.\nCVE-2026-109618: Fixed in 8.2.35-1.module_el9.8.0+329+e5668d75\nCVE-2026-109619: Fixed in 8.2.35-1.module_el9.8.0+329+e5668d75\nCVE assessment limit: The AlmaLinux stream advisory, official core RPM metadata and PHP upstream patched-version advisories establish the reviewed x86_64 build scope, not deployment status or whether an operator has applied the update.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -49890,6 +49940,30 @@
             "https://errata.almalinux.org/9/ALSA-2026-87072.html"
           ],
           "comment": "AlmaLinux ALSA-2026:87072 - Important: php:8.2 security update"
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/php-common-8.2.35-1.module_el9.8.0%2B329%2Be5668d75.x86_64.rpm"
+          ],
+          "comment": "Official AlmaLinux 9 x86_64 php-common RPM; metadata identifies php:8.2 and rebase to upstream 8.2.35."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
+          ],
+          "comment": "PHP upstream CVE-2026-109618 advisory explicitly lists 8.2.35 as patched."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp"
+          ],
+          "comment": "PHP upstream CVE-2026-109619 advisory explicitly lists 8.2.35 as patched."
         }
       ]
     },
@@ -49994,9 +50068,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:rocky-linux:817d0b8a1a25",
-      "summary": "Rocky Linux 8 PHP streams without a published fix remain affected; fixed release scopes are listed separately (php:7.4 and php:8.2 fixes are recorded separately in PHP-0964 and PHP-0965).",
+      "summary": "Investigation for Rocky Linux 8 php:7.2, php:7.3 and php:8.0: no explicit vendor assessment was found for these streams; php:7.4 and php:8.2 fixes are recorded separately in PHP-0964 and PHP-0965.",
       "description": "Rocky Linux 8 PHP RPM/AppStream streams",
-      "comment": "Inventory record: PHP-0962\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Affected scope inferred from absence of a vendor fix; fixed releases recorded separately\nDeployment status: Not measured\nPHP surface: Rocky Linux 8 PHP module streams that are retired upstream and in RHEL\nPHP version scope: php:7.2 (7.2.24-1.module+el8.4.0+413+c9202dda), php:7.3 (7.3.20-1.module+el8.4.0+414+2e7afcdd) and php:8.0 (8.0.30-1.module+el8.10.0+1605+02e07af7)\nLimitations: Rocky Linux rebuilds Red Hat Enterprise Linux sources and Red Hat issued no RHSA for these streams, so no Rocky RLSA exists. Neither Rocky Linux nor Red Hat states a per-stream affected status for them; the Vulnerable status rests on the absence of a fixed build in the Rocky Linux repository and on AlmaLinux having fixed the same streams with its own builds. Check the installed package release, not the PHP version alone. Fixed scopes: php:7.4 and php:8.2 fixes are recorded separately in PHP-0964 and PHP-0965.\nPatch owner: Rocky Enterprise Software Foundation for any future packaged fix; system administrator for stream selection, update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Rocky Linux 8 AppStream x86_64 listing reviewed 2026-11-05; fixed scopes recorded separately\nSource accessed: 2026-11-05\nAliases: rocky8:php-appstreams\nVulnerability status: Vulnerable when using an affected PHP stream; fixed scopes are recorded separately.\nCVE-2026-109618: Vulnerable on affected PHP; see separate fixed scopes.\nCVE-2026-109619: Vulnerable on affected PHP; see separate fixed scopes.\nCVE assessment limit: The published fixed scopes do not establish that other installations have updated PHP; deployed runtimes were not tested.",
+      "comment": "Inventory record: PHP-0962\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: No explicit Rocky Linux assessment found for the listed streams; fixed releases recorded separately\nDeployment status: Not measured\nPHP surface: Rocky Linux 8 PHP module streams that are retired upstream and in RHEL\nPHP version scope: php:7.2 (7.2.24-1.module+el8.4.0+413+c9202dda), php:7.3 (7.3.20-1.module+el8.4.0+414+2e7afcdd) and php:8.0 (8.0.30-1.module+el8.10.0+1605+02e07af7)\nLimitations: The reviewed Rocky Linux sources do not explicitly assess these streams for either CVE. AlmaLinux advisories establish fixes for AlmaLinux builds, not affectedness of Rocky Linux packages. Repository package availability and the absence of a cited fix do not establish a CVE status. Fixed scopes: php:7.4 and php:8.2 fixes are recorded separately in PHP-0964 and PHP-0965. Check the installed package release, not the PHP version alone.\nPatch owner: Rocky Enterprise Software Foundation for any future packaged fix; system administrator for stream selection, update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Rocky Linux 8 AppStream x86_64 package listing reviewed 2026-11-09; fixed scopes recorded separately\nSource accessed: 2026-11-09\nAliases: rocky8:php-appstreams\nVulnerability status: Investigation for the listed streams; fixed scopes are recorded separately.\nCVE-2026-109618: Investigation; no explicit vendor assessment found for the listed Rocky Linux streams.\nCVE-2026-109619: Investigation; no explicit vendor assessment found for the listed Rocky Linux streams.\nCVE assessment limit: Vendor fixes for other streams and AlmaLinux builds do not determine the status of these Rocky Linux streams; deployed runtimes were not tested.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -50004,7 +50078,7 @@
           "locator": [
             "https://errata.almalinux.org/8/ALSA-2026-A011.html"
           ],
-          "comment": "AlmaLinux ALSA-2026:A011 fixes php:7.2 with its own build, showing the stream is affected"
+          "comment": "AlmaLinux ALSA-2026:A011 fixes php:7.2 with its own build; supporting AlmaLinux context only, not a Rocky Linux CVE assessment"
         },
         {
           "type": "ExternalRef",
@@ -50012,7 +50086,7 @@
           "locator": [
             "https://errata.almalinux.org/8/ALSA-2026-A012.html"
           ],
-          "comment": "AlmaLinux ALSA-2026:A012 fixes php:7.3 with its own build, showing the stream is affected"
+          "comment": "AlmaLinux ALSA-2026:A012 fixes php:7.3 with its own build; supporting AlmaLinux context only, not a Rocky Linux CVE assessment"
         },
         {
           "type": "ExternalRef",
@@ -50020,7 +50094,7 @@
           "locator": [
             "https://errata.almalinux.org/8/ALSA-2026-A013.html"
           ],
-          "comment": "AlmaLinux ALSA-2026:A013 fixes php:8.0 with its own build, showing the stream is affected"
+          "comment": "AlmaLinux ALSA-2026:A013 fixes php:8.0 with its own build; supporting AlmaLinux context only, not a Rocky Linux CVE assessment"
         },
         {
           "type": "ExternalRef",
@@ -50028,7 +50102,7 @@
           "locator": [
             "https://dl.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/p/"
           ],
-          "comment": "Rocky Linux 8 AppStream x86_64 package listing reviewed 2026-11-05: newest php:7.2, php:7.3 and php:8.0 builds are the unfixed ones named here"
+          "comment": "Rocky Linux 8 AppStream x86_64 package listing; package availability does not establish CVE status."
         }
       ]
     },
@@ -50046,9 +50120,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:rocky-linux:817d0b8a1a25",
-      "summary": "Rocky Linux 9 PHP streams without a published fix remain affected; fixed release scopes are listed separately (PHP 8.0, php:8.2 and php:8.3 fixes are recorded separately in PHP-0966, PHP-0967 and PHP-0968).",
+      "summary": "Investigation for Rocky Linux 9 php:8.1: no explicit vendor assessment was found for these streams; PHP 8.0, php:8.2 and php:8.3 fixes are recorded separately in PHP-0966, PHP-0967 and PHP-0968.",
       "description": "Rocky Linux 9 PHP RPM/AppStream streams",
-      "comment": "Inventory record: PHP-0963\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Affected scope inferred from absence of a vendor fix; fixed releases recorded separately\nDeployment status: Not measured\nPHP surface: Rocky Linux 9 PHP module streams that are retired upstream and in RHEL\nPHP version scope: php:8.1 (8.1.32-1.module+el9.7.0+40003+454ed3c4)\nLimitations: Rocky Linux rebuilds Red Hat Enterprise Linux sources and Red Hat issued no RHSA for these streams, so no Rocky RLSA exists. Neither Rocky Linux nor Red Hat states a per-stream affected status for them; the Vulnerable status rests on the absence of a fixed build in the Rocky Linux repository and on AlmaLinux having fixed the same streams with its own builds. Check the installed package release, not the PHP version alone. Fixed scopes: PHP 8.0, php:8.2 and php:8.3 fixes are recorded separately in PHP-0966, PHP-0967 and PHP-0968.\nPatch owner: Rocky Enterprise Software Foundation for any future packaged fix; system administrator for stream selection, update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Rocky Linux 9 AppStream x86_64 listing reviewed 2026-11-05; fixed scopes recorded separately\nSource accessed: 2026-11-05\nAliases: rocky9:php-appstreams\nVulnerability status: Vulnerable when using an affected PHP stream; fixed scopes are recorded separately.\nCVE-2026-109618: Vulnerable on affected PHP; see separate fixed scopes.\nCVE-2026-109619: Vulnerable on affected PHP; see separate fixed scopes.\nCVE assessment limit: The published fixed scopes do not establish that other installations have updated PHP; deployed runtimes were not tested.",
+      "comment": "Inventory record: PHP-0963\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: No explicit Rocky Linux assessment found for the listed streams; fixed releases recorded separately\nDeployment status: Not measured\nPHP surface: Rocky Linux 9 PHP module streams that are retired upstream and in RHEL\nPHP version scope: php:8.1 (8.1.32-1.module+el9.7.0+40003+454ed3c4)\nLimitations: The reviewed Rocky Linux sources do not explicitly assess these streams for either CVE. AlmaLinux advisories establish fixes for AlmaLinux builds, not affectedness of Rocky Linux packages. Repository package availability and the absence of a cited fix do not establish a CVE status. Fixed scopes: PHP 8.0, php:8.2 and php:8.3 fixes are recorded separately in PHP-0966, PHP-0967 and PHP-0968. Check the installed package release, not the PHP version alone.\nPatch owner: Rocky Enterprise Software Foundation for any future packaged fix; system administrator for stream selection, update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Rocky Linux 9 AppStream x86_64 package listing reviewed 2026-11-09; fixed scopes recorded separately\nSource accessed: 2026-11-09\nAliases: rocky9:php-appstreams\nVulnerability status: Investigation for the listed streams; fixed scopes are recorded separately.\nCVE-2026-109618: Investigation; no explicit vendor assessment found for the listed Rocky Linux streams.\nCVE-2026-109619: Investigation; no explicit vendor assessment found for the listed Rocky Linux streams.\nCVE assessment limit: Vendor fixes for other streams and AlmaLinux builds do not determine the status of these Rocky Linux streams; deployed runtimes were not tested.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -50056,7 +50130,7 @@
           "locator": [
             "https://errata.almalinux.org/9/ALSA-2026-A014.html"
           ],
-          "comment": "AlmaLinux ALSA-2026:A014 fixes php:8.1 with its own build, showing the stream is affected"
+          "comment": "AlmaLinux ALSA-2026:A014 fixes php:8.1 with its own build; supporting AlmaLinux context only, not a Rocky Linux CVE assessment"
         },
         {
           "type": "ExternalRef",
@@ -50064,7 +50138,7 @@
           "locator": [
             "https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/p/"
           ],
-          "comment": "Rocky Linux 9 AppStream x86_64 package listing reviewed 2026-11-05: newest php:8.1 build is the unfixed one named here"
+          "comment": "Rocky Linux 9 AppStream x86_64 package listing; package availability does not establish CVE status."
         }
       ]
     },
@@ -51649,32 +51723,30 @@
       "security_actionStatement": "Monitor the linked Broadcom product advisory for remediation details and restrict management exposure until a fixed release is verified."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:rocky8php20261105",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0962"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Rocky Linux 8 streams without a published fix remain affected: php:7.2 (7.2.24-1.module+el8.4.0+413+c9202dda), php:7.3 (7.3.20-1.module+el8.4.0+414+2e7afcdd) and php:8.0 (8.0.30-1.module+el8.10.0+1605+02e07af7). Rocky Linux has published no RLSA for them and Red Hat issued no RHSA for them. Fixed scopes are separate entries.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable in the remaining unpatched scope",
-      "comment": "Sources reviewed 2026-11-05: https://errata.almalinux.org/8/ALSA-2026-A011.html; https://errata.almalinux.org/8/ALSA-2026-A012.html; https://errata.almalinux.org/8/ALSA-2026-A013.html; https://dl.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/p/",
-      "security_actionStatement": "Move to a fixed stream listed in the separate Rocky Linux 8 entries, or apply a fix if Rocky Linux publishes one for the installed stream; do not apply other streams' fix status to these."
+      "relationshipType": "underInvestigationFor",
+      "security_statusNotes": "Investigation for Rocky Linux 8 php:7.2, php:7.3 and php:8.0: no explicit vendor assessment found for either CVE in the reviewed sources. The separate php:7.4 and php:8.2 fixed scopes do not determine the status of these streams.",
+      "summary": "CVE-2026-109618 assessment: Investigation for the remaining streams",
+      "comment": "Sources reviewed 2026-11-09: https://errata.almalinux.org/8/ALSA-2026-A011.html; https://errata.almalinux.org/8/ALSA-2026-A012.html; https://errata.almalinux.org/8/ALSA-2026-A013.html; https://dl.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/p/ AlmaLinux advisories are context for another distribution, not evidence of Rocky Linux affectedness. The existing assessment ID is retained."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:rocky9php20261105",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0963"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Rocky Linux 9 streams without a published fix remain affected: php:8.1 (8.1.32-1.module+el9.7.0+40003+454ed3c4). Rocky Linux has published no RLSA for them and Red Hat issued no RHSA for them. Fixed scopes are separate entries.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable in the remaining unpatched scope",
-      "comment": "Sources reviewed 2026-11-05: https://errata.almalinux.org/9/ALSA-2026-A014.html; https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/p/",
-      "security_actionStatement": "Move to a fixed stream listed in the separate Rocky Linux 9 entries, or apply a fix if Rocky Linux publishes one for the installed stream; do not apply other streams' fix status to these."
+      "relationshipType": "underInvestigationFor",
+      "security_statusNotes": "Investigation for Rocky Linux 9 php:8.1: no explicit vendor assessment found for either CVE in the reviewed sources. The separate PHP 8.0, php:8.2 and php:8.3 fixed scopes do not determine the status of these streams.",
+      "summary": "CVE-2026-109618 assessment: Investigation for the remaining streams",
+      "comment": "Sources reviewed 2026-11-09: https://errata.almalinux.org/9/ALSA-2026-A014.html; https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/p/ AlmaLinux advisories are context for another distribution, not evidence of Rocky Linux affectedness. The existing assessment ID is retained."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -53287,6 +53359,32 @@
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0682-fg-ir-26-186-20261106",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0682"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in 8.0.1 or later, or by Security Patch #2 for 8.0.0 / Security Patch #1 for 7.6.7 and 7.5.4. Fortinet confirms PHP-service/GUI denial of service only (CVSS 3.1: 5.3). Unpatched older releases remain affected; 7.6.8 and 7.5.5 are still described as upcoming.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public Fortinet advisory updated 2026-11-05 and linked patch documentation reviewed 2026-11-06. Source: https://fortiguard.fortinet.com/psirt/FG-IR-26-186\nAction statement: Upgrade to 8.0.1 or later, or install the security patch for the exact listed application version. Confirm patch installation; unpatched deployments remain affected. Legacy branches must migrate to a fixed release."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0683-fg-ir-26-186-20261106",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0683"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in 8.0.1 or later, or by Security Patch #2 for 8.0.0 / Security Patch #1 for 7.6.7 and 7.5.4. Fortinet confirms PHP-service/GUI denial of service only (CVSS 3.1: 5.3). Unpatched older releases remain affected; 7.6.8 and 7.5.5 are still described as upcoming.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Public Fortinet advisory updated 2026-11-05 and linked patch documentation reviewed 2026-11-06. Source: https://fortiguard.fortinet.com/psirt/FG-IR-26-186\nAction statement: Upgrade to 8.0.1 or later, or install the security patch for the exact listed application version. Confirm patch installation; unpatched deployments remain affected. Legacy branches must migrate to a fixed release."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0717-official-20261026",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
@@ -53974,9 +54072,9 @@
         "urn:php2shell:inventory:package:PHP-0958"
       ],
       "relationshipType": "fixedIn",
-      "security_statusNotes": "AlmaLinux lists ALSA-2026:87072 as the php:8.2 security update for both CVEs for AlmaLinux 9; its package list names only the module companion packages, and the php core build 8.2.35-1.module_el9.8.0+329+e5668d75 is published in the AlmaLinux 9 AppStream repository (changelog: rebase to 8.2.35, the upstream fixed release). This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "security_statusNotes": "AlmaLinux ALSA-2026:87072 identifies the php:8.2 security update for both CVEs but lists only companion RPMs. Official AlmaLinux AppStream core RPM metadata identifies x86_64 build 8.2.35-1.module_el9.8.0+329+e5668d75, module php:8.2 and rebase to upstream 8.2.35. The PHP upstream advisory explicitly lists 8.2.35 as patched. Fix is scoped to this reviewed x86_64 build; other streams and architectures are not established by this core-package evidence.",
       "summary": "CVE-2026-109618 assessment: Fix in the specified published release",
-      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+      "comment": "Official sources reviewed 2026-11-09: https://errata.almalinux.org/9/ALSA-2026-87072.html; https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/php-common-8.2.35-1.module_el9.8.0%2B329%2Be5668d75.x86_64.rpm; https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -54521,32 +54619,30 @@
       "security_actionStatement": "Monitor the linked Broadcom product advisory for remediation details and restrict management exposure until a fixed release is verified."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:rocky8php20261105",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0962"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Rocky Linux 8 streams without a published fix remain affected: php:7.2 (7.2.24-1.module+el8.4.0+413+c9202dda), php:7.3 (7.3.20-1.module+el8.4.0+414+2e7afcdd) and php:8.0 (8.0.30-1.module+el8.10.0+1605+02e07af7). Rocky Linux has published no RLSA for them and Red Hat issued no RHSA for them. Fixed scopes are separate entries.",
-      "summary": "CVE-2026-109619 assessment: Vulnerable in the remaining unpatched scope",
-      "comment": "Sources reviewed 2026-11-05: https://errata.almalinux.org/8/ALSA-2026-A011.html; https://errata.almalinux.org/8/ALSA-2026-A012.html; https://errata.almalinux.org/8/ALSA-2026-A013.html; https://dl.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/p/",
-      "security_actionStatement": "Move to a fixed stream listed in the separate Rocky Linux 8 entries, or apply a fix if Rocky Linux publishes one for the installed stream; do not apply other streams' fix status to these."
+      "relationshipType": "underInvestigationFor",
+      "security_statusNotes": "Investigation for Rocky Linux 8 php:7.2, php:7.3 and php:8.0: no explicit vendor assessment found for either CVE in the reviewed sources. The separate php:7.4 and php:8.2 fixed scopes do not determine the status of these streams.",
+      "summary": "CVE-2026-109619 assessment: Investigation for the remaining streams",
+      "comment": "Sources reviewed 2026-11-09: https://errata.almalinux.org/8/ALSA-2026-A011.html; https://errata.almalinux.org/8/ALSA-2026-A012.html; https://errata.almalinux.org/8/ALSA-2026-A013.html; https://dl.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/p/ AlmaLinux advisories are context for another distribution, not evidence of Rocky Linux affectedness. The existing assessment ID is retained."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:rocky9php20261105",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0963"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Rocky Linux 9 streams without a published fix remain affected: php:8.1 (8.1.32-1.module+el9.7.0+40003+454ed3c4). Rocky Linux has published no RLSA for them and Red Hat issued no RHSA for them. Fixed scopes are separate entries.",
-      "summary": "CVE-2026-109619 assessment: Vulnerable in the remaining unpatched scope",
-      "comment": "Sources reviewed 2026-11-05: https://errata.almalinux.org/9/ALSA-2026-A014.html; https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/p/",
-      "security_actionStatement": "Move to a fixed stream listed in the separate Rocky Linux 9 entries, or apply a fix if Rocky Linux publishes one for the installed stream; do not apply other streams' fix status to these."
+      "relationshipType": "underInvestigationFor",
+      "security_statusNotes": "Investigation for Rocky Linux 9 php:8.1: no explicit vendor assessment found for either CVE in the reviewed sources. The separate PHP 8.0, php:8.2 and php:8.3 fixed scopes do not determine the status of these streams.",
+      "summary": "CVE-2026-109619 assessment: Investigation for the remaining streams",
+      "comment": "Sources reviewed 2026-11-09: https://errata.almalinux.org/9/ALSA-2026-A014.html; https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/p/ AlmaLinux advisories are context for another distribution, not evidence of Rocky Linux affectedness. The existing assessment ID is retained."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -56188,6 +56284,32 @@
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0682-fg-ir-26-186-20261106",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0682"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in 8.0.1 or later, or by Security Patch #2 for 8.0.0 / Security Patch #1 for 7.6.7 and 7.5.4. Fortinet confirms PHP-service/GUI denial of service only (CVSS 3.1: 5.3). Unpatched older releases remain affected; 7.6.8 and 7.5.5 are still described as upcoming.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public Fortinet advisory updated 2026-11-05 and linked patch documentation reviewed 2026-11-06. Source: https://fortiguard.fortinet.com/psirt/FG-IR-26-186\nAction statement: Upgrade to 8.0.1 or later, or install the security patch for the exact listed application version. Confirm patch installation; unpatched deployments remain affected. Legacy branches must migrate to a fixed release."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0683-fg-ir-26-186-20261106",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0683"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fixed in 8.0.1 or later, or by Security Patch #2 for 8.0.0 / Security Patch #1 for 7.6.7 and 7.5.4. Fortinet confirms PHP-service/GUI denial of service only (CVSS 3.1: 5.3). Unpatched older releases remain affected; 7.6.8 and 7.5.5 are still described as upcoming.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Public Fortinet advisory updated 2026-11-05 and linked patch documentation reviewed 2026-11-06. Source: https://fortiguard.fortinet.com/psirt/FG-IR-26-186\nAction statement: Upgrade to 8.0.1 or later, or install the security patch for the exact listed application version. Confirm patch installation; unpatched deployments remain affected. Legacy branches must migrate to a fixed release."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0717-official-20261026",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
@@ -56861,9 +56983,9 @@
         "urn:php2shell:inventory:package:PHP-0958"
       ],
       "relationshipType": "fixedIn",
-      "security_statusNotes": "AlmaLinux lists ALSA-2026:87072 as the php:8.2 security update for both CVEs for AlmaLinux 9; its package list names only the module companion packages, and the php core build 8.2.35-1.module_el9.8.0+329+e5668d75 is published in the AlmaLinux 9 AppStream repository (changelog: rebase to 8.2.35, the upstream fixed release). This fix is specific to the named release and stream; other AlmaLinux streams are assessed separately.",
+      "security_statusNotes": "AlmaLinux ALSA-2026:87072 identifies the php:8.2 security update for both CVEs but lists only companion RPMs. Official AlmaLinux AppStream core RPM metadata identifies x86_64 build 8.2.35-1.module_el9.8.0+329+e5668d75, module php:8.2 and rebase to upstream 8.2.35. The PHP upstream advisory explicitly lists 8.2.35 as patched. Fix is scoped to this reviewed x86_64 build; other streams and architectures are not established by this core-package evidence.",
       "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
-      "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+      "comment": "Official sources reviewed 2026-11-09: https://errata.almalinux.org/9/ALSA-2026-87072.html; https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/php-common-8.2.35-1.module_el9.8.0%2B329%2Be5668d75.x86_64.rpm; https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
