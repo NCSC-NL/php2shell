@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "as_of_date": "2026-11-06",
+  "as_of_date": "2026-11-09",
   "timezone": "UTC",
   "history_ref": "origin/main",
   "cves": [
@@ -11,27 +11,27 @@
   "day_selection": "inventory-updates",
   "current": {
     "counts": {
-      "tracked": 948,
-      "fixed": 187,
+      "tracked": 968,
+      "fixed": 205,
       "vulnerable": 215,
-      "investigation": 91,
+      "investigation": 93,
       "runtime_dependent": 240,
       "not_affected": 214,
       "unknown": 1
     },
     "by_cve": {
       "CVE-2026-109618": {
-        "fixed": 187,
+        "fixed": 205,
         "vulnerable": 215,
-        "investigation": 91,
+        "investigation": 93,
         "runtime_dependent": 240,
         "not_affected": 214,
         "unknown": 1
       },
       "CVE-2026-109619": {
-        "fixed": 187,
+        "fixed": 205,
         "vulnerable": 213,
-        "investigation": 92,
+        "investigation": 94,
         "runtime_dependent": 239,
         "not_affected": 216,
         "unknown": 1
@@ -102,30 +102,30 @@
       }
     },
     {
-      "date": "2026-11-06",
+      "date": "2026-11-09",
       "source": "working-tree",
       "counts": {
-        "tracked": 948,
-        "fixed": 187,
+        "tracked": 968,
+        "fixed": 205,
         "vulnerable": 215,
-        "investigation": 91,
+        "investigation": 93,
         "runtime_dependent": 240,
         "not_affected": 214,
         "unknown": 1
       },
       "by_cve": {
         "CVE-2026-109618": {
-          "fixed": 187,
+          "fixed": 205,
           "vulnerable": 215,
-          "investigation": 91,
+          "investigation": 93,
           "runtime_dependent": 240,
           "not_affected": 214,
           "unknown": 1
         },
         "CVE-2026-109619": {
-          "fixed": 187,
+          "fixed": 205,
           "vulnerable": 213,
-          "investigation": 92,
+          "investigation": 94,
           "runtime_dependent": 239,
           "not_affected": 216,
           "unknown": 1

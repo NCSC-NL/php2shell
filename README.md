@@ -1,7 +1,7 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
 Operational information: 28 October 2026 16:46 CET<br>
-Software list last status update: 6 November 2026 09:21 CET<br>
+Software list last status update: 9 November 2026 09:49 CET<br>
 ## TLP:CLEAR
 
 This repository contains operational information regarding the critical PHP vulnerabilities tracked by CERT-EU as CVE-2026-109618 and CVE-2026-109619.
@@ -11,7 +11,7 @@ PHP is a widely used open-source server-side scripting language, so these vulner
 ## Current status
 
 <!-- inventory-statistics:summary:start -->
-This repository tracks **948 products**, including **215 vulnerable** and **187 fixed**.
+This repository tracks **968 products**, including **215 vulnerable** and **205 fixed**.
 <!-- inventory-statistics:summary:end -->
 
 On 21 October 2026, PHP published fixed releases for CVE-2026-109618 and CVE-2026-109619: PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. PHP states that both vulnerabilities can allow unauthenticated remote code execution and that all PHP installations serving web requests are at risk, including PHP-FPM, Apache with mod_php, php-cgi, FrankenPHP and LiteSpeed. PHP considers the risk highest for mod_php, where an unauthenticated request can trigger exploitation before application code runs.
@@ -54,11 +54,11 @@ The repository is being updated as the situation develops. Check back for update
 
 <!-- inventory-statistics:start -->
 
-Statistics as of **2026-11-06 (UTC)**, from the current SPDX inventory.
+Statistics as of **2026-11-09 (UTC)**, from the current SPDX inventory.
 
 | Products tracked | Fixed | Vulnerable | Under investigation | Runtime-dependent | Not affected | Unassessed / unknown |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 948 | 187 | 215 | 91 | 240 | 214 | 1 |
+| 968 | 205 | 215 | 93 | 240 | 214 | 1 |
 
 ![Product status on the last 3 inventory update days](software/statistics/inventory-statistics.png)
 
@@ -70,11 +70,11 @@ Statistics as of **2026-11-06 (UTC)**, from the current SPDX inventory.
 
 | Date and time | Supplier | Product | Version (see Status) | Status CVE-2026-109618 / CVE-2026-109619 | Links |
 |:------------------------|:---------|:--------|:--------------------:|:----------------------:|------:|
-|2026-11-06 09:21:28 +0100|Fortinet|FortiSOAR|8.0.1 or later; 8.0.0 + Security Patch #2; 7.6.7 or 7.5.4 + Security Patch #1|Fix|[source 1](<https://fortiguard.fortinet.com/psirt/FG-IR-26-186>)<br>[source 2](<https://docs.fortinet.com/document/fortisoar/8.0.0/fortisoar-os-update-lifecycle/749719>)<br>[source 3](<https://docs.fortinet.com/document/fortisoar/7.6.7/fortisoar-os-update-lifecycle/749719>)<br>[source 4](<https://docs.fortinet.com/document/fortisoar/7.5.4/fortisoar-os-update-lifecycle/749719>)|
-|2026-11-06 09:21:28 +0100|Fortinet|FortiSOAR PaaS|8.0.1 or later; 8.0.0 + Security Patch #2; 7.6.7 or 7.5.4 + Security Patch #1|Fix|[source 1](<https://fortiguard.fortinet.com/psirt/FG-IR-26-186>)<br>[source 2](<https://docs.fortinet.com/document/fortisoar/8.0.0/fortisoar-os-update-lifecycle/749719>)<br>[source 3](<https://docs.fortinet.com/document/fortisoar/7.6.7/fortisoar-os-update-lifecycle/749719>)<br>[source 4](<https://docs.fortinet.com/document/fortisoar/7.5.4/fortisoar-os-update-lifecycle/749719>)|
-|2026-11-04 09:32:34 +0100|Centreon|Centreon Cloud hosted service (patched PHP rollout)|Cloud rollout confirmed 2026-10-22; service build unspecified|Fix|[source](<https://thewatch.centreon.com/latest-security-bulletins-64/php-security-advisory-action-required-for-centreon-on-premise-installations-6010?postid=20972>)|
-|2026-11-04 09:32:34 +0100|EGroupware GmbH / EGroupware project|EGroupware Cloud hosted service (patched PHP rollout)|Hosted service rollout completed 2026-10-21; vendor confirmation updated 2026-10-27|Fix|[source](<https://www.egroupware.org/en/general/php2shell-and-our-strategy>)|
-|2026-11-04 09:32:34 +0100|EGroupware GmbH / EGroupware project|EGroupware official Docker images with patched PHP|26.10.20261021 and 23.1.20261021; PHP 8.5.12|Fix|[source 1](<https://www.egroupware.org/en/general/php2shell-and-our-strategy>)<br>[source 2](<https://github.com/EGroupware/egroupware/releases/tag/26.10.20261021>)<br>[source 3](<https://github.com/EGroupware/egroupware/releases/tag/23.1.20261021>)|
+|2026-11-09 09:49:16 +0100|AlmaLinux|AlmaLinux 10 PHP 8.3 packages|8.3.36-1.el10_2 (ALSA-2026:87070)|Fix|[source](<https://errata.almalinux.org/10/ALSA-2026-87070.html>)|
+|2026-11-09 09:49:16 +0100|AlmaLinux|AlmaLinux 10 PHP 8.4 packages (php8.4)|8.4.27-1.el10_2 (ALSA-2026:87071)|Fix|[source](<https://errata.almalinux.org/10/ALSA-2026-87071.html>)|
+|2026-11-09 09:49:16 +0100|AlmaLinux|AlmaLinux 8 php:7.2 module|7.2.24-1.module_el8.10.0+4315+7b734bf3.alma.1 (ALSA-2026:A011)|Fix|[source](<https://errata.almalinux.org/8/ALSA-2026-A011.html>)|
+|2026-11-09 09:49:16 +0100|AlmaLinux|AlmaLinux 8 php:7.3 module|7.3.20-1.module_el8.10.0+4316+90ea5fe5.alma.1 (ALSA-2026:A012)|Fix|[source](<https://errata.almalinux.org/8/ALSA-2026-A012.html>)|
+|2026-11-09 09:49:16 +0100|AlmaLinux|AlmaLinux 8 php:7.4 module|7.4.33-8.module_el8.10.0+4321+cf5fd4bb (ALSA-2026:87080)|Fix|[source](<https://errata.almalinux.org/8/ALSA-2026-87080.html>)|
 
 See the [full software status update history](software/changelog_software_list.md).
 
