@@ -5263,6 +5263,72 @@
       "security_statusNotes": "Fixed in 8.0.1 or later, or by Security Patch #2 for 8.0.0 / Security Patch #1 for 7.6.7 and 7.5.4. Fortinet confirms PHP-service/GUI denial of service only (CVSS 3.1: 5.3). Unpatched older releases remain affected; 7.6.8 and 7.5.5 are still described as upcoming.",
       "summary": "CVE-2026-109619 assessment: Fix",
       "comment": "Public Fortinet advisory updated 2026-11-05 and linked patch documentation reviewed 2026-11-06. Source: https://fortiguard.fortinet.com/psirt/FG-IR-26-186\nAction statement: Upgrade to 8.0.1 or later, or install the security patch for the exact listed application version. Confirm patch installation; unpatched deployments remain affected. Legacy branches must migrate to a fixed release."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0974",
+      "creationInfo": "_:creationinfo",
+      "name": "OroCommerce on OroCloud managed environments",
+      "software_primaryPurpose": "application",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0974"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:oro-inc.:bf7f89b3295e",
+      "software_packageVersion": "Managed environments patched 2026-10-22",
+      "summary": "Oro reports that no customer action is required for its patched managed environments; self-hosted OroCommerce requires a separate PHP update.",
+      "comment": "Inventory record: PHP-0974\nEvidence reviewed: 2026-11-12\nScope: Only OroCloud managed environments; self-hosted OroCommerce remains dependent on operator-applied PHP updates. The vendor does not publish individual deployed PHP build numbers.\nCVE-2026-109618 and CVE-2026-109619: Fix: Oro confirms all OroCloud managed environments were patched on 2026-10-22 for both PHP2Shell CVEs.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://oroinc.com/b2b-ecommerce/blog/security-update/"
+          ],
+          "comment": "Oro official security update, 2026-11-09; managed versus self-hosted PHP remediation."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0974",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0974",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "dependsOn",
+      "summary": "PHP runtime dependency for OroCommerce on OroCloud managed environments",
+      "comment": "Vendor-confirmed remediation scope separated from PHP-0158."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0974-official-20261112",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0974"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: Oro confirms all OroCloud managed environments were patched on 2026-10-22 for both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://oroinc.com/b2b-ecommerce/blog/security-update/\nScope: Only OroCloud managed environments; self-hosted OroCommerce remains dependent on operator-applied PHP updates. The vendor does not publish individual deployed PHP build numbers."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0974-official-20261112",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0974"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: Oro confirms all OroCloud managed environments were patched on 2026-10-22 for both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://oroinc.com/b2b-ecommerce/blog/security-update/\nScope: Only OroCloud managed environments; self-hosted OroCommerce remains dependent on operator-applied PHP updates. The vendor does not publish individual deployed PHP build numbers."
     }
   ]
 }

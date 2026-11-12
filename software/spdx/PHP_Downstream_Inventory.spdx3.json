@@ -5143,7 +5143,25 @@
         "urn:php2shell:inventory:package:PHP-0963",
         "urn:php2shell:inventory:relationship:PHP-0963",
         "urn:php2shell:inventory:vex:CVE-2026-109618:affects:rocky9php20261105",
-        "urn:php2shell:inventory:vex:CVE-2026-109619:affects:rocky9php20261105"
+        "urn:php2shell:inventory:vex:CVE-2026-109619:affects:rocky9php20261105",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0720-official-20261112",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0720-official-20261112",
+        "urn:php2shell:inventory:package:PHP-0971",
+        "urn:php2shell:inventory:relationship:PHP-0971",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0971-official-20261112",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0971-official-20261112",
+        "urn:php2shell:inventory:package:PHP-0972",
+        "urn:php2shell:inventory:relationship:PHP-0972",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0972-official-20261112",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0972-official-20261112",
+        "urn:php2shell:inventory:package:PHP-0973",
+        "urn:php2shell:inventory:relationship:PHP-0973",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0973-official-20261112",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0973-official-20261112",
+        "urn:php2shell:inventory:package:PHP-0974",
+        "urn:php2shell:inventory:relationship:PHP-0974",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0974-official-20261112",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0974-official-20261112"
       ]
     },
     {
@@ -10934,10 +10952,18 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:oro-inc.:bf7f89b3295e",
-      "summary": "The vendor separates server PHP/CLI and extension requirements from client-side browsers, cookies and JavaScript.",
+      "summary": "Vulnerable on an unpatched self-hosted PHP runtime; OroCloud remediation is separately recorded in PHP-0974.",
       "description": "Server-side PHP web runtime; CLI where separately documented; exact SAPI deployment-dependent",
-      "comment": "Inventory record: PHP-0158\nCategory: Commerce\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime; CLI where separately documented; exact SAPI deployment-dependent\nPHP version scope: Current system-requirements page labelled 7.0: PHP >=8.5, matching web and CLI versions; exact release artifact not pinned.\nExtensions: Required (documented scope): ctype, curl, fileinfo, gd, intl, json, mbstring, sodium, openssl, pgsql, pcre, simplexml, tokenizer, xml, zip, imap, soap, bcmath, ldap. Optional/recommended: tidy. Conditional/alternatives: mongodb >=2.0 for OroGridFSConfigBundle\nLimitations: This evidence is scoped to the displayed 7.0 documentation and does not establish that any browser/mobile client contains PHP. Other Oro products and older releases need separate validation. PHP presence does not establish an affected build, reachable flaw or exploitation. Installations and enabled integrations were not measured.\nPatch owner: PHP package/image/hosting provider and operator for runtime; application/plugin maintainer and merchant for application updates\nDownstream surface: B2B storefront, administration, integrations and asynchronous application processes\nRelease pin: Version-scoped/moving official documentation; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: orocommerce, OroCommerce Community Edition, OroCommerce Enterprise Edition\nConditional downstream consequence: A matching PHP memory-safety or parser flaw reached through store requests, imports or media handling could cause denial of service, disclosure or code execution in the PHP worker. Code execution could expose configured commerce/payment credentials or alter orders and content. Provider compromise, tenant escape and lateral movement would require additional permissions or flaws.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0158\nEvidence reviewed: 2026-11-12\nScope: Oro directs self-hosted customers to update PHP to 8.5.12, 8.4.27, 8.3.36 or 8.2.35 (or later) and restart all PHP workers. An application update alone does not update the externally supplied interpreter.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable on an unpatched self-hosted PHP runtime; OroCloud remediation is separately recorded in PHP-0974.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://oroinc.com/b2b-ecommerce/blog/security-update/"
+          ],
+          "comment": "Oro official security update, 2026-11-09; managed versus self-hosted PHP remediation."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "other",
@@ -10946,7 +10972,8 @@
           ],
           "comment": "Official OroCommerce requirements / implementation evidence"
         }
-      ]
+      ],
+      "software_packageVersion": "Self-hosted deployments using unpatched PHP"
     },
     {
       "type": "software_Package",
@@ -14797,10 +14824,18 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:observium-limited-observium-project:09c602022500",
-      "summary": "The official installation guide explicitly provisions both the PHP web SAPI and command-line runtime.",
+      "summary": "Vulnerable on an unpatched PHP runtime; Observium published request-filtering mitigation, not a PHP runtime fix.",
       "description": "Apache mod_php with prefork plus PHP CLI in the documented environments",
-      "comment": "Inventory record: PHP-0272\nCategory: Monitoring and administration\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Apache mod_php with prefork plus PHP CLI in the documented environments\nPHP version scope: Official Ubuntu/Debian examples use PHP 8.5 on Ubuntu 26.04, 8.4 on Debian 13 and 8.3 on Ubuntu 24.04. These are documented OS environments, not a universal minimum or edition/version matrix.\nExtensions: Full required extension set unknown. Conditional/ambiguous: Example packages include mysql connector, gd, bcmath, mbstring, curl, APCu and version-dependent OPcache packaging; mandatory/optional split remains unverified\nLimitations: Community/subscription source snapshots and complete native modules were not pinned separately. The guide’s PHP 8.5 OPcache packaging note is not generalized to every distributor. No monitoring commands were executed. PHP presence does not establish an affected build, reachability or exploitation. Deployments, loaded modules and enabled features were not measured.\nPatch owner: Application/module maintainer for product code; PHP package/image/hosting provider and deploying operator for compatible runtime/module updates\nDownstream surface: Network monitoring web interface, graphs, inventory and scheduled processing\nRelease pin: Version-scoped/moving official documentation or source branch; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: Observium Community Edition, Observium network monitoring\nConditional downstream consequence: A matching PHP runtime or loaded-extension flaw reached through web/API input, imported content or PHP background jobs could cause denial of service, information disclosure or worker-level code execution. Monitoring data, application configuration and accessible integration credentials could then be read or changed. Further management actions require the configured rights and reachable services; native engines, agents, host privilege and tenant escape remain separate boundaries.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0272\nEvidence reviewed: 2026-11-12\nScope: Revision r15384 blocks multipart requests and initially disables session upload progress for both named CVEs. Revision r15386 removes the upload-progress overrides while retaining the multipart block. Do not treat these application changes as a fixed PHP runtime or assume that an unreleased Community Edition snapshot is installed.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable on an unpatched PHP runtime; Observium published request-filtering mitigation, not a PHP runtime fix.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://changelog.observium.org/2026.html"
+          ],
+          "comment": "Official Observium changelog, r15384 and r15386, 2026-10-21; reviewed 2026-11-12."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "other",
@@ -14809,7 +14844,8 @@
           ],
           "comment": "Official Observium PHP relationship / requirements evidence"
         }
-      ]
+      ],
+      "software_packageVersion": "Unpatched PHP deployments; application mitigation in r15384/r15386"
     },
     {
       "type": "software_Package",
@@ -27902,10 +27938,34 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:trend-micro:ddb8e439b1bf",
-      "summary": "Monitor KA-0024802 for vendor hotfixes or critical patches and restrict management access to trusted networks.",
+      "summary": "Vulnerable on unpatched installations. Japanese Windows Critical Patch build 20113 was released on 2026-11-12; the confirmed fixed scope is PHP-0972.",
       "description": "Bundled PHP module in the Apex One server; exact SAPI and reachable paths unspecified",
-      "comment": "Inventory record: PHP-0631\nCategory: Monitoring and administration\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Bundled PHP module in the Apex One server; exact SAPI and reachable paths unspecified\nPHP version scope: Apex One on-premises server; vendor version ranges not specified\nLimitations: The vendor readme confirms a PHP module in Apex One, but does not identify CVE-2026-109618 or CVE-2026-109619, affected/fixed product builds, enabled features, reachability or deployment status.\nPatch owner: Trend Micro for bundled product components; operator for patch rollout\nDownstream surface: Apex One server and management interfaces\nRelease pin: Apex One on-premises server; vendor version ranges not specified\nSource accessed: 2026-10-23\nAliases: Trend Micro Apex One\nVulnerability status: Vulnerable. Trend Micro KA-0024802, updated 23 October, confirms Apex One on-premises server is impacted and mitigation is in development. Apex One as a Service is a separate scope.\nCVE-2026-109618: Vulnerable. Trend Micro KA-0024802, updated 23 October, confirms Apex One on-premises server is impacted and mitigation is in development. Apex One as a Service is a separate scope.\nCVE-2026-109619: Vulnerable. Trend Micro KA-0024802, updated 23 October, confirms Apex One on-premises server is impacted and mitigation is in development. Apex One as a Service is a separate scope.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://success.trendmicro.com/en-US/solution/KA-0024802",
+      "comment": "Inventory record: PHP-0631\nEvidence reviewed: 2026-11-12\nScope: The Japanese release evidence does not establish release availability for other language editions. Use the matching vendor package; the hosted service is a separate scope.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable on unpatched installations. Japanese Windows Critical Patch build 20113 was released on 2026-11-12; the confirmed fixed scope is PHP-0972.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/ja-jp/solution/KA-0024807"
+          ],
+          "comment": "Official Japanese PHP2Shell advisory, updated 2026-11-12; both CVEs."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/ja-JP/solution/KA-0025018"
+          ],
+          "comment": "Official Critical Patch release announcement, 2026-11-12 at 11:00 JST."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://files.trendmicro.com/jp/ucmodule/apexone/win/2019/sp1/apex_one_2019_win_cp_b20113_JP_hotfix_Readme.html"
+          ],
+          "comment": "Official Japanese Windows Critical Patch readme."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "other",
@@ -27923,7 +27983,7 @@
           "comment": "Official public CVE review 2026-10-23"
         }
       ],
-      "software_packageVersion": "Apex One on-premises server; vendor version ranges not specified"
+      "software_packageVersion": "Unpatched on-premises releases; Japanese fixed scope recorded separately"
     },
     {
       "type": "software_Package",
@@ -27939,10 +27999,34 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:trend-micro:ddb8e439b1bf",
-      "summary": "Monitor KA-0024802 for vendor hotfixes or critical patches and restrict management access to trusted networks.",
+      "summary": "Vulnerable on unpatched installations. Japanese Windows Critical Patch build 7351 was released on 2026-11-12; the confirmed fixed scope is PHP-0973.",
       "description": "Bundled PHP module in the Apex Central server; exact SAPI and reachable paths unspecified",
-      "comment": "Inventory record: PHP-0632\nCategory: Monitoring and administration\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Bundled PHP module in the Apex Central server; exact SAPI and reachable paths unspecified\nPHP version scope: Apex Central; vendor version ranges not specified\nLimitations: The vendor readme confirms a PHP module in Apex Central, but does not identify CVE-2026-109618 or CVE-2026-109619, affected/fixed product builds, enabled features, reachability or deployment status.\nPatch owner: Trend Micro for bundled product components; operator for patch rollout\nDownstream surface: Apex Central server and management interfaces\nRelease pin: Apex Central; vendor version ranges not specified\nSource accessed: 2026-10-23\nAliases: Trend Micro Apex Central\nVulnerability status: Vulnerable. Trend Micro KA-0024802, updated 23 October, confirms Apex Central is impacted and mitigation is in development; no released fix is identified.\nCVE-2026-109618: Vulnerable. Trend Micro KA-0024802, updated 23 October, confirms Apex Central is impacted and mitigation is in development; no released fix is identified.\nCVE-2026-109619: Vulnerable. Trend Micro KA-0024802, updated 23 October, confirms Apex Central is impacted and mitigation is in development; no released fix is identified.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://success.trendmicro.com/en-US/solution/KA-0024802",
+      "comment": "Inventory record: PHP-0632\nEvidence reviewed: 2026-11-12\nScope: The Japanese release evidence does not establish release availability for other language editions. Use the matching vendor package; the hosted service is a separate scope.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable on unpatched installations. Japanese Windows Critical Patch build 7351 was released on 2026-11-12; the confirmed fixed scope is PHP-0973.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/ja-jp/solution/KA-0024807"
+          ],
+          "comment": "Official Japanese PHP2Shell advisory, updated 2026-11-12; both CVEs."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/ja-jp/solution/KA-0025014"
+          ],
+          "comment": "Official Critical Patch release announcement, 2026-11-12 at 11:00 JST."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://files.trendmicro.com/jp/ucmodule/apexcentral/win/2019/CP/apexcentral_win_jp_criticalpatch_b7351_JP_Readme.html"
+          ],
+          "comment": "Official Japanese Windows Critical Patch readme."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "other",
@@ -27960,7 +28044,7 @@
           "comment": "Official public CVE review 2026-10-23"
         }
       ],
-      "software_packageVersion": "Apex Central; vendor version ranges not specified"
+      "software_packageVersion": "Unpatched on-premises releases; Japanese fixed scope recorded separately"
     },
     {
       "type": "software_Package",
@@ -39915,9 +39999,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Monitor CSCwx37073 for an available fixed release; do not treat its estimated date as released software.",
+      "summary": "Install Cisco URWB release 26.2.1.9; the advisory requires authenticated-administrator access for exploitation of earlier affected URWB releases.",
       "description": "Industrial wireless backhaul",
-      "comment": "Inventory record: PHP-0699\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: URWB; affected release range not specified\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Vulnerable. Cisco lists URWB as vulnerable under CSCwx37073 and requires an authenticated administrator for exploitation. Release 27.1.1 is only estimated for February 2027, not an available fix.\nCVE-2026-109618: Vulnerable. Cisco lists URWB as vulnerable under CSCwx37073 and requires an authenticated administrator for exploitation. Release 27.1.1 is only estimated for February 2027, not an available fix.\nCVE-2026-109619: Vulnerable. Cisco lists URWB as vulnerable under CSCwx37073 and requires an authenticated administrator for exploitation. Release 27.1.1 is only estimated for February 2027, not an available fix.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: URWB; affected release range not specified",
+      "comment": "Inventory record: PHP-0699\nEvidence reviewed: 2026-11-12\nScope: Only the named industrial wireless product running fixed release 26.2.1.9; earlier affected releases require an update. Cisco specifies authenticated-administrator access as an exploitation prerequisite for URWB.\nCVE-2026-109618 and CVE-2026-109619: Fix available in 26.2.1.9 for both CVEs (CSCwx37073); Cisco version 1.11 confirms release availability.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -39925,10 +40009,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Official public CVE review 2026-10-23"
+          "comment": "Cisco advisory version 1.11, 2026-11-06; CSCwx37073 fixed release is available; reviewed 2026-11-12."
         }
       ],
-      "software_packageVersion": "URWB; affected release range not specified"
+      "software_packageVersion": "26.2.1.9"
     },
     {
       "type": "software_Package",
@@ -39944,9 +40028,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Follow Cisco's product-specific guidance and release availability for CSCwx37073; no currently available fixed build is confirmed by this advisory.",
+      "summary": "Install Cisco Unified Industrial Wireless Software release 26.2.1.9 using the vendor upgrade guidance.",
       "description": "Industrial wireless software",
-      "comment": "Inventory record: PHP-0700\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nExtensions: Unknown\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nEvidence status: Official public vendor/upstream CVE assessment\nSource accessed: 2026-10-28\nPublic vendor CVE review: 2026-10-28\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nVendor advisory status: Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.\nVulnerability status: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.\nCVE assessment limit: Only the documented product, release and platform scope is assessed. Installed versions, runtime selection, reachability and exploitation were not tested.\nCVE-2026-109618: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.\nCVE-2026-109619: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.\nPHP version scope: Affected release numbers not specified by Cisco; see the product-specific advisory status.\nRelease pin: Cisco advisory version 1.8, Final, updated 2026-10-27\nLimitations: The advisory confirms product status but does not establish the installed build, enabled features, reachability or exploitation of an individual deployment.",
+      "comment": "Inventory record: PHP-0700\nEvidence reviewed: 2026-11-12\nScope: Only the named industrial wireless product running fixed release 26.2.1.9; earlier affected releases require an update.\nCVE-2026-109618 and CVE-2026-109619: Fix available in 26.2.1.9 for both CVEs (CSCwx37073); Cisco version 1.11 confirms release availability.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -39954,9 +40038,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Official public source reviewed 2026-10-28"
+          "comment": "Cisco advisory version 1.11, 2026-11-06; CSCwx37073 fixed release is available; reviewed 2026-11-12."
         }
-      ]
+      ],
+      "software_packageVersion": "26.2.1.9"
     },
     {
       "type": "software_Package",
@@ -40514,7 +40599,7 @@
       "creationInfo": "_:creationinfo",
       "name": "QNAP QNE (ADRA)",
       "software_primaryPurpose": "firmware",
-      "software_packageVersion": "QNE (ADRA) 1.0.7 and earlier",
+      "software_packageVersion": "1.0.7.q327",
       "externalIdentifier": [
         {
           "type": "ExternalIdentifier",
@@ -40523,10 +40608,18 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:qnap:01af88f7bc7a",
-      "summary": "QNAP's earlier QSA-26-18 scope named QNE (ADRA) 1.0.7 and earlier, but the current canonical resolved advisory omits QNE without documenting a fix or a not-affected conclusion.",
+      "summary": "Install QNE (ADRA) 1.0.7.q327. This dedicated advisory resolves QNE status; container and third-party PHP updates remain separate.",
       "description": "Network appliance operating system web components",
-      "comment": "Inventory record: PHP-0720\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Conflicting current official QNAP advisory scope\nDeployment status: Not measured\nPHP surface: QNAP says PHP is used in web components of QNAP operating systems and several QNAP applications; exact component boundary and SAPI are not published for this product.\nPHP version scope: Earlier official regional QSA-26-18 content names QNE (ADRA) 1.0.7 and earlier as affected; the current canonical resolved advisory omits the product without publishing a fixed version.\nExtensions: Unknown\nLimitations: QNAP has not documented whether QNE was removed because the original affected scope was incorrect or because remediation occurred. Omission alone does not establish fixed or not-affected status. PHP included in containers running on Container Station or in third-party applications is outside QNAP update coverage.\nPatch owner: QNAP for product-status clarification and any supported update; operator for exposure reduction\nSource accessed: 2026-11-02\nVulnerability status: Under investigation pending reconciliation of conflicting official QNAP advisory presentations.\nCVE-2026-109618: Under investigation; earlier affected scope remains live while the current canonical page omits the product\nCVE-2026-109619: Under investigation; earlier affected scope remains live while the current canonical page omits the product\nCVE assessment limit: Current vendor evidence does not support fixed, not-affected, or still-affected status conclusively.",
+      "comment": "Inventory record: PHP-0720\nEvidence reviewed: 2026-11-12\nScope: QNE (ADRA) 1.0.7 and earlier are affected. The dedicated QSA-26-19 names 1.0.7.q327 as fixed. Container and third-party PHP runtimes are outside this update.\nCVE-2026-109618 and CVE-2026-109619: Fix available in QNE (ADRA) 1.0.7.q327 for both CVEs; QSA-26-19 resolves the earlier QSA-26-18 omission.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.qnap.com/en/security-advisory/qsa-26-19"
+          ],
+          "comment": "QNAP QSA-26-19, revision 1.1 dated 2026-11-02, resolved QNE row; reviewed 2026-11-12."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
@@ -42026,19 +42119,17 @@
       "security_impactStatement": "Cisco lists the product under 'Products Confirmed Not Vulnerable' in cisco-sa-php-october26-Jj384Daq."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:qnap-qsa-26-18-20261022",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0718",
-        "urn:php2shell:inventory:package:PHP-0720"
+        "urn:php2shell:inventory:package:PHP-0718"
       ],
       "relationshipType": "underInvestigationFor",
       "security_statusNotes": "Earlier official regional QSA-26-18 content names these versions as affected, while the current canonical resolved advisory omits them without documenting a fix or a not-affected conclusion.",
       "summary": "CVE-2026-109618 assessment: conflicting current QNAP advisory presentations require clarification",
-      "comment": "QNAP Security Advisory QSA-26-18 reviewed 2026-11-02. Earlier official regional content names QuMagie 2.10.1 and earlier and QNE (ADRA) 1.0.7 and earlier as affected. The current canonical resolved advisory omits both products and publishes neither fixed versions nor not-affected conclusions for them. Sources: https://www.qnap.com/en/security-advisory/qsa-26-18 and https://www.qnap.com/th-th/security-advisory/qsa-26-18.",
-      "security_actionStatement": "Request QNAP clarification and continue applying the vendor's exposure-reduction guidance until the affected/fixed status is reconciled."
+      "comment": "QNAP QSA-26-18 review 2026-11-02 remains unresolved for QuMagie 2.10.1 and earlier: regional content names it as affected, while the canonical page omits it without a fix or not-affected conclusion. QNE is assessed separately against QSA-26-19. Sources: https://www.qnap.com/en/security-advisory/qsa-26-18 and https://www.qnap.com/th-th/security-advisory/qsa-26-18."
     },
     {
       "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
@@ -42046,14 +42137,12 @@
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
-        "urn:php2shell:inventory:package:PHP-0718",
-        "urn:php2shell:inventory:package:PHP-0720"
+        "urn:php2shell:inventory:package:PHP-0718"
       ],
       "relationshipType": "underInvestigationFor",
       "security_statusNotes": "Earlier official regional QSA-26-18 content names these versions as affected, while the current canonical resolved advisory omits them without documenting a fix or a not-affected conclusion.",
       "summary": "CVE-2026-109619 assessment: conflicting current QNAP advisory presentations require clarification",
-      "comment": "QNAP Security Advisory QSA-26-18 reviewed 2026-11-02. Earlier official regional content names QuMagie 2.10.1 and earlier and QNE (ADRA) 1.0.7 and earlier as affected. The current canonical resolved advisory omits both products and publishes neither fixed versions nor not-affected conclusions for them. Sources: https://www.qnap.com/en/security-advisory/qsa-26-18 and https://www.qnap.com/th-th/security-advisory/qsa-26-18.",
-      "security_actionStatement": "Request QNAP clarification and continue applying the vendor's exposure-reduction guidance until the affected/fixed status is reconciled."
+      "comment": "QNAP QSA-26-18 review 2026-11-02 remains unresolved for QuMagie 2.10.1 and earlier: regional content names it as affected, while the canonical page omits it without a fix or not-affected conclusion. QNE is assessed separately against QSA-26-19. Sources: https://www.qnap.com/en/security-advisory/qsa-26-18 and https://www.qnap.com/th-th/security-advisory/qsa-26-18."
     },
     {
       "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
@@ -43840,7 +43929,7 @@
       "type": "software_Package",
       "spdxId": "urn:php2shell:inventory:package:PHP-0760",
       "creationInfo": "_:creationinfo",
-      "name": "Xerox AltaLink and EC81xx products",
+      "name": "Xerox AltaLink C80xx, B80xx and EC80xx products",
       "software_primaryPurpose": "other",
       "externalIdentifier": [
         {
@@ -43850,9 +43939,25 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:xerox",
-      "summary": "Affected PHP component; the bulletin does not publish exact PHP or product build numbers.",
-      "description": "Affected Products: Xerox AltaLink and EC81xx products, as scoped in Xerox XRX26-016 v4.",
+      "summary": "Apply XRX26-018 on the required service pack and restrict management access. Fixed AltaLink 81xx/82xx and EC81xx firmware is listed separately.",
+      "description": "Remaining affected legacy models from the broader AltaLink family; fixed 81xx/82xx and EC81xx scope is PHP-0971.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v6, updated 2026-11-06; reviewed 2026-11-12."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-018-for-PHP2Shell-Patch-for-AltaLink-C80XXAltalink-B80XXand-EC80XX-Series.pdf"
+          ],
+          "comment": "XRX26-018, 2026-11-05; configuration mitigation only, not full remediation."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
@@ -43862,8 +43967,8 @@
           "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 1; reviewed 2026-10-29."
         }
       ],
-      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
-      "comment": "Inventory record: PHP-0760\nBulletin product row: Xerox AltaLink and EC81xx products\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nXerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability."
+      "software_packageVersion": "Affected model-specific 103.xxx.026.27100 service packs; configuration patch is not a full fix",
+      "comment": "Inventory record: PHP-0760\nEvidence reviewed: 2026-11-12\nScope: AltaLink C8030/C8035, C8045/C8055, C8070; B8045/B8055, B8065/B8075/B8090; EC8036 and EC8056. XRX26-018 requires the model-specific 103.xxx.026.27100 service pack before patches 1088115v1 (AltaLink) or 1088115v2 (EC80xx). AltaLink 81xx/82xx and EC81xx fixes are recorded separately in PHP-0971.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable; XRX26-018 configuration patches reduce exposure but do not fully remediate either CVE.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope."
     },
     {
       "type": "software_Package",
@@ -43879,9 +43984,17 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:xerox",
-      "summary": "Affected PHP component; the bulletin does not publish exact PHP or product build numbers.",
-      "description": "Affected Products: Xerox VersaLink C/B415, C/B625, C/B620, as scoped in Xerox XRX26-016 v4.",
+      "summary": "Install the model-appropriate 123.xxx.006.30100 firmware containing PHP 8.2.35.",
+      "description": "Vendor-remediated VersaLink models named in XRX26-016 v6.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v6, updated 2026-11-06; reviewed 2026-11-12."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
@@ -43891,14 +44004,14 @@
           "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 1; reviewed 2026-10-29."
         }
       ],
-      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
-      "comment": "Inventory record: PHP-0761\nBulletin product row: Xerox VersaLink C/B415, C/B625, C/B620\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nXerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability."
+      "software_packageVersion": "123.xxx.006.30100",
+      "comment": "Inventory record: PHP-0761\nEvidence reviewed: 2026-11-12\nScope: Only VersaLink C/B415, C/B625 and C/B620; apply the model-appropriate firmware update.\nCVE-2026-109618 and CVE-2026-109619: Fix: XRX26-016 v6 confirms PHP 8.2.35 in firmware 123.xxx.006.30100.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope."
     },
     {
       "type": "software_Package",
       "spdxId": "urn:php2shell:inventory:package:PHP-0762",
       "creationInfo": "_:creationinfo",
-      "name": "Xerox WorkCentre 3655, EC7836, EC7856",
+      "name": "Xerox WorkCentre 3655/3655i, EC7836, EC7856",
       "software_primaryPurpose": "other",
       "externalIdentifier": [
         {
@@ -43908,9 +44021,25 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:xerox",
-      "summary": "Affected PHP component; the bulletin does not publish exact PHP or product build numbers.",
-      "description": "Affected Products: Xerox WorkCentre 3655, EC7836, EC7856, as scoped in Xerox XRX26-016 v4.",
+      "summary": "Apply XRX26-017 patch 1088114v1.dlm after the required service pack; restrict management access and review the bulletin functional-impact warnings.",
+      "description": "Affected Embedded Web Server PHP component; released configuration patch is mitigation only.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v6, updated 2026-11-06; reviewed 2026-11-12."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-017-for-PHP2Shell-Patch-for-EC7836-EC7856-WorkCentre-3655-and-WorkCentre-3655i.pdf"
+          ],
+          "comment": "XRX26-017; required service packs and configuration mitigation, not full remediation."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
@@ -43920,8 +44049,8 @@
           "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 1; reviewed 2026-10-29."
         }
       ],
-      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
-      "comment": "Inventory record: PHP-0762\nBulletin product row: Xerox WorkCentre 3655, EC7836, EC7856\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nA fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates.\nThe v2 generic WorkCentre affected family is superseded by the specific model list in v4; WorkCentre 3335/3345 and 6515 are separately not impacted."
+      "software_packageVersion": "EC7836 075.050.006.05200; EC7856 075.020.006.05200; WorkCentre 3655/3655i 075.060.006.05200",
+      "comment": "Inventory record: PHP-0762\nEvidence reviewed: 2026-11-12\nScope: Named models and service packs only. Install the required service pack before the configuration patch. Network restrictions remain necessary; the bulletin warns that disabling HTTP/HTTPS disrupts AAA and remote administration.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable; XRX26-017 patch 1088114v1.dlm reduces exposure but does not fully remediate either CVE.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope."
     },
     {
       "type": "software_Package",
@@ -43937,9 +44066,17 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:fiery",
-      "summary": "Affected PHP component; the bulletin does not publish exact PHP or product build numbers.",
+      "summary": "Check Fiery for actual patch availability; Xerox publishes a release schedule rather than confirmed fixed build numbers.",
       "description": "Affected Products: Fiery Digital Front End (DFE), as scoped in Xerox XRX26-016 v4.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v6, updated 2026-11-06; reviewed 2026-11-12."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
@@ -43958,7 +44095,7 @@
         }
       ],
       "software_packageVersion": "Fiery FS200/300/350/400/500/600/700/800, including Pro variants; patch releases are planned, not yet confirmed available",
-      "comment": "Inventory record: PHP-0763\nBulletin product row: Fiery Digital Front End (DFE)\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nTarget patches: FS800/700/600/500, including Pro variants, by 2026-11-09; FS400/350/300, including Pro variants, by 2026-11-16; FS200 and FS200 Pro by 2026-11-23. These are planned dates, not released fixes. Monitor Xerox and Fiery advisories.\nScope: Fiery DFE as assessed for the Xerox portfolio; the release targets on page 2 do not establish patch availability."
+      "comment": "Inventory record: PHP-0763\nBulletin product row: Fiery Digital Front End (DFE)\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nTarget patches: FS800/700/600/500, including Pro variants, by 2026-11-09; FS400/350/300, including Pro variants, by 2026-11-16; FS200 and FS200 Pro by 2026-11-23. These are planned dates, not released fixes. Monitor Xerox and Fiery advisories.\nScope: Fiery DFE as assessed for the Xerox portfolio; the release targets on page 2 do not establish patch availability.\nOfficial public-source review 2026-11-12: Vulnerable; XRX26-016 v6 gives target patch dates of 2026-11-09 through 2026-11-23 by Fiery system version. A schedule is not confirmation that a fixed release is available."
     },
     {
       "type": "software_Package",
@@ -43974,9 +44111,17 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:xerox",
-      "summary": "Affected PHP component; the bulletin does not publish exact PHP or product build numbers.",
+      "summary": "Monitor XRX26-016 for release availability; the vendor still reports a fix in development.",
       "description": "Affected Products: Worldwide Ticketing Tool, as scoped in Xerox XRX26-016 v4.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v6, updated 2026-11-06; reviewed 2026-11-12."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
@@ -43986,8 +44131,8 @@
           "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 1; reviewed 2026-10-29."
         }
       ],
-      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
-      "comment": "Inventory record: PHP-0764\nBulletin product row: Worldwide Ticketing Tool\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nA fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates."
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v6 (2026-11-06); version not specified",
+      "comment": "Inventory record: PHP-0764\nBulletin product row: Worldwide Ticketing Tool\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nA fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates.\nOfficial public-source review 2026-11-12: Vulnerable; XRX26-016 v6 still reports the Worldwide Ticketing Tool fix as in development, without a released fixed version."
     },
     {
       "type": "software_Package",
@@ -50346,6 +50491,166 @@
       ]
     },
     {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0971",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox AltaLink 82xx, AltaLink 81xx and EC81xx products",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0971"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "software_packageVersion": "123.xxx.006.29800",
+      "summary": "Install model-appropriate 123.xxx.006.29800 firmware; this fix does not cover AltaLink C80xx/B80xx or EC80xx models.",
+      "comment": "Inventory record: PHP-0971\nEvidence reviewed: 2026-11-12\nScope: Only AltaLink 82xx, AltaLink 81xx and EC81xx models named in XRX26-016 v6; legacy 80xx models remain affected in PHP-0760.\nCVE-2026-109618 and CVE-2026-109619: Fix: XRX26-016 v6 confirms PHP 8.2.35 in firmware 123.xxx.006.29800.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v6, updated 2026-11-06; reviewed 2026-11-12."
+        }
+      ]
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0972",
+      "creationInfo": "_:creationinfo",
+      "name": "Apex One 2019 on-premises server (Japanese Windows release)",
+      "software_primaryPurpose": "application",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0972"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:trend-micro:ddb8e439b1bf",
+      "software_packageVersion": "Critical Patch build 20113 (Japanese Windows)",
+      "summary": "Install Japanese Windows Critical Patch 20113 over Apex One SP1 build 11092 or later; it updates PHP to 8.2.35. Review the Apex Central communication issue.",
+      "comment": "Inventory record: PHP-0972\nEvidence reviewed: 2026-11-12\nScope: Japanese Windows edition only; this does not establish patch availability for other languages. Requires Apex One Service Pack 1 build 11092 or later; patch updates PHP to 8.2.35. Review vendor known issues, including the Apex One/Apex Central communication issue documented in KA-0025036.\nCVE-2026-109618 and CVE-2026-109619: Fix: Japanese Windows Critical Patch build 20113 was released on 2026-11-12 and addresses both PHP2Shell CVEs.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/ja-jp/solution/KA-0024807"
+          ],
+          "comment": "Official Japanese PHP2Shell advisory, updated 2026-11-12; both CVEs."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/ja-JP/solution/KA-0025018"
+          ],
+          "comment": "Official Critical Patch release announcement, 2026-11-12 at 11:00 JST."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://files.trendmicro.com/jp/ucmodule/apexone/win/2019/sp1/apex_one_2019_win_cp_b20113_JP_hotfix_Readme.html"
+          ],
+          "comment": "Official Japanese Windows Critical Patch readme."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://success.trendmicro.com/ja-jp/solution/KA-0025036"
+          ],
+          "comment": "Vendor-linked patch compatibility notice."
+        }
+      ]
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0973",
+      "creationInfo": "_:creationinfo",
+      "name": "Apex Central 2019 (Japanese Windows release)",
+      "software_primaryPurpose": "application",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0973"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:trend-micro:ddb8e439b1bf",
+      "software_packageVersion": "Critical Patch build 7351 (Japanese Windows)",
+      "summary": "Install Japanese Windows Critical Patch 7351 over Apex Central build 3945 or later; it updates PHP to 8.2.35. Other language releases are not confirmed here.",
+      "comment": "Inventory record: PHP-0973\nEvidence reviewed: 2026-11-12\nScope: Japanese Windows edition only; this does not establish patch availability for other languages. Requires Apex Central build 3945 or later; patch updates PHP to 8.2.35. Review vendor known issues, including the Apex One/Apex Central communication issue documented in KA-0025036.\nCVE-2026-109618 and CVE-2026-109619: Fix: Japanese Windows Critical Patch build 7351 was released on 2026-11-12 and addresses both PHP2Shell CVEs.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/ja-jp/solution/KA-0024807"
+          ],
+          "comment": "Official Japanese PHP2Shell advisory, updated 2026-11-12; both CVEs."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/ja-jp/solution/KA-0025014"
+          ],
+          "comment": "Official Critical Patch release announcement, 2026-11-12 at 11:00 JST."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://files.trendmicro.com/jp/ucmodule/apexcentral/win/2019/CP/apexcentral_win_jp_criticalpatch_b7351_JP_Readme.html"
+          ],
+          "comment": "Official Japanese Windows Critical Patch readme."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://success.trendmicro.com/ja-jp/solution/KA-0025036"
+          ],
+          "comment": "Vendor-linked patch compatibility notice."
+        }
+      ]
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0974",
+      "creationInfo": "_:creationinfo",
+      "name": "OroCommerce on OroCloud managed environments",
+      "software_primaryPurpose": "application",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0974"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:oro-inc.:bf7f89b3295e",
+      "software_packageVersion": "Managed environments patched 2026-10-22",
+      "summary": "Oro reports that no customer action is required for its patched managed environments; self-hosted OroCommerce requires a separate PHP update.",
+      "comment": "Inventory record: PHP-0974\nEvidence reviewed: 2026-11-12\nScope: Only OroCloud managed environments; self-hosted OroCommerce remains dependent on operator-applied PHP updates. The vendor does not publish individual deployed PHP build numbers.\nCVE-2026-109618 and CVE-2026-109619: Fix: Oro confirms all OroCloud managed environments were patched on 2026-10-22 for both PHP2Shell CVEs.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://oroinc.com/b2b-ecommerce/blog/security-update/"
+          ],
+          "comment": "Oro official security update, 2026-11-09; managed versus self-hosted PHP remediation."
+        }
+      ]
+    },
+    {
       "type": "Relationship",
       "spdxId": "urn:php2shell:inventory:relationship:PHP-0012-provided-runtime",
       "creationInfo": "_:creationinfo",
@@ -50822,8 +51127,8 @@
         "urn:php2shell:inventory:package:PHP-0037"
       ],
       "relationshipType": "dependsOn",
-      "summary": "Xerox AltaLink and EC81xx products has an affected PHP runtime dependency.",
-      "comment": "Xerox XRX26-016 v4 explicitly identifies both PHP runtime CVEs as affecting this product; exact PHP build and packaging are not stated."
+      "summary": "Vendor-documented embedded PHP dependency for PHP-0760",
+      "comment": "Current product and remediation scope is documented on the package using Xerox XRX26-016 v6 and model-specific bulletins."
     },
     {
       "type": "Relationship",
@@ -50834,8 +51139,8 @@
         "urn:php2shell:inventory:package:PHP-0037"
       ],
       "relationshipType": "dependsOn",
-      "summary": "Xerox VersaLink C/B415, C/B625, C/B620 has an affected PHP runtime dependency.",
-      "comment": "Xerox XRX26-016 v4 explicitly identifies both PHP runtime CVEs as affecting this product; exact PHP build and packaging are not stated."
+      "summary": "Vendor-documented embedded PHP dependency for PHP-0761",
+      "comment": "Current product and remediation scope is documented on the package using Xerox XRX26-016 v6 and model-specific bulletins."
     },
     {
       "type": "Relationship",
@@ -50846,8 +51151,8 @@
         "urn:php2shell:inventory:package:PHP-0037"
       ],
       "relationshipType": "dependsOn",
-      "summary": "Xerox WorkCentre 3655, EC7836, EC7856 has an affected PHP runtime dependency.",
-      "comment": "Xerox XRX26-016 v4 explicitly identifies both PHP runtime CVEs as affecting this product; exact PHP build and packaging are not stated."
+      "summary": "Vendor-documented embedded PHP dependency for PHP-0762",
+      "comment": "Current product and remediation scope is documented on the package using Xerox XRX26-016 v6 and model-specific bulletins."
     },
     {
       "type": "Relationship",
@@ -51390,6 +51695,54 @@
       "comment": "Fixed distribution of Rocky Linux 10 php8.4; deployment and other streams are assessed separately."
     },
     {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0971",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0971",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "PHP runtime dependency for Xerox AltaLink 82xx, AltaLink 81xx and EC81xx products",
+      "comment": "Vendor-confirmed remediation scope separated from PHP-0760."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0972",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0972",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "PHP runtime dependency for Apex One 2019 on-premises server (Japanese Windows release)",
+      "comment": "Vendor-confirmed remediation scope separated from PHP-0631."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0973",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0973",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "PHP runtime dependency for Apex Central 2019 (Japanese Windows release)",
+      "comment": "Vendor-confirmed remediation scope separated from PHP-0632."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0974",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0974",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "dependsOn",
+      "summary": "PHP runtime dependency for OroCommerce on OroCloud managed environments",
+      "comment": "Vendor-confirmed remediation scope separated from PHP-0158."
+    },
+    {
       "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:broadcom-esg-39404-20261022",
       "creationInfo": "_:creationinfo",
@@ -51579,10 +51932,10 @@
         "urn:php2shell:inventory:package:PHP-0631"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Trend Micro KA-0024802, updated 23 October, confirms Apex One on-premises server is impacted and mitigation is in development. Apex One as a Service is a separate scope.",
+      "security_statusNotes": "Vulnerable on unpatched installations. Japanese Windows Critical Patch build 20113 was released on 2026-11-12; the confirmed fixed scope is PHP-0972.",
       "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://success.trendmicro.com/en-US/solution/KA-0024802",
-      "security_actionStatement": "Monitor KA-0024802 for vendor hotfixes or critical patches and restrict management access to trusted networks."
+      "comment": "Official public sources reviewed 2026-11-12. https://success.trendmicro.com/ja-jp/solution/KA-0024807 https://success.trendmicro.com/ja-JP/solution/KA-0025018 https://files.trendmicro.com/jp/ucmodule/apexone/win/2019/sp1/apex_one_2019_win_cp_b20113_JP_hotfix_Readme.html\nAction: Apply the matching released vendor patch. See PHP-0972 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice.",
+      "security_actionStatement": "Apply the matching released vendor patch. See PHP-0972 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -51593,10 +51946,10 @@
         "urn:php2shell:inventory:package:PHP-0632"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Trend Micro KA-0024802, updated 23 October, confirms Apex Central is impacted and mitigation is in development; no released fix is identified.",
+      "security_statusNotes": "Vulnerable on unpatched installations. Japanese Windows Critical Patch build 7351 was released on 2026-11-12; the confirmed fixed scope is PHP-0973.",
       "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://success.trendmicro.com/en-US/solution/KA-0024802",
-      "security_actionStatement": "Monitor KA-0024802 for vendor hotfixes or critical patches and restrict management access to trusted networks."
+      "comment": "Official public sources reviewed 2026-11-12. https://success.trendmicro.com/ja-jp/solution/KA-0024807 https://success.trendmicro.com/ja-jp/solution/KA-0025014 https://files.trendmicro.com/jp/ucmodule/apexcentral/win/2019/CP/apexcentral_win_jp_criticalpatch_b7351_JP_Readme.html\nAction: Apply the matching released vendor patch. See PHP-0973 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice.",
+      "security_actionStatement": "Apply the matching released vendor patch. See PHP-0973 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -51654,32 +52007,30 @@
       "comment": "Public official source reviewed 2026-10-30: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nAction statement: Upgrade to Expressway 15.5.21."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0699-official-20261023",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0699"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Cisco lists URWB as vulnerable under CSCwx37073 and requires an authenticated administrator for exploitation. Release 27.1.1 is only estimated for February 2027, not an available fix.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
-      "security_actionStatement": "Monitor CSCwx37073 for an available fixed release; do not treat its estimated date as released software."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix available in 26.2.1.9 for both CVEs (CSCwx37073); Cisco version 1.11 confirms release availability.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nAction: Install Cisco fixed release 26.2.1.9 following product-specific upgrade guidance."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0700-official-20261028",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0700"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Official public sources reviewed 2026-10-28. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
-      "security_actionStatement": "Follow Cisco's product-specific guidance and release availability for CSCwx37073; no currently available fixed build is confirmed by this advisory."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix available in 26.2.1.9 for both CVEs (CSCwx37073); Cisco version 1.11 confirms release availability.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nAction: Install Cisco fixed release 26.2.1.9 following product-specific upgrade guidance."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -51757,24 +52108,23 @@
         "urn:php2shell:inventory:package:PHP-0760"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability.",
+      "security_statusNotes": "Vulnerable; XRX26-018 configuration patches reduce exposure but do not fully remediate either CVE.",
       "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability."
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-018-for-PHP2Shell-Patch-for-AltaLink-C80XXAltalink-B80XXand-EC80XX-Series.pdf\nAction: Install the model-specific XRX26-018 patch and restrict management access to trusted networks; await a full PHP fix. Follow the bulletin prerequisites and functional-impact warnings.",
+      "security_actionStatement": "Install the model-specific XRX26-018 patch and restrict management access to trusted networks; await a full PHP fix. Follow the bulletin prerequisites and functional-impact warnings."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:xerox-xrx26-016-v4-php-0761",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0761"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: XRX26-016 v6 confirms PHP 8.2.35 in firmware 123.xxx.006.30100.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nAction: Install model-appropriate firmware 123.xxx.006.30100."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -51785,10 +52135,10 @@
         "urn:php2shell:inventory:package:PHP-0762"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates.",
+      "security_statusNotes": "Vulnerable; XRX26-017 patch 1088114v1.dlm reduces exposure but does not fully remediate either CVE.",
       "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates."
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-017-for-PHP2Shell-Patch-for-EC7836-EC7856-WorkCentre-3655-and-WorkCentre-3655i.pdf\nAction: Apply XRX26-017 using the required service pack and restrict management access; monitor for a full PHP fix.",
+      "security_actionStatement": "Apply XRX26-017 using the required service pack and restrict management access; monitor for a full PHP fix."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -51799,10 +52149,10 @@
         "urn:php2shell:inventory:package:PHP-0763"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. Target patches: FS800/700/600/500, including Pro variants, by 2026-11-09; FS400/350/300, including Pro variants, by 2026-11-16; FS200 and FS200 Pro by 2026-11-23. These are planned dates, not released fixes. Monitor Xerox and Fiery advisories.",
+      "security_statusNotes": "Vulnerable; XRX26-016 v6 gives target patch dates of 2026-11-09 through 2026-11-23 by Fiery system version. A schedule is not confirmation that a fixed release is available.",
       "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "Target patches: FS800/700/600/500, including Pro variants, by 2026-11-09; FS400/350/300, including Pro variants, by 2026-11-16; FS200 and FS200 Pro by 2026-11-23. These are planned dates, not released fixes. Monitor Xerox and Fiery advisories."
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nAction: Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix.",
+      "security_actionStatement": "Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -51813,10 +52163,10 @@
         "urn:php2shell:inventory:package:PHP-0764"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates.",
+      "security_statusNotes": "Vulnerable; XRX26-016 v6 still reports the Worldwide Ticketing Tool fix as in development, without a released fixed version.",
       "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates."
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nAction: Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix.",
+      "security_actionStatement": "Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix."
     },
     {
       "type": "security_VexNotAffectedVulnAssessmentRelationship",
@@ -53412,6 +53762,19 @@
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0720-official-20261112",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0720"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix available in QNE (ADRA) 1.0.7.q327 for both CVEs; QSA-26-19 resolves the earlier QSA-26-18 omission.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "QSA-26-19 reviewed 2026-11-12. Source: https://www.qnap.com/en/security-advisory/qsa-26-19\nAction: Install QNE (ADRA) 1.0.7.q327 following QNAP model-specific instructions."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0721-released-20261030",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
@@ -54208,6 +54571,58 @@
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0971-official-20261112",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0971"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: XRX26-016 v6 confirms PHP 8.2.35 in firmware 123.xxx.006.29800.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nScope: Only AltaLink 82xx, AltaLink 81xx and EC81xx models named in XRX26-016 v6; legacy 80xx models remain affected in PHP-0760."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0972-official-20261112",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0972"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: Japanese Windows Critical Patch build 20113 was released on 2026-11-12 and addresses both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://success.trendmicro.com/ja-jp/solution/KA-0024807 https://success.trendmicro.com/ja-JP/solution/KA-0025018 https://files.trendmicro.com/jp/ucmodule/apexone/win/2019/sp1/apex_one_2019_win_cp_b20113_JP_hotfix_Readme.html https://success.trendmicro.com/ja-jp/solution/KA-0025036\nScope: Japanese Windows edition only; this does not establish patch availability for other languages. Requires Apex One Service Pack 1 build 11092 or later. Review vendor known issues, including the Apex One/Apex Central communication issue documented in KA-0025036."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0973-official-20261112",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0973"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: Japanese Windows Critical Patch build 7351 was released on 2026-11-12 and addresses both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://success.trendmicro.com/ja-jp/solution/KA-0024807 https://success.trendmicro.com/ja-jp/solution/KA-0025014 https://files.trendmicro.com/jp/ucmodule/apexcentral/win/2019/CP/apexcentral_win_jp_criticalpatch_b7351_JP_Readme.html https://success.trendmicro.com/ja-jp/solution/KA-0025036\nScope: Japanese Windows edition only; this does not establish patch availability for other languages. Requires Apex Central build 3945 or later; patch updates PHP to 8.2.35. Review vendor known issues, including the Apex One/Apex Central communication issue documented in KA-0025036."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0974-official-20261112",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0974"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: Oro confirms all OroCloud managed environments were patched on 2026-10-22 for both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://oroinc.com/b2b-ecommerce/blog/security-update/\nScope: Only OroCloud managed environments; self-hosted OroCommerce remains dependent on operator-applied PHP updates. The vendor does not publish individual deployed PHP build numbers."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:serversideup-v5-0-2-20261021",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
@@ -54489,10 +54904,10 @@
         "urn:php2shell:inventory:package:PHP-0631"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Trend Micro KA-0024802, updated 23 October, confirms Apex One on-premises server is impacted and mitigation is in development. Apex One as a Service is a separate scope.",
+      "security_statusNotes": "Vulnerable on unpatched installations. Japanese Windows Critical Patch build 20113 was released on 2026-11-12; the confirmed fixed scope is PHP-0972.",
       "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://success.trendmicro.com/en-US/solution/KA-0024802",
-      "security_actionStatement": "Monitor KA-0024802 for vendor hotfixes or critical patches and restrict management access to trusted networks."
+      "comment": "Official public sources reviewed 2026-11-12. https://success.trendmicro.com/ja-jp/solution/KA-0024807 https://success.trendmicro.com/ja-JP/solution/KA-0025018 https://files.trendmicro.com/jp/ucmodule/apexone/win/2019/sp1/apex_one_2019_win_cp_b20113_JP_hotfix_Readme.html\nAction: Apply the matching released vendor patch. See PHP-0972 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice.",
+      "security_actionStatement": "Apply the matching released vendor patch. See PHP-0972 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -54503,10 +54918,10 @@
         "urn:php2shell:inventory:package:PHP-0632"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Trend Micro KA-0024802, updated 23 October, confirms Apex Central is impacted and mitigation is in development; no released fix is identified.",
+      "security_statusNotes": "Vulnerable on unpatched installations. Japanese Windows Critical Patch build 7351 was released on 2026-11-12; the confirmed fixed scope is PHP-0973.",
       "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://success.trendmicro.com/en-US/solution/KA-0024802",
-      "security_actionStatement": "Monitor KA-0024802 for vendor hotfixes or critical patches and restrict management access to trusted networks."
+      "comment": "Official public sources reviewed 2026-11-12. https://success.trendmicro.com/ja-jp/solution/KA-0024807 https://success.trendmicro.com/ja-jp/solution/KA-0025014 https://files.trendmicro.com/jp/ucmodule/apexcentral/win/2019/CP/apexcentral_win_jp_criticalpatch_b7351_JP_Readme.html\nAction: Apply the matching released vendor patch. See PHP-0973 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice.",
+      "security_actionStatement": "Apply the matching released vendor patch. See PHP-0973 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -54550,32 +54965,30 @@
       "comment": "Public official source reviewed 2026-10-30: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nAction statement: Upgrade to Expressway 15.5.21."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0699-official-20261023",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0699"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Cisco lists URWB as vulnerable under CSCwx37073 and requires an authenticated administrator for exploitation. Release 27.1.1 is only estimated for February 2027, not an available fix.",
-      "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
-      "security_actionStatement": "Monitor CSCwx37073 for an available fixed release; do not treat its estimated date as released software."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix available in 26.2.1.9 for both CVEs (CSCwx37073); Cisco version 1.11 confirms release availability.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nAction: Install Cisco fixed release 26.2.1.9 following product-specific upgrade guidance."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0700-official-20261028",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0700"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.",
-      "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Official public sources reviewed 2026-10-28. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
-      "security_actionStatement": "Follow Cisco's product-specific guidance and release availability for CSCwx37073; no currently available fixed build is confirmed by this advisory."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix available in 26.2.1.9 for both CVEs (CSCwx37073); Cisco version 1.11 confirms release availability.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nAction: Install Cisco fixed release 26.2.1.9 following product-specific upgrade guidance."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -54653,24 +55066,23 @@
         "urn:php2shell:inventory:package:PHP-0760"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability.",
+      "security_statusNotes": "Vulnerable; XRX26-018 configuration patches reduce exposure but do not fully remediate either CVE.",
       "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability."
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-018-for-PHP2Shell-Patch-for-AltaLink-C80XXAltalink-B80XXand-EC80XX-Series.pdf\nAction: Install the model-specific XRX26-018 patch and restrict management access to trusted networks; await a full PHP fix. Follow the bulletin prerequisites and functional-impact warnings.",
+      "security_actionStatement": "Install the model-specific XRX26-018 patch and restrict management access to trusted networks; await a full PHP fix. Follow the bulletin prerequisites and functional-impact warnings."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:xerox-xrx26-016-v4-php-0761",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0761"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability.",
-      "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: XRX26-016 v6 confirms PHP 8.2.35 in firmware 123.xxx.006.30100.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nAction: Install model-appropriate firmware 123.xxx.006.30100."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -54681,10 +55093,10 @@
         "urn:php2shell:inventory:package:PHP-0762"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates.",
+      "security_statusNotes": "Vulnerable; XRX26-017 patch 1088114v1.dlm reduces exposure but does not fully remediate either CVE.",
       "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates."
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-017-for-PHP2Shell-Patch-for-EC7836-EC7856-WorkCentre-3655-and-WorkCentre-3655i.pdf\nAction: Apply XRX26-017 using the required service pack and restrict management access; monitor for a full PHP fix.",
+      "security_actionStatement": "Apply XRX26-017 using the required service pack and restrict management access; monitor for a full PHP fix."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -54695,10 +55107,10 @@
         "urn:php2shell:inventory:package:PHP-0763"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. Target patches: FS800/700/600/500, including Pro variants, by 2026-11-09; FS400/350/300, including Pro variants, by 2026-11-16; FS200 and FS200 Pro by 2026-11-23. These are planned dates, not released fixes. Monitor Xerox and Fiery advisories.",
+      "security_statusNotes": "Vulnerable; XRX26-016 v6 gives target patch dates of 2026-11-09 through 2026-11-23 by Fiery system version. A schedule is not confirmation that a fixed release is available.",
       "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "Target patches: FS800/700/600/500, including Pro variants, by 2026-11-09; FS400/350/300, including Pro variants, by 2026-11-16; FS200 and FS200 Pro by 2026-11-23. These are planned dates, not released fixes. Monitor Xerox and Fiery advisories."
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nAction: Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix.",
+      "security_actionStatement": "Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -54709,10 +55121,10 @@
         "urn:php2shell:inventory:package:PHP-0764"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates.",
+      "security_statusNotes": "Vulnerable; XRX26-016 v6 still reports the Worldwide Ticketing Tool fix as in development, without a released fixed version.",
       "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates."
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nAction: Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix.",
+      "security_actionStatement": "Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix."
     },
     {
       "type": "security_VexNotAffectedVulnAssessmentRelationship",
@@ -56337,6 +56749,19 @@
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0720-official-20261112",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0720"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix available in QNE (ADRA) 1.0.7.q327 for both CVEs; QSA-26-19 resolves the earlier QSA-26-18 omission.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "QSA-26-19 reviewed 2026-11-12. Source: https://www.qnap.com/en/security-advisory/qsa-26-19\nAction: Install QNE (ADRA) 1.0.7.q327 following QNAP model-specific instructions."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0721-released-20261030",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
@@ -57116,6 +57541,58 @@
       "security_statusNotes": "Rocky Linux lists RLSA-2026:87071 (rebuild of RHSA-2026:87071) and 8.4.27-1.el10_2 as the released fix for both CVEs in Rocky Linux 10 php8.4. This fix is specific to the named release and stream; retired or unpatched Rocky Linux streams are assessed separately.",
       "summary": "CVE-2026-109619 assessment: Fix in the specified published release",
       "comment": "Official sources reviewed 2026-11-05.\nAction statement: Install the stated fixed package, then restart PHP-FPM or the web server so serving workers load it, and verify the serving PHP runtime."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0971-official-20261112",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0971"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: XRX26-016 v6 confirms PHP 8.2.35 in firmware 123.xxx.006.29800.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nScope: Only AltaLink 82xx, AltaLink 81xx and EC81xx models named in XRX26-016 v6; legacy 80xx models remain affected in PHP-0760."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0972-official-20261112",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0972"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: Japanese Windows Critical Patch build 20113 was released on 2026-11-12 and addresses both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://success.trendmicro.com/ja-jp/solution/KA-0024807 https://success.trendmicro.com/ja-JP/solution/KA-0025018 https://files.trendmicro.com/jp/ucmodule/apexone/win/2019/sp1/apex_one_2019_win_cp_b20113_JP_hotfix_Readme.html https://success.trendmicro.com/ja-jp/solution/KA-0025036\nScope: Japanese Windows edition only; this does not establish patch availability for other languages. Requires Apex One Service Pack 1 build 11092 or later. Review vendor known issues, including the Apex One/Apex Central communication issue documented in KA-0025036."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0973-official-20261112",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0973"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: Japanese Windows Critical Patch build 7351 was released on 2026-11-12 and addresses both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://success.trendmicro.com/ja-jp/solution/KA-0024807 https://success.trendmicro.com/ja-jp/solution/KA-0025014 https://files.trendmicro.com/jp/ucmodule/apexcentral/win/2019/CP/apexcentral_win_jp_criticalpatch_b7351_JP_Readme.html https://success.trendmicro.com/ja-jp/solution/KA-0025036\nScope: Japanese Windows edition only; this does not establish patch availability for other languages. Requires Apex Central build 3945 or later; patch updates PHP to 8.2.35. Review vendor known issues, including the Apex One/Apex Central communication issue documented in KA-0025036."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0974-official-20261112",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0974"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: Oro confirms all OroCloud managed environments were patched on 2026-10-22 for both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://oroinc.com/b2b-ecommerce/blog/security-update/\nScope: Only OroCloud managed environments; self-hosted OroCommerce remains dependent on operator-applied PHP updates. The vendor does not publish individual deployed PHP build numbers."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",

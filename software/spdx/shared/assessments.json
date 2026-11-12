@@ -19,9 +19,7 @@
       "urn:php2shell:inventory:vex:CVE-2026-109618:underInvestigationFor:github-sbom-php-web-candidates-20261021": 2004,
       "urn:php2shell:inventory:vex:CVE-2026-109619:underInvestigationFor:github-sbom-php-web-candidates-20261021": 2005,
       "urn:php2shell:inventory:vex:CVE-2026-109618:doesNotAffect:cisco-sa-php-october26-20261022": 2044,
-      "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:cisco-sa-php-october26-20261022": 2045,
-      "urn:php2shell:inventory:vex:CVE-2026-109618:affects:qnap-qsa-26-18-20261022": 2046,
-      "urn:php2shell:inventory:vex:CVE-2026-109619:affects:qnap-qsa-26-18-20261022": 2047
+      "urn:php2shell:inventory:vex:CVE-2026-109619:doesNotAffect:cisco-sa-php-october26-20261022": 2045
     }
   },
   "@graph": [
@@ -870,36 +868,6 @@
       "summary": "CVE-2026-109619 assessment: Cisco advisory cisco-sa-php-october26-Jj384Daq lists product under 'Products Confirmed Not Vulnerable'",
       "comment": "Added from Cisco Security Advisory cisco-sa-php-october26-Jj384Daq (interim, version 1.4, last updated 2026-10-22 23:00 GMT), section 'Products Confirmed Not Vulnerable'.",
       "security_impactStatement": "Cisco lists the product under 'Products Confirmed Not Vulnerable' in cisco-sa-php-october26-Jj384Daq."
-    },
-    {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:qnap-qsa-26-18-20261022",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0718",
-        "urn:php2shell:inventory:package:PHP-0720"
-      ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Earlier official regional QSA-26-18 content names these versions as affected, while the current canonical resolved advisory omits them without documenting a fix or a not-affected conclusion.",
-      "summary": "CVE-2026-109618 assessment: conflicting current QNAP advisory presentations require clarification",
-      "comment": "QNAP Security Advisory QSA-26-18 reviewed 2026-11-02. Earlier official regional content names QuMagie 2.10.1 and earlier and QNE (ADRA) 1.0.7 and earlier as affected. The current canonical resolved advisory omits both products and publishes neither fixed versions nor not-affected conclusions for them. Sources: https://www.qnap.com/en/security-advisory/qsa-26-18 and https://www.qnap.com/th-th/security-advisory/qsa-26-18.",
-      "security_actionStatement": "Request QNAP clarification and continue applying the vendor's exposure-reduction guidance until the affected/fixed status is reconciled."
-    },
-    {
-      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
-      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:qnap-qsa-26-18-20261022",
-      "creationInfo": "_:creationinfo",
-      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
-      "to": [
-        "urn:php2shell:inventory:package:PHP-0718",
-        "urn:php2shell:inventory:package:PHP-0720"
-      ],
-      "relationshipType": "underInvestigationFor",
-      "security_statusNotes": "Earlier official regional QSA-26-18 content names these versions as affected, while the current canonical resolved advisory omits them without documenting a fix or a not-affected conclusion.",
-      "summary": "CVE-2026-109619 assessment: conflicting current QNAP advisory presentations require clarification",
-      "comment": "QNAP Security Advisory QSA-26-18 reviewed 2026-11-02. Earlier official regional content names QuMagie 2.10.1 and earlier and QNE (ADRA) 1.0.7 and earlier as affected. The current canonical resolved advisory omits both products and publishes neither fixed versions nor not-affected conclusions for them. Sources: https://www.qnap.com/en/security-advisory/qsa-26-18 and https://www.qnap.com/th-th/security-advisory/qsa-26-18.",
-      "security_actionStatement": "Request QNAP clarification and continue applying the vendor's exposure-reduction guidance until the affected/fixed status is reconciled."
     },
     {
       "type": "security_VexNotAffectedVulnAssessmentRelationship",

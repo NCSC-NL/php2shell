@@ -433,7 +433,9 @@
       "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:1a9a3989ec9c": 2030,
       "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:f3afc71e8241": 2031,
       "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:8d49eb06dd8b": 2034,
-      "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:001a66361324": 2035
+      "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:001a66361324": 2035,
+      "urn:php2shell:inventory:vex:CVE-2026-109618:affects:qnap-qsa-26-18-20261022": 2046,
+      "urn:php2shell:inventory:vex:CVE-2026-109619:affects:qnap-qsa-26-18-20261022": 2047
     }
   },
   "@graph": [
@@ -2203,10 +2205,18 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:oro-inc.:bf7f89b3295e",
-      "summary": "The vendor separates server PHP/CLI and extension requirements from client-side browsers, cookies and JavaScript.",
+      "summary": "Vulnerable on an unpatched self-hosted PHP runtime; OroCloud remediation is separately recorded in PHP-0974.",
       "description": "Server-side PHP web runtime; CLI where separately documented; exact SAPI deployment-dependent",
-      "comment": "Inventory record: PHP-0158\nCategory: Commerce\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime; CLI where separately documented; exact SAPI deployment-dependent\nPHP version scope: Current system-requirements page labelled 7.0: PHP >=8.5, matching web and CLI versions; exact release artifact not pinned.\nExtensions: Required (documented scope): ctype, curl, fileinfo, gd, intl, json, mbstring, sodium, openssl, pgsql, pcre, simplexml, tokenizer, xml, zip, imap, soap, bcmath, ldap. Optional/recommended: tidy. Conditional/alternatives: mongodb >=2.0 for OroGridFSConfigBundle\nLimitations: This evidence is scoped to the displayed 7.0 documentation and does not establish that any browser/mobile client contains PHP. Other Oro products and older releases need separate validation. PHP presence does not establish an affected build, reachable flaw or exploitation. Installations and enabled integrations were not measured.\nPatch owner: PHP package/image/hosting provider and operator for runtime; application/plugin maintainer and merchant for application updates\nDownstream surface: B2B storefront, administration, integrations and asynchronous application processes\nRelease pin: Version-scoped/moving official documentation; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: orocommerce, OroCommerce Community Edition, OroCommerce Enterprise Edition\nConditional downstream consequence: A matching PHP memory-safety or parser flaw reached through store requests, imports or media handling could cause denial of service, disclosure or code execution in the PHP worker. Code execution could expose configured commerce/payment credentials or alter orders and content. Provider compromise, tenant escape and lateral movement would require additional permissions or flaws.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0158\nEvidence reviewed: 2026-11-12\nScope: Oro directs self-hosted customers to update PHP to 8.5.12, 8.4.27, 8.3.36 or 8.2.35 (or later) and restart all PHP workers. An application update alone does not update the externally supplied interpreter.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable on an unpatched self-hosted PHP runtime; OroCloud remediation is separately recorded in PHP-0974.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://oroinc.com/b2b-ecommerce/blog/security-update/"
+          ],
+          "comment": "Oro official security update, 2026-11-09; managed versus self-hosted PHP remediation."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "other",
@@ -2215,7 +2225,8 @@
           ],
           "comment": "Official OroCommerce requirements / implementation evidence"
         }
-      ]
+      ],
+      "software_packageVersion": "Self-hosted deployments using unpatched PHP"
     },
     {
       "type": "software_Package",
@@ -10753,9 +10764,17 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:xerox",
-      "summary": "Affected PHP component; the bulletin does not publish exact PHP or product build numbers.",
+      "summary": "Monitor XRX26-016 for release availability; the vendor still reports a fix in development.",
       "description": "Affected Products: Worldwide Ticketing Tool, as scoped in Xerox XRX26-016 v4.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v6, updated 2026-11-06; reviewed 2026-11-12."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
@@ -10765,8 +10784,8 @@
           "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 1; reviewed 2026-10-29."
         }
       ],
-      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
-      "comment": "Inventory record: PHP-0764\nBulletin product row: Worldwide Ticketing Tool\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nA fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates."
+      "software_packageVersion": "Most current release evaluated in XRX26-016 v6 (2026-11-06); version not specified",
+      "comment": "Inventory record: PHP-0764\nBulletin product row: Worldwide Ticketing Tool\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nA fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates.\nOfficial public-source review 2026-11-12: Vulnerable; XRX26-016 v6 still reports the Worldwide Ticketing Tool fix as in development, without a released fixed version."
     },
     {
       "type": "Relationship",
@@ -10789,10 +10808,10 @@
         "urn:php2shell:inventory:package:PHP-0764"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates.",
+      "security_statusNotes": "Vulnerable; XRX26-016 v6 still reports the Worldwide Ticketing Tool fix as in development, without a released fixed version.",
       "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates."
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nAction: Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix.",
+      "security_actionStatement": "Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -10803,10 +10822,10 @@
         "urn:php2shell:inventory:package:PHP-0764"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates.",
+      "security_statusNotes": "Vulnerable; XRX26-016 v6 still reports the Worldwide Ticketing Tool fix as in development, without a released fixed version.",
       "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates."
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nAction: Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix.",
+      "security_actionStatement": "Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix."
     },
     {
       "type": "software_Package",
@@ -13552,6 +13571,32 @@
       "relationshipType": "hasVariant",
       "summary": "phpMyFAQ has a separately assessed official release-candidate container distribution.",
       "comment": "Version-specific VEX is carried by PHP-0932; it does not replace the generic product assessments on PHP-0658."
+    },
+    {
+      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:qnap-qsa-26-18-20261022",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0718"
+      ],
+      "relationshipType": "underInvestigationFor",
+      "security_statusNotes": "Earlier official regional QSA-26-18 content names these versions as affected, while the current canonical resolved advisory omits them without documenting a fix or a not-affected conclusion.",
+      "summary": "CVE-2026-109618 assessment: conflicting current QNAP advisory presentations require clarification",
+      "comment": "QNAP QSA-26-18 review 2026-11-02 remains unresolved for QuMagie 2.10.1 and earlier: regional content names it as affected, while the canonical page omits it without a fix or not-affected conclusion. QNE is assessed separately against QSA-26-19. Sources: https://www.qnap.com/en/security-advisory/qsa-26-18 and https://www.qnap.com/th-th/security-advisory/qsa-26-18."
+    },
+    {
+      "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:qnap-qsa-26-18-20261022",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0718"
+      ],
+      "relationshipType": "underInvestigationFor",
+      "security_statusNotes": "Earlier official regional QSA-26-18 content names these versions as affected, while the current canonical resolved advisory omits them without documenting a fix or a not-affected conclusion.",
+      "summary": "CVE-2026-109619 assessment: conflicting current QNAP advisory presentations require clarification",
+      "comment": "QNAP QSA-26-18 review 2026-11-02 remains unresolved for QuMagie 2.10.1 and earlier: regional content names it as affected, while the canonical page omits it without a fix or not-affected conclusion. QNE is assessed separately against QSA-26-19. Sources: https://www.qnap.com/en/security-advisory/qsa-26-18 and https://www.qnap.com/th-th/security-advisory/qsa-26-18."
     }
   ]
 }
