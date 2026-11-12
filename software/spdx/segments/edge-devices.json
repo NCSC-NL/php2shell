@@ -2371,9 +2371,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Monitor CSCwx37073 for an available fixed release; do not treat its estimated date as released software.",
+      "summary": "Install Cisco URWB release 26.2.1.9; the advisory requires authenticated-administrator access for exploitation of earlier affected URWB releases.",
       "description": "Industrial wireless backhaul",
-      "comment": "Inventory record: PHP-0699\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nPHP version scope: URWB; affected release range not specified\nExtensions: Unknown\nLimitations: A vendor advisory listing establishes review scope, not a confirmed PHP dependency, affected build or reachable path. The advisory is interim and Cisco states there are no workarounds.\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nSource accessed: 2026-10-23\nVulnerability status: Vulnerable. Cisco lists URWB as vulnerable under CSCwx37073 and requires an authenticated administrator for exploitation. Release 27.1.1 is only estimated for February 2027, not an available fix.\nCVE-2026-109618: Vulnerable. Cisco lists URWB as vulnerable under CSCwx37073 and requires an authenticated administrator for exploitation. Release 27.1.1 is only estimated for February 2027, not an available fix.\nCVE-2026-109619: Vulnerable. Cisco lists URWB as vulnerable under CSCwx37073 and requires an authenticated administrator for exploitation. Release 27.1.1 is only estimated for February 2027, not an available fix.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nRelease pin: URWB; affected release range not specified",
+      "comment": "Inventory record: PHP-0699\nEvidence reviewed: 2026-11-12\nScope: Only the named industrial wireless product running fixed release 26.2.1.9; earlier affected releases require an update. Cisco specifies authenticated-administrator access as an exploitation prerequisite for URWB.\nCVE-2026-109618 and CVE-2026-109619: Fix available in 26.2.1.9 for both CVEs (CSCwx37073); Cisco version 1.11 confirms release availability.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2381,10 +2381,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Official public CVE review 2026-10-23"
+          "comment": "Cisco advisory version 1.11, 2026-11-06; CSCwx37073 fixed release is available; reviewed 2026-11-12."
         }
       ],
-      "software_packageVersion": "URWB; affected release range not specified"
+      "software_packageVersion": "26.2.1.9"
     },
     {
       "type": "software_Package",
@@ -2400,9 +2400,9 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:cisco:aa669b285cc1",
-      "summary": "Follow Cisco's product-specific guidance and release availability for CSCwx37073; no currently available fixed build is confirmed by this advisory.",
+      "summary": "Install Cisco Unified Industrial Wireless Software release 26.2.1.9 using the vendor upgrade guidance.",
       "description": "Industrial wireless software",
-      "comment": "Inventory record: PHP-0700\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nDeployment status: Not measured\nPHP surface: Vendor-named product in Cisco's php2shell advisory; exact PHP component and SAPI are not published\nExtensions: Unknown\nPatch owner: Cisco; operator for deployment of fixed releases where on-premises\nEvidence status: Official public vendor/upstream CVE assessment\nSource accessed: 2026-10-28\nPublic vendor CVE review: 2026-10-28\nVendor advisory sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nVendor advisory status: Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.\nVulnerability status: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.\nCVE assessment limit: Only the documented product, release and platform scope is assessed. Installed versions, runtime selection, reachability and exploitation were not tested.\nCVE-2026-109618: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.\nCVE-2026-109619: Vulnerable. Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.\nPHP version scope: Affected release numbers not specified by Cisco; see the product-specific advisory status.\nRelease pin: Cisco advisory version 1.8, Final, updated 2026-10-27\nLimitations: The advisory confirms product status but does not establish the installed build, enabled features, reachability or exploitation of an individual deployment.",
+      "comment": "Inventory record: PHP-0700\nEvidence reviewed: 2026-11-12\nScope: Only the named industrial wireless product running fixed release 26.2.1.9; earlier affected releases require an update.\nCVE-2026-109618 and CVE-2026-109619: Fix available in 26.2.1.9 for both CVEs (CSCwx37073); Cisco version 1.11 confirms release availability.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
       "externalRef": [
         {
           "type": "ExternalRef",
@@ -2410,9 +2410,10 @@
           "locator": [
             "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq"
           ],
-          "comment": "Official public source reviewed 2026-10-28"
+          "comment": "Cisco advisory version 1.11, 2026-11-06; CSCwx37073 fixed release is available; reviewed 2026-11-12."
         }
-      ]
+      ],
+      "software_packageVersion": "26.2.1.9"
     },
     {
       "type": "software_Package",
@@ -2420,7 +2421,7 @@
       "creationInfo": "_:creationinfo",
       "name": "QNAP QNE (ADRA)",
       "software_primaryPurpose": "firmware",
-      "software_packageVersion": "QNE (ADRA) 1.0.7 and earlier",
+      "software_packageVersion": "1.0.7.q327",
       "externalIdentifier": [
         {
           "type": "ExternalIdentifier",
@@ -2429,10 +2430,18 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:qnap:01af88f7bc7a",
-      "summary": "QNAP's earlier QSA-26-18 scope named QNE (ADRA) 1.0.7 and earlier, but the current canonical resolved advisory omits QNE without documenting a fix or a not-affected conclusion.",
+      "summary": "Install QNE (ADRA) 1.0.7.q327. This dedicated advisory resolves QNE status; container and third-party PHP updates remain separate.",
       "description": "Network appliance operating system web components",
-      "comment": "Inventory record: PHP-0720\nCategory: Appliances and embedded\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Conflicting current official QNAP advisory scope\nDeployment status: Not measured\nPHP surface: QNAP says PHP is used in web components of QNAP operating systems and several QNAP applications; exact component boundary and SAPI are not published for this product.\nPHP version scope: Earlier official regional QSA-26-18 content names QNE (ADRA) 1.0.7 and earlier as affected; the current canonical resolved advisory omits the product without publishing a fixed version.\nExtensions: Unknown\nLimitations: QNAP has not documented whether QNE was removed because the original affected scope was incorrect or because remediation occurred. Omission alone does not establish fixed or not-affected status. PHP included in containers running on Container Station or in third-party applications is outside QNAP update coverage.\nPatch owner: QNAP for product-status clarification and any supported update; operator for exposure reduction\nSource accessed: 2026-11-02\nVulnerability status: Under investigation pending reconciliation of conflicting official QNAP advisory presentations.\nCVE-2026-109618: Under investigation; earlier affected scope remains live while the current canonical page omits the product\nCVE-2026-109619: Under investigation; earlier affected scope remains live while the current canonical page omits the product\nCVE assessment limit: Current vendor evidence does not support fixed, not-affected, or still-affected status conclusively.",
+      "comment": "Inventory record: PHP-0720\nEvidence reviewed: 2026-11-12\nScope: QNE (ADRA) 1.0.7 and earlier are affected. The dedicated QSA-26-19 names 1.0.7.q327 as fixed. Container and third-party PHP runtimes are outside this update.\nCVE-2026-109618 and CVE-2026-109619: Fix available in QNE (ADRA) 1.0.7.q327 for both CVEs; QSA-26-19 resolves the earlier QSA-26-18 omission.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.qnap.com/en/security-advisory/qsa-26-19"
+          ],
+          "comment": "QNAP QSA-26-19, revision 1.1 dated 2026-11-02, resolved QNE row; reviewed 2026-11-12."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
@@ -2901,32 +2910,30 @@
       "comment": "Public official source reviewed 2026-10-30: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nAction statement: Upgrade to Expressway 15.5.21."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0699-official-20261023",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0699"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Cisco lists URWB as vulnerable under CSCwx37073 and requires an authenticated administrator for exploitation. Release 27.1.1 is only estimated for February 2027, not an available fix.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
-      "security_actionStatement": "Monitor CSCwx37073 for an available fixed release; do not treat its estimated date as released software."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix available in 26.2.1.9 for both CVEs (CSCwx37073); Cisco version 1.11 confirms release availability.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nAction: Install Cisco fixed release 26.2.1.9 following product-specific upgrade guidance."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0699-official-20261023",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0699"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Cisco lists URWB as vulnerable under CSCwx37073 and requires an authenticated administrator for exploitation. Release 27.1.1 is only estimated for February 2027, not an available fix.",
-      "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
-      "security_actionStatement": "Monitor CSCwx37073 for an available fixed release; do not treat its estimated date as released software."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix available in 26.2.1.9 for both CVEs (CSCwx37073); Cisco version 1.11 confirms release availability.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nAction: Install Cisco fixed release 26.2.1.9 following product-specific upgrade guidance."
     },
     {
       "type": "security_VexNotAffectedVulnAssessmentRelationship",
@@ -3748,32 +3755,30 @@
       "security_actionStatement": "Migrate to TOS 7, install the vendor-fixed PHP package in App Center and restart PHP-dependent services. Update containers independently."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0700-official-20261028",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0700"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Official public sources reviewed 2026-10-28. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
-      "security_actionStatement": "Follow Cisco's product-specific guidance and release availability for CSCwx37073; no currently available fixed build is confirmed by this advisory."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix available in 26.2.1.9 for both CVEs (CSCwx37073); Cisco version 1.11 confirms release availability.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nAction: Install Cisco fixed release 26.2.1.9 following product-specific upgrade guidance."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0700-official-20261028",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0700"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Cisco advisory version 1.8 (Final, 2026-10-27) lists Unified Industrial Wireless Software as vulnerable. Bug CSCwx37073 lists 27.1.1 for March 2027; this is a planned release, not an available fix.",
-      "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Official public sources reviewed 2026-10-28. Sources: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq",
-      "security_actionStatement": "Follow Cisco's product-specific guidance and release availability for CSCwx37073; no currently available fixed build is confirmed by this advisory."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix available in 26.2.1.9 for both CVEs (CSCwx37073); Cisco version 1.11 confirms release availability.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq\nAction: Install Cisco fixed release 26.2.1.9 following product-specific upgrade guidance."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -3807,7 +3812,7 @@
       "type": "software_Package",
       "spdxId": "urn:php2shell:inventory:package:PHP-0760",
       "creationInfo": "_:creationinfo",
-      "name": "Xerox AltaLink and EC81xx products",
+      "name": "Xerox AltaLink C80xx, B80xx and EC80xx products",
       "software_primaryPurpose": "other",
       "externalIdentifier": [
         {
@@ -3817,9 +3822,25 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:xerox",
-      "summary": "Affected PHP component; the bulletin does not publish exact PHP or product build numbers.",
-      "description": "Affected Products: Xerox AltaLink and EC81xx products, as scoped in Xerox XRX26-016 v4.",
+      "summary": "Apply XRX26-018 on the required service pack and restrict management access. Fixed AltaLink 81xx/82xx and EC81xx firmware is listed separately.",
+      "description": "Remaining affected legacy models from the broader AltaLink family; fixed 81xx/82xx and EC81xx scope is PHP-0971.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v6, updated 2026-11-06; reviewed 2026-11-12."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-018-for-PHP2Shell-Patch-for-AltaLink-C80XXAltalink-B80XXand-EC80XX-Series.pdf"
+          ],
+          "comment": "XRX26-018, 2026-11-05; configuration mitigation only, not full remediation."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
@@ -3829,8 +3850,8 @@
           "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 1; reviewed 2026-10-29."
         }
       ],
-      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
-      "comment": "Inventory record: PHP-0760\nBulletin product row: Xerox AltaLink and EC81xx products\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nXerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability."
+      "software_packageVersion": "Affected model-specific 103.xxx.026.27100 service packs; configuration patch is not a full fix",
+      "comment": "Inventory record: PHP-0760\nEvidence reviewed: 2026-11-12\nScope: AltaLink C8030/C8035, C8045/C8055, C8070; B8045/B8055, B8065/B8075/B8090; EC8036 and EC8056. XRX26-018 requires the model-specific 103.xxx.026.27100 service pack before patches 1088115v1 (AltaLink) or 1088115v2 (EC80xx). AltaLink 81xx/82xx and EC81xx fixes are recorded separately in PHP-0971.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable; XRX26-018 configuration patches reduce exposure but do not fully remediate either CVE.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope."
     },
     {
       "type": "Relationship",
@@ -3841,8 +3862,8 @@
         "urn:php2shell:inventory:package:PHP-0037"
       ],
       "relationshipType": "dependsOn",
-      "summary": "Xerox AltaLink and EC81xx products has an affected PHP runtime dependency.",
-      "comment": "Xerox XRX26-016 v4 explicitly identifies both PHP runtime CVEs as affecting this product; exact PHP build and packaging are not stated."
+      "summary": "Vendor-documented embedded PHP dependency for PHP-0760",
+      "comment": "Current product and remediation scope is documented on the package using Xerox XRX26-016 v6 and model-specific bulletins."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -3853,10 +3874,10 @@
         "urn:php2shell:inventory:package:PHP-0760"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability.",
+      "security_statusNotes": "Vulnerable; XRX26-018 configuration patches reduce exposure but do not fully remediate either CVE.",
       "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability."
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-018-for-PHP2Shell-Patch-for-AltaLink-C80XXAltalink-B80XXand-EC80XX-Series.pdf\nAction: Install the model-specific XRX26-018 patch and restrict management access to trusted networks; await a full PHP fix. Follow the bulletin prerequisites and functional-impact warnings.",
+      "security_actionStatement": "Install the model-specific XRX26-018 patch and restrict management access to trusted networks; await a full PHP fix. Follow the bulletin prerequisites and functional-impact warnings."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -3867,10 +3888,10 @@
         "urn:php2shell:inventory:package:PHP-0760"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability.",
+      "security_statusNotes": "Vulnerable; XRX26-018 configuration patches reduce exposure but do not fully remediate either CVE.",
       "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability."
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-018-for-PHP2Shell-Patch-for-AltaLink-C80XXAltalink-B80XXand-EC80XX-Series.pdf\nAction: Install the model-specific XRX26-018 patch and restrict management access to trusted networks; await a full PHP fix. Follow the bulletin prerequisites and functional-impact warnings.",
+      "security_actionStatement": "Install the model-specific XRX26-018 patch and restrict management access to trusted networks; await a full PHP fix. Follow the bulletin prerequisites and functional-impact warnings."
     },
     {
       "type": "software_Package",
@@ -3886,9 +3907,17 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:xerox",
-      "summary": "Affected PHP component; the bulletin does not publish exact PHP or product build numbers.",
-      "description": "Affected Products: Xerox VersaLink C/B415, C/B625, C/B620, as scoped in Xerox XRX26-016 v4.",
+      "summary": "Install the model-appropriate 123.xxx.006.30100 firmware containing PHP 8.2.35.",
+      "description": "Vendor-remediated VersaLink models named in XRX26-016 v6.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v6, updated 2026-11-06; reviewed 2026-11-12."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
@@ -3898,8 +3927,8 @@
           "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 1; reviewed 2026-10-29."
         }
       ],
-      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
-      "comment": "Inventory record: PHP-0761\nBulletin product row: Xerox VersaLink C/B415, C/B625, C/B620\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nXerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability."
+      "software_packageVersion": "123.xxx.006.30100",
+      "comment": "Inventory record: PHP-0761\nEvidence reviewed: 2026-11-12\nScope: Only VersaLink C/B415, C/B625 and C/B620; apply the model-appropriate firmware update.\nCVE-2026-109618 and CVE-2026-109619: Fix: XRX26-016 v6 confirms PHP 8.2.35 in firmware 123.xxx.006.30100.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope."
     },
     {
       "type": "Relationship",
@@ -3910,42 +3939,40 @@
         "urn:php2shell:inventory:package:PHP-0037"
       ],
       "relationshipType": "dependsOn",
-      "summary": "Xerox VersaLink C/B415, C/B625, C/B620 has an affected PHP runtime dependency.",
-      "comment": "Xerox XRX26-016 v4 explicitly identifies both PHP runtime CVEs as affecting this product; exact PHP build and packaging are not stated."
+      "summary": "Vendor-documented embedded PHP dependency for PHP-0761",
+      "comment": "Current product and remediation scope is documented on the package using Xerox XRX26-016 v6 and model-specific bulletins."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:xerox-xrx26-016-v4-php-0761",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0761"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: XRX26-016 v6 confirms PHP 8.2.35 in firmware 123.xxx.006.30100.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nAction: Install model-appropriate firmware 123.xxx.006.30100."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:xerox-xrx26-016-v4-php-0761",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0761"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability.",
-      "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "Xerox is testing a fix with a target publication date of 2026-11-06; no released fixed version is identified. Monitor XRX26-016 for availability."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: XRX26-016 v6 confirms PHP 8.2.35 in firmware 123.xxx.006.30100.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nAction: Install model-appropriate firmware 123.xxx.006.30100."
     },
     {
       "type": "software_Package",
       "spdxId": "urn:php2shell:inventory:package:PHP-0762",
       "creationInfo": "_:creationinfo",
-      "name": "Xerox WorkCentre 3655, EC7836, EC7856",
+      "name": "Xerox WorkCentre 3655/3655i, EC7836, EC7856",
       "software_primaryPurpose": "other",
       "externalIdentifier": [
         {
@@ -3955,9 +3982,25 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:xerox",
-      "summary": "Affected PHP component; the bulletin does not publish exact PHP or product build numbers.",
-      "description": "Affected Products: Xerox WorkCentre 3655, EC7836, EC7856, as scoped in Xerox XRX26-016 v4.",
+      "summary": "Apply XRX26-017 patch 1088114v1.dlm after the required service pack; restrict management access and review the bulletin functional-impact warnings.",
+      "description": "Affected Embedded Web Server PHP component; released configuration patch is mitigation only.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v6, updated 2026-11-06; reviewed 2026-11-12."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-017-for-PHP2Shell-Patch-for-EC7836-EC7856-WorkCentre-3655-and-WorkCentre-3655i.pdf"
+          ],
+          "comment": "XRX26-017; required service packs and configuration mitigation, not full remediation."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
@@ -3967,8 +4010,8 @@
           "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 1; reviewed 2026-10-29."
         }
       ],
-      "software_packageVersion": "Most current release evaluated in XRX26-016 v4 (2026-10-28); version not specified",
-      "comment": "Inventory record: PHP-0762\nBulletin product row: Xerox WorkCentre 3655, EC7836, EC7856\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nA fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates.\nThe v2 generic WorkCentre affected family is superseded by the specific model list in v4; WorkCentre 3335/3345 and 6515 are separately not impacted."
+      "software_packageVersion": "EC7836 075.050.006.05200; EC7856 075.020.006.05200; WorkCentre 3655/3655i 075.060.006.05200",
+      "comment": "Inventory record: PHP-0762\nEvidence reviewed: 2026-11-12\nScope: Named models and service packs only. Install the required service pack before the configuration patch. Network restrictions remain necessary; the bulletin warns that disabling HTTP/HTTPS disrupts AAA and remote administration.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable; XRX26-017 patch 1088114v1.dlm reduces exposure but does not fully remediate either CVE.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope."
     },
     {
       "type": "Relationship",
@@ -3979,8 +4022,8 @@
         "urn:php2shell:inventory:package:PHP-0037"
       ],
       "relationshipType": "dependsOn",
-      "summary": "Xerox WorkCentre 3655, EC7836, EC7856 has an affected PHP runtime dependency.",
-      "comment": "Xerox XRX26-016 v4 explicitly identifies both PHP runtime CVEs as affecting this product; exact PHP build and packaging are not stated."
+      "summary": "Vendor-documented embedded PHP dependency for PHP-0762",
+      "comment": "Current product and remediation scope is documented on the package using Xerox XRX26-016 v6 and model-specific bulletins."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -3991,10 +4034,10 @@
         "urn:php2shell:inventory:package:PHP-0762"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates.",
+      "security_statusNotes": "Vulnerable; XRX26-017 patch 1088114v1.dlm reduces exposure but does not fully remediate either CVE.",
       "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates."
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-017-for-PHP2Shell-Patch-for-EC7836-EC7856-WorkCentre-3655-and-WorkCentre-3655i.pdf\nAction: Apply XRX26-017 using the required service pack and restrict management access; monitor for a full PHP fix.",
+      "security_actionStatement": "Apply XRX26-017 using the required service pack and restrict management access; monitor for a full PHP fix."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -4005,10 +4048,10 @@
         "urn:php2shell:inventory:package:PHP-0762"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates.",
+      "security_statusNotes": "Vulnerable; XRX26-017 patch 1088114v1.dlm reduces exposure but does not fully remediate either CVE.",
       "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "A fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates."
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-017-for-PHP2Shell-Patch-for-EC7836-EC7856-WorkCentre-3655-and-WorkCentre-3655i.pdf\nAction: Apply XRX26-017 using the required service pack and restrict management access; monitor for a full PHP fix.",
+      "security_actionStatement": "Apply XRX26-017 using the required service pack and restrict management access; monitor for a full PHP fix."
     },
     {
       "type": "software_Package",
@@ -4024,9 +4067,17 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:fiery",
-      "summary": "Affected PHP component; the bulletin does not publish exact PHP or product build numbers.",
+      "summary": "Check Fiery for actual patch availability; Xerox publishes a release schedule rather than confirmed fixed build numbers.",
       "description": "Affected Products: Fiery Digital Front End (DFE), as scoped in Xerox XRX26-016 v4.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v6, updated 2026-11-06; reviewed 2026-11-12."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
@@ -4045,7 +4096,7 @@
         }
       ],
       "software_packageVersion": "Fiery FS200/300/350/400/500/600/700/800, including Pro variants; patch releases are planned, not yet confirmed available",
-      "comment": "Inventory record: PHP-0763\nBulletin product row: Fiery Digital Front End (DFE)\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nTarget patches: FS800/700/600/500, including Pro variants, by 2026-11-09; FS400/350/300, including Pro variants, by 2026-11-16; FS200 and FS200 Pro by 2026-11-23. These are planned dates, not released fixes. Monitor Xerox and Fiery advisories.\nScope: Fiery DFE as assessed for the Xerox portfolio; the release targets on page 2 do not establish patch availability."
+      "comment": "Inventory record: PHP-0763\nBulletin product row: Fiery Digital Front End (DFE)\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nTarget patches: FS800/700/600/500, including Pro variants, by 2026-11-09; FS400/350/300, including Pro variants, by 2026-11-16; FS200 and FS200 Pro by 2026-11-23. These are planned dates, not released fixes. Monitor Xerox and Fiery advisories.\nScope: Fiery DFE as assessed for the Xerox portfolio; the release targets on page 2 do not establish patch availability.\nOfficial public-source review 2026-11-12: Vulnerable; XRX26-016 v6 gives target patch dates of 2026-11-09 through 2026-11-23 by Fiery system version. A schedule is not confirmation that a fixed release is available."
     },
     {
       "type": "Relationship",
@@ -4068,10 +4119,10 @@
         "urn:php2shell:inventory:package:PHP-0763"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. Target patches: FS800/700/600/500, including Pro variants, by 2026-11-09; FS400/350/300, including Pro variants, by 2026-11-16; FS200 and FS200 Pro by 2026-11-23. These are planned dates, not released fixes. Monitor Xerox and Fiery advisories.",
+      "security_statusNotes": "Vulnerable; XRX26-016 v6 gives target patch dates of 2026-11-09 through 2026-11-23 by Fiery system version. A schedule is not confirmation that a fixed release is available.",
       "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "Target patches: FS800/700/600/500, including Pro variants, by 2026-11-09; FS400/350/300, including Pro variants, by 2026-11-16; FS200 and FS200 Pro by 2026-11-23. These are planned dates, not released fixes. Monitor Xerox and Fiery advisories."
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nAction: Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix.",
+      "security_actionStatement": "Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -4082,10 +4133,10 @@
         "urn:php2shell:inventory:package:PHP-0763"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "XRX26-016 v4 confirms both CVEs affect this product. Target patches: FS800/700/600/500, including Pro variants, by 2026-11-09; FS400/350/300, including Pro variants, by 2026-11-16; FS200 and FS200 Pro by 2026-11-23. These are planned dates, not released fixes. Monitor Xerox and Fiery advisories.",
+      "security_statusNotes": "Vulnerable; XRX26-016 v6 gives target patch dates of 2026-11-09 through 2026-11-23 by Fiery system version. A schedule is not confirmation that a fixed release is available.",
       "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Official Xerox XRX26-016 v4, updated 2026-10-28, page 1; reviewed 2026-10-29. Source: https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf",
-      "security_actionStatement": "Target patches: FS800/700/600/500, including Pro variants, by 2026-11-09; FS400/350/300, including Pro variants, by 2026-11-16; FS200 and FS200 Pro by 2026-11-23. These are planned dates, not released fixes. Monitor Xerox and Fiery advisories."
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nAction: Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix.",
+      "security_actionStatement": "Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix."
     },
     {
       "type": "software_Package",
@@ -5467,6 +5518,98 @@
       "security_statusNotes": "Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published",
       "summary": "CVE-2026-109619 assessment: Fortinet PSIRT FG-IR-26-186 lists product as under investigation; affected/fixed versions not yet published",
       "comment": "Fortinet FG-IR-26-186, updated 2026-11-05 and reviewed 2026-11-06, still lists FortiDDoS under investigation. FortiDDoS-F is a separate product listed as not impacted. FortiSOAR and FortiSOAR PaaS now have separate fixed assessments."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0720-official-20261112",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0720"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix available in QNE (ADRA) 1.0.7.q327 for both CVEs; QSA-26-19 resolves the earlier QSA-26-18 omission.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "QSA-26-19 reviewed 2026-11-12. Source: https://www.qnap.com/en/security-advisory/qsa-26-19\nAction: Install QNE (ADRA) 1.0.7.q327 following QNAP model-specific instructions."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0720-official-20261112",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0720"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix available in QNE (ADRA) 1.0.7.q327 for both CVEs; QSA-26-19 resolves the earlier QSA-26-18 omission.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "QSA-26-19 reviewed 2026-11-12. Source: https://www.qnap.com/en/security-advisory/qsa-26-19\nAction: Install QNE (ADRA) 1.0.7.q327 following QNAP model-specific instructions."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0971",
+      "creationInfo": "_:creationinfo",
+      "name": "Xerox AltaLink 82xx, AltaLink 81xx and EC81xx products",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0971"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:xerox",
+      "software_packageVersion": "123.xxx.006.29800",
+      "summary": "Install model-appropriate 123.xxx.006.29800 firmware; this fix does not cover AltaLink C80xx/B80xx or EC80xx models.",
+      "comment": "Inventory record: PHP-0971\nEvidence reviewed: 2026-11-12\nScope: Only AltaLink 82xx, AltaLink 81xx and EC81xx models named in XRX26-016 v6; legacy 80xx models remain affected in PHP-0760.\nCVE-2026-109618 and CVE-2026-109619: Fix: XRX26-016 v6 confirms PHP 8.2.35 in firmware 123.xxx.006.29800.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf"
+          ],
+          "comment": "Xerox XRX26-016 v6, updated 2026-11-06; reviewed 2026-11-12."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0971",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0971",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "PHP runtime dependency for Xerox AltaLink 82xx, AltaLink 81xx and EC81xx products",
+      "comment": "Vendor-confirmed remediation scope separated from PHP-0760."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0971-official-20261112",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0971"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: XRX26-016 v6 confirms PHP 8.2.35 in firmware 123.xxx.006.29800.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nScope: Only AltaLink 82xx, AltaLink 81xx and EC81xx models named in XRX26-016 v6; legacy 80xx models remain affected in PHP-0760."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0971-official-20261112",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0971"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: XRX26-016 v6 confirms PHP 8.2.35 in firmware 123.xxx.006.29800.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nScope: Only AltaLink 82xx, AltaLink 81xx and EC81xx models named in XRX26-016 v6; legacy 80xx models remain affected in PHP-0760."
     }
   ]
 }
