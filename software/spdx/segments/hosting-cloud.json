@@ -2688,20 +2688,28 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:sophos:2fd5c42d49f9",
-      "summary": "Use Sophos Support for licensing while the portal is offline; no completed portal fix is asserted.",
+      "summary": "Use Sophos Support for licensing. MyUTM will remain permanently offline; this is retirement of the vulnerable historical service, not a published software fix.",
       "description": "Legacy hosted licensing portal",
-      "comment": "Inventory record: PHP-0657\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Legacy hosted portal web runtime\nPHP version scope: MyUTM hosted licensing portal before vendor PHP update\nExtensions: Unknown\nLimitations: This row covers the legacy hosted MyUTM portal only. Sophos explicitly says no Sophos products are affected, so this must not be generalized to Sophos UTM or other product lines.\nPatch owner: Sophos for hosted portal remediation\nDownstream surface: Legacy licensing portal accounts and service operations\nRelease pin: MyUTM hosted licensing portal before vendor PHP update\nSource accessed: 2026-10-23\nAliases: Sophos MyUTM portal\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through the hosted service, possible effects include worker denial of service, disclosure of service-accessible secrets, data modification or code execution with the service identity. Provider boundaries, tenant escape and lateral movement require separate evidence.\nVulnerability status: Vulnerable. Sophos advisory version 4 confirms the MyUTM hosted portal ran affected PHP and was taken offline pending its update. The separate statement that Sophos products are not affected does not exclude this hosted service.\nCVE-2026-109618: Vulnerable. Sophos advisory version 4 confirms the MyUTM hosted portal ran affected PHP and was taken offline pending its update. The separate statement that Sophos products are not affected does not exclude this hosted service.\nCVE-2026-109619: Vulnerable. Sophos advisory version 4 confirms the MyUTM hosted portal ran affected PHP and was taken offline pending its update. The separate statement that Sophos products are not affected does not exclude this hosted service.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell",
+      "comment": "Inventory record: PHP-0657\nEvidence reviewed: 2026-11-18\nScope: Retired hosted licensing portal only. Permanent shutdown removes service availability but is not a published software fix. Contact Sophos Support for licensing needs.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable historical MyUTM service; Sophos has permanently retired the portal after reviewing PHP2Shell. No released fix or service restoration is asserted.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://community.sophos.com/utm-firewall/b/blog/posts/sophos-utm-myutm-to-remain-offline"
+          ],
+          "comment": "Official 2026-10-28 product announcement: MyUTM will remain permanently offline following PHP2Shell review."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
           "locator": [
             "https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell"
           ],
-          "comment": "Official public CVE review 2026-10-23"
+          "comment": "Official advisory confirms the legacy MyUTM hosted portal used affected PHP; other Sophos product assessments are separate."
         }
       ],
-      "software_packageVersion": "MyUTM hosted licensing portal before vendor PHP update"
+      "software_packageVersion": "Legacy MyUTM hosted portal; permanently offline per 2026-10-28 announcement"
     },
     {
       "type": "software_Package",
@@ -3990,10 +3998,10 @@
         "urn:php2shell:inventory:package:PHP-0657"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Sophos advisory version 4 confirms the MyUTM hosted portal ran affected PHP and was taken offline pending its update. The separate statement that Sophos products are not affected does not exclude this hosted service.",
+      "security_statusNotes": "Vulnerable historical MyUTM service; Sophos has permanently retired the portal after reviewing PHP2Shell. No released fix or service restoration is asserted.",
       "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell",
-      "security_actionStatement": "Use Sophos Support for licensing while the portal is offline; no completed portal fix is asserted."
+      "comment": "Official public sources reviewed 2026-11-18. https://community.sophos.com/utm-firewall/b/blog/posts/sophos-utm-myutm-to-remain-offline https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell\nAction: Use Sophos Support for licensing. The portal will remain permanently offline.",
+      "security_actionStatement": "Use Sophos Support for licensing. The portal will remain permanently offline."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -4004,10 +4012,10 @@
         "urn:php2shell:inventory:package:PHP-0657"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Sophos advisory version 4 confirms the MyUTM hosted portal ran affected PHP and was taken offline pending its update. The separate statement that Sophos products are not affected does not exclude this hosted service.",
+      "security_statusNotes": "Vulnerable historical MyUTM service; Sophos has permanently retired the portal after reviewing PHP2Shell. No released fix or service restoration is asserted.",
       "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell",
-      "security_actionStatement": "Use Sophos Support for licensing while the portal is offline; no completed portal fix is asserted."
+      "comment": "Official public sources reviewed 2026-11-18. https://community.sophos.com/utm-firewall/b/blog/posts/sophos-utm-myutm-to-remain-offline https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell\nAction: Use Sophos Support for licensing. The portal will remain permanently offline.",
+      "security_actionStatement": "Use Sophos Support for licensing. The portal will remain permanently offline."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -5329,6 +5337,72 @@
       "security_statusNotes": "Fix: Oro confirms all OroCloud managed environments were patched on 2026-10-22 for both PHP2Shell CVEs.",
       "summary": "CVE-2026-109619 assessment: Fix",
       "comment": "Official public sources reviewed 2026-11-12. https://oroinc.com/b2b-ecommerce/blog/security-update/\nScope: Only OroCloud managed environments; self-hosted OroCommerce remains dependent on operator-applied PHP updates. The vendor does not publish individual deployed PHP build numbers."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0978",
+      "creationInfo": "_:creationinfo",
+      "name": "X-Cart hosted stores (patched PHP 7.4+ scope)",
+      "software_primaryPurpose": "application",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0978"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:x-cart:7f70f9da1d3b",
+      "summary": "Vendor-applied update for X-Cart-hosted stores on PHP 7.4 or newer. Self-hosted installations and pending legacy upgrades are excluded; exact PHP package builds are not published.",
+      "software_packageVersion": "Vendor-hosted stores on patched PHP 7.4 or newer, confirmed 2026-11-05",
+      "comment": "Inventory record: PHP-0978\nEvidence reviewed: 2026-11-18\nScope: Limited to vendor-hosted stores covered by the published patch confirmation. Self-hosted installations and pending legacy store/runtime upgrades are excluded; confirm an individual legacy store with X-Cart Support. Exact package builds are not published.\nCVE-2026-109618 and CVE-2026-109619: Fix: X-Cart confirms it applied patched PHP builds to its hosted stores running PHP 7.4 or newer for both PHP2Shell CVEs.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope.\nParent inventory record: PHP-0157",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.x-cart.com/php2shell-what-we-patched-and-what-you-need-to-do.html"
+          ],
+          "comment": "Official X-Cart advisory dated 2026-11-05; both CVEs, patched hosted PHP 7.4+ stores, and self-hosted remediation responsibility."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0978",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0978",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "dependsOn",
+      "summary": "PHP runtime dependency for X-Cart hosted stores (patched PHP 7.4+ scope)",
+      "comment": "Vendor-confirmed remediation scope separated from PHP-0157."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0978-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0978"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: X-Cart confirms it applied patched PHP builds to its hosted stores running PHP 7.4 or newer for both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-18. https://www.x-cart.com/php2shell-what-we-patched-and-what-you-need-to-do.html\nAction: Limited to vendor-hosted stores covered by the published patch confirmation. Self-hosted installations and pending legacy store/runtime upgrades are excluded; confirm an individual legacy store with X-Cart Support. Exact package builds are not published."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0978-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0978"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: X-Cart confirms it applied patched PHP builds to its hosted stores running PHP 7.4 or newer for both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-18. https://www.x-cart.com/php2shell-what-we-patched-and-what-you-need-to-do.html\nAction: Limited to vendor-hosted stores covered by the published patch confirmation. Self-hosted installations and pending legacy store/runtime upgrades are excluded; confirm an individual legacy store with X-Cart Support. Exact package builds are not published."
     }
   ]
 }

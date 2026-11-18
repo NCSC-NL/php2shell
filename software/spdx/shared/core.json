@@ -2427,7 +2427,27 @@
         "urn:php2shell:inventory:package:PHP-0974",
         "urn:php2shell:inventory:relationship:PHP-0974",
         "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0974-official-20261112",
-        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0974-official-20261112"
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0974-official-20261112",
+        "urn:php2shell:inventory:package:PHP-0975",
+        "urn:php2shell:inventory:relationship:PHP-0975",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0975-official-20261118",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0975-official-20261118",
+        "urn:php2shell:inventory:package:PHP-0976",
+        "urn:php2shell:inventory:relationship:PHP-0976",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0976-official-20261118",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0976-official-20261118",
+        "urn:php2shell:inventory:package:PHP-0977",
+        "urn:php2shell:inventory:relationship:PHP-0977",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0977-official-20261118",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0977-official-20261118",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0151-official-20261118",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0151-official-20261118",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0157-official-20261118",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0157-official-20261118",
+        "urn:php2shell:inventory:package:PHP-0978",
+        "urn:php2shell:inventory:relationship:PHP-0978",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0978-official-20261118",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0978-official-20261118"
       ]
     }
   ]

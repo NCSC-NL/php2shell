@@ -1,7 +1,7 @@
 # php2shell vulnerabilities (CVE-2026-109618, CVE-2026-109619)
 
 Operational information: 28 October 2026 16:46 CET<br>
-Software list last status update: 12 November 2026 08:56 CET<br>
+Software list last status update: 18 November 2026 15:41 CET<br>
 ## TLP:CLEAR
 
 This repository contains operational information regarding the critical PHP vulnerabilities tracked by CERT-EU as CVE-2026-109618 and CVE-2026-109619.
@@ -11,7 +11,7 @@ PHP is a widely used open-source server-side scripting language, so these vulner
 ## Current status
 
 <!-- inventory-statistics:summary:start -->
-This repository tracks **972 products**, including **212 vulnerable** and **213 fixed**.
+This repository tracks **976 products**, including **211 vulnerable** and **218 fixed**.
 <!-- inventory-statistics:summary:end -->
 
 On 21 October 2026, PHP published fixed releases for CVE-2026-109618 and CVE-2026-109619: PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. PHP states that both vulnerabilities can allow unauthenticated remote code execution and that all PHP installations serving web requests are at risk, including PHP-FPM, Apache with mod_php, php-cgi, FrankenPHP and LiteSpeed. PHP considers the risk highest for mod_php, where an unauthenticated request can trigger exploitation before application code runs.
@@ -54,11 +54,11 @@ The repository is being updated as the situation develops. Check back for update
 
 <!-- inventory-statistics:start -->
 
-Statistics as of **2026-11-12 (UTC)**, from the current SPDX inventory.
+Statistics as of **2026-11-18 (UTC)**, from the current SPDX inventory.
 
 | Products tracked | Fixed | Vulnerable | Under investigation | Runtime-dependent | Not affected | Unassessed / unknown |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 972 | 213 | 212 | 92 | 240 | 214 | 1 |
+| 976 | 218 | 211 | 92 | 240 | 214 | 1 |
 
 ![Product status on the last 3 inventory update days](software/statistics/inventory-statistics.png)
 
@@ -70,11 +70,11 @@ Statistics as of **2026-11-12 (UTC)**, from the current SPDX inventory.
 
 | Date and time | Supplier | Product | Version (see Status) | Status CVE-2026-109618 / CVE-2026-109619 | Links |
 |:------------------------|:---------|:--------|:--------------------:|:----------------------:|------:|
-|2026-11-12 08:56:41 +0100|Cisco|Cisco Ultra-Reliable Wireless Backhaul (URWB)|26.2.1.9|Fix|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
-|2026-11-12 08:56:41 +0100|Cisco|Cisco Unified Industrial Wireless Software|26.2.1.9|Fix|[source](<https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq>)|
-|2026-11-12 08:56:41 +0100|Oro Inc.|OroCommerce on OroCloud managed environments|Managed environments patched 2026-10-22|Fix|[source](<https://oroinc.com/b2b-ecommerce/blog/security-update/>)|
-|2026-11-12 08:56:41 +0100|QNAP|QNAP QNE (ADRA)|1.0.7.q327|Fix|[source 1](<https://www.qnap.com/en/security-advisory/qsa-26-19>)<br>[source 2](<https://www.qnap.com/en/security-advisory/qsa-26-18>)<br>[source 3](<https://www.qnap.com/th-th/security-advisory/qsa-26-18>)|
-|2026-11-12 08:56:41 +0100|Trend Micro|Apex Central 2019 (Japanese Windows release)|Critical Patch build 7351 (Japanese Windows)|Fix|[source 1](<https://success.trendmicro.com/ja-jp/solution/KA-0024807>)<br>[source 2](<https://success.trendmicro.com/ja-jp/solution/KA-0025014>)<br>[source 3](<https://files.trendmicro.com/jp/ucmodule/apexcentral/win/2019/CP/apexcentral_win_jp_criticalpatch_b7351_JP_Readme.html>)<br>[source 4](<https://success.trendmicro.com/ja-jp/solution/KA-0025036>)|
+|2026-11-18 15:41:28 +0100|Red Hat|Red Hat Enterprise Linux 9 php:8.4 module|php-8.4.27-1.module+el9.9.0+25112+f4f032cf (RHSA-2026:97880)|Fix|[source](<https://access.redhat.com/errata/RHSA-2026:97880>)|
+|2026-11-18 15:41:28 +0100|Trend Micro|Apex Central 2019 (English Windows release)|Critical Patch build 7351 (English Windows); PHP 8.2.35|Fix|[source 1](<https://files.trendmicro.com/documentation/readme/CP/apexcentral_win_en_criticalpatch_b7351_Readme.html>)<br>[source 2](<https://success.trendmicro.com/en-US/solution/KA-0025041>)<br>[source 3](<https://downloadcenter.trendmicro.com/index.php?prodid=1746&regs=nabu>)<br>[source 4](<https://success.trendmicro.com/en-US/solution/KA-0024802>)|
+|2026-11-18 15:41:28 +0100|Trend Micro|Apex One 2019 on-premises server (English Windows release)|SP1 Critical Patch build 20113 (English Windows)|Fix|[source 1](<https://success.trendmicro.com/en-US/solution/KA-0024778>)<br>[source 2](<https://success.trendmicro.com/en-US/solution/KA-0024802>)|
+|2026-11-18 15:41:28 +0100|X-Cart|X-Cart hosted stores (patched PHP 7.4+ scope)|Vendor-hosted stores on patched PHP 7.4 or newer, confirmed 2026-11-05|Fix|[source](<https://www.x-cart.com/php2shell-what-we-patched-and-what-you-need-to-do.html>)|
+|2026-11-18 15:41:28 +0100|Xerox|Xerox Worldwide Ticketing Tool|Vendor-remediated hosted service reported in XRX26-016 v7 (2026-11-13); build not published|Fix|[source 1](<https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v7.pdf>)<br>[source 2](<https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf>)<br>[source 3](<https://securitydocs.business.xerox.com/wp-content/uploads/2026/10/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v4.pdf>)|
 
 See the [full software status update history](software/changelog_software_list.md).
 
