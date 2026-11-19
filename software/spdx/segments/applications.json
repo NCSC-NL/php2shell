@@ -2001,10 +2001,18 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:webkul:50c784d84ab7",
-      "summary": "The guide separates manifest, web-installer and transitive extension requirements, and distinguishes Bagisto 2.4 from 2.5.",
+      "summary": "Update PHP to a patched release compatible with the installed Bagisto version, then restart PHP. Application updates or upload-progress configuration alone do not establish remediation.",
       "description": "Server-side PHP web runtime; CLI where separately documented; exact SAPI deployment-dependent",
-      "comment": "Inventory record: PHP-0151\nCategory: Commerce\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime; CLI where separately documented; exact SAPI deployment-dependent\nPHP version scope: 2.4 documentation: PHP 8.3 or 8.4 / Laravel 12. 2.5 documentation and prerelease examples: PHP ^8.4 / Laravel 13.\nExtensions: Required (documented scope): calendar, curl, intl, mbstring, openssl, pdo, pdo_mysql, tokenizer, ctype, dom, fileinfo, filter, gd, hash, json, pcre, session, xml, bcmath, iconv, libxml, simplexml, xmlreader, xmlwriter, zip, zlib. Conditional/alternatives: pdo_pgsql for PostgreSQL on the 2.5 line; imagick when IMAGE_DRIVER=imagick; redis when REDIS_CLIENT=phpredis; Predis is the documented library alternative\nLimitations: The flat extension list here is from the 2.5 documentation; it is not an exact 2.4 extension manifest. The current installation guide still calls latest a stable 2.4 image and gives 2.5.0-beta6 as a prerelease example. Do not treat moving 2.5 guidance as proof of the deployed stable release or image contents. PHP presence does not establish an affected build, reachable flaw or exploitation. Installations and enabled integrations were not measured.\nPatch owner: PHP package/image/hosting provider and operator for runtime; application/plugin maintainer and merchant for application updates\nDownstream surface: Storefront/admin/API backend, indexers and applicable jobs\nRelease pin: Version-scoped/moving official documentation; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: bagisto/bagisto\nConditional downstream consequence: A matching PHP memory-safety or parser flaw reached through store requests, imports or media handling could cause denial of service, disclosure or code execution in the PHP worker. Code execution could expose configured commerce/payment credentials or alter orders and content. Provider compromise, tenant escape and lateral movement would require additional permissions or flaws.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0151\nEvidence reviewed: 2026-11-18\nScope: Vendor guidance specifies PHP 8.4.27 for Bagisto 2.5, PHP 8.3.36 or 8.4.27 for 2.4, and PHP 8.2.35 or 8.3.36 for 2.3. Match the installed release and vendor backports. Managed hosting responsibility alone does not confirm an individual store has been patched.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable when served by unpatched PHP. Bagisto explicitly confirms both CVEs affect its stores and directs operators to update PHP; an application update alone is not the fix.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://bagisto.com/en/php-security-releases-bagisto-stores/"
+          ],
+          "comment": "Official Bagisto security guidance explicitly names both CVEs, affected store runtimes and supported patched PHP versions."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "other",
@@ -2021,7 +2029,8 @@
           ],
           "comment": "Official project/vendor documentation or publisher-supplied package metadata - The guide distinguishes PHP-FPM, mod_php and lsphp image variants; latest still tracks stable 2.4 while 2.5 examples are beta."
         }
-      ]
+      ],
+      "software_packageVersion": "Bagisto stores using unpatched PHP; compatible patched runtime required"
     },
     {
       "type": "software_Package",
@@ -2177,10 +2186,18 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:x-cart:7f70f9da1d3b",
-      "summary": "The versioned developer page requires PHP 8.3–8.4, lists runtime extensions and separately recommends Xdebug for development.",
+      "summary": "Update the PHP runtime for self-hosted or externally hosted stores. The vendor-applied hosted fix is limited to PHP-0978; arrange pending legacy upgrades separately.",
       "description": "Server-side PHP web runtime; CLI where separately documented; exact SAPI deployment-dependent",
-      "comment": "Inventory record: PHP-0157\nCategory: Commerce\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime; CLI where separately documented; exact SAPI deployment-dependent\nPHP version scope: Documentation labelled X-Cart 5.6.0: PHP 8.3–8.4. Older 5.5/5.4 requirements are separate.\nExtensions: Required (documented scope): amqp, ctype, curl, date, filter, hash, iconv, intl, json, libxml, mbstring, openssl, pcre, pdo, redis, simplexml, soap, sockets, sodium, spl, tokenizer, xml, xmlwriter. Optional/recommended: xdebug (development only)\nLimitations: libvips is an external image-processing dependency and is not labelled a PHP extension here. Older X-Cart help pages must not supply the 5.6 minimum. PHP presence does not establish an affected build, reachable flaw or exploitation. Installations and enabled integrations were not measured.\nPatch owner: PHP package/image/hosting provider and operator for runtime; application/plugin maintainer and merchant for application updates\nDownstream surface: Commerce storefront, checkout, catalog/admin and enabled integrations\nRelease pin: Version-scoped/moving official documentation; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: X-Cart 5.6\nConditional downstream consequence: A matching PHP memory-safety or parser flaw reached through store requests, imports or media handling could cause denial of service, disclosure or code execution in the PHP worker. Code execution could expose configured commerce/payment credentials or alter orders and content. Provider compromise, tenant escape and lateral movement would require additional permissions or flaws.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0157\nEvidence reviewed: 2026-11-18\nScope: The hosted fix does not establish remediation of self-hosted deployments, externally hosted stores or pending legacy upgrades. Application versions alone do not prove a patched PHP runtime.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable on unpatched PHP. X-Cart confirms its hosted stores using PHP 7.4 or newer have been patched (PHP-0978); self-hosted stores require operator or hosting-provider PHP updates.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.x-cart.com/php2shell-what-we-patched-and-what-you-need-to-do.html"
+          ],
+          "comment": "Official X-Cart advisory dated 2026-11-05; both CVEs, patched hosted PHP 7.4+ stores, and self-hosted remediation responsibility."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "other",
@@ -2189,7 +2206,8 @@
           ],
           "comment": "Official X-Cart 5 requirements / implementation evidence"
         }
-      ]
+      ],
+      "software_packageVersion": "Unpatched X-Cart 5 installations; vendor-hosted fixed scope recorded separately"
     },
     {
       "type": "software_Package",
@@ -10764,9 +10782,17 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:xerox",
-      "summary": "Monitor XRX26-016 for release availability; the vendor still reports a fix in development.",
-      "description": "Affected Products: Worldwide Ticketing Tool, as scoped in Xerox XRX26-016 v4.",
+      "summary": "Xerox applied the hosted-service fix; no customer action is required. The bulletin does not publish an exact service build.",
+      "description": "Xerox-managed Worldwide Ticketing Tool service; remediated in XRX26-016 v7.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v7.pdf"
+          ],
+          "comment": "Official XRX26-016 v7, updated 2026-11-13, page 1; Worldwide Ticketing Tool remediated by Xerox."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
@@ -10784,8 +10810,8 @@
           "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 1; reviewed 2026-10-29."
         }
       ],
-      "software_packageVersion": "Most current release evaluated in XRX26-016 v6 (2026-11-06); version not specified",
-      "comment": "Inventory record: PHP-0764\nBulletin product row: Worldwide Ticketing Tool\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nA fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates.\nOfficial public-source review 2026-11-12: Vulnerable; XRX26-016 v6 still reports the Worldwide Ticketing Tool fix as in development, without a released fixed version."
+      "software_packageVersion": "Vendor-remediated hosted service reported in XRX26-016 v7 (2026-11-13); build not published",
+      "comment": "Inventory record: PHP-0764\nEvidence reviewed: 2026-11-18\nScope: Worldwide Ticketing Tool only. The vendor applied the service fix; the bulletin does not publish a version number or establish remediation of other Xerox products.\nCVE-2026-109618 and CVE-2026-109619: Fix: Xerox confirms that it has applied the Worldwide Ticketing Tool fix for both PHP2Shell CVEs; no customer action is required.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope."
     },
     {
       "type": "Relationship",
@@ -10800,32 +10826,30 @@
       "comment": "Xerox XRX26-016 v4 explicitly identifies both PHP runtime CVEs as affecting this product; exact PHP build and packaging are not stated."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:xerox-xrx26-016-v4-php-0764",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0764"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Vulnerable; XRX26-016 v6 still reports the Worldwide Ticketing Tool fix as in development, without a released fixed version.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nAction: Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix.",
-      "security_actionStatement": "Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: Xerox confirms that it has applied the Worldwide Ticketing Tool fix for both PHP2Shell CVEs; no customer action is required.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-18. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v7.pdf\nAction: No customer action is required for this vendor-remediated hosted service."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:xerox-xrx26-016-v4-php-0764",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0764"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Vulnerable; XRX26-016 v6 still reports the Worldwide Ticketing Tool fix as in development, without a released fixed version.",
-      "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nAction: Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix.",
-      "security_actionStatement": "Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: Xerox confirms that it has applied the Worldwide Ticketing Tool fix for both PHP2Shell CVEs; no customer action is required.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-18. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v7.pdf\nAction: No customer action is required for this vendor-remediated hosted service."
     },
     {
       "type": "software_Package",
@@ -13597,6 +13621,62 @@
       "security_statusNotes": "Earlier official regional QSA-26-18 content names these versions as affected, while the current canonical resolved advisory omits them without documenting a fix or a not-affected conclusion.",
       "summary": "CVE-2026-109619 assessment: conflicting current QNAP advisory presentations require clarification",
       "comment": "QNAP QSA-26-18 review 2026-11-02 remains unresolved for QuMagie 2.10.1 and earlier: regional content names it as affected, while the canonical page omits it without a fix or not-affected conclusion. QNE is assessed separately against QSA-26-19. Sources: https://www.qnap.com/en/security-advisory/qsa-26-18 and https://www.qnap.com/th-th/security-advisory/qsa-26-18."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0151-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0151"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Vulnerable when served by unpatched PHP. Bagisto explicitly confirms both CVEs affect its stores and directs operators to update PHP; an application update alone is not the fix.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Official public sources reviewed 2026-11-18. https://bagisto.com/en/php-security-releases-bagisto-stores/\nAction: Install a compatible fixed PHP build or vendor backport and restart PHP. Treat upload-progress configuration changes only as interim mitigation.",
+      "security_actionStatement": "Install a compatible fixed PHP build or vendor backport and restart PHP. Treat upload-progress configuration changes only as interim mitigation."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0151-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0151"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Vulnerable when served by unpatched PHP. Bagisto explicitly confirms both CVEs affect its stores and directs operators to update PHP; an application update alone is not the fix.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Official public sources reviewed 2026-11-18. https://bagisto.com/en/php-security-releases-bagisto-stores/\nAction: Install a compatible fixed PHP build or vendor backport and restart PHP. Treat upload-progress configuration changes only as interim mitigation.",
+      "security_actionStatement": "Install a compatible fixed PHP build or vendor backport and restart PHP. Treat upload-progress configuration changes only as interim mitigation."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0157-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0157"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Vulnerable on unpatched PHP. X-Cart confirms its hosted stores using PHP 7.4 or newer have been patched (PHP-0978); self-hosted stores require operator or hosting-provider PHP updates.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Official public sources reviewed 2026-11-18. https://www.x-cart.com/php2shell-what-we-patched-and-what-you-need-to-do.html\nAction: Install supported PHP security updates or applicable vendor backports. Coordinate legacy X-Cart upgrades with the vendor as needed.",
+      "security_actionStatement": "Install supported PHP security updates or applicable vendor backports. Coordinate legacy X-Cart upgrades with the vendor as needed."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0157-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0157"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Vulnerable on unpatched PHP. X-Cart confirms its hosted stores using PHP 7.4 or newer have been patched (PHP-0978); self-hosted stores require operator or hosting-provider PHP updates.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Official public sources reviewed 2026-11-18. https://www.x-cart.com/php2shell-what-we-patched-and-what-you-need-to-do.html\nAction: Install supported PHP security updates or applicable vendor backports. Coordinate legacy X-Cart upgrades with the vendor as needed.",
+      "security_actionStatement": "Install supported PHP security updates or applicable vendor backports. Coordinate legacy X-Cart upgrades with the vendor as needed."
     }
   ]
 }

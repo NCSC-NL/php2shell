@@ -5161,7 +5161,27 @@
         "urn:php2shell:inventory:package:PHP-0974",
         "urn:php2shell:inventory:relationship:PHP-0974",
         "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0974-official-20261112",
-        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0974-official-20261112"
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0974-official-20261112",
+        "urn:php2shell:inventory:package:PHP-0975",
+        "urn:php2shell:inventory:relationship:PHP-0975",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0975-official-20261118",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0975-official-20261118",
+        "urn:php2shell:inventory:package:PHP-0976",
+        "urn:php2shell:inventory:relationship:PHP-0976",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0976-official-20261118",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0976-official-20261118",
+        "urn:php2shell:inventory:package:PHP-0977",
+        "urn:php2shell:inventory:relationship:PHP-0977",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0977-official-20261118",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0977-official-20261118",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0151-official-20261118",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0151-official-20261118",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0157-official-20261118",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0157-official-20261118",
+        "urn:php2shell:inventory:package:PHP-0978",
+        "urn:php2shell:inventory:relationship:PHP-0978",
+        "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0978-official-20261118",
+        "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0978-official-20261118"
       ]
     },
     {
@@ -10748,10 +10768,18 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:webkul:50c784d84ab7",
-      "summary": "The guide separates manifest, web-installer and transitive extension requirements, and distinguishes Bagisto 2.4 from 2.5.",
+      "summary": "Update PHP to a patched release compatible with the installed Bagisto version, then restart PHP. Application updates or upload-progress configuration alone do not establish remediation.",
       "description": "Server-side PHP web runtime; CLI where separately documented; exact SAPI deployment-dependent",
-      "comment": "Inventory record: PHP-0151\nCategory: Commerce\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime; CLI where separately documented; exact SAPI deployment-dependent\nPHP version scope: 2.4 documentation: PHP 8.3 or 8.4 / Laravel 12. 2.5 documentation and prerelease examples: PHP ^8.4 / Laravel 13.\nExtensions: Required (documented scope): calendar, curl, intl, mbstring, openssl, pdo, pdo_mysql, tokenizer, ctype, dom, fileinfo, filter, gd, hash, json, pcre, session, xml, bcmath, iconv, libxml, simplexml, xmlreader, xmlwriter, zip, zlib. Conditional/alternatives: pdo_pgsql for PostgreSQL on the 2.5 line; imagick when IMAGE_DRIVER=imagick; redis when REDIS_CLIENT=phpredis; Predis is the documented library alternative\nLimitations: The flat extension list here is from the 2.5 documentation; it is not an exact 2.4 extension manifest. The current installation guide still calls latest a stable 2.4 image and gives 2.5.0-beta6 as a prerelease example. Do not treat moving 2.5 guidance as proof of the deployed stable release or image contents. PHP presence does not establish an affected build, reachable flaw or exploitation. Installations and enabled integrations were not measured.\nPatch owner: PHP package/image/hosting provider and operator for runtime; application/plugin maintainer and merchant for application updates\nDownstream surface: Storefront/admin/API backend, indexers and applicable jobs\nRelease pin: Version-scoped/moving official documentation; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: bagisto/bagisto\nConditional downstream consequence: A matching PHP memory-safety or parser flaw reached through store requests, imports or media handling could cause denial of service, disclosure or code execution in the PHP worker. Code execution could expose configured commerce/payment credentials or alter orders and content. Provider compromise, tenant escape and lateral movement would require additional permissions or flaws.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0151\nEvidence reviewed: 2026-11-18\nScope: Vendor guidance specifies PHP 8.4.27 for Bagisto 2.5, PHP 8.3.36 or 8.4.27 for 2.4, and PHP 8.2.35 or 8.3.36 for 2.3. Match the installed release and vendor backports. Managed hosting responsibility alone does not confirm an individual store has been patched.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable when served by unpatched PHP. Bagisto explicitly confirms both CVEs affect its stores and directs operators to update PHP; an application update alone is not the fix.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://bagisto.com/en/php-security-releases-bagisto-stores/"
+          ],
+          "comment": "Official Bagisto security guidance explicitly names both CVEs, affected store runtimes and supported patched PHP versions."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "other",
@@ -10768,7 +10796,8 @@
           ],
           "comment": "Official project/vendor documentation or publisher-supplied package metadata - The guide distinguishes PHP-FPM, mod_php and lsphp image variants; latest still tracks stable 2.4 while 2.5 examples are beta."
         }
-      ]
+      ],
+      "software_packageVersion": "Bagisto stores using unpatched PHP; compatible patched runtime required"
     },
     {
       "type": "software_Package",
@@ -10924,10 +10953,18 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:x-cart:7f70f9da1d3b",
-      "summary": "The versioned developer page requires PHP 8.3–8.4, lists runtime extensions and separately recommends Xdebug for development.",
+      "summary": "Update the PHP runtime for self-hosted or externally hosted stores. The vendor-applied hosted fix is limited to PHP-0978; arrange pending legacy upgrades separately.",
       "description": "Server-side PHP web runtime; CLI where separately documented; exact SAPI deployment-dependent",
-      "comment": "Inventory record: PHP-0157\nCategory: Commerce\nOriginal relationship: requires\nRelationship direction: depends_on_php\nParent component: PHP-0037\nEvidence status: Confirmed relationship\nDeployment status: Not measured\nPHP surface: Server-side PHP web runtime; CLI where separately documented; exact SAPI deployment-dependent\nPHP version scope: Documentation labelled X-Cart 5.6.0: PHP 8.3–8.4. Older 5.5/5.4 requirements are separate.\nExtensions: Required (documented scope): amqp, ctype, curl, date, filter, hash, iconv, intl, json, libxml, mbstring, openssl, pcre, pdo, redis, simplexml, soap, sockets, sodium, spl, tokenizer, xml, xmlwriter. Optional/recommended: xdebug (development only)\nLimitations: libvips is an external image-processing dependency and is not labelled a PHP extension here. Older X-Cart help pages must not supply the 5.6 minimum. PHP presence does not establish an affected build, reachable flaw or exploitation. Installations and enabled integrations were not measured.\nPatch owner: PHP package/image/hosting provider and operator for runtime; application/plugin maintainer and merchant for application updates\nDownstream surface: Commerce storefront, checkout, catalog/admin and enabled integrations\nRelease pin: Version-scoped/moving official documentation; immutable release pin pending\nSource accessed: 2026-10-17\nAliases: X-Cart 5.6\nConditional downstream consequence: A matching PHP memory-safety or parser flaw reached through store requests, imports or media handling could cause denial of service, disclosure or code execution in the PHP worker. Code execution could expose configured commerce/payment credentials or alter orders and content. Provider compromise, tenant escape and lateral movement would require additional permissions or flaws.\nVulnerability status: Preliminary CVE-REVIEW-20261021-01: PHP relationship confirmed; CVE match unknown. No affected deployment established.\nCVE-2026-109618: PHP relationship confirmed; CVE match unknown\nCVE-2026-109619: PHP relationship confirmed; CVE match unknown\nCVE assessment limit: Pre-release public-source review. Affected/fixed builds, SAPI/features and exploit prerequisites are not established. Installed version, backport, configuration and reachable path need separate evidence.",
+      "comment": "Inventory record: PHP-0157\nEvidence reviewed: 2026-11-18\nScope: The hosted fix does not establish remediation of self-hosted deployments, externally hosted stores or pending legacy upgrades. Application versions alone do not prove a patched PHP runtime.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable on unpatched PHP. X-Cart confirms its hosted stores using PHP 7.4 or newer have been patched (PHP-0978); self-hosted stores require operator or hosting-provider PHP updates.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.x-cart.com/php2shell-what-we-patched-and-what-you-need-to-do.html"
+          ],
+          "comment": "Official X-Cart advisory dated 2026-11-05; both CVEs, patched hosted PHP 7.4+ stores, and self-hosted remediation responsibility."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "other",
@@ -10936,7 +10973,8 @@
           ],
           "comment": "Official X-Cart 5 requirements / implementation evidence"
         }
-      ]
+      ],
+      "software_packageVersion": "Unpatched X-Cart 5 installations; vendor-hosted fixed scope recorded separately"
     },
     {
       "type": "software_Package",
@@ -17848,10 +17886,18 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:red-hat:2c30c5da9571",
-      "summary": "The broader RHEL 9 PHP family retains its affected scope, including PHP 8.4. Additional fixed SAP Update Services and EUS packages are recorded separately in PHP-0945, PHP-0946, PHP-0947, PHP-0948, PHP-0949, PHP-0950.",
+      "summary": "Apply the Red Hat advisory for the installed release, stream and architecture, and restart PHP services. The new php:8.4 fixed package scope is PHP-0977.",
       "description": "Common profile includes php-fpm for Apache/nginx; minimal profile is CLI only",
-      "comment": "Inventory record: PHP-0364\nCategory: Containers and distribution\nOriginal relationship: bundles\nRelationship direction: distributes_php\nParent component: PHP-0037\nEvidence status: Vendor-confirmed affected scope with separately recorded fixed releases\nDeployment status: Not measured\nPHP surface: Common profile includes php-fpm for Apache/nginx; minimal profile is CLI only\nPHP version scope: Red Hat lists fixed RHEL 9 PHP 8.0 and php:8.3 packages in RHSA-2026:87151 and RHSA-2026:87079, alongside the existing php:8.2 fix. The php:8.4/php stream remains Affected for both CVEs, so the family stays Vulnerable; fixed package scopes are separate entries.\nExtensions: Bundled/required/optional extension inventory unknown; selected package or build recipe must be resolved\nLimitations: Red Hat lists fixed RHEL 9 PHP 8.0 and php:8.3 packages in RHSA-2026:87151 and RHSA-2026:87079, alongside the existing php:8.2 fix. The php:8.4/php stream remains Affected for both CVEs, so the family stays Vulnerable; fixed package scopes are separate entries.\nPatch owner: Red Hat for supported backported RPMs/AppStreams; subscriber/operator for supported stream selection, update and restart\nDownstream surface: Only applications/jobs using the selected installed runtime or image\nRelease pin: Official advisory reviewed 2026-10-23; fixed scope recorded separately\nSource accessed: 2026-10-23\nAliases: rhel9:php-appstreams\nConditional downstream consequence: A matching flaw could affect applications or jobs actually using this installed package and its loaded modules. Package availability alone creates no exposure. Distribution backports, SAPI, configuration and reachable input must be matched before assessing disclosure, DoS, integrity or code-execution consequences.\nFix sources: https://access.redhat.com/errata/RHSA-2026:87151; https://access.redhat.com/errata/RHSA-2026:87079\nVulnerability status: Vulnerable when using an affected PHP runtime; fixed scopes are recorded separately.\nCVE-2026-109618: Vulnerable on affected PHP; see separate fixed scopes.\nCVE-2026-109619: Vulnerable on affected PHP; see separate fixed scopes.\nCVE assessment limit: The published fixed scopes do not establish that other installations have updated PHP; deployed runtimes were not tested.\nPublished fix review (2026-11-04): The broader RHEL 9 PHP family retains its affected scope, including PHP 8.4. Additional fixed SAP Update Services and EUS packages are recorded separately in PHP-0945, PHP-0946, PHP-0947, PHP-0948, PHP-0949, PHP-0950.",
+      "comment": "Inventory record: PHP-0364\nEvidence reviewed: 2026-11-18\nScope: The PHP 8.4 fix is now available. This parent record describes unpatched installations, not absence of a vendor patch. Use the advisory matching the installed RHEL release, stream and architecture.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable on unpatched RHEL 9 PHP installations. RHSA-2026:97880 now provides the php:8.4 fix, recorded as PHP-0977; existing PHP 8.0/8.2/8.3 and EUS/SAP fixes remain separate.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/errata/RHSA-2026:97880"
+          ],
+          "comment": "Official RHEL 9 php:8.4 security advisory issued 2026-11-10; names both CVEs and the fixed RPM build."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "other",
@@ -27938,10 +27984,26 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:trend-micro:ddb8e439b1bf",
-      "summary": "Vulnerable on unpatched installations. Japanese Windows Critical Patch build 20113 was released on 2026-11-12; the confirmed fixed scope is PHP-0972.",
+      "summary": "Apply the matching language-specific critical patch; English Windows SP1 CP 20113 is PHP-0975 and the existing Japanese scope is PHP-0972. Review vendor prerequisites and known issues.",
       "description": "Bundled PHP module in the Apex One server; exact SAPI and reachable paths unspecified",
-      "comment": "Inventory record: PHP-0631\nEvidence reviewed: 2026-11-12\nScope: The Japanese release evidence does not establish release availability for other language editions. Use the matching vendor package; the hosted service is a separate scope.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable on unpatched installations. Japanese Windows Critical Patch build 20113 was released on 2026-11-12; the confirmed fixed scope is PHP-0972.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
+      "comment": "Inventory record: PHP-0631\nEvidence reviewed: 2026-11-18\nScope: On-premises installations on unpatched PHP remain affected. Use the matching vendor patch for the product and language; hosted services and other language editions require their own assessment.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable on unpatched installations. English Windows Critical Patch build 20113 is now released; see PHP-0975. The existing Japanese fixed scope remains PHP-0972.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/en-US/solution/KA-0024778"
+          ],
+          "comment": "Official 2026-11-13 security bulletin; English Windows SP1 CP 20113 is available and fixes both PHP2Shell CVEs."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/en-US/solution/KA-0024802"
+          ],
+          "comment": "Official PHP2Shell advisory, updated 2026-11-17; released critical patches for both CVEs."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
@@ -27973,17 +28035,9 @@
             "https://files.trendmicro.com/documentation/readme/Apex%20One/2020/apex_one_2019_win_cp_b20105_EN_hotfix_Readme.html"
           ],
           "comment": "Official Trend Micro Apex One critical patch readme"
-        },
-        {
-          "type": "ExternalRef",
-          "externalRefType": "securityAdvisory",
-          "locator": [
-            "https://success.trendmicro.com/en-US/solution/KA-0024802"
-          ],
-          "comment": "Official public CVE review 2026-10-23"
         }
       ],
-      "software_packageVersion": "Unpatched on-premises releases; Japanese fixed scope recorded separately"
+      "software_packageVersion": "Unpatched on-premises releases; English and Japanese fixed scopes recorded separately"
     },
     {
       "type": "software_Package",
@@ -27999,10 +28053,42 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:trend-micro:ddb8e439b1bf",
-      "summary": "Vulnerable on unpatched installations. Japanese Windows Critical Patch build 7351 was released on 2026-11-12; the confirmed fixed scope is PHP-0973.",
+      "summary": "Apply the matching language-specific critical patch; English Windows CP 7351 is PHP-0976 and the existing Japanese scope is PHP-0973. Review vendor prerequisites and known issues.",
       "description": "Bundled PHP module in the Apex Central server; exact SAPI and reachable paths unspecified",
-      "comment": "Inventory record: PHP-0632\nEvidence reviewed: 2026-11-12\nScope: The Japanese release evidence does not establish release availability for other language editions. Use the matching vendor package; the hosted service is a separate scope.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable on unpatched installations. Japanese Windows Critical Patch build 7351 was released on 2026-11-12; the confirmed fixed scope is PHP-0973.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
+      "comment": "Inventory record: PHP-0632\nEvidence reviewed: 2026-11-18\nScope: On-premises installations on unpatched PHP remain affected. Use the matching vendor patch for the product and language; hosted services and other language editions require their own assessment.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable on unpatched installations. English Windows Critical Patch build 7351 is now released; see PHP-0976. The existing Japanese fixed scope remains PHP-0973.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://files.trendmicro.com/documentation/readme/CP/apexcentral_win_en_criticalpatch_b7351_Readme.html"
+          ],
+          "comment": "Official English Windows CP 7351 readme; resolves PHP2Shell by updating PHP to 8.2.35."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/en-US/solution/KA-0025041"
+          ],
+          "comment": "Official CP 7351 release announcement, 2026-11-11."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://downloadcenter.trendmicro.com/index.php?prodid=1746&regs=nabu"
+          ],
+          "comment": "Official download catalog lists English Windows CP 7351 released 2026-11-11."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/en-US/solution/KA-0024802"
+          ],
+          "comment": "Official PHP2Shell advisory, updated 2026-11-17; released critical patches for both CVEs."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
@@ -28034,17 +28120,9 @@
             "https://files.trendmicro.com/documentation/readme/CP/apexcentral_win_en_criticalpatch_b7328_Readme.html"
           ],
           "comment": "Official Trend Micro Apex Central hotfix readme"
-        },
-        {
-          "type": "ExternalRef",
-          "externalRefType": "securityAdvisory",
-          "locator": [
-            "https://success.trendmicro.com/en-US/solution/KA-0024802"
-          ],
-          "comment": "Official public CVE review 2026-10-23"
         }
       ],
-      "software_packageVersion": "Unpatched on-premises releases; Japanese fixed scope recorded separately"
+      "software_packageVersion": "Unpatched on-premises releases; English and Japanese fixed scopes recorded separately"
     },
     {
       "type": "software_Package",
@@ -37304,10 +37382,10 @@
         "urn:php2shell:inventory:package:PHP-0364"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Red Hat lists fixed RHEL 9 PHP 8.0 and php:8.3 packages in RHSA-2026:87151 and RHSA-2026:87079, alongside the existing php:8.2 fix. The php:8.4/php stream remains Affected for both CVEs, so the family stays Vulnerable; fixed package scopes are separate entries.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable in the remaining unpatched scope",
-      "comment": "Official sources reviewed 2026-10-23: https://access.redhat.com/errata/RHSA-2026:87151; https://access.redhat.com/errata/RHSA-2026:87079",
-      "security_actionStatement": "Install the applicable Red Hat security advisory for the selected stream; do not apply PHP 8.0/8.2/8.3 fix status to PHP 8.4."
+      "security_statusNotes": "Vulnerable on unpatched RHEL 9 PHP installations. RHSA-2026:97880 now provides the php:8.4 fix, recorded as PHP-0977; existing PHP 8.0/8.2/8.3 and EUS/SAP fixes remain separate.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Official public sources reviewed 2026-11-18. https://access.redhat.com/errata/RHSA-2026:97880\nAction: Install the applicable Red Hat security update, including RHSA-2026:97880 for RHEL 9 php:8.4, and restart the affected services.",
+      "security_actionStatement": "Install the applicable Red Hat security update, including RHSA-2026:97880 for RHEL 9 php:8.4, and restart the affected services."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -37318,10 +37396,10 @@
         "urn:php2shell:inventory:package:PHP-0364"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Red Hat lists fixed RHEL 9 PHP 8.0 and php:8.3 packages in RHSA-2026:87151 and RHSA-2026:87079, alongside the existing php:8.2 fix. The php:8.4/php stream remains Affected for both CVEs, so the family stays Vulnerable; fixed package scopes are separate entries.",
-      "summary": "CVE-2026-109619 assessment: Vulnerable in the remaining unpatched scope",
-      "comment": "Official sources reviewed 2026-10-23: https://access.redhat.com/errata/RHSA-2026:87151; https://access.redhat.com/errata/RHSA-2026:87079",
-      "security_actionStatement": "Install the applicable Red Hat security advisory for the selected stream; do not apply PHP 8.0/8.2/8.3 fix status to PHP 8.4."
+      "security_statusNotes": "Vulnerable on unpatched RHEL 9 PHP installations. RHSA-2026:97880 now provides the php:8.4 fix, recorded as PHP-0977; existing PHP 8.0/8.2/8.3 and EUS/SAP fixes remain separate.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Official public sources reviewed 2026-11-18. https://access.redhat.com/errata/RHSA-2026:97880\nAction: Install the applicable Red Hat security update, including RHSA-2026:97880 for RHEL 9 php:8.4, and restart the affected services.",
+      "security_actionStatement": "Install the applicable Red Hat security update, including RHSA-2026:97880 for RHEL 9 php:8.4, and restart the affected services."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
@@ -38247,13 +38325,11 @@
         "urn:php2shell:inventory:package:PHP-0148",
         "urn:php2shell:inventory:package:PHP-0149",
         "urn:php2shell:inventory:package:PHP-0150",
-        "urn:php2shell:inventory:package:PHP-0151",
         "urn:php2shell:inventory:package:PHP-0152",
         "urn:php2shell:inventory:package:PHP-0153",
         "urn:php2shell:inventory:package:PHP-0154",
         "urn:php2shell:inventory:package:PHP-0155",
         "urn:php2shell:inventory:package:PHP-0156",
-        "urn:php2shell:inventory:package:PHP-0157",
         "urn:php2shell:inventory:package:PHP-0158",
         "urn:php2shell:inventory:package:PHP-0159",
         "urn:php2shell:inventory:package:PHP-0160",
@@ -38448,13 +38524,11 @@
         "urn:php2shell:inventory:package:PHP-0148",
         "urn:php2shell:inventory:package:PHP-0149",
         "urn:php2shell:inventory:package:PHP-0150",
-        "urn:php2shell:inventory:package:PHP-0151",
         "urn:php2shell:inventory:package:PHP-0152",
         "urn:php2shell:inventory:package:PHP-0153",
         "urn:php2shell:inventory:package:PHP-0154",
         "urn:php2shell:inventory:package:PHP-0155",
         "urn:php2shell:inventory:package:PHP-0156",
-        "urn:php2shell:inventory:package:PHP-0157",
         "urn:php2shell:inventory:package:PHP-0158",
         "urn:php2shell:inventory:package:PHP-0159",
         "urn:php2shell:inventory:package:PHP-0160",
@@ -38801,20 +38875,28 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:sophos:2fd5c42d49f9",
-      "summary": "Use Sophos Support for licensing while the portal is offline; no completed portal fix is asserted.",
+      "summary": "Use Sophos Support for licensing. MyUTM will remain permanently offline; this is retirement of the vulnerable historical service, not a published software fix.",
       "description": "Legacy hosted licensing portal",
-      "comment": "Inventory record: PHP-0657\nCategory: Hosting and cloud\nOriginal relationship: requires\nRelationship direction: product_depends_on_php\nParent component: PHP-0037\nEvidence status: Official public vendor/upstream CVE assessment\nDeployment status: Not measured\nPHP surface: Legacy hosted portal web runtime\nPHP version scope: MyUTM hosted licensing portal before vendor PHP update\nExtensions: Unknown\nLimitations: This row covers the legacy hosted MyUTM portal only. Sophos explicitly says no Sophos products are affected, so this must not be generalized to Sophos UTM or other product lines.\nPatch owner: Sophos for hosted portal remediation\nDownstream surface: Legacy licensing portal accounts and service operations\nRelease pin: MyUTM hosted licensing portal before vendor PHP update\nSource accessed: 2026-10-23\nAliases: Sophos MyUTM portal\nConditional downstream consequence: If a matching PHP or enabled native-extension flaw is reachable through the hosted service, possible effects include worker denial of service, disclosure of service-accessible secrets, data modification or code execution with the service identity. Provider boundaries, tenant escape and lateral movement require separate evidence.\nVulnerability status: Vulnerable. Sophos advisory version 4 confirms the MyUTM hosted portal ran affected PHP and was taken offline pending its update. The separate statement that Sophos products are not affected does not exclude this hosted service.\nCVE-2026-109618: Vulnerable. Sophos advisory version 4 confirms the MyUTM hosted portal ran affected PHP and was taken offline pending its update. The separate statement that Sophos products are not affected does not exclude this hosted service.\nCVE-2026-109619: Vulnerable. Sophos advisory version 4 confirms the MyUTM hosted portal ran affected PHP and was taken offline pending its update. The separate statement that Sophos products are not affected does not exclude this hosted service.\nCVE assessment limit: Only the stated product/version/deployment scope is assessed. No installation, reachability or exploitation test was performed.\nPublic vendor CVE review: 2026-10-23\nVendor advisory sources: https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell",
+      "comment": "Inventory record: PHP-0657\nEvidence reviewed: 2026-11-18\nScope: Retired hosted licensing portal only. Permanent shutdown removes service availability but is not a published software fix. Contact Sophos Support for licensing needs.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable historical MyUTM service; Sophos has permanently retired the portal after reviewing PHP2Shell. No released fix or service restoration is asserted.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://community.sophos.com/utm-firewall/b/blog/posts/sophos-utm-myutm-to-remain-offline"
+          ],
+          "comment": "Official 2026-10-28 product announcement: MyUTM will remain permanently offline following PHP2Shell review."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
           "locator": [
             "https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell"
           ],
-          "comment": "Official public CVE review 2026-10-23"
+          "comment": "Official advisory confirms the legacy MyUTM hosted portal used affected PHP; other Sophos product assessments are separate."
         }
       ],
-      "software_packageVersion": "MyUTM hosted licensing portal before vendor PHP update"
+      "software_packageVersion": "Legacy MyUTM hosted portal; permanently offline per 2026-10-28 announcement"
     },
     {
       "type": "software_Package",
@@ -44111,9 +44193,17 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:xerox",
-      "summary": "Monitor XRX26-016 for release availability; the vendor still reports a fix in development.",
-      "description": "Affected Products: Worldwide Ticketing Tool, as scoped in Xerox XRX26-016 v4.",
+      "summary": "Xerox applied the hosted-service fix; no customer action is required. The bulletin does not publish an exact service build.",
+      "description": "Xerox-managed Worldwide Ticketing Tool service; remediated in XRX26-016 v7.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v7.pdf"
+          ],
+          "comment": "Official XRX26-016 v7, updated 2026-11-13, page 1; Worldwide Ticketing Tool remediated by Xerox."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
@@ -44131,8 +44221,8 @@
           "comment": "Xerox XRX26-016 v4, published 2026-10-23, updated 2026-10-28, page 1; reviewed 2026-10-29."
         }
       ],
-      "software_packageVersion": "Most current release evaluated in XRX26-016 v6 (2026-11-06); version not specified",
-      "comment": "Inventory record: PHP-0764\nBulletin product row: Worldwide Ticketing Tool\nBulletin category: Affected Products\nEvidence reviewed: 2026-10-29\nScope: Named product/model group and vendor-evaluated current release only; earlier releases and unlisted models are not assessed.\nPHP dependency: Vendor confirms an affected PHP runtime component; PHP version and deployment details are not published.\nA fix is in development; the bulletin provides no fixed version or release date. Monitor XRX26-016 for updates.\nOfficial public-source review 2026-11-12: Vulnerable; XRX26-016 v6 still reports the Worldwide Ticketing Tool fix as in development, without a released fixed version."
+      "software_packageVersion": "Vendor-remediated hosted service reported in XRX26-016 v7 (2026-11-13); build not published",
+      "comment": "Inventory record: PHP-0764\nEvidence reviewed: 2026-11-18\nScope: Worldwide Ticketing Tool only. The vendor applied the service fix; the bulletin does not publish a version number or establish remediation of other Xerox products.\nCVE-2026-109618 and CVE-2026-109619: Fix: Xerox confirms that it has applied the Worldwide Ticketing Tool fix for both PHP2Shell CVEs; no customer action is required.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope."
     },
     {
       "type": "software_Package",
@@ -50651,6 +50741,150 @@
       ]
     },
     {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0975",
+      "creationInfo": "_:creationinfo",
+      "name": "Apex One 2019 on-premises server (English Windows release)",
+      "software_primaryPurpose": "application",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0975"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:trend-micro:ddb8e439b1bf",
+      "summary": "Install English Windows SP1 CP 20113 following vendor prerequisites. This fixes the on-premises server; hosted services and other language editions are separate scopes.",
+      "software_packageVersion": "SP1 Critical Patch build 20113 (English Windows)",
+      "comment": "Inventory record: PHP-0975\nEvidence reviewed: 2026-11-18\nScope: Apply the English Windows SP1 CP 20113 package. Vendor bulletin lists on-premises 2019 builds below 20113 as affected. The hosted service and other language editions are separate scopes; review installation prerequisites and known issues.\nCVE-2026-109618 and CVE-2026-109619: Fix: English Windows SP1 CP 20113 addresses both PHP2Shell CVEs in the on-premises server; the vendor confirms release availability on 2026-11-13.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope.\nParent inventory record: PHP-0631",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/en-US/solution/KA-0024778"
+          ],
+          "comment": "Official 2026-11-13 security bulletin; English Windows SP1 CP 20113 is available and fixes both PHP2Shell CVEs."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/en-US/solution/KA-0024802"
+          ],
+          "comment": "Official PHP2Shell advisory, updated 2026-11-17; released critical patches for both CVEs."
+        }
+      ]
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0976",
+      "creationInfo": "_:creationinfo",
+      "name": "Apex Central 2019 (English Windows release)",
+      "software_primaryPurpose": "application",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0976"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:trend-micro:ddb8e439b1bf",
+      "summary": "Install English Windows CP 7351 over the supported build 3752 baseline. It includes PHP 8.2.35; other language editions and unpatched installations are separate scopes.",
+      "software_packageVersion": "Critical Patch build 7351 (English Windows); PHP 8.2.35",
+      "comment": "Inventory record: PHP-0976\nEvidence reviewed: 2026-11-18\nScope: Install the English Windows critical patch over the supported Apex Central build 3752 baseline, following vendor requirements. Other language editions and unpatched installations are separate scopes.\nCVE-2026-109618 and CVE-2026-109619: Fix: English Windows CP 7351, released 2026-11-11, upgrades the bundled PHP to 8.2.35 and resolves both PHP2Shell CVEs.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope.\nParent inventory record: PHP-0632",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://files.trendmicro.com/documentation/readme/CP/apexcentral_win_en_criticalpatch_b7351_Readme.html"
+          ],
+          "comment": "Official English Windows CP 7351 readme; resolves PHP2Shell by updating PHP to 8.2.35."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/en-US/solution/KA-0025041"
+          ],
+          "comment": "Official CP 7351 release announcement, 2026-11-11."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://downloadcenter.trendmicro.com/index.php?prodid=1746&regs=nabu"
+          ],
+          "comment": "Official download catalog lists English Windows CP 7351 released 2026-11-11."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/en-US/solution/KA-0024802"
+          ],
+          "comment": "Official PHP2Shell advisory, updated 2026-11-17; released critical patches for both CVEs."
+        }
+      ]
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0977",
+      "creationInfo": "_:creationinfo",
+      "name": "Red Hat Enterprise Linux 9 php:8.4 module",
+      "software_primaryPurpose": "other",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0977"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:red-hat:2c30c5da9571",
+      "summary": "Apply RHSA-2026:97880 for RHEL 9 php:8.4 and restart PHP services. The advisory covers x86_64, aarch64, ppc64le and s390x; other streams require their own updates.",
+      "software_packageVersion": "php-8.4.27-1.module+el9.9.0+25112+f4f032cf (RHSA-2026:97880)",
+      "comment": "Inventory record: PHP-0977\nEvidence reviewed: 2026-11-18\nScope: Apply RHSA-2026:97880 for the RHEL 9 php:8.4 module on x86_64, aarch64, ppc64le or s390x and restart services using PHP. This does not establish remediation of unpatched deployments or other RHEL streams.\nCVE-2026-109618 and CVE-2026-109619: Fix: RHSA-2026:97880 provides released php:8.4 packages for both CVEs in RHEL 9.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope.\nParent inventory record: PHP-0364",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://access.redhat.com/errata/RHSA-2026:97880"
+          ],
+          "comment": "Official RHEL 9 php:8.4 security advisory issued 2026-11-10; names both CVEs and the fixed RPM build."
+        }
+      ]
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0978",
+      "creationInfo": "_:creationinfo",
+      "name": "X-Cart hosted stores (patched PHP 7.4+ scope)",
+      "software_primaryPurpose": "application",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0978"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:x-cart:7f70f9da1d3b",
+      "summary": "Vendor-applied update for X-Cart-hosted stores on PHP 7.4 or newer. Self-hosted installations and pending legacy upgrades are excluded; exact PHP package builds are not published.",
+      "software_packageVersion": "Vendor-hosted stores on patched PHP 7.4 or newer, confirmed 2026-11-05",
+      "comment": "Inventory record: PHP-0978\nEvidence reviewed: 2026-11-18\nScope: Limited to vendor-hosted stores covered by the published patch confirmation. Self-hosted installations and pending legacy store/runtime upgrades are excluded; confirm an individual legacy store with X-Cart Support. Exact package builds are not published.\nCVE-2026-109618 and CVE-2026-109619: Fix: X-Cart confirms it applied patched PHP builds to its hosted stores running PHP 7.4 or newer for both PHP2Shell CVEs.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope.\nParent inventory record: PHP-0157",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://www.x-cart.com/php2shell-what-we-patched-and-what-you-need-to-do.html"
+          ],
+          "comment": "Official X-Cart advisory dated 2026-11-05; both CVEs, patched hosted PHP 7.4+ stores, and self-hosted remediation responsibility."
+        }
+      ]
+    },
+    {
       "type": "Relationship",
       "spdxId": "urn:php2shell:inventory:relationship:PHP-0012-provided-runtime",
       "creationInfo": "_:creationinfo",
@@ -51743,6 +51977,54 @@
       "comment": "Vendor-confirmed remediation scope separated from PHP-0158."
     },
     {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0975",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0975",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "PHP runtime dependency for Apex One 2019 on-premises server (English Windows release)",
+      "comment": "Vendor-confirmed remediation scope separated from PHP-0631."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0976",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0976",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "PHP runtime dependency for Apex Central 2019 (English Windows release)",
+      "comment": "Vendor-confirmed remediation scope separated from PHP-0632."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0977",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0977",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "PHP runtime dependency for Red Hat Enterprise Linux 9 php:8.4 module",
+      "comment": "Vendor-confirmed remediation scope separated from PHP-0364."
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0978",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0978",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "dependsOn",
+      "summary": "PHP runtime dependency for X-Cart hosted stores (patched PHP 7.4+ scope)",
+      "comment": "Vendor-confirmed remediation scope separated from PHP-0157."
+    },
+    {
       "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:broadcom-esg-39404-20261022",
       "creationInfo": "_:creationinfo",
@@ -51824,6 +52106,34 @@
       "summary": "CVE-2026-109618 assessment: Vulnerable. MODX confirms that these PHP vulnerabilities affect the runtime serving MODX; updating MODX alone does not fix them. MODX Cloud is a separate scope for which the vendor confirms deployed PHP patches.",
       "comment": "Official public source reviewed 2026-10-26. Source: https://community.modx.com/t/critical-php-vulnerabilities-upgrade-immediately/9312",
       "security_actionStatement": "Update the serving PHP runtime to the vendor-supported fixed package and restart PHP workers. Hosted and container scopes must be checked separately."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0151-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0151"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Vulnerable when served by unpatched PHP. Bagisto explicitly confirms both CVEs affect its stores and directs operators to update PHP; an application update alone is not the fix.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Official public sources reviewed 2026-11-18. https://bagisto.com/en/php-security-releases-bagisto-stores/\nAction: Install a compatible fixed PHP build or vendor backport and restart PHP. Treat upload-progress configuration changes only as interim mitigation.",
+      "security_actionStatement": "Install a compatible fixed PHP build or vendor backport and restart PHP. Treat upload-progress configuration changes only as interim mitigation."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:php-0157-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0157"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Vulnerable on unpatched PHP. X-Cart confirms its hosted stores using PHP 7.4 or newer have been patched (PHP-0978); self-hosted stores require operator or hosting-provider PHP updates.",
+      "summary": "CVE-2026-109618 assessment: Vulnerable",
+      "comment": "Official public sources reviewed 2026-11-18. https://www.x-cart.com/php2shell-what-we-patched-and-what-you-need-to-do.html\nAction: Install supported PHP security updates or applicable vendor backports. Coordinate legacy X-Cart upgrades with the vendor as needed.",
+      "security_actionStatement": "Install supported PHP security updates or applicable vendor backports. Coordinate legacy X-Cart upgrades with the vendor as needed."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -51932,10 +52242,10 @@
         "urn:php2shell:inventory:package:PHP-0631"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Vulnerable on unpatched installations. Japanese Windows Critical Patch build 20113 was released on 2026-11-12; the confirmed fixed scope is PHP-0972.",
+      "security_statusNotes": "Vulnerable on unpatched installations. English Windows Critical Patch build 20113 is now released; see PHP-0975. The existing Japanese fixed scope remains PHP-0972.",
       "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Official public sources reviewed 2026-11-12. https://success.trendmicro.com/ja-jp/solution/KA-0024807 https://success.trendmicro.com/ja-JP/solution/KA-0025018 https://files.trendmicro.com/jp/ucmodule/apexone/win/2019/sp1/apex_one_2019_win_cp_b20113_JP_hotfix_Readme.html\nAction: Apply the matching released vendor patch. See PHP-0972 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice.",
-      "security_actionStatement": "Apply the matching released vendor patch. See PHP-0972 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice."
+      "comment": "Official public sources reviewed 2026-11-18. https://success.trendmicro.com/en-US/solution/KA-0024778 https://success.trendmicro.com/en-US/solution/KA-0024802\nAction: Apply the matching released critical patch and review vendor prerequisites and known issues.",
+      "security_actionStatement": "Apply the matching released critical patch and review vendor prerequisites and known issues."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -51946,10 +52256,10 @@
         "urn:php2shell:inventory:package:PHP-0632"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Vulnerable on unpatched installations. Japanese Windows Critical Patch build 7351 was released on 2026-11-12; the confirmed fixed scope is PHP-0973.",
+      "security_statusNotes": "Vulnerable on unpatched installations. English Windows Critical Patch build 7351 is now released; see PHP-0976. The existing Japanese fixed scope remains PHP-0973.",
       "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Official public sources reviewed 2026-11-12. https://success.trendmicro.com/ja-jp/solution/KA-0024807 https://success.trendmicro.com/ja-jp/solution/KA-0025014 https://files.trendmicro.com/jp/ucmodule/apexcentral/win/2019/CP/apexcentral_win_jp_criticalpatch_b7351_JP_Readme.html\nAction: Apply the matching released vendor patch. See PHP-0973 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice.",
-      "security_actionStatement": "Apply the matching released vendor patch. See PHP-0973 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice."
+      "comment": "Official public sources reviewed 2026-11-18. https://files.trendmicro.com/documentation/readme/CP/apexcentral_win_en_criticalpatch_b7351_Readme.html https://success.trendmicro.com/en-US/solution/KA-0025041 https://downloadcenter.trendmicro.com/index.php?prodid=1746&regs=nabu https://success.trendmicro.com/en-US/solution/KA-0024802\nAction: Apply the matching released critical patch and review vendor prerequisites and known issues.",
+      "security_actionStatement": "Apply the matching released critical patch and review vendor prerequisites and known issues."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -51960,10 +52270,10 @@
         "urn:php2shell:inventory:package:PHP-0657"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Sophos advisory version 4 confirms the MyUTM hosted portal ran affected PHP and was taken offline pending its update. The separate statement that Sophos products are not affected does not exclude this hosted service.",
+      "security_statusNotes": "Vulnerable historical MyUTM service; Sophos has permanently retired the portal after reviewing PHP2Shell. No released fix or service restoration is asserted.",
       "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell",
-      "security_actionStatement": "Use Sophos Support for licensing while the portal is offline; no completed portal fix is asserted."
+      "comment": "Official public sources reviewed 2026-11-18. https://community.sophos.com/utm-firewall/b/blog/posts/sophos-utm-myutm-to-remain-offline https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell\nAction: Use Sophos Support for licensing. The portal will remain permanently offline.",
+      "security_actionStatement": "Use Sophos Support for licensing. The portal will remain permanently offline."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -52155,18 +52465,17 @@
       "security_actionStatement": "Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:affects:xerox-xrx26-016-v4-php-0764",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
       "to": [
         "urn:php2shell:inventory:package:PHP-0764"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Vulnerable; XRX26-016 v6 still reports the Worldwide Ticketing Tool fix as in development, without a released fixed version.",
-      "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nAction: Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix.",
-      "security_actionStatement": "Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: Xerox confirms that it has applied the Worldwide Ticketing Tool fix for both PHP2Shell CVEs; no customer action is required.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-18. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v7.pdf\nAction: No customer action is required for this vendor-remediated hosted service."
     },
     {
       "type": "security_VexNotAffectedVulnAssessmentRelationship",
@@ -54623,6 +54932,58 @@
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0975-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0975"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: English Windows SP1 CP 20113 addresses both PHP2Shell CVEs in the on-premises server; the vendor confirms release availability on 2026-11-13.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-18. https://success.trendmicro.com/en-US/solution/KA-0024778 https://success.trendmicro.com/en-US/solution/KA-0024802\nAction: Apply the English Windows SP1 CP 20113 package. Vendor bulletin lists on-premises 2019 builds below 20113 as affected. The hosted service and other language editions are separate scopes; review installation prerequisites and known issues."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0976-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0976"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: English Windows CP 7351, released 2026-11-11, upgrades the bundled PHP to 8.2.35 and resolves both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-18. https://files.trendmicro.com/documentation/readme/CP/apexcentral_win_en_criticalpatch_b7351_Readme.html https://success.trendmicro.com/en-US/solution/KA-0025041 https://downloadcenter.trendmicro.com/index.php?prodid=1746&regs=nabu https://success.trendmicro.com/en-US/solution/KA-0024802\nAction: Install the English Windows critical patch over the supported Apex Central build 3752 baseline, following vendor requirements. Other language editions and unpatched installations are separate scopes."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0977-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0977"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: RHSA-2026:97880 provides released php:8.4 packages for both CVEs in RHEL 9.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-18. https://access.redhat.com/errata/RHSA-2026:97880\nAction: Apply RHSA-2026:97880 for the RHEL 9 php:8.4 module on x86_64, aarch64, ppc64le or s390x and restart services using PHP. This does not establish remediation of unpatched deployments or other RHEL streams."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0978-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0978"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: X-Cart confirms it applied patched PHP builds to its hosted stores running PHP 7.4 or newer for both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-18. https://www.x-cart.com/php2shell-what-we-patched-and-what-you-need-to-do.html\nAction: Limited to vendor-hosted stores covered by the published patch confirmation. Self-hosted installations and pending legacy store/runtime upgrades are excluded; confirm an individual legacy store with X-Cart Support. Exact package builds are not published."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:serversideup-v5-0-2-20261021",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
@@ -54813,6 +55174,34 @@
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0151-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0151"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Vulnerable when served by unpatched PHP. Bagisto explicitly confirms both CVEs affect its stores and directs operators to update PHP; an application update alone is not the fix.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Official public sources reviewed 2026-11-18. https://bagisto.com/en/php-security-releases-bagisto-stores/\nAction: Install a compatible fixed PHP build or vendor backport and restart PHP. Treat upload-progress configuration changes only as interim mitigation.",
+      "security_actionStatement": "Install a compatible fixed PHP build or vendor backport and restart PHP. Treat upload-progress configuration changes only as interim mitigation."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0157-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0157"
+      ],
+      "relationshipType": "affects",
+      "security_statusNotes": "Vulnerable on unpatched PHP. X-Cart confirms its hosted stores using PHP 7.4 or newer have been patched (PHP-0978); self-hosted stores require operator or hosting-provider PHP updates.",
+      "summary": "CVE-2026-109619 assessment: Vulnerable",
+      "comment": "Official public sources reviewed 2026-11-18. https://www.x-cart.com/php2shell-what-we-patched-and-what-you-need-to-do.html\nAction: Install supported PHP security updates or applicable vendor backports. Coordinate legacy X-Cart upgrades with the vendor as needed.",
+      "security_actionStatement": "Install supported PHP security updates or applicable vendor backports. Coordinate legacy X-Cart upgrades with the vendor as needed."
+    },
+    {
+      "type": "security_VexAffectedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:php-0221-official-20261026",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
@@ -54904,10 +55293,10 @@
         "urn:php2shell:inventory:package:PHP-0631"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Vulnerable on unpatched installations. Japanese Windows Critical Patch build 20113 was released on 2026-11-12; the confirmed fixed scope is PHP-0972.",
+      "security_statusNotes": "Vulnerable on unpatched installations. English Windows Critical Patch build 20113 is now released; see PHP-0975. The existing Japanese fixed scope remains PHP-0972.",
       "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Official public sources reviewed 2026-11-12. https://success.trendmicro.com/ja-jp/solution/KA-0024807 https://success.trendmicro.com/ja-JP/solution/KA-0025018 https://files.trendmicro.com/jp/ucmodule/apexone/win/2019/sp1/apex_one_2019_win_cp_b20113_JP_hotfix_Readme.html\nAction: Apply the matching released vendor patch. See PHP-0972 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice.",
-      "security_actionStatement": "Apply the matching released vendor patch. See PHP-0972 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice."
+      "comment": "Official public sources reviewed 2026-11-18. https://success.trendmicro.com/en-US/solution/KA-0024778 https://success.trendmicro.com/en-US/solution/KA-0024802\nAction: Apply the matching released critical patch and review vendor prerequisites and known issues.",
+      "security_actionStatement": "Apply the matching released critical patch and review vendor prerequisites and known issues."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -54918,10 +55307,10 @@
         "urn:php2shell:inventory:package:PHP-0632"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Vulnerable on unpatched installations. Japanese Windows Critical Patch build 7351 was released on 2026-11-12; the confirmed fixed scope is PHP-0973.",
+      "security_statusNotes": "Vulnerable on unpatched installations. English Windows Critical Patch build 7351 is now released; see PHP-0976. The existing Japanese fixed scope remains PHP-0973.",
       "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Official public sources reviewed 2026-11-12. https://success.trendmicro.com/ja-jp/solution/KA-0024807 https://success.trendmicro.com/ja-jp/solution/KA-0025014 https://files.trendmicro.com/jp/ucmodule/apexcentral/win/2019/CP/apexcentral_win_jp_criticalpatch_b7351_JP_Readme.html\nAction: Apply the matching released vendor patch. See PHP-0973 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice.",
-      "security_actionStatement": "Apply the matching released vendor patch. See PHP-0973 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice."
+      "comment": "Official public sources reviewed 2026-11-18. https://files.trendmicro.com/documentation/readme/CP/apexcentral_win_en_criticalpatch_b7351_Readme.html https://success.trendmicro.com/en-US/solution/KA-0025041 https://downloadcenter.trendmicro.com/index.php?prodid=1746&regs=nabu https://success.trendmicro.com/en-US/solution/KA-0024802\nAction: Apply the matching released critical patch and review vendor prerequisites and known issues.",
+      "security_actionStatement": "Apply the matching released critical patch and review vendor prerequisites and known issues."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -54932,10 +55321,10 @@
         "urn:php2shell:inventory:package:PHP-0657"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Sophos advisory version 4 confirms the MyUTM hosted portal ran affected PHP and was taken offline pending its update. The separate statement that Sophos products are not affected does not exclude this hosted service.",
+      "security_statusNotes": "Vulnerable historical MyUTM service; Sophos has permanently retired the portal after reviewing PHP2Shell. No released fix or service restoration is asserted.",
       "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Public official source reviewed 2026-10-23. Sources: https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell",
-      "security_actionStatement": "Use Sophos Support for licensing while the portal is offline; no completed portal fix is asserted."
+      "comment": "Official public sources reviewed 2026-11-18. https://community.sophos.com/utm-firewall/b/blog/posts/sophos-utm-myutm-to-remain-offline https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell\nAction: Use Sophos Support for licensing. The portal will remain permanently offline.",
+      "security_actionStatement": "Use Sophos Support for licensing. The portal will remain permanently offline."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -55113,18 +55502,17 @@
       "security_actionStatement": "Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix."
     },
     {
-      "type": "security_VexAffectedVulnAssessmentRelationship",
+      "type": "security_VexFixedVulnAssessmentRelationship",
       "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:affects:xerox-xrx26-016-v4-php-0764",
       "creationInfo": "_:creationinfo",
       "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
       "to": [
         "urn:php2shell:inventory:package:PHP-0764"
       ],
-      "relationshipType": "affects",
-      "security_statusNotes": "Vulnerable; XRX26-016 v6 still reports the Worldwide Ticketing Tool fix as in development, without a released fixed version.",
-      "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Official public sources reviewed 2026-11-12. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v6.pdf\nAction: Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix.",
-      "security_actionStatement": "Monitor the vendor bulletin for confirmed release availability; retain exposure-reduction measures pending a full fix."
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: Xerox confirms that it has applied the Worldwide Ticketing Tool fix for both PHP2Shell CVEs; no customer action is required.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-18. https://securitydocs.business.xerox.com/wp-content/uploads/2026/11/Xerox-Security-Bulletin-XRX26-016-for-PHP2Shell-Vulnerabilities-CVE-2026-109618-and-CVE-2026-109619-v7.pdf\nAction: No customer action is required for this vendor-remediated hosted service."
     },
     {
       "type": "security_VexNotAffectedVulnAssessmentRelationship",
@@ -57593,6 +57981,58 @@
       "security_statusNotes": "Fix: Oro confirms all OroCloud managed environments were patched on 2026-10-22 for both PHP2Shell CVEs.",
       "summary": "CVE-2026-109619 assessment: Fix",
       "comment": "Official public sources reviewed 2026-11-12. https://oroinc.com/b2b-ecommerce/blog/security-update/\nScope: Only OroCloud managed environments; self-hosted OroCommerce remains dependent on operator-applied PHP updates. The vendor does not publish individual deployed PHP build numbers."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0975-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0975"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: English Windows SP1 CP 20113 addresses both PHP2Shell CVEs in the on-premises server; the vendor confirms release availability on 2026-11-13.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-18. https://success.trendmicro.com/en-US/solution/KA-0024778 https://success.trendmicro.com/en-US/solution/KA-0024802\nAction: Apply the English Windows SP1 CP 20113 package. Vendor bulletin lists on-premises 2019 builds below 20113 as affected. The hosted service and other language editions are separate scopes; review installation prerequisites and known issues."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0976-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0976"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: English Windows CP 7351, released 2026-11-11, upgrades the bundled PHP to 8.2.35 and resolves both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-18. https://files.trendmicro.com/documentation/readme/CP/apexcentral_win_en_criticalpatch_b7351_Readme.html https://success.trendmicro.com/en-US/solution/KA-0025041 https://downloadcenter.trendmicro.com/index.php?prodid=1746&regs=nabu https://success.trendmicro.com/en-US/solution/KA-0024802\nAction: Install the English Windows critical patch over the supported Apex Central build 3752 baseline, following vendor requirements. Other language editions and unpatched installations are separate scopes."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0977-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0977"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: RHSA-2026:97880 provides released php:8.4 packages for both CVEs in RHEL 9.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-18. https://access.redhat.com/errata/RHSA-2026:97880\nAction: Apply RHSA-2026:97880 for the RHEL 9 php:8.4 module on x86_64, aarch64, ppc64le or s390x and restart services using PHP. This does not establish remediation of unpatched deployments or other RHEL streams."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0978-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0978"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: X-Cart confirms it applied patched PHP builds to its hosted stores running PHP 7.4 or newer for both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-18. https://www.x-cart.com/php2shell-what-we-patched-and-what-you-need-to-do.html\nAction: Limited to vendor-hosted stores covered by the published patch confirmation. Self-hosted installations and pending legacy store/runtime upgrades are excluded; confirm an individual legacy store with X-Cart Support. Exact package builds are not published."
     },
     {
       "type": "security_VexFixedVulnAssessmentRelationship",

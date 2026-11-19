@@ -1247,10 +1247,26 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:trend-micro:ddb8e439b1bf",
-      "summary": "Vulnerable on unpatched installations. Japanese Windows Critical Patch build 20113 was released on 2026-11-12; the confirmed fixed scope is PHP-0972.",
+      "summary": "Apply the matching language-specific critical patch; English Windows SP1 CP 20113 is PHP-0975 and the existing Japanese scope is PHP-0972. Review vendor prerequisites and known issues.",
       "description": "Bundled PHP module in the Apex One server; exact SAPI and reachable paths unspecified",
-      "comment": "Inventory record: PHP-0631\nEvidence reviewed: 2026-11-12\nScope: The Japanese release evidence does not establish release availability for other language editions. Use the matching vendor package; the hosted service is a separate scope.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable on unpatched installations. Japanese Windows Critical Patch build 20113 was released on 2026-11-12; the confirmed fixed scope is PHP-0972.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
+      "comment": "Inventory record: PHP-0631\nEvidence reviewed: 2026-11-18\nScope: On-premises installations on unpatched PHP remain affected. Use the matching vendor patch for the product and language; hosted services and other language editions require their own assessment.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable on unpatched installations. English Windows Critical Patch build 20113 is now released; see PHP-0975. The existing Japanese fixed scope remains PHP-0972.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/en-US/solution/KA-0024778"
+          ],
+          "comment": "Official 2026-11-13 security bulletin; English Windows SP1 CP 20113 is available and fixes both PHP2Shell CVEs."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/en-US/solution/KA-0024802"
+          ],
+          "comment": "Official PHP2Shell advisory, updated 2026-11-17; released critical patches for both CVEs."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
@@ -1282,17 +1298,9 @@
             "https://files.trendmicro.com/documentation/readme/Apex%20One/2020/apex_one_2019_win_cp_b20105_EN_hotfix_Readme.html"
           ],
           "comment": "Official Trend Micro Apex One critical patch readme"
-        },
-        {
-          "type": "ExternalRef",
-          "externalRefType": "securityAdvisory",
-          "locator": [
-            "https://success.trendmicro.com/en-US/solution/KA-0024802"
-          ],
-          "comment": "Official public CVE review 2026-10-23"
         }
       ],
-      "software_packageVersion": "Unpatched on-premises releases; Japanese fixed scope recorded separately"
+      "software_packageVersion": "Unpatched on-premises releases; English and Japanese fixed scopes recorded separately"
     },
     {
       "type": "software_Package",
@@ -1308,10 +1316,42 @@
         }
       ],
       "suppliedBy": "urn:php2shell:inventory:organization:trend-micro:ddb8e439b1bf",
-      "summary": "Vulnerable on unpatched installations. Japanese Windows Critical Patch build 7351 was released on 2026-11-12; the confirmed fixed scope is PHP-0973.",
+      "summary": "Apply the matching language-specific critical patch; English Windows CP 7351 is PHP-0976 and the existing Japanese scope is PHP-0973. Review vendor prerequisites and known issues.",
       "description": "Bundled PHP module in the Apex Central server; exact SAPI and reachable paths unspecified",
-      "comment": "Inventory record: PHP-0632\nEvidence reviewed: 2026-11-12\nScope: The Japanese release evidence does not establish release availability for other language editions. Use the matching vendor package; the hosted service is a separate scope.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable on unpatched installations. Japanese Windows Critical Patch build 7351 was released on 2026-11-12; the confirmed fixed scope is PHP-0973.\nDeployment status: Not measured; vendor confirmation applies only to the stated product, version and deployment scope.",
+      "comment": "Inventory record: PHP-0632\nEvidence reviewed: 2026-11-18\nScope: On-premises installations on unpatched PHP remain affected. Use the matching vendor patch for the product and language; hosted services and other language editions require their own assessment.\nCVE-2026-109618 and CVE-2026-109619: Vulnerable on unpatched installations. English Windows Critical Patch build 7351 is now released; see PHP-0976. The existing Japanese fixed scope remains PHP-0973.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope.",
       "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://files.trendmicro.com/documentation/readme/CP/apexcentral_win_en_criticalpatch_b7351_Readme.html"
+          ],
+          "comment": "Official English Windows CP 7351 readme; resolves PHP2Shell by updating PHP to 8.2.35."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/en-US/solution/KA-0025041"
+          ],
+          "comment": "Official CP 7351 release announcement, 2026-11-11."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://downloadcenter.trendmicro.com/index.php?prodid=1746&regs=nabu"
+          ],
+          "comment": "Official download catalog lists English Windows CP 7351 released 2026-11-11."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/en-US/solution/KA-0024802"
+          ],
+          "comment": "Official PHP2Shell advisory, updated 2026-11-17; released critical patches for both CVEs."
+        },
         {
           "type": "ExternalRef",
           "externalRefType": "securityAdvisory",
@@ -1343,17 +1383,9 @@
             "https://files.trendmicro.com/documentation/readme/CP/apexcentral_win_en_criticalpatch_b7328_Readme.html"
           ],
           "comment": "Official Trend Micro Apex Central hotfix readme"
-        },
-        {
-          "type": "ExternalRef",
-          "externalRefType": "securityAdvisory",
-          "locator": [
-            "https://success.trendmicro.com/en-US/solution/KA-0024802"
-          ],
-          "comment": "Official public CVE review 2026-10-23"
         }
       ],
-      "software_packageVersion": "Unpatched on-premises releases; Japanese fixed scope recorded separately"
+      "software_packageVersion": "Unpatched on-premises releases; English and Japanese fixed scopes recorded separately"
     },
     {
       "type": "Relationship",
@@ -3152,10 +3184,10 @@
         "urn:php2shell:inventory:package:PHP-0631"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Vulnerable on unpatched installations. Japanese Windows Critical Patch build 20113 was released on 2026-11-12; the confirmed fixed scope is PHP-0972.",
+      "security_statusNotes": "Vulnerable on unpatched installations. English Windows Critical Patch build 20113 is now released; see PHP-0975. The existing Japanese fixed scope remains PHP-0972.",
       "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Official public sources reviewed 2026-11-12. https://success.trendmicro.com/ja-jp/solution/KA-0024807 https://success.trendmicro.com/ja-JP/solution/KA-0025018 https://files.trendmicro.com/jp/ucmodule/apexone/win/2019/sp1/apex_one_2019_win_cp_b20113_JP_hotfix_Readme.html\nAction: Apply the matching released vendor patch. See PHP-0972 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice.",
-      "security_actionStatement": "Apply the matching released vendor patch. See PHP-0972 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice."
+      "comment": "Official public sources reviewed 2026-11-18. https://success.trendmicro.com/en-US/solution/KA-0024778 https://success.trendmicro.com/en-US/solution/KA-0024802\nAction: Apply the matching released critical patch and review vendor prerequisites and known issues.",
+      "security_actionStatement": "Apply the matching released critical patch and review vendor prerequisites and known issues."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -3166,10 +3198,10 @@
         "urn:php2shell:inventory:package:PHP-0631"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Vulnerable on unpatched installations. Japanese Windows Critical Patch build 20113 was released on 2026-11-12; the confirmed fixed scope is PHP-0972.",
+      "security_statusNotes": "Vulnerable on unpatched installations. English Windows Critical Patch build 20113 is now released; see PHP-0975. The existing Japanese fixed scope remains PHP-0972.",
       "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Official public sources reviewed 2026-11-12. https://success.trendmicro.com/ja-jp/solution/KA-0024807 https://success.trendmicro.com/ja-JP/solution/KA-0025018 https://files.trendmicro.com/jp/ucmodule/apexone/win/2019/sp1/apex_one_2019_win_cp_b20113_JP_hotfix_Readme.html\nAction: Apply the matching released vendor patch. See PHP-0972 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice.",
-      "security_actionStatement": "Apply the matching released vendor patch. See PHP-0972 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice."
+      "comment": "Official public sources reviewed 2026-11-18. https://success.trendmicro.com/en-US/solution/KA-0024778 https://success.trendmicro.com/en-US/solution/KA-0024802\nAction: Apply the matching released critical patch and review vendor prerequisites and known issues.",
+      "security_actionStatement": "Apply the matching released critical patch and review vendor prerequisites and known issues."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -3180,10 +3212,10 @@
         "urn:php2shell:inventory:package:PHP-0632"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Vulnerable on unpatched installations. Japanese Windows Critical Patch build 7351 was released on 2026-11-12; the confirmed fixed scope is PHP-0973.",
+      "security_statusNotes": "Vulnerable on unpatched installations. English Windows Critical Patch build 7351 is now released; see PHP-0976. The existing Japanese fixed scope remains PHP-0973.",
       "summary": "CVE-2026-109618 assessment: Vulnerable",
-      "comment": "Official public sources reviewed 2026-11-12. https://success.trendmicro.com/ja-jp/solution/KA-0024807 https://success.trendmicro.com/ja-jp/solution/KA-0025014 https://files.trendmicro.com/jp/ucmodule/apexcentral/win/2019/CP/apexcentral_win_jp_criticalpatch_b7351_JP_Readme.html\nAction: Apply the matching released vendor patch. See PHP-0973 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice.",
-      "security_actionStatement": "Apply the matching released vendor patch. See PHP-0973 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice."
+      "comment": "Official public sources reviewed 2026-11-18. https://files.trendmicro.com/documentation/readme/CP/apexcentral_win_en_criticalpatch_b7351_Readme.html https://success.trendmicro.com/en-US/solution/KA-0025041 https://downloadcenter.trendmicro.com/index.php?prodid=1746&regs=nabu https://success.trendmicro.com/en-US/solution/KA-0024802\nAction: Apply the matching released critical patch and review vendor prerequisites and known issues.",
+      "security_actionStatement": "Apply the matching released critical patch and review vendor prerequisites and known issues."
     },
     {
       "type": "security_VexAffectedVulnAssessmentRelationship",
@@ -3194,10 +3226,10 @@
         "urn:php2shell:inventory:package:PHP-0632"
       ],
       "relationshipType": "affects",
-      "security_statusNotes": "Vulnerable on unpatched installations. Japanese Windows Critical Patch build 7351 was released on 2026-11-12; the confirmed fixed scope is PHP-0973.",
+      "security_statusNotes": "Vulnerable on unpatched installations. English Windows Critical Patch build 7351 is now released; see PHP-0976. The existing Japanese fixed scope remains PHP-0973.",
       "summary": "CVE-2026-109619 assessment: Vulnerable",
-      "comment": "Official public sources reviewed 2026-11-12. https://success.trendmicro.com/ja-jp/solution/KA-0024807 https://success.trendmicro.com/ja-jp/solution/KA-0025014 https://files.trendmicro.com/jp/ucmodule/apexcentral/win/2019/CP/apexcentral_win_jp_criticalpatch_b7351_JP_Readme.html\nAction: Apply the matching released vendor patch. See PHP-0973 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice.",
-      "security_actionStatement": "Apply the matching released vendor patch. See PHP-0973 for the confirmed Japanese Windows build. Review vendor installation notes and the Apex One/Apex Central communication compatibility notice."
+      "comment": "Official public sources reviewed 2026-11-18. https://files.trendmicro.com/documentation/readme/CP/apexcentral_win_en_criticalpatch_b7351_Readme.html https://success.trendmicro.com/en-US/solution/KA-0025041 https://downloadcenter.trendmicro.com/index.php?prodid=1746&regs=nabu https://success.trendmicro.com/en-US/solution/KA-0024802\nAction: Apply the matching released critical patch and review vendor prerequisites and known issues.",
+      "security_actionStatement": "Apply the matching released critical patch and review vendor prerequisites and known issues."
     },
     {
       "type": "software_Package",
@@ -5209,6 +5241,170 @@
       "security_statusNotes": "Fix: Japanese Windows Critical Patch build 7351 was released on 2026-11-12 and addresses both PHP2Shell CVEs.",
       "summary": "CVE-2026-109619 assessment: Fix",
       "comment": "Official public sources reviewed 2026-11-12. https://success.trendmicro.com/ja-jp/solution/KA-0024807 https://success.trendmicro.com/ja-jp/solution/KA-0025014 https://files.trendmicro.com/jp/ucmodule/apexcentral/win/2019/CP/apexcentral_win_jp_criticalpatch_b7351_JP_Readme.html https://success.trendmicro.com/ja-jp/solution/KA-0025036\nScope: Japanese Windows edition only; this does not establish patch availability for other languages. Requires Apex Central build 3945 or later; patch updates PHP to 8.2.35. Review vendor known issues, including the Apex One/Apex Central communication issue documented in KA-0025036."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0975",
+      "creationInfo": "_:creationinfo",
+      "name": "Apex One 2019 on-premises server (English Windows release)",
+      "software_primaryPurpose": "application",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0975"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:trend-micro:ddb8e439b1bf",
+      "summary": "Install English Windows SP1 CP 20113 following vendor prerequisites. This fixes the on-premises server; hosted services and other language editions are separate scopes.",
+      "software_packageVersion": "SP1 Critical Patch build 20113 (English Windows)",
+      "comment": "Inventory record: PHP-0975\nEvidence reviewed: 2026-11-18\nScope: Apply the English Windows SP1 CP 20113 package. Vendor bulletin lists on-premises 2019 builds below 20113 as affected. The hosted service and other language editions are separate scopes; review installation prerequisites and known issues.\nCVE-2026-109618 and CVE-2026-109619: Fix: English Windows SP1 CP 20113 addresses both PHP2Shell CVEs in the on-premises server; the vendor confirms release availability on 2026-11-13.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope.\nParent inventory record: PHP-0631",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/en-US/solution/KA-0024778"
+          ],
+          "comment": "Official 2026-11-13 security bulletin; English Windows SP1 CP 20113 is available and fixes both PHP2Shell CVEs."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/en-US/solution/KA-0024802"
+          ],
+          "comment": "Official PHP2Shell advisory, updated 2026-11-17; released critical patches for both CVEs."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0975",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0975",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "PHP runtime dependency for Apex One 2019 on-premises server (English Windows release)",
+      "comment": "Vendor-confirmed remediation scope separated from PHP-0631."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0975-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0975"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: English Windows SP1 CP 20113 addresses both PHP2Shell CVEs in the on-premises server; the vendor confirms release availability on 2026-11-13.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-18. https://success.trendmicro.com/en-US/solution/KA-0024778 https://success.trendmicro.com/en-US/solution/KA-0024802\nAction: Apply the English Windows SP1 CP 20113 package. Vendor bulletin lists on-premises 2019 builds below 20113 as affected. The hosted service and other language editions are separate scopes; review installation prerequisites and known issues."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0975-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0975"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: English Windows SP1 CP 20113 addresses both PHP2Shell CVEs in the on-premises server; the vendor confirms release availability on 2026-11-13.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-18. https://success.trendmicro.com/en-US/solution/KA-0024778 https://success.trendmicro.com/en-US/solution/KA-0024802\nAction: Apply the English Windows SP1 CP 20113 package. Vendor bulletin lists on-premises 2019 builds below 20113 as affected. The hosted service and other language editions are separate scopes; review installation prerequisites and known issues."
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:php2shell:inventory:package:PHP-0976",
+      "creationInfo": "_:creationinfo",
+      "name": "Apex Central 2019 (English Windows release)",
+      "software_primaryPurpose": "application",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "other",
+          "identifier": "PHP-0976"
+        }
+      ],
+      "suppliedBy": "urn:php2shell:inventory:organization:trend-micro:ddb8e439b1bf",
+      "summary": "Install English Windows CP 7351 over the supported build 3752 baseline. It includes PHP 8.2.35; other language editions and unpatched installations are separate scopes.",
+      "software_packageVersion": "Critical Patch build 7351 (English Windows); PHP 8.2.35",
+      "comment": "Inventory record: PHP-0976\nEvidence reviewed: 2026-11-18\nScope: Install the English Windows critical patch over the supported Apex Central build 3752 baseline, following vendor requirements. Other language editions and unpatched installations are separate scopes.\nCVE-2026-109618 and CVE-2026-109619: Fix: English Windows CP 7351, released 2026-11-11, upgrades the bundled PHP to 8.2.35 and resolves both PHP2Shell CVEs.\nDeployment status: Not measured; assessment is limited to the vendor-stated product and runtime scope.\nParent inventory record: PHP-0632",
+      "externalRef": [
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://files.trendmicro.com/documentation/readme/CP/apexcentral_win_en_criticalpatch_b7351_Readme.html"
+          ],
+          "comment": "Official English Windows CP 7351 readme; resolves PHP2Shell by updating PHP to 8.2.35."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/en-US/solution/KA-0025041"
+          ],
+          "comment": "Official CP 7351 release announcement, 2026-11-11."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "other",
+          "locator": [
+            "https://downloadcenter.trendmicro.com/index.php?prodid=1746&regs=nabu"
+          ],
+          "comment": "Official download catalog lists English Windows CP 7351 released 2026-11-11."
+        },
+        {
+          "type": "ExternalRef",
+          "externalRefType": "securityAdvisory",
+          "locator": [
+            "https://success.trendmicro.com/en-US/solution/KA-0024802"
+          ],
+          "comment": "Official PHP2Shell advisory, updated 2026-11-17; released critical patches for both CVEs."
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:php2shell:inventory:relationship:PHP-0976",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:package:PHP-0976",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0037"
+      ],
+      "relationshipType": "contains",
+      "summary": "PHP runtime dependency for Apex Central 2019 (English Windows release)",
+      "comment": "Vendor-confirmed remediation scope separated from PHP-0632."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109618:fixedIn:php-0976-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109618",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0976"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: English Windows CP 7351, released 2026-11-11, upgrades the bundled PHP to 8.2.35 and resolves both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109618 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-18. https://files.trendmicro.com/documentation/readme/CP/apexcentral_win_en_criticalpatch_b7351_Readme.html https://success.trendmicro.com/en-US/solution/KA-0025041 https://downloadcenter.trendmicro.com/index.php?prodid=1746&regs=nabu https://success.trendmicro.com/en-US/solution/KA-0024802\nAction: Install the English Windows critical patch over the supported Apex Central build 3752 baseline, following vendor requirements. Other language editions and unpatched installations are separate scopes."
+    },
+    {
+      "type": "security_VexFixedVulnAssessmentRelationship",
+      "spdxId": "urn:php2shell:inventory:vex:CVE-2026-109619:fixedIn:php-0976-official-20261118",
+      "creationInfo": "_:creationinfo",
+      "from": "urn:php2shell:inventory:vulnerability:CVE-2026-109619",
+      "to": [
+        "urn:php2shell:inventory:package:PHP-0976"
+      ],
+      "relationshipType": "fixedIn",
+      "security_statusNotes": "Fix: English Windows CP 7351, released 2026-11-11, upgrades the bundled PHP to 8.2.35 and resolves both PHP2Shell CVEs.",
+      "summary": "CVE-2026-109619 assessment: Fix",
+      "comment": "Official public sources reviewed 2026-11-18. https://files.trendmicro.com/documentation/readme/CP/apexcentral_win_en_criticalpatch_b7351_Readme.html https://success.trendmicro.com/en-US/solution/KA-0025041 https://downloadcenter.trendmicro.com/index.php?prodid=1746&regs=nabu https://success.trendmicro.com/en-US/solution/KA-0024802\nAction: Install the English Windows critical patch over the supported Apex Central build 3752 baseline, following vendor requirements. Other language editions and unpatched installations are separate scopes."
     }
   ]
 }
